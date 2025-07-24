@@ -48,10 +48,10 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
 
   return (
     <Card
-      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-lg h-60 w-45"
+      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-lg h-60"
       onClick={onClick}
     >
-      <CardContent className="p-4 flex flex-col items-center text-center space-y-3 h-full w-45">
+      <CardContent className="p-4 flex flex-col items-center text-center space-y-3 h-full">
         <Avatar className="w-10 h-10 flex-shrink-0">
           <AvatarImage src={student.avatar} />
           <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
