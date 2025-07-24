@@ -19,16 +19,16 @@ interface Student {
 
 const mockStudents: Student[] = [
   // Students with upcoming sessions
-  { id: "1", name: "Jordan", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today" },
-  { id: "2", name: "Jordan", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today" },
-  { id: "3", name: "Jordan", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today" },
-  
+  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" },
+  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=150&h=150&fit=crop&crop=face" },
+  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" },
+
   // Students with open tasks
-  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true },
-  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true },
-  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true },
-  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true },
-  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true },
+  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" },
+  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" },
+  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face" },
+  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face" },
+  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face" },
   { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true },
   
   // All students (additional)
