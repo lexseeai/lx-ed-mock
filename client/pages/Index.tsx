@@ -163,7 +163,7 @@ export default function Index() {
           <section>
             <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
               <h1 className="text-xl pt-5">
-                <strong className="text-stone-400">Students with upcoming sessions</strong>
+                <p>Students with upcoming sessions</p>
               </h1>
             </h2>
             <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
