@@ -16,6 +16,12 @@ export default {
       fontFamily: {
         'lexend': ['Lexend', 'sans-serif'],
       },
+      width: {
+        '45': '180px',
+      },
+      height: {
+        '60': '240px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
