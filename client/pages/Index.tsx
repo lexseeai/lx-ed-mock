@@ -197,8 +197,8 @@ export default function Index() {
 
           {/* All students */}
           <section>
-            <h2 className="text-base font-bold text-stone-400 mb-3 font-lexend">
-              <h1>
+            <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
+              <h1 className="text-xl pt-5">
                 <strong className="text-stone-400">All students</strong>
               </h1>
             </h2>
