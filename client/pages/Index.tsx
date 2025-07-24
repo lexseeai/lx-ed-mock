@@ -78,32 +78,32 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
 
 function Sidebar() {
   return (
-    <div className="w-16 bg-white border-r border-gray-200 flex flex-col items-center py-4">
+    <div className="w-16 bg-white border-r border-stone-200 flex flex-col items-center py-3">
       {/* Logo */}
-      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+      <div className="w-8 h-8 bg-stone-100 rounded-full flex items-center justify-center mb-4">
         <div className="w-6 h-6 bg-indigo-600 rounded-full"></div>
       </div>
-      
+
       {/* Navigation */}
-      <nav className="flex flex-col space-y-4">
-        <Button variant="ghost" size="sm" className="w-10 h-10 p-0 text-gray-400">
+      <nav className="flex flex-col space-y-2">
+        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 text-stone-400 hover:text-stone-600">
           <GraduationCap className="w-4 h-4" />
         </Button>
-        <Button variant="ghost" size="sm" className="w-10 h-10 p-0 text-gray-400">
+        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 text-stone-400 hover:text-stone-600">
           <FileText className="w-4 h-4" />
         </Button>
-        <Button variant="ghost" size="sm" className="w-10 h-10 p-0 bg-gray-100 text-indigo-600">
+        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 bg-stone-100 text-indigo-600 hover:bg-stone-100">
           <Users className="w-4 h-4" />
         </Button>
-        <Button variant="ghost" size="sm" className="w-10 h-10 p-0 text-gray-400">
+        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 text-stone-400 hover:text-stone-600">
           <Settings className="w-4 h-4" />
         </Button>
       </nav>
-      
+
       {/* User avatar */}
       <div className="mt-auto">
         <Avatar className="w-8 h-8">
-          <AvatarFallback className="bg-gray-200 text-gray-600 text-xs">U</AvatarFallback>
+          <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">U</AvatarFallback>
         </Avatar>
       </div>
     </div>
