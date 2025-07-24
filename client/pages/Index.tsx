@@ -195,7 +195,11 @@ export default function Index() {
 
           {/* All students */}
           <section>
-            <h2 className="text-base font-medium text-stone-600 mb-3">All students</h2>
+            <h2 className="text-base font-extrabold text-stone-400 mb-3 font-lexend">
+              <h1>
+                <strong className="text-stone-400">All students</strong>
+              </h1>
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
               {allStudents.map((student) => (
                 <StudentCard
