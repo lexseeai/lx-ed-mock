@@ -48,7 +48,8 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
 
   return (
     <Card
-      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-lg h-60"
+      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-lg h-60 min-w-42 max-w-48 mx-auto"
+      style={{ aspectRatio: '0.75' }}
       onClick={onClick}
     >
       <CardContent className="p-4 flex flex-col items-center text-center space-y-3 h-full">
