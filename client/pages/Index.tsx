@@ -63,7 +63,9 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
         <div className="space-y-1 flex-1 flex flex-col justify-start items-center w-full">
           <h3 className="text-gray-900 font-lexend font-medium text-sm">{student.name}</h3>
           {student.sessionTime && (
-            <p className="text-xs text-gray-600 leading-tight">{student.sessionTime}</p>
+            <p className="text-xs text-gray-600 leading-tight">
+              <p>{student.sessionTime}</p>
+            </p>
           )}
         </div>
 
