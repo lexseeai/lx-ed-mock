@@ -19,17 +19,17 @@ interface Student {
 
 const mockStudents: Student[] = [
   // Students with upcoming sessions
-  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&backgroundColor=b6e3f4&clothesColor=262e33&eyebrowType=default&eyeType=happy&hairColor=auburn&hatColor=blue01&mouthType=smile&skinColor=light" },
-  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma&backgroundColor=c084fc&clothesColor=e60026&eyebrowType=raised&eyeType=happy&hairColor=blonde&mouthType=smile&skinColor=light" },
-  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus&backgroundColor=fbbf24&clothesColor=3c4858&eyebrowType=default&eyeType=default&hairColor=black&mouthType=default&skinColor=brown" },
+  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Alex" },
+  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Emma" },
+  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Marcus" },
 
   // Students with open tasks
-  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sofia&backgroundColor=f87171&clothesColor=ff488e&eyebrowType=default&eyeType=happy&hairColor=brown&mouthType=smile&skinColor=light" },
-  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Liam&backgroundColor=34d399&clothesColor=5199e4&eyebrowType=default&eyeType=default&hairColor=red&mouthType=smile&skinColor=light" },
-  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabella&backgroundColor=a78bfa&clothesColor=ff5722&eyebrowType=raised&eyeType=happy&hairColor=black&mouthType=smile&skinColor=dark" },
-  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Noah&backgroundColor=60a5fa&clothesColor=25dd3c&eyebrowType=default&eyeType=default&hairColor=blonde&mouthType=default&skinColor=light" },
-  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mia&backgroundColor=fb7185&clothesColor=262e33&eyebrowType=raised&eyeType=happy&hairColor=auburn&mouthType=smile&skinColor=light" },
-  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ethan&backgroundColor=fcd34d&clothesColor=3c4858&eyebrowType=default&eyeType=default&hairColor=brown&mouthType=default&skinColor=brown" },
+  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Sofia" },
+  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Liam" },
+  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Isabella" },
+  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Noah" },
+  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mia" },
+  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Ethan" },
   
   // All students (additional)
   { id: "10", name: "Jayden", sessionTime: "8:00pm, today" },
