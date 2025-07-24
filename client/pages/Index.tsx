@@ -135,8 +135,7 @@ export default function Index() {
         <div className="bg-stone-50 border-b border-stone-200 px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-semibold text-gray-900 flex items-center">
-                <div className="w-6 h-6 bg-indigo-600 rounded-full mr-2"></div>
+              <h1 className="text-xl font-medium text-gray-900">
                 My students
               </h1>
             </div>
