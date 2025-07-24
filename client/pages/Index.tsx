@@ -156,7 +156,7 @@ export default function Index() {
         </div>
 
         {/* Content */}
-        <div className="flex-1 p-6 space-y-6">
+        <div className="flex-1 p-6 space-y-6 bg-stone-50">
           {/* Students with upcoming sessions */}
           <section>
             <h2 className="text-base font-medium text-stone-600 mb-3">Students with upcoming sessions</h2>
