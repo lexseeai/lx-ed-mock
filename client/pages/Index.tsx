@@ -19,17 +19,17 @@ interface Student {
 
 const mockStudents: Student[] = [
   // Students with upcoming sessions
-  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&h=150&fit=crop&crop=face" },
-  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" },
-  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=150&h=150&fit=crop&crop=face" },
+  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&backgroundColor=b6e3f4&clothesColor=262e33&eyebrowType=default&eyeType=happy&hairColor=auburn&hatColor=blue01&mouthType=smile&skinColor=light" },
+  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma&backgroundColor=c084fc&clothesColor=e60026&eyebrowType=raised&eyeType=happy&hairColor=blonde&mouthType=smile&skinColor=light" },
+  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus&backgroundColor=fbbf24&clothesColor=3c4858&eyebrowType=default&eyeType=default&hairColor=black&mouthType=default&skinColor=brown" },
 
   // Students with open tasks
-  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face" },
-  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=150&h=150&fit=crop&crop=face" },
-  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face" },
-  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&h=150&fit=crop&crop=face" },
-  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=150&h=150&fit=crop&crop=face" },
-  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" },
+  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sofia&backgroundColor=f87171&clothesColor=ff488e&eyebrowType=default&eyeType=happy&hairColor=brown&mouthType=smile&skinColor=light" },
+  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Liam&backgroundColor=34d399&clothesColor=5199e4&eyebrowType=default&eyeType=default&hairColor=red&mouthType=smile&skinColor=light" },
+  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabella&backgroundColor=a78bfa&clothesColor=ff5722&eyebrowType=raised&eyeType=happy&hairColor=black&mouthType=smile&skinColor=dark" },
+  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Noah&backgroundColor=60a5fa&clothesColor=25dd3c&eyebrowType=default&eyeType=default&hairColor=blonde&mouthType=default&skinColor=light" },
+  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mia&backgroundColor=fb7185&clothesColor=262e33&eyebrowType=raised&eyeType=happy&hairColor=auburn&mouthType=smile&skinColor=light" },
+  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ethan&backgroundColor=fcd34d&clothesColor=3c4858&eyebrowType=default&eyeType=default&hairColor=brown&mouthType=default&skinColor=brown" },
   
   // All students (additional)
   { id: "10", name: "Jayden", sessionTime: "8:00pm, today" },
