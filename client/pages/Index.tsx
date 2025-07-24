@@ -179,8 +179,8 @@ export default function Index() {
 
           {/* Students with open tasks */}
           <section>
-            <h2 className="text-base font-bold text-stone-400 mb-3 font-lexend">
-              <h1>
+            <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
+              <h1 className="text-xl pt-5">
                 <p>Open tasks</p>
               </h1>
             </h2>
