@@ -201,7 +201,7 @@ export default function Index() {
                 <strong className="text-stone-400">All students</strong>
               </h1>
             </h2>
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(192px,_1fr))] gap-3">
+            <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
               {allStudents.map((student) => (
                 <StudentCard
                   key={student.id}
