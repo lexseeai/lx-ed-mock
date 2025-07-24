@@ -125,11 +125,11 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-stone-100 flex">
       <Sidebar />
-      
+
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <div className="bg-white border-b border-gray-200 px-6 py-4">
+        <div className="bg-white border-b border-stone-200 px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <h1 className="text-xl font-semibold text-gray-900 flex items-center">
@@ -137,7 +137,7 @@ export default function Index() {
                 My students
               </h1>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <Input
@@ -145,22 +145,22 @@ export default function Index() {
                   placeholder="Filter students"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64"
+                  className="w-64 h-9"
                 />
               </div>
-              <Button className="bg-indigo-600 hover:bg-indigo-700">
+              <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
                 + New student
               </Button>
             </div>
           </div>
         </div>
-        
+
         {/* Content */}
-        <div className="flex-1 p-6 space-y-8">
+        <div className="flex-1 p-6 space-y-6">
           {/* Students with upcoming sessions */}
           <section>
-            <h2 className="text-lg font-medium text-gray-700 mb-4">Students with upcoming sessions</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+            <h2 className="text-base font-medium text-stone-600 mb-3">Students with upcoming sessions</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
               {studentsWithUpcomingSessions.map((student) => (
                 <StudentCard
                   key={student.id}
@@ -173,8 +173,8 @@ export default function Index() {
 
           {/* Students with open tasks */}
           <section>
-            <h2 className="text-lg font-medium text-gray-700 mb-4">Students with open tasks</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+            <h2 className="text-base font-medium text-stone-600 mb-3">Students with open tasks</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
               {studentsWithOpenTasks.map((student) => (
                 <StudentCard
                   key={student.id}
@@ -187,8 +187,8 @@ export default function Index() {
 
           {/* All students */}
           <section>
-            <h2 className="text-lg font-medium text-gray-700 mb-4">All students</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+            <h2 className="text-base font-medium text-stone-600 mb-3">All students</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
               {allStudents.map((student) => (
                 <StudentCard
                   key={student.id}
