@@ -19,9 +19,9 @@ interface Student {
 
 const mockStudents: Student[] = [
   // Students with upcoming sessions
-  { id: "1", name: "Jordan", upcomingSession: "3:00 PM, today", sessionTime: "3:00" },
-  { id: "2", name: "Jordan", upcomingSession: "3:00 PM, today", sessionTime: "3:00" },
-  { id: "3", name: "Jordan", upcomingSession: "8:00 PM, today", sessionTime: "8:00" },
+  { id: "1", name: "Jordan", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today" },
+  { id: "2", name: "Jordan", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today" },
+  { id: "3", name: "Jordan", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today" },
   
   // Students with open tasks
   { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true },
