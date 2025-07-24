@@ -162,7 +162,7 @@ export default function Index() {
           {/* Students with upcoming sessions */}
           <section>
             <h2 className="text-base font-bold text-stone-400 mb-3 font-lexend">
-              <h1>
+              <h1 className="text-xl pt-5">
                 <strong className="text-stone-400">Students with upcoming sessions</strong>
               </h1>
             </h2>
