@@ -17,7 +17,9 @@ export default {
         'lexend': ['Lexend', 'sans-serif'],
       },
       width: {
+        '42': '168px',
         '45': '180px',
+        '48': '192px',
       },
       height: {
         '60': '240px',
