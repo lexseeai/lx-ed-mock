@@ -112,10 +112,10 @@ function Sidebar() {
 
 export default function Index() {
   const [searchQuery, setSearchQuery] = useState("");
-  
+  const navigate = useNavigate();
+
   const handleStudentClick = (studentId: string) => {
-    console.log("Opening student view for:", studentId);
-    // Navigate to student detail view
+    navigate(`/student/${studentId}`);
   };
 
   const studentsWithUpcomingSessions = mockStudents.filter(s => s.upcomingSession);
