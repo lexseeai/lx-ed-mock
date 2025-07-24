@@ -161,7 +161,7 @@ export default function Index() {
         <div className="flex-1 p-6 space-y-6 bg-stone-50">
           {/* Students with upcoming sessions */}
           <section>
-            <h2 className="text-base font-bold text-stone-400 mb-3 font-lexend">
+            <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
               <h1 className="text-xl pt-5">
                 <strong className="text-stone-400">Students with upcoming sessions</strong>
               </h1>
