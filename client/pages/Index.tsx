@@ -19,17 +19,17 @@ interface Student {
 
 const mockStudents: Student[] = [
   // Students with upcoming sessions
-  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Alex" },
-  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Emma" },
-  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Marcus" },
+  { id: "1", name: "Alex", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex" },
+  { id: "2", name: "Emma", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma" },
+  { id: "3", name: "Marcus", upcomingSession: "5:00 PM, today", sessionTime: "5:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus" },
 
   // Students with open tasks
-  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Sofia" },
-  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Liam" },
-  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Isabella" },
-  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Noah" },
-  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mia" },
-  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://api.dicebear.com/6.x/fun-emoji/svg?seed=Ethan" },
+  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia" },
+  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam" },
+  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella" },
+  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Noah" },
+  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Mia" },
+  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ethan" },
   
   // All students (additional)
   { id: "10", name: "Jayden", sessionTime: "8:00pm, today" },
