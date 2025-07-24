@@ -177,7 +177,11 @@ export default function Index() {
 
           {/* Students with open tasks */}
           <section>
-            <h2 className="text-base font-medium text-stone-600 mb-3">Students with open tasks</h2>
+            <h2 className="text-base font-extrabold text-stone-400 mb-3 font-lexend">
+              <h1>
+                <strong className="text-stone-400">Students with open tasks</strong>
+              </h1>
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
               {studentsWithOpenTasks.map((student) => (
                 <StudentCard
