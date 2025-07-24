@@ -47,27 +47,27 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
   };
 
   return (
-    <Card 
-      className="cursor-pointer hover:shadow-md transition-shadow duration-200 bg-white border border-gray-200"
+    <Card
+      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-lg h-full"
       onClick={onClick}
     >
-      <CardContent className="p-4 flex flex-col items-center text-center space-y-3">
-        <Avatar className="w-12 h-12">
+      <CardContent className="p-4 flex flex-col items-center text-center space-y-3 h-full">
+        <Avatar className="w-10 h-10 flex-shrink-0">
           <AvatarImage src={student.avatar} />
-          <AvatarFallback className="bg-orange-100 text-orange-800 font-medium">
+          <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
             {getInitials(student.name)}
           </AvatarFallback>
         </Avatar>
-        
-        <div className="space-y-1">
-          <h3 className="font-medium text-gray-900">{student.name}</h3>
+
+        <div className="space-y-1 flex-1 flex flex-col justify-center">
+          <h3 className="font-medium text-gray-900 text-sm">{student.name}</h3>
           {student.sessionTime && (
-            <p className="text-sm text-gray-600">{student.sessionTime}</p>
+            <p className="text-xs text-gray-600 leading-tight">{student.sessionTime}</p>
           )}
         </div>
-        
+
         {student.sessionReportDue && (
-          <Badge variant="outline" className="text-xs bg-pink-50 text-pink-700 border-pink-200">
+          <Badge variant="outline" className="text-xs bg-pink-50 text-pink-700 border-pink-200 flex-shrink-0">
             📝 Session report due
           </Badge>
         )}
