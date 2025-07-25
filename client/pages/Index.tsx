@@ -203,10 +203,38 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
 
 export default function Index() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeView, setActiveView] = useState("all");
   const navigate = useNavigate();
 
   const handleStudentClick = (studentId: string) => {
     navigate(`/student/${studentId}`);
+  };
+
+  // Helper functions for different views
+  const getAllStudentsSorted = () => {
+    return [...mockStudents].sort((a, b) => a.name.localeCompare(b.name));
+  };
+
+  const getThisWeekStudents = () => {
+    const today = mockStudents.filter(s => s.sessionTime?.includes('today'));
+    const tomorrow = mockStudents.filter(s => s.sessionTime?.includes('tomorrow'));
+    return { today, tomorrow };
+  };
+
+  const getUpcomingStudents = () => {
+    const thisWeek = mockStudents.filter(s => s.sessionTime?.includes('today') || s.sessionTime?.includes('tomorrow'));
+    const nextWeek = mockStudents.filter(s => s.sessionTime?.includes('next'));
+    const furtherOut = mockStudents.filter(s => s.sessionTime && !s.sessionTime.includes('today') && !s.sessionTime.includes('tomorrow') && !s.sessionTime.includes('next'));
+    return { thisWeek, nextWeek, furtherOut };
+  };
+
+  const getOpenTasksStudents = () => {
+    return mockStudents.filter(s => s.sessionReportDue).sort((a, b) => {
+      // Sort by session time for open tasks
+      if (!a.sessionTime) return 1;
+      if (!b.sessionTime) return -1;
+      return a.sessionTime.localeCompare(b.sessionTime);
+    });
   };
 
   const studentsWithUpcomingSessions = mockStudents.filter(s => s.upcomingSession);
