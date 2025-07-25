@@ -202,36 +202,37 @@ export default function Index() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <div className="bg-stone-50 border-b border-stone-200 px-6 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-medium text-gray-900">
-                My students
-              </h1>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <Input
-                  type="text"
-                  placeholder="Filter students"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 h-9"
-                />
-              </div>
-              <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
-                + New student
-              </Button>
-            </div>
-          </div>
-        </div>
-
         {/* Content */}
         <div className="flex-1 p-6 bg-stone-100">
           {/* My students panel card */}
-          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm p-6 space-y-6">
+          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm">
+            {/* Header inside card */}
+            <div className="border-b border-stone-200 px-6 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <h1 className="text-xl font-medium text-gray-900">
+                    My students
+                  </h1>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="relative">
+                    <Input
+                      type="text"
+                      placeholder="Filter students"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-64 h-9"
+                    />
+                  </div>
+                  <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
+                    + New student
+                  </Button>
+                </div>
+              </div>
+            </div>
+            {/* Content inside card */}
+            <div className="p-6 space-y-6">
           {/* Students with upcoming sessions */}
           <section>
             <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
@@ -285,6 +286,7 @@ export default function Index() {
               ))}
             </div>
           </section>
+            </div>
           </div>
         </div>
       </div>
