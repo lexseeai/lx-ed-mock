@@ -197,15 +197,15 @@ export default function Index() {
   const allStudents = mockStudents.slice(9); // Show the Jayden students in "All students"
 
   return (
-    <div className="min-h-screen bg-stone-100 flex">
+    <div className="h-screen bg-stone-100 flex">
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col h-full">
         {/* Content */}
-        <div className="flex-1 p-6 bg-stone-100">
+        <div className="flex-1 p-6 bg-stone-100 h-full">
           {/* My students panel card */}
-          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm">
+          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col">
             {/* Header inside card */}
             <div className="border-b border-stone-200 px-6 py-4">
               <div className="flex items-center justify-between">
@@ -232,7 +232,7 @@ export default function Index() {
               </div>
             </div>
             {/* Content inside card */}
-            <div className="p-6 space-y-6">
+            <div className="p-6 space-y-6 flex-1 overflow-y-auto">
           {/* Students with upcoming sessions */}
           <section>
             <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
