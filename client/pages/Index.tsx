@@ -278,59 +278,105 @@ export default function Index() {
             </div>
             {/* Content inside card */}
             <div className="p-6 space-y-6 flex-1 overflow-y-auto">
-          {/* Students with upcoming sessions */}
-          <section>
-            <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
-              <h1 className="text-xl pt-5">
-                <p>Students with upcoming sessions</p>
-              </h1>
-            </h2>
-            <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
-              {studentsWithUpcomingSessions.map((student) => (
-                <StudentCard
-                  key={student.id}
-                  student={student}
-                  onClick={() => handleStudentClick(student.id)}
-                />
-              ))}
-            </div>
-          </section>
+              {activeView === 'all' && (
+                <section>
+                  <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                    {getAllStudentsSorted().map((student) => (
+                      <StudentCard
+                        key={student.id}
+                        student={student}
+                        onClick={() => handleStudentClick(student.id)}
+                      />
+                    ))}
+                  </div>
+                </section>
+              )}
 
-          {/* Students with open tasks */}
-          <section>
-            <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
-              <h1 className="text-xl pt-5">
-                <p>Open tasks</p>
-              </h1>
-            </h2>
-            <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
-              {studentsWithOpenTasks.map((student) => (
-                <StudentCard
-                  key={student.id}
-                  student={student}
-                  onClick={() => handleStudentClick(student.id)}
-                />
-              ))}
-            </div>
-          </section>
+              {activeView === 'thisweek' && (
+                <>
+                  <section>
+                    <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Today</h2>
+                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                      {getThisWeekStudents().today.map((student) => (
+                        <StudentCard
+                          key={student.id}
+                          student={student}
+                          onClick={() => handleStudentClick(student.id)}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                  <section>
+                    <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Tomorrow</h2>
+                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                      {getThisWeekStudents().tomorrow.map((student) => (
+                        <StudentCard
+                          key={student.id}
+                          student={student}
+                          onClick={() => handleStudentClick(student.id)}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                </>
+              )}
 
-          {/* All students */}
-          <section>
-            <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
-              <h1 className="text-xl pt-5">
-                <p>All students</p>
-              </h1>
-            </h2>
-            <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
-              {allStudents.map((student) => (
-                <StudentCard
-                  key={student.id}
-                  student={student}
-                  onClick={() => handleStudentClick(student.id)}
-                />
-              ))}
-            </div>
-          </section>
+              {activeView === 'upcoming' && (
+                <>
+                  <section>
+                    <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">This Week</h2>
+                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                      {getUpcomingStudents().thisWeek.map((student) => (
+                        <StudentCard
+                          key={student.id}
+                          student={student}
+                          onClick={() => handleStudentClick(student.id)}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                  <section>
+                    <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Next Week</h2>
+                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                      {getUpcomingStudents().nextWeek.map((student) => (
+                        <StudentCard
+                          key={student.id}
+                          student={student}
+                          onClick={() => handleStudentClick(student.id)}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                  {getUpcomingStudents().furtherOut.length > 0 && (
+                    <section>
+                      <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Further Out</h2>
+                      <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                        {getUpcomingStudents().furtherOut.map((student) => (
+                          <StudentCard
+                            key={student.id}
+                            student={student}
+                            onClick={() => handleStudentClick(student.id)}
+                          />
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                </>
+              )}
+
+              {activeView === 'opentasks' && (
+                <section>
+                  <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                    {getOpenTasksStudents().map((student) => (
+                      <StudentCard
+                        key={student.id}
+                        student={student}
+                        onClick={() => handleStudentClick(student.id)}
+                      />
+                    ))}
+                  </div>
+                </section>
+              )}
             </div>
           </div>
         </div>
