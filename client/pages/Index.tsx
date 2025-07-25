@@ -229,7 +229,9 @@ export default function Index() {
         </div>
 
         {/* Content */}
-        <div className="flex-1 p-6 space-y-6 bg-stone-50">
+        <div className="flex-1 p-6 bg-stone-100">
+          {/* My students panel card */}
+          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm p-6 space-y-6">
           {/* Students with upcoming sessions */}
           <section>
             <h2 className="text-base font-normal text-stone-400 mb-3 font-lexend">
@@ -283,6 +285,7 @@ export default function Index() {
               ))}
             </div>
           </section>
+          </div>
         </div>
       </div>
     </div>
