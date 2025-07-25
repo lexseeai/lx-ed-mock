@@ -76,7 +76,7 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
   );
 }
 
-function Sidebar() {
+function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveView: (view: string) => void }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
