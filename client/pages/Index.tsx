@@ -377,7 +377,7 @@ export default function Index() {
                     </div>
                   </section>
                   <section>
-                    <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Next Week</h2>
+                    <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Next Week</h2>
                     <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
                       {getUpcomingStudents().nextWeek.map((student) => (
                         <StudentCard
