@@ -106,40 +106,60 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             </div>
           )}
 
-          {/* All Students - Active */}
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg bg-indigo-600 text-white`}>
+          {/* All Students */}
+          <div
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
+              activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-stone-100'
+            }`}
+            onClick={() => setActiveView('all')}
+          >
             <div className="flex items-center space-x-2">
-              <UsersRound className="w-4 h-4" />
-              {!isCollapsed && <span className="text-sm font-lexend">All</span>}
+              <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-stone-600'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-stone-700'}`}>All</span>}
             </div>
-            {!isCollapsed && <span className="text-sm font-lexend">14</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-stone-400'}`}>14</span>}
           </div>
 
           {/* This Week */}
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+          <div
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
+              activeView === 'thisweek' ? 'bg-indigo-600 text-white' : 'hover:bg-stone-100'
+            }`}
+            onClick={() => setActiveView('thisweek')}
+          >
             <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4 text-teal-500" />
-              {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">This week</span>}
+              <Clock className={`w-4 h-4 ${activeView === 'thisweek' ? 'text-white' : 'text-teal-500'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-stone-700'}`}>This week</span>}
             </div>
-            {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">3</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-stone-400'}`}>3</span>}
           </div>
 
           {/* Upcoming */}
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+          <div
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
+              activeView === 'upcoming' ? 'bg-indigo-600 text-white' : 'hover:bg-stone-100'
+            }`}
+            onClick={() => setActiveView('upcoming')}
+          >
             <div className="flex items-center space-x-2">
-              <Calendar className="w-4 h-4 text-sky-500" />
-              {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">Upcoming</span>}
+              <Calendar className={`w-4 h-4 ${activeView === 'upcoming' ? 'text-white' : 'text-sky-500'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-stone-700'}`}>Upcoming</span>}
             </div>
-            {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">9</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-stone-400'}`}>9</span>}
           </div>
 
           {/* Open Tasks */}
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+          <div
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
+              activeView === 'opentasks' ? 'bg-indigo-600 text-white' : 'hover:bg-stone-100'
+            }`}
+            onClick={() => setActiveView('opentasks')}
+          >
             <div className="flex items-center space-x-2">
-              <NotebookText className="w-4 h-4 text-fuchsia-500" />
-              {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">Open tasks</span>}
+              <NotebookText className={`w-4 h-4 ${activeView === 'opentasks' ? 'text-white' : 'text-fuchsia-500'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-stone-700'}`}>Open tasks</span>}
             </div>
-            {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">4</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-stone-400'}`}>4</span>}
           </div>
         </div>
 
