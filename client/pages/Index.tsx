@@ -24,19 +24,19 @@ const mockStudents: Student[] = [
   { id: "3", name: "Marcus", upcomingSession: "5:00 PM, tomorrow", sessionTime: "5:00pm tomorrow", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus" },
 
   // Students with open tasks
-  { id: "4", name: "Sofia", sessionTime: "10:30am, tomorrow", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia" },
-  { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam" },
-  { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella" },
-  { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Noah" },
+  { id: "4", name: "Sofia", sessionTime: "10:30am, next Tuesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia" },
+  { id: "5", name: "Liam", sessionTime: "9:00am, next Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam" },
+  { id: "6", name: "Isabella", sessionTime: "1:30pm, next Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella" },
+  { id: "7", name: "Noah", sessionTime: "4:45pm, next Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Noah" },
 
   // All students (additional)
-  { id: "10", name: "Carlos", sessionTime: "8:00pm, today" },
-  { id: "11", name: "Maya", sessionTime: "3:00pm, today" },
+  { id: "10", name: "Carlos", sessionTime: "8:00pm, next Monday" },
+  { id: "11", name: "Maya", sessionTime: "3:00pm, next Thursday" },
   { id: "12", name: "Daniel" },
-  { id: "13", name: "Zoe", sessionTime: "3:00pm, today" },
-  { id: "14", name: "Oliver", sessionTime: "8:00pm, today" },
+  { id: "13", name: "Zoe", sessionTime: "3:00pm, next Tuesday" },
+  { id: "14", name: "Oliver", sessionTime: "8:00pm, next Friday" },
   { id: "15", name: "Luna" },
-  { id: "16", name: "Kai", sessionTime: "8:00pm, today" },
+  { id: "16", name: "Kai", sessionTime: "8:00pm, next Wednesday" },
 ];
 
 function StudentCard({ student, onClick }: { student: Student; onClick: () => void }) {
