@@ -28,17 +28,15 @@ const mockStudents: Student[] = [
   { id: "5", name: "Liam", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam" },
   { id: "6", name: "Isabella", sessionTime: "1:30am, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella" },
   { id: "7", name: "Noah", sessionTime: "4:45pm, today", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Noah" },
-  { id: "8", name: "Mia", sessionTime: "11:00am, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Mia" },
-  { id: "9", name: "Ethan", sessionTime: "2:00pm, Thursday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ethan" },
-  
+
   // All students (additional)
-  { id: "10", name: "Jayden", sessionTime: "8:00pm, today" },
-  { id: "11", name: "Jayden", sessionTime: "3:00pm, today" },
-  { id: "12", name: "Jayden", sessionTime: "8:00pm, today" },
-  { id: "13", name: "Jayden", sessionTime: "3:00pm, today" },
-  { id: "14", name: "Jayden", sessionTime: "8:00pm, today" },
-  { id: "15", name: "Jayden", sessionTime: "8:00pm, today" },
-  { id: "16", name: "Jayden", sessionTime: "8:00pm, today" },
+  { id: "10", name: "Carlos", sessionTime: "8:00pm, today" },
+  { id: "11", name: "Maya", sessionTime: "3:00pm, today" },
+  { id: "12", name: "Daniel" },
+  { id: "13", name: "Zoe", sessionTime: "3:00pm, today" },
+  { id: "14", name: "Oliver", sessionTime: "8:00pm, today" },
+  { id: "15", name: "Luna" },
+  { id: "16", name: "Kai", sessionTime: "8:00pm, today" },
 ];
 
 function StudentCard({ student, onClick }: { student: Student; onClick: () => void }) {
