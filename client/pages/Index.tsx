@@ -85,7 +85,7 @@ function Sidebar() {
   return (
     <div className={`${isCollapsed ? 'w-16' : 'w-60'} bg-stone-100 flex flex-col min-h-screen transition-all duration-300`}>
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-4 border-b border-stone-200">
+      <div className="flex items-center justify-between px-4 py-4">
         {!isCollapsed && (
           <h1 className="text-lg font-medium text-stone-800 font-lexend">Lexsee Workspace</h1>
         )}
@@ -169,7 +169,7 @@ function Sidebar() {
       </div>
 
       {/* User Profile at Bottom */}
-      <div className="border-t border-stone-200 p-3">
+      <div className="p-3">
         <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
           <div className="flex items-center space-x-2">
             <Avatar className="w-8 h-8">
