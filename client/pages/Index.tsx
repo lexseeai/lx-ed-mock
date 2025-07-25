@@ -203,7 +203,7 @@ export default function Index() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full">
         {/* Content */}
-        <div className="flex-1 p-6 bg-stone-100 h-full">
+        <div className="flex-1 pt-6 pr-6 pb-6 pl-3 bg-stone-100 h-full">
           {/* My students panel card */}
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col">
             {/* Header inside card */}
