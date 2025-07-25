@@ -336,7 +336,7 @@ export default function Index() {
               {activeView === 'thisweek' && (
                 <>
                   <section>
-                    <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Today</h2>
+                    <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Today</h2>
                     <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
                       {getThisWeekStudents().today.map((student) => (
                         <StudentCard
