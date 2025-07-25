@@ -243,7 +243,7 @@ export default function Index() {
 
   return (
     <div className="h-screen bg-stone-100 flex">
-      <Sidebar />
+      <Sidebar activeView={activeView} setActiveView={setActiveView} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full">
