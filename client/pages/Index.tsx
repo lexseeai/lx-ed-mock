@@ -54,7 +54,6 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
     >
       <CardContent className="p-4 flex flex-col items-center text-center space-y-3 h-full">
         <Avatar className="w-10 h-10 flex-shrink-0">
-          <AvatarImage src={student.avatar} />
           <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
             {getInitials(student.name)}
           </AvatarFallback>
