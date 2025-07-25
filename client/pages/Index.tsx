@@ -83,7 +83,7 @@ function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className={`${isCollapsed ? 'w-16' : 'w-60'} bg-stone-50 flex flex-col h-full transition-all duration-300`}>
+    <div className={`${isCollapsed ? 'w-16' : 'w-60'} bg-stone-50 flex flex-col min-h-screen transition-all duration-300`}>
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-4 border-b border-stone-200">
         {!isCollapsed && (
@@ -130,7 +130,7 @@ function Sidebar() {
           {/* Upcoming */}
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4 text-sky-500" />
+              <Calendar className="w-4 h-4 text-sky-500" />
               {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">Upcoming</span>}
             </div>
             {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">9</span>}
@@ -150,7 +150,7 @@ function Sidebar() {
         <div className="my-4"></div>
 
         {/* Other Navigation Items */}
-        <div className="space-y-2">
+        <div className="space-y-2 flex-1">
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <LibraryBig className="w-4 h-4 text-stone-600" />
             {!isCollapsed && <span className="text-sm text-stone-700 font-lexend ml-2">Library</span>}
@@ -166,18 +166,18 @@ function Sidebar() {
             {!isCollapsed && <span className="text-sm text-stone-700 font-lexend ml-2">Lexsee Reader</span>}
           </div>
         </div>
+      </div>
 
-        {/* User Profile at Bottom */}
-        <div className="mt-auto border-t border-stone-200 pt-4">
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
-            <div className="flex items-center space-x-2">
-              <Avatar className="w-8 h-8">
-                <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
-              </Avatar>
-              {!isCollapsed && <span className="text-sm font-medium text-black font-lexend">John Smith</span>}
-            </div>
-            {!isCollapsed && <ChevronsUpDown className="w-4 h-4 text-stone-400" />}
+      {/* User Profile at Bottom */}
+      <div className="border-t border-stone-200 p-3">
+        <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+          <div className="flex items-center space-x-2">
+            <Avatar className="w-8 h-8">
+              <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
+            </Avatar>
+            {!isCollapsed && <span className="text-sm font-medium text-black font-lexend">John Smith</span>}
           </div>
+          {!isCollapsed && <ChevronsUpDown className="w-4 h-4 text-stone-400" />}
         </div>
       </div>
     </div>
