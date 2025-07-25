@@ -390,7 +390,7 @@ export default function Index() {
                   </section>
                   {getUpcomingStudents().furtherOut.length > 0 && (
                     <section>
-                      <h2 className="text-xl font-medium text-gray-900 mb-4 font-lexend">Further Out</h2>
+                      <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Further Out</h2>
                       <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
                         {getUpcomingStudents().furtherOut.map((student) => (
                           <StudentCard
