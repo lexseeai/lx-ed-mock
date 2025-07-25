@@ -121,7 +121,7 @@ function Sidebar() {
           {/* This Week */}
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4 text-teal-500" />
+              <Timer className="w-4 h-4 text-teal-500" />
               {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">This week</span>}
             </div>
             {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">3</span>}
