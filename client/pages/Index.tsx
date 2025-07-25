@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, FileText, GraduationCap, Settings } from "lucide-react";
+import { Users, FileText, GraduationCap, Settings, Clock, Calendar, BookOpen, FileUser, ChevronUp, LayoutPanelLeft, Timer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
