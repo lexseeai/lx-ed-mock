@@ -80,56 +80,69 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
 }
 
 function Sidebar() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
   return (
-    <div className="w-60 bg-white flex flex-col h-full">
+    <div className={`${isCollapsed ? 'w-16' : 'w-60'} bg-stone-50 flex flex-col h-full transition-all duration-300`}>
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-4 border-b border-stone-200">
-        <h1 className="text-lg font-medium text-stone-800 font-lexend">Lexsee Workspace</h1>
-        <LayoutPanelLeft className="w-5 h-5 text-stone-400" />
+        {!isCollapsed && (
+          <h1 className="text-lg font-medium text-stone-800 font-lexend">Lexsee Workspace</h1>
+        )}
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="p-1 h-6 w-6"
+        >
+          <PanelLeft className="w-5 h-5 text-stone-400" />
+        </Button>
       </div>
 
       {/* Navigation Content */}
       <div className="flex-1 flex flex-col px-3 py-4">
         {/* My Students Section */}
         <div className="space-y-2">
-          <div className="px-2">
-            <h2 className="text-xs font-medium text-stone-400 font-lexend uppercase tracking-wide">My students</h2>
-          </div>
+          {!isCollapsed && (
+            <div className="px-2">
+              <h2 className="text-xs font-medium text-stone-400 font-lexend uppercase tracking-wide">My students</h2>
+            </div>
+          )}
 
           {/* All Students - Active */}
-          <div className="flex items-center justify-between px-2 py-1 rounded-lg bg-indigo-600 text-white">
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg bg-indigo-600 text-white`}>
             <div className="flex items-center space-x-2">
-              <Users className="w-4 h-4" />
-              <span className="text-sm font-lexend">All</span>
+              <UsersRound className="w-4 h-4" />
+              {!isCollapsed && <span className="text-sm font-lexend">All</span>}
             </div>
-            <span className="text-sm font-lexend">14</span>
+            {!isCollapsed && <span className="text-sm font-lexend">14</span>}
           </div>
 
           {/* This Week */}
-          <div className="flex items-center justify-between px-2 py-1 rounded-lg hover:bg-stone-50">
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <div className="flex items-center space-x-2">
-              <Timer className="w-4 h-4 text-teal-500" />
-              <span className="text-sm text-stone-700 font-lexend">This week</span>
+              <Clock className="w-4 h-4 text-teal-500" />
+              {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">This week</span>}
             </div>
-            <span className="text-sm text-stone-400 font-lexend">3</span>
+            {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">3</span>}
           </div>
 
           {/* Upcoming */}
-          <div className="flex items-center justify-between px-2 py-1 rounded-lg hover:bg-stone-50">
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <div className="flex items-center space-x-2">
-              <Calendar className="w-4 h-4 text-sky-500" />
-              <span className="text-sm text-stone-700 font-lexend">Upcoming</span>
+              <Clock className="w-4 h-4 text-sky-500" />
+              {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">Upcoming</span>}
             </div>
-            <span className="text-sm text-stone-400 font-lexend">9</span>
+            {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">9</span>}
           </div>
 
           {/* Open Tasks */}
-          <div className="flex items-center justify-between px-2 py-1 rounded-lg hover:bg-stone-50">
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <div className="flex items-center space-x-2">
-              <FileText className="w-4 h-4 text-fuchsia-500" />
-              <span className="text-sm text-stone-700 font-lexend">Open tasks</span>
+              <NotebookText className="w-4 h-4 text-fuchsia-500" />
+              {!isCollapsed && <span className="text-sm text-stone-700 font-lexend">Open tasks</span>}
             </div>
-            <span className="text-sm text-stone-400 font-lexend">4</span>
+            {!isCollapsed && <span className="text-sm text-stone-400 font-lexend">4</span>}
           </div>
         </div>
 
@@ -138,32 +151,32 @@ function Sidebar() {
 
         {/* Other Navigation Items */}
         <div className="space-y-2">
-          <div className="flex items-center px-2 py-1 rounded-lg hover:bg-stone-50">
-            <BookOpen className="w-4 h-4 text-stone-600 mr-2" />
-            <span className="text-sm text-stone-700 font-lexend">Library</span>
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+            <LibraryBig className="w-4 h-4 text-stone-600" />
+            {!isCollapsed && <span className="text-sm text-stone-700 font-lexend ml-2">Library</span>}
           </div>
 
-          <div className="flex items-center px-2 py-1 rounded-lg hover:bg-stone-50">
-            <FileUser className="w-4 h-4 text-stone-600 mr-2" />
-            <span className="text-sm text-stone-700 font-lexend">Assignments</span>
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+            <FileAudio className="w-4 h-4 text-stone-600" />
+            {!isCollapsed && <span className="text-sm text-stone-700 font-lexend ml-2">Assignments</span>}
           </div>
 
-          <div className="flex items-center px-2 py-1 rounded-lg hover:bg-stone-50">
-            <GraduationCap className="w-4 h-4 text-stone-600 mr-2" />
-            <span className="text-sm text-stone-700 font-lexend">Lexsee Reader</span>
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+            <Rabbit className="w-4 h-4 text-stone-600" />
+            {!isCollapsed && <span className="text-sm text-stone-700 font-lexend ml-2">Lexsee Reader</span>}
           </div>
         </div>
 
         {/* User Profile at Bottom */}
         <div className="mt-auto border-t border-stone-200 pt-4">
-          <div className="flex items-center justify-between px-2 py-1 rounded-lg hover:bg-stone-50">
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <div className="flex items-center space-x-2">
               <Avatar className="w-8 h-8">
                 <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
               </Avatar>
-              <span className="text-sm font-medium text-black font-lexend">John Smith</span>
+              {!isCollapsed && <span className="text-sm font-medium text-black font-lexend">John Smith</span>}
             </div>
-            <ChevronUp className="w-4 h-4 text-stone-400" />
+            {!isCollapsed && <ChevronsUpDown className="w-4 h-4 text-stone-400" />}
           </div>
         </div>
       </div>
