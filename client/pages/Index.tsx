@@ -574,8 +574,11 @@ export default function Index() {
                           }, 50);
                         }}
                         className={`relative w-9 h-5 rounded-full transition-colors ${
-                          hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-400'
+                          hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-600'
                         }`}
+                        style={{
+                          backgroundColor: hideEmptyDays ? '#4f46e5' : '#5d5955'
+                        }}
                       >
                         <div
                           className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
