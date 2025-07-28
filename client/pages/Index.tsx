@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 interface Student {
   id: string;
   name: string;
+  subject?: string;
   avatar?: string;
   upcomingSession?: string;
   sessionTime?: string;
