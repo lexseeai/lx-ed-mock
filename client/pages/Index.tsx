@@ -499,49 +499,18 @@ export default function Index() {
                           const isEmpty = dayData.sessions === 0;
 
                           if (!isToggling) {
-                            return isEmpty && hideEmptyDays ? 'opacity-0 absolute pointer-events-none' : 'day-card-container';
+                            return 'transition-all duration-300 ease-in-out';
                           }
 
                           if (isEmpty) {
                             if (animationDirection === 'hiding') {
-                              return 'day-card-hiding day-card-container';
+                              return 'day-card-hiding transition-all duration-300 ease-in-out';
                             } else if (animationDirection === 'showing') {
-                              return 'day-card-showing day-card-container';
+                              return 'day-card-showing transition-all duration-300 ease-in-out';
                             }
                           }
 
-                          return 'day-card-container';
-                        };
-
-                        // Calculate positions for smooth autolayout
-                        const calculateTransform = (dayData: any, originalIndex: number) => {
-                          if (!isToggling) return {};
-
-                          const isEmpty = dayData.sessions === 0;
-
-                          if (isEmpty) {
-                            // Empty days don't move, just fade
-                            return {};
-                          }
-
-                          // Calculate how many empty cards are to the left of this card
-                          let emptyCardsToLeft = 0;
-                          for (let i = 0; i < originalIndex; i++) {
-                            if (allDays[i].sessions === 0) {
-                              emptyCardsToLeft++;
-                            }
-                          }
-
-                          if (animationDirection === 'hiding') {
-                            // Non-empty cards should move left to close gaps left by empty cards
-                            // Each empty card removal means moving left by 104px (96px card + 8px gap)
-                            return {};  // Let CSS transition handle the movement to final position
-                          } else if (animationDirection === 'showing') {
-                            // Non-empty cards should move right to make space for appearing empty cards
-                            return {};  // Let CSS transition handle the movement to final position
-                          }
-
-                          return {};
+                          return 'transition-all duration-300 ease-in-out';
                         };
 
                         // Show all days during animation, filter after
