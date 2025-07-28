@@ -753,7 +753,10 @@ export default function Index() {
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
                               student={student}
-                              onClick={() => handleStudentClick(student.id)}
+                              onClick={() => {
+                                const allDayStudents = [...getScheduleData().morning, ...getScheduleData().afternoon, ...getScheduleData().evening];
+                                handleStudentClick(student.id, allDayStudents);
+                              }}
                               scheduleView={true}
                             />
                           </div>
