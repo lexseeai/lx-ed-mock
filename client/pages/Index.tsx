@@ -84,7 +84,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-4">
         {!isCollapsed && (
-          <h1 className="text-lg font-medium text-stone-800 font-lexend">Lexsee Workspace</h1>
+          <h1 className="text-lg font-medium text-white font-lexend">Lexsee Workspace</h1>
         )}
         <Button
           variant="ghost"
