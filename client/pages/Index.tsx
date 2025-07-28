@@ -218,6 +218,8 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
 export default function Index() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeView, setActiveView] = useState("schedule");
+  const [showCalendarPicker, setShowCalendarPicker] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const navigate = useNavigate();
 
   const handleStudentClick = (studentId: string) => {
