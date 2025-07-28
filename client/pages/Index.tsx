@@ -192,7 +192,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             <Avatar className="w-8 h-8">
               <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
             </Avatar>
-            {!isCollapsed && <span className="text-sm font-medium text-black font-lexend">John Smith</span>}
+            {!isCollapsed && <span className="text-sm font-medium text-white font-lexend">John Smith</span>}
           </div>
           {!isCollapsed && <ChevronsUpDown className="w-4 h-4 text-stone-400" />}
         </div>
