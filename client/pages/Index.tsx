@@ -162,18 +162,18 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>3</span>}
           </div>
 
-          {/* Open Tasks */}
+          {/* Session Notes */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
-              activeView === 'opentasks' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
+              activeView === 'sessionnotes' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
-            onClick={() => setActiveView('opentasks')}
+            onClick={() => setActiveView('sessionnotes')}
           >
             <div className="flex items-center space-x-2">
-              <NotebookText className={`w-4 h-4 ${activeView === 'opentasks' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-white'}`}>Open tasks</span>}
+              <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Session notes</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-white/50'}`}>4</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>}
           </div>
         </div>
 
