@@ -842,8 +842,8 @@ export default function Index() {
                   {getSelectedStudent()?.sessionTime && (
                     <div className="flex items-center gap-1 mt-1">
                       <Bell className="w-4 h-4 text-stone-700" />
-                      <span className="text-stone-700 font-lexend text-sm">
-                        {getSelectedStudent()?.sessionTime}
+                      <span className="text-stone-700 font-lexend text-base">
+                        9:00am, Thursday July 31
                       </span>
                     </div>
                   )}
