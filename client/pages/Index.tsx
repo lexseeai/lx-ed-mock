@@ -579,7 +579,7 @@ export default function Index() {
                                 </div>
                               )}
                             </div>
-                            <div className={`text-base font-medium leading-none font-lexend w-full text-left transition-colors duration-200 ${
+                            <div className={`text-base font-medium leading-none font-lexend w-full text-left ${
                               isSelected
                                 ? 'text-white'
                                 : dayData.sessions === 0
