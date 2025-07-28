@@ -150,7 +150,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
 
           {/* Schedule */}
           <div
-            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer h-8 leading-6 ${
               activeView === 'schedule' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
             onClick={() => setActiveView('schedule')}
