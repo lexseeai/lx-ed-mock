@@ -220,6 +220,7 @@ export default function Index() {
   const [activeView, setActiveView] = useState("schedule");
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [hideEmptyDays, setHideEmptyDays] = useState(true);
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
