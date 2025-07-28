@@ -890,11 +890,11 @@ export default function Index() {
                   </p>
                 </div>
                 <div className="text-stone-900 font-lexend text-base leading-5 space-y-2">
-                  <div>• Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.</div>
-                  <div>• Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.</div>
-                  <div>• Demonstrated improved accuracy in identifying decimal positions with visual support.</div>
-                  <div>• Made progress toward independent problem-solving with fewer rounding errors.</div>
-                  <div>• Joined the session late but used remaining time effectively to reinforce key math skills.</div>
+                  <div className="pl-4 -indent-4">• Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.</div>
+                  <div className="pl-4 -indent-4">• Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.</div>
+                  <div className="pl-4 -indent-4">• Demonstrated improved accuracy in identifying decimal positions with visual support.</div>
+                  <div className="pl-4 -indent-4">• Made progress toward independent problem-solving with fewer rounding errors.</div>
+                  <div className="pl-4 -indent-4">• Joined the session late but used remaining time effectively to reinforce key math skills.</div>
                 </div>
               </div>
             </div>
