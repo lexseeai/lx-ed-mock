@@ -142,7 +142,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             onClick={() => setActiveView('upcoming')}
           >
             <div className="flex items-center space-x-2">
-              <Calendar className={`w-4 h-4 ${activeView === 'upcoming' ? 'text-white' : 'text-sky-500'}`} />
+              <Calendar className={`w-4 h-4 ${activeView === 'upcoming' ? 'text-white' : 'text-white/80'}`} />
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-white'}`}>Upcoming</span>}
             </div>
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-white/50'}`}>9</span>}
