@@ -439,7 +439,7 @@ export default function Index() {
                     {/* Morning */}
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Morning</h3>
-                      <div className="flex space-x-4 overflow-x-auto pb-2">
+                      <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
                         {getScheduleData().today.morning.map((student) => (
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
@@ -457,7 +457,7 @@ export default function Index() {
                     {/* Afternoon */}
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Afternoon</h3>
-                      <div className="flex space-x-4 overflow-x-auto pb-2">
+                      <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
                         {getScheduleData().today.afternoon.map((student) => (
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
@@ -475,7 +475,7 @@ export default function Index() {
                     {/* Evening */}
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Evening</h3>
-                      <div className="flex space-x-4 overflow-x-auto pb-2">
+                      <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
                         {getScheduleData().today.evening.map((student) => (
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
