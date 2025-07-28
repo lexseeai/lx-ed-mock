@@ -170,7 +170,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
         <div className="space-y-2 flex-1">
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
             <LibraryBig className="w-4 h-4 text-stone-600" />
-            {!isCollapsed && <span className="text-sm text-stone-700 font-lexend ml-2">Library</span>}
+            {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Library</span>}
           </div>
 
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
