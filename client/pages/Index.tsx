@@ -80,7 +80,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className={`${isCollapsed ? 'w-16' : 'w-60'} bg-stone-100 flex flex-col min-h-screen transition-all duration-300`}>
+    <div className={`${isCollapsed ? 'w-16' : 'w-60'} flex flex-col min-h-screen transition-all duration-300`}>
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-4">
         {!isCollapsed && (
