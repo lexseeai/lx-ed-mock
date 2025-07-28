@@ -217,7 +217,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
 
 export default function Index() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeView, setActiveView] = useState("all");
+  const [activeView, setActiveView] = useState("schedule");
   const navigate = useNavigate();
 
   const handleStudentClick = (studentId: string) => {
