@@ -499,25 +499,55 @@ export default function Index() {
                           const isEmpty = dayData.sessions === 0;
 
                           if (!isToggling) {
-                            return '';
+                            return isEmpty && hideEmptyDays ? 'opacity-0 absolute pointer-events-none' : 'day-card-container';
                           }
 
                           if (isEmpty) {
                             if (animationDirection === 'hiding') {
-                              return 'animate-slide-left-behind';
+                              return 'day-card-hiding day-card-container';
                             } else if (animationDirection === 'showing') {
-                              return 'animate-slide-in-from-left';
-                            }
-                          } else {
-                            // Non-empty days shift to fill space
-                            if (animationDirection === 'hiding') {
-                              return 'animate-shift-left';
-                            } else if (animationDirection === 'showing') {
-                              return 'animate-shift-right';
+                              return 'day-card-showing day-card-container';
                             }
                           }
 
-                          return '';
+                          return 'day-card-container';
+                        };
+
+                        // Calculate positions for smooth autolayout
+                        const calculateTransform = (dayData: any, originalIndex: number) => {
+                          if (!isToggling) return {};
+
+                          const isEmpty = dayData.sessions === 0;
+
+                          if (isEmpty && animationDirection === 'hiding') {
+                            // Empty days stay in place while fading out
+                            return {};
+                          }
+
+                          if (isEmpty && animationDirection === 'showing') {
+                            // Empty days appear in their final position
+                            return {};
+                          }
+
+                          // For non-empty days, calculate how many empty days before this one
+                          let emptyDaysBefore = 0;
+                          for (let i = 0; i < originalIndex; i++) {
+                            if (allDays[i].sessions === 0) {
+                              emptyDaysBefore++;
+                            }
+                          }
+
+                          if (animationDirection === 'hiding') {
+                            // Move left by the width of removed empty days
+                            const offsetPx = emptyDaysBefore * -104; // -(width + gap)
+                            return { transform: `translateX(${offsetPx}px)` };
+                          } else if (animationDirection === 'showing') {
+                            // Move right to make space for new empty days
+                            const offsetPx = emptyDaysBefore * 104; // width + gap
+                            return { transform: `translateX(${offsetPx}px)` };
+                          }
+
+                          return {};
                         };
 
                         // Show all days during animation, filter after
