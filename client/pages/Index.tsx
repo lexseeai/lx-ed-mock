@@ -476,7 +476,7 @@ export default function Index() {
 
                     {/* Day Cards Container */}
                     <div className="flex-1 min-w-0 overflow-hidden">
-                      <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+                      <div className="flex gap-1 overflow-x-auto scrollbar-hide pb-2">
                       {(() => {
                         const allDays = [
                           { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
