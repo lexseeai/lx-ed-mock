@@ -500,15 +500,11 @@ export default function Index() {
                         const getMoveDistance = (dayData: any, originalIndex: number) => {
                           if (dayData.sessions === 0) return 0;
 
-                          // Calculate how many empty cards are to the left
-                          let emptyCardsToLeft = 0;
-                          for (let i = 0; i < originalIndex; i++) {
-                            if (allDays[i].sessions === 0) {
-                              emptyCardsToLeft++;
-                            }
-                          }
+                          // For train-like movement: all non-empty cards move by the total number of empty cards
+                          // This makes them move together as a unified system
+                          const totalEmptyCards = allDays.filter(day => day.sessions === 0).length;
 
-                          return emptyCardsToLeft * -104; // Each card width + gap
+                          return totalEmptyCards * -104; // Each card width + gap - all cards move the same distance
                         };
 
                         // Show all days during animation, filter after
