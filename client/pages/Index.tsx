@@ -415,7 +415,7 @@ export default function Index() {
               </div>
             </div>
             {/* Content inside card */}
-            <div className="p-6 space-y-6 flex-1 overflow-y-auto">
+            <div className="px-6 pb-6 pt-0 space-y-6 flex-1 overflow-y-auto">
               {activeView === 'all' && (
                 <section>
                   <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
