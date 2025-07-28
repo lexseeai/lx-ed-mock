@@ -221,8 +221,6 @@ export default function Index() {
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [hideEmptyDays, setHideEmptyDays] = useState(true);
-  const [isToggling, setIsToggling] = useState(false);
-  const [animationDirection, setAnimationDirection] = useState<'hiding' | 'showing' | null>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -437,17 +435,7 @@ export default function Index() {
                   <div className="flex items-center justify-end">
                     <div className="flex items-center gap-2 mr-16">
                       <button
-                        onClick={() => {
-                          setIsToggling(true);
-                          setAnimationDirection(hideEmptyDays ? 'showing' : 'hiding');
-                          setTimeout(() => {
-                            setHideEmptyDays(!hideEmptyDays);
-                            setTimeout(() => {
-                              setIsToggling(false);
-                              setAnimationDirection(null);
-                            }, 300);
-                          }, 50);
-                        }}
+                        onClick={() => setHideEmptyDays(!hideEmptyDays)}
                         className={`relative w-9 h-5 rounded-full transition-colors ${
                           hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-300'
                         }`}
