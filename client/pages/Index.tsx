@@ -129,9 +129,9 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
           >
             <div className="flex items-center space-x-2">
               <Clock className={`w-4 h-4 ${activeView === 'thisweek' ? 'text-white' : 'text-teal-500'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-stone-700'}`}>This week</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-white'}`}>This week</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-stone-400'}`}>3</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-white/50'}`}>3</span>}
           </div>
 
           {/* Upcoming */}
