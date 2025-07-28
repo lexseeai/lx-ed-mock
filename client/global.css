@@ -140,74 +140,39 @@
     }
   }
 
-  /* Sophisticated slide animations for empty day toggle */
-  @keyframes slideLeftBehind {
+  /* Horizontal autolayout animations for day cards */
+  @keyframes fadeOut {
     0% {
       opacity: 1;
-      transform: translateX(0) scale(1);
-      z-index: 10;
-    }
-    50% {
-      opacity: 0.7;
-      transform: translateX(-50px) scale(0.8);
-      z-index: 1;
+      transform: scale(1);
     }
     100% {
       opacity: 0;
-      transform: translateX(-120px) scale(0.6);
-      z-index: 1;
+      transform: scale(0.8);
     }
   }
 
-  @keyframes slideInFromLeft {
+  @keyframes fadeIn {
     0% {
       opacity: 0;
-      transform: translateX(-120px) scale(0.6);
-      z-index: 1;
-    }
-    50% {
-      opacity: 0.7;
-      transform: translateX(-50px) scale(0.8);
-      z-index: 5;
+      transform: scale(0.8);
     }
     100% {
       opacity: 1;
-      transform: translateX(0) scale(1);
-      z-index: 10;
+      transform: scale(1);
     }
   }
 
-  @keyframes shiftLeft {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-104px); /* width + gap */
-    }
+  /* Smooth position transitions for autolayout */
+  .day-card-container {
+    transition: transform 0.3s ease-in-out;
   }
 
-  @keyframes shiftRight {
-    0% {
-      transform: translateX(-104px);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  .day-card-hiding {
+    animation: fadeOut 0.3s ease-in-out forwards;
   }
 
-  .animate-slide-left-behind {
-    animation: slideLeftBehind 0.3s ease-in-out forwards;
-  }
-
-  .animate-slide-in-from-left {
-    animation: slideInFromLeft 0.3s ease-in-out forwards;
-  }
-
-  .animate-shift-left {
-    animation: shiftLeft 0.3s ease-in-out forwards;
-  }
-
-  .animate-shift-right {
-    animation: shiftRight 0.3s ease-in-out forwards;
+  .day-card-showing {
+    animation: fadeIn 0.3s ease-in-out forwards;
   }
 }
