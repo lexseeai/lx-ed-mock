@@ -569,7 +569,7 @@ export default function Index() {
                               </div>
                               {dayData.isToday && (
                                 <div className={`text-xs leading-none font-lexend opacity-50 transition-colors duration-200 ${
-                                  dayData.isSelected
+                                  isSelected
                                     ? 'text-white'
                                     : dayData.sessions === 0
                                       ? 'text-stone-400'
@@ -580,7 +580,7 @@ export default function Index() {
                               )}
                             </div>
                             <div className={`text-base font-medium leading-none font-lexend w-full text-left transition-colors duration-200 ${
-                              dayData.isSelected
+                              isSelected
                                 ? 'text-white'
                                 : dayData.sessions === 0
                                   ? 'text-stone-400'
