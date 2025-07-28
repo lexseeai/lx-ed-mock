@@ -477,33 +477,63 @@ export default function Index() {
                     {/* Day Cards Container */}
                     <div className="flex-1 min-w-0 overflow-hidden">
                       <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
-                      {[
-                        { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
-                        { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
-                        { date: '30', day: 'Wed', sessions: 0, isToday: false, isSelected: false },
-                        { date: '31', day: 'Thu', sessions: 3, isToday: false, isSelected: false },
-                        { date: '1', day: 'Fri', sessions: 0, isToday: false, isSelected: false },
-                        { date: '2', day: 'Sat', sessions: 0, isToday: false, isSelected: false },
-                        { date: '3', day: 'Sun', sessions: 0, isToday: false, isSelected: false },
-                        { date: '4', day: 'Mon', sessions: 3, isToday: false, isSelected: false },
-                        { date: '5', day: 'Tue', sessions: 1, isToday: false, isSelected: false },
-                        { date: '6', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
-                        { date: '7', day: 'Thu', sessions: 1, isToday: false, isSelected: false },
-                        { date: '8', day: 'Fri', sessions: 1, isToday: false, isSelected: false },
-                        { date: '11', day: 'Mon', sessions: 1, isToday: false, isSelected: false },
-                        { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
-                      ].filter(dayData => !hideEmptyDays || dayData.sessions > 0).map((dayData, index) => (
-                        <button
-                          key={dayData.date}
-                          className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-all duration-300 ease-in-out flex-shrink-0 transform ${
-                            dayData.isSelected
-                              ? 'border-indigo-600 bg-indigo-600 scale-100'
-                              : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
-                          }`}
-                          style={{
-                            animation: 'slideIn 0.3s ease-out'
-                          }}
-                        >
+                      {(() => {
+                        const allDays = [
+                          { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
+                          { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
+                          { date: '30', day: 'Wed', sessions: 0, isToday: false, isSelected: false },
+                          { date: '31', day: 'Thu', sessions: 3, isToday: false, isSelected: false },
+                          { date: '1', day: 'Fri', sessions: 0, isToday: false, isSelected: false },
+                          { date: '2', day: 'Sat', sessions: 0, isToday: false, isSelected: false },
+                          { date: '3', day: 'Sun', sessions: 0, isToday: false, isSelected: false },
+                          { date: '4', day: 'Mon', sessions: 3, isToday: false, isSelected: false },
+                          { date: '5', day: 'Tue', sessions: 1, isToday: false, isSelected: false },
+                          { date: '6', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
+                          { date: '7', day: 'Thu', sessions: 1, isToday: false, isSelected: false },
+                          { date: '8', day: 'Fri', sessions: 1, isToday: false, isSelected: false },
+                          { date: '11', day: 'Mon', sessions: 1, isToday: false, isSelected: false },
+                          { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
+                        ];
+
+                        const getAnimationClass = (dayData: any, index: number) => {
+                          const isEmpty = dayData.sessions === 0;
+
+                          if (!isToggling) {
+                            return '';
+                          }
+
+                          if (isEmpty) {
+                            if (animationDirection === 'hiding') {
+                              return 'animate-slide-left-behind';
+                            } else if (animationDirection === 'showing') {
+                              return 'animate-slide-in-from-left';
+                            }
+                          } else {
+                            // Non-empty days shift to fill space
+                            if (animationDirection === 'hiding') {
+                              return 'animate-shift-left';
+                            } else if (animationDirection === 'showing') {
+                              return 'animate-shift-right';
+                            }
+                          }
+
+                          return '';
+                        };
+
+                        // Show all days during animation, filter after
+                        const visibleDays = isToggling
+                          ? allDays
+                          : allDays.filter(dayData => !hideEmptyDays || dayData.sessions > 0);
+
+                        return visibleDays.map((dayData, index) => (
+                          <button
+                            key={dayData.date}
+                            className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-all duration-300 ease-in-out flex-shrink-0 transform ${
+                              dayData.isSelected
+                                ? 'border-indigo-600 bg-indigo-600 scale-100'
+                                : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
+                            } ${getAnimationClass(dayData, index)}`}
+                          >
                           {/* Top section with date and today indicator */}
                           <div className="flex flex-col items-start gap-1.5 w-full">
                             <div className="flex justify-between items-center w-full">
@@ -554,8 +584,9 @@ export default function Index() {
                               </div>
                             </div>
                           )}
-                        </button>
-                      ))}
+                          </button>
+                        ));
+                      })()}
                       </div>
                     </div>
 
