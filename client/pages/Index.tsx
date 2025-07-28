@@ -40,7 +40,7 @@ const mockStudents: Student[] = [
   { id: "16", name: "Kai", subject: "Computer Science", sessionTime: "8:00pm, next Wednesday" },
 ];
 
-function StudentCard({ student, onClick }: { student: Student; onClick: () => void }) {
+function StudentCard({ student, onClick, scheduleView = false }: { student: Student; onClick: () => void; scheduleView?: boolean }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
   };
