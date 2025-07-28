@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
