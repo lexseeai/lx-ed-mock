@@ -253,48 +253,62 @@ export default function Index() {
     return [...mockStudents].sort((a, b) => a.name.localeCompare(b.name));
   };
 
+  // Session data for each date
+  const dateSessionData: { [key: string]: { morning: Student[], afternoon: Student[], evening: Student[] } } = {
+    '28': {
+      morning: [mockStudents[0]], // Alex
+      afternoon: [mockStudents[1], mockStudents[2]], // Emma, Marcus
+      evening: []
+    },
+    '29': {
+      morning: [],
+      afternoon: [mockStudents[3]], // Sofia
+      evening: []
+    },
+    '31': {
+      morning: [mockStudents[4]], // Liam
+      afternoon: [mockStudents[5], mockStudents[6]], // Isabella, Noah
+      evening: []
+    },
+    '4': {
+      morning: [],
+      afternoon: [mockStudents[7], mockStudents[8], mockStudents[9]], // All afternoon
+      evening: []
+    },
+    '5': {
+      morning: [],
+      afternoon: [],
+      evening: [mockStudents[10]] // Maya
+    },
+    '6': {
+      morning: [mockStudents[11]], // Daniel
+      afternoon: [mockStudents[12]], // Zoe
+      evening: [mockStudents[13]] // Oliver
+    },
+    '7': {
+      morning: [],
+      afternoon: [mockStudents[14]], // Luna
+      evening: []
+    },
+    '8': {
+      morning: [mockStudents[15]], // Kai
+      afternoon: [],
+      evening: []
+    },
+    '11': {
+      morning: [],
+      afternoon: [mockStudents[0]], // Alex
+      evening: []
+    },
+    '12': {
+      morning: [],
+      afternoon: [],
+      evening: [mockStudents[1]] // Emma
+    }
+  };
+
   const getScheduleData = () => {
-    // Get students with sessions today and tomorrow
-    const todayStudents = mockStudents.filter(s => s.sessionTime?.includes('today'));
-    const tomorrowStudents = mockStudents.filter(s => s.sessionTime?.includes('tomorrow'));
-
-    // Parse time and categorize by period
-    const categorizeByTime = (students: Student[]) => {
-      const morning: Student[] = [];
-      const afternoon: Student[] = [];
-      const evening: Student[] = [];
-
-      students.forEach(student => {
-        if (!student.sessionTime) return;
-
-        const timeMatch = student.sessionTime.match(/(\d{1,2}):?(\d{0,2})(am|pm)/i);
-        if (!timeMatch) return;
-
-        let hours = parseInt(timeMatch[1]);
-        const period = timeMatch[3].toLowerCase();
-
-        if (period === 'pm' && hours !== 12) hours += 12;
-        if (period === 'am' && hours === 12) hours = 0;
-
-        if (hours >= 6 && hours < 12) {
-          morning.push(student);
-        } else if (hours >= 12 && hours < 17) {
-          afternoon.push(student);
-        } else {
-          evening.push(student);
-        }
-      });
-
-      return { morning, afternoon, evening };
-    };
-
-    const todayPeriods = categorizeByTime(todayStudents);
-    const tomorrowPeriods = categorizeByTime(tomorrowStudents);
-
-    return {
-      today: todayPeriods,
-      tomorrow: tomorrowPeriods
-    };
+    return dateSessionData[selectedDayDate] || { morning: [], afternoon: [], evening: [] };
   };
 
   const getSessionNotesStudents = () => {
