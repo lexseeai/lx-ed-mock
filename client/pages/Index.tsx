@@ -437,7 +437,20 @@ export default function Index() {
                   <div className="flex items-center justify-end">
                     <div className="flex items-center gap-2 mr-16">
                       <button
-                        onClick={() => setHideEmptyDays(!hideEmptyDays)}
+                        onClick={() => {
+                          if (isToggling) return; // Prevent rapid clicking
+                          setIsToggling(true);
+                          setAnimationDirection(hideEmptyDays ? 'showing' : 'hiding');
+
+                          // Start animation, then change state, then cleanup
+                          setTimeout(() => {
+                            setHideEmptyDays(!hideEmptyDays);
+                            setTimeout(() => {
+                              setIsToggling(false);
+                              setAnimationDirection(null);
+                            }, 350); // Match animation duration
+                          }, 50);
+                        }}
                         className={`relative w-9 h-5 rounded-full transition-colors ${
                           hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-300'
                         }`}
