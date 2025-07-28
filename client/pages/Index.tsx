@@ -301,10 +301,80 @@ export default function Index() {
             {/* Header inside card */}
             <div className="px-6 py-4">
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <h1 className="text-xl font-medium text-gray-900">
-                    My students
-                  </h1>
+                <div className="flex items-center space-x-2 relative">
+                  <button
+                    className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1"
+                    onClick={() => setShowCalendarPicker(!showCalendarPicker)}
+                  >
+                    <h1 className="text-xl font-medium text-gray-900 font-lexend">
+                      {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                    </h1>
+                    <ChevronDown className="w-4 h-4 text-gray-600" />
+                  </button>
+
+                  {/* Calendar Picker */}
+                  {showCalendarPicker && (
+                    <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-10 min-w-80">
+                      <div className="flex items-center justify-between mb-4">
+                        <button
+                          onClick={() => {
+                            const newDate = new Date(selectedDate);
+                            newDate.setMonth(newDate.getMonth() - 1);
+                            setSelectedDate(newDate);
+                          }}
+                          className="p-1 hover:bg-stone-100 rounded"
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                        </button>
+                        <span className="font-medium font-lexend">
+                          {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                        </span>
+                        <button
+                          onClick={() => {
+                            const newDate = new Date(selectedDate);
+                            newDate.setMonth(newDate.getMonth() + 1);
+                            setSelectedDate(newDate);
+                          }}
+                          className="p-1 hover:bg-stone-100 rounded"
+                        >
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+
+                      {/* Simple calendar grid */}
+                      <div className="grid grid-cols-7 gap-1 text-sm">
+                        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+                          <div key={day} className="text-center p-2 text-gray-500 font-lexend text-xs">
+                            {day}
+                          </div>
+                        ))}
+                        {Array.from({length: 35}, (_, i) => {
+                          const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i - 6);
+                          const isSelected = date.toDateString() === selectedDate.toDateString();
+                          const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
+
+                          return (
+                            <button
+                              key={i}
+                              onClick={() => {
+                                setSelectedDate(date);
+                                setShowCalendarPicker(false);
+                              }}
+                              className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
+                                isSelected
+                                  ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                  : isCurrentMonth
+                                    ? 'text-gray-900'
+                                    : 'text-gray-400'
+                              }`}
+                            >
+                              {date.getDate()}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-center space-x-4">
