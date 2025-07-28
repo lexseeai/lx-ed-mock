@@ -814,9 +814,10 @@ export default function Index() {
           <button
             onClick={navigatePrevious}
             disabled={!canNavigatePrevious()}
-            className={`absolute left-8 top-1/2 transform -translate-y-1/2 flex p-2.5 items-center justify-center rounded-full border border-stone-200 bg-white shadow-lg transition-opacity ${
+            className={`absolute left-2 top-1/2 transform -translate-y-1/2 flex p-2.5 items-center justify-center rounded-full border border-stone-200 bg-white shadow-lg transition-opacity ${
               canNavigatePrevious() ? 'hover:bg-stone-50' : 'opacity-50 cursor-not-allowed'
             }`}
+            style={{ left: 'calc(50% - 384px - 24px - 44px)' }}
           >
             <ChevronLeft className={`w-6 h-6 ${
               canNavigatePrevious() ? 'text-indigo-600' : 'text-stone-300'
