@@ -115,9 +115,9 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
           >
             <div className="flex items-center space-x-2">
               <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-stone-600'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-stone-700'}`}>All</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>All</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-stone-400'}`}>14</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white/50'}`}>14</span>}
           </div>
 
           {/* This Week */}
