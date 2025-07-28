@@ -20,9 +20,9 @@ interface Student {
 
 const mockStudents: Student[] = [
   // Students with upcoming sessions
-  { id: "1", name: "Alex", subject: "Math Tutoring", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex" },
-  { id: "2", name: "Emma", subject: "Science Tutoring", upcomingSession: "4:00 PM, today", sessionTime: "4:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma" },
-  { id: "3", name: "Marcus", subject: "English Tutoring", upcomingSession: "5:00 PM, tomorrow", sessionTime: "5:00pm tomorrow", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus" },
+  { id: "1", name: "Alex", subject: "Math Tutoring", upcomingSession: "9:00 AM, today", sessionTime: "9:00am today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex" },
+  { id: "2", name: "Emma", subject: "Science Tutoring", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma" },
+  { id: "3", name: "Marcus", subject: "English Tutoring", upcomingSession: "7:00 PM, today", sessionTime: "7:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus" },
 
   // Students with open tasks
   { id: "4", name: "Sofia", subject: "History Tutoring", sessionTime: "10:30am, next Tuesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia" },
