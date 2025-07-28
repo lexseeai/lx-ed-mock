@@ -337,76 +337,104 @@ export default function Index() {
                 </section>
               )}
 
-              {activeView === 'thisweek' && (
-                <>
-                  <section>
-                    <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Today</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
-                      {getThisWeekStudents().today.map((student) => (
-                        <StudentCard
-                          key={student.id}
-                          student={student}
-                          onClick={() => handleStudentClick(student.id)}
-                        />
-                      ))}
+              {activeView === 'schedule' && (
+                <div className="space-y-6">
+                  {/* Calendar Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <h2 className="text-lg font-medium text-gray-900 font-lexend">July, 2025</h2>
+                      <div className="flex items-center space-x-1">
+                        <button className="p-1 hover:bg-stone-200 rounded">
+                          <ChevronLeft className="w-4 h-4 text-gray-600" />
+                        </button>
+                        <button className="p-1 hover:bg-stone-200 rounded">
+                          <ChevronRight className="w-4 h-4 text-gray-600" />
+                        </button>
+                      </div>
                     </div>
-                  </section>
-                  <section>
-                    <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Tomorrow</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
-                      {getThisWeekStudents().tomorrow.map((student) => (
-                        <StudentCard
-                          key={student.id}
-                          student={student}
-                          onClick={() => handleStudentClick(student.id)}
-                        />
-                      ))}
-                    </div>
-                  </section>
-                </>
-              )}
+                    <button className="px-3 py-1 text-sm text-gray-700 hover:bg-stone-100 rounded font-lexend">
+                      Today
+                    </button>
+                  </div>
 
-              {activeView === 'upcoming' && (
-                <>
-                  <section>
-                    <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">This Week</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
-                      {getUpcomingStudents().thisWeek.map((student) => (
-                        <StudentCard
-                          key={student.id}
-                          student={student}
-                          onClick={() => handleStudentClick(student.id)}
-                        />
+                  {/* Week Calendar */}
+                  <div className="bg-white rounded-lg border border-stone-200 p-4 mb-6">
+                    <div className="grid grid-cols-7 gap-4 mb-4">
+                      {['28', '29', '31', '4', '5', '6', '7'].map((date, index) => (
+                        <div key={date} className="text-center">
+                          <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center text-sm font-lexend ${
+                            index === 0 ? 'bg-indigo-600 text-white' : 'text-gray-700'
+                          }`}>
+                            {date}
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1 font-lexend">
+                            {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][index]}
+                          </div>
+                          <div className="text-xs text-gray-400 mt-1 font-lexend">
+                            {['3 sessions', '1 sessions', '3 sessions', '3 sessions', '1 sessions', '3 sessions', '1 sessions'][index]}
+                          </div>
+                        </div>
                       ))}
                     </div>
-                  </section>
-                  <section>
-                    <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Next Week</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
-                      {getUpcomingStudents().nextWeek.map((student) => (
-                        <StudentCard
-                          key={student.id}
-                          student={student}
-                          onClick={() => handleStudentClick(student.id)}
-                        />
-                      ))}
-                    </div>
-                  </section>
-                  {getUpcomingStudents().furtherOut.length > 0 && (
+                  </div>
+
+                  {/* Time Periods */}
+                  <div className="space-y-8">
+                    {/* Morning */}
                     <section>
-                      <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Further Out</h2>
-                      <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
-                        {getUpcomingStudents().furtherOut.map((student) => (
-                          <StudentCard
-                            key={student.id}
-                            student={student}
-                            onClick={() => handleStudentClick(student.id)}
-                          />
+                      <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Morning</h3>
+                      <div className="flex space-x-4 overflow-x-auto pb-2">
+                        {getScheduleData().today.morning.map((student) => (
+                          <div key={student.id} className="flex-shrink-0">
+                            <StudentCard
+                              student={student}
+                              onClick={() => handleStudentClick(student.id)}
+                            />
+                          </div>
                         ))}
+                        {getScheduleData().today.morning.length === 0 && (
+                          <div className="text-gray-400 font-lexend text-sm">No sessions scheduled</div>
+                        )}
                       </div>
                     </section>
-                  )}
-                </>
+
+                    {/* Afternoon */}
+                    <section>
+                      <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Afternoon</h3>
+                      <div className="flex space-x-4 overflow-x-auto pb-2">
+                        {getScheduleData().today.afternoon.map((student) => (
+                          <div key={student.id} className="flex-shrink-0">
+                            <StudentCard
+                              student={student}
+                              onClick={() => handleStudentClick(student.id)}
+                            />
+                          </div>
+                        ))}
+                        {getScheduleData().today.afternoon.length === 0 && (
+                          <div className="text-gray-400 font-lexend text-sm">No sessions scheduled</div>
+                        )}
+                      </div>
+                    </section>
+
+                    {/* Evening */}
+                    <section>
+                      <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Evening</h3>
+                      <div className="flex space-x-4 overflow-x-auto pb-2">
+                        {getScheduleData().today.evening.map((student) => (
+                          <div key={student.id} className="flex-shrink-0">
+                            <StudentCard
+                              student={student}
+                              onClick={() => handleStudentClick(student.id)}
+                            />
+                          </div>
+                        ))}
+                        {getScheduleData().today.evening.length === 0 && (
+                          <div className="text-gray-400 font-lexend text-sm">No sessions scheduled</div>
+                        )}
+                      </div>
+                    </section>
+                  </div>
+                </div>
               )}
 
               {activeView === 'opentasks' && (
