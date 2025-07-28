@@ -229,58 +229,48 @@ export default function Index() {
     return [...mockStudents].sort((a, b) => a.name.localeCompare(b.name));
   };
 
-  const getThisWeekStudents = () => {
-    const today = mockStudents.filter(s => s.sessionTime?.includes('today'));
-    const tomorrow = mockStudents.filter(s => s.sessionTime?.includes('tomorrow'));
-    return { today, tomorrow };
-  };
+  const getScheduleData = () => {
+    // Get students with sessions today and tomorrow
+    const todayStudents = mockStudents.filter(s => s.sessionTime?.includes('today'));
+    const tomorrowStudents = mockStudents.filter(s => s.sessionTime?.includes('tomorrow'));
 
-  const getUpcomingStudents = () => {
-    const thisWeek = mockStudents.filter(s => s.sessionTime?.includes('today') || s.sessionTime?.includes('tomorrow'));
-    const nextWeekUnsorted = mockStudents.filter(s => s.sessionTime?.includes('next'));
-    const furtherOut = mockStudents.filter(s => s.sessionTime && !s.sessionTime.includes('today') && !s.sessionTime.includes('tomorrow') && !s.sessionTime.includes('next'));
+    // Parse time and categorize by period
+    const categorizeByTime = (students: Student[]) => {
+      const morning: Student[] = [];
+      const afternoon: Student[] = [];
+      const evening: Student[] = [];
 
-    // Sort next week by day of week and then by time
-    const nextWeek = nextWeekUnsorted.sort((a, b) => {
-      const dayOrder = { 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Sunday': 7 };
+      students.forEach(student => {
+        if (!student.sessionTime) return;
 
-      // Extract day from sessionTime (e.g., "1:30pm, next Monday" -> "Monday")
-      const getDayFromTime = (timeStr: string) => {
-        const match = timeStr.match(/next (\w+)/i);
-        return match ? match[1] : '';
-      };
-
-      // Extract time for sorting (e.g., "1:30pm" -> convert to 24hr format for comparison)
-      const getTimeValue = (timeStr: string) => {
-        const timeMatch = timeStr.match(/(\d{1,2}):?(\d{0,2})(am|pm)/i);
-        if (!timeMatch) return 0;
+        const timeMatch = student.sessionTime.match(/(\d{1,2}):?(\d{0,2})(am|pm)/i);
+        if (!timeMatch) return;
 
         let hours = parseInt(timeMatch[1]);
-        const minutes = parseInt(timeMatch[2] || '0');
         const period = timeMatch[3].toLowerCase();
 
         if (period === 'pm' && hours !== 12) hours += 12;
         if (period === 'am' && hours === 12) hours = 0;
 
-        return hours * 60 + minutes; // Convert to minutes for easy comparison
-      };
+        if (hours >= 6 && hours < 12) {
+          morning.push(student);
+        } else if (hours >= 12 && hours < 17) {
+          afternoon.push(student);
+        } else {
+          evening.push(student);
+        }
+      });
 
-      const dayA = getDayFromTime(a.sessionTime || '');
-      const dayB = getDayFromTime(b.sessionTime || '');
+      return { morning, afternoon, evening };
+    };
 
-      const dayOrderA = dayOrder[dayA as keyof typeof dayOrder] || 999;
-      const dayOrderB = dayOrder[dayB as keyof typeof dayOrder] || 999;
+    const todayPeriods = categorizeByTime(todayStudents);
+    const tomorrowPeriods = categorizeByTime(tomorrowStudents);
 
-      // First sort by day
-      if (dayOrderA !== dayOrderB) {
-        return dayOrderA - dayOrderB;
-      }
-
-      // Then sort by time within the same day
-      return getTimeValue(a.sessionTime || '') - getTimeValue(b.sessionTime || '');
-    });
-
-    return { thisWeek, nextWeek, furtherOut };
+    return {
+      today: todayPeriods,
+      tomorrow: tomorrowPeriods
+    };
   };
 
   const getOpenTasksStudents = () => {
