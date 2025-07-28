@@ -324,7 +324,7 @@ export default function Index() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 relative" ref={calendarRef}>
                   <button
-                    className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1 ml-14"
+                    className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1 ml-12"
                     onClick={() => setShowCalendarPicker(!showCalendarPicker)}
                   >
                     <h1 className="text-xl font-medium text-gray-900 font-lexend">
@@ -415,7 +415,7 @@ export default function Index() {
               </div>
             </div>
             {/* Content inside card */}
-            <div className="px-6 pb-6 pt-0 space-y-6 flex-1 overflow-y-auto">
+            <div className="px-4 pb-6 pt-0 space-y-6 flex-1 overflow-y-auto">
               {activeView === 'all' && (
                 <section>
                   <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
@@ -597,7 +597,7 @@ export default function Index() {
 
                     {/* Forward Arrow */}
                     <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
-                      <ChevronRight className="w-6 h-6 text-black" />
+                      <ChevronRight className="w-6 h-6" style={{color: '#5046e5'}} />
                     </button>
                   </div>
 
