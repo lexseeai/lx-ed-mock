@@ -148,32 +148,18 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white/50'}`}>14</span>}
           </div>
 
-          {/* This Week */}
+          {/* Schedule */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
-              activeView === 'thisweek' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
+              activeView === 'schedule' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
-            onClick={() => setActiveView('thisweek')}
+            onClick={() => setActiveView('schedule')}
           >
             <div className="flex items-center space-x-2">
-              <Clock className={`w-4 h-4 ${activeView === 'thisweek' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-white'}`}>This week</span>}
+              <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'thisweek' ? 'text-white' : 'text-white/50'}`}>3</span>}
-          </div>
-
-          {/* Upcoming */}
-          <div
-            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
-              activeView === 'upcoming' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
-            }`}
-            onClick={() => setActiveView('upcoming')}
-          >
-            <div className="flex items-center space-x-2">
-              <Calendar className={`w-4 h-4 ${activeView === 'upcoming' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-white'}`}>Upcoming</span>}
-            </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-white/50'}`}>9</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>3</span>}
           </div>
 
           {/* Open Tasks */}
