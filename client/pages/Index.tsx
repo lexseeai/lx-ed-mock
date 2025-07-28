@@ -321,7 +321,7 @@ export default function Index() {
           {/* My students panel card */}
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col">
             {/* Header inside card */}
-            <div className="border-b border-stone-200 px-6 py-4">
+            <div className="px-6 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h1 className="text-xl font-medium text-gray-900">
