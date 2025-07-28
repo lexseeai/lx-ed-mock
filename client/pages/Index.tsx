@@ -319,6 +319,27 @@ export default function Index() {
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col min-w-0 overflow-hidden">
             {/* Header inside card */}
             <div className="px-6 py-4">
+              {/* Toggle Switch */}
+              <div className="flex items-center justify-end mb-3">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setHideEmptyDays(!hideEmptyDays)}
+                    className={`relative w-9 h-5 rounded-full transition-colors ${
+                      hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-300'
+                    }`}
+                  >
+                    <div
+                      className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
+                        hideEmptyDays ? 'translate-x-4' : 'translate-x-0.5'
+                      }`}
+                    />
+                  </button>
+                  <span className="text-sm font-medium text-stone-900 font-lexend">
+                    Hide empty days
+                  </span>
+                </div>
+              </div>
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 relative" ref={calendarRef}>
                   <button
@@ -432,120 +453,102 @@ export default function Index() {
                 <div className="space-y-6 min-w-0 overflow-hidden">
 
 
-                  {/* Calendar Header with Toggle */}
-                  <div className="flex items-center justify-between mb-6 min-w-0">
-                    <div className="flex items-center gap-4 min-w-0 flex-1">
-                      {/* Back Arrow */}
-                      <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
-                        <ChevronLeft className="w-6 h-6 text-black" />
-                      </button>
+                  {/* Week Calendar */}
+                  <div className="flex items-center gap-4 mb-6 min-w-0">
+                    {/* Back Arrow */}
+                    <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
+                      <ChevronLeft className="w-6 h-6 text-black" />
+                    </button>
 
-                      {/* Day Cards Container */}
-                      <div className="flex-1 min-w-0 overflow-hidden">
-                        <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
-                        {[
-                          { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
-                          { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
-                          { date: '30', day: 'Wed', sessions: 0, isToday: false, isSelected: false },
-                          { date: '31', day: 'Thu', sessions: 3, isToday: false, isSelected: false },
-                          { date: '1', day: 'Fri', sessions: 0, isToday: false, isSelected: false },
-                          { date: '2', day: 'Sat', sessions: 0, isToday: false, isSelected: false },
-                          { date: '3', day: 'Sun', sessions: 0, isToday: false, isSelected: false },
-                          { date: '4', day: 'Mon', sessions: 3, isToday: false, isSelected: false },
-                          { date: '5', day: 'Tue', sessions: 1, isToday: false, isSelected: false },
-                          { date: '6', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
-                          { date: '7', day: 'Thu', sessions: 1, isToday: false, isSelected: false },
-                          { date: '8', day: 'Fri', sessions: 1, isToday: false, isSelected: false },
-                          { date: '11', day: 'Mon', sessions: 1, isToday: false, isSelected: false },
-                          { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
-                        ].filter(dayData => !hideEmptyDays || dayData.sessions > 0).map((dayData, index) => (
-                          <button
-                            key={dayData.date}
-                            className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-colors flex-shrink-0 ${
-                              dayData.isSelected
-                                ? 'border-indigo-600 bg-indigo-600'
-                                : 'border-stone-200 bg-white hover:bg-stone-50'
-                            }`}
-                          >
-                            {/* Top section with date and today indicator */}
-                            <div className="flex flex-col items-start gap-1.5 w-full">
-                              <div className="flex justify-between items-center w-full">
-                                <div className={`text-2xl font-black leading-none font-lexend ${
-                                  dayData.isSelected
-                                    ? 'text-white'
-                                    : dayData.sessions === 0
-                                      ? 'text-stone-400'
-                                      : 'text-stone-700'
-                                }`}>
-                                  {dayData.date}
-                                </div>
-                                {dayData.isToday && (
-                                  <div className={`text-xs leading-none font-lexend opacity-50 ${
-                                    dayData.isSelected
-                                      ? 'text-white'
-                                      : dayData.sessions === 0
-                                        ? 'text-stone-400'
-                                        : 'text-stone-700'
-                                  }`}>
-                                    Today
-                                  </div>
-                                )}
-                              </div>
-                              <div className={`text-base font-medium leading-none font-lexend w-full text-left ${
+                    {/* Day Cards Container */}
+                    <div className="flex-1 min-w-0 overflow-hidden">
+                      <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+                      {[
+                        { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
+                        { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
+                        { date: '30', day: 'Wed', sessions: 0, isToday: false, isSelected: false },
+                        { date: '31', day: 'Thu', sessions: 3, isToday: false, isSelected: false },
+                        { date: '1', day: 'Fri', sessions: 0, isToday: false, isSelected: false },
+                        { date: '2', day: 'Sat', sessions: 0, isToday: false, isSelected: false },
+                        { date: '3', day: 'Sun', sessions: 0, isToday: false, isSelected: false },
+                        { date: '4', day: 'Mon', sessions: 3, isToday: false, isSelected: false },
+                        { date: '5', day: 'Tue', sessions: 1, isToday: false, isSelected: false },
+                        { date: '6', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
+                        { date: '7', day: 'Thu', sessions: 1, isToday: false, isSelected: false },
+                        { date: '8', day: 'Fri', sessions: 1, isToday: false, isSelected: false },
+                        { date: '11', day: 'Mon', sessions: 1, isToday: false, isSelected: false },
+                        { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
+                      ].filter(dayData => !hideEmptyDays || dayData.sessions > 0).map((dayData, index) => (
+                        <button
+                          key={dayData.date}
+                          className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-all duration-300 ease-in-out flex-shrink-0 transform ${
+                            dayData.isSelected
+                              ? 'border-indigo-600 bg-indigo-600 scale-100'
+                              : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
+                          }`}
+                          style={{
+                            animation: 'slideIn 0.3s ease-out'
+                          }}
+                        >
+                          {/* Top section with date and today indicator */}
+                          <div className="flex flex-col items-start gap-1.5 w-full">
+                            <div className="flex justify-between items-center w-full">
+                              <div className={`text-2xl font-black leading-none font-lexend transition-colors duration-200 ${
                                 dayData.isSelected
                                   ? 'text-white'
                                   : dayData.sessions === 0
                                     ? 'text-stone-400'
                                     : 'text-stone-700'
                               }`}>
-                                {dayData.day}
+                                {dayData.date}
+                              </div>
+                              {dayData.isToday && (
+                                <div className={`text-xs leading-none font-lexend opacity-50 transition-colors duration-200 ${
+                                  dayData.isSelected
+                                    ? 'text-white'
+                                    : dayData.sessions === 0
+                                      ? 'text-stone-400'
+                                      : 'text-stone-700'
+                                }`}>
+                                  Today
+                                </div>
+                              )}
+                            </div>
+                            <div className={`text-base font-medium leading-none font-lexend w-full text-left transition-colors duration-200 ${
+                              dayData.isSelected
+                                ? 'text-white'
+                                : dayData.sessions === 0
+                                  ? 'text-stone-400'
+                                  : 'text-stone-700'
+                            }`}>
+                              {dayData.day}
+                            </div>
+                          </div>
+
+                          {/* Bottom section with sessions */}
+                          {dayData.sessions > 0 && (
+                            <div className="flex items-start gap-1 w-full">
+                              <div className={`text-sm font-normal leading-none font-lexend transition-colors duration-200 ${
+                                dayData.isSelected ? 'text-white' : 'text-stone-700'
+                              }`}>
+                                {dayData.sessions}
+                              </div>
+                              <div className={`text-sm font-normal leading-none font-lexend transition-colors duration-200 ${
+                                dayData.isSelected ? 'text-white' : 'text-stone-700'
+                              }`}>
+                                {dayData.sessions === 1 ? 'session' : 'sessions'}
                               </div>
                             </div>
-
-                            {/* Bottom section with sessions */}
-                            {dayData.sessions > 0 && (
-                              <div className="flex items-start gap-1 w-full">
-                                <div className={`text-sm font-normal leading-none font-lexend ${
-                                  dayData.isSelected ? 'text-white' : 'text-stone-700'
-                                }`}>
-                                  {dayData.sessions}
-                                </div>
-                                <div className={`text-sm font-normal leading-none font-lexend ${
-                                  dayData.isSelected ? 'text-white' : 'text-stone-700'
-                                }`}>
-                                  {dayData.sessions === 1 ? 'session' : 'sessions'}
-                                </div>
-                              </div>
-                            )}
-                          </button>
-                        ))}
-                        </div>
+                          )}
+                        </button>
+                      ))}
                       </div>
-
-                      {/* Forward Arrow */}
-                      <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
-                        <ChevronRight className="w-6 h-6 text-black" />
-                      </button>
                     </div>
 
-                    {/* Toggle Switch */}
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <button
-                        onClick={() => setHideEmptyDays(!hideEmptyDays)}
-                        className={`relative w-9 h-5 rounded-full transition-colors ${
-                          hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-300'
-                        }`}
-                      >
-                        <div
-                          className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
-                            hideEmptyDays ? 'translate-x-4' : 'translate-x-0.5'
-                          }`}
-                        />
-                      </button>
-                      <span className="text-sm font-medium text-stone-900 font-lexend">
-                        Hide empty days
-                      </span>
-                    </div>
+                    {/* Forward Arrow */}
+                    <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
+                      <ChevronRight className="w-6 h-6 text-black" />
+                    </button>
                   </div>
 
                   {/* Time Periods */}
