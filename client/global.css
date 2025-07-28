@@ -140,39 +140,85 @@
     }
   }
 
-  /* Horizontal autolayout animations for day cards */
-  @keyframes fadeOut {
+  /* Sophisticated day card stacking animations */
+  @keyframes slideLeftBehind {
     0% {
+      transform: translateX(0) scale(1);
+      z-index: 10;
       opacity: 1;
-      transform: scale(1);
+    }
+    50% {
+      transform: translateX(-60px) scale(0.9);
+      z-index: 1;
+      opacity: 0.8;
     }
     100% {
-      opacity: 0;
-      transform: scale(0.8);
+      transform: translateX(-200px) scale(0.7);
+      z-index: 1;
+      opacity: 0.3;
     }
   }
 
-  @keyframes fadeIn {
+  @keyframes slideRightFromBehind {
     0% {
-      opacity: 0;
-      transform: scale(0.8);
+      transform: translateX(-200px) scale(0.7);
+      z-index: 1;
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateX(-60px) scale(0.9);
+      z-index: 5;
+      opacity: 0.8;
     }
     100% {
+      transform: translateX(0) scale(1);
+      z-index: 10;
       opacity: 1;
-      transform: scale(1);
     }
   }
 
-  /* Smooth position transitions for autolayout */
-  .day-card-container {
-    transition: transform 0.3s ease-in-out;
+  @keyframes moveLeftToFillGap {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(var(--move-distance, -104px));
+    }
   }
 
-  .day-card-hiding {
-    animation: fadeOut 0.3s ease-in-out forwards;
+  @keyframes moveRightToMakeSpace {
+    0% {
+      transform: translateX(var(--move-distance, -104px));
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 
-  .day-card-showing {
-    animation: fadeIn 0.3s ease-in-out forwards;
+  /* Animation classes */
+  .day-card-slide-behind {
+    animation: slideLeftBehind 0.4s ease-in-out forwards;
+    position: relative;
+  }
+
+  .day-card-emerge {
+    animation: slideRightFromBehind 0.4s ease-in-out forwards;
+    position: relative;
+  }
+
+  .day-card-fill-gap {
+    animation: moveLeftToFillGap 0.4s ease-in-out forwards;
+    position: relative;
+  }
+
+  .day-card-make-space {
+    animation: moveRightToMakeSpace 0.4s ease-in-out forwards;
+    position: relative;
+  }
+
+  /* Base transition for smooth movements */
+  .day-card-base {
+    transition: all 0.3s ease-in-out;
+    position: relative;
   }
 }
