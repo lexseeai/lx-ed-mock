@@ -431,6 +431,26 @@ export default function Index() {
               {activeView === 'schedule' && (
                 <div className="space-y-6 min-w-0 overflow-hidden">
 
+                  {/* Toggle Switch */}
+                  <div className="flex items-center justify-end">
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setHideEmptyDays(!hideEmptyDays)}
+                        className={`relative w-9 h-5 rounded-full transition-colors ${
+                          hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-300'
+                        }`}
+                      >
+                        <div
+                          className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
+                            hideEmptyDays ? 'translate-x-4' : 'translate-x-0.5'
+                          }`}
+                        />
+                      </button>
+                      <span className="text-sm font-medium text-stone-900 font-lexend">
+                        Hide empty days
+                      </span>
+                    </div>
+                  </div>
 
                   {/* Week Calendar */}
                   <div className="flex items-center gap-4 mb-6 min-w-0">
