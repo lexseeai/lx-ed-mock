@@ -223,6 +223,7 @@ export default function Index() {
   const [hideEmptyDays, setHideEmptyDays] = useState(true);
   const [isToggling, setIsToggling] = useState(false);
   const [animationDirection, setAnimationDirection] = useState<'hiding' | 'showing' | null>(null);
+  const [selectedDayDate, setSelectedDayDate] = useState('28'); // Track selected day
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
