@@ -295,7 +295,7 @@ export default function Index() {
         {/* Content */}
         <div className="flex-1 p-3 h-full min-w-0 overflow-hidden">
           {/* My students panel card */}
-          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col">
+          <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col min-w-0 overflow-hidden">
             {/* Header inside card */}
             <div className="px-6 py-4">
               <div className="flex items-center justify-between">
