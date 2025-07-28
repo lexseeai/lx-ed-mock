@@ -593,12 +593,12 @@ export default function Index() {
                           {/* Bottom section with sessions */}
                           {dayData.sessions > 0 && (
                             <div className="flex items-start gap-1 w-full">
-                              <div className={`text-sm font-normal leading-none font-lexend transition-colors duration-200 ${
+                              <div className={`text-sm font-normal leading-none font-lexend ${
                                 isSelected ? 'text-white' : 'text-stone-700'
                               }`}>
                                 {dayData.sessions}
                               </div>
-                              <div className={`text-sm font-normal leading-none font-lexend transition-colors duration-200 ${
+                              <div className={`text-sm font-normal leading-none font-lexend ${
                                 isSelected ? 'text-white' : 'text-stone-700'
                               }`}>
                                 {dayData.sessions === 1 ? 'session' : 'sessions'}
