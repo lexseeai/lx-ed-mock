@@ -435,7 +435,7 @@ export default function Index() {
                   </div>
 
                   {/* Time Periods */}
-                  <div className="space-y-8">
+                  <div className="space-y-8 min-w-0">
                     {/* Morning */}
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Morning</h3>
