@@ -409,7 +409,7 @@ export default function Index() {
                     />
                   </div>
                   <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
-                    + New student
+                    <b>+</b>
                   </Button>
                 </div>
               </div>
