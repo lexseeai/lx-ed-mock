@@ -123,7 +123,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
           {/* This Week */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
-              activeView === 'thisweek' ? 'bg-indigo-600 text-white' : 'hover:bg-stone-100'
+              activeView === 'thisweek' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
             onClick={() => setActiveView('thisweek')}
           >
