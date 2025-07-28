@@ -220,7 +220,25 @@ export default function Index() {
   const [activeView, setActiveView] = useState("schedule");
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // Close calendar picker when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
+        setShowCalendarPicker(false);
+      }
+    };
+
+    if (showCalendarPicker) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showCalendarPicker]);
 
   const handleStudentClick = (studentId: string) => {
     navigate(`/student/${studentId}`);
