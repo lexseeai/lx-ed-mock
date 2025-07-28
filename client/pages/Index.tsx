@@ -555,15 +555,18 @@ export default function Index() {
                           ? allDays
                           : allDays.filter(dayData => !hideEmptyDays || dayData.sessions > 0);
 
-                        return visibleDays.map((dayData, index) => (
-                          <button
-                            key={dayData.date}
-                            className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-all duration-300 ease-in-out flex-shrink-0 transform ${
-                              dayData.isSelected
-                                ? 'border-indigo-600 bg-indigo-600 scale-100'
-                                : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
-                            } ${getAnimationClass(dayData, index)}`}
-                          >
+                        return visibleDays.map((dayData, index) => {
+                          const originalIndex = allDays.findIndex(day => day.date === dayData.date);
+                          return (
+                            <button
+                              key={dayData.date}
+                              className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer flex-shrink-0 ${
+                                dayData.isSelected
+                                  ? 'border-indigo-600 bg-indigo-600 scale-100'
+                                  : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
+                              } ${getAnimationClass(dayData, originalIndex)}`}
+                              style={calculateTransform(dayData, originalIndex)}
+                            >
                           {/* Top section with date and today indicator */}
                           <div className="flex flex-col items-start gap-1.5 w-full">
                             <div className="flex justify-between items-center w-full">
@@ -614,8 +617,9 @@ export default function Index() {
                               </div>
                             </div>
                           )}
-                          </button>
-                        ));
+                            </button>
+                          );
+                        });
                       })()}
                       </div>
                     </div>
