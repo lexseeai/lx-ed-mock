@@ -824,7 +824,7 @@ export default function Index() {
           </button>
 
           {/* Modal Content */}
-          <div className="bg-white rounded-lg border border-stone-200 shadow-xl max-w-2xl w-full mx-8 max-h-[90vh] overflow-y-auto">
+          <div className="bg-blue-50 rounded-lg border border-stone-200 shadow-xl max-w-2xl w-full mx-8 max-h-[85vh] max-w-[90vw] overflow-y-auto">
             {/* Header */}
             <div className="flex items-start justify-between p-6">
               <div className="flex items-center gap-2">
