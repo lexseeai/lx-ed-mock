@@ -250,8 +250,49 @@ export default function Index() {
     };
   }, [showCalendarPicker]);
 
-  const handleStudentClick = (studentId: string) => {
-    navigate(`/student/${studentId}`);
+  const handleStudentClick = (studentId: string, studentList: Student[] = []) => {
+    setSelectedStudentId(studentId);
+    setCurrentStudentList(studentList);
+    setShowStudentOverlay(true);
+  };
+
+  const handleExpandStudent = () => {
+    if (selectedStudentId) {
+      setShowStudentOverlay(false);
+      navigate(`/student/${selectedStudentId}`);
+    }
+  };
+
+  const getCurrentStudentIndex = () => {
+    return currentStudentList.findIndex(student => student.id === selectedStudentId);
+  };
+
+  const canNavigatePrevious = () => {
+    const currentIndex = getCurrentStudentIndex();
+    return currentIndex > 0;
+  };
+
+  const canNavigateNext = () => {
+    const currentIndex = getCurrentStudentIndex();
+    return currentIndex < currentStudentList.length - 1;
+  };
+
+  const navigatePrevious = () => {
+    if (canNavigatePrevious()) {
+      const currentIndex = getCurrentStudentIndex();
+      setSelectedStudentId(currentStudentList[currentIndex - 1].id);
+    }
+  };
+
+  const navigateNext = () => {
+    if (canNavigateNext()) {
+      const currentIndex = getCurrentStudentIndex();
+      setSelectedStudentId(currentStudentList[currentIndex + 1].id);
+    }
+  };
+
+  const getSelectedStudent = () => {
+    return mockStudents.find(student => student.id === selectedStudentId);
   };
 
   // Helper functions for different views
