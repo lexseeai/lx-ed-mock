@@ -349,7 +349,7 @@ export default function Index() {
             <div className="p-6 space-y-6 flex-1 overflow-y-auto">
               {activeView === 'all' && (
                 <section>
-                  <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                  <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                     {getAllStudentsSorted().map((student) => (
                       <StudentCard
                         key={student.id}
@@ -365,7 +365,7 @@ export default function Index() {
                 <>
                   <section>
                     <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Today</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                       {getThisWeekStudents().today.map((student) => (
                         <StudentCard
                           key={student.id}
@@ -377,7 +377,7 @@ export default function Index() {
                   </section>
                   <section>
                     <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Tomorrow</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                       {getThisWeekStudents().tomorrow.map((student) => (
                         <StudentCard
                           key={student.id}
@@ -394,7 +394,7 @@ export default function Index() {
                 <>
                   <section>
                     <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">This Week</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                       {getUpcomingStudents().thisWeek.map((student) => (
                         <StudentCard
                           key={student.id}
@@ -406,7 +406,7 @@ export default function Index() {
                   </section>
                   <section>
                     <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Next Week</h2>
-                    <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                       {getUpcomingStudents().nextWeek.map((student) => (
                         <StudentCard
                           key={student.id}
@@ -419,7 +419,7 @@ export default function Index() {
                   {getUpcomingStudents().furtherOut.length > 0 && (
                     <section>
                       <h2 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Further Out</h2>
-                      <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                      <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                         {getUpcomingStudents().furtherOut.map((student) => (
                           <StudentCard
                             key={student.id}
@@ -435,7 +435,7 @@ export default function Index() {
 
               {activeView === 'opentasks' && (
                 <section>
-                  <div className="grid grid-cols-[repeat(auto-fill,_192px)] gap-3">
+                  <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                     {getOpenTasksStudents().map((student) => (
                       <StudentCard
                         key={student.id}
