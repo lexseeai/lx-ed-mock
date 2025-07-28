@@ -358,14 +358,15 @@ export default function Index() {
                   </div>
 
                   {/* Week Calendar */}
-                  <div className="flex justify-between items-center mb-6">
+                  <div className="flex items-center gap-4 mb-6">
                     {/* Back Arrow */}
-                    <button className="flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
+                    <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
                       <ChevronLeft className="w-6 h-6 text-black" />
                     </button>
 
-                    {/* Day Cards */}
-                    <div className="flex gap-3">
+                    {/* Day Cards Container */}
+                    <div className="flex-1 overflow-hidden">
+                      <div className="flex gap-3 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                       {[
                         { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
                         { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
@@ -424,10 +425,11 @@ export default function Index() {
                           </div>
                         </button>
                       ))}
+                      </div>
                     </div>
 
                     {/* Forward Arrow */}
-                    <button className="flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
+                    <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
                       <ChevronRight className="w-6 h-6 text-black" />
                     </button>
                   </div>
