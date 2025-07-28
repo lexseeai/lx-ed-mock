@@ -809,7 +809,7 @@ export default function Index() {
 
       {/* Student Overlay Modal */}
       {showStudentOverlay && selectedStudentId && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[1000]">
+        <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-[1000]">
           {/* Navigation Arrow - Left */}
           <button
             onClick={navigatePrevious}
