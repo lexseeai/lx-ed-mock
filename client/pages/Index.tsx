@@ -187,7 +187,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
 
       {/* User Profile at Bottom */}
       <div className="p-3">
-        <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+        <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-indigo-950`}>
           <div className="flex items-center space-x-2">
             <Avatar className="w-8 h-8">
               <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
