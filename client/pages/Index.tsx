@@ -312,7 +312,7 @@ export default function Index() {
                       placeholder="Filter students"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-64 h-9"
+                      className="w-48 md:w-64 h-9 min-w-0"
                     />
                   </div>
                   <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
