@@ -611,7 +611,7 @@ export default function Index() {
                             setTimeout(() => {
                               setIsToggling(false);
                               setAnimationDirection(null);
-                            }, 350); // Match animation duration
+                            }, 500); // Match animation duration
                           }, 50);
                         }}
                         className={`relative w-9 h-5 rounded-full transition-colors ${
