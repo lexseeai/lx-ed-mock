@@ -539,11 +539,14 @@ export default function Index() {
                           const originalIndex = allDays.findIndex(day => day.date === dayData.date);
                           const moveDistance = getMoveDistance(dayData, originalIndex);
 
+                          const isSelected = selectedDayDate === dayData.date;
+
                           return (
                             <button
                               key={dayData.date}
+                              onClick={() => setSelectedDayDate(dayData.date)}
                               className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer flex-shrink-0 ${
-                                dayData.isSelected
+                                isSelected
                                   ? 'border-indigo-600 bg-indigo-600 scale-100'
                                   : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
                               } ${getAnimationClass(dayData, originalIndex)}`}
