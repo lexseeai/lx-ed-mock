@@ -677,7 +677,7 @@ export default function Index() {
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Morning</h3>
                       <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
-                        {getScheduleData().today.morning.map((student) => (
+                        {getScheduleData().morning.map((student) => (
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
                               student={student}
@@ -685,7 +685,7 @@ export default function Index() {
                             />
                           </div>
                         ))}
-                        {getScheduleData().today.morning.length === 0 && (
+                        {getScheduleData().morning.length === 0 && (
                           <div className="text-gray-400 font-lexend text-sm">No sessions scheduled</div>
                         )}
                       </div>
@@ -695,7 +695,7 @@ export default function Index() {
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Afternoon</h3>
                       <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
-                        {getScheduleData().today.afternoon.map((student) => (
+                        {getScheduleData().afternoon.map((student) => (
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
                               student={student}
@@ -703,7 +703,7 @@ export default function Index() {
                             />
                           </div>
                         ))}
-                        {getScheduleData().today.afternoon.length === 0 && (
+                        {getScheduleData().afternoon.length === 0 && (
                           <div className="text-gray-400 font-lexend text-sm">No sessions scheduled</div>
                         )}
                       </div>
@@ -713,7 +713,7 @@ export default function Index() {
                     <section>
                       <h3 className="text-xl font-normal text-stone-400 mb-4 font-lexend">Evening</h3>
                       <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
-                        {getScheduleData().today.evening.map((student) => (
+                        {getScheduleData().evening.map((student) => (
                           <div key={student.id} className="flex-shrink-0">
                             <StudentCard
                               student={student}
@@ -721,7 +721,7 @@ export default function Index() {
                             />
                           </div>
                         ))}
-                        {getScheduleData().today.evening.length === 0 && (
+                        {getScheduleData().evening.length === 0 && (
                           <div className="text-gray-400 font-lexend text-sm">No sessions scheduled</div>
                         )}
                       </div>
