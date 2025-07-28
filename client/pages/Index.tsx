@@ -558,7 +558,7 @@ export default function Index() {
                           {/* Top section with date and today indicator */}
                           <div className="flex flex-col items-start w-full gap-0.5">
                             <div className="flex justify-between items-center w-full">
-                              <div className={`text-2xl font-black leading-none font-lexend transition-colors duration-200 ${
+                              <div className={`text-2xl font-black leading-none font-lexend ${
                                 isSelected
                                   ? 'text-white'
                                   : dayData.sessions === 0
