@@ -110,7 +110,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
   return (
     <div className={`${isCollapsed ? 'w-16' : 'w-60'} flex flex-col min-h-screen transition-all duration-300`}>
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-4">
+      <div className="flex items-center justify-between pl-4 pr-0 py-4">
         {!isCollapsed && (
           <h1 className="text-lg font-medium text-white font-lexend">Lexsee Workspace</h1>
         )}
@@ -125,7 +125,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
       </div>
 
       {/* Navigation Content */}
-      <div className="flex-1 flex flex-col px-3 py-4">
+      <div className="flex-1 flex flex-col pl-3 pr-0 py-4">
         {/* My Students Section */}
         <div className="space-y-2">
           {!isCollapsed && (
