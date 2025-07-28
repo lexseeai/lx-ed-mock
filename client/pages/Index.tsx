@@ -520,28 +520,25 @@ export default function Index() {
                           const isEmpty = dayData.sessions === 0;
 
                           if (isEmpty) {
-                            // Empty days don't need transform - they fade in/out in place
+                            // Empty days don't move, just fade
                             return {};
                           }
 
-                          // For non-empty days, calculate how many empty days will be removed/added before this one
-                          let emptyDaysBefore = 0;
+                          // Calculate how many empty cards are to the left of this card
+                          let emptyCardsToLeft = 0;
                           for (let i = 0; i < originalIndex; i++) {
                             if (allDays[i].sessions === 0) {
-                              emptyDaysBefore++;
+                              emptyCardsToLeft++;
                             }
                           }
 
                           if (animationDirection === 'hiding') {
-                            // When hiding: start at current position, end at left-shifted position
-                            // This means we need to end up moved left, so transform should be negative
-                            const finalOffsetPx = emptyDaysBefore * -104; // -(width + gap)
-                            return { transform: `translateX(${finalOffsetPx}px)` };
+                            // Non-empty cards should move left to close gaps left by empty cards
+                            // Each empty card removal means moving left by 104px (96px card + 8px gap)
+                            return {};  // Let CSS transition handle the movement to final position
                           } else if (animationDirection === 'showing') {
-                            // When showing: start at left-shifted position, end at normal position
-                            // This means we start moved left and go back to 0, so we need to start negative
-                            const startOffsetPx = emptyDaysBefore * -104; // start left-shifted
-                            return { transform: `translateX(${startOffsetPx}px)` };
+                            // Non-empty cards should move right to make space for appearing empty cards
+                            return {};  // Let CSS transition handle the movement to final position
                           }
 
                           return {};
