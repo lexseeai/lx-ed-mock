@@ -904,9 +904,10 @@ export default function Index() {
           <button
             onClick={navigateNext}
             disabled={!canNavigateNext()}
-            className={`absolute right-8 top-1/2 transform -translate-y-1/2 flex p-2.5 items-center justify-center rounded-full border border-stone-200 bg-white shadow-lg transition-opacity ${
+            className={`absolute right-2 top-1/2 transform -translate-y-1/2 flex p-2.5 items-center justify-center rounded-full border border-stone-200 bg-white shadow-lg transition-opacity ${
               canNavigateNext() ? 'hover:bg-stone-50' : 'opacity-50 cursor-not-allowed'
             }`}
+            style={{ right: 'calc(50% - 384px - 24px - 44px)' }}
           >
             <ChevronRight className={`w-6 h-6 ${
               canNavigateNext() ? 'text-indigo-600' : 'text-stone-300'
