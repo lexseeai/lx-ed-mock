@@ -411,23 +411,7 @@ export default function Index() {
 
               {activeView === 'schedule' && (
                 <div className="space-y-6 min-w-0 overflow-hidden">
-                  {/* Calendar Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-4">
-                      <h2 className="text-lg font-medium text-gray-900 font-lexend">July, 2025</h2>
-                      <div className="flex items-center space-x-1">
-                        <button className="p-1 hover:bg-stone-200 rounded">
-                          <ChevronLeft className="w-4 h-4 text-gray-600" />
-                        </button>
-                        <button className="p-1 hover:bg-stone-200 rounded">
-                          <ChevronRight className="w-4 h-4 text-gray-600" />
-                        </button>
-                      </div>
-                    </div>
-                    <button className="px-3 py-1 text-sm text-gray-700 hover:bg-stone-100 rounded font-lexend">
-                      Today
-                    </button>
-                  </div>
+
 
                   {/* Week Calendar */}
                   <div className="flex items-center gap-4 mb-6 min-w-0">
