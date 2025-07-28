@@ -47,31 +47,58 @@ function StudentCard({ student, onClick }: { student: Student; onClick: () => vo
 
   return (
     <Card
-      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-lg h-60 w-48"
-      style={{ aspectRatio: '0.75' }}
+      className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-xl w-45 h-60"
       onClick={onClick}
     >
-      <CardContent className="p-4 flex flex-col items-center text-center space-y-3 h-full">
-        <Avatar className="w-10 h-10 flex-shrink-0">
-          <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
-            {getInitials(student.name)}
-          </AvatarFallback>
-        </Avatar>
+      <CardContent className="p-1.5 flex flex-col justify-between h-full">
+        {/* Top section with avatar, name, subject, and session time */}
+        <div className="flex flex-col items-start gap-1 px-3 pt-3">
+          {/* Avatar */}
+          <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
+            <Avatar className="w-full h-full">
+              <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
+                {getInitials(student.name)}
+              </AvatarFallback>
+            </Avatar>
+          </div>
 
-        <div className="space-y-1 flex-1 flex flex-col justify-start items-center w-full">
-          <h3 className="text-gray-900 font-lexend font-medium text-sm">{student.name}</h3>
-          {student.sessionTime && (
-            <p className="text-xs text-gray-600 leading-tight">
-              <p>{student.sessionTime}</p>
-            </p>
-          )}
+          {/* Name */}
+          <h3 className="text-stone-900 font-lexend font-semibold text-lg leading-[18px] tracking-[-0.09px] mt-1">
+            {student.name}
+          </h3>
+
+          {/* Subject and Session Time */}
+          <div className="flex flex-col items-start gap-0.5 pt-3">
+            {student.subject && (
+              <div className="text-stone-900 font-lexend text-xs font-normal leading-[18px] tracking-[-0.06px]">
+                {student.subject}
+              </div>
+            )}
+
+            {student.sessionTime && (
+              <div className="flex items-center gap-1 py-0.5">
+                <div className="flex items-center gap-1">
+                  <Bell className="w-3 h-3 text-stone-700" />
+                  <span className="text-stone-700 font-lexend text-xs font-normal leading-4">
+                    {student.sessionTime}
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
-        {student.sessionReportDue && (
-          <Badge variant="outline" className="text-xs bg-pink-50 text-pink-700 border-pink-200 flex-shrink-0">
-            📝 Session report due
-          </Badge>
-        )}
+        {/* Bottom section with session report badge */}
+        <div className="flex justify-center px-1.5 pb-1.5">
+          {student.sessionReportDue && (
+            <div className="flex items-center gap-1 px-1.5 py-0.5 border border-stone-200 rounded">
+              <Clock className="w-3 h-3 text-pink-600" />
+              <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                Session report
+              </span>
+            </div>
+          )}
+        </div>
       </CardContent>
     </Card>
   );
