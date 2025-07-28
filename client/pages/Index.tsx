@@ -498,7 +498,7 @@ export default function Index() {
                       <StudentCard
                         key={student.id}
                         student={student}
-                        onClick={() => handleStudentClick(student.id)}
+                        onClick={() => handleStudentClick(student.id, getAllStudentsSorted())}
                       />
                     ))}
                   </div>
