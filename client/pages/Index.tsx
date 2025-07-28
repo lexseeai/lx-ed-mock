@@ -143,9 +143,9 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
           >
             <div className="flex items-center space-x-2">
               <Calendar className={`w-4 h-4 ${activeView === 'upcoming' ? 'text-white' : 'text-sky-500'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-stone-700'}`}>Upcoming</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-white'}`}>Upcoming</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-stone-400'}`}>9</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'upcoming' ? 'text-white' : 'text-white/50'}`}>9</span>}
           </div>
 
           {/* Open Tasks */}
