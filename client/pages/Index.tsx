@@ -109,7 +109,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
           {/* All Students */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer ${
-              activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-stone-100'
+              activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
             onClick={() => setActiveView('all')}
           >
