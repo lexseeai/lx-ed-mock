@@ -319,7 +319,7 @@ export default function Index() {
             {/* Header inside card */}
             <div className="px-6 py-4">
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2 relative">
+                <div className="flex items-center space-x-2 relative" ref={calendarRef}>
                   <button
                     className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1"
                     onClick={() => setShowCalendarPicker(!showCalendarPicker)}
