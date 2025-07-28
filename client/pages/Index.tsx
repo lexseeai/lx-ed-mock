@@ -358,7 +358,7 @@ export default function Index() {
                   </div>
 
                   {/* Week Calendar */}
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-4 mb-6 min-w-0">
                     {/* Back Arrow */}
                     <button className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
                       <ChevronLeft className="w-6 h-6 text-black" />
