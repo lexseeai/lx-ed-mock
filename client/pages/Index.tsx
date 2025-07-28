@@ -568,7 +568,7 @@ export default function Index() {
                                 {dayData.date}
                               </div>
                               {dayData.isToday && (
-                                <div className={`text-xs leading-none font-lexend opacity-50 transition-colors duration-200 ${
+                                <div className={`text-xs leading-none font-lexend opacity-50 ${
                                   isSelected
                                     ? 'text-white'
                                     : dayData.sessions === 0
