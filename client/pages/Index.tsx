@@ -366,7 +366,7 @@ export default function Index() {
 
                     {/* Day Cards Container */}
                     <div className="flex-1 overflow-hidden">
-                      <div className="flex gap-3 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                      <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2">
                       {[
                         { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
                         { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
