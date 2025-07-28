@@ -221,6 +221,8 @@ export default function Index() {
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [hideEmptyDays, setHideEmptyDays] = useState(true);
+  const [isToggling, setIsToggling] = useState(false);
+  const [animationDirection, setAnimationDirection] = useState<'hiding' | 'showing' | null>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
