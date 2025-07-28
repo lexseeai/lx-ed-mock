@@ -830,13 +830,13 @@ export default function Index() {
               <div className="flex items-center gap-2">
                 <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
                   <Avatar className="w-full h-full">
-                    <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
+                    <AvatarFallback className="bg-orange-100 text-orange-700 font-bold text-2xl">
                       {getSelectedStudent()?.name.charAt(0).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
                 </div>
                 <div className="flex flex-col">
-                  <h2 className="text-xl font-semibold text-stone-900 font-lexend leading-tight">
+                  <h2 className="text-2xl font-semibold text-stone-900 font-lexend leading-tight">
                     {getSelectedStudent()?.name}
                   </h2>
                   {getSelectedStudent()?.sessionTime && (
