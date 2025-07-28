@@ -685,6 +685,7 @@ export default function Index() {
                             <StudentCard
                               student={student}
                               onClick={() => handleStudentClick(student.id)}
+                              scheduleView={true}
                             />
                           </div>
                         ))}
