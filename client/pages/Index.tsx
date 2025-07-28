@@ -157,9 +157,9 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
           >
             <div className="flex items-center space-x-2">
               <NotebookText className={`w-4 h-4 ${activeView === 'opentasks' ? 'text-white' : 'text-fuchsia-500'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-stone-700'}`}>Open tasks</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-white'}`}>Open tasks</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-stone-400'}`}>4</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'opentasks' ? 'text-white' : 'text-white/50'}`}>4</span>}
           </div>
         </div>
 
