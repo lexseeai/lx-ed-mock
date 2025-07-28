@@ -168,7 +168,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
 
         {/* Other Navigation Items */}
         <div className="space-y-2 flex-1">
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-stone-100`}>
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-indigo-950`}>
             <LibraryBig className="w-4 h-4 text-white/80" />
             {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Library</span>}
           </div>
