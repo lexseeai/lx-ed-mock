@@ -459,20 +459,20 @@ export default function Index() {
                       <div className="flex gap-1 overflow-x-auto scrollbar-hide">
                       {(() => {
                         const allDays = [
-                          { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
-                          { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
-                          { date: '30', day: 'Wed', sessions: 0, isToday: false, isSelected: false },
-                          { date: '31', day: 'Thu', sessions: 3, isToday: false, isSelected: false },
-                          { date: '1', day: 'Fri', sessions: 0, isToday: false, isSelected: false },
-                          { date: '2', day: 'Sat', sessions: 0, isToday: false, isSelected: false },
-                          { date: '3', day: 'Sun', sessions: 0, isToday: false, isSelected: false },
-                          { date: '4', day: 'Mon', sessions: 3, isToday: false, isSelected: false },
-                          { date: '5', day: 'Tue', sessions: 1, isToday: false, isSelected: false },
-                          { date: '6', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
-                          { date: '7', day: 'Thu', sessions: 1, isToday: false, isSelected: false },
-                          { date: '8', day: 'Fri', sessions: 1, isToday: false, isSelected: false },
-                          { date: '11', day: 'Mon', sessions: 1, isToday: false, isSelected: false },
-                          { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
+                          { date: '28', day: 'Mon', sessions: 3, isToday: true },
+                          { date: '29', day: 'Tues', sessions: 1, isToday: false },
+                          { date: '30', day: 'Wed', sessions: 0, isToday: false },
+                          { date: '31', day: 'Thu', sessions: 3, isToday: false },
+                          { date: '1', day: 'Fri', sessions: 0, isToday: false },
+                          { date: '2', day: 'Sat', sessions: 0, isToday: false },
+                          { date: '3', day: 'Sun', sessions: 0, isToday: false },
+                          { date: '4', day: 'Mon', sessions: 3, isToday: false },
+                          { date: '5', day: 'Tue', sessions: 1, isToday: false },
+                          { date: '6', day: 'Wed', sessions: 3, isToday: false },
+                          { date: '7', day: 'Thu', sessions: 1, isToday: false },
+                          { date: '8', day: 'Fri', sessions: 1, isToday: false },
+                          { date: '11', day: 'Mon', sessions: 1, isToday: false },
+                          { date: '12', day: 'Tue', sessions: 1, isToday: false }
                         ];
 
                         const getAnimationClass = (dayData: any, originalIndex: number) => {
