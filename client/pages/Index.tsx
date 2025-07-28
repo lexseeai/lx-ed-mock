@@ -358,24 +358,78 @@ export default function Index() {
                   </div>
 
                   {/* Week Calendar */}
-                  <div className="bg-white rounded-lg border border-stone-200 p-4 mb-6">
-                    <div className="grid grid-cols-7 gap-4 mb-4">
-                      {['28', '29', '31', '4', '5', '6', '7'].map((date, index) => (
-                        <div key={date} className="text-center">
-                          <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center text-sm font-lexend ${
-                            index === 0 ? 'bg-indigo-600 text-white' : 'text-gray-700'
-                          }`}>
-                            {date}
+                  <div className="flex justify-between items-center mb-6">
+                    {/* Back Arrow */}
+                    <button className="flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
+                      <ChevronLeft className="w-6 h-6 text-black" />
+                    </button>
+
+                    {/* Day Cards */}
+                    <div className="flex gap-3">
+                      {[
+                        { date: '28', day: 'Mon', sessions: 3, isToday: true, isSelected: true },
+                        { date: '29', day: 'Tues', sessions: 1, isToday: false, isSelected: false },
+                        { date: '31', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
+                        { date: '4', day: 'Mon', sessions: 3, isToday: false, isSelected: false },
+                        { date: '5', day: 'Tue', sessions: 1, isToday: false, isSelected: false },
+                        { date: '6', day: 'Wed', sessions: 3, isToday: false, isSelected: false },
+                        { date: '7', day: 'Thu', sessions: 1, isToday: false, isSelected: false },
+                        { date: '8', day: 'Fri', sessions: 1, isToday: false, isSelected: false },
+                        { date: '11', day: 'Mon', sessions: 1, isToday: false, isSelected: false },
+                        { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
+                      ].map((dayData, index) => (
+                        <button
+                          key={dayData.date}
+                          className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-colors ${
+                            dayData.isSelected
+                              ? 'border-indigo-600 bg-indigo-600'
+                              : 'border-stone-200 bg-white hover:bg-stone-50'
+                          }`}
+                        >
+                          {/* Top section with date and today indicator */}
+                          <div className="flex flex-col items-start gap-1.5 w-full">
+                            <div className="flex justify-between items-center w-full">
+                              <div className={`text-2xl font-black leading-none font-lexend ${
+                                dayData.isSelected ? 'text-white' : 'text-stone-700'
+                              }`}>
+                                {dayData.date}
+                              </div>
+                              {dayData.isToday && (
+                                <div className={`text-xs leading-none font-lexend opacity-50 ${
+                                  dayData.isSelected ? 'text-white' : 'text-stone-700'
+                                }`}>
+                                  Today
+                                </div>
+                              )}
+                            </div>
+                            <div className={`text-base font-medium leading-none font-lexend w-full text-left ${
+                              dayData.isSelected ? 'text-white' : 'text-stone-700'
+                            }`}>
+                              {dayData.day}
+                            </div>
                           </div>
-                          <div className="text-xs text-gray-500 mt-1 font-lexend">
-                            {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][index]}
+
+                          {/* Bottom section with sessions */}
+                          <div className="flex items-start gap-1 w-full">
+                            <div className={`text-sm font-normal leading-none font-lexend ${
+                              dayData.isSelected ? 'text-white' : 'text-stone-700'
+                            }`}>
+                              {dayData.sessions}
+                            </div>
+                            <div className={`text-sm font-normal leading-none font-lexend ${
+                              dayData.isSelected ? 'text-white' : 'text-stone-700'
+                            }`}>
+                              sessions
+                            </div>
                           </div>
-                          <div className="text-xs text-gray-400 mt-1 font-lexend">
-                            {['3 sessions', '1 sessions', '3 sessions', '3 sessions', '1 sessions', '3 sessions', '1 sessions'][index]}
-                          </div>
-                        </div>
+                        </button>
                       ))}
                     </div>
+
+                    {/* Forward Arrow */}
+                    <button className="flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50">
+                      <ChevronRight className="w-6 h-6 text-black" />
+                    </button>
                   </div>
 
                   {/* Time Periods */}
