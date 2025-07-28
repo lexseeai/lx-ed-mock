@@ -559,7 +559,7 @@ export default function Index() {
                           <div className="flex flex-col items-start w-full gap-0.5">
                             <div className="flex justify-between items-center w-full">
                               <div className={`text-2xl font-black leading-none font-lexend transition-colors duration-200 ${
-                                dayData.isSelected
+                                isSelected
                                   ? 'text-white'
                                   : dayData.sessions === 0
                                     ? 'text-stone-400'
