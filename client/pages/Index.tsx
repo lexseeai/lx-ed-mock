@@ -433,7 +433,7 @@ export default function Index() {
 
                   {/* Toggle Switch */}
                   <div className="flex items-center justify-end">
-                    <div className="flex items-center gap-2 pr-14">
+                    <div className="flex items-center gap-2 mr-16">
                       <button
                         onClick={() => setHideEmptyDays(!hideEmptyDays)}
                         className={`relative w-9 h-5 rounded-full transition-colors ${
