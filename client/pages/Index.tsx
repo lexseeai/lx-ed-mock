@@ -552,7 +552,7 @@ export default function Index() {
                               }}
                             >
                           {/* Top section with date and today indicator */}
-                          <div className="flex flex-col items-start gap-1.5 w-full">
+                          <div className="flex flex-col items-start w-full">
                             <div className="flex justify-between items-center w-full">
                               <div className={`text-2xl font-black leading-none font-lexend transition-colors duration-200 ${
                                 dayData.isSelected
