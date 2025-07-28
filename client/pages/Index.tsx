@@ -806,6 +806,113 @@ export default function Index() {
           </div>
         </div>
       </div>
+
+      {/* Student Overlay Modal */}
+      {showStudentOverlay && selectedStudentId && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[1000]">
+          {/* Navigation Arrow - Left */}
+          <button
+            onClick={navigatePrevious}
+            disabled={!canNavigatePrevious()}
+            className={`absolute left-8 top-1/2 transform -translate-y-1/2 flex p-2.5 items-center justify-center rounded-full border border-stone-200 bg-white shadow-lg transition-opacity ${
+              canNavigatePrevious() ? 'hover:bg-stone-50' : 'opacity-50 cursor-not-allowed'
+            }`}
+          >
+            <ChevronLeft className={`w-6 h-6 ${
+              canNavigatePrevious() ? 'text-indigo-600' : 'text-stone-300'
+            }`} />
+          </button>
+
+          {/* Modal Content */}
+          <div className="bg-white rounded-lg border border-stone-200 shadow-xl max-w-2xl w-full mx-8 max-h-[90vh] overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-start justify-between p-6 border-b border-stone-200">
+              <div className="flex items-center gap-2">
+                <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
+                  <Avatar className="w-full h-full">
+                    <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
+                      {getSelectedStudent()?.name.charAt(0).toUpperCase()}
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+                <div className="flex flex-col">
+                  <h2 className="text-xl font-semibold text-stone-900 font-lexend leading-tight">
+                    {getSelectedStudent()?.name}
+                  </h2>
+                  {getSelectedStudent()?.sessionTime && (
+                    <div className="flex items-center gap-1 mt-1">
+                      <Bell className="w-4 h-4 text-stone-700" />
+                      <span className="text-stone-700 font-lexend text-sm">
+                        {getSelectedStudent()?.sessionTime}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <Button variant="outline" className="flex items-center gap-2">
+                  <MoreVertical className="w-4 h-4" />
+                  <span>Actions</span>
+                  <ChevronDown className="w-4 h-4" />
+                </Button>
+                <button onClick={handleExpandStudent} className="p-1 hover:bg-stone-100 rounded">
+                  <Maximize2 className="w-6 h-6 text-stone-700" />
+                </button>
+                <button onClick={() => setShowStudentOverlay(false)} className="p-1 hover:bg-stone-100 rounded">
+                  <X className="w-6 h-6 text-stone-700" />
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 space-y-6">
+              {/* Topics for next session */}
+              <div className="border border-stone-200 rounded-lg bg-stone-50 p-5">
+                <h3 className="text-xl font-bold text-stone-900 font-lexend mb-3">
+                  Topics for next session
+                </h3>
+                <div className="text-stone-900 font-lexend text-base leading-5 space-y-2">
+                  <div>1. Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.</div>
+                  <div>2. Apply 2D shape formulas in word problems to build real-world problem-solving skills.</div>
+                  <div>3. Introduce multi-step problems involving both perimeter/area and decimal rounding.</div>
+                </div>
+              </div>
+
+              {/* Session highlights */}
+              <div className="border border-stone-200 rounded-lg bg-stone-50 p-5">
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold text-stone-900 font-lexend">
+                    Session highlights
+                  </h3>
+                  <p className="text-xs text-stone-400 font-lexend mt-1">
+                    From the last 7 sessions
+                  </p>
+                </div>
+                <div className="text-stone-900 font-lexend text-base leading-5 space-y-2">
+                  <div>• Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.</div>
+                  <div>• Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.</div>
+                  <div>• Demonstrated improved accuracy in identifying decimal positions with visual support.</div>
+                  <div>• Made progress toward independent problem-solving with fewer rounding errors.</div>
+                  <div>• Joined the session late but used remaining time effectively to reinforce key math skills.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Arrow - Right */}
+          <button
+            onClick={navigateNext}
+            disabled={!canNavigateNext()}
+            className={`absolute right-8 top-1/2 transform -translate-y-1/2 flex p-2.5 items-center justify-center rounded-full border border-stone-200 bg-white shadow-lg transition-opacity ${
+              canNavigateNext() ? 'hover:bg-stone-50' : 'opacity-50 cursor-not-allowed'
+            }`}
+          >
+            <ChevronRight className={`w-6 h-6 ${
+              canNavigateNext() ? 'text-indigo-600' : 'text-stone-300'
+            }`} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
