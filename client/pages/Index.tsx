@@ -338,7 +338,7 @@ export default function Index() {
               )}
 
               {activeView === 'schedule' && (
-                <div className="space-y-6">
+                <div className="space-y-6 min-w-0 overflow-hidden">
                   {/* Calendar Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-4">
