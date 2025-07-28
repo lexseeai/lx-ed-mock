@@ -519,17 +519,12 @@ export default function Index() {
 
                           const isEmpty = dayData.sessions === 0;
 
-                          if (isEmpty && animationDirection === 'hiding') {
-                            // Empty days stay in place while fading out
+                          if (isEmpty) {
+                            // Empty days don't need transform - they fade in/out in place
                             return {};
                           }
 
-                          if (isEmpty && animationDirection === 'showing') {
-                            // Empty days appear in their final position
-                            return {};
-                          }
-
-                          // For non-empty days, calculate how many empty days before this one
+                          // For non-empty days, calculate how many empty days will be removed/added before this one
                           let emptyDaysBefore = 0;
                           for (let i = 0; i < originalIndex; i++) {
                             if (allDays[i].sessions === 0) {
@@ -538,13 +533,15 @@ export default function Index() {
                           }
 
                           if (animationDirection === 'hiding') {
-                            // Move left by the width of removed empty days
-                            const offsetPx = emptyDaysBefore * -104; // -(width + gap)
-                            return { transform: `translateX(${offsetPx}px)` };
+                            // When hiding: start at current position, end at left-shifted position
+                            // This means we need to end up moved left, so transform should be negative
+                            const finalOffsetPx = emptyDaysBefore * -104; // -(width + gap)
+                            return { transform: `translateX(${finalOffsetPx}px)` };
                           } else if (animationDirection === 'showing') {
-                            // Move right to make space for new empty days
-                            const offsetPx = emptyDaysBefore * 104; // width + gap
-                            return { transform: `translateX(${offsetPx}px)` };
+                            // When showing: start at left-shifted position, end at normal position
+                            // This means we start moved left and go back to 0, so we need to start negative
+                            const startOffsetPx = emptyDaysBefore * -104; // start left-shifted
+                            return { transform: `translateX(${startOffsetPx}px)` };
                           }
 
                           return {};
