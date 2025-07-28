@@ -273,9 +273,9 @@ export default function Index() {
     };
   };
 
-  const getOpenTasksStudents = () => {
+  const getSessionNotesStudents = () => {
     return mockStudents.filter(s => s.sessionReportDue).sort((a, b) => {
-      // Sort by session time for open tasks
+      // Sort by session time for session notes
       if (!a.sessionTime) return 1;
       if (!b.sessionTime) return -1;
       return a.sessionTime.localeCompare(b.sessionTime);
