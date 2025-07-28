@@ -498,17 +498,22 @@ export default function Index() {
                         };
 
                         const getMoveDistance = (dayData: any, originalIndex: number) => {
-                          if (dayData.sessions === 0) return 0;
+                          if (dayData.sessions === 0) {
+                            // Empty cards slide far left to go behind the nearest session card to their left
+                            return -200; // Fixed distance to slide behind
+                          }
 
-                          // Only move if there are empty cards to the left of this card
-                          let emptyCardsToLeft = 0;
-                          for (let i = 0; i < originalIndex; i++) {
+                          // For session cards: count consecutive empty cards immediately to the left
+                          let consecutiveEmptyToLeft = 0;
+                          for (let i = originalIndex - 1; i >= 0; i--) {
                             if (allDays[i].sessions === 0) {
-                              emptyCardsToLeft++;
+                              consecutiveEmptyToLeft++;
+                            } else {
+                              break; // Stop at first non-empty card
                             }
                           }
 
-                          return emptyCardsToLeft * -104; // Each card width + gap
+                          return consecutiveEmptyToLeft * -104; // Move by the number of consecutive empty cards
                         };
 
                         // Show all days during animation, filter after
