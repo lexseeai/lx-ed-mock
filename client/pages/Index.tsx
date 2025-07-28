@@ -461,22 +461,54 @@ export default function Index() {
                           { date: '12', day: 'Tue', sessions: 1, isToday: false, isSelected: false }
                         ];
 
-                        const getAnimationClass = (dayData: any, index: number) => {
+                        const getAnimationClass = (dayData: any, originalIndex: number) => {
                           const isEmpty = dayData.sessions === 0;
 
                           if (!isToggling) {
-                            return 'transition-all duration-300 ease-in-out';
+                            return 'day-card-base';
                           }
 
                           if (isEmpty) {
                             if (animationDirection === 'hiding') {
-                              return 'day-card-hiding transition-all duration-300 ease-in-out';
+                              return 'day-card-slide-behind';
                             } else if (animationDirection === 'showing') {
-                              return 'day-card-showing transition-all duration-300 ease-in-out';
+                              return 'day-card-emerge';
+                            }
+                          } else {
+                            // Non-empty cards move to fill gaps or make space
+                            if (animationDirection === 'hiding') {
+                              return 'day-card-fill-gap';
+                            } else if (animationDirection === 'showing') {
+                              return 'day-card-make-space';
                             }
                           }
 
-                          return 'transition-all duration-300 ease-in-out';
+                          return 'day-card-base';
+                        };
+
+                        const getZIndex = (dayData: any, originalIndex: number) => {
+                          const isEmpty = dayData.sessions === 0;
+
+                          if (isEmpty && isToggling && animationDirection === 'hiding') {
+                            return 1; // Empty cards go behind
+                          }
+
+                          // Earlier dates have higher z-index (leftmost has highest)
+                          return 50 - originalIndex;
+                        };
+
+                        const getMoveDistance = (dayData: any, originalIndex: number) => {
+                          if (dayData.sessions === 0) return 0;
+
+                          // Calculate how many empty cards are to the left
+                          let emptyCardsToLeft = 0;
+                          for (let i = 0; i < originalIndex; i++) {
+                            if (allDays[i].sessions === 0) {
+                              emptyCardsToLeft++;
+                            }
+                          }
+
+                          return emptyCardsToLeft * -104; // Each card width + gap
                         };
 
                         // Show all days during animation, filter after
