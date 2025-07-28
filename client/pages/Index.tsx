@@ -142,7 +142,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             onClick={() => setActiveView('all')}
           >
             <div className="flex items-center space-x-2">
-              <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-stone-600'}`} />
+              <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>All</span>}
             </div>
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white/50'}`}>14</span>}
@@ -335,7 +335,7 @@ export default function Index() {
 
                   {/* Calendar Picker */}
                   {showCalendarPicker && (
-                    <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-10 min-w-80">
+                    <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-50 min-w-80">
                       <div className="flex items-center justify-between mb-4">
                         <button
                           onClick={() => {
@@ -402,7 +402,7 @@ export default function Index() {
                   <div className="relative">
                     <Input
                       type="text"
-                      placeholder="Filter students"
+                      placeholder="Find session"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       className="w-48 md:w-64 h-9 min-w-0"
