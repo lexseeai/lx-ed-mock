@@ -556,7 +556,7 @@ export default function Index() {
                   </div>
 
                   {/* Toggle Switch */}
-                  <div className="flex items-center justify-end -mt-6">
+                  <div className="flex items-center justify-end" style={{marginTop: '8px'}}>
                     <div className="flex items-center gap-2 mr-16">
                       <button
                         onClick={() => {
