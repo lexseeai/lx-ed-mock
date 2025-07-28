@@ -437,7 +437,7 @@ export default function Index() {
                 </div>
               )}
 
-              {activeView === 'opentasks' && (
+              {activeView === 'sessionnotes' && (
                 <section>
                   <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
                     {getOpenTasksStudents().map((student) => (
