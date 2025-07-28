@@ -102,7 +102,7 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
         <div className="space-y-2">
           {!isCollapsed && (
             <div className="px-2">
-              <h2 className="text-xs font-medium text-stone-400 font-lexend uppercase tracking-wide">My students</h2>
+              <h2 className="text-xs font-medium text-white/80 font-lexend uppercase tracking-wide">My students</h2>
             </div>
           )}
 
