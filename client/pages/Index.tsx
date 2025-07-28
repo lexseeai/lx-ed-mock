@@ -319,27 +319,6 @@ export default function Index() {
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col min-w-0 overflow-hidden">
             {/* Header inside card */}
             <div className="px-6 py-4">
-              {/* Toggle Switch */}
-              <div className="flex items-center justify-end mb-3">
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setHideEmptyDays(!hideEmptyDays)}
-                    className={`relative w-9 h-5 rounded-full transition-colors ${
-                      hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-300'
-                    }`}
-                  >
-                    <div
-                      className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
-                        hideEmptyDays ? 'translate-x-4' : 'translate-x-0.5'
-                      }`}
-                    />
-                  </button>
-                  <span className="text-sm font-medium text-stone-900 font-lexend">
-                    Hide empty days
-                  </span>
-                </div>
-              </div>
-
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 relative" ref={calendarRef}>
                   <button
