@@ -381,7 +381,7 @@ export default function Index() {
                       ].map((dayData, index) => (
                         <button
                           key={dayData.date}
-                          className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-colors ${
+                          className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer transition-colors flex-shrink-0 ${
                             dayData.isSelected
                               ? 'border-indigo-600 bg-indigo-600'
                               : 'border-stone-200 bg-white hover:bg-stone-50'
