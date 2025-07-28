@@ -291,7 +291,7 @@ export default function Index() {
       <Sidebar activeView={activeView} setActiveView={setActiveView} />
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col h-full">
+      <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
         {/* Content */}
         <div className="flex-1 p-3 h-full">
           {/* My students panel card */}
