@@ -283,7 +283,7 @@ export default function Index() {
   const allStudents = mockStudents.slice(9); // Show the Jayden students in "All students"
 
   return (
-    <div className="h-screen bg-stone-100 flex">
+    <div className="h-screen bg-indigo-800 flex">
       <Sidebar activeView={activeView} setActiveView={setActiveView} />
 
       {/* Main Content */}
