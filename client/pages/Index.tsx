@@ -21,25 +21,33 @@ interface Student {
 }
 
 const mockStudents: Student[] = [
-  // Students with upcoming sessions
-  { id: "1", name: "Alex", subject: "Math Tutoring", upcomingSession: "9:00 AM, today", sessionTime: "9:00am today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(), sessionReportCompleted: false },
-  { id: "2", name: "Emma", subject: "Science Tutoring", upcomingSession: "3:00 PM, today", sessionTime: "3:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(), sessionReportCompleted: false },
-  { id: "3", name: "Marcus", subject: "English Tutoring", upcomingSession: "7:00 PM, today", sessionTime: "7:00pm today", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(), sessionReportCompleted: true },
+  // July 21st - 3 sessions: 2 done, 1 late
+  { id: "1", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 21", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 21), sessionReportCompleted: true }, // Done
+  { id: "2", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 21", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(2025, 6, 21), sessionReportCompleted: true }, // Done
+  { id: "3", name: "Marcus", subject: "English Tutoring", sessionTime: "7:00pm, July 21", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 21), sessionReportCompleted: false }, // Late
 
-  // Students with past sessions (different completion states)
-  { id: "4", name: "Sofia", subject: "History Tutoring", sessionTime: "10:30am, Tuesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia", sessionDate: new Date(Date.now() - 24 * 60 * 60 * 1000), sessionReportCompleted: false }, // 1 day ago - Active
-  { id: "5", name: "Liam", subject: "Math Tutoring", sessionTime: "9:00am, Friday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(Date.now() - 72 * 60 * 60 * 1000), sessionReportCompleted: false }, // 3 days ago - Late
-  { id: "6", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "1:30pm, Monday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(Date.now() - 12 * 60 * 60 * 1000), sessionReportCompleted: true }, // 12 hours ago - Done
-  { id: "7", name: "Noah", subject: "Physics Tutoring", sessionTime: "4:45pm, Wednesday", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Noah", sessionDate: new Date(Date.now() + 24 * 60 * 60 * 1000), sessionReportCompleted: false }, // Future - Waiting
+  // July 23rd - 1 session: late
+  { id: "4", name: "Sofia", subject: "History Tutoring", sessionTime: "10:30am, July 23", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia", sessionDate: new Date(2025, 6, 23), sessionReportCompleted: false }, // Late
 
-  // All students (additional)
-  { id: "10", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, Monday", sessionDate: new Date(Date.now() + 48 * 60 * 60 * 1000), sessionReportCompleted: false },
-  { id: "11", name: "Maya", subject: "Biology Tutoring", sessionTime: "3:00pm, Thursday", sessionDate: new Date(Date.now() - 96 * 60 * 60 * 1000), sessionReportCompleted: false }, // 4 days ago - Late
-  { id: "12", name: "Daniel", subject: "Art Tutoring", sessionDate: new Date(Date.now() + 72 * 60 * 60 * 1000), sessionReportCompleted: false },
-  { id: "13", name: "Zoe", subject: "Music Tutoring", sessionTime: "3:00pm, Tuesday", sessionDate: new Date(Date.now() - 36 * 60 * 60 * 1000), sessionReportCompleted: true }, // 1.5 days ago - Done
-  { id: "14", name: "Oliver", subject: "Geography Tutoring", sessionTime: "8:00pm, Friday", sessionDate: new Date(Date.now() + 120 * 60 * 60 * 1000), sessionReportCompleted: false },
-  { id: "15", name: "Luna", subject: "Literature Tutoring", sessionDate: new Date(Date.now() - 60 * 60 * 60 * 1000), sessionReportCompleted: false }, // 2.5 days ago - Late
-  { id: "16", name: "Kai", subject: "Computer Science", sessionTime: "8:00pm, Wednesday", sessionDate: new Date(Date.now() + 24 * 60 * 60 * 1000), sessionReportCompleted: false },
+  // July 24th - 2 sessions: both late
+  { id: "5", name: "Liam", subject: "Math Tutoring", sessionTime: "9:00am, July 24", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 24), sessionReportCompleted: false }, // Late
+  { id: "6", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "1:30pm, July 24", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 6, 24), sessionReportCompleted: false }, // Late
+
+  // July 28th - 3 sessions: all done (before July 29th cutoff)
+  { id: "7", name: "Noah", subject: "Physics Tutoring", sessionTime: "9:00am, July 28", sessionReportDue: true, avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Noah", sessionDate: new Date(2025, 6, 28), sessionReportCompleted: true }, // Done
+  { id: "8", name: "Ava", subject: "Chemistry Tutoring", sessionTime: "1:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ava", sessionDate: new Date(2025, 6, 28), sessionReportCompleted: true }, // Done
+  { id: "9", name: "Lucas", subject: "Biology Tutoring", sessionTime: "3:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Lucas", sessionDate: new Date(2025, 6, 28), sessionReportCompleted: true }, // Done
+
+  // July 29th and forward - all waiting
+  { id: "10", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, July 29", sessionDate: new Date(2025, 6, 29), sessionReportCompleted: false }, // Waiting
+  { id: "11", name: "Maya", subject: "Biology Tutoring", sessionTime: "3:00pm, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
+  { id: "12", name: "Daniel", subject: "Art Tutoring", sessionTime: "11:00am, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
+  { id: "13", name: "Zoe", subject: "Music Tutoring", sessionTime: "3:00pm, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
+
+  // August sessions - all waiting
+  { id: "14", name: "Oliver", subject: "Geography Tutoring", sessionTime: "8:00pm, August 4", sessionDate: new Date(2025, 7, 4), sessionReportCompleted: false }, // Waiting
+  { id: "15", name: "Luna", subject: "Literature Tutoring", sessionTime: "2:00pm, August 7", sessionDate: new Date(2025, 7, 7), sessionReportCompleted: false }, // Waiting
+  { id: "16", name: "Kai", subject: "Computer Science", sessionTime: "8:00pm, August 8", sessionDate: new Date(2025, 7, 8), sessionReportCompleted: false }, // Waiting
 ];
 
 function getSessionReportStatus(student: Student) {
