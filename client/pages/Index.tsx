@@ -42,10 +42,48 @@ const mockStudents: Student[] = [
   { id: "16", name: "Kai", subject: "Computer Science", sessionTime: "8:00pm, Wednesday", sessionDate: new Date(Date.now() + 24 * 60 * 60 * 1000), sessionReportCompleted: false },
 ];
 
+function getSessionReportStatus(student: Student) {
+  if (!student.sessionDate) return 'waiting';
+
+  const now = new Date();
+  const sessionDate = student.sessionDate;
+  const hoursSinceSession = (now.getTime() - sessionDate.getTime()) / (1000 * 60 * 60);
+
+  // If session hasn't happened yet
+  if (sessionDate > now) return 'waiting';
+
+  // If session report is completed
+  if (student.sessionReportCompleted) return 'done';
+
+  // If session was more than 48 hours ago
+  if (hoursSinceSession > 48) return 'late';
+
+  // If session was within 48 hours and not completed
+  return 'active';
+}
+
+function getSessionBadgeConfig(status: string) {
+  switch (status) {
+    case 'done':
+      return { icon: CircleCheck, color: 'text-green-500', bgColor: 'bg-green-50', borderColor: 'border-green-200' };
+    case 'active':
+      return { icon: NotebookPen, color: 'text-indigo-600', bgColor: 'bg-indigo-50', borderColor: 'border-indigo-200' };
+    case 'late':
+      return { icon: Timer, color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' };
+    case 'waiting':
+    default:
+      return { icon: Loader2, color: 'text-stone-400', bgColor: 'bg-stone-50', borderColor: 'border-stone-200' };
+  }
+}
+
 function StudentCard({ student, onClick, scheduleView = false }: { student: Student; onClick: () => void; scheduleView?: boolean }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
   };
+
+  const sessionStatus = getSessionReportStatus(student);
+  const badgeConfig = getSessionBadgeConfig(sessionStatus);
+  const BadgeIcon = badgeConfig.icon;
 
   return (
     <Card
