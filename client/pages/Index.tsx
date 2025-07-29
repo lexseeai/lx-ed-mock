@@ -16,6 +16,8 @@ interface Student {
   sessionTime?: string;
   openTasks?: number;
   sessionReportDue?: boolean;
+  sessionDate?: Date;
+  sessionReportCompleted?: boolean;
 }
 
 const mockStudents: Student[] = [
