@@ -265,23 +265,7 @@ export default function Index() {
   const [isToggling, setIsToggling] = useState(false);
   const [animationDirection, setAnimationDirection] = useState<'hiding' | 'showing' | null>(null);
   const [selectedDayDate, setSelectedDayDate] = useState('28'); // Track selected day
-  const [currentWeekStart, setCurrentWeekStart] = useState(() => {
-    // Find the Monday of the week containing today (28th)
-    const allDays = [
-      // July 2025 - partial data for initialization
-      { date: '21', fullDate: '2025-07-21', day: 'Mon', sessions: 3, isToday: false, month: 'July' },
-      { date: '22', fullDate: '2025-07-22', day: 'Tue', sessions: 0, isToday: false, month: 'July' },
-      { date: '23', fullDate: '2025-07-23', day: 'Wed', sessions: 1, isToday: false, month: 'July' },
-      { date: '24', fullDate: '2025-07-24', day: 'Thu', sessions: 2, isToday: false, month: 'July' },
-      { date: '25', fullDate: '2025-07-25', day: 'Fri', sessions: 0, isToday: false, month: 'July' },
-      { date: '26', fullDate: '2025-07-26', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
-      { date: '27', fullDate: '2025-07-27', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
-      { date: '28', fullDate: '2025-07-28', day: 'Mon', sessions: 3, isToday: true, month: 'July' },
-    ];
-    const todayIndex = allDays.findIndex(day => day.date === '28');
-    // Since today (28th) is Monday, the Monday index is the same
-    return todayIndex;
-  }); // Starting index for week view
+  const [currentWeekStart, setCurrentWeekStart] = useState(27); // July 28th is at index 27 (Monday)
   const [showStudentOverlay, setShowStudentOverlay] = useState(false);
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
