@@ -445,55 +445,38 @@ export default function Index() {
     ];
   };
 
-  const navigateWeek = (direction: 'prev' | 'next') => {
+  const navigateTime = (direction: 'prev' | 'next') => {
     const allDays = getAllDaysData();
-    const currentSelectedDay = allDays.find(day => day.date === selectedDayDate);
+    const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
 
-    if (!currentSelectedDay) return;
+    if (currentIndex === -1) return;
 
     if (direction === 'prev') {
-      // Find previous Thursday or same weekday 7 days back
-      let targetIndex = -1;
-      const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+      // Scroll back by approximately 7 days in the view, but move selection more granularly
+      const newWeekStart = Math.max(0, currentWeekStart - 7);
+      setCurrentWeekStart(newWeekStart);
 
-      if (currentSelectedDay.day === 'Thu') {
-        // Find previous Thursday
-        for (let i = currentIndex - 1; i >= 0; i--) {
-          if (allDays[i].day === 'Thu') {
-            targetIndex = i;
-            break;
-          }
-        }
-      } else {
-        // Go back 7 days (1 week)
-        targetIndex = Math.max(0, currentIndex - 7);
-      }
+      // Move selected day to a logical position in the new view (first day with sessions if available)
+      const newViewDays = allDays.slice(newWeekStart, newWeekStart + 14);
+      const firstDayWithSessions = newViewDays.find(day => day.sessions > 0);
+      const targetDay = firstDayWithSessions || newViewDays[Math.min(3, newViewDays.length - 1)];
 
-      if (targetIndex >= 0) {
-        setSelectedDayDate(allDays[targetIndex].date);
-        setCurrentWeekStart(Math.max(0, targetIndex - 3)); // Position selected day nicely in view
+      if (targetDay) {
+        setSelectedDayDate(targetDay.date);
       }
     } else {
-      // Find next Thursday or same weekday 7 days forward
-      let targetIndex = -1;
-      const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+      // Scroll forward by approximately 7 days in the view
+      const maxStart = Math.max(0, allDays.length - 14);
+      const newWeekStart = Math.min(maxStart, currentWeekStart + 7);
+      setCurrentWeekStart(newWeekStart);
 
-      if (currentSelectedDay.day === 'Thu') {
-        // Find next Thursday
-        for (let i = currentIndex + 1; i < allDays.length; i++) {
-          if (allDays[i].day === 'Thu') {
-            targetIndex = i;
-            break;
-          }
-        }
-      } else {
-        // Go forward 7 days (1 week)
-        targetIndex = Math.min(allDays.length - 1, currentIndex + 7);
-      }
+      // Move selected day to a logical position in the new view
+      const newViewDays = allDays.slice(newWeekStart, newWeekStart + 14);
+      const firstDayWithSessions = newViewDays.find(day => day.sessions > 0);
+      const targetDay = firstDayWithSessions || newViewDays[Math.min(3, newViewDays.length - 1)];
 
-      if (targetIndex >= 0) {
-        setSelectedDayDate(allDays[targetIndex].date);
-        setCurrentWeekStart(Math.max(0, targetIndex - 3)); // Position selected day nicely in view
+      if (targetDay) {
+        setSelectedDayDate(targetDay.date);
       }
     }
   };
