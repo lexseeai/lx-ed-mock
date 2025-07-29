@@ -750,24 +750,31 @@ export default function Index() {
                                              date.getMonth() === selectedDate.getMonth() &&
                                              date.getFullYear() === selectedDate.getFullYear();
                             const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
+                            const sessionCount = getSessionCountForDate(date);
+                            const hasNoSessions = sessionCount === 0;
+                            const shouldGrayOut = hideEmptyDays && hasNoSessions && isCurrentMonth;
 
                             return (
-                              <button
-                                key={i}
-                                onClick={() => {
-                                  setSelectedDate(date);
-                                  jumpToDate(date);
-                                }}
-                                className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
-                                  isSelected
-                                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                                    : isCurrentMonth
-                                      ? 'text-gray-900'
-                                      : 'text-gray-400'
-                                }`}
-                              >
-                                {date.getDate()}
-                              </button>
+                              <div key={i} className="flex flex-col items-center">
+                                <button
+                                  onClick={() => {
+                                    setSelectedDate(date);
+                                    jumpToDate(date);
+                                  }}
+                                  className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
+                                    isSelected
+                                      ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                      : shouldGrayOut
+                                        ? 'text-gray-400'
+                                        : isCurrentMonth
+                                          ? 'text-gray-900'
+                                          : 'text-gray-400'
+                                  }`}
+                                >
+                                  {date.getDate()}
+                                </button>
+                                {isCurrentMonth && renderSessionDots(sessionCount)}
+                              </div>
                             );
                           })}
                         </div>
