@@ -775,14 +775,16 @@ export default function Index() {
                                       ? 'text-stone-200'
                                       : isCurrentMonth
                                         ? 'text-stone-700'
-                                        : 'text-stone-400'
+                                        : sessionCount > 0
+                                          ? 'text-stone-400'
+                                          : 'text-stone-200'
                                 }`}
                               >
                                 <div className="leading-none">
                                   {date.getDate()}
                                 </div>
-                                {isCurrentMonth && sessionCount > 0 ?
-                                  renderSessionDots(sessionCount, isSelected) :
+                                {sessionCount > 0 ?
+                                  renderSessionDots(sessionCount, isSelected, isCurrentMonth) :
                                   <div className="h-1.5"></div>
                                 }
                               </button>
