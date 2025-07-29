@@ -1117,7 +1117,7 @@ export default function Index() {
                         placeholder="Search notes"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-14 pr-14 h-11 font-readex text-base"
+                        className="pl-14 pr-14 h-11 font-readex text-base rounded-full overflow-hidden"
                       />
                     </div>
                   </div>
