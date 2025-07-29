@@ -213,18 +213,21 @@ function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveV
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white/50'}`}>14</span>}
           </div>
 
-          {/* Schedule */}
+          {/* This week */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg cursor-pointer h-8 leading-6 ${
               activeView === 'schedule' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
-            onClick={() => setActiveView('schedule')}
+            onClick={() => {
+              setActiveView('schedule');
+              selectToday(); // Navigate to this week (July 28)
+            }}
           >
             <div className="flex items-center space-x-2">
               <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>This week</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>3</span>}
+            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>}
           </div>
 
           {/* Session Notes */}
