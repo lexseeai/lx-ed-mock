@@ -671,7 +671,7 @@ export default function Index() {
     }
 
     return (
-      <div className="flex justify-center gap-0.5 -mt-0.5">
+      <div className="flex justify-center gap-0.5 mt-0.5">
         {Array.from({ length: dotCount }, (_, i) => (
           <div key={i} className={`w-1 h-1 ${dotColor} rounded-full`}></div>
         ))}
