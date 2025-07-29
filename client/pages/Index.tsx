@@ -1024,26 +1024,23 @@ export default function Index() {
               </div>
             )}
 
-            {/* Header for All and Session Notes views */}
-            {(activeView === 'all' || activeView === 'sessionnotes') && (
+            {/* Header for All Students view */}
+            {activeView === 'all' && (
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col">
                     <h1 className="text-3xl font-bold text-stone-800 font-lexend pt-1">
-                      {activeView === 'all' ? 'All Students' : 'Session Notes'}
+                      All Students
                     </h1>
                     <p className="text-lg text-gray-600 font-lexend mt-1">
-                      {activeView === 'all'
-                        ? `${getAllStudentsSorted().length} students in your workspace`
-                        : `${getSessionNotesStudents().length} students with pending session notes`
-                      }
+                      {getAllStudentsSorted().length} students in your workspace
                     </p>
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="relative">
                       <Input
                         type="text"
-                        placeholder={activeView === 'all' ? "Find student" : "Find session"}
+                        placeholder="Find student"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-48 md:w-64 h-9 min-w-0"
@@ -1052,6 +1049,72 @@ export default function Index() {
                     <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
                       <b>+</b>
                     </Button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Header for Session Notes view */}
+            {activeView === 'sessionnotes' && (
+              <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-end gap-0.5 pt-4">
+                    <h1 className="text-3xl font-bold text-stone-800 font-lexend">
+                      Session notes
+                    </h1>
+                  </div>
+                  <div className="flex items-center w-72">
+                    <div className="relative flex-1">
+                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      <Input
+                        type="text"
+                        placeholder="Search notes"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-14 pr-14 h-11 font-readex text-base"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tab Navigation */}
+                <div className="flex justify-center">
+                  <div className="flex p-1.5 border border-stone-200 rounded-full bg-white">
+                    <button
+                      onClick={() => scrollToSection('in-progress')}
+                      className={`flex px-3 py-1.5 rounded-full text-base font-medium font-lexend transition-all ${
+                        activeTab === 'in-progress'
+                          ? 'bg-indigo-600 text-white shadow-sm'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      In progress
+                    </button>
+                    <button
+                      onClick={() => scrollToSection('due-soon')}
+                      className={`flex px-3 py-1.5 rounded-full text-base font-medium font-lexend transition-all ${
+                        activeTab === 'due-soon'
+                          ? 'bg-indigo-600 text-white shadow-sm'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      Due soon
+                    </button>
+                    <button
+                      onClick={() => scrollToSection('submitted')}
+                      className={`flex px-3 py-1.5 rounded-full text-base font-medium font-lexend transition-all ${
+                        activeTab === 'submitted'
+                          ? 'bg-indigo-600 text-white shadow-sm'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      Submitted
+                    </button>
                   </div>
                 </div>
               </div>
