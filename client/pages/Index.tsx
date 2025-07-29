@@ -651,6 +651,37 @@ export default function Index() {
     });
   };
 
+  // Helper functions to categorize session notes by status
+  const getInProgressNotes = () => {
+    return mockStudents
+      .filter(student => getSessionReportStatus(student) === 'active')
+      .sort((a, b) => {
+        // Sort by most recent session date first
+        if (!a.sessionDate || !b.sessionDate) return 0;
+        return b.sessionDate.getTime() - a.sessionDate.getTime();
+      });
+  };
+
+  const getDueSoonNotes = () => {
+    return mockStudents
+      .filter(student => getSessionReportStatus(student) === 'late')
+      .sort((a, b) => {
+        // Sort by most recent session date first
+        if (!a.sessionDate || !b.sessionDate) return 0;
+        return b.sessionDate.getTime() - a.sessionDate.getTime();
+      });
+  };
+
+  const getSubmittedNotes = () => {
+    return mockStudents
+      .filter(student => getSessionReportStatus(student) === 'done')
+      .sort((a, b) => {
+        // Sort by most recent session date first
+        if (!a.sessionDate || !b.sessionDate) return 0;
+        return b.sessionDate.getTime() - a.sessionDate.getTime();
+      });
+  };
+
   // Helper function to get session count for a specific date
   const getSessionCountForDate = (date: Date) => {
     const dateStr = date.getDate().toString();
