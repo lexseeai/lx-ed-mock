@@ -160,7 +160,7 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
           <div className="flex items-center gap-1 px-1.5 py-0.5 border border-stone-200 rounded bg-white">
             <BadgeIcon className={`w-3 h-3 ${badgeConfig.color}`} />
             <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-              Session report
+              {(sessionStatus === 'waiting' || sessionStatus === 'active') ? 'Session notes' : 'Session report'}
             </span>
           </div>
         </div>
