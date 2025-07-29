@@ -1050,7 +1050,7 @@ export default function Index() {
             {/* Content inside card - Different margins for different views */}
             <div className={`${
               activeView === 'schedule'
-                ? 'px-4 pb-6 pt-0'
+                ? 'pl-0 pr-4 pb-6 pt-0'
                 : 'px-8 pb-8 pt-4'
             } space-y-6 flex-1 overflow-y-auto`}>
               {activeView === 'all' && (
