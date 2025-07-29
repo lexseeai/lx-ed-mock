@@ -641,6 +641,37 @@ export default function Index() {
     });
   };
 
+  // Helper function to get session count for a specific date
+  const getSessionCountForDate = (date: Date) => {
+    const dateStr = date.getDate().toString();
+    const monthStr = date.toLocaleDateString('en-US', { month: 'long' });
+
+    // Find matching day in our calendar data
+    const allDays = getAllDaysData();
+    const matchingDay = allDays.find(day =>
+      day.date === dateStr && day.month === monthStr
+    );
+
+    return matchingDay ? matchingDay.sessions : 0;
+  };
+
+  // Helper function to render session dots
+  const renderSessionDots = (sessionCount: number) => {
+    if (sessionCount === 0) return null;
+
+    let dotCount = 1;
+    if (sessionCount >= 2 && sessionCount <= 4) dotCount = 2;
+    if (sessionCount >= 5) dotCount = 3;
+
+    return (
+      <div className="flex justify-center gap-0.5 mt-1">
+        {Array.from({ length: dotCount }, (_, i) => (
+          <div key={i} className="w-1 h-1 bg-indigo-600 rounded-full"></div>
+        ))}
+      </div>
+    );
+  };
+
   const studentsWithUpcomingSessions = mockStudents.filter(s => s.upcomingSession);
   const studentsWithOpenTasks = mockStudents.filter(s => s.sessionReportDue);
   const allStudents = mockStudents.slice(9); // Show the Jayden students in "All students"
