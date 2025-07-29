@@ -441,6 +441,13 @@ export default function Index() {
 
   const getCurrentWeek = () => {
     const allDays = getAllDaysData();
+
+    // Use currentWeekStart if it's set, otherwise calculate from selectedDayDate
+    if (currentWeekStart >= 0 && currentWeekStart < allDays.length) {
+      return allDays.slice(currentWeekStart, currentWeekStart + 7);
+    }
+
+    // Fallback: find by selectedDayDate
     const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
 
     if (currentIndex === -1) return allDays.slice(0, 7);
