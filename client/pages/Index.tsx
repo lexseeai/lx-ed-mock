@@ -1444,8 +1444,8 @@ export default function Index() {
             </button>
 
             {/* Assist */}
-            <button className="flex items-center justify-center w-6 h-6 hover:bg-stone-50 rounded transition-colors">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button className="flex items-center justify-center w-10 h-10 hover:bg-stone-50 rounded-lg transition-colors">
+              <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_6300_8539)">
                   <path d="M16.2301 2.73009L15.2701 1.77009C15.1857 1.68483 15.0853 1.61715 14.9745 1.57095C14.8638 1.52476 14.7451 1.50098 14.6251 1.50098C14.5051 1.50098 14.3864 1.52476 14.2757 1.57095C14.1649 1.61715 14.0645 1.68483 13.9801 1.77009L1.77009 13.9801C1.68483 14.0645 1.61715 14.1649 1.57095 14.2757C1.52476 14.3864 1.50098 14.5051 1.50098 14.6251C1.50098 14.7451 1.52476 14.8638 1.57095 14.9745C1.61715 15.0853 1.68483 15.1857 1.77009 15.2701L2.73009 16.2301C2.81396 16.3163 2.91425 16.3848 3.02503 16.4315C3.13581 16.4783 3.25484 16.5024 3.37509 16.5024C3.49535 16.5024 3.61438 16.4783 3.72516 16.4315C3.83594 16.3848 3.93623 16.3163 4.02009 16.2301L16.2301 4.02009C16.3163 3.93623 16.3848 3.83594 16.4315 3.72516C16.4783 3.61438 16.5024 3.49535 16.5024 3.37509C16.5024 3.25484 16.4783 3.13581 16.4315 3.02503C16.3848 2.91425 16.3163 2.81396 16.2301 2.73009Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M10.5 5.25L12.75 7.5" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1465,8 +1465,8 @@ export default function Index() {
             </button>
 
             {/* New Student */}
-            <button className="flex items-center justify-center w-6 h-6 hover:bg-stone-50 rounded transition-colors">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button className="flex items-center justify-center w-10 h-10 hover:bg-stone-50 rounded-lg transition-colors">
+              <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.5 15.7503C1.49994 14.5956 1.8331 13.4653 2.45951 12.4952C3.08592 11.5252 3.97896 10.7564 5.03145 10.2813C6.08394 9.80625 7.25118 9.64496 8.39307 9.81684C9.53496 9.98872 10.603 10.4865 11.469 11.2503" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M7.5 9.75C9.57107 9.75 11.25 8.07107 11.25 6C11.25 3.92893 9.57107 2.25 7.5 2.25C5.42893 2.25 3.75 3.92893 3.75 6C3.75 8.07107 5.42893 9.75 7.5 9.75Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M14.25 12V16.5" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1475,10 +1475,10 @@ export default function Index() {
             </button>
 
             {/* Vertical Divider */}
-            <div className="w-px h-7 bg-stone-200"></div>
+            <div className="w-px h-8 bg-stone-200"></div>
 
             {/* Search */}
-            <button className="flex items-center justify-center w-6 h-6 hover:bg-stone-50 rounded transition-colors">
+            <button className="flex items-center justify-center w-10 h-10 hover:bg-stone-50 rounded-lg transition-colors">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.7501 15.7501L12.4951 12.4951" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
