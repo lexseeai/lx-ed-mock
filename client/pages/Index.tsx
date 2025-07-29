@@ -662,7 +662,7 @@ export default function Index() {
                   <div className="flex flex-col">
                     <div className="flex items-center space-x-2 relative" ref={calendarRef}>
                       <button
-                        className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1"
+                        className="flex items-center space-x-2 hover:bg-stone-100 rounded pr-2 pb-1"
                         onClick={() => setShowCalendarPicker(!showCalendarPicker)}
                       >
                       <h1 className="text-3xl font-bold text-gray-900 font-lexend">
