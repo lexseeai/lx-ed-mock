@@ -1114,7 +1114,7 @@ export default function Index() {
 
               {activeView === 'sessionnotes' && (
                 <section>
-                  <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-3">
+                  <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
                     {getSessionNotesStudents().map((student) => (
                       <StudentCard
                         key={student.id}
