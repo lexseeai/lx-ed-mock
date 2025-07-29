@@ -275,7 +275,15 @@ export default function Index() {
   // Sync selectedDate when selectedDayDate changes
   useEffect(() => {
     const allDays = getAllDaysData();
-    const selectedDay = allDays.find(day => day.date === selectedDayDate);
+
+    // First try to find the day in the current week context
+    const currentWeekDays = getCurrentWeek();
+    let selectedDay = currentWeekDays.find(day => day.date === selectedDayDate);
+
+    // If not found in current week, fall back to searching all days
+    if (!selectedDay) {
+      selectedDay = allDays.find(day => day.date === selectedDayDate);
+    }
 
     if (selectedDay) {
       // Parse the full date and create a proper Date object
@@ -283,7 +291,7 @@ export default function Index() {
       const newSelectedDate = new Date(year, month - 1, date); // month is 0-indexed
       setSelectedDate(newSelectedDate);
     }
-  }, [selectedDayDate]);
+  }, [selectedDayDate, currentWeekStart]);
 
   // Close calendar picker when clicking outside
   useEffect(() => {
