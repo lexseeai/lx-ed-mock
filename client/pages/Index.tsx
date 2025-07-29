@@ -698,10 +698,10 @@ export default function Index() {
                         className="flex items-center space-x-2 hover:bg-stone-100 rounded pr-2 pb-1"
                         onClick={() => setShowCalendarPicker(!showCalendarPicker)}
                       >
-                      <h1 className="text-3xl font-bold text-gray-900 font-lexend">
+                      <h1 className="text-3xl font-bold text-stone-800 font-lexend">
                         {getCurrentMondayMonth()} 2025
                       </h1>
-                      <ChevronDown className="w-4 h-4 text-gray-600" />
+                      <ChevronDown className="w-6 h-6 text-black" />
                       </button>
 
                       {/* Calendar Picker */}
