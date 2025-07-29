@@ -640,10 +640,7 @@ export default function Index() {
                       {/* Today button */}
                       <div className="flex justify-center mb-4">
                         <button
-                          onClick={() => {
-                            setSelectedDate(new Date());
-                            setShowCalendarPicker(false);
-                          }}
+                          onClick={selectToday}
                           className="px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700 font-lexend"
                         >
                           Today
