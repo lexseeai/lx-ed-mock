@@ -656,19 +656,14 @@ export default function Index() {
   };
 
   // Helper function to render session dots
-  const renderSessionDots = (sessionCount: number, isSelected: boolean = false, isCurrentMonth: boolean = true) => {
+  const renderSessionDots = (sessionCount: number, isSelected: boolean = false) => {
     if (sessionCount === 0) return null;
 
     let dotCount = 1;
     if (sessionCount >= 2 && sessionCount <= 4) dotCount = 2;
     if (sessionCount >= 5) dotCount = 3;
 
-    let dotColor = 'bg-stone-300'; // Default for current month
-    if (isSelected) {
-      dotColor = 'bg-white';
-    } else if (!isCurrentMonth) {
-      dotColor = 'bg-stone-400'; // Non-active months use stone-400
-    }
+    const dotColor = isSelected ? 'bg-white' : 'bg-stone-300';
 
     return (
       <div className="flex justify-center gap-0.5 mt-0.5">
@@ -775,16 +770,14 @@ export default function Index() {
                                       ? 'text-stone-200'
                                       : isCurrentMonth
                                         ? 'text-stone-700'
-                                        : sessionCount > 0
-                                          ? 'text-stone-400'
-                                          : 'text-stone-200'
+                                        : 'text-stone-400'
                                 }`}
                               >
                                 <div className="leading-none">
                                   {date.getDate()}
                                 </div>
-                                {sessionCount > 0 ?
-                                  renderSessionDots(sessionCount, isSelected, isCurrentMonth) :
+                                {isCurrentMonth && sessionCount > 0 ?
+                                  renderSessionDots(sessionCount, isSelected) :
                                   <div className="h-1.5"></div>
                                 }
                               </button>
@@ -1259,7 +1252,7 @@ export default function Index() {
                 <div className="text-stone-900 font-lexend text-base leading-5 space-y-2">
                   <div className="pl-4 -indent-4">• Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.</div>
                   <div className="pl-4 -indent-4">• Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.</div>
-                  <div className="pl-4 -indent-4">��� Demonstrated improved accuracy in identifying decimal positions with visual support.</div>
+                  <div className="pl-4 -indent-4">• Demonstrated improved accuracy in identifying decimal positions with visual support.</div>
                   <div className="pl-4 -indent-4">• Made progress toward independent problem-solving with fewer rounding errors.</div>
                   <div className="pl-4 -indent-4">• Joined the session late but used remaining time effectively to reinforce key math skills.</div>
                 </div>
