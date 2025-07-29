@@ -666,7 +666,7 @@ export default function Index() {
     const dotColor = isSelected ? 'bg-white' : 'bg-stone-300';
 
     return (
-      <div className="flex justify-center gap-0.5 mt-0.5">
+      <div className="flex justify-center gap-0.5 -mt-1">
         {Array.from({ length: dotCount }, (_, i) => (
           <div key={i} className={`w-1 h-1 ${dotColor} rounded-full`}></div>
         ))}
