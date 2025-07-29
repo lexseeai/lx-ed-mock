@@ -747,11 +747,11 @@ export default function Index() {
 
                         // Show all days during animation, filter after
                         const visibleDays = isToggling
-                          ? allDays
-                          : allDays.filter(dayData => !hideEmptyDays || dayData.sessions > 0);
+                          ? visibleWindow
+                          : visibleWindow.filter(dayData => !hideEmptyDays || dayData.sessions > 0);
 
                         return visibleDays.map((dayData, index) => {
-                          const originalIndex = allDays.findIndex(day => day.date === dayData.date);
+                          const originalIndex = visibleWindow.findIndex(day => day.date === dayData.date);
                           const moveDistance = getMoveDistance(dayData, originalIndex);
 
                           const isSelected = selectedDayDate === dayData.date;
