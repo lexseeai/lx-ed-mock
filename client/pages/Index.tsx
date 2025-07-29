@@ -65,14 +65,14 @@ function getSessionReportStatus(student: Student) {
 function getSessionBadgeConfig(status: string) {
   switch (status) {
     case 'done':
-      return { icon: CircleCheck, color: 'text-green-500', bgColor: 'bg-green-50', borderColor: 'border-green-200' };
+      return { icon: CircleCheck, color: 'text-green-500' };
     case 'active':
-      return { icon: NotebookPen, color: 'text-indigo-600', bgColor: 'bg-indigo-50', borderColor: 'border-indigo-200' };
+      return { icon: NotebookPen, color: 'text-indigo-600' };
     case 'late':
-      return { icon: Timer, color: 'text-pink-600', bgColor: 'bg-pink-50', borderColor: 'border-pink-200' };
+      return { icon: Timer, color: 'text-pink-600' };
     case 'waiting':
     default:
-      return { icon: Loader2, color: 'text-stone-400', bgColor: 'bg-stone-50', borderColor: 'border-stone-200' };
+      return { icon: Loader, color: 'text-stone-400' };
   }
 }
 
