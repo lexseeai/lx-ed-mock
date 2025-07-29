@@ -786,7 +786,7 @@ export default function Index() {
 
                         {/* Hide empty days toggle */}
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-lexend text-white">Hide empty days</span>
+                          <span className="text-sm font-lexend text-gray-700">Hide empty days</span>
                           <button
                             onClick={() => {
                               if (isToggling) return; // Prevent rapid clicking
