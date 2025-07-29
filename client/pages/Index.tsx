@@ -853,7 +853,7 @@ export default function Index() {
 
                     {/* Forward Arrow */}
                     <button
-                      onClick={() => navigateWeek('next')}
+                      onClick={() => navigateTime('next')}
                       className="flex-shrink-0 flex p-2.5 items-center justify-center rounded-full border border-stone-200 hover:bg-stone-50"
                     >
                       <ChevronRight className="w-6 h-6" style={{color: '#5046e5'}} />
