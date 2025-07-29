@@ -1104,8 +1104,8 @@ export default function Index() {
                       Session notes
                     </h1>
                   </div>
-                  <div className="flex items-center w-56">
-                    <div className="relative flex-1">
+                  <div className="flex items-center gap-3">
+                    <div className="relative flex-1 w-56">
                       <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                           <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1120,6 +1120,12 @@ export default function Index() {
                         className="pl-14 pr-14 h-11 font-readex text-base rounded-full overflow-hidden"
                       />
                     </div>
+                    <button className="flex items-center justify-center w-11 h-11 border border-input bg-background rounded-full hover:bg-stone-50 transition-colors">
+                      <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 2.25H3.75C3.35218 2.25 2.97064 2.40804 2.68934 2.68934C2.40804 2.97064 2.25 3.35218 2.25 3.75V14.25C2.25 14.6478 2.40804 15.0294 2.68934 15.3107C2.97064 15.592 3.35218 15.75 3.75 15.75H14.25C14.6478 15.75 15.0294 15.592 15.3107 15.3107C15.592 15.0294 15.75 14.6478 15.75 14.25V9" stroke="#A8A29E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M13.7813 1.96892C14.0797 1.67055 14.4844 1.50293 14.9063 1.50293C15.3283 1.50293 15.733 1.67055 16.0313 1.96892C16.3297 2.26729 16.4973 2.67196 16.4973 3.09392C16.4973 3.51588 16.3297 3.92055 16.0313 4.21892L9.27157 10.9794C9.09348 11.1574 8.87347 11.2876 8.63182 11.3582L6.47707 11.9882C6.41253 12.007 6.34412 12.0081 6.279 11.9914C6.21388 11.9748 6.15444 11.9409 6.10691 11.8933C6.05937 11.8458 6.02549 11.7864 6.0088 11.7212C5.99212 11.6561 5.99325 11.5877 6.01207 11.5232L6.64207 9.36842C6.71297 9.12696 6.84347 8.90721 7.02157 8.72942L13.7813 1.96892Z" stroke="#A8A29E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
                   </div>
                 </div>
 
