@@ -266,29 +266,9 @@ export default function Index() {
   const [animationDirection, setAnimationDirection] = useState<'hiding' | 'showing' | null>(null);
   const [selectedDayDate, setSelectedDayDate] = useState('28'); // Track selected day
   const [currentWeekStart, setCurrentWeekStart] = useState(() => {
-    // Find the index of today (28th) and position it nicely in view
+    // Find the Monday of the week containing today (28th)
     const allDays = [
-      // July 2025
-      { date: '1', fullDate: '2025-07-01', day: 'Tue', sessions: 2, isToday: false, month: 'July' },
-      { date: '2', fullDate: '2025-07-02', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
-      { date: '3', fullDate: '2025-07-03', day: 'Thu', sessions: 3, isToday: false, month: 'July' },
-      { date: '4', fullDate: '2025-07-04', day: 'Fri', sessions: 0, isToday: false, month: 'July' },
-      { date: '5', fullDate: '2025-07-05', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
-      { date: '6', fullDate: '2025-07-06', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
-      { date: '7', fullDate: '2025-07-07', day: 'Mon', sessions: 1, isToday: false, month: 'July' },
-      { date: '8', fullDate: '2025-07-08', day: 'Tue', sessions: 2, isToday: false, month: 'July' },
-      { date: '9', fullDate: '2025-07-09', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
-      { date: '10', fullDate: '2025-07-10', day: 'Thu', sessions: 1, isToday: false, month: 'July' },
-      { date: '11', fullDate: '2025-07-11', day: 'Fri', sessions: 3, isToday: false, month: 'July' },
-      { date: '12', fullDate: '2025-07-12', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
-      { date: '13', fullDate: '2025-07-13', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
-      { date: '14', fullDate: '2025-07-14', day: 'Mon', sessions: 2, isToday: false, month: 'July' },
-      { date: '15', fullDate: '2025-07-15', day: 'Tue', sessions: 1, isToday: false, month: 'July' },
-      { date: '16', fullDate: '2025-07-16', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
-      { date: '17', fullDate: '2025-07-17', day: 'Thu', sessions: 2, isToday: false, month: 'July' },
-      { date: '18', fullDate: '2025-07-18', day: 'Fri', sessions: 1, isToday: false, month: 'July' },
-      { date: '19', fullDate: '2025-07-19', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
-      { date: '20', fullDate: '2025-07-20', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
+      // July 2025 - partial data for initialization
       { date: '21', fullDate: '2025-07-21', day: 'Mon', sessions: 3, isToday: false, month: 'July' },
       { date: '22', fullDate: '2025-07-22', day: 'Tue', sessions: 0, isToday: false, month: 'July' },
       { date: '23', fullDate: '2025-07-23', day: 'Wed', sessions: 1, isToday: false, month: 'July' },
@@ -299,7 +279,8 @@ export default function Index() {
       { date: '28', fullDate: '2025-07-28', day: 'Mon', sessions: 3, isToday: true, month: 'July' },
     ];
     const todayIndex = allDays.findIndex(day => day.date === '28');
-    return Math.max(0, todayIndex - 3); // Position today nicely in view
+    // Since today (28th) is Monday, the Monday index is the same
+    return todayIndex;
   }); // Starting index for week view
   const [showStudentOverlay, setShowStudentOverlay] = useState(false);
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
