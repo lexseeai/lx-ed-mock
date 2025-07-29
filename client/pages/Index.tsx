@@ -775,7 +775,9 @@ export default function Index() {
                                       ? 'text-stone-200'
                                       : isCurrentMonth
                                         ? 'text-stone-700'
-                                        : 'text-stone-400'
+                                        : sessionCount > 0
+                                          ? 'text-stone-400'
+                                          : 'text-stone-200'
                                 }`}
                               >
                                 <div className="leading-none">
