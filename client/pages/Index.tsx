@@ -763,7 +763,7 @@ export default function Index() {
                                     setSelectedDate(date);
                                     jumpToDate(date);
                                   }}
-                                  className={`p-2 text-center rounded hover:bg-stone-700/10 font-lexend text-sm ${
+                                  className={`px-2 pt-2 pb-1 text-center rounded hover:bg-stone-700/10 font-lexend text-sm ${
                                     isSelected
                                       ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                                       : shouldGrayOut
