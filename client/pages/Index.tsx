@@ -657,20 +657,21 @@ export default function Index() {
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col min-w-0 overflow-hidden">
             {/* Header inside card - Different headers for different views */}
             {activeView === 'schedule' && (
-              <div className="px-6 pt-4 pb-0">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 relative" ref={calendarRef}>
-                    <button
-                      className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1 ml-12"
-                      onClick={() => setShowCalendarPicker(!showCalendarPicker)}
-                    >
+              <div className="px-8 pt-6 pb-0">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-2 relative" ref={calendarRef}>
+                      <button
+                        className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1"
+                        onClick={() => setShowCalendarPicker(!showCalendarPicker)}
+                      >
                       <h1 className="text-3xl font-bold text-gray-900 font-lexend">
                         {getCurrentMondayMonth()} 2025
                       </h1>
                       <ChevronDown className="w-4 h-4 text-gray-600" />
-                    </button>
+                      </button>
 
-                    {/* Calendar Picker */}
+                      {/* Calendar Picker */}
                     {showCalendarPicker && (
                       <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
                         <div className="flex items-center justify-between mb-4">
@@ -748,7 +749,8 @@ export default function Index() {
                           })}
                         </div>
                       </div>
-                    )}
+                      )}
+                    </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
