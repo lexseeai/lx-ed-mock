@@ -776,7 +776,10 @@ export default function Index() {
                                 <div className="leading-none">
                                   {date.getDate()}
                                 </div>
-                                {isCurrentMonth && sessionCount > 0 && renderSessionDots(sessionCount, isSelected)}
+                                {isCurrentMonth && sessionCount > 0 ?
+                                  renderSessionDots(sessionCount, isSelected) :
+                                  <div className="h-2 mt-0.5"></div>
+                                }
                               </button>
                             );
                           })}
