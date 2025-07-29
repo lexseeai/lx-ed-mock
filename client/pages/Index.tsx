@@ -445,38 +445,49 @@ export default function Index() {
     ];
   };
 
+  const getCurrentWeek = () => {
+    const allDays = getAllDaysData();
+    const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+
+    if (currentIndex === -1) return allDays.slice(0, 7);
+
+    // Find the Monday of the current week
+    const currentDay = allDays[currentIndex];
+    const dayIndex = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(currentDay.day);
+    const mondayIndex = currentIndex - dayIndex;
+
+    // Get the complete week (Monday through Sunday)
+    return allDays.slice(Math.max(0, mondayIndex), Math.max(7, mondayIndex + 7));
+  };
+
   const navigateTime = (direction: 'prev' | 'next') => {
     const allDays = getAllDaysData();
     const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
 
     if (currentIndex === -1) return;
 
+    // Find current Monday
+    const currentDay = allDays[currentIndex];
+    const dayIndex = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(currentDay.day);
+    const currentMondayIndex = currentIndex - dayIndex;
+
     if (direction === 'prev') {
-      // Scroll back by approximately 7 days in the view, but move selection more granularly
-      const newWeekStart = Math.max(0, currentWeekStart - 7);
-      setCurrentWeekStart(newWeekStart);
+      // Go to previous week's Monday
+      const previousMondayIndex = Math.max(0, currentMondayIndex - 7);
+      const previousMonday = allDays[previousMondayIndex];
 
-      // Move selected day to a logical position in the new view (first day with sessions if available)
-      const newViewDays = allDays.slice(newWeekStart, newWeekStart + 14);
-      const firstDayWithSessions = newViewDays.find(day => day.sessions > 0);
-      const targetDay = firstDayWithSessions || newViewDays[Math.min(3, newViewDays.length - 1)];
-
-      if (targetDay) {
-        setSelectedDayDate(targetDay.date);
+      if (previousMonday) {
+        setSelectedDayDate(previousMonday.date);
+        setCurrentWeekStart(previousMondayIndex);
       }
     } else {
-      // Scroll forward by approximately 7 days in the view
-      const maxStart = Math.max(0, allDays.length - 14);
-      const newWeekStart = Math.min(maxStart, currentWeekStart + 7);
-      setCurrentWeekStart(newWeekStart);
+      // Go to next week's Monday
+      const nextMondayIndex = Math.min(allDays.length - 7, currentMondayIndex + 7);
+      const nextMonday = allDays[nextMondayIndex];
 
-      // Move selected day to a logical position in the new view
-      const newViewDays = allDays.slice(newWeekStart, newWeekStart + 14);
-      const firstDayWithSessions = newViewDays.find(day => day.sessions > 0);
-      const targetDay = firstDayWithSessions || newViewDays[Math.min(3, newViewDays.length - 1)];
-
-      if (targetDay) {
-        setSelectedDayDate(targetDay.date);
+      if (nextMonday) {
+        setSelectedDayDate(nextMonday.date);
+        setCurrentWeekStart(nextMondayIndex);
       }
     }
   };
