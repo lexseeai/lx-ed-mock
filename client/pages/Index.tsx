@@ -1280,9 +1280,9 @@ export default function Index() {
 
                   {/* Due Soon Section */}
                   <section id="due-soon">
-                    <div className="flex items-center gap-2 mb-6">
+                    <div className="flex items-center gap-2 mb-4">
                       <Timer className="w-6 h-6 text-stone-400" />
-                      <h2 className="text-2xl font-bold text-stone-400 font-lexend">Due Soon</h2>
+                      <h2 className="text-xl font-normal text-stone-400 font-lexend">Due Soon</h2>
                       <span className="text-sm text-stone-400 font-lexend">({getDueSoonNotes().length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
