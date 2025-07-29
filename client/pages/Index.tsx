@@ -773,16 +773,18 @@ export default function Index() {
                                     ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                                     : shouldGrayOut
                                       ? 'text-stone-200'
-                                      : isCurrentMonth
-                                        ? 'text-stone-700'
-                                        : 'text-stone-400'
+                                      : hasNoSessions
+                                        ? 'text-stone-200'
+                                        : isCurrentMonth
+                                          ? 'text-stone-700'
+                                          : 'text-stone-400'
                                 }`}
                               >
                                 <div className="leading-none">
                                   {date.getDate()}
                                 </div>
-                                {isCurrentMonth && sessionCount > 0 ?
-                                  renderSessionDots(sessionCount, isSelected) :
+                                {sessionCount > 0 ?
+                                  renderSessionDots(sessionCount, isSelected, isCurrentMonth) :
                                   <div className="h-1.5"></div>
                                 }
                               </button>
