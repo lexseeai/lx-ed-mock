@@ -441,6 +441,40 @@ export default function Index() {
     return allDays.slice(Math.max(0, mondayIndex), Math.max(7, mondayIndex + 7));
   };
 
+  const getCurrentMondayMonth = () => {
+    const currentWeek = getCurrentWeek();
+    const monday = currentWeek.find(day => day.day === 'Mon');
+    return monday ? monday.month : 'July';
+  };
+
+  const jumpToDate = (targetDate: Date) => {
+    const allDays = getAllDaysData();
+    const targetDateStr = targetDate.getDate().toString();
+    const targetMonth = targetDate.toLocaleDateString('en-US', { month: 'long' });
+
+    // Find the target day in our data
+    const targetDay = allDays.find(day =>
+      day.date === targetDateStr && day.month === targetMonth
+    );
+
+    if (targetDay) {
+      setSelectedDayDate(targetDay.date);
+
+      // Find the Monday of this week and set as week start
+      const targetIndex = allDays.findIndex(day => day === targetDay);
+      const dayIndex = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(targetDay.day);
+      const mondayIndex = targetIndex - dayIndex;
+
+      setCurrentWeekStart(Math.max(0, mondayIndex));
+      setShowCalendarPicker(false);
+    }
+  };
+
+  const selectToday = () => {
+    // Today is July 28th (Monday) - jump to this date
+    jumpToDate(new Date(2025, 6, 28)); // July 28, 2025
+  };
+
   const navigateTime = (direction: 'prev' | 'next') => {
     const allDays = getAllDaysData();
     const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
