@@ -1026,10 +1026,10 @@ export default function Index() {
 
             {/* Header for All and Session Notes views */}
             {(activeView === 'all' || activeView === 'sessionnotes') && (
-              <div className="px-8 pt-6 pb-0">
-                <div className="flex items-center justify-between mb-2">
+              <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
+                <div className="flex items-center justify-between">
                   <div className="flex flex-col">
-                    <h1 className="text-3xl font-bold text-gray-900 font-lexend">
+                    <h1 className="text-3xl font-bold text-stone-800 font-lexend">
                       {activeView === 'all' ? 'All Students' : 'Session Notes'}
                     </h1>
                     <p className="text-lg text-gray-600 font-lexend mt-1">
