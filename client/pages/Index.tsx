@@ -603,7 +603,7 @@ export default function Index() {
                     onClick={() => setShowCalendarPicker(!showCalendarPicker)}
                   >
                     <h1 className="text-xl font-medium text-gray-900 font-lexend">
-                      {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                      {getCurrentMondayMonth()} 2025
                     </h1>
                     <ChevronDown className="w-4 h-4 text-gray-600" />
                   </button>
