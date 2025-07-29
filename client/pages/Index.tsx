@@ -825,19 +825,30 @@ export default function Index() {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="relative">
-                      <Input
-                        type="text"
-                        placeholder="Find session"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-48 md:w-64 h-9 min-w-0"
-                      />
-                    </div>
-                    <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
-                      <b>+</b>
-                    </Button>
+                  <div className="flex items-center gap-1.5">
+                    {/* Back Arrow */}
+                    <button
+                      onClick={() => navigateTime('prev')}
+                      className="flex p-2.5 items-center justify-center rounded-xl border border-stone-200 bg-white hover:bg-stone-50 h-11"
+                    >
+                      <ChevronLeft className="w-6 h-6 text-black" />
+                    </button>
+
+                    {/* Today Button */}
+                    <button
+                      onClick={selectToday}
+                      className="flex px-4 py-2 items-center justify-center rounded-lg border border-stone-200 bg-white hover:bg-stone-50 h-11"
+                    >
+                      <span className="text-stone-900 font-lexend text-base font-normal leading-6">Today</span>
+                    </button>
+
+                    {/* Forward Arrow */}
+                    <button
+                      onClick={() => navigateTime('next')}
+                      className="flex p-2.5 items-center justify-center rounded-xl border border-stone-200 bg-white hover:bg-stone-50 h-11"
+                    >
+                      <ChevronRight className="w-6 h-6 text-black" />
+                    </button>
                   </div>
                 </div>
               </div>
