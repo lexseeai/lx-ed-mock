@@ -265,6 +265,7 @@ export default function Index() {
   const [isToggling, setIsToggling] = useState(false);
   const [animationDirection, setAnimationDirection] = useState<'hiding' | 'showing' | null>(null);
   const [selectedDayDate, setSelectedDayDate] = useState('28'); // Track selected day
+  const [currentWeekStart, setCurrentWeekStart] = useState(0); // Starting index for week view
   const [showStudentOverlay, setShowStudentOverlay] = useState(false);
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
