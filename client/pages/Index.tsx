@@ -339,6 +339,130 @@ export default function Index() {
     return [...mockStudents].sort((a, b) => a.name.localeCompare(b.name));
   };
 
+  // Comprehensive July/August 2025 day data
+  const getAllDaysData = () => {
+    return [
+      // July 2025
+      { date: '1', fullDate: '2025-07-01', day: 'Tue', sessions: 2, isToday: false, month: 'July' },
+      { date: '2', fullDate: '2025-07-02', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
+      { date: '3', fullDate: '2025-07-03', day: 'Thu', sessions: 3, isToday: false, month: 'July' },
+      { date: '4', fullDate: '2025-07-04', day: 'Fri', sessions: 0, isToday: false, month: 'July' },
+      { date: '5', fullDate: '2025-07-05', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
+      { date: '6', fullDate: '2025-07-06', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
+      { date: '7', fullDate: '2025-07-07', day: 'Mon', sessions: 1, isToday: false, month: 'July' },
+      { date: '8', fullDate: '2025-07-08', day: 'Tue', sessions: 2, isToday: false, month: 'July' },
+      { date: '9', fullDate: '2025-07-09', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
+      { date: '10', fullDate: '2025-07-10', day: 'Thu', sessions: 1, isToday: false, month: 'July' },
+      { date: '11', fullDate: '2025-07-11', day: 'Fri', sessions: 3, isToday: false, month: 'July' },
+      { date: '12', fullDate: '2025-07-12', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
+      { date: '13', fullDate: '2025-07-13', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
+      { date: '14', fullDate: '2025-07-14', day: 'Mon', sessions: 2, isToday: false, month: 'July' },
+      { date: '15', fullDate: '2025-07-15', day: 'Tue', sessions: 1, isToday: false, month: 'July' },
+      { date: '16', fullDate: '2025-07-16', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
+      { date: '17', fullDate: '2025-07-17', day: 'Thu', sessions: 2, isToday: false, month: 'July' },
+      { date: '18', fullDate: '2025-07-18', day: 'Fri', sessions: 1, isToday: false, month: 'July' },
+      { date: '19', fullDate: '2025-07-19', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
+      { date: '20', fullDate: '2025-07-20', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
+      { date: '21', fullDate: '2025-07-21', day: 'Mon', sessions: 3, isToday: false, month: 'July' },
+      { date: '22', fullDate: '2025-07-22', day: 'Tue', sessions: 0, isToday: false, month: 'July' },
+      { date: '23', fullDate: '2025-07-23', day: 'Wed', sessions: 1, isToday: false, month: 'July' },
+      { date: '24', fullDate: '2025-07-24', day: 'Thu', sessions: 2, isToday: false, month: 'July' },
+      { date: '25', fullDate: '2025-07-25', day: 'Fri', sessions: 0, isToday: false, month: 'July' },
+      { date: '26', fullDate: '2025-07-26', day: 'Sat', sessions: 0, isToday: false, month: 'July' },
+      { date: '27', fullDate: '2025-07-27', day: 'Sun', sessions: 0, isToday: false, month: 'July' },
+      { date: '28', fullDate: '2025-07-28', day: 'Mon', sessions: 3, isToday: true, month: 'July' },
+      { date: '29', fullDate: '2025-07-29', day: 'Tue', sessions: 1, isToday: false, month: 'July' },
+      { date: '30', fullDate: '2025-07-30', day: 'Wed', sessions: 0, isToday: false, month: 'July' },
+      { date: '31', fullDate: '2025-07-31', day: 'Thu', sessions: 3, isToday: false, month: 'July' },
+
+      // August 2025
+      { date: '1', fullDate: '2025-08-01', day: 'Fri', sessions: 0, isToday: false, month: 'August' },
+      { date: '2', fullDate: '2025-08-02', day: 'Sat', sessions: 0, isToday: false, month: 'August' },
+      { date: '3', fullDate: '2025-08-03', day: 'Sun', sessions: 0, isToday: false, month: 'August' },
+      { date: '4', fullDate: '2025-08-04', day: 'Mon', sessions: 3, isToday: false, month: 'August' },
+      { date: '5', fullDate: '2025-08-05', day: 'Tue', sessions: 1, isToday: false, month: 'August' },
+      { date: '6', fullDate: '2025-08-06', day: 'Wed', sessions: 3, isToday: false, month: 'August' },
+      { date: '7', fullDate: '2025-08-07', day: 'Thu', sessions: 1, isToday: false, month: 'August' },
+      { date: '8', fullDate: '2025-08-08', day: 'Fri', sessions: 1, isToday: false, month: 'August' },
+      { date: '9', fullDate: '2025-08-09', day: 'Sat', sessions: 0, isToday: false, month: 'August' },
+      { date: '10', fullDate: '2025-08-10', day: 'Sun', sessions: 0, isToday: false, month: 'August' },
+      { date: '11', fullDate: '2025-08-11', day: 'Mon', sessions: 1, isToday: false, month: 'August' },
+      { date: '12', fullDate: '2025-08-12', day: 'Tue', sessions: 1, isToday: false, month: 'August' },
+      { date: '13', fullDate: '2025-08-13', day: 'Wed', sessions: 2, isToday: false, month: 'August' },
+      { date: '14', fullDate: '2025-08-14', day: 'Thu', sessions: 3, isToday: false, month: 'August' },
+      { date: '15', fullDate: '2025-08-15', day: 'Fri', sessions: 0, isToday: false, month: 'August' },
+      { date: '16', fullDate: '2025-08-16', day: 'Sat', sessions: 0, isToday: false, month: 'August' },
+      { date: '17', fullDate: '2025-08-17', day: 'Sun', sessions: 0, isToday: false, month: 'August' },
+      { date: '18', fullDate: '2025-08-18', day: 'Mon', sessions: 2, isToday: false, month: 'August' },
+      { date: '19', fullDate: '2025-08-19', day: 'Tue', sessions: 1, isToday: false, month: 'August' },
+      { date: '20', fullDate: '2025-08-20', day: 'Wed', sessions: 0, isToday: false, month: 'August' },
+      { date: '21', fullDate: '2025-08-21', day: 'Thu', sessions: 2, isToday: false, month: 'August' },
+      { date: '22', fullDate: '2025-08-22', day: 'Fri', sessions: 3, isToday: false, month: 'August' },
+      { date: '23', fullDate: '2025-08-23', day: 'Sat', sessions: 0, isToday: false, month: 'August' },
+      { date: '24', fullDate: '2025-08-24', day: 'Sun', sessions: 0, isToday: false, month: 'August' },
+      { date: '25', fullDate: '2025-08-25', day: 'Mon', sessions: 1, isToday: false, month: 'August' },
+      { date: '26', fullDate: '2025-08-26', day: 'Tue', sessions: 0, isToday: false, month: 'August' },
+      { date: '27', fullDate: '2025-08-27', day: 'Wed', sessions: 2, isToday: false, month: 'August' },
+      { date: '28', fullDate: '2025-08-28', day: 'Thu', sessions: 1, isToday: false, month: 'August' },
+      { date: '29', fullDate: '2025-08-29', day: 'Fri', sessions: 0, isToday: false, month: 'August' },
+      { date: '30', fullDate: '2025-08-30', day: 'Sat', sessions: 0, isToday: false, month: 'August' },
+      { date: '31', fullDate: '2025-08-31', day: 'Sun', sessions: 0, isToday: false, month: 'August' }
+    ];
+  };
+
+  const navigateWeek = (direction: 'prev' | 'next') => {
+    const allDays = getAllDaysData();
+    const currentSelectedDay = allDays.find(day => day.date === selectedDayDate);
+
+    if (!currentSelectedDay) return;
+
+    if (direction === 'prev') {
+      // Find previous Thursday or same weekday 7 days back
+      let targetIndex = -1;
+      const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+
+      if (currentSelectedDay.day === 'Thu') {
+        // Find previous Thursday
+        for (let i = currentIndex - 1; i >= 0; i--) {
+          if (allDays[i].day === 'Thu') {
+            targetIndex = i;
+            break;
+          }
+        }
+      } else {
+        // Go back 7 days (1 week)
+        targetIndex = Math.max(0, currentIndex - 7);
+      }
+
+      if (targetIndex >= 0) {
+        setSelectedDayDate(allDays[targetIndex].date);
+        setCurrentWeekStart(Math.max(0, targetIndex - 3)); // Position selected day nicely in view
+      }
+    } else {
+      // Find next Thursday or same weekday 7 days forward
+      let targetIndex = -1;
+      const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+
+      if (currentSelectedDay.day === 'Thu') {
+        // Find next Thursday
+        for (let i = currentIndex + 1; i < allDays.length; i++) {
+          if (allDays[i].day === 'Thu') {
+            targetIndex = i;
+            break;
+          }
+        }
+      } else {
+        // Go forward 7 days (1 week)
+        targetIndex = Math.min(allDays.length - 1, currentIndex + 7);
+      }
+
+      if (targetIndex >= 0) {
+        setSelectedDayDate(allDays[targetIndex].date);
+        setCurrentWeekStart(Math.max(0, targetIndex - 3)); // Position selected day nicely in view
+      }
+    }
+  };
+
   // Session data for each date
   const dateSessionData: { [key: string]: { morning: Student[], afternoon: Student[], evening: Student[] } } = {
     '28': {
