@@ -517,26 +517,26 @@ export default function Index() {
     },
     '4': {
       morning: [],
-      afternoon: [mockStudents[7], mockStudents[8], mockStudents[9]], // All afternoon
+      afternoon: [mockStudents[8], mockStudents[9], mockStudents[10]], // Carlos, Maya, Daniel
       evening: []
     },
     '5': {
       morning: [],
       afternoon: [],
-      evening: [mockStudents[10]] // Maya
+      evening: [mockStudents[9]] // Maya
     },
     '6': {
-      morning: [mockStudents[11]], // Daniel
-      afternoon: [mockStudents[12]], // Zoe
-      evening: [mockStudents[13]] // Oliver
+      morning: [mockStudents[10]], // Daniel
+      afternoon: [mockStudents[11]], // Zoe
+      evening: [mockStudents[12]] // Oliver
     },
     '7': {
       morning: [],
-      afternoon: [mockStudents[14]], // Luna
+      afternoon: [mockStudents[13]], // Luna
       evening: []
     },
     '8': {
-      morning: [mockStudents[15]], // Kai
+      morning: [mockStudents[14]], // Kai
       afternoon: [],
       evening: []
     },
