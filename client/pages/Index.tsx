@@ -1434,7 +1434,7 @@ export default function Index() {
       {/* Floating Tool Panel - Only show on specific views */}
       {(activeView === 'all' || activeView === 'schedule' || activeView === 'sessionnotes') && (
         <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="flex items-center gap-4 px-4 py-2 bg-white border border-stone-200 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)]">
+          <div className="flex items-center gap-4 px-4 py-2 bg-white border border-stone-200 rounded-xl shadow-2xl">
             {/* New Document */}
             <button className="flex items-center justify-center w-6 h-6 hover:bg-stone-50 rounded transition-colors">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
