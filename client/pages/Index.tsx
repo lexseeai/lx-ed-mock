@@ -553,7 +553,13 @@ export default function Index() {
   };
 
   const getScheduleData = () => {
-    return dateSessionData[selectedDayDate] || { morning: [], afternoon: [], evening: [] };
+    const data = dateSessionData[selectedDayDate] || { morning: [], afternoon: [], evening: [] };
+    // Filter out any undefined students to prevent errors
+    return {
+      morning: data.morning.filter(student => student && student.id),
+      afternoon: data.afternoon.filter(student => student && student.id),
+      evening: data.evening.filter(student => student && student.id)
+    };
   };
 
   const getSessionNotesStudents = () => {
