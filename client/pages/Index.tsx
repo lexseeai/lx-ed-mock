@@ -255,7 +255,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
             {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Library</span>}
           </div>
 
-          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-2 py-1 rounded-lg hover:bg-indigo-950`}>
+          <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
             <FileAudio className="w-4 h-4 text-white/80" />
             {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Assignments</span>}
           </div>
