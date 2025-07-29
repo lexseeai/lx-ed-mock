@@ -1075,7 +1075,7 @@ export default function Index() {
 
 
                   {/* Time Periods */}
-                  <div className="space-y-8 min-w-0 mt-6 mx-16">
+                  <div className="space-y-8 min-w-0 mt-9 ml-9 mr-16">
                     {/* Morning */}
                     <section>
                       <div className="flex items-center gap-2 mb-4">
