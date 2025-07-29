@@ -192,7 +192,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
       {/* Navigation Content */}
       <div className="flex-1 flex flex-col pl-3 pr-0 py-4">
         {/* My Students Section */}
-        <div className="space-y-2">
+        <div className="space-y-1">
           {!isCollapsed && (
             <div className="px-2">
               <h2 className="text-xs font-medium text-white/80 font-lexend uppercase tracking-wide">My students</h2>
@@ -249,7 +249,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
         <div className="my-4"></div>
 
         {/* Other Navigation Items */}
-        <div className="space-y-2 flex-1">
+        <div className="space-y-1 flex-1">
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
             <LibraryBig className="w-4 h-4 text-white/80" />
             {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Library</span>}
