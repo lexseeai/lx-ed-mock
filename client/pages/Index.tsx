@@ -851,6 +851,167 @@ export default function Index() {
                     </button>
                   </div>
                 </div>
+
+                {/* Week Calendar */}
+                <div className="flex items-center gap-4 mt-6">
+                  <div className="flex-1 min-w-0 overflow-hidden">
+                    <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">
+                    {(() => {
+                      const currentWeek = getCurrentWeek();
+
+                      const getAnimationClass = (dayData: any, originalIndex: number) => {
+                        const isEmpty = dayData.sessions === 0;
+
+                        if (!isToggling) {
+                          return 'day-card-base';
+                        }
+
+                        if (isEmpty) {
+                          if (animationDirection === 'hiding') {
+                            return 'day-card-slide-behind';
+                          } else if (animationDirection === 'showing') {
+                            return 'day-card-emerge';
+                          }
+                        } else {
+                          // Non-empty cards move to fill gaps or make space
+                          if (animationDirection === 'hiding') {
+                            return 'day-card-fill-gap';
+                          } else if (animationDirection === 'showing') {
+                            return 'day-card-make-space';
+                          }
+                        }
+
+                        return 'day-card-base';
+                      };
+
+                      const getZIndex = (dayData: any, originalIndex: number) => {
+                        const isEmpty = dayData.sessions === 0;
+
+                        if (isEmpty && isToggling && animationDirection === 'hiding') {
+                          return 1; // Empty cards go behind
+                        }
+
+                        // Earlier dates have higher z-index (leftmost has highest)
+                        return 50 - originalIndex;
+                      };
+
+                      const getMoveDistance = (dayData: any, originalIndex: number) => {
+                        if (dayData.sessions === 0) {
+                          // Empty cards slide far left to go behind the nearest session card to their left
+                          return -200; // Fixed distance to slide behind
+                        }
+
+                        // For session cards: count consecutive empty cards immediately to the left
+                        let consecutiveEmptyToLeft = 0;
+                        for (let i = originalIndex - 1; i >= 0; i--) {
+                          if (currentWeek[i] && currentWeek[i].sessions === 0) {
+                            consecutiveEmptyToLeft++;
+                          } else {
+                            break; // Stop at first non-empty card
+                          }
+                        }
+
+                        return consecutiveEmptyToLeft * -104; // Move by the number of consecutive empty cards
+                      };
+
+                      // Show all days during animation, filter after based on new rules
+                      let visibleDays;
+                      if (isToggling) {
+                        visibleDays = currentWeek;
+                      } else if (hideEmptyDays) {
+                        // When hiding empty days: show only days with sessions, but always include Monday
+                        const monday = currentWeek.find(day => day.day === 'Mon');
+                        const daysWithSessions = currentWeek.filter(day => day.sessions > 0);
+
+                        // Create set to avoid duplicates, then convert back to array maintaining order
+                        const uniqueDays = new Map();
+                        if (monday) uniqueDays.set(monday.date, monday);
+                        daysWithSessions.forEach(day => uniqueDays.set(day.date, day));
+                        visibleDays = Array.from(uniqueDays.values()).sort((a, b) =>
+                          currentWeek.indexOf(a) - currentWeek.indexOf(b)
+                        );
+                      } else {
+                        // When showing empty days: show all 7 days of the week
+                        visibleDays = currentWeek;
+                      }
+
+                      return visibleDays.map((dayData, index) => {
+                        const originalIndex = currentWeek.findIndex(day => day.date === dayData.date);
+                        const moveDistance = getMoveDistance(dayData, originalIndex);
+
+                        const isSelected = selectedDayDate === dayData.date;
+
+                        return (
+                          <button
+                            key={dayData.date}
+                            onClick={() => setSelectedDayDate(dayData.date)}
+                            className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border cursor-pointer flex-shrink-0 ${
+                              isSelected
+                                ? 'border-indigo-600 bg-indigo-600 scale-100'
+                                : 'border-stone-200 bg-white hover:bg-stone-50 scale-100'
+                            } ${getAnimationClass(dayData, originalIndex)}`}
+                            style={{
+                              zIndex: getZIndex(dayData, originalIndex),
+                              '--move-distance': `${moveDistance}px`
+                            }}
+                          >
+                        {/* Top section with date and today indicator */}
+                        <div className="flex flex-col items-start w-full gap-0.5">
+                          <div className="flex justify-between items-center w-full">
+                            <div className={`text-2xl font-black leading-none font-lexend ${
+                              isSelected
+                                ? 'text-white'
+                                : dayData.sessions === 0
+                                  ? 'text-stone-400'
+                                  : 'text-stone-700'
+                            }`}>
+                              {dayData.date}
+                            </div>
+                            {dayData.isToday && (
+                              <div className={`text-xs leading-none font-lexend opacity-50 ${
+                                isSelected
+                                  ? 'text-white'
+                                  : dayData.sessions === 0
+                                    ? 'text-stone-400'
+                                    : 'text-stone-700'
+                              }`}>
+                                Today
+                              </div>
+                            )}
+                          </div>
+                          <div className={`text-base font-medium leading-none font-lexend w-full text-left ${
+                            isSelected
+                              ? 'text-white'
+                              : dayData.sessions === 0
+                                ? 'text-stone-400'
+                                : 'text-stone-700'
+                          }`}>
+                            {dayData.day}
+                          </div>
+                        </div>
+
+                        {/* Bottom section with sessions */}
+                        {dayData.sessions > 0 && (
+                          <div className="flex items-start gap-1 w-full">
+                            <div className={`text-xs font-normal leading-none font-lexend ${
+                              isSelected ? 'text-white' : 'text-stone-700'
+                            }`}>
+                              {dayData.sessions}
+                            </div>
+                            <div className={`text-xs font-normal leading-none font-lexend ${
+                              isSelected ? 'text-white' : 'text-stone-700'
+                            }`}>
+                              {dayData.sessions === 1 ? 'session' : 'sessions'}
+                            </div>
+                          </div>
+                        )}
+                          </button>
+                        );
+                      });
+                    })()}
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
