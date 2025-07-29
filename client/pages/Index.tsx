@@ -720,10 +720,7 @@ export default function Index() {
                     <div className="flex-1 min-w-0 overflow-hidden">
                       <div className="flex gap-1 overflow-x-auto scrollbar-hide">
                       {(() => {
-                        const allDays = getAllDaysData();
-
-                        // Get a window of days to show (about 14 days from current week start)
-                        const visibleWindow = allDays.slice(currentWeekStart, currentWeekStart + 14);
+                        const currentWeek = getCurrentWeek();
 
                         const getAnimationClass = (dayData: any, originalIndex: number) => {
                           const isEmpty = dayData.sessions === 0;
