@@ -777,13 +777,29 @@ export default function Index() {
                           return consecutiveEmptyToLeft * -104; // Move by the number of consecutive empty cards
                         };
 
-                        // Show all days during animation, filter after
-                        const visibleDays = isToggling
-                          ? visibleWindow
-                          : visibleWindow.filter(dayData => !hideEmptyDays || dayData.sessions > 0);
+                        // Show all days during animation, filter after based on new rules
+                        let visibleDays;
+                        if (isToggling) {
+                          visibleDays = currentWeek;
+                        } else if (hideEmptyDays) {
+                          // When hiding empty days: show only days with sessions, but always include Monday
+                          const monday = currentWeek.find(day => day.day === 'Mon');
+                          const daysWithSessions = currentWeek.filter(day => day.sessions > 0);
+
+                          // Create set to avoid duplicates, then convert back to array maintaining order
+                          const uniqueDays = new Map();
+                          if (monday) uniqueDays.set(monday.date, monday);
+                          daysWithSessions.forEach(day => uniqueDays.set(day.date, day));
+                          visibleDays = Array.from(uniqueDays.values()).sort((a, b) =>
+                            currentWeek.indexOf(a) - currentWeek.indexOf(b)
+                          );
+                        } else {
+                          // When showing empty days: show all 7 days of the week
+                          visibleDays = currentWeek;
+                        }
 
                         return visibleDays.map((dayData, index) => {
-                          const originalIndex = visibleWindow.findIndex(day => day.date === dayData.date);
+                          const originalIndex = currentWeek.findIndex(day => day.date === dayData.date);
                           const moveDistance = getMoveDistance(dayData, originalIndex);
 
                           const isSelected = selectedDayDate === dayData.date;
