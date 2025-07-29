@@ -1148,7 +1148,7 @@ export default function Index() {
                     </button>
                     <button
                       onClick={() => scrollToSection('submitted')}
-                      className={`flex px-3 py-1.5 rounded-full text-sm font-medium font-lexend transition-all ${
+                      className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
                         activeTab === 'submitted'
                           ? 'bg-indigo-600 text-white shadow-sm'
                           : 'text-stone-400 hover:text-stone-600'
