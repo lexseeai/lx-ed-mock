@@ -1164,7 +1164,9 @@ export default function Index() {
             <div className={`${
               activeView === 'schedule'
                 ? 'pl-0 pr-4 pb-6 pt-0'
-                : 'px-8 pb-8 pt-4'
+                : activeView === 'sessionnotes'
+                  ? 'p-9'
+                  : 'px-8 pb-8 pt-4'
             } space-y-6 flex-1 overflow-y-auto`}>
               {activeView === 'all' && (
                 <section>
