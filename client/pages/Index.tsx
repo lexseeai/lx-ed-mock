@@ -831,7 +831,7 @@ export default function Index() {
                       onClick={() => navigateTime('prev')}
                       className="flex p-2.5 items-center justify-center rounded-xl border border-stone-200 bg-white hover:bg-stone-50 h-11"
                     >
-                      <ChevronLeft className="w-6 h-6 text-black" />
+                      <ChevronLeft className="w-6 h-6 text-indigo-600" />
                     </button>
 
                     {/* Today Button */}
