@@ -853,7 +853,7 @@ export default function Index() {
                 </div>
 
                 {/* Week Calendar */}
-                <div className="flex items-center gap-4 mt-6">
+                <div className="flex items-center gap-4 mt-3">
                   <div className="flex-1 min-w-0 overflow-hidden">
                     <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">
                     {(() => {
