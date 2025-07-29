@@ -498,53 +498,25 @@ export default function Index() {
   const navigateTime = (direction: 'prev' | 'next') => {
     const allDays = getAllDaysData();
 
-    // Find current day more precisely - look for exact match including month context
-    let currentIndex = -1;
-    const currentWeek = getCurrentWeek();
-    const currentDayInWeek = currentWeek.find(day => day.date === selectedDayDate);
-
-    if (currentDayInWeek) {
-      // Find this exact day in the full data array
-      currentIndex = allDays.findIndex(day =>
-        day.date === selectedDayDate &&
-        day.month === currentDayInWeek.month &&
-        day.day === currentDayInWeek.day
-      );
-    }
-
-    if (currentIndex === -1) {
-      // Fallback: find by date only
-      currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
-    }
-
-    if (currentIndex === -1) return;
-
-    // Find current Monday
-    const currentDay = allDays[currentIndex];
-    const dayIndex = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(currentDay.day);
-    const currentMondayIndex = currentIndex - dayIndex;
-
     if (direction === 'prev') {
-      // Go to previous week's Monday
-      const previousMondayIndex = Math.max(0, currentMondayIndex - 7);
-      const previousMonday = allDays[previousMondayIndex];
+      // Go to previous week
+      const newWeekStart = Math.max(0, currentWeekStart - 7);
+      setCurrentWeekStart(newWeekStart);
 
-      if (previousMonday) {
-        setSelectedDayDate(previousMonday.date);
-        setCurrentWeekStart(previousMondayIndex);
+      // Set selected day to the Monday of this week
+      const newMonday = allDays[newWeekStart];
+      if (newMonday) {
+        setSelectedDayDate(newMonday.date);
       }
     } else {
-      // Go to next week's Monday
-      const nextMondayIndex = currentMondayIndex + 7;
+      // Go to next week
+      const newWeekStart = Math.min(allDays.length - 7, currentWeekStart + 7);
+      setCurrentWeekStart(newWeekStart);
 
-      // Make sure we don't go beyond our data
-      if (nextMondayIndex < allDays.length) {
-        const nextMonday = allDays[nextMondayIndex];
-
-        if (nextMonday) {
-          setSelectedDayDate(nextMonday.date);
-          setCurrentWeekStart(nextMondayIndex);
-        }
+      // Set selected day to the Monday of this week
+      const newMonday = allDays[newWeekStart];
+      if (newMonday) {
+        setSelectedDayDate(newMonday.date);
       }
     }
   };
