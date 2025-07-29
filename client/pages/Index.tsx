@@ -497,10 +497,11 @@ export default function Index() {
       }
     } else {
       // Go to next week's Monday
-      const nextMondayIndex = Math.min(allDays.length - 7, currentMondayIndex + 7);
+      const nextMondayIndex = currentMondayIndex + 7;
       const nextMonday = allDays[nextMondayIndex];
 
-      if (nextMonday) {
+      // Check if we have enough days for a full week
+      if (nextMonday && nextMondayIndex < allDays.length) {
         setSelectedDayDate(nextMonday.date);
         setCurrentWeekStart(nextMondayIndex);
       }
