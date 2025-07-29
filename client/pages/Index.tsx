@@ -296,8 +296,18 @@ export default function Index() {
   const [showStudentOverlay, setShowStudentOverlay] = useState(false);
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
+  const [activeTab, setActiveTab] = useState('in-progress');
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // Function to scroll to section
+  const scrollToSection = (sectionId: string) => {
+    setActiveTab(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   // Sync selectedDate when selectedDayDate changes
   useEffect(() => {
