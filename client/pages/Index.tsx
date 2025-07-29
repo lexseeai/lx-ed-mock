@@ -185,7 +185,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="p-1 h-6 w-6"
         >
-          <PanelLeft className="w-5 h-5 text-stone-400" />
+          <PanelLeft className="w-5 h-5 text-white/50" />
         </Button>
       </div>
 
