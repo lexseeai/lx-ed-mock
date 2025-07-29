@@ -1104,7 +1104,7 @@ export default function Index() {
                       Session notes
                     </h1>
                   </div>
-                  <div className="flex items-center w-72">
+                  <div className="flex items-center w-56">
                     <div className="relative flex-1">
                       <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
