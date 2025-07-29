@@ -649,25 +649,30 @@ export default function Index() {
 
                       {/* Simple calendar grid */}
                       <div className="grid grid-cols-7 gap-1 text-sm">
-                        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+                        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
                           <div key={day} className="text-center p-2 text-gray-500 font-lexend text-xs">
                             {day}
                           </div>
                         ))}
-                        {Array.from({length: 35}, (_, i) => {
-                          const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i - 6);
+                        {Array.from({length: 42}, (_, i) => {
+                          // Start from Monday - calculate the first Monday of the month view
+                          const firstOfMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+                          const firstDayOfWeek = (firstOfMonth.getDay() + 6) % 7; // Convert Sunday=0 to Monday=0
+                          const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i - firstDayOfWeek + 1);
+
                           const isSelected = date.toDateString() === selectedDate.toDateString();
                           const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
+                          const isToday = date.toDateString() === new Date(2025, 6, 28).toDateString(); // July 28, 2025
 
                           return (
                             <button
                               key={i}
                               onClick={() => {
                                 setSelectedDate(date);
-                                setShowCalendarPicker(false);
+                                jumpToDate(date);
                               }}
                               className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
-                                isSelected
+                                isSelected || isToday
                                   ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                                   : isCurrentMonth
                                     ? 'text-gray-900'
