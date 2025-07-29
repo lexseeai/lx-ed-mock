@@ -1029,7 +1029,7 @@ export default function Index() {
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col">
-                    <h1 className="text-3xl font-bold text-stone-800 font-lexend">
+                    <h1 className="text-3xl font-bold text-stone-800 font-lexend pt-1">
                       {activeView === 'all' ? 'All Students' : 'Session Notes'}
                     </h1>
                     <p className="text-lg text-gray-600 font-lexend mt-1">
