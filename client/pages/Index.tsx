@@ -1125,7 +1125,7 @@ export default function Index() {
 
                 {/* Tab Navigation */}
                 <div className="flex justify-center">
-                  <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-11">
+                  <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
                     <button
                       onClick={() => scrollToSection('in-progress')}
                       className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
