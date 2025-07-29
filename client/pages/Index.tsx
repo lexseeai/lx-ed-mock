@@ -716,7 +716,7 @@ export default function Index() {
                             }}
                             className="p-1 hover:bg-stone-100 rounded"
                           >
-                            <ChevronLeft className="w-4 h-4" />
+                            <ChevronLeft className="w-4 h-4 text-indigo-600" />
                           </button>
                           <span className="font-medium font-lexend text-stone-800">
                             {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
@@ -729,7 +729,7 @@ export default function Index() {
                             }}
                             className="p-1 hover:bg-stone-100 rounded"
                           >
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-4 h-4 text-indigo-600" />
                           </button>
                         </div>
 
@@ -738,7 +738,7 @@ export default function Index() {
                         {/* Simple calendar grid */}
                         <div className="grid grid-cols-7 gap-1 text-sm">
                           {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
-                          <div key={day} className="text-center p-2 text-stone-700 font-lexend text-xs">
+                          <div key={day} className="text-center p-2 text-stone-500 font-lexend text-xs">
                             {day}
                           </div>
                         ))}
@@ -778,7 +778,7 @@ export default function Index() {
                                 </div>
                                 {isCurrentMonth && sessionCount > 0 ?
                                   renderSessionDots(sessionCount, isSelected) :
-                                  <div className="h-2 mt-0.5"></div>
+                                  <div className="h-1.5"></div>
                                 }
                               </button>
                             );
