@@ -655,117 +655,152 @@ export default function Index() {
         <div className="flex-1 p-3 h-full min-w-0 overflow-hidden">
           {/* My students panel card */}
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col min-w-0 overflow-hidden">
-            {/* Header inside card */}
-            <div className="px-6 pt-4 pb-0">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2 relative" ref={calendarRef}>
-                  <button
-                    className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1 ml-12"
-                    onClick={() => setShowCalendarPicker(!showCalendarPicker)}
-                  >
-                    <h1 className="text-xl font-medium text-gray-900 font-lexend">
-                      {getCurrentMondayMonth()} 2025
-                    </h1>
-                    <ChevronDown className="w-4 h-4 text-gray-600" />
-                  </button>
+            {/* Header inside card - Different headers for different views */}
+            {activeView === 'schedule' && (
+              <div className="px-6 pt-4 pb-0">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2 relative" ref={calendarRef}>
+                    <button
+                      className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1 ml-12"
+                      onClick={() => setShowCalendarPicker(!showCalendarPicker)}
+                    >
+                      <h1 className="text-xl font-medium text-gray-900 font-lexend">
+                        {getCurrentMondayMonth()} 2025
+                      </h1>
+                      <ChevronDown className="w-4 h-4 text-gray-600" />
+                    </button>
 
-                  {/* Calendar Picker */}
-                  {showCalendarPicker && (
-                    <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
-                      <div className="flex items-center justify-between mb-4">
-                        <button
-                          onClick={() => {
-                            const newDate = new Date(selectedDate);
-                            newDate.setMonth(newDate.getMonth() - 1);
-                            setSelectedDate(newDate);
-                          }}
-                          className="p-1 hover:bg-stone-100 rounded"
-                        >
-                          <ChevronLeft className="w-4 h-4" />
-                        </button>
-                        <span className="font-medium font-lexend">
-                          {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                        </span>
-                        <button
-                          onClick={() => {
-                            const newDate = new Date(selectedDate);
-                            newDate.setMonth(newDate.getMonth() + 1);
-                            setSelectedDate(newDate);
-                          }}
-                          className="p-1 hover:bg-stone-100 rounded"
-                        >
-                          <ChevronRight className="w-4 h-4" />
-                        </button>
+                    {/* Calendar Picker */}
+                    {showCalendarPicker && (
+                      <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
+                        <div className="flex items-center justify-between mb-4">
+                          <button
+                            onClick={() => {
+                              const newDate = new Date(selectedDate);
+                              newDate.setMonth(newDate.getMonth() - 1);
+                              setSelectedDate(newDate);
+                            }}
+                            className="p-1 hover:bg-stone-100 rounded"
+                          >
+                            <ChevronLeft className="w-4 h-4" />
+                          </button>
+                          <span className="font-medium font-lexend">
+                            {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                          </span>
+                          <button
+                            onClick={() => {
+                              const newDate = new Date(selectedDate);
+                              newDate.setMonth(newDate.getMonth() + 1);
+                              setSelectedDate(newDate);
+                            }}
+                            className="p-1 hover:bg-stone-100 rounded"
+                          >
+                            <ChevronRight className="w-4 h-4" />
+                          </button>
+                        </div>
+
+                        {/* Today button */}
+                        <div className="flex justify-center mb-4">
+                          <button
+                            onClick={selectToday}
+                            className="px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700 font-lexend"
+                          >
+                            Today
+                          </button>
+                        </div>
+
+                        {/* Simple calendar grid */}
+                        <div className="grid grid-cols-7 gap-1 text-sm">
+                          {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
+                            <div key={day} className="text-center p-2 text-gray-500 font-lexend text-xs">
+                              {day}
+                            </div>
+                          ))}
+                          {Array.from({length: 42}, (_, i) => {
+                            // Start from Monday - calculate the first Monday of the month view
+                            const firstOfMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+                            const firstDayOfWeek = (firstOfMonth.getDay() + 6) % 7; // Convert Sunday=0 to Monday=0
+                            const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i - firstDayOfWeek + 1);
+
+                            const isSelected = date.getDate() === selectedDate.getDate() &&
+                                             date.getMonth() === selectedDate.getMonth() &&
+                                             date.getFullYear() === selectedDate.getFullYear();
+                            const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
+
+                            return (
+                              <button
+                                key={i}
+                                onClick={() => {
+                                  setSelectedDate(date);
+                                  jumpToDate(date);
+                                }}
+                                className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
+                                  isSelected
+                                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                    : isCurrentMonth
+                                      ? 'text-gray-900'
+                                      : 'text-gray-400'
+                                }`}
+                              >
+                                {date.getDate()}
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
-
-                      {/* Today button */}
-                      <div className="flex justify-center mb-4">
-                        <button
-                          onClick={selectToday}
-                          className="px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700 font-lexend"
-                        >
-                          Today
-                        </button>
-                      </div>
-
-                      {/* Simple calendar grid */}
-                      <div className="grid grid-cols-7 gap-1 text-sm">
-                        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
-                          <div key={day} className="text-center p-2 text-gray-500 font-lexend text-xs">
-                            {day}
-                          </div>
-                        ))}
-                        {Array.from({length: 42}, (_, i) => {
-                          // Start from Monday - calculate the first Monday of the month view
-                          const firstOfMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
-                          const firstDayOfWeek = (firstOfMonth.getDay() + 6) % 7; // Convert Sunday=0 to Monday=0
-                          const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i - firstDayOfWeek + 1);
-
-                          const isSelected = date.getDate() === selectedDate.getDate() &&
-                                           date.getMonth() === selectedDate.getMonth() &&
-                                           date.getFullYear() === selectedDate.getFullYear();
-                          const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
-
-                          return (
-                            <button
-                              key={i}
-                              onClick={() => {
-                                setSelectedDate(date);
-                                jumpToDate(date);
-                              }}
-                              className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
-                                isSelected
-                                  ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                                  : isCurrentMonth
-                                    ? 'text-gray-900'
-                                    : 'text-gray-400'
-                              }`}
-                            >
-                              {date.getDate()}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="relative">
-                    <Input
-                      type="text"
-                      placeholder="Find session"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-48 md:w-64 h-9 min-w-0"
-                    />
+                    )}
                   </div>
-                  <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
-                    <b>+</b>
-                  </Button>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="relative">
+                      <Input
+                        type="text"
+                        placeholder="Find session"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-48 md:w-64 h-9 min-w-0"
+                      />
+                    </div>
+                    <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
+                      <b>+</b>
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
+
+            {/* Header for All and Session Notes views */}
+            {(activeView === 'all' || activeView === 'sessionnotes') && (
+              <div className="px-8 pt-6 pb-0">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex flex-col">
+                    <h1 className="text-3xl font-bold text-gray-900 font-lexend">
+                      {activeView === 'all' ? 'All Students' : 'Session Notes'}
+                    </h1>
+                    <p className="text-lg text-gray-600 font-lexend mt-1">
+                      {activeView === 'all'
+                        ? `${getAllStudentsSorted().length} students in your workspace`
+                        : `${getSessionNotesStudents().length} students with pending session notes`
+                      }
+                    </p>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="relative">
+                      <Input
+                        type="text"
+                        placeholder={activeView === 'all' ? "Find student" : "Find session"}
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-48 md:w-64 h-9 min-w-0"
+                      />
+                    </div>
+                    <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
+                      <b>+</b>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
             {/* Content inside card */}
             <div className="px-4 pb-6 pt-0 space-y-6 flex-1 overflow-y-auto">
               {activeView === 'all' && (
