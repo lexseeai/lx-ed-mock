@@ -666,7 +666,9 @@ export default function Index() {
                           const firstDayOfWeek = (firstOfMonth.getDay() + 6) % 7; // Convert Sunday=0 to Monday=0
                           const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i - firstDayOfWeek + 1);
 
-                          const isSelected = date.toDateString() === selectedDate.toDateString();
+                          const isSelected = date.getDate() === selectedDate.getDate() &&
+                                           date.getMonth() === selectedDate.getMonth() &&
+                                           date.getFullYear() === selectedDate.getFullYear();
                           const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
 
                           return (
