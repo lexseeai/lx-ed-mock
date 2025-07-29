@@ -656,17 +656,19 @@ export default function Index() {
   };
 
   // Helper function to render session dots
-  const renderSessionDots = (sessionCount: number) => {
+  const renderSessionDots = (sessionCount: number, isSelected: boolean = false) => {
     if (sessionCount === 0) return null;
 
     let dotCount = 1;
     if (sessionCount >= 2 && sessionCount <= 4) dotCount = 2;
     if (sessionCount >= 5) dotCount = 3;
 
+    const dotColor = isSelected ? 'bg-white' : 'bg-stone-300';
+
     return (
-      <div className="flex justify-center gap-0.5 mt-1">
+      <div className="flex justify-center gap-0.5 mt-0.5">
         {Array.from({ length: dotCount }, (_, i) => (
-          <div key={i} className="w-1 h-1 bg-indigo-600 rounded-full"></div>
+          <div key={i} className={`w-1 h-1 ${dotColor} rounded-full`}></div>
         ))}
       </div>
     );
@@ -704,7 +706,7 @@ export default function Index() {
 
                       {/* Calendar Picker */}
                     {showCalendarPicker && (
-                      <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
+                      <div className="absolute top-full left-0 mt-2 bg-stone-800 border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
                         <div className="flex items-center justify-between mb-4">
                           <button
                             onClick={() => {
@@ -716,7 +718,7 @@ export default function Index() {
                           >
                             <ChevronLeft className="w-4 h-4" />
                           </button>
-                          <span className="font-medium font-lexend">
+                          <span className="font-medium font-lexend text-stone-800">
                             {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                           </span>
                           <button
@@ -736,10 +738,10 @@ export default function Index() {
                         {/* Simple calendar grid */}
                         <div className="grid grid-cols-7 gap-1 text-sm">
                           {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
-                            <div key={day} className="text-center p-2 text-gray-500 font-lexend text-xs">
-                              {day}
-                            </div>
-                          ))}
+                          <div key={day} className="text-center p-2 text-stone-700 font-lexend text-xs">
+                            {day}
+                          </div>
+                        ))}
                           {Array.from({length: 42}, (_, i) => {
                             // Start from Monday - calculate the first Monday of the month view
                             const firstOfMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
@@ -761,19 +763,19 @@ export default function Index() {
                                     setSelectedDate(date);
                                     jumpToDate(date);
                                   }}
-                                  className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
+                                  className={`p-2 text-center rounded hover:bg-stone-700/10 font-lexend text-sm ${
                                     isSelected
                                       ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                                       : shouldGrayOut
-                                        ? 'text-gray-400'
+                                        ? 'text-stone-200'
                                         : isCurrentMonth
-                                          ? 'text-gray-900'
-                                          : 'text-gray-400'
+                                          ? 'text-stone-700'
+                                          : 'text-stone-400'
                                   }`}
                                 >
                                   {date.getDate()}
                                 </button>
-                                {isCurrentMonth && renderSessionDots(sessionCount)}
+                                {isCurrentMonth && renderSessionDots(sessionCount, isSelected)}
                               </div>
                             );
                           })}
@@ -784,7 +786,7 @@ export default function Index() {
 
                         {/* Hide empty days toggle */}
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-lexend text-gray-700">Hide empty days</span>
+                          <span className="text-sm font-lexend text-white">Hide empty days</span>
                           <button
                             onClick={() => {
                               if (isToggling) return; // Prevent rapid clicking
