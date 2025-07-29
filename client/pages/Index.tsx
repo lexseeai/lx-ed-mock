@@ -701,7 +701,7 @@ export default function Index() {
                       <h1 className="text-3xl font-bold text-stone-800 font-lexend">
                         {getCurrentMondayMonth()} 2025
                       </h1>
-                      <ChevronDown className="w-6 h-6 text-black" />
+                      <ChevronDown className="w-6 h-6 text-stone-400" />
                       </button>
 
                       {/* Calendar Picker */}
