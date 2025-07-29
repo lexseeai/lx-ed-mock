@@ -656,14 +656,19 @@ export default function Index() {
   };
 
   // Helper function to render session dots
-  const renderSessionDots = (sessionCount: number, isSelected: boolean = false) => {
+  const renderSessionDots = (sessionCount: number, isSelected: boolean = false, isCurrentMonth: boolean = true) => {
     if (sessionCount === 0) return null;
 
     let dotCount = 1;
     if (sessionCount >= 2 && sessionCount <= 4) dotCount = 2;
     if (sessionCount >= 5) dotCount = 3;
 
-    const dotColor = isSelected ? 'bg-white' : 'bg-stone-300';
+    let dotColor = 'bg-stone-300'; // Default for current month
+    if (isSelected) {
+      dotColor = 'bg-white';
+    } else if (!isCurrentMonth) {
+      dotColor = 'bg-stone-400'; // Non-active months use stone-400
+    }
 
     return (
       <div className="flex justify-center gap-0.5 mt-0.5">
