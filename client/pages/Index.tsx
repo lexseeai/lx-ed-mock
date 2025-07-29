@@ -847,7 +847,7 @@ export default function Index() {
                       onClick={() => navigateTime('next')}
                       className="flex p-2.5 items-center justify-center rounded-xl border border-stone-200 bg-white hover:bg-stone-50 h-11"
                     >
-                      <ChevronRight className="w-6 h-6 text-black" />
+                      <ChevronRight className="w-6 h-6 text-indigo-600" />
                     </button>
                   </div>
                 </div>
