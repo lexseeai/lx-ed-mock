@@ -1128,7 +1128,7 @@ export default function Index() {
                   <div className="flex p-1.5 border border-stone-200 rounded-full bg-white">
                     <button
                       onClick={() => scrollToSection('in-progress')}
-                      className={`flex px-3 py-1.5 rounded-full text-base font-medium font-lexend transition-all ${
+                      className={`flex px-3 py-1.5 rounded-full text-sm font-medium font-lexend transition-all ${
                         activeTab === 'in-progress'
                           ? 'bg-indigo-600 text-white shadow-sm'
                           : 'text-stone-400 hover:text-stone-600'
