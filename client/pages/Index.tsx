@@ -664,7 +664,7 @@ export default function Index() {
                       className="flex items-center space-x-2 hover:bg-stone-100 rounded px-2 py-1 ml-12"
                       onClick={() => setShowCalendarPicker(!showCalendarPicker)}
                     >
-                      <h1 className="text-xl font-medium text-gray-900 font-lexend">
+                      <h1 className="text-3xl font-bold text-gray-900 font-lexend">
                         {getCurrentMondayMonth()} 2025
                       </h1>
                       <ChevronDown className="w-4 h-4 text-gray-600" />
