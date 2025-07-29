@@ -778,6 +778,42 @@ export default function Index() {
                             );
                           })}
                         </div>
+
+                        {/* Separator */}
+                        <div className="border-t border-stone-200 my-4"></div>
+
+                        {/* Hide empty days toggle */}
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-lexend text-gray-700">Hide empty days</span>
+                          <button
+                            onClick={() => {
+                              if (isToggling) return; // Prevent rapid clicking
+                              setIsToggling(true);
+                              setAnimationDirection(hideEmptyDays ? 'showing' : 'hiding');
+
+                              // Start animation, then change state, then cleanup
+                              setTimeout(() => {
+                                setHideEmptyDays(!hideEmptyDays);
+                                setTimeout(() => {
+                                  setIsToggling(false);
+                                  setAnimationDirection(null);
+                                }, 500); // Match animation duration
+                              }, 50);
+                            }}
+                            className={`relative w-9 h-5 rounded-full transition-colors ${
+                              hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-600'
+                            }`}
+                            style={{
+                              backgroundColor: hideEmptyDays ? '#4f46e5' : '#5d5955'
+                            }}
+                          >
+                            <div
+                              className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
+                                hideEmptyDays ? 'translate-x-4' : 'translate-x-0.5'
+                              }`}
+                            />
+                          </button>
+                        </div>
                       </div>
                       )}
                     </div>
