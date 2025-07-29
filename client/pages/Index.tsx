@@ -288,6 +288,19 @@ export default function Index() {
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
+  // Sync selectedDate when selectedDayDate changes
+  useEffect(() => {
+    const allDays = getAllDaysData();
+    const selectedDay = allDays.find(day => day.date === selectedDayDate);
+
+    if (selectedDay) {
+      // Parse the full date and create a proper Date object
+      const [year, month, date] = selectedDay.fullDate.split('-').map(Number);
+      const newSelectedDate = new Date(year, month - 1, date); // month is 0-indexed
+      setSelectedDate(newSelectedDate);
+    }
+  }, [selectedDayDate]);
+
   // Close calendar picker when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
