@@ -662,7 +662,6 @@ export default function Index() {
 
                           const isSelected = date.toDateString() === selectedDate.toDateString();
                           const isCurrentMonth = date.getMonth() === selectedDate.getMonth();
-                          const isToday = date.toDateString() === new Date(2025, 6, 28).toDateString(); // July 28, 2025
 
                           return (
                             <button
@@ -672,7 +671,7 @@ export default function Index() {
                                 jumpToDate(date);
                               }}
                               className={`p-2 text-center rounded hover:bg-stone-100 font-lexend text-sm ${
-                                isSelected || isToday
+                                isSelected
                                   ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                                   : isCurrentMonth
                                     ? 'text-gray-900'
