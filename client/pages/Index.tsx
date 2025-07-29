@@ -220,7 +220,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
             }`}
             onClick={() => {
               setActiveView('schedule');
-              selectToday(); // Navigate to this week (July 28)
+              onThisWeekClick(); // Navigate to this week (July 28)
             }}
           >
             <div className="flex items-center space-x-2">
