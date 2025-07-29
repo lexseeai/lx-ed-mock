@@ -706,7 +706,7 @@ export default function Index() {
 
                       {/* Calendar Picker */}
                     {showCalendarPicker && (
-                      <div className="absolute top-full left-0 mt-2 bg-stone-800 border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
+                      <div className="absolute top-full left-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg p-4 z-[100] min-w-80">
                         <div className="flex items-center justify-between mb-4">
                           <button
                             onClick={() => {
