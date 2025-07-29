@@ -690,7 +690,7 @@ export default function Index() {
           <div className="bg-stone-50 border border-stone-200 rounded-lg shadow-sm h-full flex flex-col min-w-0 overflow-hidden">
             {/* Header inside card - Different headers for different views */}
             {activeView === 'schedule' && (
-              <div className="px-8 pt-6 pb-0">
+              <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex flex-col">
                     <div className="flex items-center space-x-2 relative" ref={calendarRef}>
