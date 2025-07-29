@@ -778,8 +778,8 @@ export default function Index() {
                                         : sessionCount > 0
                                           ? 'text-stone-400'
                                           : hideEmptyDays
-                                            ? 'text-stone-400'
-                                            : 'text-stone-200'
+                                            ? 'text-stone-200'
+                                            : 'text-stone-400'
                                 }`}
                               >
                                 <div className="leading-none">
