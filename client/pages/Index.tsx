@@ -656,22 +656,17 @@ export default function Index() {
   };
 
   // Helper function to render session dots
-  const renderSessionDots = (sessionCount: number, isSelected: boolean = false, isCurrentMonth: boolean = true) => {
+  const renderSessionDots = (sessionCount: number, isSelected: boolean = false) => {
     if (sessionCount === 0) return null;
 
     let dotCount = 1;
     if (sessionCount >= 2 && sessionCount <= 4) dotCount = 2;
     if (sessionCount >= 5) dotCount = 3;
 
-    let dotColor = 'bg-stone-300'; // Default for current month
-    if (isSelected) {
-      dotColor = 'bg-white';
-    } else if (!isCurrentMonth) {
-      dotColor = 'bg-stone-400'; // Non-active months use stone-400
-    }
+    const dotColor = isSelected ? 'bg-white' : 'bg-stone-300';
 
     return (
-      <div className="flex justify-center gap-0.5 -mt-0.5">
+      <div className="flex justify-center gap-0.5 mt-0.5">
         {Array.from({ length: dotCount }, (_, i) => (
           <div key={i} className={`w-1 h-1 ${dotColor} rounded-full`}></div>
         ))}
@@ -773,18 +768,16 @@ export default function Index() {
                                     ? 'bg-indigo-600 text-white hover:bg-indigo-700'
                                     : shouldGrayOut
                                       ? 'text-stone-200'
-                                      : hasNoSessions
-                                        ? 'text-stone-200'
-                                        : isCurrentMonth
-                                          ? 'text-stone-700'
-                                          : 'text-stone-400'
+                                      : isCurrentMonth
+                                        ? 'text-stone-700'
+                                        : 'text-stone-400'
                                 }`}
                               >
                                 <div className="leading-none">
                                   {date.getDate()}
                                 </div>
-                                {sessionCount > 0 ?
-                                  renderSessionDots(sessionCount, isSelected, isCurrentMonth) :
+                                {isCurrentMonth && sessionCount > 0 ?
+                                  renderSessionDots(sessionCount, isSelected) :
                                   <div className="h-1.5"></div>
                                 }
                               </button>
