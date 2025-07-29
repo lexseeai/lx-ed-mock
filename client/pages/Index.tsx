@@ -490,7 +490,25 @@ export default function Index() {
 
   const navigateTime = (direction: 'prev' | 'next') => {
     const allDays = getAllDaysData();
-    const currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+
+    // Find current day more precisely - look for exact match including month context
+    let currentIndex = -1;
+    const currentWeek = getCurrentWeek();
+    const currentDayInWeek = currentWeek.find(day => day.date === selectedDayDate);
+
+    if (currentDayInWeek) {
+      // Find this exact day in the full data array
+      currentIndex = allDays.findIndex(day =>
+        day.date === selectedDayDate &&
+        day.month === currentDayInWeek.month &&
+        day.day === currentDayInWeek.day
+      );
+    }
+
+    if (currentIndex === -1) {
+      // Fallback: find by date only
+      currentIndex = allDays.findIndex(day => day.date === selectedDayDate);
+    }
 
     if (currentIndex === -1) return;
 
@@ -511,12 +529,15 @@ export default function Index() {
     } else {
       // Go to next week's Monday
       const nextMondayIndex = currentMondayIndex + 7;
-      const nextMonday = allDays[nextMondayIndex];
 
-      // Check if we have enough days for a full week
-      if (nextMonday && nextMondayIndex < allDays.length) {
-        setSelectedDayDate(nextMonday.date);
-        setCurrentWeekStart(nextMondayIndex);
+      // Make sure we don't go beyond our data
+      if (nextMondayIndex < allDays.length) {
+        const nextMonday = allDays[nextMondayIndex];
+
+        if (nextMonday) {
+          setSelectedDayDate(nextMonday.date);
+          setCurrentWeekStart(nextMondayIndex);
+        }
       }
     }
   };
