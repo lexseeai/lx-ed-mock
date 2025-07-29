@@ -1100,7 +1100,7 @@ export default function Index() {
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-end gap-0.5">
-                    <h1 className="text-3xl font-bold text-stone-800 font-lexend">
+                    <h1 className="text-3xl font-bold text-stone-800 font-lexend tracking-tight">
                       Session notes
                     </h1>
                   </div>
