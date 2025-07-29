@@ -731,15 +731,7 @@ export default function Index() {
                           </button>
                         </div>
 
-                        {/* Today button */}
-                        <div className="flex justify-center mb-4">
-                          <button
-                            onClick={selectToday}
-                            className="px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700 font-lexend"
-                          >
-                            Today
-                          </button>
-                        </div>
+
 
                         {/* Simple calendar grid */}
                         <div className="grid grid-cols-7 gap-1 text-sm">
