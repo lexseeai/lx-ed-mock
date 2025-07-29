@@ -735,7 +735,7 @@ export default function Index() {
                           // For session cards: count consecutive empty cards immediately to the left
                           let consecutiveEmptyToLeft = 0;
                           for (let i = originalIndex - 1; i >= 0; i--) {
-                            if (allDays[i].sessions === 0) {
+                            if (visibleWindow[i].sessions === 0) {
                               consecutiveEmptyToLeft++;
                             } else {
                               break; // Stop at first non-empty card
