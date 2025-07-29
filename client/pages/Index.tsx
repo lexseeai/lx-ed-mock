@@ -53,7 +53,7 @@ const mockStudents: Student[] = [
   { id: "15", name: "Marcus", subject: "English Tutoring", sessionTime: "7:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(Date.now() + 2 * 60 * 60 * 1000), sessionReportCompleted: false }, // Waiting (2h in future)
 
   // July 29th - all waiting
-  { id: "16", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, July 29", sessionDate: new Date(2025, 6, 29), sessionReportCompleted: false }, // Waiting
+  { id: "16", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, July 29", sessionDate: new Date(Date.now() + 24 * 60 * 60 * 1000), sessionReportCompleted: false }, // Waiting (24h in future)
 
   // July 31st - all waiting
   { id: "17", name: "Maya", subject: "Biology Tutoring", sessionTime: "10:00am, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
