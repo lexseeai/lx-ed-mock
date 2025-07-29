@@ -1070,44 +1070,7 @@ export default function Index() {
                     </button>
                   </div>
 
-                  {/* Toggle Switch */}
-                  <div className="flex items-center justify-end" style={{marginTop: '8px'}}>
-                    <div className="flex items-center gap-2 mr-16">
-                      <button
-                        onClick={() => {
-                          if (isToggling) return; // Prevent rapid clicking
-                          setIsToggling(true);
-                          setAnimationDirection(hideEmptyDays ? 'showing' : 'hiding');
 
-                          // Start animation, then change state, then cleanup
-                          setTimeout(() => {
-                            setHideEmptyDays(!hideEmptyDays);
-                            setTimeout(() => {
-                              setIsToggling(false);
-                              setAnimationDirection(null);
-                            }, 500); // Match animation duration
-                          }, 50);
-                        }}
-                        className={`relative w-9 h-5 rounded-full transition-colors ${
-                          hideEmptyDays ? 'bg-indigo-600' : 'bg-stone-600'
-                        }`}
-                        style={{
-                          backgroundColor: hideEmptyDays ? '#4f46e5' : '#5d5955'
-                        }}
-                      >
-                        <div
-                          className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
-                            hideEmptyDays ? 'translate-x-4' : 'translate-x-0.5'
-                          }`}
-                        />
-                      </button>
-                      <span className="text-sm font-lexend" style={{color: 'rgba(74, 74, 74, 0.75)'}}>
-                        <span style={{color: 'rgb(169, 162, 159)'}}>
-                          Hide empty days
-                        </span>
-                      </span>
-                    </div>
-                  </div>
 
                   {/* Time Periods */}
                   <div className="space-y-8 min-w-0 mt-6 mx-16">
