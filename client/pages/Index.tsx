@@ -1262,9 +1262,9 @@ export default function Index() {
                 <div className="space-y-12">
                   {/* In Progress Section */}
                   <section id="in-progress">
-                    <div className="flex items-center gap-2 mb-6">
+                    <div className="flex items-center gap-2 mb-4">
                       <NotebookPen className="w-6 h-6 text-stone-400" />
-                      <h2 className="text-2xl font-bold text-stone-400 font-lexend">In Progress</h2>
+                      <h2 className="text-xl font-normal text-stone-400 font-lexend">In Progress</h2>
                       <span className="text-sm text-stone-400 font-lexend">({getInProgressNotes().length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
