@@ -169,7 +169,7 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
   );
 }
 
-function Sidebar({ activeView, setActiveView }: { activeView: string; setActiveView: (view: string) => void }) {
+function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: string; setActiveView: (view: string) => void; onThisWeekClick: () => void }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
