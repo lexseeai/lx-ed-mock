@@ -539,55 +539,83 @@ export default function Index() {
 
   // Session data for each date
   const dateSessionData: { [key: string]: { morning: Student[], afternoon: Student[], evening: Student[] } } = {
-    '28': {
-      morning: [mockStudents[0]], // Alex
-      afternoon: [mockStudents[1], mockStudents[2]], // Emma, Marcus
+    // July 14th - 2 sessions: all done
+    '14': {
+      morning: [mockStudents[0]], // Alex - Done
+      afternoon: [mockStudents[1]], // Emma - Done
       evening: []
     },
+    // July 15th - 1 session: done
+    '15': {
+      morning: [mockStudents[2]], // Marcus - Done
+      afternoon: [],
+      evening: []
+    },
+    // July 17th - 2 sessions: all done
+    '17': {
+      morning: [mockStudents[3]], // Sofia - Done
+      afternoon: [mockStudents[4]], // Liam - Done
+      evening: []
+    },
+    // July 18th - 1 session: done
+    '18': {
+      morning: [mockStudents[5]], // Isabella - Done
+      afternoon: [],
+      evening: []
+    },
+    // July 21st - 3 sessions: 2 done, 1 late
+    '21': {
+      morning: [mockStudents[6]], // Alex - Done
+      afternoon: [mockStudents[7]], // Emma - Done
+      evening: [mockStudents[8]] // Marcus - Late
+    },
+    // July 23rd - 1 session: late
+    '23': {
+      morning: [mockStudents[9]], // Sofia - Late
+      afternoon: [],
+      evening: []
+    },
+    // July 24th - 2 sessions: both late
+    '24': {
+      morning: [mockStudents[10]], // Liam - Late
+      afternoon: [mockStudents[11]], // Isabella - Late
+      evening: []
+    },
+    // July 28th - 3 sessions: Alex & Emma = In process, Marcus = Waiting
+    '28': {
+      morning: [mockStudents[12]], // Alex - In process
+      afternoon: [mockStudents[13]], // Emma - In process
+      evening: [mockStudents[14]] // Marcus - Waiting
+    },
+    // July 29th - all waiting
     '29': {
       morning: [],
-      afternoon: [mockStudents[3]], // Sofia
+      afternoon: [mockStudents[15]], // Carlos - Waiting
       evening: []
     },
+    // July 31st - all waiting
     '31': {
-      morning: [mockStudents[4]], // Liam
-      afternoon: [mockStudents[5], mockStudents[6]], // Isabella, Noah
+      morning: [mockStudents[16]], // Maya - Waiting
+      afternoon: [mockStudents[17], mockStudents[18]], // Daniel, Zoe - Waiting
       evening: []
     },
+    // August 4th - waiting
     '4': {
-      morning: [],
-      afternoon: [mockStudents[8], mockStudents[9], mockStudents[10]], // Carlos, Maya, Daniel
+      morning: [mockStudents[19]], // Oliver - Waiting
+      afternoon: [],
       evening: []
     },
-    '5': {
-      morning: [],
-      afternoon: [],
-      evening: [mockStudents[9]] // Maya
-    },
-    '6': {
-      morning: [mockStudents[10]], // Daniel
-      afternoon: [mockStudents[11]], // Zoe
-      evening: [mockStudents[12]] // Oliver
-    },
+    // August 7th - waiting
     '7': {
       morning: [],
-      afternoon: [mockStudents[13]], // Luna
+      afternoon: [mockStudents[20]], // Luna - Waiting
       evening: []
     },
+    // August 8th - waiting
     '8': {
-      morning: [mockStudents[14]], // Kai
-      afternoon: [],
-      evening: []
-    },
-    '11': {
-      morning: [],
-      afternoon: [mockStudents[0]], // Alex
-      evening: []
-    },
-    '12': {
       morning: [],
       afternoon: [],
-      evening: [mockStudents[1]] // Emma
+      evening: [mockStudents[21]] // Kai - Waiting
     }
   };
 
