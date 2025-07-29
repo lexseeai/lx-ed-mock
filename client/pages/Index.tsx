@@ -133,14 +133,12 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
 
         {/* Bottom section with session report badge */}
         <div className="flex justify-center px-1.5 pb-1.5">
-          {student.sessionReportDue && (
-            <div className="flex items-center gap-1 px-1.5 py-0.5 border border-stone-200 rounded">
-              <Clock className="w-3 h-3 text-pink-600" />
-              <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                Session report
-              </span>
-            </div>
-          )}
+          <div className={`flex items-center gap-1 px-1.5 py-0.5 border rounded ${badgeConfig.borderColor} ${badgeConfig.bgColor}`}>
+            <BadgeIcon className={`w-3 h-3 ${badgeConfig.color}`} />
+            <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+              Session report
+            </span>
+          </div>
         </div>
       </CardContent>
     </Card>
