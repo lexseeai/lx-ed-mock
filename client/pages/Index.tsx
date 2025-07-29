@@ -757,26 +757,27 @@ export default function Index() {
                             const shouldGrayOut = hideEmptyDays && hasNoSessions && isCurrentMonth;
 
                             return (
-                              <div key={i} className="flex flex-col items-center">
-                                <button
-                                  onClick={() => {
-                                    setSelectedDate(date);
-                                    jumpToDate(date);
-                                  }}
-                                  className={`px-2 pt-2 pb-1 text-center rounded hover:bg-stone-700/10 font-lexend text-sm ${
-                                    isSelected
-                                      ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                                      : shouldGrayOut
-                                        ? 'text-stone-200'
-                                        : isCurrentMonth
-                                          ? 'text-stone-700'
-                                          : 'text-stone-400'
-                                  }`}
-                                >
+                              <button
+                                key={i}
+                                onClick={() => {
+                                  setSelectedDate(date);
+                                  jumpToDate(date);
+                                }}
+                                className={`w-9 h-9 flex flex-col items-center justify-center text-center rounded hover:bg-stone-700/10 font-lexend text-sm ${
+                                  isSelected
+                                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                    : shouldGrayOut
+                                      ? 'text-stone-200'
+                                      : isCurrentMonth
+                                        ? 'text-stone-700'
+                                        : 'text-stone-400'
+                                }`}
+                              >
+                                <div className="leading-none">
                                   {date.getDate()}
-                                </button>
-                                {isCurrentMonth && renderSessionDots(sessionCount, isSelected)}
-                              </div>
+                                </div>
+                                {isCurrentMonth && sessionCount > 0 && renderSessionDots(sessionCount, isSelected)}
+                              </button>
                             );
                           })}
                         </div>
