@@ -1524,7 +1524,7 @@ export default function Index() {
 
                   {/* Session Times */}
                   <div className="flex flex-col">
-                    <button className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-full">
+                    <button className="group flex items-center justify-between gap-2 p-2 -mx-2 mb-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-full">
                       <div className="flex items-center gap-2">
                         <div className="w-[60px] flex justify-end">
                           <Clock className="w-[18px] h-[18px] text-stone-400" />
