@@ -1353,6 +1353,9 @@ export default function Index() {
             className="fixed inset-y-0 right-0 h-full w-[600px] border-l bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right z-50 overflow-y-auto"
             onPointerDownOutside={(e) => e.preventDefault()}
             onInteractOutside={(e) => e.preventDefault()}
+            onEscapeKeyDown={(e) => e.preventDefault()}
+            onFocusOutside={(e) => e.preventDefault()}
+            trapFocus={false}
           >
           {selectedStudentId && getSelectedStudent() ? (
             <>
