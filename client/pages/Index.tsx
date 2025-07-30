@@ -115,7 +115,7 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
   const getTimeIcon = () => {
     switch (sessionStatus) {
       case 'active': // in progress
-        return { icon: Edit, color: 'text-indigo-600' };
+        return { icon: Pencil, color: 'text-indigo-600' };
       case 'late': // due soon
         return { icon: Timer, color: 'text-pink-600' };
       case 'done': // submitted
