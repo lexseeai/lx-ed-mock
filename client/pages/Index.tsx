@@ -454,6 +454,28 @@ export default function Index() {
     );
   };
 
+  // Get days that have sessions for a specific student
+  const getStudentSessionDays = (studentName: string) => {
+    const studentSessions = mockStudents.filter(s => s.name === studentName);
+    const days = new Set<string>();
+
+    studentSessions.forEach(session => {
+      if (session.sessionDate) {
+        days.add(session.sessionDate.getDate().toString());
+      }
+    });
+
+    return Array.from(days);
+  };
+
+  // Check if a day should be shown based on student filter
+  const shouldShowDay = (dayData: any) => {
+    if (!selectedStudentFilter) return true;
+
+    const studentSessionDays = getStudentSessionDays(selectedStudentFilter);
+    return studentSessionDays.includes(dayData.date);
+  };
+
   const handleStudentClick = (studentId: string, studentList: Student[] = []) => {
     setSelectedStudentId(studentId);
     setCurrentStudentList(studentList);
