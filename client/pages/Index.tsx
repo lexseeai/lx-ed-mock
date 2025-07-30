@@ -1016,10 +1016,7 @@ export default function Index() {
                   <div className="flex items-center gap-1.5">
                     <div className="relative flex-1 w-56" ref={studentDropdownRef}>
                       <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                        <UserRoundSearch className="w-6 h-6 text-stone-400" />
                       </div>
                       {selectedStudentFilter && (
                         <button
