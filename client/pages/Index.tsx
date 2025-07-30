@@ -333,7 +333,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
                     <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
                   </div>
                 </TooltipTrigger>
-                <TooltipContent className="animate-none">
+                <TooltipContent className="animate-none pointer-events-none">
                   <p>7 this week</p>
                 </TooltipContent>
               </Tooltip>
