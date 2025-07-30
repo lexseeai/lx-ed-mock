@@ -1469,7 +1469,7 @@ export default function Index() {
                 <div className="px-15 pb-3">
                   <div className="flex items-center justify-between pb-5">
                     <div className="flex items-center gap-2">
-                      <div className="w-15 h-15 rounded-full overflow-hidden flex-shrink-0">
+                      <div className="w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
                         <img
                           src="https://api.builder.io/api/v1/image/assets/TEMP/df2d5088701924956cda8e165bca6457a40fbfaa?width=149"
                           alt={getSelectedStudent()?.name}
