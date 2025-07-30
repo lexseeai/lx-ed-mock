@@ -309,72 +309,14 @@ export default function Index() {
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Function to scroll to section with offset
+  // Function to scroll to section
   const scrollToSection = (sectionId: string) => {
     setActiveTab(sectionId);
-    try {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const yOffset = -24; // 24px offset to leave space between border and title
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    } catch (error) {
-      console.warn('Scroll to section error:', error);
-      // Fallback to simple scrollIntoView
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-
-  // Scroll detection to update active tab based on visible section
-  useEffect(() => {
-    if (activeView !== 'sessionnotes') return;
-
-    let throttleTimer: NodeJS.Timeout | null = null;
-
-    const handleScroll = () => {
-      if (throttleTimer) return;
-
-      throttleTimer = setTimeout(() => {
-        try {
-          const sections = ['in-progress', 'due-soon', 'submitted'];
-          const scrollPosition = window.scrollY + 100;
-
-          for (let i = sections.length - 1; i >= 0; i--) {
-            const section = document.getElementById(sections[i]);
-            if (section && section.offsetTop <= scrollPosition) {
-              setActiveTab(sections[i]);
-              break;
-            }
-          }
-        } catch (error) {
-          console.warn('Scroll detection error:', error);
-        }
-        throttleTimer = null;
-      }, 16); // ~60fps throttling
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Initial check with delay to ensure DOM is ready
-    setTimeout(() => {
-      try {
-        handleScroll();
-      } catch (error) {
-        console.warn('Initial scroll check error:', error);
-      }
-    }, 100);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (throttleTimer) {
-        clearTimeout(throttleTimer);
-      }
-    };
-  }, [activeView]);
 
   // Sync selectedDate when selectedDayDate changes
   useEffect(() => {
