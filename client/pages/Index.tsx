@@ -955,6 +955,23 @@ export default function Index() {
                   </div>
 
                   <div className="flex items-center gap-1.5">
+                    <div className="relative flex-1 w-56">
+                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      <Input
+                        type="text"
+                        placeholder="Search sessions"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-14 pr-14 h-11 font-readex text-base rounded-full overflow-hidden bg-transparent"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1.5">
                     {/* Back Arrow */}
                     <button
                       onClick={() => navigateTime('prev')}
