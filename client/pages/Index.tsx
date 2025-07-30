@@ -320,7 +320,7 @@ export default function Index() {
         const containerTop = scrollContainer.getBoundingClientRect().top;
         const elementTop = element.getBoundingClientRect().top;
         const scrollTop = scrollContainer.scrollTop;
-        const targetScroll = scrollTop + (elementTop - containerTop) + 12; // 12px offset
+        const targetScroll = scrollTop + (elementTop - containerTop) - 24; // 24px offset upward to show more space above
 
         scrollContainer.scrollTo({
           top: targetScroll,
