@@ -1180,8 +1180,19 @@ export default function Index() {
                       if (isToggling) {
                         visibleDays = currentWeek;
                       } else if (selectedStudentFilter) {
-                        // When student is filtered: show only days that student has sessions
-                        visibleDays = currentWeek.filter(day => shouldShowDay(day) && day.sessions > 0);
+                        // When student is filtered: show all dates in the month where that student has sessions
+                        const allDays = getAllDaysData();
+                        const currentMondayMonth = getCurrentMondayMonth();
+
+                        // Get all days in the current month where the selected student has sessions
+                        const studentSessionDays = getStudentSessionDays(selectedStudentFilter);
+                        const monthDaysWithStudentSessions = allDays.filter(day =>
+                          day.month === currentMondayMonth &&
+                          studentSessionDays.includes(day.date) &&
+                          day.sessions > 0
+                        );
+
+                        visibleDays = monthDaysWithStudentSessions;
                       } else if (hideEmptyDays) {
                         // When hiding empty days: show only days with sessions, but always include Monday
                         const monday = currentWeek.find(day => day.day === 'Mon');
