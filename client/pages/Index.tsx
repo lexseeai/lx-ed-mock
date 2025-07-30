@@ -1674,53 +1674,113 @@ export default function Index() {
                         </p>
                       </div>
                       <div className="space-y-3">
-                        <div className="flex items-start gap-1.5">
+                        <div className="relative flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
                             Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.
                           </p>
+                          <div className="group relative ml-2">
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-700 hover:bg-stone-600 transition-colors cursor-pointer">
+                              <span className="text-white font-lexend text-xs font-normal leading-none">21 July 25</span>
+                            </div>
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex items-start gap-1.5">
+                        <div className="relative flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
                             Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.
                           </p>
+                          <div className="group relative ml-2">
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
+                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">21 July 25</span>
+                            </div>
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex items-start gap-1.5">
+                        <div className="relative flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
                             Demonstrated improved accuracy in identifying decimal positions with visual support.
                           </p>
+                          <div className="group relative ml-2">
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
+                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">14 July 25</span>
+                            </div>
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex items-start gap-1.5">
+                        <div className="relative flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
                             Made progress toward independent problem-solving with fewer rounding errors.
                           </p>
+                          <div className="group relative ml-2">
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
+                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">7 July 25</span>
+                            </div>
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex items-start gap-1.5">
+                        <div className="relative flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
                             Joined the session late but used remaining time effectively to reinforce key math skills.
                           </p>
+                          <div className="group relative ml-2">
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
+                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">30 June 25</span>
+                            </div>
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex items-start gap-1.5">
+                        <div className="relative flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
                             Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.
                           </p>
+                          <div className="group relative ml-2">
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
+                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">23 June 25</span>
+                            </div>
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
