@@ -206,7 +206,10 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-8 ${
               activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
-            onClick={() => setActiveView('all')}
+            onClick={() => {
+              setActiveView('all');
+              setShowStudentOverlay(false);
+            }}
           >
             <div className="flex items-center space-x-2">
               <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
@@ -223,6 +226,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
             onClick={() => {
               setActiveView('schedule');
               onThisWeekClick(); // Navigate to this week (July 28)
+              setShowStudentOverlay(false);
             }}
           >
             <div className="flex items-center space-x-2">
@@ -237,7 +241,10 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick }: { activeView: s
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-8 ${
               activeView === 'sessionnotes' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
-            onClick={() => setActiveView('sessionnotes')}
+            onClick={() => {
+              setActiveView('sessionnotes');
+              setShowStudentOverlay(false);
+            }}
           >
             <div className="flex items-center space-x-2">
               <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
