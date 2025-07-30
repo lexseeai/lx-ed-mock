@@ -1770,11 +1770,11 @@ export default function Index() {
                           </div>
                           <p className="text-base font-normal text-stone-900 font-lexend leading-5">
                             Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.{' '}
-                            <span className="relative inline-block">
-                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group" style={{margin: '-5px 0 2px 4px'}}>
+                            <span className="relative inline-block group align-middle ml-1">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{verticalAlign: 'middle'}}>
                                 <span className="text-stone-400 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>23 June 25</span>
                               </span>
-                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-auto">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
                                   <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
                                 </span>
