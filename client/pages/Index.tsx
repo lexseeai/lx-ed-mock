@@ -111,6 +111,24 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
   const badgeConfig = getSessionBadgeConfig(sessionStatus);
   const BadgeIcon = badgeConfig.icon;
 
+  // Get icon for session time based on status
+  const getTimeIcon = () => {
+    switch (sessionStatus) {
+      case 'active': // in progress
+        return { icon: Edit, color: 'text-indigo-600' };
+      case 'late': // due soon
+        return { icon: Timer, color: 'text-pink-600' };
+      case 'done': // submitted
+        return { icon: CircleCheck, color: 'text-green-600' };
+      case 'waiting':
+      default:
+        return { icon: Clock, color: 'text-stone-700' };
+    }
+  };
+
+  const timeIconConfig = getTimeIcon();
+  const TimeIcon = timeIconConfig.icon;
+
   return (
     <Card
       className="cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-xl w-45 h-60"
