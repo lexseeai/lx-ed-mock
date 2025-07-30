@@ -1531,64 +1531,124 @@ export default function Index() {
                       // Today is July 28, 2025
                       const today = new Date(2025, 6, 28); // July 28, 2025
 
-                      // For Alex: next session is Aug 4, current session is today (July 28)
-                      const nextSessionDate = new Date(2025, 7, 4); // Aug 4, 2025
-                      const currentSessionDate = today;
-
-                      // Format date function
-                      const formatSessionDate = (date: Date, isToday: boolean = false) => {
-                        if (isToday) {
-                          return "today, 28 July";
+                      // Student session data mapping
+                      const studentSessionData = {
+                        'Alex': {
+                          next: { time: '9:00am', date: 'Mon 4 August', status: 'wait' },
+                          current: { time: '9:00am', date: 'today, 28 July', status: 'in-progress' }
+                        },
+                        'Carlos': {
+                          next: { time: '8:00pm', date: 'Tue 29 July', status: 'wait' },
+                          previous: { time: '8:00pm', date: 'Mon 21 July', status: 'done' }
+                        },
+                        'Daniel': {
+                          next: { time: '2:00pm', date: 'Thu 31 July', status: 'wait' },
+                          previous: { time: '2:00pm', date: 'Thu 24 July', status: 'done' }
+                        },
+                        'Emma': {
+                          next: { time: '3:00pm', date: 'Mon 4 August', status: 'wait' },
+                          current: { time: '3:00pm', date: 'today, 28 July', status: 'in-progress' }
+                        },
+                        'Isabella': {
+                          next: { time: '1:30pm', date: 'Thu 31 July', status: 'wait' },
+                          previous: { time: '1:30pm', date: 'Mon 21 July', status: 'late' }
+                        },
+                        'Kai': {
+                          next: { time: '6:00pm', date: 'Fri 8 August', status: 'wait' },
+                          previous: null
+                        },
+                        'Liam': {
+                          next: { time: '9:00am', date: 'Thu 31 July', status: 'wait' },
+                          previous: { time: '9:00am', date: 'Thu 24 July', status: 'late' }
+                        },
+                        'Luna': {
+                          next: { time: '2:00pm', date: 'Thu 7 August', status: 'wait' },
+                          previous: null
+                        },
+                        'Marcus': {
+                          current: { time: '7:00pm', date: 'today, 28 July', status: 'wait' },
+                          previous: { time: '7:00pm', date: 'Mon 21 July', status: 'late' }
                         }
-                        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-                        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                        const dayName = days[date.getDay()];
-                        const day = date.getDate();
-                        const month = months[date.getMonth()];
-                        return `${dayName} ${day} ${month}`;
                       };
 
-                      return (
-                        <>
-                          {/* Next Session */}
-                          <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
-                            <div className="flex items-center gap-2">
-                              <div className="w-6 flex justify-end pr-1.5">
-                                <Clock className="w-[18px] h-[18px] text-stone-400" />
-                              </div>
-                              <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                                9:00am, {formatSessionDate(nextSessionDate)}
-                              </span>
-                            </div>
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                              <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-                                <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                                  Edit session notes
-                                </span>
-                              </div>
-                            </div>
-                          </button>
+                      const sessions = studentSessionData[student.name] || {};
 
-                          {/* Current Session (today) */}
-                          <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
+                      // Get icon and color based on status
+                      const getSessionIcon = (status: string) => {
+                        switch (status) {
+                          case 'wait':
+                            return { icon: Clock, color: 'text-stone-400' };
+                          case 'in-progress':
+                            return { icon: Pencil, color: 'text-indigo-600' };
+                          case 'done':
+                            return { icon: CircleCheck, color: 'text-green-500' };
+                          case 'late':
+                            return { icon: Timer, color: 'text-pink-600' };
+                          default:
+                            return { icon: Clock, color: 'text-stone-400' };
+                        }
+                      };
+
+                      // Get button text based on status
+                      const getButtonText = (status: string) => {
+                        return (status === 'done') ? 'View session notes' : 'Edit session notes';
+                      };
+
+                      const sessions_to_show = [];
+
+                      // Show next session first (if exists)
+                      if (sessions.next) {
+                        sessions_to_show.push({
+                          ...sessions.next,
+                          key: 'next'
+                        });
+                      }
+
+                      // Show current session (if exists)
+                      if (sessions.current) {
+                        sessions_to_show.push({
+                          ...sessions.current,
+                          key: 'current'
+                        });
+                      }
+
+                      // Show previous session (if exists and no current)
+                      if (sessions.previous && !sessions.current) {
+                        sessions_to_show.push({
+                          ...sessions.previous,
+                          key: 'previous'
+                        });
+                      }
+
+                      return sessions_to_show.map((session, index) => {
+                        const iconConfig = getSessionIcon(session.status);
+                        const IconComponent = iconConfig.icon;
+                        const buttonText = getButtonText(session.status);
+
+                        return (
+                          <button
+                            key={session.key}
+                            className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto"
+                            style={{margin: '0 36px 0 28px'}}
+                          >
                             <div className="flex items-center gap-2">
                               <div className="w-6 flex justify-end pr-1.5">
-                                <Pencil className="w-[18px] h-[18px] text-indigo-600" />
+                                <IconComponent className={`w-[18px] h-[18px] ${iconConfig.color}`} />
                               </div>
                               <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                                9:00am {formatSessionDate(currentSessionDate, true)}
+                                {session.time}, {session.date}
                               </span>
                             </div>
                             <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                               <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
                                 <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                                  Edit session notes
+                                  {buttonText}
                                 </span>
                               </div>
                             </div>
                           </button>
-                        </>
-                      );
+                        );
+                      });
                     })()}
                   </div>
 
