@@ -964,10 +964,10 @@ export default function Index() {
                       </div>
                       <Input
                         type="text"
-                        placeholder="Search sessions"
+                        placeholder="Filter by students"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-14 pr-14 h-11 font-readex text-base rounded-full overflow-hidden bg-transparent"
+                        className="pl-14 pr-4.5 h-11 font-readex text-base rounded-full overflow-hidden bg-transparent"
                       />
                     </div>
                   </div>
