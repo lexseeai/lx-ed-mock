@@ -1620,7 +1620,7 @@ export default function Index() {
                       <div className="space-y-3">
                         <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
-                            <div className="w-4 h-4 rounded-full border-2 border-stone-700"></div>
+                            <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
                           </div>
                           <p className="text-base font-normal text-stone-900 font-lexend leading-5">
                             Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
@@ -1628,7 +1628,7 @@ export default function Index() {
                         </div>
                         <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
-                            <div className="w-4 h-4 rounded-full border-2 border-stone-700"></div>
+                            <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
                           </div>
                           <p className="text-base font-normal text-stone-900 font-lexend leading-5">
                             Apply 2D shape formulas in word problems to build real-world problem-solving skills.
@@ -1636,7 +1636,7 @@ export default function Index() {
                         </div>
                         <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
-                            <div className="w-4 h-4 rounded-full border-2 border-stone-700"></div>
+                            <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
                           </div>
                           <p className="text-base font-normal text-stone-900 font-lexend leading-5">
                             Introduce multi-step problems involving both perimeter/area and decimal rounding.
