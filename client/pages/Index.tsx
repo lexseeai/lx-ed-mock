@@ -1570,7 +1570,7 @@ export default function Index() {
               </div>
 
               {/* Scrollable Content */}
-              <div className="flex-1 overflow-y-auto px-15 pt-5 pb-12">
+              <div className="flex-1 overflow-y-auto px-[60px] pt-5 pb-12">
                 {studentDetailTab === 'next-session' && (
                   <div className="space-y-12">
                     {/* Next Session */}
