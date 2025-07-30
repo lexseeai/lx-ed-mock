@@ -1524,9 +1524,9 @@ export default function Index() {
 
                   {/* Session Times */}
                   <div className="flex flex-col space-y-2">
-                    <div className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-200 transition-colors">
+                    <button className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-full">
                       <div className="flex items-center gap-2">
-                        <div className="w-[60px] flex justify-end pr-2">
+                        <div className="w-[60px] flex justify-end">
                           <Clock className="w-[18px] h-[18px] text-stone-400" />
                         </div>
                         <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
@@ -1540,10 +1540,10 @@ export default function Index() {
                           </span>
                         </div>
                       </div>
-                    </div>
-                    <div className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-200 transition-colors">
+                    </button>
+                    <button className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-full">
                       <div className="flex items-center gap-2">
-                        <div className="w-[60px] flex justify-end pr-2">
+                        <div className="w-[60px] flex justify-end">
                           <CircleCheck className="w-[18px] h-[18px] text-green-500" />
                         </div>
                         <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
@@ -1557,7 +1557,7 @@ export default function Index() {
                           </span>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   </div>
 
                   {/* Tab Navigation */}
