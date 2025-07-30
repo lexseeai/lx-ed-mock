@@ -107,6 +107,40 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
     return name.charAt(0).toUpperCase();
   };
 
+  // Get avatar colors based on tutoring subject
+  const getSubjectColors = () => {
+    const subject = student.subject?.toLowerCase() || '';
+
+    // Group similar subjects together
+    if (subject.includes('math') || subject.includes('algebra') || subject.includes('geometry') || subject.includes('calculus')) {
+      return 'bg-blue-100 text-blue-700';
+    }
+    if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry') || subject.includes('physics')) {
+      return 'bg-green-100 text-green-700';
+    }
+    if (subject.includes('english') || subject.includes('literature') || subject.includes('writing')) {
+      return 'bg-purple-100 text-purple-700';
+    }
+    if (subject.includes('history') || subject.includes('social')) {
+      return 'bg-amber-100 text-amber-700';
+    }
+    if (subject.includes('spanish') || subject.includes('french') || subject.includes('language')) {
+      return 'bg-pink-100 text-pink-700';
+    }
+    if (subject.includes('art') || subject.includes('music') || subject.includes('creative')) {
+      return 'bg-red-100 text-red-700';
+    }
+    if (subject.includes('computer') || subject.includes('coding') || subject.includes('programming')) {
+      return 'bg-indigo-100 text-indigo-700';
+    }
+    if (subject.includes('geography') || subject.includes('earth')) {
+      return 'bg-teal-100 text-teal-700';
+    }
+
+    // Default color for unknown subjects
+    return 'bg-stone-100 text-stone-700';
+  };
+
   const sessionStatus = getSessionReportStatus(student);
   const badgeConfig = getSessionBadgeConfig(sessionStatus);
   const BadgeIcon = badgeConfig.icon;
