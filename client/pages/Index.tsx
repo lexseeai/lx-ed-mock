@@ -309,14 +309,43 @@ export default function Index() {
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Function to scroll to section
+  // Function to scroll to section with offset
   const scrollToSection = (sectionId: string) => {
     setActiveTab(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const yOffset = -24; // 24px offset to leave space between border and title
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
+  // Scroll detection to update active tab based on visible section
+  useEffect(() => {
+    if (activeView !== 'sessionnotes') return;
+
+    const handleScroll = () => {
+      const sections = ['in-progress', 'due-soon', 'submitted'];
+      const scrollPosition = window.scrollY + 100; // Add offset for better detection
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveTab(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [activeView]);
 
   // Sync selectedDate when selectedDayDate changes
   useEffect(() => {
