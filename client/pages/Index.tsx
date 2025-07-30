@@ -1416,6 +1416,9 @@ export default function Index() {
       {/* Student Details Sheet */}
       <Sheet open={showStudentOverlay} onOpenChange={handleSheetOpenChange} modal={true}>
         <SheetContent side="right" className="w-[700px] sm:w-[700px] sm:max-w-[700px] p-0 overflow-hidden">
+          <SheetTitle className="sr-only">
+            {getSelectedStudent()?.name} - Student Details
+          </SheetTitle>
           {selectedStudentId && getSelectedStudent() ? (
             <div className="h-full flex flex-col">
               {/* Fixed Header */}
