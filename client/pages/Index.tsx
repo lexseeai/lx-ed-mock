@@ -357,6 +357,7 @@ export default function Index() {
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
   const [activeTab, setActiveTab] = useState('in-progress');
+  const [studentDetailTab, setStudentDetailTab] = useState('next-session');
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
