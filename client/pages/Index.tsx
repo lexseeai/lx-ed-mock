@@ -1674,113 +1674,113 @@ export default function Index() {
                         </p>
                       </div>
                       <div className="space-y-3">
-                        <div className="relative flex items-start gap-1.5">
+                        <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
-                            Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.{' '}
+                            <span className="relative inline-block">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
+                                <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>21 July 25</span>
+                              </span>
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                </span>
+                              </span>
+                            </span>
                           </p>
-                          <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
-                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '7px'}}>21 July 25</span>
-                            </div>
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
-                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                        <div className="relative flex items-start gap-1.5">
+                        <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
-                            Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.{' '}
+                            <span className="relative inline-block">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
+                                <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>21 July 25</span>
+                              </span>
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                </span>
+                              </span>
+                            </span>
                           </p>
-                          <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
-                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>21 July 25</span>
-                            </div>
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
-                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                        <div className="relative flex items-start gap-1.5">
+                        <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
-                            Demonstrated improved accuracy in identifying decimal positions with visual support.
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Demonstrated improved accuracy in identifying decimal positions with visual support.{' '}
+                            <span className="relative inline-block">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
+                                <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>14 July 25</span>
+                              </span>
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                </span>
+                              </span>
+                            </span>
                           </p>
-                          <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
-                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>14 July 25</span>
-                            </div>
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
-                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                        <div className="relative flex items-start gap-1.5">
+                        <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
-                            Made progress toward independent problem-solving with fewer rounding errors.
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Made progress toward independent problem-solving with fewer rounding errors.{' '}
+                            <span className="relative inline-block">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
+                                <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>7 July 25</span>
+                              </span>
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                </span>
+                              </span>
+                            </span>
                           </p>
-                          <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
-                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>7 July 25</span>
-                            </div>
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
-                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                        <div className="relative flex items-start gap-1.5">
+                        <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
-                            Joined the session late but used remaining time effectively to reinforce key math skills.
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Joined the session late but used remaining time effectively to reinforce key math skills.{' '}
+                            <span className="relative inline-block">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
+                                <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>30 June 25</span>
+                              </span>
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                </span>
+                              </span>
+                            </span>
                           </p>
-                          <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
-                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>30 June 25</span>
-                            </div>
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
-                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                        <div className="relative flex items-start gap-1.5">
+                        <div className="flex items-start gap-1.5">
                           <div className="pt-0.5">
                             <ArrowRight className="w-4 h-4 text-stone-700" />
                           </div>
-                          <p className="text-base font-normal text-stone-900 font-lexend leading-5 flex-1">
-                            Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.{' '}
+                            <span className="relative inline-block">
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
+                                <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>23 June 25</span>
+                              </span>
+                              <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md">
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                </span>
+                              </span>
+                            </span>
                           </p>
-                          <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
-                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>23 June 25</span>
-                            </div>
-                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
-                                <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
