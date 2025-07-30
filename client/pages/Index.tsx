@@ -1495,17 +1495,17 @@ export default function Index() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-15 flex justify-end pr-2">
-                        <Clock className="w-4 h-4 text-stone-400" />
+                        <Clock className="w-4.5 h-4.5 text-stone-400" />
                       </div>
-                      <span className="text-base font-normal text-stone-700 font-lexend leading-tight -tracking-tight">
+                      <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
                         3:00pm, Tue 29 July 2025
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-15 flex justify-end pr-2">
-                        <CircleCheck className="w-4 h-4 text-green-500" />
+                        <CircleCheck className="w-4.5 h-4.5 text-green-500" />
                       </div>
-                      <span className="text-base font-normal text-stone-700 font-lexend leading-tight -tracking-tight">
+                      <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
                         3:00pm, Tue 21 July 2025
                       </span>
                     </div>
