@@ -422,6 +422,38 @@ export default function Index() {
     };
   }, [showCalendarPicker]);
 
+  // Close student dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (studentDropdownRef.current && !studentDropdownRef.current.contains(event.target as Node)) {
+        setShowStudentDropdown(false);
+      }
+    };
+
+    if (showStudentDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showStudentDropdown]);
+
+  // Get unique student names for filtering
+  const getUniqueStudentNames = () => {
+    const names = [...new Set(mockStudents.map(s => s.name))];
+    return names.sort();
+  };
+
+  // Filter student names based on search
+  const getFilteredStudentNames = () => {
+    const allNames = getUniqueStudentNames();
+    if (!studentSearchQuery) return allNames;
+    return allNames.filter(name =>
+      name.toLowerCase().includes(studentSearchQuery.toLowerCase())
+    );
+  };
+
   const handleStudentClick = (studentId: string, studentList: Student[] = []) => {
     setSelectedStudentId(studentId);
     setCurrentStudentList(studentList);
