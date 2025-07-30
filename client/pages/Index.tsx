@@ -362,6 +362,15 @@ export default function Index() {
     setShowStudentOverlay(true);
   };
 
+  const handleSheetOpenChange = (open: boolean) => {
+    // Only close the sheet if we're explicitly closing it, not when switching students
+    if (!open && showStudentOverlay) {
+      setShowStudentOverlay(false);
+      setSelectedStudentId(null);
+      setCurrentStudentList([]);
+    }
+  };
+
   const handleExpandStudent = () => {
     if (selectedStudentId) {
       setShowStudentOverlay(false);
