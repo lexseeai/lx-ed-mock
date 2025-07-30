@@ -1415,14 +1415,14 @@ export default function Index() {
 
       {/* Student Details Sheet */}
       <Sheet open={showStudentOverlay} onOpenChange={handleSheetOpenChange} modal={true}>
-        <SheetContent side="right" className="w-[700px] sm:w-[700px] sm:max-w-[700px] p-0 overflow-hidden">
+        <SheetContent side="right" className="w-[700px] sm:w-[700px] sm:max-w-[700px] p-0 overflow-hidden bg-white">
           <SheetTitle className="sr-only">
             {getSelectedStudent()?.name} - Student Details
           </SheetTitle>
           {selectedStudentId && getSelectedStudent() ? (
             <div className="h-full flex flex-col">
               {/* Fixed Header */}
-              <div className="sticky top-0 z-10 bg-white border-b border-stone-200">
+              <div className="sticky top-0 z-10 bg-white">
                 {/* Top Control Row */}
                 <div className="flex justify-between items-center p-3">
                   <div className="flex items-center gap-1.5">
@@ -1466,7 +1466,7 @@ export default function Index() {
                 </div>
 
                 {/* Student Info Header */}
-                <div className="px-[60px] pb-3">
+                <div className="flex flex-col gap-1.5 px-[60px] py-[30px] pb-3">
                   <div className="flex items-center justify-between pb-5">
                     <div className="flex items-center gap-2">
                       <div className="w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
@@ -1492,7 +1492,7 @@ export default function Index() {
                   </div>
 
                   {/* Session Times */}
-                  <div className="space-y-2">
+                  <div className="flex flex-col space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-[60px] flex justify-end pr-2">
                         <Clock className="w-[18px] h-[18px] text-stone-400" />
@@ -1575,7 +1575,7 @@ export default function Index() {
                   <div className="space-y-12">
                     {/* Next Session */}
                     <div>
-                      <div className="pb-6">
+                      <div className="pb-3">
                         <h2 className="text-xl font-bold text-stone-900 font-lexend leading-6 -tracking-wide">
                           Next session
                         </h2>
@@ -1613,7 +1613,7 @@ export default function Index() {
 
                     {/* Observations */}
                     <div>
-                      <div className="pb-6">
+                      <div className="pb-3">
                         <h2 className="text-xl font-bold text-stone-900 font-lexend leading-6 -tracking-wide">
                           Observations
                         </h2>
