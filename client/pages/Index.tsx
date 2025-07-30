@@ -1473,6 +1473,7 @@ export default function Index() {
                                 handleStudentClick(student.id, allDayStudents);
                               }}
                               scheduleView={true}
+                              dimmed={selectedStudentFilter && student.name !== selectedStudentFilter}
                             />
                           </div>
                         ))}
