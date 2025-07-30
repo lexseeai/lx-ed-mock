@@ -1466,7 +1466,7 @@ export default function Index() {
                 </div>
 
                 {/* Student Info Header */}
-                <div className="px-15 pb-3">
+                <div className="px-[60px] pb-3">
                   <div className="flex items-center justify-between pb-5">
                     <div className="flex items-center gap-2">
                       <div className="w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
