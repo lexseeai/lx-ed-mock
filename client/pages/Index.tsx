@@ -1477,7 +1477,7 @@ export default function Index() {
                         />
                       </div>
                       <div className="flex flex-col py-0.5 justify-center gap-1">
-                        <h1 className="text-3xl font-bold text-stone-900 font-lexend leading-9 -tracking-[0.15px]">
+                        <h1 className="text-[30px] font-semibold text-stone-900 font-lexend leading-9 -tracking-[0.15px]">
                           {getSelectedStudent()?.name}
                         </h1>
                         <p className="text-base font-medium text-stone-700 font-lexend leading-5 -tracking-[0.08px]">
