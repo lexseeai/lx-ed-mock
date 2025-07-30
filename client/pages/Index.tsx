@@ -327,7 +327,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
             </div>
             {!isCollapsed && (
-              <Tooltip>
+              <Tooltip delayDuration={0} disableHoverableContent>
                 <TooltipTrigger asChild>
                   <div className="px-2 py-1 -mx-2 -my-1">
                     <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
