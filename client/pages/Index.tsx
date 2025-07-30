@@ -312,11 +312,20 @@ export default function Index() {
   // Function to scroll to section with offset
   const scrollToSection = (sectionId: string) => {
     setActiveTab(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const yOffset = -24; // 24px offset to leave space between border and title
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+    try {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const yOffset = -24; // 24px offset to leave space between border and title
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    } catch (error) {
+      console.warn('Scroll to section error:', error);
+      // Fallback to simple scrollIntoView
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
