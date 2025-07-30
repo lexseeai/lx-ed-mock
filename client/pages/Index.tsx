@@ -1470,30 +1470,22 @@ export default function Index() {
                   <div className="flex items-center justify-between pb-5">
                     <div className="flex items-center gap-2">
                       <div className="w-15 h-15 rounded-full overflow-hidden flex-shrink-0">
-                        <Avatar className="w-full h-full">
-                          <AvatarFallback className={`${getSelectedStudent() ? (() => {
-                            const subject = getSelectedStudent()?.subject?.toLowerCase() || '';
-                            if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
-                            if (subject.includes('science')) return 'bg-green-100 text-green-700';
-                            if (subject.includes('english')) return 'bg-purple-100 text-purple-700';
-                            if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
-                            if (subject.includes('spanish')) return 'bg-pink-100 text-pink-700';
-                            return 'bg-stone-100 text-stone-700';
-                          })() : 'bg-stone-100 text-stone-700'} font-bold text-2xl`}>
-                            {getSelectedStudent()?.name.charAt(0).toUpperCase()}
-                          </AvatarFallback>
-                        </Avatar>
+                        <img
+                          src="https://api.builder.io/api/v1/image/assets/TEMP/df2d5088701924956cda8e165bca6457a40fbfaa?width=149"
+                          alt={getSelectedStudent()?.name}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <div className="flex flex-col">
-                        <h1 className="text-3xl font-bold text-stone-900 font-lexend leading-9 -tracking-wide">
+                      <div className="flex flex-col py-0.5 justify-center gap-1">
+                        <h1 className="text-3xl font-bold text-stone-900 font-lexend leading-9 -tracking-[0.15px]">
                           {getSelectedStudent()?.name}
                         </h1>
-                        <p className="text-base font-medium text-stone-700 font-lexend leading-5 -tracking-tight">
+                        <p className="text-base font-medium text-stone-700 font-lexend leading-5 -tracking-[0.08px]">
                           {getSelectedStudent()?.subject}
                         </p>
                       </div>
                     </div>
-                    <Button variant="outline" className="flex items-center gap-1 px-4 py-2">
+                    <Button variant="outline" className="flex items-center gap-1 px-4 py-2 border border-stone-200 bg-white">
                       <span className="text-sm font-medium text-stone-700 font-lexend">Actions</span>
                       <MoreVertical className="w-6 h-6 text-stone-300" />
                     </Button>
