@@ -1523,7 +1523,7 @@ export default function Index() {
                   </div>
 
                   {/* Session Times */}
-                  <div className="flex flex-col space-y-2">
+                  <div className="flex flex-col">
                     <button className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-full">
                       <div className="flex items-center gap-2">
                         <div className="w-[60px] flex justify-end">
