@@ -1494,16 +1494,16 @@ export default function Index() {
                   {/* Session Times */}
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-15 flex justify-end pr-2">
-                        <Clock className="w-4.5 h-4.5 text-stone-400" />
+                      <div className="w-[60px] flex justify-end pr-2">
+                        <Clock className="w-[18px] h-[18px] text-stone-400" />
                       </div>
                       <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
                         3:00pm, Tue 29 July 2025
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-15 flex justify-end pr-2">
-                        <CircleCheck className="w-4.5 h-4.5 text-green-500" />
+                      <div className="w-[60px] flex justify-end pr-2">
+                        <CircleCheck className="w-[18px] h-[18px] text-green-500" />
                       </div>
                       <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
                         3:00pm, Tue 21 July 2025
