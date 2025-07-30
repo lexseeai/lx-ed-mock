@@ -177,10 +177,9 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
 
         {/* Bottom section with session report badge */}
         <div className="flex justify-center px-1.5 pb-1.5">
-          <div className="flex items-center gap-1 px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-            <BadgeIcon className={`w-3 h-3 ${badgeConfig.color}`} />
+          <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
             <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-              {(sessionStatus === 'waiting' || sessionStatus === 'active') ? 'Session notes' : 'Session report'}
+              {sessionStatus === 'done' ? 'View session notes' : 'Edit session notes'}
             </span>
           </div>
         </div>
