@@ -324,26 +324,46 @@ export default function Index() {
   useEffect(() => {
     if (activeView !== 'sessionnotes') return;
 
-    const handleScroll = () => {
-      const sections = ['in-progress', 'due-soon', 'submitted'];
-      const scrollPosition = window.scrollY + 100; // Add offset for better detection
+    let throttleTimer: NodeJS.Timeout | null = null;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveTab(sections[i]);
-          break;
+    const handleScroll = () => {
+      if (throttleTimer) return;
+
+      throttleTimer = setTimeout(() => {
+        try {
+          const sections = ['in-progress', 'due-soon', 'submitted'];
+          const scrollPosition = window.scrollY + 100;
+
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const section = document.getElementById(sections[i]);
+            if (section && section.offsetTop <= scrollPosition) {
+              setActiveTab(sections[i]);
+              break;
+            }
+          }
+        } catch (error) {
+          console.warn('Scroll detection error:', error);
         }
-      }
+        throttleTimer = null;
+      }, 16); // ~60fps throttling
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Initial check
-    handleScroll();
+    // Initial check with delay to ensure DOM is ready
+    setTimeout(() => {
+      try {
+        handleScroll();
+      } catch (error) {
+        console.warn('Initial scroll check error:', error);
+      }
+    }, 100);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (throttleTimer) {
+        clearTimeout(throttleTimer);
+      }
     };
   }, [activeView]);
 
