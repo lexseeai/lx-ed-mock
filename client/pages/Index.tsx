@@ -276,7 +276,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           >
             <div className="flex items-center space-x-2">
               <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>This week</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
             </div>
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>}
           </div>
