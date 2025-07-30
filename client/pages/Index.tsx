@@ -1057,7 +1057,7 @@ export default function Index() {
                             }
                           }
                         }}
-                        className={`pl-14 ${selectedStudentFilter ? 'pr-10' : 'pr-4.5'} h-11 font-readex text-base rounded-full overflow-hidden bg-transparent ${selectedStudentFilter ? 'text-stone-900 font-medium' : ''}`}
+                        className={`pl-14 ${selectedStudentFilter ? 'pr-10' : 'pr-4.5'} h-11 font-readex text-base rounded-full overflow-hidden bg-transparent ${selectedStudentFilter ? 'text-stone-900 font-medium placeholder:text-stone-900 placeholder:font-medium' : 'placeholder:text-stone-400'}`}
                         readOnly={!!selectedStudentFilter}
                       />
 
