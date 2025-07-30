@@ -314,7 +314,22 @@ export default function Index() {
     setActiveTab(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Find the scrollable container
+      const scrollContainer = element.closest('.overflow-y-auto');
+      if (scrollContainer) {
+        const containerTop = scrollContainer.getBoundingClientRect().top;
+        const elementTop = element.getBoundingClientRect().top;
+        const scrollTop = scrollContainer.scrollTop;
+        const targetScroll = scrollTop + (elementTop - containerTop) + 12; // 12px offset
+
+        scrollContainer.scrollTo({
+          top: targetScroll,
+          behavior: 'smooth'
+        });
+      } else {
+        // Fallback to window scroll
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
