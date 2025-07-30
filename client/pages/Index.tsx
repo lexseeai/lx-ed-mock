@@ -309,14 +309,12 @@ export default function Index() {
   const calendarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Function to scroll to section with 12px offset
+  // Function to scroll to section
   const scrollToSection = (sectionId: string) => {
     setActiveTab(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      const yOffset = 12; // 12px downward offset
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
