@@ -1414,133 +1414,303 @@ export default function Index() {
       </div>
 
       {/* Student Details Sheet */}
-      <Sheet open={showStudentOverlay} onOpenChange={handleSheetOpenChange} modal={false}>
-        <SheetPortal>
-          <SheetPrimitive.Content
-            className="fixed inset-y-0 right-0 h-full w-[600px] border-l bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right z-50 overflow-y-auto"
-            onPointerDownOutside={(e) => e.preventDefault()}
-            onInteractOutside={(e) => e.preventDefault()}
-            onEscapeKeyDown={(e) => e.preventDefault()}
-            onFocusOutside={(e) => e.preventDefault()}
-            trapFocus={false}
-          >
+      <Sheet open={showStudentOverlay} onOpenChange={handleSheetOpenChange} modal={true}>
+        <SheetContent side="right" className="w-[700px] sm:w-[700px] sm:max-w-[700px] p-0 overflow-hidden">
           {selectedStudentId && getSelectedStudent() ? (
-            <>
-              <SheetHeader className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
-                      <Avatar className="w-full h-full">
-                        <AvatarFallback className="bg-orange-100 text-orange-700 font-bold text-2xl">
-                          {getSelectedStudent()?.name.charAt(0).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                    </div>
-                    <div className="flex flex-col">
-                      <SheetTitle className="text-2xl font-semibold text-stone-900 font-lexend leading-tight text-left">
-                        {getSelectedStudent()?.name}
-                      </SheetTitle>
-                      {getSelectedStudent()?.sessionTime && (
-                        <div className="flex items-center gap-1 mt-1">
-                          <Bell className="w-4 h-4 text-stone-700" />
-                          <span className="text-stone-700 font-lexend text-base">
-                            9:00am, Thursday July 31
-                          </span>
-                        </div>
-                      )}
-                    </div>
+            <div className="h-full flex flex-col">
+              {/* Fixed Header */}
+              <div className="sticky top-0 z-10 bg-white border-b border-stone-200">
+                {/* Top Control Row */}
+                <div className="flex justify-between items-center p-3">
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={() => setShowStudentOverlay(false)}
+                      className="p-1 hover:bg-stone-100 rounded transition-colors"
+                    >
+                      <ChevronsLeft className="w-6 h-6 text-stone-400" />
+                    </button>
+                    <button
+                      onClick={handleExpandStudent}
+                      className="p-1 hover:bg-stone-100 rounded transition-colors"
+                    >
+                      <Maximize2 className="w-4 h-4 text-stone-400" />
+                    </button>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button variant="outline" className="flex items-center gap-2">
-                      <MoreVertical className="w-4 h-4" />
-                      <span>Actions</span>
-                      <ChevronDown className="w-4 h-4" />
-                    </Button>
-                    <button onClick={handleExpandStudent} className="p-1 hover:bg-stone-100 rounded">
-                      <Maximize2 className="w-6 h-6 text-stone-700" />
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={navigatePrevious}
+                      disabled={!canNavigatePrevious()}
+                      className={`p-1 hover:bg-stone-100 rounded transition-colors ${
+                        !canNavigatePrevious() ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                    >
+                      <ChevronDown className={`w-6 h-6 ${
+                        canNavigatePrevious() ? 'text-stone-400' : 'text-stone-300'
+                      }`} />
+                    </button>
+                    <button
+                      onClick={navigateNext}
+                      disabled={!canNavigateNext()}
+                      className={`p-1 hover:bg-stone-100 rounded transition-colors ${
+                        !canNavigateNext() ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                    >
+                      <ChevronUp className={`w-6 h-6 ${
+                        canNavigateNext() ? 'text-stone-400' : 'text-stone-300'
+                      }`} />
                     </button>
                   </div>
                 </div>
 
-                {/* Navigation buttons */}
-                <div className="flex items-center justify-between">
-                  <button
-                    onClick={navigatePrevious}
-                    disabled={!canNavigatePrevious()}
-                    className={`flex p-2 items-center justify-center rounded-lg border border-stone-200 bg-white shadow-sm transition-opacity ${
-                      canNavigatePrevious() ? 'hover:bg-stone-50' : 'opacity-50 cursor-not-allowed'
-                    }`}
-                  >
-                    <ChevronLeft className={`w-5 h-5 ${
-                      canNavigatePrevious() ? 'text-indigo-600' : 'text-stone-300'
-                    }`} />
-                    <span className="text-sm ml-1">Previous</span>
-                  </button>
-
-                  <div className="text-sm text-stone-500 font-lexend">
-                    {getCurrentStudentIndex() + 1} of {currentStudentList.length}
+                {/* Student Info Header */}
+                <div className="px-15 pb-3">
+                  <div className="flex items-center justify-between pb-5">
+                    <div className="flex items-center gap-2">
+                      <div className="w-15 h-15 rounded-full overflow-hidden flex-shrink-0">
+                        <Avatar className="w-full h-full">
+                          <AvatarFallback className={`${getSelectedStudent() ? (() => {
+                            const subject = getSelectedStudent()?.subject?.toLowerCase() || '';
+                            if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
+                            if (subject.includes('science')) return 'bg-green-100 text-green-700';
+                            if (subject.includes('english')) return 'bg-purple-100 text-purple-700';
+                            if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
+                            if (subject.includes('spanish')) return 'bg-pink-100 text-pink-700';
+                            return 'bg-stone-100 text-stone-700';
+                          })() : 'bg-stone-100 text-stone-700'} font-bold text-2xl`}>
+                            {getSelectedStudent()?.name.charAt(0).toUpperCase()}
+                          </AvatarFallback>
+                        </Avatar>
+                      </div>
+                      <div className="flex flex-col">
+                        <h1 className="text-3xl font-bold text-stone-900 font-lexend leading-9 -tracking-wide">
+                          {getSelectedStudent()?.name}
+                        </h1>
+                        <p className="text-base font-medium text-stone-700 font-lexend leading-5 -tracking-tight">
+                          {getSelectedStudent()?.subject}
+                        </p>
+                      </div>
+                    </div>
+                    <Button variant="outline" className="flex items-center gap-1 px-4 py-2">
+                      <span className="text-sm font-medium text-stone-700 font-lexend">Actions</span>
+                      <MoreVertical className="w-6 h-6 text-stone-300" />
+                    </Button>
                   </div>
 
-                  <button
-                    onClick={navigateNext}
-                    disabled={!canNavigateNext()}
-                    className={`flex p-2 items-center justify-center rounded-lg border border-stone-200 bg-white shadow-sm transition-opacity ${
-                      canNavigateNext() ? 'hover:bg-stone-50' : 'opacity-50 cursor-not-allowed'
-                    }`}
-                  >
-                    <span className="text-sm mr-1">Next</span>
-                    <ChevronRight className={`w-5 h-5 ${
-                      canNavigateNext() ? 'text-indigo-600' : 'text-stone-300'
-                    }`} />
-                  </button>
-                </div>
-              </SheetHeader>
-
-              {/* Content */}
-              <div className="mt-6 space-y-6">
-                {/* Topics for next session */}
-                <div className="border border-stone-200 rounded-lg bg-stone-50 p-5">
-                  <h3 className="text-xl font-bold text-stone-900 font-lexend mb-3">
-                    Topics for next session
-                  </h3>
-                  <div className="text-stone-900 font-lexend text-base leading-5 space-y-2">
-                    <div>1. Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.</div>
-                    <div>2. Apply 2D shape formulas in word problems to build real-world problem-solving skills.</div>
-                    <div>3. Introduce multi-step problems involving both perimeter/area and decimal rounding.</div>
+                  {/* Session Times */}
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-15 flex justify-end pr-2">
+                        <Clock className="w-4 h-4 text-stone-400" />
+                      </div>
+                      <span className="text-base font-normal text-stone-700 font-lexend leading-tight -tracking-tight">
+                        3:00pm, Tue 29 July 2025
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-15 flex justify-end pr-2">
+                        <CircleCheck className="w-4 h-4 text-green-500" />
+                      </div>
+                      <span className="text-base font-normal text-stone-700 font-lexend leading-tight -tracking-tight">
+                        3:00pm, Tue 21 July 2025
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Session highlights */}
-                <div className="border border-stone-200 rounded-lg bg-stone-50 p-5">
-                  <div className="mb-3">
-                    <h3 className="text-xl font-bold text-stone-900 font-lexend">
-                      Session highlights
-                    </h3>
-                    <p className="text-xs text-stone-400 font-lexend mt-1">
-                      From the last 7 sessions
-                    </p>
-                  </div>
-                  <div className="text-stone-900 font-lexend text-base leading-5 space-y-2">
-                    <div className="pl-4 -indent-4">• Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.</div>
-                    <div className="pl-4 -indent-4">• Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.</div>
-                    <div className="pl-4 -indent-4">• Demonstrated improved accuracy in identifying decimal positions with visual support.</div>
-                    <div className="pl-4 -indent-4">• Made progress toward independent problem-solving with fewer rounding errors.</div>
-                    <div className="pl-4 -indent-4">• Joined the session late but used remaining time effectively to reinforce key math skills.</div>
+                  {/* Tab Navigation */}
+                  <div className="flex justify-center pt-6">
+                    <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white">
+                      <button
+                        onClick={() => setStudentDetailTab('next-session')}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          studentDetailTab === 'next-session'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Next session
+                      </button>
+                      <button
+                        onClick={() => setStudentDetailTab('observations')}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          studentDetailTab === 'observations'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Observations
+                      </button>
+                      <button
+                        onClick={() => setStudentDetailTab('goals')}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          studentDetailTab === 'goals'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Goals
+                      </button>
+                      <button
+                        onClick={() => setStudentDetailTab('session-notes')}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          studentDetailTab === 'session-notes'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Session Notes
+                      </button>
+                      <button
+                        onClick={() => setStudentDetailTab('assignments')}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          studentDetailTab === 'assignments'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Assignments
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </>
+
+              {/* Scrollable Content */}
+              <div className="flex-1 overflow-y-auto px-15 pt-5 pb-12">
+                {studentDetailTab === 'next-session' && (
+                  <div className="space-y-12">
+                    {/* Next Session */}
+                    <div>
+                      <div className="pb-6">
+                        <h2 className="text-xl font-bold text-stone-900 font-lexend leading-6 -tracking-wide">
+                          Next session
+                        </h2>
+                        <p className="text-sm font-normal text-stone-400 font-lexend mt-1">
+                          From session notes 21 July 2025
+                        </p>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <div className="w-4 h-4 rounded-full border-2 border-stone-700"></div>
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <div className="w-4 h-4 rounded-full border-2 border-stone-700"></div>
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Apply 2D shape formulas in word problems to build real-world problem-solving skills.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <div className="w-4 h-4 rounded-full border-2 border-stone-700"></div>
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Introduce multi-step problems involving both perimeter/area and decimal rounding.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Observations */}
+                    <div>
+                      <div className="pb-6">
+                        <h2 className="text-xl font-bold text-stone-900 font-lexend leading-6 -tracking-wide">
+                          Observations
+                        </h2>
+                        <p className="text-sm font-normal text-stone-400 font-lexend mt-1">
+                          From the last 7 sessions
+                        </p>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <ArrowRight className="w-4 h-4 text-stone-700" />
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <ArrowRight className="w-4 h-4 text-stone-700" />
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <ArrowRight className="w-4 h-4 text-stone-700" />
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Demonstrated improved accuracy in identifying decimal positions with visual support.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <ArrowRight className="w-4 h-4 text-stone-700" />
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Made progress toward independent problem-solving with fewer rounding errors.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <ArrowRight className="w-4 h-4 text-stone-700" />
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Joined the session late but used remaining time effectively to reinforce key math skills.
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <div className="pt-0.5">
+                            <ArrowRight className="w-4 h-4 text-stone-700" />
+                          </div>
+                          <p className="text-base font-normal text-stone-900 font-lexend leading-5">
+                            Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {studentDetailTab === 'observations' && (
+                  <div className="text-center py-12">
+                    <p className="text-stone-500 font-lexend">Observations content coming soon...</p>
+                  </div>
+                )}
+
+                {studentDetailTab === 'goals' && (
+                  <div className="text-center py-12">
+                    <p className="text-stone-500 font-lexend">Goals content coming soon...</p>
+                  </div>
+                )}
+
+                {studentDetailTab === 'session-notes' && (
+                  <div className="text-center py-12">
+                    <p className="text-stone-500 font-lexend">Session notes content coming soon...</p>
+                  </div>
+                )}
+
+                {studentDetailTab === 'assignments' && (
+                  <div className="text-center py-12">
+                    <p className="text-stone-500 font-lexend">Assignments content coming soon...</p>
+                  </div>
+                )}
+              </div>
+            </div>
           ) : (
             <div className="flex items-center justify-center h-full">
               <div className="text-stone-500">Loading student details...</div>
             </div>
           )}
-            <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-              <X className="h-4 w-4" />
-              <span className="sr-only">Close</span>
-            </SheetPrimitive.Close>
-          </SheetPrimitive.Content>
-        </SheetPortal>
+        </SheetContent>
       </Sheet>
 
 
