@@ -1073,6 +1073,8 @@ export default function Index() {
                           onClick={() => {
                             setSelectedStudentFilter(null);
                             setStudentSearchQuery("");
+                            // Reset to highlighting today when student filter is cleared
+                            setSelectedDayDate('28');
                           }}
                           className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 p-1 hover:bg-stone-100 rounded"
                         >
