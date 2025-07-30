@@ -1682,8 +1682,8 @@ export default function Index() {
                             Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.
                           </p>
                           <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-700 hover:bg-stone-600 transition-colors cursor-pointer">
-                              <span className="text-white font-lexend text-xs font-normal leading-none">21 July 25</span>
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
+                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '7px'}}>21 July 25</span>
                             </div>
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                               <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
@@ -1700,8 +1700,8 @@ export default function Index() {
                             Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.
                           </p>
                           <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
-                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">21 July 25</span>
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
+                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>21 July 25</span>
                             </div>
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                               <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
