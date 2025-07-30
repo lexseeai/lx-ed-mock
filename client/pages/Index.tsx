@@ -1524,40 +1524,100 @@ export default function Index() {
 
                   {/* Session Times */}
                   <div className="flex flex-col">
-                    <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 flex justify-end pr-1.5">
-                          <Clock className="w-[18px] h-[18px] text-stone-400" />
-                        </div>
-                        <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                          3:00pm, Tue 29 July 2025
-                        </span>
-                      </div>
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-                          <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                            Edit session notes
-                          </span>
-                        </div>
-                      </div>
-                    </button>
-                    <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 flex justify-end pr-1.5">
-                          <CircleCheck className="w-[18px] h-[18px] text-green-500" />
-                        </div>
-                        <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                          3:00pm, Tue 21 July 2025
-                        </span>
-                      </div>
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-                          <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                            View session notes
-                          </span>
-                        </div>
-                      </div>
-                    </button>
+                    {(() => {
+                      const student = getSelectedStudent();
+                      const studentSessions = mockStudents.filter(s => s.name === student?.name).sort((a, b) => {
+                        if (!a.sessionDate || !b.sessionDate) return 0;
+                        return a.sessionDate.getTime() - b.sessionDate.getTime();
+                      });
+
+                      // Find next session (future session or create one a week after latest)
+                      const now = new Date();
+                      const futureSessions = studentSessions.filter(s => s.sessionDate && s.sessionDate > now);
+                      const pastSessions = studentSessions.filter(s => s.sessionDate && s.sessionDate <= now);
+
+                      let nextSession, previousSession;
+
+                      if (futureSessions.length > 0) {
+                        nextSession = futureSessions[0];
+                      } else {
+                        // Create next session a week after the latest session
+                        const latestSession = pastSessions[pastSessions.length - 1];
+                        if (latestSession && latestSession.sessionDate) {
+                          const nextDate = new Date(latestSession.sessionDate);
+                          nextDate.setDate(nextDate.getDate() + 7);
+                          nextSession = {
+                            sessionTime: "9:00am, Mon 4 August 2025",
+                            sessionDate: nextDate,
+                            sessionReportCompleted: false
+                          };
+                        }
+                      }
+
+                      // Find previous session (most recent completed)
+                      const completedSessions = pastSessions.filter(s => s.sessionReportCompleted);
+                      if (completedSessions.length > 0) {
+                        previousSession = completedSessions[completedSessions.length - 1];
+                      } else {
+                        // Create previous session a week before earliest session
+                        const earliestSession = pastSessions[0];
+                        if (earliestSession && earliestSession.sessionDate) {
+                          const prevDate = new Date(earliestSession.sessionDate);
+                          prevDate.setDate(prevDate.getDate() - 7);
+                          previousSession = {
+                            sessionTime: "9:00am, Mon 21 July 2025",
+                            sessionDate: prevDate,
+                            sessionReportCompleted: true
+                          };
+                        }
+                      }
+
+                      return (
+                        <>
+                          {/* Next Session */}
+                          {nextSession && (
+                            <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
+                              <div className="flex items-center gap-2">
+                                <div className="w-6 flex justify-end pr-1.5">
+                                  <Clock className="w-[18px] h-[18px] text-stone-400" />
+                                </div>
+                                <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                                  {nextSession.sessionTime}
+                                </span>
+                              </div>
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+                                  <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                                    Edit session notes
+                                  </span>
+                                </div>
+                              </div>
+                            </button>
+                          )}
+
+                          {/* Previous Session */}
+                          {previousSession && (
+                            <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
+                              <div className="flex items-center gap-2">
+                                <div className="w-6 flex justify-end pr-1.5">
+                                  <CircleCheck className="w-[18px] h-[18px] text-green-500" />
+                                </div>
+                                <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                                  {previousSession.sessionTime}
+                                </span>
+                              </div>
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+                                  <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                                    View session notes
+                                  </span>
+                                </div>
+                              </div>
+                            </button>
+                          )}
+                        </>
+                      );
+                    })()}
                   </div>
 
                   {/* Tab Navigation */}
