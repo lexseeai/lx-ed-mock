@@ -246,12 +246,6 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
       <div className="flex-1 flex flex-col pl-3 pr-0 py-4">
         {/* My Students Section */}
         <div className="space-y-1">
-          {!isCollapsed && (
-            <div className="px-2">
-              <h2 className="text-xs font-medium text-white/80 font-lexend uppercase tracking-wide">My students</h2>
-            </div>
-          )}
-
           {/* All Students */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-8 ${
@@ -264,7 +258,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           >
             <div className="flex items-center space-x-2">
               <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>All</span>}
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>My students</span>}
             </div>
             {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white/50'}`}>14</span>}
           </div>
