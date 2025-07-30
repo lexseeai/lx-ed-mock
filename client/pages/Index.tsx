@@ -329,9 +329,11 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             {!isCollapsed && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
+                  <div className="px-2 py-1 -mx-2 -my-1">
+                    <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
+                  </div>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent className="animate-none">
                   <p>7 this week</p>
                 </TooltipContent>
               </Tooltip>
@@ -355,9 +357,11 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             {!isCollapsed && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
+                  <div className="px-2 py-1 -mx-2 -my-1">
+                    <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
+                  </div>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent className="animate-none">
                   <p>4 due soon</p>
                 </TooltipContent>
               </Tooltip>
