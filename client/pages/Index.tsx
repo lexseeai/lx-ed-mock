@@ -1718,8 +1718,8 @@ export default function Index() {
                             Demonstrated improved accuracy in identifying decimal positions with visual support.
                           </p>
                           <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
-                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">14 July 25</span>
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
+                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>14 July 25</span>
                             </div>
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                               <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
@@ -1736,8 +1736,8 @@ export default function Index() {
                             Made progress toward independent problem-solving with fewer rounding errors.
                           </p>
                           <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
-                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">7 July 25</span>
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
+                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>7 July 25</span>
                             </div>
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                               <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
@@ -1754,8 +1754,8 @@ export default function Index() {
                             Joined the session late but used remaining time effectively to reinforce key math skills.
                           </p>
                           <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
-                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">30 June 25</span>
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
+                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>30 June 25</span>
                             </div>
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                               <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
@@ -1772,8 +1772,8 @@ export default function Index() {
                             Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.
                           </p>
                           <div className="group relative ml-2">
-                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer">
-                              <span className="text-stone-500 font-lexend text-xs font-normal leading-none">23 June 25</span>
+                            <div className="flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer">
+                              <span className="text-stone-500 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>23 June 25</span>
                             </div>
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                               <div className="bg-stone-100 px-3 py-1.5 rounded shadow-md">
