@@ -1612,8 +1612,8 @@ export default function Index() {
                         });
                       }
 
-                      // Show previous session (if exists and no current)
-                      if (sessions.previous && !sessions.current) {
+                      // Always show previous session (if exists)
+                      if (sessions.previous) {
                         sessions_to_show.push({
                           ...sessions.previous,
                           key: 'previous'
