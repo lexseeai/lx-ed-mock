@@ -351,7 +351,16 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
               <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Session notes</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>}
+            {!isCollapsed && (
+              <div className="relative group">
+                <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
+                <div className="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-50 pointer-events-none">
+                  <div className="bg-stone-800 px-2 py-1 rounded text-xs text-white whitespace-nowrap">
+                    4 due soon
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
