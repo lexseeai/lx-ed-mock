@@ -1436,7 +1436,7 @@ export default function Index() {
                       onClick={handleExpandStudent}
                       className="p-1 hover:bg-stone-100 rounded transition-colors"
                     >
-                      <Maximize2 className="w-4 h-4 text-stone-400" />
+                      <Maximize2 className="w-4 h-4 text-stone-400" strokeWidth={2.25} />
                     </button>
                   </div>
                   <div className="flex items-center gap-1.5">
