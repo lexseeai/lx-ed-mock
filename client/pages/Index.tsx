@@ -1354,17 +1354,31 @@ export default function Index() {
 
                         {/* Bottom section with sessions */}
                         {dayData.sessions > 0 && (
-                          <div className="flex items-start gap-1 w-full">
-                            <div className={`text-xs font-normal leading-none font-lexend ${
-                              isSelected ? 'text-white' : 'text-stone-700'
-                            }`}>
-                              {dayData.sessions}
-                            </div>
-                            <div className={`text-xs font-normal leading-none font-lexend ${
-                              isSelected ? 'text-white' : 'text-stone-700'
-                            }`}>
-                              {dayData.sessions === 1 ? 'session' : 'sessions'}
-                            </div>
+                          <div className="flex flex-col items-start gap-0.5 w-full">
+                            {selectedStudentFilter ? (
+                              // Show session times when student is filtered
+                              getStudentSessionTimes(selectedStudentFilter, dayData.date).map((time, index) => (
+                                <div key={index} className={`text-xs font-normal leading-none font-lexend ${
+                                  isSelected ? 'text-white' : 'text-stone-700'
+                                }`}>
+                                  {time}
+                                </div>
+                              ))
+                            ) : (
+                              // Show session count when no student filter
+                              <div className="flex items-start gap-1 w-full">
+                                <div className={`text-xs font-normal leading-none font-lexend ${
+                                  isSelected ? 'text-white' : 'text-stone-700'
+                                }`}>
+                                  {dayData.sessions}
+                                </div>
+                                <div className={`text-xs font-normal leading-none font-lexend ${
+                                  isSelected ? 'text-white' : 'text-stone-700'
+                                }`}>
+                                  {dayData.sessions === 1 ? 'session' : 'sessions'}
+                                </div>
+                              </div>
+                            )}
                           </div>
                         )}
                           </button>
