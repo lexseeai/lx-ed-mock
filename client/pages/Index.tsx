@@ -1685,7 +1685,7 @@ export default function Index() {
                                 <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>21 July 25</span>
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                   <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
                                 </span>
                               </span>
