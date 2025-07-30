@@ -523,6 +523,29 @@ export default function Index() {
     return studentSessionDays.includes(dayData.date);
   };
 
+  // Get session times for a specific student on a specific date
+  const getStudentSessionTimes = (studentName: string, date: string) => {
+    const dayData = dateSessionData[date];
+    if (!dayData) return [];
+
+    const times = [];
+
+    // Check all time periods for this student
+    ['morning', 'afternoon', 'evening'].forEach(period => {
+      const periodStudents = dayData[period as keyof typeof dayData];
+      const studentInPeriod = periodStudents.find(s => s.name === studentName);
+      if (studentInPeriod && studentInPeriod.sessionTime) {
+        // Extract just the time from the sessionTime string (e.g., "9:00am" from "9:00am, July 28")
+        const timeMatch = studentInPeriod.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i);
+        if (timeMatch) {
+          times.push(timeMatch[1]);
+        }
+      }
+    });
+
+    return times;
+  };
+
   const handleStudentClick = (studentId: string, studentList: Student[] = []) => {
     setSelectedStudentId(studentId);
     setCurrentStudentList(studentList);
