@@ -1507,7 +1507,7 @@ export default function Index() {
                           </AvatarFallback>
                         </Avatar>
                       </div>
-                      <div className="flex flex-col py-0.5 justify-center gap-1">
+                      <div className="flex flex-col py-0.5 justify-center gap-0.5">
                         <h1 className="text-[30px] font-semibold text-stone-900 font-lexend leading-9 -tracking-[0.15px]">
                           {getSelectedStudent()?.name}
                         </h1>
