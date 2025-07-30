@@ -102,7 +102,7 @@ function getSessionBadgeConfig(status: string) {
   }
 }
 
-function StudentCard({ student, onClick, scheduleView = false }: { student: Student; onClick: () => void; scheduleView?: boolean }) {
+function StudentCard({ student, onClick, scheduleView = false, dimmed = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
   };
