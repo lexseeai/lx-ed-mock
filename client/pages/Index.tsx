@@ -744,7 +744,7 @@ export default function Index() {
 
   return (
     <div className="h-screen bg-indigo-900 flex">
-      <Sidebar activeView={activeView} setActiveView={setActiveView} onThisWeekClick={selectToday} />
+      <Sidebar activeView={activeView} setActiveView={setActiveView} onThisWeekClick={selectToday} setShowStudentOverlay={setShowStudentOverlay} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
