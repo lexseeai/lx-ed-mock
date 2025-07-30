@@ -363,8 +363,8 @@ export default function Index() {
   };
 
   const handleSheetOpenChange = (open: boolean) => {
-    // Only close the sheet if we're explicitly closing it, not when switching students
-    if (!open && showStudentOverlay) {
+    // Only allow explicit closing through close button or sidebar navigation
+    if (!open) {
       setShowStudentOverlay(false);
       setSelectedStudentId(null);
       setCurrentStudentList([]);
