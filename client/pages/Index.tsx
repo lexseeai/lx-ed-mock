@@ -1179,6 +1179,9 @@ export default function Index() {
                       let visibleDays;
                       if (isToggling) {
                         visibleDays = currentWeek;
+                      } else if (selectedStudentFilter) {
+                        // When student is filtered: show only days that student has sessions
+                        visibleDays = currentWeek.filter(day => shouldShowDay(day) && day.sessions > 0);
                       } else if (hideEmptyDays) {
                         // When hiding empty days: show only days with sessions, but always include Monday
                         const monday = currentWeek.find(day => day.day === 'Mon');
