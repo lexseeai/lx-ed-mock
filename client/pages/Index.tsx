@@ -1524,21 +1524,39 @@ export default function Index() {
 
                   {/* Session Times */}
                   <div className="flex flex-col space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-[60px] flex justify-end pr-2">
-                        <Clock className="w-[18px] h-[18px] text-stone-400" />
+                    <div className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-200 transition-colors">
+                      <div className="flex items-center gap-2">
+                        <div className="w-[60px] flex justify-end pr-2">
+                          <Clock className="w-[18px] h-[18px] text-stone-400" />
+                        </div>
+                        <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                          3:00pm, Tue 29 July 2025
+                        </span>
                       </div>
-                      <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                        3:00pm, Tue 29 July 2025
-                      </span>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+                          <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                            Edit session notes
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-[60px] flex justify-end pr-2">
-                        <CircleCheck className="w-[18px] h-[18px] text-green-500" />
+                    <div className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-200 transition-colors">
+                      <div className="flex items-center gap-2">
+                        <div className="w-[60px] flex justify-end pr-2">
+                          <CircleCheck className="w-[18px] h-[18px] text-green-500" />
+                        </div>
+                        <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                          3:00pm, Tue 21 July 2025
+                        </span>
                       </div>
-                      <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                        3:00pm, Tue 21 July 2025
-                      </span>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+                          <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                            View session notes
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
