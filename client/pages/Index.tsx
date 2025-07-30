@@ -992,20 +992,76 @@ export default function Index() {
                   </div>
 
                   <div className="flex items-center gap-1.5">
-                    <div className="relative flex-1 w-56">
-                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <div className="relative flex-1 w-56" ref={studentDropdownRef}>
+                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                           <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
+                      {selectedStudentFilter && (
+                        <button
+                          onClick={() => {
+                            setSelectedStudentFilter(null);
+                            setStudentSearchQuery("");
+                          }}
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 p-1 hover:bg-stone-100 rounded"
+                        >
+                          <X className="w-4 h-4 text-stone-400 hover:text-stone-600" />
+                        </button>
+                      )}
                       <Input
                         type="text"
-                        placeholder="Filter by students"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-14 pr-4.5 h-11 font-readex text-base rounded-full overflow-hidden bg-transparent"
+                        placeholder={selectedStudentFilter || "Filter by students"}
+                        value={selectedStudentFilter ? "" : studentSearchQuery}
+                        onChange={(e) => {
+                          if (!selectedStudentFilter) {
+                            setStudentSearchQuery(e.target.value);
+                          }
+                        }}
+                        onFocus={() => {
+                          setShowStudentDropdown(true);
+                          if (selectedStudentFilter) {
+                            setStudentSearchQuery("");
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' && !selectedStudentFilter) {
+                            const filteredNames = getFilteredStudentNames();
+                            if (filteredNames.length === 1) {
+                              setSelectedStudentFilter(filteredNames[0]);
+                              setShowStudentDropdown(false);
+                              setStudentSearchQuery("");
+                            }
+                          }
+                        }}
+                        className={`pl-14 ${selectedStudentFilter ? 'pr-10' : 'pr-4.5'} h-11 font-readex text-base rounded-full overflow-hidden bg-transparent ${selectedStudentFilter ? 'text-stone-700 font-medium' : ''}`}
+                        readOnly={!!selectedStudentFilter}
                       />
+
+                      {/* Dropdown */}
+                      {showStudentDropdown && (
+                        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                          {getFilteredStudentNames().map((name) => (
+                            <button
+                              key={name}
+                              onClick={() => {
+                                setSelectedStudentFilter(name);
+                                setShowStudentDropdown(false);
+                                setStudentSearchQuery("");
+                              }}
+                              className="w-full px-4 py-2 text-left hover:bg-stone-50 first:rounded-t-lg last:rounded-b-lg transition-colors"
+                            >
+                              <span className="text-stone-900 font-lexend text-sm">{name}</span>
+                            </button>
+                          ))}
+                          {getFilteredStudentNames().length === 0 && (
+                            <div className="px-4 py-2 text-stone-500 text-sm">
+                              No students found
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="flex items-center gap-1.5">
