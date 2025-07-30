@@ -144,7 +144,7 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
             {student.sessionTime && (
               <div className="flex items-center gap-1 py-0.5">
                 <div className="flex items-center gap-1">
-                  <Bell className="w-3 h-3 text-stone-700" />
+                  <NotebookPen className="w-3 h-3 text-stone-700" />
                   <span className="text-stone-700 font-lexend text-xs font-normal leading-4">
                     {scheduleView
                       ? student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1] || student.sessionTime
