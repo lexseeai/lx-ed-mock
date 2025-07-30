@@ -1680,7 +1680,7 @@ export default function Index() {
                           </div>
                           <p className="text-base font-normal text-stone-900 font-lexend leading-5">
                             Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.{' '}
-                            <span className="relative inline-block ml-1" style={{verticalAlign: 'baseline'}}>
+                            <span className="relative inline-block" style={{verticalAlign: 'baseline', marginLeft: '4px'}}>
                               <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
                                 <span className="text-stone-400 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>21 July 25</span>
                               </span>
