@@ -1518,7 +1518,7 @@ export default function Index() {
                     </div>
                     <Button variant="outline" className="flex items-center gap-1 px-4 py-2 border border-stone-200 bg-white">
                       <span className="text-sm font-medium text-stone-700 font-lexend">Actions</span>
-                      <MoreVertical className="w-6 h-6 text-stone-300" />
+                      <ChevronsUpDown className="w-6 h-6 text-stone-300" />
                     </Button>
                   </div>
 
