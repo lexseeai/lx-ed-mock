@@ -174,7 +174,7 @@ function StudentCard({ student, onClick, scheduleView = false }: { student: Stud
           {/* Avatar */}
           <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
             <Avatar className="w-full h-full">
-              <AvatarFallback className="bg-orange-100 text-orange-700 font-medium text-sm">
+              <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
                 {getInitials(student.name)}
               </AvatarFallback>
             </Avatar>
