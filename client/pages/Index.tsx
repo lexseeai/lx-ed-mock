@@ -1214,7 +1214,8 @@ export default function Index() {
                         }
 
                         // Earlier dates have higher z-index (leftmost has highest)
-                        return 50 - originalIndex;
+                        // Keep these values low to not conflict with modals/overlays
+                        return 10 - originalIndex;
                       };
 
                       const getMoveDistance = (dayData: any, originalIndex: number) => {
