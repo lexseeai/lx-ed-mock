@@ -352,7 +352,12 @@ export default function Index() {
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
   const [activeTab, setActiveTab] = useState('in-progress');
   const [studentDetailTab, setStudentDetailTab] = useState('next-session');
+  // Student filtering states
+  const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
+  const [showStudentDropdown, setShowStudentDropdown] = useState(false);
+  const [studentSearchQuery, setStudentSearchQuery] = useState("");
   const calendarRef = useRef<HTMLDivElement>(null);
+  const studentDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   // Function to scroll to section
