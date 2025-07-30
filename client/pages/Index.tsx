@@ -1524,9 +1524,9 @@ export default function Index() {
 
                   {/* Session Times */}
                   <div className="flex flex-col">
-                    <button className="group flex items-center justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-full">
+                    <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
                       <div className="flex items-center gap-2">
-                        <div className="w-[60px] flex justify-end pr-1.5">
+                        <div className="w-6 flex justify-end pr-1.5">
                           <Clock className="w-[18px] h-[18px] text-stone-400" />
                         </div>
                         <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
