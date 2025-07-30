@@ -1016,7 +1016,10 @@ export default function Index() {
                   <div className="flex items-center gap-1.5">
                     <div className="relative flex-1 w-56" ref={studentDropdownRef}>
                       <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
-                        <UserRoundSearch className="w-6 h-6 text-stone-400" />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                       </div>
                       {selectedStudentFilter && (
                         <button
@@ -1054,7 +1057,7 @@ export default function Index() {
                             }
                           }
                         }}
-                        className={`pl-14 ${selectedStudentFilter ? 'pr-10' : 'pr-4.5'} h-11 font-readex text-base rounded-full overflow-hidden bg-transparent ${selectedStudentFilter ? 'text-stone-700 font-medium' : ''}`}
+                        className={`pl-14 ${selectedStudentFilter ? 'pr-10' : 'pr-4.5'} h-11 font-readex text-base rounded-full overflow-hidden bg-transparent ${selectedStudentFilter ? 'text-stone-900 font-medium' : ''}`}
                         readOnly={!!selectedStudentFilter}
                       />
 
@@ -1071,10 +1074,10 @@ export default function Index() {
 
                                 // Highlight the first day when student is selected
                                 const allDays = getAllDaysData();
-                                const currentMondayMonth = getCurrentMondayMonth();
+                                const activeMonth = selectedDate.toLocaleDateString('en-US', { month: 'long' });
                                 const studentSessionDays = getStudentSessionDays(name);
                                 const monthDaysWithStudentSessions = allDays.filter(day =>
-                                  day.month === currentMondayMonth &&
+                                  day.month === activeMonth &&
                                   studentSessionDays.includes(day.date) &&
                                   day.sessions > 0
                                 );
@@ -1191,14 +1194,14 @@ export default function Index() {
                       if (isToggling) {
                         visibleDays = currentWeek;
                       } else if (selectedStudentFilter) {
-                        // When student is filtered: show all dates in the month where that student has sessions
+                        // When student is filtered: show all dates in the active month where that student has sessions
                         const allDays = getAllDaysData();
-                        const currentMondayMonth = getCurrentMondayMonth();
+                        const activeMonth = selectedDate.toLocaleDateString('en-US', { month: 'long' });
 
-                        // Get all days in the current month where the selected student has sessions
+                        // Get all days in the active month where the selected student has sessions
                         const studentSessionDays = getStudentSessionDays(selectedStudentFilter);
                         const monthDaysWithStudentSessions = allDays.filter(day =>
-                          day.month === currentMondayMonth &&
+                          day.month === activeMonth &&
                           studentSessionDays.includes(day.date) &&
                           day.sessions > 0
                         );
