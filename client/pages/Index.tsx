@@ -1526,95 +1526,67 @@ export default function Index() {
                   <div className="flex flex-col">
                     {(() => {
                       const student = getSelectedStudent();
-                      const studentSessions = mockStudents.filter(s => s.name === student?.name).sort((a, b) => {
-                        if (!a.sessionDate || !b.sessionDate) return 0;
-                        return a.sessionDate.getTime() - b.sessionDate.getTime();
-                      });
+                      if (!student) return null;
 
-                      // Find next session (future session or create one a week after latest)
-                      const now = new Date();
-                      const futureSessions = studentSessions.filter(s => s.sessionDate && s.sessionDate > now);
-                      const pastSessions = studentSessions.filter(s => s.sessionDate && s.sessionDate <= now);
+                      // Today is July 28, 2025
+                      const today = new Date(2025, 6, 28); // July 28, 2025
 
-                      let nextSession, previousSession;
+                      // For Alex: next session is Aug 4, current session is today (July 28)
+                      const nextSessionDate = new Date(2025, 7, 4); // Aug 4, 2025
+                      const currentSessionDate = today;
 
-                      if (futureSessions.length > 0) {
-                        nextSession = futureSessions[0];
-                      } else {
-                        // Create next session a week after the latest session
-                        const latestSession = pastSessions[pastSessions.length - 1];
-                        if (latestSession && latestSession.sessionDate) {
-                          const nextDate = new Date(latestSession.sessionDate);
-                          nextDate.setDate(nextDate.getDate() + 7);
-                          nextSession = {
-                            sessionTime: "9:00am, Mon 4 August 2025",
-                            sessionDate: nextDate,
-                            sessionReportCompleted: false
-                          };
+                      // Format date function
+                      const formatSessionDate = (date: Date, isToday: boolean = false) => {
+                        if (isToday) {
+                          return "today, 28 July";
                         }
-                      }
-
-                      // Find previous session (most recent completed)
-                      const completedSessions = pastSessions.filter(s => s.sessionReportCompleted);
-                      if (completedSessions.length > 0) {
-                        previousSession = completedSessions[completedSessions.length - 1];
-                      } else {
-                        // Create previous session a week before earliest session
-                        const earliestSession = pastSessions[0];
-                        if (earliestSession && earliestSession.sessionDate) {
-                          const prevDate = new Date(earliestSession.sessionDate);
-                          prevDate.setDate(prevDate.getDate() - 7);
-                          previousSession = {
-                            sessionTime: "9:00am, Mon 21 July 2025",
-                            sessionDate: prevDate,
-                            sessionReportCompleted: true
-                          };
-                        }
-                      }
+                        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                        const dayName = days[date.getDay()];
+                        const day = date.getDate();
+                        const month = months[date.getMonth()];
+                        return `${dayName} ${day} ${month}`;
+                      };
 
                       return (
                         <>
                           {/* Next Session */}
-                          {nextSession && (
-                            <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
-                              <div className="flex items-center gap-2">
-                                <div className="w-6 flex justify-end pr-1.5">
-                                  <Clock className="w-[18px] h-[18px] text-stone-400" />
-                                </div>
-                                <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                                  {nextSession.sessionTime}
+                          <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
+                            <div className="flex items-center gap-2">
+                              <div className="w-6 flex justify-end pr-1.5">
+                                <Clock className="w-[18px] h-[18px] text-stone-400" />
+                              </div>
+                              <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                                9:00am, {formatSessionDate(nextSessionDate)}
+                              </span>
+                            </div>
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                              <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+                                <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                                  Edit session notes
                                 </span>
                               </div>
-                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-                                  <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                                    Edit session notes
-                                  </span>
-                                </div>
-                              </div>
-                            </button>
-                          )}
+                            </div>
+                          </button>
 
-                          {/* Previous Session */}
-                          {previousSession && (
-                            <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
-                              <div className="flex items-center gap-2">
-                                <div className="w-6 flex justify-end pr-1.5">
-                                  <CircleCheck className="w-[18px] h-[18px] text-green-500" />
-                                </div>
-                                <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
-                                  {previousSession.sessionTime}
+                          {/* Current Session (today) */}
+                          <button className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto" style={{margin: '0 36px 0 28px'}}>
+                            <div className="flex items-center gap-2">
+                              <div className="w-6 flex justify-end pr-1.5">
+                                <Pencil className="w-[18px] h-[18px] text-indigo-600" />
+                              </div>
+                              <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                                9:00am {formatSessionDate(currentSessionDate, true)}
+                              </span>
+                            </div>
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                              <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+                                <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                                  Edit session notes
                                 </span>
                               </div>
-                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-                                  <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                                    View session notes
-                                  </span>
-                                </div>
-                              </div>
-                            </button>
-                          )}
+                            </div>
+                          </button>
                         </>
                       );
                     })()}
