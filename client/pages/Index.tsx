@@ -140,7 +140,7 @@ function getSessionBadgeConfig(status: string) {
     case 'done':
       return { icon: CircleCheck, color: 'text-green-500' };
     case 'active':
-      return { icon: NotebookPen, color: 'text-indigo-600' };
+      return { icon: LoaderCircle, color: 'text-indigo-600' };
     case 'late':
       return { icon: Timer, color: 'text-pink-600' };
     case 'waiting':
@@ -196,7 +196,7 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false }:
   const getTimeIcon = () => {
     switch (sessionStatus) {
       case 'active': // in progress
-        return { icon: Pencil, color: 'text-indigo-600' };
+        return { icon: LoaderCircle, color: 'text-indigo-600' };
       case 'late': // due soon
         return { icon: Timer, color: 'text-pink-600' };
       case 'done': // submitted
@@ -1600,7 +1600,7 @@ export default function Index() {
                   {/* In Progress Section */}
                   <section id="in-progress">
                     <div className="flex items-center gap-2 mb-4">
-                      <NotebookPen className="w-6 h-6 text-stone-400" />
+                      <LoaderCircle className="w-6 h-6 text-stone-400" />
                       <h2 className="text-xl font-normal text-stone-400 font-lexend">In Progress</h2>
                       <span className="text-sm text-stone-400 font-lexend">({getInProgressNotes().length})</span>
                     </div>
@@ -1823,7 +1823,7 @@ export default function Index() {
                           case 'wait':
                             return { icon: Clock, color: 'text-stone-400' };
                           case 'in-progress':
-                            return { icon: Pencil, color: 'text-indigo-600' };
+                            return { icon: LoaderCircle, color: 'text-indigo-600' };
                           case 'done':
                             return { icon: CircleCheck, color: 'text-green-500' };
                           case 'late':
