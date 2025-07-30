@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetPortal } from "@/components/ui/sheet";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { Link, useNavigate } from "react-router-dom";
 
 interface Student {
