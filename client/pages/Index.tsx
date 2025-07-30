@@ -1734,12 +1734,12 @@ export default function Index() {
                           </div>
                           <p className="text-base font-normal text-stone-900 font-lexend leading-5">
                             Made progress toward independent problem-solving with fewer rounding errors.{' '}
-                            <span className="relative inline-block ml-1" style={{verticalAlign: 'baseline'}}>
-                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 hover:bg-stone-700 transition-colors cursor-pointer group">
-                                <span className="text-stone-400 group-hover:text-white font-lexend leading-3 font-normal" style={{fontSize: '8px'}}>7 July 25</span>
+                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                              <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>7 July 25</span>
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-auto">
+                                <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                   <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
                                 </span>
                               </span>
