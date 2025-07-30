@@ -327,14 +327,14 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
             </div>
             {!isCollapsed && (
-              <div className="relative group">
-                <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
-                <div className="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-50 pointer-events-none">
-                  <div className="bg-stone-800 px-2 py-1 rounded text-xs text-white whitespace-nowrap">
-                    7 this week
-                  </div>
-                </div>
-              </div>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>7 this week</p>
+                </TooltipContent>
+              </Tooltip>
             )}
           </div>
 
@@ -353,14 +353,14 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Session notes</span>}
             </div>
             {!isCollapsed && (
-              <div className="relative group">
-                <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
-                <div className="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-50 pointer-events-none">
-                  <div className="bg-stone-800 px-2 py-1 rounded text-xs text-white whitespace-nowrap">
-                    4 due soon
-                  </div>
-                </div>
-              </div>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>4 due soon</p>
+                </TooltipContent>
+              </Tooltip>
             )}
           </div>
         </div>
@@ -952,8 +952,9 @@ export default function Index() {
   const allStudents = mockStudents.slice(9); // Show the Jayden students in "All students"
 
   return (
-    <div className="h-screen bg-indigo-900 flex">
-      <Sidebar activeView={activeView} setActiveView={setActiveView} onThisWeekClick={selectToday} setShowStudentOverlay={setShowStudentOverlay} />
+    <TooltipProvider>
+      <div className="h-screen bg-indigo-900 flex">
+        <Sidebar activeView={activeView} setActiveView={setActiveView} onThisWeekClick={selectToday} setShowStudentOverlay={setShowStudentOverlay} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
@@ -2176,6 +2177,7 @@ export default function Index() {
       </Sheet>
 
 
-    </div>
+      </div>
+    </TooltipProvider>
   );
 }
