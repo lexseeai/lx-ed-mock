@@ -1068,6 +1068,20 @@ export default function Index() {
                                 setSelectedStudentFilter(name);
                                 setShowStudentDropdown(false);
                                 setStudentSearchQuery("");
+
+                                // Highlight the first day when student is selected
+                                const allDays = getAllDaysData();
+                                const currentMondayMonth = getCurrentMondayMonth();
+                                const studentSessionDays = getStudentSessionDays(name);
+                                const monthDaysWithStudentSessions = allDays.filter(day =>
+                                  day.month === currentMondayMonth &&
+                                  studentSessionDays.includes(day.date) &&
+                                  day.sessions > 0
+                                );
+
+                                if (monthDaysWithStudentSessions.length > 0) {
+                                  setSelectedDayDate(monthDaysWithStudentSessions[0].date);
+                                }
                               }}
                               className="w-full px-4 py-2 text-left hover:bg-stone-50 first:rounded-t-lg last:rounded-b-lg transition-colors"
                             >
