@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronUp, ArrowRight } from "lucide-react";
+import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -1430,7 +1430,7 @@ export default function Index() {
                       onClick={() => setShowStudentOverlay(false)}
                       className="p-1 hover:bg-stone-100 rounded transition-colors"
                     >
-                      <ChevronsLeft className="w-6 h-6 text-stone-400" />
+                      <ChevronsRight className="w-6 h-6 text-stone-400" />
                     </button>
                     <button
                       onClick={handleExpandStudent}
@@ -1447,7 +1447,7 @@ export default function Index() {
                         !canNavigatePrevious() ? 'opacity-50 cursor-not-allowed' : ''
                       }`}
                     >
-                      <ChevronDown className={`w-6 h-6 ${
+                      <ChevronUp className={`w-6 h-6 ${
                         canNavigatePrevious() ? 'text-stone-400' : 'text-stone-300'
                       }`} />
                     </button>
@@ -1458,7 +1458,7 @@ export default function Index() {
                         !canNavigateNext() ? 'opacity-50 cursor-not-allowed' : ''
                       }`}
                     >
-                      <ChevronUp className={`w-6 h-6 ${
+                      <ChevronDown className={`w-6 h-6 ${
                         canNavigateNext() ? 'text-stone-400' : 'text-stone-300'
                       }`} />
                     </button>
@@ -1470,11 +1470,42 @@ export default function Index() {
                   <div className="flex items-center justify-between pb-5">
                     <div className="flex items-center gap-2">
                       <div className="w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
-                        <img
-                          src="https://api.builder.io/api/v1/image/assets/TEMP/df2d5088701924956cda8e165bca6457a40fbfaa?width=149"
-                          alt={getSelectedStudent()?.name}
-                          className="w-full h-full object-cover"
-                        />
+                        <Avatar className="w-full h-full">
+                          <AvatarFallback className={`${
+                            (() => {
+                              const student = getSelectedStudent();
+                              if (!student?.subject) return 'bg-stone-100 text-stone-700';
+                              const subject = student.subject.toLowerCase();
+                              if (subject.includes('math') || subject.includes('algebra') || subject.includes('geometry') || subject.includes('calculus')) {
+                                return 'bg-blue-100 text-blue-700';
+                              }
+                              if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry') || subject.includes('physics')) {
+                                return 'bg-green-100 text-green-700';
+                              }
+                              if (subject.includes('english') || subject.includes('literature') || subject.includes('writing')) {
+                                return 'bg-purple-100 text-purple-700';
+                              }
+                              if (subject.includes('history') || subject.includes('social')) {
+                                return 'bg-amber-100 text-amber-700';
+                              }
+                              if (subject.includes('spanish') || subject.includes('french') || subject.includes('language')) {
+                                return 'bg-pink-100 text-pink-700';
+                              }
+                              if (subject.includes('art') || subject.includes('music') || subject.includes('creative')) {
+                                return 'bg-red-100 text-red-700';
+                              }
+                              if (subject.includes('computer') || subject.includes('coding') || subject.includes('programming')) {
+                                return 'bg-indigo-100 text-indigo-700';
+                              }
+                              if (subject.includes('geography') || subject.includes('earth')) {
+                                return 'bg-teal-100 text-teal-700';
+                              }
+                              return 'bg-stone-100 text-stone-700';
+                            })()
+                          } font-medium text-2xl`}>
+                            {getSelectedStudent()?.name?.charAt(0).toUpperCase()}
+                          </AvatarFallback>
+                        </Avatar>
                       </div>
                       <div className="flex flex-col py-0.5 justify-center gap-1">
                         <h1 className="text-[30px] font-semibold text-stone-900 font-lexend leading-9 -tracking-[0.15px]">
@@ -1525,7 +1556,10 @@ export default function Index() {
                         Next session
                       </button>
                       <button
-                        onClick={() => setStudentDetailTab('observations')}
+                        onClick={() => {
+                          setStudentDetailTab('observations');
+                          scrollToSection('observations-section');
+                        }}
                         className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
                           studentDetailTab === 'observations'
                             ? 'bg-indigo-600 text-white shadow-sm'
@@ -1612,7 +1646,7 @@ export default function Index() {
                     </div>
 
                     {/* Observations */}
-                    <div>
+                    <div id="observations-section">
                       <div className="pb-3">
                         <h2 className="text-xl font-bold text-stone-900 font-lexend leading-6 -tracking-wide">
                           Observations
