@@ -373,7 +373,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           variant="ghost"
           size="sm"
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-1 h-6 w-6"
+          className="p-1 h-6 w-6 hover:bg-indigo-950"
         >
           <PanelLeft className="w-5 h-5 text-white/50" />
         </Button>
