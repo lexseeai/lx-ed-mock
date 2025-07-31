@@ -2087,42 +2087,19 @@ export default function Index() {
                       </button>
                     </div>
                     <div className="flex gap-4 overflow-x-auto pb-2">
-                      {/* Alex */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            A
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Alex Rodriguez</div>
-                            <div className="text-sm text-stone-500">3:00 PM</div>
-                          </div>
+                      {getScheduleData().morning.concat(getScheduleData().afternoon, getScheduleData().evening)
+                        .filter(student => student.sessionDate && student.sessionDate.getDate() === 28)
+                        .map((student) => (
+                        <div key={student.id} className="flex-shrink-0">
+                          <StudentCard
+                            student={student}
+                            onClick={() => {
+                              handleStudentClick(student.id, [student]);
+                            }}
+                            scheduleView={true}
+                          />
                         </div>
-                      </div>
-                      {/* Emma */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            E
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Emma Davis</div>
-                            <div className="text-sm text-stone-500">4:30 PM</div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* Marcus */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            M
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Marcus Thompson</div>
-                            <div className="text-sm text-stone-500">6:00 PM</div>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
 
