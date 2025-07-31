@@ -1306,9 +1306,9 @@ export default function Index() {
                     <div className="relative" ref={homeDropdownRef}>
                       <button
                         onClick={() => setShowHomeDropdown(!showHomeDropdown)}
-                        className="flex items-center justify-center w-11 h-11 bg-stone-700 rounded-xl hover:bg-stone-800 transition-colors shadow-sm overflow-hidden"
+                        className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors shadow-sm overflow-hidden border border-stone-200"
                       >
-                        <Plus className="w-5 h-5 text-white" strokeWidth={4} />
+                        <Plus className="w-5 h-5 text-indigo-600" strokeWidth={4} />
                       </button>
                       {showHomeDropdown && (
                         <div className="absolute right-0 top-12 w-56 bg-white border border-stone-200 rounded-lg shadow-lg z-50">
