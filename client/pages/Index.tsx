@@ -1984,7 +1984,7 @@ export default function Index() {
                                 <TableCell className="py-4">
                                   <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
                                     <Clock className="w-4 h-4 text-stone-400" />
-                                    {student.nextSessionTime || student.sessionTime}
+                                    {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
                                   </div>
                                 </TableCell>
                                 <TableCell className="py-4">
