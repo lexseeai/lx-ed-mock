@@ -2068,7 +2068,8 @@ export default function Index() {
               } space-y-6 flex-1 overflow-y-auto`}
               style={{
                 scrollbarWidth: 'thin',
-                scrollbarColor: '#d1d5db #f3f4f6'
+                scrollbarColor: '#d1d5db #f3f4f6',
+                padding: activeView === 'home' ? '32px 64px' : '32px'
               }}>
               {activeView === 'home' && (
                 <div className="space-y-8">
