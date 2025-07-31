@@ -1310,7 +1310,7 @@ export default function Index() {
                       )}
                       <Input
                         type="text"
-                        placeholder={selectedStudentFilter || "Filter by students"}
+                        placeholder={selectedStudentFilter || "Filter by student"}
                         value={selectedStudentFilter ? "" : studentSearchQuery}
                         onChange={(e) => {
                           if (!selectedStudentFilter) {
@@ -1652,7 +1652,7 @@ export default function Index() {
                       )}
                       <Input
                         type="text"
-                        placeholder={selectedNotesStudentFilter || "Filter by students"}
+                        placeholder={selectedNotesStudentFilter || "Filter by student"}
                         value={selectedNotesStudentFilter ? "" : notesStudentSearchQuery}
                         onChange={(e) => {
                           if (!selectedNotesStudentFilter) {
