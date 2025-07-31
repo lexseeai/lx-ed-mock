@@ -1972,9 +1972,7 @@ export default function Index() {
               </div>
             )}
             {/* Content inside card - Different margins for different views */}
-            <div
-              ref={contentRef}
-              className={`${
+            <div className={`${
                 activeView === 'schedule'
                   ? 'pl-0 pr-4 pb-6 pt-0'
                   : activeView === 'sessionnotes'
