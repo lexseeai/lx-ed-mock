@@ -211,7 +211,7 @@ function getSessionTimeRange(timeString: string): string {
   }
 }
 
-function StudentCard({ student, onClick, scheduleView = false, dimmed = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean }) {
+function StudentCard({ student, onClick, scheduleView = false, dimmed = false, sessionNotesView = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean; sessionNotesView?: boolean }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
   };
