@@ -261,7 +261,7 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false }:
         <div className="flex justify-center px-1.5 pb-1.5">
           <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
             <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-              {sessionStatus === 'done' ? 'View session notes' : 'Edit session notes'}
+              {sessionStatus === 'done' ? 'View session notes' : sessionStatus === 'waiting' ? 'Add session notes' : 'Edit session notes'}
             </span>
           </div>
         </div>
@@ -1932,7 +1932,9 @@ export default function Index() {
 
                       // Get button text based on status
                       const getButtonText = (status: string) => {
-                        return (status === 'done') ? 'View session notes' : 'Edit session notes';
+                        if (status === 'done') return 'View session notes';
+                        if (status === 'wait') return 'Add session notes';
+                        return 'Edit session notes';
                       };
 
                       const sessions_to_show = [];
@@ -1976,7 +1978,7 @@ export default function Index() {
                               <div className="w-6 flex justify-end pr-1.5">
                                 <IconComponent className={`w-[18px] h-[18px] ${iconConfig.color}`} />
                               </div>
-                              <span className="text-base font-normal text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]">
+                              <span className="text-base text-stone-700 font-lexend leading-4.5 -tracking-[0.08px]" style={{fontWeight: session.status === 'wait' ? '500' : session.status === 'in-progress' ? '300' : '400'}}>
                                 {session.time}, {session.date}
                               </span>
                             </div>
