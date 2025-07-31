@@ -151,6 +151,55 @@ function getSessionBadgeConfig(status: string) {
   }
 }
 
+// Helper function to convert single time to 45-minute session range
+function getSessionTimeRange(timeString: string): string {
+  const timeMatch = timeString.match(/(\d{1,2}):(\d{2})(am|pm)/i);
+  if (!timeMatch) return timeString;
+
+  const [, hours, minutes, period] = timeMatch;
+  const startHour = parseInt(hours);
+  const startMin = parseInt(minutes);
+
+  // Convert to 24-hour format for calculation
+  let start24Hour = startHour;
+  if (period.toLowerCase() === 'pm' && startHour !== 12) {
+    start24Hour += 12;
+  } else if (period.toLowerCase() === 'am' && startHour === 12) {
+    start24Hour = 0;
+  }
+
+  // Add 45 minutes
+  let endMin = startMin + 45;
+  let end24Hour = start24Hour;
+  if (endMin >= 60) {
+    endMin -= 60;
+    end24Hour += 1;
+  }
+
+  // Convert back to 12-hour format
+  let endHour = end24Hour;
+  let endPeriod = 'am';
+  if (end24Hour >= 12) {
+    endPeriod = 'pm';
+    if (end24Hour > 12) {
+      endHour = end24Hour - 12;
+    }
+  }
+  if (endHour === 0) {
+    endHour = 12;
+  }
+
+  const startTime = `${hours}:${minutes.padStart(2, '0')}`;
+  const endTime = `${endHour}:${endMin.toString().padStart(2, '0')}`;
+
+  // Use en dash and show period only on end time if different, or both if same
+  if (period.toLowerCase() === endPeriod) {
+    return `${startTime}–${endTime}${period.toLowerCase()}`;
+  } else {
+    return `${startTime}${period.toLowerCase()}–${endTime}${endPeriod}`;
+  }
+}
+
 function StudentCard({ student, onClick, scheduleView = false, dimmed = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
