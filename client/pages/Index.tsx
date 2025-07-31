@@ -329,68 +329,69 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           </div>
         </div>
 
-        {/* Sessions Label */}
-        {!isCollapsed && (
-          <span className="text-xs font-medium text-white/50 font-lexend ml-3 mt-3 mb-1 block">Sessions</span>
-        )}
-
         {/* Sessions Section */}
-        <div className="space-y-1">
-          {/* Schedule */}
-          <div
-            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-9 leading-6 ${
-              activeView === 'schedule' ? 'bg-indigo-600 text-white shadow-sm' : 'hover:bg-indigo-950'
-            }`}
-            onClick={() => {
-              setActiveView('schedule');
-              onThisWeekClick(); // Navigate to this week (July 28)
-              setShowStudentOverlay(false);
-            }}
-          >
-            <div className="flex items-center space-x-2">
-              <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
+        <div>
+          {/* Sessions Label */}
+          {!isCollapsed && (
+            <span className="text-xs font-medium text-white/50 font-lexend ml-3 mt-3 mb-1 block">Sessions</span>
+          )}
+          <div className="space-y-1">
+            {/* Schedule */}
+            <div
+              className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-9 leading-6 ${
+                activeView === 'schedule' ? 'bg-indigo-600 text-white shadow-sm' : 'hover:bg-indigo-950'
+              }`}
+              onClick={() => {
+                setActiveView('schedule');
+                onThisWeekClick(); // Navigate to this week (July 28)
+                setShowStudentOverlay(false);
+              }}
+            >
+              <div className="flex items-center space-x-2">
+                <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
+              </div>
+              {!isCollapsed && (
+                <Tooltip delayDuration={0} disableHoverableContent>
+                  <TooltipTrigger asChild>
+                    <div className="px-2 py-1 -mx-2 -my-1">
+                      <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent className="animate-none pointer-events-none">
+                    <p>7 this week</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
             </div>
-            {!isCollapsed && (
-              <Tooltip delayDuration={0} disableHoverableContent>
-                <TooltipTrigger asChild>
-                  <div className="px-2 py-1 -mx-2 -my-1">
-                    <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white/50'}`}>7</span>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent className="animate-none pointer-events-none">
-                  <p>7 this week</p>
-                </TooltipContent>
-              </Tooltip>
-            )}
-          </div>
 
-          {/* Session Notes */}
-          <div
-            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-8 ${
-              activeView === 'sessionnotes' ? 'bg-indigo-600 text-white shadow-sm' : 'hover:bg-indigo-950'
-            }`}
-            onClick={() => {
-              setActiveView('sessionnotes');
-              setShowStudentOverlay(false);
-            }}
-          >
-            <div className="flex items-center space-x-2">
-              <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Notes</span>}
+            {/* Session Notes */}
+            <div
+              className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-8 ${
+                activeView === 'sessionnotes' ? 'bg-indigo-600 text-white shadow-sm' : 'hover:bg-indigo-950'
+              }`}
+              onClick={() => {
+                setActiveView('sessionnotes');
+                setShowStudentOverlay(false);
+              }}
+            >
+              <div className="flex items-center space-x-2">
+                <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Notes</span>}
+              </div>
+              {!isCollapsed && (
+                <Tooltip delayDuration={0} disableHoverableContent>
+                  <TooltipTrigger asChild>
+                    <div className="px-2 py-1 -mx-2 -my-1">
+                      <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent className="animate-none pointer-events-none">
+                    <p>4 due soon</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
             </div>
-            {!isCollapsed && (
-              <Tooltip delayDuration={0} disableHoverableContent>
-                <TooltipTrigger asChild>
-                  <div className="px-2 py-1 -mx-2 -my-1">
-                    <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/50'}`}>4</span>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent className="animate-none pointer-events-none">
-                  <p>4 due soon</p>
-                </TooltipContent>
-              </Tooltip>
-            )}
           </div>
         </div>
 
