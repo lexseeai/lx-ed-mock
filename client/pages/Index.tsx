@@ -1893,9 +1893,7 @@ export default function Index() {
                   ? 'p-9'
                   : activeView === 'home'
                     ? 'p-8'
-                    : activeView === 'all' && studentsViewMode === 'list'
-                      ? 'p-0 pt-9 px-9'
-                      : 'p-9'
+                    : 'p-9'
             } space-y-6 flex-1 overflow-y-auto`}>
               {activeView === 'home' && (
                 <section>
@@ -1908,7 +1906,7 @@ export default function Index() {
               )}
 
               {activeView === 'all' && (
-                <section>
+                <section className="h-full">
                   {studentsViewMode === 'cards' ? (
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
                       {getFilteredUniqueStudents().map((student) => (
@@ -1921,14 +1919,14 @@ export default function Index() {
                       ))}
                     </div>
                   ) : (
-                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col" style={{height: 'calc(100vh - 280px)'}}>
+                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col flex-1">
                       {/* Fixed Header */}
                       <div className="border-b border-stone-200 sticky top-0 z-10">
                         <div className="w-full">
                           <div className="flex items-center h-12 text-sm font-medium text-stone-700">
                             <div className="w-12 px-4"></div>
                             <div
-                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('name')} hover:text-stone-900 flex items-center`}
+                              className={`flex-1 px-4 pl-8 cursor-pointer select-none ${getHeaderStyle('name')} hover:text-stone-900 flex items-center`}
                               onClick={() => handleSort('name')}
                             >
                               Name
