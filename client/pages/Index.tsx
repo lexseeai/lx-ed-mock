@@ -2271,7 +2271,7 @@ export default function Index() {
                     {/* Morning */}
                     <section>
                       <div className="flex items-center gap-2 mb-4">
-                        <Haze className="w-5 h-5 text-stone-400" />
+                        <Haze className="w-6 h-6 text-stone-400" />
                         <h3 className="text-xl font-normal text-stone-400 font-lexend">Morning</h3>
                       </div>
                       <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
