@@ -1984,11 +1984,8 @@ export default function Index() {
                         : 'p-9'
               } space-y-6 flex-1 overflow-y-auto`}
               style={{
-                scrollBehavior: 'smooth',
                 scrollbarWidth: 'thin',
-                scrollbarColor: '#d1d5db #f3f4f6',
-                overscrollBehavior: 'contain',
-                scrollSnapType: 'y proximity'
+                scrollbarColor: '#d1d5db #f3f4f6'
               }}>
               {activeView === 'home' && (
                 <section>
