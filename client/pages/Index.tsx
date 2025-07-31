@@ -1777,6 +1777,7 @@ export default function Index() {
                           key={student.id}
                           student={student}
                           onClick={() => handleStudentClick(student.id, getInProgressNotes())}
+                          sessionNotesView={true}
                         />
                       ))}
                     </div>
@@ -1795,6 +1796,7 @@ export default function Index() {
                           key={student.id}
                           student={student}
                           onClick={() => handleStudentClick(student.id, getDueSoonNotes())}
+                          sessionNotesView={true}
                         />
                       ))}
                     </div>
@@ -1813,6 +1815,7 @@ export default function Index() {
                           key={student.id}
                           student={student}
                           onClick={() => handleStudentClick(student.id, getSubmittedNotes())}
+                          sessionNotesView={true}
                         />
                       ))}
                     </div>
