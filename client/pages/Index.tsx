@@ -2072,7 +2072,7 @@ export default function Index() {
                 padding: activeView === 'home' ? '72px 64px 32px' : '32px'
               }}>
               {activeView === 'home' && (
-                <div className="space-y-8">
+                <div className="space-y-16">
                   {/* Today's Sessions Section */}
                   <div>
                     <div className="flex items-center mb-4">
