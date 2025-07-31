@@ -994,7 +994,16 @@ export default function Index() {
   // Helper functions to categorize session notes by status
   const getInProgressNotes = () => {
     return mockStudents
-      .filter(student => getSessionReportStatus(student) === 'active')
+      .filter(student => {
+        const status = getSessionReportStatus(student);
+        // Include both 'active' (in-progress) and 'waiting' students with sessions on July 28th
+        if (status === 'active') return true;
+        if (status === 'waiting' && student.sessionDate) {
+          const sessionDate = student.sessionDate;
+          return sessionDate.getDate() === 28 && sessionDate.getMonth() === 6; // July 28th
+        }
+        return false;
+      })
       .sort((a, b) => {
         // Sort by most recent session date first
         if (!a.sessionDate || !b.sessionDate) return 0;
@@ -1621,7 +1630,7 @@ export default function Index() {
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
-                      In progress
+                      Due soon
                     </button>
                     <button
                       onClick={() => scrollToSection('due-soon')}
@@ -1631,7 +1640,7 @@ export default function Index() {
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
-                      Due soon
+                      Late draft
                     </button>
                     <button
                       onClick={() => scrollToSection('submitted')}
@@ -1641,7 +1650,7 @@ export default function Index() {
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
-                      Submitted
+                      Recently submitted
                     </button>
                   </div>
                 </div>
@@ -1767,8 +1776,8 @@ export default function Index() {
                   {/* In Progress Section */}
                   <section id="in-progress">
                     <div className="flex items-center gap-2 mb-4">
-                      <LoaderCircle className="w-6 h-6 text-stone-400" />
-                      <h2 className="text-xl font-normal text-stone-400 font-lexend">In Progress</h2>
+                      <Clock className="w-6 h-6 text-stone-400" />
+                      <h2 className="text-xl font-normal text-stone-400 font-lexend">Due soon</h2>
                       <span className="text-sm text-stone-400 font-lexend">({getInProgressNotes().length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
@@ -1787,7 +1796,7 @@ export default function Index() {
                   <section id="due-soon">
                     <div className="flex items-center gap-2 mb-4">
                       <Timer className="w-6 h-6 text-stone-400" />
-                      <h2 className="text-xl font-normal text-stone-400 font-lexend">Due Soon</h2>
+                      <h2 className="text-xl font-normal text-stone-400 font-lexend">Late drafts</h2>
                       <span className="text-sm text-stone-400 font-lexend">({getDueSoonNotes().length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
@@ -1806,7 +1815,7 @@ export default function Index() {
                   <section id="submitted">
                     <div className="flex items-center gap-2 mb-4">
                       <CircleCheck className="w-6 h-6 text-stone-400" />
-                      <h2 className="text-xl font-normal text-stone-400 font-lexend">Submitted</h2>
+                      <h2 className="text-xl font-normal text-stone-400 font-lexend">Recently submitted</h2>
                       <span className="text-sm text-stone-400 font-lexend">({getSubmittedNotes().length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
