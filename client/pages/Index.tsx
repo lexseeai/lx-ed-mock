@@ -1272,7 +1272,7 @@ export default function Index() {
         {/* Content */}
         <div className="flex-1 p-3 h-full min-w-0" style={{ scrollBehavior: 'smooth' }}>
           {/* My students panel card */}
-          <div className="bg-stone-50 rounded-lg h-full flex flex-col min-w-0" style={{boxShadow: '0 0 4px 1px rgba(30, 27, 75, 0.01)', border: '1px none rgb(231, 229, 228)'}}>
+          <div className="bg-white rounded-lg h-full flex flex-col min-w-0" style={{boxShadow: '0 0 4px 1px rgba(30, 27, 75, 0.01)', border: '1px none rgb(231, 229, 228)'}}>
             {/* Header inside card - Different headers for different views */}
             {activeView === 'home' && (
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200 rounded-t-lg">
