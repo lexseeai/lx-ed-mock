@@ -497,7 +497,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
 
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
             <FileAudio className="w-4 h-4 text-white/80" />
-            {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Assignments</span>}
+            <span className={`text-sm text-white font-lexend ml-2 w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>Assignments</span>
           </div>
 
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
