@@ -1356,7 +1356,7 @@ export default function Index() {
                       placeholder="What are you looking for?"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="h-12 text-lg font-readex rounded-full border border-stone-300 bg-stone-100 pl-14 pr-6 placeholder:text-stone-500"
+                      className="h-12 text-lg font-readex rounded-full border border-stone-200 bg-stone-50 pl-14 pr-6 placeholder:text-stone-500"
                     />
                   </div>
                 </div>
