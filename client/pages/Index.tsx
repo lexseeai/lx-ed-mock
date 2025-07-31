@@ -1692,26 +1692,38 @@ export default function Index() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     {/* Cards/List Toggle */}
-                    <div className="flex p-0.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center">
+                    <div className="relative flex border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center" style={{padding: '3px 3px 3px 2px'}}>
+                      {/* Sliding background indicator */}
+                      <div
+                        className="absolute bg-indigo-600 shadow-sm transition-transform duration-200 ease-out"
+                        style={{
+                          width: '36px',
+                          height: '36px',
+                          borderRadius: '11px',
+                          top: '3px',
+                          left: studentsViewMode === 'cards' ? '2px' : '38px',
+                          transition: 'left 0.2s ease-out'
+                        }}
+                      />
                       <button
                         onClick={() => setStudentsViewMode('cards')}
-                        className={`flex items-center justify-center w-9.5 h-9.5 p-1.5 text-sm font-medium font-lexend transition-all overflow-hidden ${
+                        className={`relative flex items-center justify-center p-1.5 text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden ${
                           studentsViewMode === 'cards'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
+                            ? 'text-white z-10'
+                            : 'text-stone-400 hover:text-stone-600 z-10'
                         }`}
-                        style={{width: '38px', height: '38px', borderRadius: '10px'}}
+                        style={{width: '36px', height: '36px', borderRadius: '11px'}}
                       >
                         <LayoutGrid className="w-5 h-5" />
                       </button>
                       <button
                         onClick={() => setStudentsViewMode('list')}
-                        className={`flex items-center justify-center w-9.5 h-9.5 p-1.5 text-sm font-medium font-lexend transition-all overflow-hidden ${
+                        className={`relative flex items-center justify-center p-1.5 text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden ${
                           studentsViewMode === 'list'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
+                            ? 'text-white z-10'
+                            : 'text-stone-400 hover:text-stone-600 z-10'
                         }`}
-                        style={{width: '38px', height: '38px', borderRadius: '10px'}}
+                        style={{width: '36px', height: '36px', borderRadius: '11px'}}
                       >
                         <TableIcon className="w-5 h-5" />
                       </button>
