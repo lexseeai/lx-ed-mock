@@ -1582,8 +1582,20 @@ export default function Index() {
                 ? 'pl-0 pr-4 pb-6 pt-0'
                 : activeView === 'sessionnotes'
                   ? 'p-9'
-                  : 'px-8 pb-8 pt-4'
+                  : activeView === 'home'
+                    ? 'p-8'
+                    : 'px-8 pb-8 pt-4'
             } space-y-6 flex-1 overflow-y-auto`}>
+              {activeView === 'home' && (
+                <section>
+                  <div className="text-center">
+                    <p className="text-stone-600 font-lexend text-lg">
+                      Welcome to your dashboard. Use the search above or navigate using the sidebar.
+                    </p>
+                  </div>
+                </section>
+              )}
+
               {activeView === 'all' && (
                 <section>
                   <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
