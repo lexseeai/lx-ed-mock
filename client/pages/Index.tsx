@@ -2009,7 +2009,7 @@ export default function Index() {
                       <div
                         className="absolute bg-indigo-600 shadow-sm rounded-md"
                         style={{
-                          height: '30px',
+                          height: '32px',
                           top: '6px',
                           left: `${getTabPosition()!.left}px`,
                           width: `${getTabPosition()!.width}px`,
