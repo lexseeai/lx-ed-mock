@@ -164,6 +164,17 @@ function formatSessionTimeForNotes(sessionTime: string): string {
   return sessionTime; // Return original if no match
 }
 
+// Helper function to reformat session time to "Month day, time" format
+function formatSessionTimeToMonthDayTime(sessionTime: string): string {
+  // Match pattern like "9:00am, July 14" and convert to "July 14, 9:00am"
+  const match = sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm)),\s*(.+)/i);
+  if (match) {
+    const [, time, date] = match;
+    return `${date}, ${time}`;
+  }
+  return sessionTime; // Return original if no match
+}
+
 // Helper function to convert single time to 45-minute session range
 function getSessionTimeRange(timeString: string): string {
   const timeMatch = timeString.match(/(\d{1,2}):(\d{2})(am|pm)/i);
