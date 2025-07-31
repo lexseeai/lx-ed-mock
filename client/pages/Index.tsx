@@ -511,8 +511,8 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
       <div className="p-3">
         <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-indigo-950`}>
           <div className="flex items-center space-x-2">
-            <Avatar className="w-8 h-8">
-              <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
+            <Avatar className="w-8 h-8 rounded-xl">
+              <AvatarFallback className="bg-stone-200 text-stone-600 text-xs rounded-xl">JS</AvatarFallback>
             </Avatar>
             {!isCollapsed && <span className="text-sm font-medium text-white font-lexend">John Smith</span>}
           </div>
