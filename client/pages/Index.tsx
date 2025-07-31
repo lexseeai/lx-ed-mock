@@ -1984,7 +1984,9 @@ export default function Index() {
               style={{
                 scrollBehavior: 'smooth',
                 scrollbarWidth: 'thin',
-                scrollbarColor: '#d1d5db #f3f4f6'
+                scrollbarColor: '#d1d5db #f3f4f6',
+                overscrollBehavior: 'contain',
+                scrollSnapType: 'y proximity'
               }}>
               {activeView === 'home' && (
                 <section>
