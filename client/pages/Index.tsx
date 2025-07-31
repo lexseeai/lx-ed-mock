@@ -569,6 +569,8 @@ export default function Index() {
   const [sortField, setSortField] = useState<'name' | 'subject' | 'nextSession' | 'email'>('name');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const [tabPositionsReady, setTabPositionsReady] = useState(false);
+  const [showHomeDropdown, setShowHomeDropdown] = useState(false);
+  const homeDropdownRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
   const [buttonMeasurements, setButtonMeasurements] = useState<{
