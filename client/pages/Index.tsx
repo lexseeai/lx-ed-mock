@@ -2260,7 +2260,7 @@ export default function Index() {
               )}
 
               {activeView === 'schedule' && (
-                <div className="space-y-6 min-w-0 overflow-hidden">
+                <div className="space-y-6 min-w-0 overflow-hidden flex flex-col items-start justify-start">
 
 
 
