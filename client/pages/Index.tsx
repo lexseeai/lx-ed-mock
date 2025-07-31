@@ -297,7 +297,10 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false }:
                   <TimeIcon className={`w-3 h-3 ${timeIconConfig.color}`} />
                   <span className="text-stone-700 font-lexend text-xs font-normal leading-4">
                     {scheduleView
-                      ? student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1] || student.sessionTime
+                      ? (() => {
+                          const singleTime = student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1];
+                          return singleTime ? getSessionTimeRange(singleTime) : student.sessionTime;
+                        })()
                       : student.sessionTime
                     }
                   </span>
