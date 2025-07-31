@@ -612,7 +612,7 @@ export default function Index() {
       const deltaY = e.deltaY;
 
       // Calculate velocity based on wheel delta
-      velocity = Math.max(-maxVelocity, Math.min(maxVelocity, deltaY * 0.5));
+      velocity = Math.max(-maxVelocity, Math.min(maxVelocity, deltaY * 2));
 
       if (!isScrolling) {
         isScrolling = true;
