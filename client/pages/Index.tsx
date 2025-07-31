@@ -578,7 +578,7 @@ export default function Index() {
 
   // Calculate tab position and width
   const getTabPosition = () => {
-    if (!tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
+    if (!tabPositionsReady || !tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
       return { left: 6, width: 63 }; // fallback
     }
 
@@ -597,6 +597,13 @@ export default function Index() {
         return { left: 6, width: button1.offsetWidth };
     }
   };
+
+  // Effect to calculate tab positions after mount
+  useEffect(() => {
+    if (tabButton1Ref.current && tabButton2Ref.current && tabButton3Ref.current) {
+      setTabPositionsReady(true);
+    }
+  }, []);
 
   // Function to scroll to section
   const scrollToSection = (sectionId: string) => {
