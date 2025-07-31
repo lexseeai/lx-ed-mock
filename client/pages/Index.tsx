@@ -614,12 +614,15 @@ export default function Index() {
     }
   };
 
-  // Effect to force re-render when tabs mount
+  // Effect to force tab position recalculation after mount
   useEffect(() => {
     if (tabButton1Ref.current && tabButton2Ref.current && tabButton3Ref.current) {
-      setTabPositionsReady(true);
-      // Force a small delay to ensure DOM is fully rendered
-      setTimeout(() => setTabPositionsReady(false), 10);
+      // Force a re-render to use actual button dimensions instead of fallback
+      const timer = setTimeout(() => {
+        setTabPositionsReady(prev => !prev);
+      }, 50); // Small delay to ensure DOM is fully rendered
+
+      return () => clearTimeout(timer);
     }
   }, []);
 
