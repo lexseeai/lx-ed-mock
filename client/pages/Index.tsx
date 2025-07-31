@@ -2112,9 +2112,9 @@ export default function Index() {
                         <h2 className="text-xl font-normal text-stone-400 font-lexend">Late drafts</h2>
                         <button
                           onClick={() => setActiveView('sessionnotes')}
-                          className="flex items-center text-stone-200 hover:text-indigo-600 transition-colors"
+                          className="flex items-center text-stone-200 hover:text-indigo-600 transition-colors ml-1"
                         >
-                          <ArrowRight className="w-4.5 h-4.5 ml-1" />
+                          <ArrowRight className="w-6 h-6" />
                         </button>
                       </div>
                     </div>
