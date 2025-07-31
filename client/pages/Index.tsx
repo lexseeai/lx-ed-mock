@@ -1991,17 +1991,17 @@ export default function Index() {
                                     </AvatarFallback>
                                   </Avatar>
                                 </div>
-                                <div className="flex-1 px-4 py-4 pl-8">
+                                <div className="w-48 px-4 py-4 pl-8">
                                   <div className="font-medium text-stone-900 font-lexend">
                                     {student.name}
                                   </div>
                                 </div>
-                                <div className="flex-1 px-4 py-4">
+                                <div className="w-40 px-4 py-4">
                                   <div className="text-stone-600 font-lexend text-sm">
                                     {student.subject}
                                   </div>
                                 </div>
-                                <div className="flex-1 px-4 py-4">
+                                <div className="w-40 px-4 py-4">
                                   <div className="text-stone-600 font-lexend text-sm">
                                     {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
                                   </div>
