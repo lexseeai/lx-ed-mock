@@ -1695,14 +1695,14 @@ export default function Index() {
                     <div className="relative flex border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center" style={{padding: '3px'}}>
                       {/* Sliding background indicator */}
                       <div
-                        className="absolute bg-indigo-600 shadow-sm transition-transform duration-200 ease-out"
+                        className="absolute bg-indigo-600 shadow-sm"
                         style={{
                           width: '36px',
                           height: '36px',
                           borderRadius: '9px',
                           top: '3px',
                           left: studentsViewMode === 'cards' ? '3px' : '39px',
-                          transition: 'left 0.2s ease-out'
+                          transition: 'left 0.15s cubic-bezier(0.34, 1.56, 0.64, 1)'
                         }}
                       />
                       <button
