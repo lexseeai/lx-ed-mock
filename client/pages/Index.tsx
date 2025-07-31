@@ -1980,7 +1980,12 @@ export default function Index() {
                     : activeView === 'all' && studentsViewMode === 'list'
                       ? 'p-9 pb-0'
                       : 'p-9'
-            } space-y-6 flex-1 overflow-y-auto`}>
+            } space-y-6 flex-1 overflow-y-auto`}
+              style={{
+                WebkitOverflowScrolling: 'touch',
+                scrollBehavior: 'smooth',
+                scrollPaddingTop: '20px'
+              }}>
               {activeView === 'home' && (
                 <section>
                   <div className="text-center">
