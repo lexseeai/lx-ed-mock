@@ -326,7 +326,7 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
                   )}
                   <span className="text-stone-700 font-lexend text-xs font-normal leading-4">
                     {showNextSession
-                      ? student.nextSessionTime || student.sessionTime
+                      ? formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)
                       : scheduleView
                         ? (() => {
                             const singleTime = student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1];
