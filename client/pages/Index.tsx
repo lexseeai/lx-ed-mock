@@ -1296,11 +1296,56 @@ export default function Index() {
             {activeView === 'home' && (
               <div className="px-15 pt-15 pb-6 bg-white rounded-t-lg" style={{border: '1px none rgb(231, 229, 228)'}}>
                 <div className="flex flex-col items-start justify-start min-h-[200px]">
-                  <div className="flex items-center mb-6" style={{margin: '0 0 24px -8px'}}>
-                    <GreetingIcon className="w-12 h-12 text-indigo-600" />
-                    <h1 className="text-4xl font-bold text-stone-800 font-lexend ml-3">
-                      {greeting.text}, John
-                    </h1>
+                  <div className="flex items-center justify-between w-full mb-6" style={{margin: '0 0 24px -8px'}}>
+                    <div className="flex items-center">
+                      <GreetingIcon className="w-12 h-12 text-indigo-600" />
+                      <h1 className="text-4xl font-bold text-stone-800 font-lexend ml-3">
+                        {greeting.text}, John
+                      </h1>
+                    </div>
+                    <div className="relative" ref={homeDropdownRef}>
+                      <button
+                        onClick={() => setShowHomeDropdown(!showHomeDropdown)}
+                        className="flex items-center justify-center w-11 h-11 border border-stone-200 bg-transparent rounded-full hover:bg-stone-50 transition-colors"
+                      >
+                        <UserRoundPlus className="w-5 h-5 text-indigo-600" />
+                      </button>
+                      {showHomeDropdown && (
+                        <div className="absolute right-0 top-12 w-56 bg-white border border-stone-200 rounded-lg shadow-lg z-50">
+                          <div className="py-2">
+                            <button
+                              onClick={() => {
+                                setShowHomeDropdown(false);
+                                setActiveView('all');
+                              }}
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-stone-50 transition-colors"
+                            >
+                              <UserRoundPlus className="w-4 h-4 mr-3 text-stone-500" />
+                              Add student
+                            </button>
+                            <button
+                              onClick={() => {
+                                setShowHomeDropdown(false);
+                                setActiveView('sessionnotes');
+                              }}
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-stone-50 transition-colors"
+                            >
+                              <NotebookPen className="w-4 h-4 mr-3 text-stone-500" />
+                              New session notes
+                            </button>
+                            <button
+                              onClick={() => {
+                                setShowHomeDropdown(false);
+                              }}
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-stone-50 transition-colors"
+                            >
+                              <FileAudio className="w-4 h-4 mr-3 text-stone-500" />
+                              Create assignment
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="w-full">
                     <Input
