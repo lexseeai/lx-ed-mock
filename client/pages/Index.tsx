@@ -1005,6 +1005,28 @@ export default function Index() {
           {/* My students panel card */}
           <div className="bg-stone-50 rounded-lg h-full flex flex-col min-w-0 overflow-hidden" style={{boxShadow: '0 0 4px 1px rgba(30, 27, 75, 0.01)', border: '1px none rgb(231, 229, 228)'}}>
             {/* Header inside card - Different headers for different views */}
+            {activeView === 'home' && (
+              <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
+                <div className="flex flex-col items-center justify-center min-h-[200px]">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <GreetingIcon className="w-12 h-12 text-indigo-600" />
+                    <h1 className="text-4xl font-bold text-stone-800 font-lexend">
+                      {greeting.text}, John
+                    </h1>
+                  </div>
+                  <div className="w-full max-w-md">
+                    <Input
+                      type="text"
+                      placeholder="What are you looking for?"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="h-12 text-lg font-readex rounded-full px-6"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+
             {activeView === 'schedule' && (
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
                 <div className="flex items-center justify-between">
