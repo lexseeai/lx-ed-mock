@@ -58,14 +58,14 @@ const mockStudents: Student[] = [
   { id: "15", name: "Marcus", subject: "English Tutoring", sessionTime: "7:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 28, 19, 0, 0), sessionReportCompleted: false }, // Waiting (7pm, future)
 
   // July 29th - all waiting
-  { id: "16", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, July 29", sessionDate: new Date(2025, 6, 29), sessionReportCompleted: false }, // Waiting
+  { id: "16", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, July 29", sessionDate: new Date(2025, 6, 29), sessionReportCompleted: false, email: "carlos.rodriguez@email.com" }, // Waiting
 
   // July 31st - all waiting
-  { id: "17", name: "Maya", subject: "Biology Tutoring", sessionTime: "10:00am, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
-  { id: "18", name: "Daniel", subject: "Art Tutoring", sessionTime: "2:00pm, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
-  { id: "19", name: "Zoe", subject: "Music Tutoring", sessionTime: "4:00pm, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
-  { id: "20", name: "Liam", subject: "Math Tutoring", sessionTime: "2:00pm, July 31", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false }, // Waiting
-  { id: "21", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "11:00am, August 1", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 7, 1), sessionReportCompleted: false }, // Waiting
+  { id: "17", name: "Maya", subject: "Biology Tutoring", sessionTime: "10:00am, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false, email: "maya.patel@email.com" }, // Waiting
+  { id: "18", name: "Daniel", subject: "Art Tutoring", sessionTime: "2:00pm, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false, email: "daniel.kim@email.com" }, // Waiting
+  { id: "19", name: "Zoe", subject: "Music Tutoring", sessionTime: "4:00pm, July 31", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false, email: "zoe.taylor@email.com" }, // Waiting
+  { id: "20", name: "Liam", subject: "Math Tutoring", sessionTime: "2:00pm, July 31", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 31), sessionReportCompleted: false, email: "liam.davis@email.com" }, // Waiting
+  { id: "21", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "11:00am, August 1", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 7, 1), sessionReportCompleted: false, email: "isabella.martinez@email.com" }, // Waiting
 
   // August sessions - all waiting
   { id: "22", name: "Oliver", subject: "Geography Tutoring", sessionTime: "8:00am, August 4", sessionDate: new Date(2025, 7, 4), sessionReportCompleted: false }, // Waiting
