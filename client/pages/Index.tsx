@@ -568,6 +568,7 @@ export default function Index() {
   // Sorting states for list view
   const [sortField, setSortField] = useState<'name' | 'subject' | 'nextSession' | 'email'>('name');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [tabPositionsReady, setTabPositionsReady] = useState(false);
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
   const tabButton1Ref = useRef<HTMLButtonElement>(null);
