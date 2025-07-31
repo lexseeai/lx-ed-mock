@@ -1893,8 +1893,10 @@ export default function Index() {
                   ? 'p-9'
                   : activeView === 'home'
                     ? 'p-8'
-                    : 'p-9'
-            } space-y-6 flex-1 overflow-y-auto`}>
+                    : activeView === 'all' && studentsViewMode === 'list'
+                      ? 'p-9 pb-0'
+                      : 'p-9'
+            } space-y-6 flex-1 overflow-hidden`}>
               {activeView === 'home' && (
                 <section>
                   <div className="text-center">
@@ -1906,7 +1908,7 @@ export default function Index() {
               )}
 
               {activeView === 'all' && (
-                <section className="h-full">
+                <section className={studentsViewMode === 'list' ? 'h-full flex flex-col' : ''}>
                   {studentsViewMode === 'cards' ? (
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
                       {getFilteredUniqueStudents().map((student) => (
@@ -1919,7 +1921,7 @@ export default function Index() {
                       ))}
                     </div>
                   ) : (
-                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col flex-1">
+                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col overflow-hidden" style={{height: 'calc(100vh - 200px)'}}>
                       {/* Fixed Header */}
                       <div className="border-b border-stone-200 sticky top-0 z-10">
                         <div className="w-full">
@@ -1957,7 +1959,7 @@ export default function Index() {
                         </div>
                       </div>
                       {/* Scrollable Body */}
-                      <div className="flex-1 overflow-y-auto pb-9">
+                      <div className="flex-1 overflow-y-auto" style={{paddingBottom: '36px'}}>
                         <div className="w-full">
                           {getFilteredUniqueStudents().map((student) => {
                             const getInitials = (name: string) => name.charAt(0).toUpperCase();
