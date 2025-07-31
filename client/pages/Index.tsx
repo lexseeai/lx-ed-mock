@@ -342,7 +342,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           {/* This week */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-9 leading-6 ${
-              activeView === 'schedule' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
+              activeView === 'schedule' ? 'bg-indigo-600 text-white shadow-sm' : 'hover:bg-indigo-950'
             }`}
             onClick={() => {
               setActiveView('schedule');
