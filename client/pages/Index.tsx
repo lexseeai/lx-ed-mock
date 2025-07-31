@@ -570,7 +570,32 @@ export default function Index() {
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
+  const tabButton1Ref = useRef<HTMLButtonElement>(null);
+  const tabButton2Ref = useRef<HTMLButtonElement>(null);
+  const tabButton3Ref = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
+
+  // Calculate tab position and width
+  const getTabPosition = () => {
+    if (!tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
+      return { left: 6, width: 63 }; // fallback
+    }
+
+    const button1 = tabButton1Ref.current;
+    const button2 = tabButton2Ref.current;
+    const button3 = tabButton3Ref.current;
+
+    switch (activeTab) {
+      case 'in-progress':
+        return { left: 6, width: button1.offsetWidth };
+      case 'due-soon':
+        return { left: 6 + button1.offsetWidth, width: button2.offsetWidth };
+      case 'submitted':
+        return { left: 6 + button1.offsetWidth + button2.offsetWidth, width: button3.offsetWidth };
+      default:
+        return { left: 6, width: button1.offsetWidth };
+    }
+  };
 
   // Function to scroll to section
   const scrollToSection = (sectionId: string) => {
