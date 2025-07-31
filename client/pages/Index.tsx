@@ -1864,12 +1864,25 @@ export default function Index() {
 
                 {/* Tab Navigation */}
                 <div className="flex justify-center">
-                  <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
+                  <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
+                    {/* Sliding background indicator */}
+                    <div
+                      className="absolute bg-indigo-600 shadow-sm rounded-md"
+                      style={{
+                        height: '30px',
+                        top: '6px',
+                        left: activeTab === 'in-progress' ? '6px' :
+                              activeTab === 'due-soon' ? '75px' : '158px',
+                        width: activeTab === 'in-progress' ? '63px' :
+                               activeTab === 'due-soon' ? '77px' : '69px',
+                        transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
+                      }}
+                    />
                     <button
                       onClick={() => scrollToSection('in-progress')}
-                      className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'in-progress'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'text-white'
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
@@ -1877,9 +1890,9 @@ export default function Index() {
                     </button>
                     <button
                       onClick={() => scrollToSection('due-soon')}
-                      className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'due-soon'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'text-white'
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
@@ -1887,9 +1900,9 @@ export default function Index() {
                     </button>
                     <button
                       onClick={() => scrollToSection('submitted')}
-                      className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'submitted'
-                          ? 'bg-indigo-600 text-white shadow-sm'
+                          ? 'text-white'
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
