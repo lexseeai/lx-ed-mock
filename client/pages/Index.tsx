@@ -578,8 +578,18 @@ export default function Index() {
 
   // Calculate tab position and width
   const getTabPosition = () => {
-    if (!tabPositionsReady || !tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
-      return { left: 6, width: 63 }; // fallback
+    if (!tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
+      // Fallback positioning based on activeTab
+      switch (activeTab) {
+        case 'in-progress':
+          return { left: 6, width: 63 };
+        case 'due-soon':
+          return { left: 75, width: 77 };
+        case 'submitted':
+          return { left: 158, width: 69 };
+        default:
+          return { left: 6, width: 63 };
+      }
     }
 
     const button1 = tabButton1Ref.current;
@@ -598,10 +608,12 @@ export default function Index() {
     }
   };
 
-  // Effect to calculate tab positions after mount
+  // Effect to force re-render when tabs mount
   useEffect(() => {
     if (tabButton1Ref.current && tabButton2Ref.current && tabButton3Ref.current) {
       setTabPositionsReady(true);
+      // Force a small delay to ensure DOM is fully rendered
+      setTimeout(() => setTabPositionsReady(false), 10);
     }
   }, []);
 
