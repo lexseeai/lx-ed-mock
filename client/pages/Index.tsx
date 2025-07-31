@@ -1921,7 +1921,7 @@ export default function Index() {
                       ))}
                     </div>
                   ) : (
-                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col overflow-hidden" style={{height: 'calc(100vh - 200px)'}}>
+                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col overflow-hidden" style={{height: 'calc(100vh - 236px)'}}>
                       {/* Fixed Header */}
                       <div className="border-b border-stone-200 sticky top-0 z-10">
                         <div className="w-full">
