@@ -417,7 +417,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             >
               <div className="flex items-center space-x-2">
                 <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
-                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Up coming</span>}
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Upcoming</span>}
               </div>
               {!isCollapsed && (
                 <Tooltip delayDuration={0} disableHoverableContent>
