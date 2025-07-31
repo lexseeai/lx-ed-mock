@@ -1876,7 +1876,7 @@ export default function Index() {
                       const studentSessionData = {
                         'Alex': {
                           next: { time: '9:00am', date: 'Mon 4 August', status: 'wait' },
-                          current: { time: '9:00am', date: 'today, 28 July', status: 'in-progress' }
+                          previous: { time: '9:00am', date: 'today, 28 July', status: 'done' }
                         },
                         'Carlos': {
                           next: { time: '8:00pm', date: 'Tue 29 July', status: 'wait' },
