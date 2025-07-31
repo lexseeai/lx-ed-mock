@@ -119,7 +119,8 @@ const mockStudents: Student[] = [
 function getSessionReportStatus(student: Student) {
   if (!student.sessionDate) return 'waiting';
 
-  const now = new Date();
+  // Use demo date of July 28, 2025 at 4:00 PM for consistent status calculation
+  const now = new Date(2025, 6, 28, 16, 0, 0); // July 28, 2025 4:00 PM
   const sessionDate = student.sessionDate;
   const hoursSinceSession = (now.getTime() - sessionDate.getTime()) / (1000 * 60 * 60);
 
