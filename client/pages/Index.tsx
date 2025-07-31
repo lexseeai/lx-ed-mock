@@ -1713,7 +1713,7 @@ export default function Index() {
                         }`}
                         style={{width: '38px', height: '38px'}}
                       >
-                        <Table className="w-5 h-5" />
+                        <TableIcon className="w-5 h-5" />
                       </button>
                     </div>
                     {/* Add Student Button */}
