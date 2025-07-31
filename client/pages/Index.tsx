@@ -2021,17 +2021,19 @@ export default function Index() {
               </div>
             )}
             {/* Content inside card - Different margins for different views */}
-            <div className={`${
-              activeView === 'schedule'
-                ? 'pl-0 pr-4 pb-6 pt-0'
-                : activeView === 'sessionnotes'
-                  ? 'p-9'
-                  : activeView === 'home'
-                    ? 'p-8'
-                    : activeView === 'all' && studentsViewMode === 'list'
-                      ? 'p-9 pb-0'
-                      : 'p-9'
-            } space-y-6 flex-1 overflow-y-auto`}
+            <div
+              ref={contentRef}
+              className={`${
+                activeView === 'schedule'
+                  ? 'pl-0 pr-4 pb-6 pt-0'
+                  : activeView === 'sessionnotes'
+                    ? 'p-9'
+                    : activeView === 'home'
+                      ? 'p-8'
+                      : activeView === 'all' && studentsViewMode === 'list'
+                        ? 'p-9 pb-0'
+                        : 'p-9'
+              } space-y-6 flex-1 overflow-y-auto`}
               style={{
                 scrollBehavior: 'smooth',
                 scrollbarWidth: 'thin',
