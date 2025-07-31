@@ -1308,7 +1308,7 @@ export default function Index() {
                         onClick={() => setShowHomeDropdown(!showHomeDropdown)}
                         className="flex items-center justify-center w-11 h-11 border border-stone-200 bg-transparent rounded-full hover:bg-stone-50 transition-colors"
                       >
-                        <UserRoundPlus className="w-5 h-5 text-indigo-600" />
+                        <Plus className="w-5 h-5 text-indigo-600" />
                       </button>
                       {showHomeDropdown && (
                         <div className="absolute right-0 top-12 w-56 bg-white border border-stone-200 rounded-lg shadow-lg z-50">
