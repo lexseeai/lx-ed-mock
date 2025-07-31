@@ -307,6 +307,19 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
 
       {/* Navigation Content */}
       <div className="flex-1 flex flex-col pl-3 pr-0 py-4">
+        {/* Time-based Greeting */}
+        {!isCollapsed && (
+          <div className="flex items-center px-3 py-1 h-8">
+            <div className="flex items-center space-x-2">
+              <GreetingIcon className="w-4 h-4 text-white/80" />
+              <span className="text-sm font-lexend text-white">{greeting.text}</span>
+            </div>
+          </div>
+        )}
+
+        {/* Spacer */}
+        <div className="my-3"></div>
+
         {/* My Students Section */}
         <div className="space-y-1">
           {/* All Students */}
