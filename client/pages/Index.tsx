@@ -211,7 +211,7 @@ function getSessionTimeRange(timeString: string): string {
   }
 }
 
-function StudentCard({ student, onClick, scheduleView = false, dimmed = false, sessionNotesView = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean; sessionNotesView?: boolean }) {
+function StudentCard({ student, onClick, scheduleView = false, dimmed = false, sessionNotesView = false, showNextSession = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean; sessionNotesView?: boolean; showNextSession?: boolean }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
   };
@@ -274,12 +274,12 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
 
   return (
     <Card
-      className={`cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-xl w-45 h-60 ${dimmed ? 'opacity-40 hover:opacity-60' : ''}`}
+      className={`cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-xl w-45 ${showNextSession ? 'h-45' : 'h-60'} ${dimmed ? 'opacity-40 hover:opacity-60' : ''}`}
       onClick={onClick}
     >
       <CardContent className="p-1.5 flex flex-col justify-between h-full">
         {/* Top section with avatar, name, subject, and session time */}
-        <div className="flex flex-col items-start gap-1 pt-3" style={{padding: '12px 12px 0 14px'}}>
+        <div className={`flex flex-col items-start gap-1 pt-3 ${showNextSession ? 'h-full' : ''}`} style={{padding: '12px 12px 0 14px'}}>
           {/* Avatar */}
           <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0" style={{marginLeft: '-4px'}}>
             <Avatar className="w-full h-full">
@@ -295,26 +295,32 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
           </h3>
 
           {/* Subject and Session Time */}
-          <div className="flex flex-col items-start gap-0.5 pt-3">
+          <div className={`flex flex-col items-start ${showNextSession ? 'justify-end h-full' : 'gap-0.5 pt-3'}`}>
             {student.subject && (
               <div className="text-stone-900 font-lexend text-xs font-normal leading-[18px] tracking-[-0.06px]">
                 {student.subject}
               </div>
             )}
 
-            {student.sessionTime && (
+            {(student.sessionTime || (showNextSession && student.nextSessionTime)) && (
               <div className="flex items-center gap-1 py-0.5">
                 <div className="flex items-center gap-1">
-                  <TimeIcon className={`w-3 h-3 ${timeIconConfig.color}`} />
+                  {showNextSession ? (
+                    <Clock className="w-3 h-3 text-stone-700" />
+                  ) : (
+                    <TimeIcon className={`w-3 h-3 ${timeIconConfig.color}`} />
+                  )}
                   <span className="text-stone-700 font-lexend text-xs font-normal leading-4">
-                    {scheduleView
-                      ? (() => {
-                          const singleTime = student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1];
-                          return singleTime ? getSessionTimeRange(singleTime) : student.sessionTime;
-                        })()
-                      : sessionNotesView
-                        ? formatSessionTimeForNotes(student.sessionTime)
-                        : student.sessionTime
+                    {showNextSession
+                      ? student.nextSessionTime || student.sessionTime
+                      : scheduleView
+                        ? (() => {
+                            const singleTime = student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1];
+                            return singleTime ? getSessionTimeRange(singleTime) : student.sessionTime;
+                          })()
+                        : sessionNotesView
+                          ? formatSessionTimeForNotes(student.sessionTime)
+                          : student.sessionTime
                     }
                   </span>
                 </div>
@@ -323,14 +329,16 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
           </div>
         </div>
 
-        {/* Bottom section with session report badge */}
-        <div className="flex justify-center px-1.5 pb-1.5">
-          <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-            <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-              {sessionStatus === 'done' ? 'View session notes' : sessionStatus === 'waiting' ? 'Add session notes' : 'Edit session notes'}
-            </span>
+        {/* Bottom section with session report badge - removed for showNextSession */}
+        {!showNextSession && (
+          <div className="flex justify-center px-1.5 pb-1.5">
+            <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
+              <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                {sessionStatus === 'done' ? 'View session notes' : sessionStatus === 'waiting' ? 'Add session notes' : 'Edit session notes'}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </CardContent>
     </Card>
   );
@@ -735,6 +743,32 @@ export default function Index() {
   // Helper functions for different views
   const getAllStudentsSorted = () => {
     return [...mockStudents].sort((a, b) => a.name.localeCompare(b.name));
+  };
+
+  // Get unique students with their next session after July 28, 4pm
+  const getUniqueStudentsWithNextSession = () => {
+    const now = new Date(2025, 6, 28, 16, 0, 0); // July 28, 2025 4:00 PM
+    const uniqueStudents = new Map();
+
+    // Group all students by name and find their next session
+    mockStudents.forEach(student => {
+      if (!student.sessionDate) return;
+
+      // Only consider sessions after 4pm on July 28th
+      if (student.sessionDate <= now) return;
+
+      const studentName = student.name;
+      if (!uniqueStudents.has(studentName) ||
+          (uniqueStudents.get(studentName).sessionDate &&
+           student.sessionDate < uniqueStudents.get(studentName).sessionDate)) {
+        uniqueStudents.set(studentName, {
+          ...student,
+          nextSessionTime: student.sessionTime
+        });
+      }
+    });
+
+    return Array.from(uniqueStudents.values()).sort((a, b) => a.name.localeCompare(b.name));
   };
 
   // Comprehensive July/August 2025 day data
@@ -1679,11 +1713,12 @@ export default function Index() {
               {activeView === 'all' && (
                 <section>
                   <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                    {getAllStudentsSorted().map((student) => (
+                    {getUniqueStudentsWithNextSession().map((student) => (
                       <StudentCard
-                        key={student.id}
+                        key={student.name}
                         student={student}
-                        onClick={() => handleStudentClick(student.id, getAllStudentsSorted())}
+                        onClick={() => handleStudentClick(student.id, getUniqueStudentsWithNextSession())}
+                        showNextSession={true}
                       />
                     ))}
                   </div>
