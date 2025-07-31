@@ -2082,9 +2082,9 @@ export default function Index() {
                       </div>
                       <button
                         onClick={() => setActiveView('schedule')}
-                        className="flex items-center space-x-1 text-indigo-600 hover:text-indigo-700 transition-colors"
+                        className="flex items-center text-indigo-600 hover:text-indigo-700 transition-colors ml-auto"
                       >
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-4.5 h-4.5 ml-1" />
                       </button>
                     </div>
                     <div className="flex gap-4 overflow-x-auto pb-2">
