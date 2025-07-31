@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound, Search, UserRoundPlus } from "lucide-react";
+import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound, Search, UserRoundPlus, ChevronUpDown, ChevronUp as SortAsc, ChevronDown as SortDesc } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetPortal } from "@/components/ui/sheet";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
@@ -21,12 +22,13 @@ interface Student {
   sessionReportDue?: boolean;
   sessionDate?: Date;
   sessionReportCompleted?: boolean;
+  email?: string;
 }
 
 const mockStudents: Student[] = [
   // July 14th - 2 sessions: all done
-  { id: "1", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true }, // Done
-  { id: "2", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true }, // Done
+  { id: "1", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true, email: "alex.johnson@email.com" }, // Done
+  { id: "2", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true, email: "emma.wilson@email.com" }, // Done
 
   // July 15th - 1 session: done
   { id: "3", name: "Marcus", subject: "English Tutoring", sessionTime: "10:00am, July 15", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 15), sessionReportCompleted: true }, // Done
@@ -552,6 +554,9 @@ export default function Index() {
   // All students filtering and view states
   const [allStudentsSearchQuery, setAllStudentsSearchQuery] = useState("");
   const [studentsViewMode, setStudentsViewMode] = useState<'cards' | 'list'>('cards');
+  // Sorting states for list view
+  const [sortField, setSortField] = useState<'name' | 'subject' | 'nextSession' | 'email'>('name');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -785,17 +790,68 @@ export default function Index() {
 
   // Filter students based on search query
   const getFilteredUniqueStudents = () => {
-    const students = getUniqueStudentsWithNextSession();
-    if (!allStudentsSearchQuery.trim()) return students;
+    let students = getUniqueStudentsWithNextSession();
 
-    const query = allStudentsSearchQuery.toLowerCase();
-    return students.filter(student => {
-      const name = student.name?.toLowerCase() || '';
-      const subject = student.subject?.toLowerCase() || '';
-      const sessionTime = student.nextSessionTime?.toLowerCase() || student.sessionTime?.toLowerCase() || '';
+    // Apply search filter
+    if (allStudentsSearchQuery.trim()) {
+      const query = allStudentsSearchQuery.toLowerCase();
+      students = students.filter(student => {
+        const name = student.name?.toLowerCase() || '';
+        const subject = student.subject?.toLowerCase() || '';
+        const sessionTime = student.nextSessionTime?.toLowerCase() || student.sessionTime?.toLowerCase() || '';
+        const email = student.email?.toLowerCase() || '';
 
-      return name.includes(query) || subject.includes(query) || sessionTime.includes(query);
+        return name.includes(query) || subject.includes(query) || sessionTime.includes(query) || email.includes(query);
+      });
+    }
+
+    // Apply sorting
+    return students.sort((a, b) => {
+      let aValue = '';
+      let bValue = '';
+
+      switch (sortField) {
+        case 'name':
+          aValue = a.name || '';
+          bValue = b.name || '';
+          break;
+        case 'subject':
+          aValue = a.subject || '';
+          bValue = b.subject || '';
+          break;
+        case 'nextSession':
+          aValue = a.nextSessionTime || a.sessionTime || '';
+          bValue = b.nextSessionTime || b.sessionTime || '';
+          break;
+        case 'email':
+          aValue = a.email || '';
+          bValue = b.email || '';
+          break;
+      }
+
+      const comparison = aValue.localeCompare(bValue);
+      return sortDirection === 'asc' ? comparison : -comparison;
     });
+  };
+
+  // Handle column sorting
+  const handleSort = (field: 'name' | 'subject' | 'nextSession' | 'email') => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  // Get sort icon for column headers
+  const getSortIcon = (field: 'name' | 'subject' | 'nextSession' | 'email') => {
+    if (sortField !== field) {
+      return <ChevronUpDown className="w-4 h-4 text-stone-400" />;
+    }
+    return sortDirection === 'asc'
+      ? <SortAsc className="w-4 h-4 text-stone-600" />
+      : <SortDesc className="w-4 h-4 text-stone-600" />;
   };
 
   // Comprehensive July/August 2025 day data
@@ -1666,7 +1722,7 @@ export default function Index() {
                     )}
                     <Input
                       type="text"
-                      placeholder="Filter list"
+                      placeholder="Find by name, topic or session"
                       value={allStudentsSearchQuery}
                       onChange={(e) => setAllStudentsSearchQuery(e.target.value)}
                       className={`pl-14 ${allStudentsSearchQuery ? 'pr-10' : 'pr-4'} h-11 font-readex text-sm rounded-full overflow-hidden bg-transparent border border-stone-200 w-full mx-auto`}
@@ -1837,16 +1893,125 @@ export default function Index() {
 
               {activeView === 'all' && (
                 <section>
-                  <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                    {getFilteredUniqueStudents().map((student) => (
-                      <StudentCard
-                        key={student.name}
-                        student={student}
-                        onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
-                        showNextSession={true}
-                      />
-                    ))}
-                  </div>
+                  {studentsViewMode === 'cards' ? (
+                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
+                      {getFilteredUniqueStudents().map((student) => (
+                        <StudentCard
+                          key={student.name}
+                          student={student}
+                          onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
+                          showNextSession={true}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="rounded-lg border border-stone-200 bg-white">
+                      <Table>
+                        <TableHeader>
+                          <TableRow className="hover:bg-transparent border-b border-stone-200">
+                            <TableHead className="w-12"></TableHead>
+                            <TableHead
+                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              onClick={() => handleSort('name')}
+                            >
+                              <div className="flex items-center gap-2">
+                                Name
+                                {getSortIcon('name')}
+                              </div>
+                            </TableHead>
+                            <TableHead
+                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              onClick={() => handleSort('subject')}
+                            >
+                              <div className="flex items-center gap-2">
+                                Focus
+                                {getSortIcon('subject')}
+                              </div>
+                            </TableHead>
+                            <TableHead
+                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              onClick={() => handleSort('nextSession')}
+                            >
+                              <div className="flex items-center gap-2">
+                                Next session
+                                {getSortIcon('nextSession')}
+                              </div>
+                            </TableHead>
+                            <TableHead
+                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              onClick={() => handleSort('email')}
+                            >
+                              <div className="flex items-center gap-2">
+                                Email
+                                {getSortIcon('email')}
+                              </div>
+                            </TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {getFilteredUniqueStudents().map((student) => {
+                            const getInitials = (name: string) => name.charAt(0).toUpperCase();
+                            const getSubjectColors = () => {
+                              const subject = student.subject?.toLowerCase() || '';
+                              if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
+                              if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry')) return 'bg-green-100 text-green-700';
+                              if (subject.includes('english') || subject.includes('literature')) return 'bg-purple-100 text-purple-700';
+                              if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
+                              if (subject.includes('spanish') || subject.includes('language')) return 'bg-pink-100 text-pink-700';
+                              if (subject.includes('art') || subject.includes('music')) return 'bg-red-100 text-red-700';
+                              if (subject.includes('computer') || subject.includes('coding')) return 'bg-indigo-100 text-indigo-700';
+                              if (subject.includes('geography')) return 'bg-teal-100 text-teal-700';
+                              return 'bg-stone-100 text-stone-700';
+                            };
+
+                            return (
+                              <TableRow
+                                key={student.name}
+                                className="cursor-pointer hover:bg-stone-50 border-b border-stone-100"
+                                onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
+                              >
+                                <TableCell className="py-4">
+                                  <Avatar className="w-10 h-10">
+                                    <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
+                                      {getInitials(student.name)}
+                                    </AvatarFallback>
+                                  </Avatar>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <div className="font-medium text-stone-900 font-lexend">
+                                    {student.name}
+                                  </div>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <div className="text-stone-600 font-lexend text-sm">
+                                    {student.subject}
+                                  </div>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
+                                    <Clock className="w-4 h-4 text-stone-400" />
+                                    {student.nextSessionTime || student.sessionTime}
+                                  </div>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <div className="text-stone-600 font-lexend text-sm">
+                                    {student.email}
+                                  </div>
+                                </TableCell>
+                              </TableRow>
+                            );
+                          })}
+                        </TableBody>
+                      </Table>
+                      {getFilteredUniqueStudents().length === 0 && (
+                        <div className="text-center py-12 text-stone-500">
+                          <Search className="w-8 h-8 mx-auto mb-3 text-stone-300" />
+                          <p className="font-lexend">No students found</p>
+                          <p className="text-sm font-lexend mt-1">Try adjusting your search terms</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </section>
               )}
 
