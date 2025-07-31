@@ -477,7 +477,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
                     </div>
                   </TooltipTrigger>
                   <TooltipContent className="animate-none pointer-events-none">
-                    <p>4 due soon</p>
+                    <p>4 late drafts</p>
                   </TooltipContent>
                 </Tooltip>
               )}
