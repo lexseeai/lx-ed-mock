@@ -1598,7 +1598,7 @@ export default function Index() {
                       All Students
                     </h1>
                     <p className="text-lg text-gray-600 font-lexend mt-1">
-                      {getAllStudentsSorted().length} students in your workspace
+                      {getUniqueStudentsWithNextSession().length} students in your workspace
                     </p>
                   </div>
                   <div className="flex items-center space-x-4">
