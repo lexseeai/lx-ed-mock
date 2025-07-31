@@ -714,6 +714,23 @@ export default function Index() {
     };
   }, [showStudentDropdown, showNotesStudentDropdown]);
 
+  // Close home dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (homeDropdownRef.current && !homeDropdownRef.current.contains(event.target as Node)) {
+        setShowHomeDropdown(false);
+      }
+    };
+
+    if (showHomeDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showHomeDropdown]);
+
   // Get unique student names for filtering
   const getUniqueStudentNames = () => {
     const names = [...new Set(mockStudents.map(s => s.name))];
