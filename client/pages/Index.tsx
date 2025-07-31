@@ -508,7 +508,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
       </div>
 
       {/* User Profile at Bottom */}
-      <div className="p-3">
+      <div className="py-3 pl-3 pr-0">
         <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-indigo-950`}>
           <div className="flex items-center space-x-2">
             <Avatar className="w-8 h-8 rounded-xl">
