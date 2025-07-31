@@ -312,7 +312,9 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
                           const singleTime = student.sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm))/i)?.[1];
                           return singleTime ? getSessionTimeRange(singleTime) : student.sessionTime;
                         })()
-                      : student.sessionTime
+                      : sessionNotesView
+                        ? formatSessionTimeForNotes(student.sessionTime)
+                        : student.sessionTime
                     }
                   </span>
                 </div>
