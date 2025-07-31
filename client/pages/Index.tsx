@@ -581,6 +581,38 @@ export default function Index() {
 
 
 
+  // Scroll-spy functionality to update tab based on visible section
+  useEffect(() => {
+    if (activeView !== 'sessionnotes') return;
+
+    const observerOptions = {
+      root: null, // Use viewport as root
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in center of viewport
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          if (sectionId && sectionId !== activeTab) {
+            setActiveTab(sectionId);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all section elements
+    const sections = document.querySelectorAll('#in-progress, #due-soon, #submitted');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, [activeView, activeTab]);
+
   // Ref callbacks that measure immediately when elements are mounted
   const button1RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
