@@ -579,56 +579,7 @@ export default function Index() {
 
   const navigate = useNavigate();
 
-  // Momentum scrolling implementation
-  const contentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const element = contentRef.current;
-    if (!element) return;
-
-    let isScrolling = false;
-    let velocity = 0;
-    let lastTime = 0;
-    let lastY = 0;
-
-    const friction = 0.92;
-    const maxVelocity = 80;
-
-    const animateScroll = () => {
-      if (Math.abs(velocity) > 0.1) {
-        element.scrollBy(0, velocity);
-        velocity *= friction;
-        requestAnimationFrame(animateScroll);
-      } else {
-        isScrolling = false;
-      }
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-
-      const currentTime = Date.now();
-      const deltaTime = currentTime - lastTime;
-      const deltaY = e.deltaY;
-
-      // Calculate velocity based on wheel delta
-      velocity = Math.max(-maxVelocity, Math.min(maxVelocity, deltaY * 2));
-
-      if (!isScrolling) {
-        isScrolling = true;
-        requestAnimationFrame(animateScroll);
-      }
-
-      lastTime = currentTime;
-      lastY = deltaY;
-    };
-
-    element.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      element.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
 
   // Ref callbacks that measure immediately when elements are mounted
   const button1RefCallback = (el: HTMLButtonElement | null) => {
