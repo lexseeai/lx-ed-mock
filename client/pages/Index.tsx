@@ -1698,7 +1698,7 @@ export default function Index() {
                             : 'text-stone-400 hover:text-stone-600'
                         }`}
                       >
-                        Cards
+                        Card
                       </button>
                       <button
                         onClick={() => setStudentsViewMode('list')}
