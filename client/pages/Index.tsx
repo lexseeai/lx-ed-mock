@@ -1930,21 +1930,21 @@ export default function Index() {
                           <div className="flex items-center h-12 text-sm font-medium text-stone-700">
                             <div className="w-12 px-4"></div>
                             <div
-                              className={`flex-1 px-4 pl-8 cursor-pointer select-none ${getHeaderStyle('name')} hover:text-stone-900 flex items-center`}
+                              className={`w-48 px-4 pl-8 cursor-pointer select-none ${getHeaderStyle('name')} hover:text-stone-900 flex items-center`}
                               onClick={() => handleSort('name')}
                             >
                               Name
                               {getSortIcon('name')}
                             </div>
                             <div
-                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('subject')} hover:text-stone-900 flex items-center`}
+                              className={`w-40 px-4 cursor-pointer select-none ${getHeaderStyle('subject')} hover:text-stone-900 flex items-center`}
                               onClick={() => handleSort('subject')}
                             >
                               Focus
                               {getSortIcon('subject')}
                             </div>
                             <div
-                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('nextSession')} hover:text-stone-900 flex items-center`}
+                              className={`w-40 px-4 cursor-pointer select-none ${getHeaderStyle('nextSession')} hover:text-stone-900 flex items-center`}
                               onClick={() => handleSort('nextSession')}
                             >
                               Next session
