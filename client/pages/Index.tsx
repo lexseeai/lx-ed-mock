@@ -1756,7 +1756,7 @@ export default function Index() {
 
       {/* Student Details Sheet */}
       <Sheet open={showStudentOverlay} onOpenChange={handleSheetOpenChange} modal={true}>
-        <SheetContent side="right" className="w-[700px] sm:w-[700px] sm:max-w-[700px] p-0 overflow-hidden bg-white">
+        <SheetContent side="right" className="w-[700px] sm:w-[700px] sm:max-w-[700px] p-0 overflow-hidden bg-white" style={{boxShadow: '-1px 0 2px 0 rgba(0, 0, 0, 1)', border: '1px none rgba(68, 64, 60, 1)'}}>
           <SheetTitle className="sr-only">
             {getSelectedStudent()?.name} - Student Details
           </SheetTitle>
@@ -1807,7 +1807,7 @@ export default function Index() {
                 </div>
 
                 {/* Student Info Header */}
-                <div className="flex flex-col gap-1.5 px-[60px] py-[30px] pb-3">
+                <div className="flex flex-col gap-1.5 py-[30px] pb-3" style={{padding: '30px 60px 12px 54px'}}>
                   <div className="flex items-center justify-between pb-5">
                     <div className="flex items-center gap-2">
                       <div className="w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
@@ -1994,7 +1994,7 @@ export default function Index() {
                   </div>
 
                   {/* Tab Navigation */}
-                  <div className="flex justify-center pt-6">
+                  <div className="flex justify-center pt-6" style={{marginLeft: '6px'}}>
                     <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white">
                       <button
                         onClick={() => setStudentDetailTab('next-session')}
