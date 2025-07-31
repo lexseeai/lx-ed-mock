@@ -1275,7 +1275,7 @@ export default function Index() {
           <div className={`${activeView === 'home' ? 'bg-white' : 'bg-stone-50'} rounded-lg h-full flex flex-col min-w-0`} style={{boxShadow: '0 0 4px 1px rgba(30, 27, 75, 0.01)', border: '1px none rgb(231, 229, 228)'}}>
             {/* Header inside card - Different headers for different views */}
             {activeView === 'home' && (
-              <div className="px-6 pt-4 pb-6 bg-white rounded-t-lg" style={{border: '1px none rgb(231, 229, 228)'}}>
+              <div className="px-15 pt-15 pb-6 bg-white rounded-t-lg" style={{border: '1px none rgb(231, 229, 228)'}}>
                 <div className="flex flex-col items-center justify-center min-h-[200px]">
                   <div className="flex items-center space-x-4 mb-6">
                     <GreetingIcon className="w-12 h-12 text-indigo-600" />
