@@ -1617,7 +1617,7 @@ export default function Index() {
             {activeView === 'all' && (
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="text-stone-900 font-lexend text-3xl font-normal leading-9 tracking-[-0.75px]">
+                  <div className="text-stone-900 font-lexend text-3xl font-bold leading-9 tracking-[-0.75px]">
                     My students
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -1652,7 +1652,7 @@ export default function Index() {
                 </div>
                 {/* Centered Search Field */}
                 <div className="flex justify-center">
-                  <div className="relative w-80 mx-auto">
+                  <div className="relative w-96 mx-auto">
                     <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
                       <Search className="w-6 h-6 text-stone-400" />
                     </div>
