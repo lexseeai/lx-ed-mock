@@ -275,6 +275,7 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
   return (
     <Card
       className={`cursor-pointer hover:shadow-sm transition-all duration-200 bg-white border border-stone-200 rounded-xl w-45 ${showNextSession ? 'h-45' : 'h-60'} ${dimmed ? 'opacity-40 hover:opacity-60' : ''}`}
+      style={showNextSession ? {height: '180px'} : {}}
       onClick={onClick}
     >
       <CardContent className="p-1.5 flex flex-col justify-between h-full">
