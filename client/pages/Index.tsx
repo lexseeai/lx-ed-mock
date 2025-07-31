@@ -50,10 +50,10 @@ const mockStudents: Student[] = [
   { id: "11", name: "Liam", subject: "Math Tutoring", sessionTime: "9:00am, July 24", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 24), sessionReportCompleted: false }, // Late
   { id: "12", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "1:30pm, July 24", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 6, 24), sessionReportCompleted: false }, // Late
 
-  // July 28th - 3 sessions: Alex & Emma = In process, Marcus = Waiting
-  { id: "13", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(Date.now() - 12 * 60 * 60 * 1000), sessionReportCompleted: false }, // In process (12h ago, within 48h, not completed)
-  { id: "14", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(Date.now() - 6 * 60 * 60 * 1000), sessionReportCompleted: false }, // In process (6h ago, within 48h, not completed)
-  { id: "15", name: "Marcus", subject: "English Tutoring", sessionTime: "7:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 28), sessionReportCompleted: false }, // Waiting
+  // July 28th - 3 sessions: Alex = done, Emma = in-progress, Marcus = Waiting
+  { id: "13", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 28, 9, 0, 0), sessionReportCompleted: true }, // Done (9am, completed)
+  { id: "14", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(2025, 6, 28, 15, 0, 0), sessionReportCompleted: false }, // In progress (3pm, within window, not completed)
+  { id: "15", name: "Marcus", subject: "English Tutoring", sessionTime: "7:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 28, 19, 0, 0), sessionReportCompleted: false }, // Waiting (7pm, future)
 
   // July 29th - all waiting
   { id: "16", name: "Carlos", subject: "Chemistry Tutoring", sessionTime: "8:00pm, July 29", sessionDate: new Date(2025, 6, 29), sessionReportCompleted: false }, // Waiting
