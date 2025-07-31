@@ -2069,7 +2069,7 @@ export default function Index() {
               style={{
                 scrollbarWidth: 'thin',
                 scrollbarColor: '#d1d5db #f3f4f6',
-                padding: activeView === 'home' ? '32px 64px' : '32px'
+                padding: activeView === 'home' ? '72px 64px 32px' : '32px'
               }}>
               {activeView === 'home' && (
                 <div className="space-y-8">
