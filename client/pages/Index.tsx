@@ -1917,40 +1917,28 @@ export default function Index() {
                           <TableRow className="hover:bg-transparent border-b border-stone-200">
                             <TableHead className="w-12"></TableHead>
                             <TableHead
-                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              className={`cursor-pointer select-none ${getHeaderStyle('name')} text-stone-700 hover:text-stone-900`}
                               onClick={() => handleSort('name')}
                             >
-                              <div className="flex items-center gap-2">
-                                Name
-                                {getSortIcon('name')}
-                              </div>
+                              Name
                             </TableHead>
                             <TableHead
-                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              className={`cursor-pointer select-none ${getHeaderStyle('subject')} text-stone-700 hover:text-stone-900`}
                               onClick={() => handleSort('subject')}
                             >
-                              <div className="flex items-center gap-2">
-                                Focus
-                                {getSortIcon('subject')}
-                              </div>
+                              Focus
                             </TableHead>
                             <TableHead
-                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              className={`cursor-pointer select-none ${getHeaderStyle('nextSession')} text-stone-700 hover:text-stone-900`}
                               onClick={() => handleSort('nextSession')}
                             >
-                              <div className="flex items-center gap-2">
-                                Next session
-                                {getSortIcon('nextSession')}
-                              </div>
+                              Next session
                             </TableHead>
                             <TableHead
-                              className="cursor-pointer select-none font-medium text-stone-700 hover:text-stone-900"
+                              className={`cursor-pointer select-none ${getHeaderStyle('email')} text-stone-700 hover:text-stone-900`}
                               onClick={() => handleSort('email')}
                             >
-                              <div className="flex items-center gap-2">
-                                Email
-                                {getSortIcon('email')}
-                              </div>
+                              Email
                             </TableHead>
                           </TableRow>
                         </TableHeader>
