@@ -395,7 +395,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           >
             <div className="flex items-center space-x-2">
               <GreetingIcon className={`w-4 h-4 ${activeView === 'home' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'home' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>}
+              <span className={`text-sm font-lexend w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'} ${activeView === 'home' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>
             </div>
           </div>
 
