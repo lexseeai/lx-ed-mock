@@ -1911,99 +1911,107 @@ export default function Index() {
                       ))}
                     </div>
                   ) : (
-                    <div className="rounded-lg border border-stone-200 bg-white">
-                      <Table>
-                        <TableHeader>
-                          <TableRow className="hover:bg-transparent border-b border-stone-200">
-                            <TableHead className="w-12"></TableHead>
-                            <TableHead
-                              className={`cursor-pointer select-none ${getHeaderStyle('name')} text-stone-700 hover:text-stone-900`}
-                              onClick={() => handleSort('name')}
-                            >
-                              Name
-                            </TableHead>
-                            <TableHead
-                              className={`cursor-pointer select-none ${getHeaderStyle('subject')} text-stone-700 hover:text-stone-900`}
-                              onClick={() => handleSort('subject')}
-                            >
-                              Focus
-                            </TableHead>
-                            <TableHead
-                              className={`cursor-pointer select-none ${getHeaderStyle('nextSession')} text-stone-700 hover:text-stone-900`}
-                              onClick={() => handleSort('nextSession')}
-                            >
-                              Next session
-                            </TableHead>
-                            <TableHead
-                              className={`cursor-pointer select-none ${getHeaderStyle('email')} text-stone-700 hover:text-stone-900`}
-                              onClick={() => handleSort('email')}
-                            >
-                              Email
-                            </TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {getFilteredUniqueStudents().map((student) => {
-                            const getInitials = (name: string) => name.charAt(0).toUpperCase();
-                            const getSubjectColors = () => {
-                              const subject = student.subject?.toLowerCase() || '';
-                              if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
-                              if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry')) return 'bg-green-100 text-green-700';
-                              if (subject.includes('english') || subject.includes('literature')) return 'bg-purple-100 text-purple-700';
-                              if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
-                              if (subject.includes('spanish') || subject.includes('language')) return 'bg-pink-100 text-pink-700';
-                              if (subject.includes('art') || subject.includes('music')) return 'bg-red-100 text-red-700';
-                              if (subject.includes('computer') || subject.includes('coding')) return 'bg-indigo-100 text-indigo-700';
-                              if (subject.includes('geography')) return 'bg-teal-100 text-teal-700';
-                              return 'bg-stone-100 text-stone-700';
-                            };
-
-                            return (
-                              <TableRow
-                                key={student.name}
-                                className="cursor-pointer hover:bg-stone-50 border-b border-stone-100"
-                                onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
+                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col h-full">
+                      {/* Fixed Header */}
+                      <div className="border-b border-stone-200">
+                        <Table>
+                          <TableHeader>
+                            <TableRow className="hover:bg-transparent border-b border-stone-200">
+                              <TableHead className="w-12"></TableHead>
+                              <TableHead
+                                className={`cursor-pointer select-none ${getHeaderStyle('name')} text-stone-700 hover:text-stone-900`}
+                                onClick={() => handleSort('name')}
                               >
-                                <TableCell className="py-4">
-                                  <Avatar className="w-10 h-10">
-                                    <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
-                                      {getInitials(student.name)}
-                                    </AvatarFallback>
-                                  </Avatar>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                  <div className="font-medium text-stone-900 font-lexend">
-                                    {student.name}
-                                  </div>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                  <div className="text-stone-600 font-lexend text-sm">
-                                    {student.subject}
-                                  </div>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                  <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
-                                    <Clock className="w-4 h-4 text-stone-400" />
-                                    {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
-                                  </div>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                  <div className="text-stone-600 font-lexend text-sm">
-                                    {student.email}
-                                  </div>
-                                </TableCell>
-                              </TableRow>
-                            );
-                          })}
-                        </TableBody>
-                      </Table>
-                      {getFilteredUniqueStudents().length === 0 && (
-                        <div className="text-center py-12 text-stone-500">
-                          <Search className="w-8 h-8 mx-auto mb-3 text-stone-300" />
-                          <p className="font-lexend">No students found</p>
-                          <p className="text-sm font-lexend mt-1">Try adjusting your search terms</p>
-                        </div>
-                      )}
+                                Name
+                              </TableHead>
+                              <TableHead
+                                className={`cursor-pointer select-none ${getHeaderStyle('subject')} text-stone-700 hover:text-stone-900`}
+                                onClick={() => handleSort('subject')}
+                              >
+                                Focus
+                              </TableHead>
+                              <TableHead
+                                className={`cursor-pointer select-none ${getHeaderStyle('nextSession')} text-stone-700 hover:text-stone-900`}
+                                onClick={() => handleSort('nextSession')}
+                              >
+                                Next session
+                              </TableHead>
+                              <TableHead
+                                className={`cursor-pointer select-none ${getHeaderStyle('email')} text-stone-700 hover:text-stone-900`}
+                                onClick={() => handleSort('email')}
+                              >
+                                Email
+                              </TableHead>
+                            </TableRow>
+                          </TableHeader>
+                        </Table>
+                      </div>
+                      {/* Scrollable Body */}
+                      <div className="flex-1 overflow-y-auto">
+                        <Table>
+                          <TableBody>
+                            {getFilteredUniqueStudents().map((student) => {
+                              const getInitials = (name: string) => name.charAt(0).toUpperCase();
+                              const getSubjectColors = () => {
+                                const subject = student.subject?.toLowerCase() || '';
+                                if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
+                                if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry')) return 'bg-green-100 text-green-700';
+                                if (subject.includes('english') || subject.includes('literature')) return 'bg-purple-100 text-purple-700';
+                                if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
+                                if (subject.includes('spanish') || subject.includes('language')) return 'bg-pink-100 text-pink-700';
+                                if (subject.includes('art') || subject.includes('music')) return 'bg-red-100 text-red-700';
+                                if (subject.includes('computer') || subject.includes('coding')) return 'bg-indigo-100 text-indigo-700';
+                                if (subject.includes('geography')) return 'bg-teal-100 text-teal-700';
+                                return 'bg-stone-100 text-stone-700';
+                              };
+
+                              return (
+                                <TableRow
+                                  key={student.name}
+                                  className="cursor-pointer hover:bg-stone-50 border-b border-stone-100"
+                                  onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
+                                >
+                                  <TableCell className="py-4">
+                                    <Avatar className="w-10 h-10">
+                                      <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
+                                        {getInitials(student.name)}
+                                      </AvatarFallback>
+                                    </Avatar>
+                                  </TableCell>
+                                  <TableCell className="py-4">
+                                    <div className="font-medium text-stone-900 font-lexend">
+                                      {student.name}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="py-4">
+                                    <div className="text-stone-600 font-lexend text-sm">
+                                      {student.subject}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="py-4">
+                                    <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
+                                      <Clock className="w-4 h-4 text-stone-400" />
+                                      {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="py-4">
+                                    <div className="text-stone-600 font-lexend text-sm">
+                                      {student.email}
+                                    </div>
+                                  </TableCell>
+                                </TableRow>
+                              );
+                            })}
+                          </TableBody>
+                        </Table>
+                        {getFilteredUniqueStudents().length === 0 && (
+                          <div className="text-center py-12 text-stone-500">
+                            <Search className="w-8 h-8 mx-auto mb-3 text-stone-300" />
+                            <p className="font-lexend">No students found</p>
+                            <p className="text-sm font-lexend mt-1">Try adjusting your search terms</p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </section>
