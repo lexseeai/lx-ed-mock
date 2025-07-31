@@ -2070,7 +2070,7 @@ export default function Index() {
                 scrollbarWidth: 'thin',
                 scrollbarColor: '#d1d5db #f3f4f6',
                 padding: activeView === 'home' ? '72px 64px 32px' :
-                        (activeView === 'sessionnotes' || activeView === 'schedule') ? '48px' : '32px'
+                        (activeView === 'sessionnotes' || activeView === 'schedule') ? '32px 64px' : '32px'
               }}>
               {activeView === 'home' && (
                 <div className="space-y-16">
