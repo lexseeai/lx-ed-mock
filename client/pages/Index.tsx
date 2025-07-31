@@ -219,9 +219,9 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false }:
     >
       <CardContent className="p-1.5 flex flex-col justify-between h-full">
         {/* Top section with avatar, name, subject, and session time */}
-        <div className="flex flex-col items-start gap-1 px-3 pt-3">
+        <div className="flex flex-col items-start gap-1 pt-3" style={{padding: '12px 12px 0 14px'}}>
           {/* Avatar */}
-          <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0" style={{marginLeft: '-4px'}}>
             <Avatar className="w-full h-full">
               <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
                 {getInitials(student.name)}
