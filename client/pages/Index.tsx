@@ -307,24 +307,27 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
 
       {/* Navigation Content */}
       <div className="flex-1 flex flex-col pl-3 pr-0 py-4">
-        {/* Time-based Greeting */}
-        {!isCollapsed && (
-          <div className="flex items-center px-3 py-1 h-8">
+        {/* Home Section */}
+        <div className="space-y-1">
+          {/* Time-based Greeting - Clickable Home */}
+          <div
+            className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg cursor-pointer h-8 ${
+              activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
+            }`}
+            onClick={() => {
+              setActiveView('all');
+              setShowStudentOverlay(false);
+            }}
+          >
             <div className="flex items-center space-x-2">
-              <GreetingIcon className="w-4 h-4 text-white/80" />
-              <span className="text-sm font-lexend text-white">{greeting.text}</span>
+              <GreetingIcon className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>}
             </div>
           </div>
-        )}
 
-        {/* Spacer */}
-        <div className="my-3"></div>
-
-        {/* My Students Section */}
-        <div className="space-y-1">
-          {/* All Students */}
+          {/* My Students */}
           <div
-            className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-8 ${
+            className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg cursor-pointer h-8 ${
               activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
             onClick={() => {
@@ -336,10 +339,17 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
               <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
               {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>My students</span>}
             </div>
-            {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white/50'}`}>14</span>}
           </div>
+        </div>
 
-          {/* This week */}
+        {/* Sessions Label */}
+        {!isCollapsed && (
+          <span className="text-xs font-medium text-white/50 font-lexend ml-3 mt-3 mb-1 block">Sessions</span>
+        )}
+
+        {/* Sessions Section */}
+        <div className="space-y-1">
+          {/* Schedule */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-3 py-1 rounded-lg cursor-pointer h-9 leading-6 ${
               activeView === 'schedule' ? 'bg-indigo-600 text-white shadow-sm' : 'hover:bg-indigo-950'
@@ -396,11 +406,6 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             )}
           </div>
         </div>
-
-        {/* Sessions Label */}
-        {!isCollapsed && (
-          <span className="text-xs font-medium text-white/50 font-lexend ml-3 mt-3 mb-1 block">Sessions</span>
-        )}
 
         {/* Spacer */}
         <div className="my-3"></div>
