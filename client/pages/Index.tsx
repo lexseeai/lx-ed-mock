@@ -2118,54 +2118,19 @@ export default function Index() {
                       </button>
                     </div>
                     <div className="flex gap-4 overflow-x-auto pb-2">
-                      {/* Liam */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            L
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Liam Wilson</div>
-                            <div className="text-sm text-stone-500">Session notes</div>
-                          </div>
+                      {mockStudents
+                        .filter(student => getSessionReportStatus(student) === 'late')
+                        .map((student) => (
+                        <div key={student.id} className="flex-shrink-0">
+                          <StudentCard
+                            student={student}
+                            onClick={() => {
+                              handleStudentClick(student.id, [student]);
+                            }}
+                            sessionNotesView={true}
+                          />
                         </div>
-                      </div>
-                      {/* Isabella */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-violet-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            I
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Isabella Martinez</div>
-                            <div className="text-sm text-stone-500">Due July 24th</div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* Sofia */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            S
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Sofia Chen</div>
-                            <div className="text-sm text-stone-500">Due July 23rd</div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* Marcus */}
-                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                            M
-                          </div>
-                          <div>
-                            <div className="font-medium text-stone-800">Marcus Thompson</div>
-                            <div className="text-sm text-stone-500">Due July 21st</div>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
