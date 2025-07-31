@@ -516,7 +516,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             </Avatar>
             <span className={`text-sm font-medium text-white font-lexend w-20 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>John Smith</span>
           </div>
-          {!isCollapsed && <ChevronsUpDown className="w-4 h-4 text-stone-400" />}
+          <ChevronsUpDown className={`w-4 h-4 text-stone-400 transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`} />
         </div>
       </div>
     </div>
