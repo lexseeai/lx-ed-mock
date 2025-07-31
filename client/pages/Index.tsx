@@ -329,6 +329,9 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           </div>
         </div>
 
+        {/* Spacer above sessions */}
+        <div className="my-3"></div>
+
         {/* Sessions Section */}
         <div>
           {/* Sessions Label */}
@@ -349,7 +352,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             >
               <div className="flex items-center space-x-2">
                 <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
-                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Schedule</span>}
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Up coming</span>}
               </div>
               {!isCollapsed && (
                 <Tooltip delayDuration={0} disableHoverableContent>
@@ -377,7 +380,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             >
               <div className="flex items-center space-x-2">
                 <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
-                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Notes</span>}
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Notes dues</span>}
               </div>
               {!isCollapsed && (
                 <Tooltip delayDuration={0} disableHoverableContent>
