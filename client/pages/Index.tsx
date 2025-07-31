@@ -1699,7 +1699,7 @@ export default function Index() {
                   ? 'p-9'
                   : activeView === 'home'
                     ? 'p-8'
-                    : 'px-8 pb-8 pt-4'
+                    : 'p-9'
             } space-y-6 flex-1 overflow-y-auto`}>
               {activeView === 'home' && (
                 <section>
