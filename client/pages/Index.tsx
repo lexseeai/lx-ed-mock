@@ -1887,10 +1887,14 @@ export default function Index() {
                     <div className="flex items-center gap-2 mb-4">
                       <Clock className="w-6 h-6 text-stone-400" />
                       <h2 className="text-xl font-normal text-stone-400 font-lexend">Due soon</h2>
-                      <span className="text-sm text-stone-400 font-lexend">({getInProgressNotes().length})</span>
+                      <span className="text-sm text-stone-400 font-lexend">({getInProgressNotes().filter(student =>
+                        !selectedNotesStudentFilter || student.name === selectedNotesStudentFilter
+                      ).length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                      {getInProgressNotes().map((student) => (
+                      {getInProgressNotes().filter(student =>
+                        !selectedNotesStudentFilter || student.name === selectedNotesStudentFilter
+                      ).map((student) => (
                         <StudentCard
                           key={student.id}
                           student={student}
@@ -1906,10 +1910,14 @@ export default function Index() {
                     <div className="flex items-center gap-2 mb-4">
                       <Timer className="w-6 h-6 text-stone-400" />
                       <h2 className="text-xl font-normal text-stone-400 font-lexend">Late drafts</h2>
-                      <span className="text-sm text-stone-400 font-lexend">({getDueSoonNotes().length})</span>
+                      <span className="text-sm text-stone-400 font-lexend">({getDueSoonNotes().filter(student =>
+                        !selectedNotesStudentFilter || student.name === selectedNotesStudentFilter
+                      ).length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                      {getDueSoonNotes().map((student) => (
+                      {getDueSoonNotes().filter(student =>
+                        !selectedNotesStudentFilter || student.name === selectedNotesStudentFilter
+                      ).map((student) => (
                         <StudentCard
                           key={student.id}
                           student={student}
@@ -1925,10 +1933,14 @@ export default function Index() {
                     <div className="flex items-center gap-2 mb-4">
                       <CircleCheck className="w-6 h-6 text-stone-400" />
                       <h2 className="text-xl font-normal text-stone-400 font-lexend">Just sent</h2>
-                      <span className="text-sm text-stone-400 font-lexend">({getSubmittedNotes().length})</span>
+                      <span className="text-sm text-stone-400 font-lexend">({getSubmittedNotes().filter(student =>
+                        !selectedNotesStudentFilter || student.name === selectedNotesStudentFilter
+                      ).length})</span>
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                      {getSubmittedNotes().map((student) => (
+                      {getSubmittedNotes().filter(student =>
+                        !selectedNotesStudentFilter || student.name === selectedNotesStudentFilter
+                      ).map((student) => (
                         <StudentCard
                           key={student.id}
                           student={student}
