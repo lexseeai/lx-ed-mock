@@ -2002,8 +2002,7 @@ export default function Index() {
                                   </div>
                                 </div>
                                 <div className="flex-1 px-4 py-4">
-                                  <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
-                                    <Clock className="w-4 h-4 text-stone-400" />
+                                  <div className="text-stone-600 font-lexend text-sm">
                                     {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
                                   </div>
                                 </div>
