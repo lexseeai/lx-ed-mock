@@ -373,7 +373,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           variant="ghost"
           size="sm"
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-1 h-6 w-6 hover:bg-indigo-950"
+          className="p-1 h-6 w-6"
         >
           <PanelLeft className="w-5 h-5 text-white/50" />
         </Button>
@@ -395,7 +395,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           >
             <div className="flex items-center space-x-2">
               <GreetingIcon className={`w-4 h-4 ${activeView === 'home' ? 'text-white' : 'text-white/80'}`} />
-              <span className={`text-sm font-lexend w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'} ${activeView === 'home' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'home' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>}
             </div>
           </div>
 
@@ -411,7 +411,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           >
             <div className="flex items-center space-x-2">
               <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
-              <span className={`text-sm font-lexend w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'} ${activeView === 'all' ? 'text-white' : 'text-white'}`}>My students</span>
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>My students</span>}
             </div>
           </div>
         </div>
@@ -439,7 +439,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             >
               <div className="flex items-center space-x-2">
                 <Calendar className={`w-4 h-4 ${activeView === 'schedule' ? 'text-white' : 'text-white/80'}`} />
-                <span className={`text-sm font-lexend w-20 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'} ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Upcoming</span>
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'schedule' ? 'text-white' : 'text-white'}`}>Upcoming</span>}
               </div>
               {!isCollapsed && (
                 <Tooltip delayDuration={0} disableHoverableContent>
@@ -467,7 +467,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
             >
               <div className="flex items-center space-x-2">
                 <NotebookText className={`w-4 h-4 ${activeView === 'sessionnotes' ? 'text-white' : 'text-white/80'}`} />
-                <span className={`text-sm font-lexend w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'} ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Notes dues</span>
+                {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'sessionnotes' ? 'text-white' : 'text-white'}`}>Notes dues</span>}
               </div>
               {!isCollapsed && (
                 <Tooltip delayDuration={0} disableHoverableContent>
@@ -492,17 +492,17 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
         <div className="space-y-1 flex-1">
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
             <LibraryBig className="w-4 h-4 text-white/80" />
-            <span className={`text-sm text-white font-lexend ml-2 w-16 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>Library</span>
+            {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Library</span>}
           </div>
 
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
             <FileAudio className="w-4 h-4 text-white/80" />
-            <span className={`text-sm text-white font-lexend ml-2 w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>Assignments</span>
+            {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Assignments</span>}
           </div>
 
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg hover:bg-indigo-950 h-8`}>
             <Rabbit className="w-4 h-4 text-white/80" />
-            <span className={`text-sm text-white font-lexend ml-2 w-28 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>Lexsee Reader</span>
+            {!isCollapsed && <span className="text-sm text-white font-lexend ml-2">Lexsee Reader</span>}
           </div>
         </div>
       </div>
@@ -511,12 +511,12 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
       <div className="p-3">
         <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 py-1 rounded-lg hover:bg-indigo-950`}>
           <div className="flex items-center space-x-2">
-            <Avatar className="w-8 h-8 rounded-xl">
-              <AvatarFallback className="bg-stone-200 text-stone-600 text-xs rounded-xl">JS</AvatarFallback>
+            <Avatar className="w-8 h-8">
+              <AvatarFallback className="bg-stone-200 text-stone-600 text-xs">JS</AvatarFallback>
             </Avatar>
-            <span className={`text-sm font-medium text-white font-lexend w-20 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>John Smith</span>
+            {!isCollapsed && <span className="text-sm font-medium text-white font-lexend">John Smith</span>}
           </div>
-          <ChevronsUpDown className={`w-4 h-4 text-stone-400 transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'}`} />
+          {!isCollapsed && <ChevronsUpDown className="w-4 h-4 text-stone-400" />}
         </div>
       </div>
     </div>
