@@ -1960,62 +1960,60 @@ export default function Index() {
                       </div>
                       {/* Scrollable Body */}
                       <div className="flex-1 overflow-y-auto">
-                        <Table>
-                          <TableBody>
-                            {getFilteredUniqueStudents().map((student) => {
-                              const getInitials = (name: string) => name.charAt(0).toUpperCase();
-                              const getSubjectColors = () => {
-                                const subject = student.subject?.toLowerCase() || '';
-                                if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
-                                if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry')) return 'bg-green-100 text-green-700';
-                                if (subject.includes('english') || subject.includes('literature')) return 'bg-purple-100 text-purple-700';
-                                if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
-                                if (subject.includes('spanish') || subject.includes('language')) return 'bg-pink-100 text-pink-700';
-                                if (subject.includes('art') || subject.includes('music')) return 'bg-red-100 text-red-700';
-                                if (subject.includes('computer') || subject.includes('coding')) return 'bg-indigo-100 text-indigo-700';
-                                if (subject.includes('geography')) return 'bg-teal-100 text-teal-700';
-                                return 'bg-stone-100 text-stone-700';
-                              };
+                        <div className="w-full">
+                          {getFilteredUniqueStudents().map((student) => {
+                            const getInitials = (name: string) => name.charAt(0).toUpperCase();
+                            const getSubjectColors = () => {
+                              const subject = student.subject?.toLowerCase() || '';
+                              if (subject.includes('math')) return 'bg-blue-100 text-blue-700';
+                              if (subject.includes('science') || subject.includes('biology') || subject.includes('chemistry')) return 'bg-green-100 text-green-700';
+                              if (subject.includes('english') || subject.includes('literature')) return 'bg-purple-100 text-purple-700';
+                              if (subject.includes('history')) return 'bg-amber-100 text-amber-700';
+                              if (subject.includes('spanish') || subject.includes('language')) return 'bg-pink-100 text-pink-700';
+                              if (subject.includes('art') || subject.includes('music')) return 'bg-red-100 text-red-700';
+                              if (subject.includes('computer') || subject.includes('coding')) return 'bg-indigo-100 text-indigo-700';
+                              if (subject.includes('geography')) return 'bg-teal-100 text-teal-700';
+                              return 'bg-stone-100 text-stone-700';
+                            };
 
-                              return (
-                                <tr
+                            return (
+                              <div
                                 key={student.name}
-                                className="cursor-pointer hover:bg-stone-50 border-b border-stone-100"
+                                className="flex items-center cursor-pointer hover:bg-stone-50 border-b border-stone-100 min-h-[68px]"
                                 onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
                               >
-                                <td className="w-12 px-4 py-4">
+                                <div className="w-12 px-4 py-4">
                                   <Avatar className="w-10 h-10">
                                     <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
                                       {getInitials(student.name)}
                                     </AvatarFallback>
                                   </Avatar>
-                                </td>
-                                <td className="flex-1 px-4 py-4">
+                                </div>
+                                <div className="flex-1 px-4 py-4">
                                   <div className="font-medium text-stone-900 font-lexend">
                                     {student.name}
                                   </div>
-                                </td>
-                                <td className="flex-1 px-4 py-4">
+                                </div>
+                                <div className="flex-1 px-4 py-4">
                                   <div className="text-stone-600 font-lexend text-sm">
                                     {student.subject}
                                   </div>
-                                </td>
-                                <td className="flex-1 px-4 py-4">
+                                </div>
+                                <div className="flex-1 px-4 py-4">
                                   <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
                                     <Clock className="w-4 h-4 text-stone-400" />
                                     {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
                                   </div>
-                                </td>
-                                <td className="flex-1 px-4 py-4">
+                                </div>
+                                <div className="flex-1 px-4 py-4">
                                   <div className="text-stone-600 font-lexend text-sm">
                                     {student.email}
                                   </div>
-                                </td>
-                              </tr>
-                              );
-                            })}
-                          </TableBody>
-                        </Table>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                         {getFilteredUniqueStudents().length === 0 && (
                           <div className="text-center py-12 text-stone-500">
                             <Search className="w-8 h-8 mx-auto mb-3 text-stone-300" />
