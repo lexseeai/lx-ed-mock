@@ -1702,7 +1702,7 @@ export default function Index() {
                           borderRadius: '9px',
                           top: '3px',
                           left: studentsViewMode === 'cards' ? '3px' : '39px',
-                          transition: 'left 0.15s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                          transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
                         }}
                       />
                       <button
