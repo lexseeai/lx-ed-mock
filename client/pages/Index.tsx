@@ -1279,11 +1279,11 @@ export default function Index() {
                 <div className="flex flex-col items-start justify-start min-h-[200px]">
                   <div className="flex items-center mb-6" style={{margin: '0 0 24px -8px'}}>
                     <GreetingIcon className="w-12 h-12 text-indigo-600" />
-                    <h1 className="text-4xl font-bold text-stone-800 font-lexend">
+                    <h1 className="text-4xl font-bold text-stone-800 font-lexend ml-3">
                       {greeting.text}, John
                     </h1>
                   </div>
-                  <div className="w-full max-w-md">
+                  <div className="w-full">
                     <Input
                       type="text"
                       placeholder="What are you looking for?"
