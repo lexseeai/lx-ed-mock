@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound } from "lucide-react";
+import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound, Search, UserRoundPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -549,6 +549,9 @@ export default function Index() {
   const [showNotesStudentDropdown, setShowNotesStudentDropdown] = useState(false);
   const [notesStudentSearchQuery, setNotesStudentSearchQuery] = useState("");
   const notesDropdownRef = useRef<HTMLDivElement>(null);
+  // All students filtering and view states
+  const [allStudentsSearchQuery, setAllStudentsSearchQuery] = useState("");
+  const [studentsViewMode, setStudentsViewMode] = useState<'cards' | 'list'>('cards');
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -778,6 +781,21 @@ export default function Index() {
     });
 
     return Array.from(uniqueStudents.values()).sort((a, b) => a.name.localeCompare(b.name));
+  };
+
+  // Filter students based on search query
+  const getFilteredUniqueStudents = () => {
+    const students = getUniqueStudentsWithNextSession();
+    if (!allStudentsSearchQuery.trim()) return students;
+
+    const query = allStudentsSearchQuery.toLowerCase();
+    return students.filter(student => {
+      const name = student.name?.toLowerCase() || '';
+      const subject = student.subject?.toLowerCase() || '';
+      const sessionTime = student.nextSessionTime?.toLowerCase() || student.sessionTime?.toLowerCase() || '';
+
+      return name.includes(query) || subject.includes(query) || sessionTime.includes(query);
+    });
   };
 
   // Comprehensive July/August 2025 day data
@@ -1598,28 +1616,53 @@ export default function Index() {
             {/* Header for All Students view */}
             {activeView === 'all' && (
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col">
-                    <h1 className="text-3xl font-bold text-stone-800 font-lexend pt-1">
-                      All Students
-                    </h1>
-                    <p className="text-lg text-gray-600 font-lexend mt-1">
-                      {getUniqueStudentsWithNextSession().length} students in your workspace
-                    </p>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-stone-900 font-lexend text-3xl font-normal leading-9 tracking-[-0.75px]">
+                    My students
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="relative">
-                      <Input
-                        type="text"
-                        placeholder="Find student"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-48 md:w-64 h-9 min-w-0"
-                      />
+                  <div className="flex items-center gap-1.5">
+                    {/* Cards/List Toggle */}
+                    <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
+                      <button
+                        onClick={() => setStudentsViewMode('cards')}
+                        className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                          studentsViewMode === 'cards'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Cards
+                      </button>
+                      <button
+                        onClick={() => setStudentsViewMode('list')}
+                        className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                          studentsViewMode === 'list'
+                            ? 'bg-indigo-600 text-white shadow-sm'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        List
+                      </button>
                     </div>
-                    <Button className="bg-indigo-600 hover:bg-indigo-700 h-9">
-                      <b>+</b>
-                    </Button>
+                    {/* Add Student Button */}
+                    <button className="flex items-center justify-center w-11 h-11 border border-stone-200 bg-transparent rounded-full hover:bg-stone-50 transition-colors">
+                      <UserRoundPlus className="w-5 h-5 text-indigo-600" />
+                    </button>
+                  </div>
+                </div>
+                {/* Centered Search Field */}
+                <div className="flex justify-center">
+                  <div className="relative w-80 mx-auto">
+                    <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
+                      <Search className="w-6 h-6 text-stone-400" />
+                    </div>
+                    <Input
+                      type="text"
+                      placeholder="Filter list"
+                      value={allStudentsSearchQuery}
+                      onChange={(e) => setAllStudentsSearchQuery(e.target.value)}
+                      className="pl-14 pr-4 h-11 font-readex text-sm rounded-full overflow-hidden bg-transparent border border-stone-200 w-full mx-auto"
+                    />
                   </div>
                 </div>
               </div>
@@ -1787,11 +1830,11 @@ export default function Index() {
               {activeView === 'all' && (
                 <section>
                   <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                    {getUniqueStudentsWithNextSession().map((student) => (
+                    {getFilteredUniqueStudents().map((student) => (
                       <StudentCard
                         key={student.name}
                         student={student}
-                        onClick={() => handleStudentClick(student.id, getUniqueStudentsWithNextSession())}
+                        onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
                         showNextSession={true}
                       />
                     ))}
