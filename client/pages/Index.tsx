@@ -270,22 +270,8 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false }:
   );
 }
 
-function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOverlay }: { activeView: string; setActiveView: (view: string) => void; onThisWeekClick: () => void; setShowStudentOverlay: (show: boolean) => void }) {
+function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOverlay, greeting }: { activeView: string; setActiveView: (view: string) => void; onThisWeekClick: () => void; setShowStudentOverlay: (show: boolean) => void; greeting: { text: string; icon: any } }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
-
-  // Get time-based greeting
-  const getTimeBasedGreeting = () => {
-    const hour = new Date().getHours();
-    if (hour < 12) {
-      return { text: 'Good morning', icon: Haze };
-    } else if (hour < 18) {
-      return { text: 'Good afternoon', icon: SunMedium };
-    } else {
-      return { text: 'Good evening', icon: MoonStar };
-    }
-  };
-
-  const greeting = getTimeBasedGreeting();
   const GreetingIcon = greeting.icon;
 
   return (
