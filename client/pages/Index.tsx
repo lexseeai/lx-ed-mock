@@ -397,8 +397,13 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           </div>
         </div>
 
+        {/* Sessions Label */}
+        {!isCollapsed && (
+          <span className="text-xs font-medium text-white/50 font-lexend ml-3 mt-3 mb-1 block">Sessions</span>
+        )}
+
         {/* Spacer */}
-        <div className="my-4"></div>
+        <div className="my-3"></div>
 
         {/* Other Navigation Items */}
         <div className="space-y-1 flex-1">
