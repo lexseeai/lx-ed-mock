@@ -411,7 +411,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           >
             <div className="flex items-center space-x-2">
               <UsersRound className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>My students</span>}
+              <span className={`text-sm font-lexend w-24 overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0' : 'opacity-100'} ${activeView === 'all' ? 'text-white' : 'text-white'}`}>My students</span>
             </div>
           </div>
         </div>
