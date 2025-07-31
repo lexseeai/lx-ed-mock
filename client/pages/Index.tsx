@@ -31,14 +31,14 @@ const mockStudents: Student[] = [
   { id: "2", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true, email: "emma.wilson@email.com" }, // Done
 
   // July 15th - 1 session: done
-  { id: "3", name: "Marcus", subject: "English Tutoring", sessionTime: "10:00am, July 15", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 15), sessionReportCompleted: true }, // Done
+  { id: "3", name: "Marcus", subject: "English Tutoring", sessionTime: "10:00am, July 15", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 15), sessionReportCompleted: true, email: "marcus.brown@email.com" }, // Done
 
   // July 17th - 2 sessions: all done
-  { id: "4", name: "Sofia", subject: "History Tutoring", sessionTime: "9:00am, July 17", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia", sessionDate: new Date(2025, 6, 17), sessionReportCompleted: true }, // Done
-  { id: "5", name: "Liam", subject: "Math Tutoring", sessionTime: "2:00pm, July 17", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 17), sessionReportCompleted: true }, // Done
+  { id: "4", name: "Sofia", subject: "History Tutoring", sessionTime: "9:00am, July 17", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia", sessionDate: new Date(2025, 6, 17), sessionReportCompleted: true, email: "sofia.garcia@email.com" }, // Done
+  { id: "5", name: "Liam", subject: "Math Tutoring", sessionTime: "2:00pm, July 17", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 17), sessionReportCompleted: true, email: "liam.davis@email.com" }, // Done
 
   // July 18th - 1 session: done
-  { id: "6", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "11:00am, July 18", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 6, 18), sessionReportCompleted: true }, // Done
+  { id: "6", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "11:00am, July 18", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 6, 18), sessionReportCompleted: true, email: "isabella.martinez@email.com" }, // Done
 
   // July 21st - 3 sessions: 2 done, 1 late
   { id: "7", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 21", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 21), sessionReportCompleted: true }, // Done
