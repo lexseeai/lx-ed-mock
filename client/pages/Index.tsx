@@ -1920,18 +1920,20 @@ export default function Index() {
                 <div className="flex justify-center">
                   <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
                     {/* Sliding background indicator */}
-                    <div
-                      className="absolute bg-indigo-600 shadow-sm rounded-md"
-                      style={{
-                        height: '30px',
-                        top: '6px',
-                        left: `${getTabPosition().left}px`,
-                        width: `${getTabPosition().width}px`,
-                        transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
-                      }}
-                    />
+                    {getTabPosition() && (
+                      <div
+                        className="absolute bg-indigo-600 shadow-sm rounded-md"
+                        style={{
+                          height: '30px',
+                          top: '6px',
+                          left: `${getTabPosition()!.left}px`,
+                          width: `${getTabPosition()!.width}px`,
+                          transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
+                        }}
+                      />
+                    )}
                     <button
-                      ref={tabButton1Ref}
+                      ref={button1RefCallback}
                       onClick={() => scrollToSection('in-progress')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'in-progress'
@@ -1942,7 +1944,7 @@ export default function Index() {
                       Due soon
                     </button>
                     <button
-                      ref={tabButton2Ref}
+                      ref={button2RefCallback}
                       onClick={() => scrollToSection('due-soon')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'due-soon'
@@ -1953,7 +1955,7 @@ export default function Index() {
                       Late draft
                     </button>
                     <button
-                      ref={tabButton3Ref}
+                      ref={button3RefCallback}
                       onClick={() => scrollToSection('submitted')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'submitted'
