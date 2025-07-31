@@ -855,14 +855,9 @@ export default function Index() {
     }
   };
 
-  // Get sort icon for column headers
-  const getSortIcon = (field: 'name' | 'subject' | 'nextSession' | 'email') => {
-    if (sortField !== field) {
-      return <ChevronsUpDown className="w-4 h-4 text-stone-400" />;
-    }
-    return sortDirection === 'asc'
-      ? <SortAsc className="w-4 h-4 text-stone-600" />
-      : <SortDesc className="w-4 h-4 text-stone-600" />;
+  // Get header styling for active sort column
+  const getHeaderStyle = (field: 'name' | 'subject' | 'nextSession' | 'email') => {
+    return sortField === field ? 'font-bold' : 'font-medium';
   };
 
   // Comprehensive July/August 2025 day data
