@@ -1923,7 +1923,7 @@ export default function Index() {
                   ) : (
                     <div className="rounded-lg border border-stone-200 bg-white flex flex-col" style={{height: 'calc(100vh - 280px)'}}>
                       {/* Fixed Header */}
-                      <div className="bg-white border-b border-stone-200 sticky top-0 z-10">
+                      <div className="border-b border-stone-200 sticky top-0 z-10">
                         <div className="w-full">
                           <div className="flex items-center h-12 text-sm font-medium text-stone-700">
                             <div className="w-12 px-4"></div>
@@ -1959,7 +1959,7 @@ export default function Index() {
                         </div>
                       </div>
                       {/* Scrollable Body */}
-                      <div className="flex-1 overflow-y-auto">
+                      <div className="flex-1 overflow-y-auto pb-9">
                         <div className="w-full">
                           {getFilteredUniqueStudents().map((student) => {
                             const getInitials = (name: string) => name.charAt(0).toUpperCase();
@@ -1989,7 +1989,7 @@ export default function Index() {
                                     </AvatarFallback>
                                   </Avatar>
                                 </div>
-                                <div className="flex-1 px-4 py-4">
+                                <div className="flex-1 px-4 py-4 pl-8">
                                   <div className="font-medium text-stone-900 font-lexend">
                                     {student.name}
                                   </div>
