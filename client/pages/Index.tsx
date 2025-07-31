@@ -1787,9 +1787,16 @@ export default function Index() {
                       </button>
                     </div>
                     {/* Add Student Button */}
-                    <button className="flex items-center justify-center w-11 h-11 border border-stone-200 bg-transparent rounded-full hover:bg-stone-50 transition-colors">
-                      <UserRoundPlus className="w-5 h-5 text-indigo-600" />
-                    </button>
+                    <Tooltip delayDuration={0} disableHoverableContent>
+                      <TooltipTrigger asChild>
+                        <button className="flex items-center justify-center w-11 h-11 border border-stone-200 bg-transparent rounded-full hover:bg-stone-50 transition-colors">
+                          <UserRoundPlus className="w-5 h-5 text-indigo-600" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent className="animate-none pointer-events-none">
+                        <p>Add student</p>
+                      </TooltipContent>
+                    </Tooltip>
                   </div>
                 </div>
                 {/* Centered Search Field */}
