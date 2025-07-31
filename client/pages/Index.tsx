@@ -151,6 +151,17 @@ function getSessionBadgeConfig(status: string) {
   }
 }
 
+// Helper function to reformat session time for session notes view (Month Day, Time)
+function formatSessionTimeForNotes(sessionTime: string): string {
+  // Match pattern like "3:00pm, July 28" or "9:00am, July 14"
+  const match = sessionTime.match(/(\d{1,2}:\d{2}(?:am|pm)),\s*(.+)/i);
+  if (match) {
+    const [, time, date] = match;
+    return `${date}, ${time}`;
+  }
+  return sessionTime; // Return original if no match
+}
+
 // Helper function to convert single time to 45-minute session range
 function getSessionTimeRange(timeString: string): string {
   const timeMatch = timeString.match(/(\d{1,2}):(\d{2})(am|pm)/i);
