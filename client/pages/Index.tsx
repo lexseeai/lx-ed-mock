@@ -2294,7 +2294,7 @@ export default function Index() {
                     {/* Afternoon */}
                     <section>
                       <div className="flex items-center gap-2 mb-4">
-                        <SunMedium className="w-5 h-5 text-stone-400" />
+                        <SunMedium className="w-6 h-6 text-stone-400" />
                         <h3 className="text-xl font-normal text-stone-400 font-lexend">Afternoon</h3>
                       </div>
                       <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
