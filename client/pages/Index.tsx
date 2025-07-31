@@ -591,8 +591,8 @@ export default function Index() {
     let lastTime = 0;
     let lastY = 0;
 
-    const friction = 0.95;
-    const maxVelocity = 30;
+    const friction = 0.92;
+    const maxVelocity = 80;
 
     const animateScroll = () => {
       if (Math.abs(velocity) > 0.1) {
