@@ -1896,14 +1896,13 @@ export default function Index() {
                       style={{
                         height: '30px',
                         top: '6px',
-                        left: activeTab === 'in-progress' ? '6px' :
-                              activeTab === 'due-soon' ? '75px' : '158px',
-                        width: activeTab === 'in-progress' ? '63px' :
-                               activeTab === 'due-soon' ? '77px' : '69px',
+                        left: `${getTabPosition().left}px`,
+                        width: `${getTabPosition().width}px`,
                         transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
                       }}
                     />
                     <button
+                      ref={tabButton1Ref}
                       onClick={() => scrollToSection('in-progress')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'in-progress'
@@ -1914,6 +1913,7 @@ export default function Index() {
                       Due soon
                     </button>
                     <button
+                      ref={tabButton2Ref}
                       onClick={() => scrollToSection('due-soon')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'due-soon'
@@ -1924,6 +1924,7 @@ export default function Index() {
                       Late draft
                     </button>
                     <button
+                      ref={tabButton3Ref}
                       onClick={() => scrollToSection('submitted')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                         activeTab === 'submitted'
