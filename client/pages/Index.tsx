@@ -1295,7 +1295,7 @@ export default function Index() {
             {/* Header inside card - Different headers for different views */}
             {activeView === 'home' && (
               <div className="bg-white rounded-t-lg" style={{border: '1px none rgb(231, 229, 228)', padding: '60px 60px 24px'}}>
-                <div className="flex flex-col items-start justify-start min-h-[200px]">
+                <div className="flex flex-col items-start justify-start min-h-[125px]">
                   <div className="flex items-center justify-between w-full mb-6" style={{marginBottom: '24px', paddingRight: '4px'}}>
                     <div className="flex items-center">
                       <GreetingIcon className="w-12 h-12 text-indigo-600" />
