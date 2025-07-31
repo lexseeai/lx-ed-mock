@@ -860,6 +860,14 @@ export default function Index() {
     return sortField === field ? 'font-bold' : 'font-medium';
   };
 
+  // Get sort icon for column headers
+  const getSortIcon = (field: 'name' | 'subject' | 'nextSession' | 'email') => {
+    if (sortField !== field) return null;
+    return sortDirection === 'asc'
+      ? <SortAsc className="w-4 h-4 text-stone-600 ml-1" />
+      : <SortDesc className="w-4 h-4 text-stone-600 ml-1" />;
+  };
+
   // Comprehensive July/August 2025 day data
   const getAllDaysData = () => {
     return [
@@ -1885,7 +1893,9 @@ export default function Index() {
                   ? 'p-9'
                   : activeView === 'home'
                     ? 'p-8'
-                    : 'p-9'
+                    : activeView === 'all' && studentsViewMode === 'list'
+                      ? 'p-0 pt-9 px-9'
+                      : 'p-9'
             } space-y-6 flex-1 overflow-y-auto`}>
               {activeView === 'home' && (
                 <section>
@@ -1911,40 +1921,42 @@ export default function Index() {
                       ))}
                     </div>
                   ) : (
-                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col h-full">
+                    <div className="rounded-lg border border-stone-200 bg-white flex flex-col" style={{height: 'calc(100vh - 280px)'}}>
                       {/* Fixed Header */}
-                      <div className="border-b border-stone-200">
-                        <Table>
-                          <TableHeader>
-                            <TableRow className="hover:bg-transparent border-b border-stone-200">
-                              <TableHead className="w-12"></TableHead>
-                              <TableHead
-                                className={`cursor-pointer select-none ${getHeaderStyle('name')} text-stone-700 hover:text-stone-900`}
-                                onClick={() => handleSort('name')}
-                              >
-                                Name
-                              </TableHead>
-                              <TableHead
-                                className={`cursor-pointer select-none ${getHeaderStyle('subject')} text-stone-700 hover:text-stone-900`}
-                                onClick={() => handleSort('subject')}
-                              >
-                                Focus
-                              </TableHead>
-                              <TableHead
-                                className={`cursor-pointer select-none ${getHeaderStyle('nextSession')} text-stone-700 hover:text-stone-900`}
-                                onClick={() => handleSort('nextSession')}
-                              >
-                                Next session
-                              </TableHead>
-                              <TableHead
-                                className={`cursor-pointer select-none ${getHeaderStyle('email')} text-stone-700 hover:text-stone-900`}
-                                onClick={() => handleSort('email')}
-                              >
-                                Email
-                              </TableHead>
-                            </TableRow>
-                          </TableHeader>
-                        </Table>
+                      <div className="bg-white border-b border-stone-200 sticky top-0 z-10">
+                        <div className="w-full">
+                          <div className="flex items-center h-12 text-sm font-medium text-stone-700">
+                            <div className="w-12 px-4"></div>
+                            <div
+                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('name')} hover:text-stone-900 flex items-center`}
+                              onClick={() => handleSort('name')}
+                            >
+                              Name
+                              {getSortIcon('name')}
+                            </div>
+                            <div
+                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('subject')} hover:text-stone-900 flex items-center`}
+                              onClick={() => handleSort('subject')}
+                            >
+                              Focus
+                              {getSortIcon('subject')}
+                            </div>
+                            <div
+                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('nextSession')} hover:text-stone-900 flex items-center`}
+                              onClick={() => handleSort('nextSession')}
+                            >
+                              Next session
+                              {getSortIcon('nextSession')}
+                            </div>
+                            <div
+                              className={`flex-1 px-4 cursor-pointer select-none ${getHeaderStyle('email')} hover:text-stone-900 flex items-center`}
+                              onClick={() => handleSort('email')}
+                            >
+                              Email
+                              {getSortIcon('email')}
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       {/* Scrollable Body */}
                       <div className="flex-1 overflow-y-auto">
@@ -1966,40 +1978,40 @@ export default function Index() {
                               };
 
                               return (
-                                <TableRow
-                                  key={student.name}
-                                  className="cursor-pointer hover:bg-stone-50 border-b border-stone-100"
-                                  onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
-                                >
-                                  <TableCell className="py-4">
-                                    <Avatar className="w-10 h-10">
-                                      <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
-                                        {getInitials(student.name)}
-                                      </AvatarFallback>
-                                    </Avatar>
-                                  </TableCell>
-                                  <TableCell className="py-4">
-                                    <div className="font-medium text-stone-900 font-lexend">
-                                      {student.name}
-                                    </div>
-                                  </TableCell>
-                                  <TableCell className="py-4">
-                                    <div className="text-stone-600 font-lexend text-sm">
-                                      {student.subject}
-                                    </div>
-                                  </TableCell>
-                                  <TableCell className="py-4">
-                                    <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
-                                      <Clock className="w-4 h-4 text-stone-400" />
-                                      {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
-                                    </div>
-                                  </TableCell>
-                                  <TableCell className="py-4">
-                                    <div className="text-stone-600 font-lexend text-sm">
-                                      {student.email}
-                                    </div>
-                                  </TableCell>
-                                </TableRow>
+                                <tr
+                                key={student.name}
+                                className="cursor-pointer hover:bg-stone-50 border-b border-stone-100"
+                                onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
+                              >
+                                <td className="w-12 px-4 py-4">
+                                  <Avatar className="w-10 h-10">
+                                    <AvatarFallback className={`${getSubjectColors()} font-medium text-sm`}>
+                                      {getInitials(student.name)}
+                                    </AvatarFallback>
+                                  </Avatar>
+                                </td>
+                                <td className="flex-1 px-4 py-4">
+                                  <div className="font-medium text-stone-900 font-lexend">
+                                    {student.name}
+                                  </div>
+                                </td>
+                                <td className="flex-1 px-4 py-4">
+                                  <div className="text-stone-600 font-lexend text-sm">
+                                    {student.subject}
+                                  </div>
+                                </td>
+                                <td className="flex-1 px-4 py-4">
+                                  <div className="flex items-center gap-2 text-stone-600 font-lexend text-sm">
+                                    <Clock className="w-4 h-4 text-stone-400" />
+                                    {formatSessionTimeToMonthDayTime(student.nextSessionTime || student.sessionTime)}
+                                  </div>
+                                </td>
+                                <td className="flex-1 px-4 py-4">
+                                  <div className="text-stone-600 font-lexend text-sm">
+                                    {student.email}
+                                  </div>
+                                </td>
+                              </tr>
                               );
                             })}
                           </TableBody>
