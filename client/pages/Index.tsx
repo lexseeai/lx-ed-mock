@@ -847,7 +847,7 @@ export default function Index() {
   // Get sort icon for column headers
   const getSortIcon = (field: 'name' | 'subject' | 'nextSession' | 'email') => {
     if (sortField !== field) {
-      return <ChevronUpDown className="w-4 h-4 text-stone-400" />;
+      return <ChevronsUpDown className="w-4 h-4 text-stone-400" />;
     }
     return sortDirection === 'asc'
       ? <SortAsc className="w-4 h-4 text-stone-600" />
