@@ -1982,9 +1982,9 @@ export default function Index() {
                       : 'p-9'
             } space-y-6 flex-1 overflow-y-auto`}
               style={{
-                WebkitOverflowScrolling: 'touch',
                 scrollBehavior: 'smooth',
-                scrollPaddingTop: '20px'
+                scrollbarWidth: 'thin',
+                scrollbarColor: '#d1d5db #f3f4f6'
               }}>
               {activeView === 'home' && (
                 <section>
