@@ -1692,16 +1692,16 @@ export default function Index() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     {/* Cards/List Toggle */}
-                    <div className="relative flex border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center" style={{padding: '3px 3px 3px 2px'}}>
+                    <div className="relative flex border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center" style={{padding: '3px'}}>
                       {/* Sliding background indicator */}
                       <div
                         className="absolute bg-indigo-600 shadow-sm transition-transform duration-200 ease-out"
                         style={{
                           width: '36px',
                           height: '36px',
-                          borderRadius: '11px',
+                          borderRadius: '9px',
                           top: '3px',
-                          left: studentsViewMode === 'cards' ? '2px' : '38px',
+                          left: studentsViewMode === 'cards' ? '3px' : '39px',
                           transition: 'left 0.2s ease-out'
                         }}
                       />
