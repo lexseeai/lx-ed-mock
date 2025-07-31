@@ -2075,17 +2075,17 @@ export default function Index() {
                 <div className="space-y-8">
                   {/* Today's Sessions Section */}
                   <div>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center mb-4">
                       <div className="flex items-center space-x-2">
                         <CalendarFold className="w-6 h-6 text-stone-400" />
                         <h2 className="text-xl font-normal text-stone-400 font-lexend">Today's sessions</h2>
+                        <button
+                          onClick={() => setActiveView('schedule')}
+                          className="flex items-center text-stone-200 hover:text-indigo-600 transition-colors"
+                        >
+                          <ArrowRight className="w-4.5 h-4.5 ml-1" />
+                        </button>
                       </div>
-                      <button
-                        onClick={() => setActiveView('schedule')}
-                        className="flex items-center text-indigo-600 hover:text-indigo-700 transition-colors ml-auto"
-                      >
-                        <ArrowRight className="w-4.5 h-4.5 ml-1" />
-                      </button>
                     </div>
                     <div className="flex gap-4 overflow-x-auto pb-2">
                       {getScheduleData().morning.concat(getScheduleData().afternoon, getScheduleData().evening)
