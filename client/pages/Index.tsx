@@ -1978,7 +1978,10 @@ export default function Index() {
                               <div className="w-6 flex justify-end pr-1.5">
                                 <IconComponent className={`w-[18px] h-[18px] ${iconConfig.color}`} />
                               </div>
-                              <span className="text-base font-lexend leading-4.5 -tracking-[0.08px]" style={{fontWeight: '400', color: 'rgba(87, 83, 78, 1)'}}>
+                              <span className="text-base font-lexend leading-4.5 -tracking-[0.08px]" style={{
+                                fontWeight: session.key === 'previous' ? '400' : '600',
+                                color: session.key === 'previous' ? 'rgba(87, 83, 78, 1)' : 'rgba(68, 64, 60, 1)'
+                              }}>
                                 {session.time}, {session.date}
                               </span>
                             </div>
