@@ -462,6 +462,7 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
               }`}
               onClick={() => {
                 setActiveView('sessionnotes');
+                setActiveTab('in-progress'); // Reset to "Due soon" tab
                 setShowStudentOverlay(false);
               }}
             >
