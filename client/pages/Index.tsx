@@ -580,6 +580,28 @@ export default function Index() {
 
   const navigate = useNavigate();
 
+  // Custom momentum scrolling hook
+  const useMomentumScroll = () => {
+    const [isDragging, setIsDragging] = useState(false);
+    const y = useMotionValue(0);
+    const springY = useSpring(y, { damping: 15, stiffness: 300 });
+
+    return {
+      style: { y: springY },
+      isDragging,
+      setIsDragging,
+      drag: "y" as const,
+      dragConstraints: { top: 0, bottom: 0 },
+      dragElastic: 0.1,
+      dragMomentum: true,
+      onDragStart: () => setIsDragging(true),
+      onDragEnd: () => setIsDragging(false),
+      transition: { type: "spring", damping: 15, stiffness: 300 }
+    };
+  };
+
+  const momentumProps = useMomentumScroll();
+
   // Ref callbacks that measure immediately when elements are mounted
   const button1RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
