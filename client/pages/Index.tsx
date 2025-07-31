@@ -571,60 +571,60 @@ export default function Index() {
   const [tabPositionsReady, setTabPositionsReady] = useState(false);
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
-  const tabButton1Ref = useRef<HTMLButtonElement>(null);
-  const tabButton2Ref = useRef<HTMLButtonElement>(null);
-  const tabButton3Ref = useRef<HTMLButtonElement>(null);
+  const [buttonMeasurements, setButtonMeasurements] = useState<{
+    button1?: number;
+    button2?: number;
+    button3?: number;
+  }>({});
+
   const navigate = useNavigate();
 
-  // Calculate tab position and width
-  const getTabPosition = () => {
-    if (!tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
-      // More accurate fallback positioning based on text content + padding
-      // px-3 = 12px padding on each side = 24px total padding
-      // Estimate character width ~7px for text-sm
-      const dueSoonWidth = 24 + (8 * 7); // "Due soon" = 8 chars
-      const lateDraftWidth = 24 + (10 * 7); // "Late draft" = 10 chars
-      const justSentWidth = 24 + (9 * 7); // "Just sent" = 9 chars
-
-      switch (activeTab) {
-        case 'in-progress':
-          return { left: 6, width: dueSoonWidth };
-        case 'due-soon':
-          return { left: 6 + dueSoonWidth, width: lateDraftWidth };
-        case 'submitted':
-          return { left: 6 + dueSoonWidth + lateDraftWidth, width: justSentWidth };
-        default:
-          return { left: 6, width: dueSoonWidth };
-      }
-    }
-
-    const button1 = tabButton1Ref.current;
-    const button2 = tabButton2Ref.current;
-    const button3 = tabButton3Ref.current;
-
-    switch (activeTab) {
-      case 'in-progress':
-        return { left: 6, width: button1.offsetWidth };
-      case 'due-soon':
-        return { left: 6 + button1.offsetWidth, width: button2.offsetWidth };
-      case 'submitted':
-        return { left: 6 + button1.offsetWidth + button2.offsetWidth, width: button3.offsetWidth };
-      default:
-        return { left: 6, width: button1.offsetWidth };
+  // Ref callbacks that measure immediately when elements are mounted
+  const button1RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      // Small delay to ensure styles are applied
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button1: el.offsetWidth }));
+      }, 10);
     }
   };
 
-  // Effect to force tab position recalculation after mount
-  useEffect(() => {
-    if (tabButton1Ref.current && tabButton2Ref.current && tabButton3Ref.current) {
-      // Force a re-render to use actual button dimensions instead of fallback
-      const timer = setTimeout(() => {
-        setTabPositionsReady(prev => !prev);
-      }, 50); // Small delay to ensure DOM is fully rendered
-
-      return () => clearTimeout(timer);
+  const button2RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button2: el.offsetWidth }));
+      }, 10);
     }
-  }, []);
+  };
+
+  const button3RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button3: el.offsetWidth }));
+      }, 10);
+    }
+  };
+
+  // Calculate tab position and width
+  const getTabPosition = () => {
+    const { button1, button2, button3 } = buttonMeasurements;
+
+    if (!button1 || !button2 || !button3) {
+      // Return null to hide slider until measurements are ready
+      return null;
+    }
+
+    switch (activeTab) {
+      case 'in-progress':
+        return { left: 6, width: button1 };
+      case 'due-soon':
+        return { left: 6 + button1, width: button2 };
+      case 'submitted':
+        return { left: 6 + button1 + button2, width: button3 };
+      default:
+        return { left: 6, width: button1 };
+    }
+  };
 
   // Function to scroll to section
   const scrollToSection = (sectionId: string) => {
