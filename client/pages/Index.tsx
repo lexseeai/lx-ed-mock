@@ -1656,12 +1656,20 @@ export default function Index() {
                     <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
                       <Search className="w-6 h-6 text-stone-400" />
                     </div>
+                    {allStudentsSearchQuery && (
+                      <button
+                        onClick={() => setAllStudentsSearchQuery("")}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 p-1 hover:bg-stone-100 rounded"
+                      >
+                        <X className="w-4 h-4 text-stone-400 hover:text-stone-600" />
+                      </button>
+                    )}
                     <Input
                       type="text"
                       placeholder="Filter list"
                       value={allStudentsSearchQuery}
                       onChange={(e) => setAllStudentsSearchQuery(e.target.value)}
-                      className="pl-14 pr-4 h-11 font-readex text-sm rounded-full overflow-hidden bg-transparent border border-stone-200 w-full mx-auto"
+                      className={`pl-14 ${allStudentsSearchQuery ? 'pr-10' : 'pr-4'} h-11 font-readex text-sm rounded-full overflow-hidden bg-transparent border border-stone-200 w-full mx-auto`}
                     />
                   </div>
                 </div>
