@@ -579,16 +579,22 @@ export default function Index() {
   // Calculate tab position and width
   const getTabPosition = () => {
     if (!tabButton1Ref.current || !tabButton2Ref.current || !tabButton3Ref.current) {
-      // Fallback positioning based on activeTab
+      // More accurate fallback positioning based on text content + padding
+      // px-3 = 12px padding on each side = 24px total padding
+      // Estimate character width ~7px for text-sm
+      const dueSoonWidth = 24 + (8 * 7); // "Due soon" = 8 chars
+      const lateDraftWidth = 24 + (10 * 7); // "Late draft" = 10 chars
+      const justSentWidth = 24 + (9 * 7); // "Just sent" = 9 chars
+
       switch (activeTab) {
         case 'in-progress':
-          return { left: 6, width: 63 };
+          return { left: 6, width: dueSoonWidth };
         case 'due-soon':
-          return { left: 75, width: 77 };
+          return { left: 6 + dueSoonWidth, width: lateDraftWidth };
         case 'submitted':
-          return { left: 158, width: 69 };
+          return { left: 6 + dueSoonWidth + lateDraftWidth, width: justSentWidth };
         default:
-          return { left: 6, width: 63 };
+          return { left: 6, width: dueSoonWidth };
       }
     }
 
