@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle } from "lucide-react";
+import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -544,6 +544,11 @@ export default function Index() {
   const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
+  // Session notes filtering states
+  const [selectedNotesStudentFilter, setSelectedNotesStudentFilter] = useState<string | null>(null);
+  const [showNotesStudentDropdown, setShowNotesStudentDropdown] = useState(false);
+  const [notesStudentSearchQuery, setNotesStudentSearchQuery] = useState("");
+  const notesDropdownRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -616,16 +621,19 @@ export default function Index() {
       if (studentDropdownRef.current && !studentDropdownRef.current.contains(event.target as Node)) {
         setShowStudentDropdown(false);
       }
+      if (notesDropdownRef.current && !notesDropdownRef.current.contains(event.target as Node)) {
+        setShowNotesStudentDropdown(false);
+      }
     };
 
-    if (showStudentDropdown) {
+    if (showStudentDropdown || showNotesStudentDropdown) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showStudentDropdown]);
+  }, [showStudentDropdown, showNotesStudentDropdown]);
 
   // Get unique student names for filtering
   const getUniqueStudentNames = () => {
@@ -1285,10 +1293,7 @@ export default function Index() {
                   <div className="flex items-center gap-1.5">
                     <div className="relative flex-1 w-56" ref={studentDropdownRef}>
                       <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                        <UserRound className="w-6 h-6 text-stone-400" />
                       </div>
                       {selectedStudentFilter && (
                         <button
@@ -1630,20 +1635,88 @@ export default function Index() {
                     </h1>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="relative flex-1 w-56">
-                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M21.0002 21.0002L16.6602 16.6602" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#A8A29E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                    <div className="relative flex-1 w-56" ref={notesDropdownRef}>
+                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
+                        <UserRound className="w-6 h-6 text-stone-400" />
                       </div>
+                      {selectedNotesStudentFilter && (
+                        <button
+                          onClick={() => {
+                            setSelectedNotesStudentFilter(null);
+                            setNotesStudentSearchQuery("");
+                          }}
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 p-1 hover:bg-stone-100 rounded"
+                        >
+                          <X className="w-4 h-4 text-stone-400 hover:text-stone-600" />
+                        </button>
+                      )}
                       <Input
                         type="text"
-                        placeholder="Search notes"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-14 pr-14 h-11 font-readex text-base rounded-full overflow-hidden bg-transparent"
+                        placeholder={selectedNotesStudentFilter || "Filter by students"}
+                        value={selectedNotesStudentFilter ? "" : notesStudentSearchQuery}
+                        onChange={(e) => {
+                          if (!selectedNotesStudentFilter) {
+                            setNotesStudentSearchQuery(e.target.value);
+                          }
+                        }}
+                        onFocus={() => {
+                          setShowNotesStudentDropdown(true);
+                          if (selectedNotesStudentFilter) {
+                            setNotesStudentSearchQuery("");
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' && !selectedNotesStudentFilter) {
+                            const filteredNames = getFilteredStudentNames().filter(name => {
+                              // Filter to show only students that appear in session notes
+                              const allNotesStudents = [...getInProgressNotes(), ...getDueSoonNotes(), ...getSubmittedNotes()];
+                              return allNotesStudents.some(student => student.name === name);
+                            });
+                            if (filteredNames.length === 1) {
+                              setSelectedNotesStudentFilter(filteredNames[0]);
+                              setShowNotesStudentDropdown(false);
+                              setNotesStudentSearchQuery("");
+                            }
+                          }
+                        }}
+                        className={`pl-14 ${selectedNotesStudentFilter ? 'pr-10' : 'pr-4.5'} h-11 font-readex text-base rounded-full overflow-hidden bg-transparent ${selectedNotesStudentFilter ? 'text-stone-900 font-medium placeholder:text-stone-900 placeholder:font-medium' : 'placeholder:text-stone-400'}`}
+                        readOnly={!!selectedNotesStudentFilter}
                       />
+
+                      {/* Dropdown */}
+                      {showNotesStudentDropdown && (
+                        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-stone-200 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                          {getFilteredStudentNames().filter(name => {
+                            // Filter to show only students that appear in session notes
+                            const allNotesStudents = [...getInProgressNotes(), ...getDueSoonNotes(), ...getSubmittedNotes()];
+                            return allNotesStudents.some(student => student.name === name);
+                          }).filter(name =>
+                            name.toLowerCase().includes(notesStudentSearchQuery.toLowerCase())
+                          ).map((name) => (
+                            <button
+                              key={name}
+                              onClick={() => {
+                                setSelectedNotesStudentFilter(name);
+                                setShowNotesStudentDropdown(false);
+                                setNotesStudentSearchQuery("");
+                              }}
+                              className="w-full px-4 py-2 text-left hover:bg-stone-50 first:rounded-t-lg last:rounded-b-lg transition-colors"
+                            >
+                              <span className="text-stone-900 font-lexend text-sm">{name}</span>
+                            </button>
+                          ))}
+                          {getFilteredStudentNames().filter(name => {
+                            const allNotesStudents = [...getInProgressNotes(), ...getDueSoonNotes(), ...getSubmittedNotes()];
+                            return allNotesStudents.some(student => student.name === name);
+                          }).filter(name =>
+                            name.toLowerCase().includes(notesStudentSearchQuery.toLowerCase())
+                          ).length === 0 && (
+                            <div className="px-4 py-2 text-stone-500 text-sm">
+                              No students found
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                     <button className="flex items-center justify-center w-11 h-11 border border-input bg-transparent rounded-full hover:bg-stone-50 transition-colors">
                       <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
