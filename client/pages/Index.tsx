@@ -1910,15 +1910,17 @@ export default function Index() {
               {activeView === 'all' && (
                 <section className={studentsViewMode === 'list' ? 'h-full flex flex-col' : ''}>
                   {studentsViewMode === 'cards' ? (
-                    <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-start">
-                      {getFilteredUniqueStudents().map((student) => (
-                        <StudentCard
-                          key={student.name}
-                          student={student}
-                          onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
-                          showNextSession={true}
-                        />
-                      ))}
+                    <div className="flex justify-center">
+                      <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-center max-w-full">
+                        {getFilteredUniqueStudents().map((student) => (
+                          <StudentCard
+                            key={student.name}
+                            student={student}
+                            onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
+                            showNextSession={true}
+                          />
+                        ))}
+                      </div>
                     </div>
                   ) : (
                     <div className="rounded-lg border border-stone-200 bg-white flex flex-col overflow-hidden" style={{height: 'calc(100vh - 236px)'}}>
