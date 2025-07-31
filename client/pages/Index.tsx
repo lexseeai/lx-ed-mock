@@ -2076,7 +2076,7 @@ export default function Index() {
                   {/* Today's Sessions Section */}
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-2">
                         <CalendarFold className="w-6 h-6 text-stone-400" />
                         <h2 className="text-xl font-normal text-stone-400 font-lexend">Today's sessions</h2>
                       </div>
