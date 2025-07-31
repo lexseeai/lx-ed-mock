@@ -541,6 +541,12 @@ export default function Index() {
 
   const greeting = getTimeBasedGreeting();
   const GreetingIcon = greeting.icon;
+
+  // Get sessions heading based on time of day
+  const getSessionsHeading = () => {
+    const hour = new Date().getHours();
+    return hour >= 18 ? "Tomorrow's sessions" : "Today's sessions";
+  };
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date(2025, 6, 28)); // July 28, 2025 to match initial selectedDayDate
   const [hideEmptyDays, setHideEmptyDays] = useState(true);
