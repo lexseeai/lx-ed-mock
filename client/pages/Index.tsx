@@ -1990,13 +1990,7 @@ export default function Index() {
                 scrollbarColor: '#d1d5db #f3f4f6'
               }}>
               {activeView === 'home' && (
-                <section>
-                  <div className="text-center">
-                    <p className="text-stone-600 font-lexend text-lg">
-                      Welcome to your dashboard. Use the search above or navigate using the sidebar.
-                    </p>
-                  </div>
-                </section>
+                <></>
               )}
 
               {activeView === 'all' && (
