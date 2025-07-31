@@ -312,16 +312,16 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
           {/* Time-based Greeting - Clickable Home */}
           <div
             className={`flex items-center ${isCollapsed ? 'justify-center' : ''} px-3 py-1 rounded-lg cursor-pointer h-8 ${
-              activeView === 'all' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
+              activeView === 'home' ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-950'
             }`}
             onClick={() => {
-              setActiveView('all');
+              setActiveView('home');
               setShowStudentOverlay(false);
             }}
           >
             <div className="flex items-center space-x-2">
-              <GreetingIcon className={`w-4 h-4 ${activeView === 'all' ? 'text-white' : 'text-white/80'}`} />
-              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'all' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>}
+              <GreetingIcon className={`w-4 h-4 ${activeView === 'home' ? 'text-white' : 'text-white/80'}`} />
+              {!isCollapsed && <span className={`text-sm font-lexend ${activeView === 'home' ? 'text-white' : 'text-white'}`}>{greeting.text}</span>}
             </div>
           </div>
 
