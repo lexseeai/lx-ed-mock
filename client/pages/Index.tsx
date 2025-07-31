@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound, Search, UserRoundPlus, ChevronUp as SortAsc, ChevronDown as SortDesc, ContactRound, LayoutList } from "lucide-react";
+import { UsersRound, NotebookText, LibraryBig, FileAudio, Rabbit, ChevronsUpDown, PanelLeft, Clock, Calendar, Bell, ChevronLeft, ChevronRight, ChevronDown, Haze, SunMedium, MoonStar, X, Maximize2, MoreVertical, Loader, Timer, NotebookPen, CircleCheck, Edit, Pencil, ChevronsLeft, ChevronsRight, ChevronUp, ArrowRight, UserRoundSearch, LoaderCircle, UserRound, Search, UserRoundPlus, ChevronUp as SortAsc, ChevronDown as SortDesc, LayoutGrid, Table } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -1692,26 +1692,28 @@ export default function Index() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     {/* Cards/List Toggle */}
-                    <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
+                    <div className="flex p-0.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center">
                       <button
                         onClick={() => setStudentsViewMode('cards')}
-                        className={`flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                        className={`flex items-center justify-center w-9.5 h-9.5 p-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
                           studentsViewMode === 'cards'
                             ? 'bg-indigo-600 text-white shadow-sm'
                             : 'text-stone-400 hover:text-stone-600'
                         }`}
+                        style={{width: '38px', height: '38px'}}
                       >
-                        <ContactRound className="w-4 h-4" />
+                        <LayoutGrid className="w-5 h-5" />
                       </button>
                       <button
                         onClick={() => setStudentsViewMode('list')}
-                        className={`flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                        className={`flex items-center justify-center w-9.5 h-9.5 p-1.5 rounded-lg text-sm font-medium font-lexend transition-all overflow-hidden ${
                           studentsViewMode === 'list'
                             ? 'bg-indigo-600 text-white shadow-sm'
                             : 'text-stone-400 hover:text-stone-600'
                         }`}
+                        style={{width: '38px', height: '38px'}}
                       >
-                        <LayoutList className="w-4 h-4" />
+                        <Table className="w-5 h-5" />
                       </button>
                     </div>
                     {/* Add Student Button */}
