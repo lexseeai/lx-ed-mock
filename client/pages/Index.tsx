@@ -1347,13 +1347,16 @@ export default function Index() {
                       )}
                     </div>
                   </div>
-                  <div className="w-full" style={{paddingLeft: '4px'}}>
+                  <div className="w-full relative" style={{paddingLeft: '4px'}}>
+                    <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-10">
+                      <Search className="w-5 h-5 text-stone-400" />
+                    </div>
                     <Input
                       type="text"
                       placeholder="What are you looking for?"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="h-12 text-lg font-readex rounded-full px-6"
+                      className="h-12 text-lg font-readex rounded-full border border-stone-300 bg-stone-100 pl-14 pr-6 placeholder:text-stone-500"
                     />
                   </div>
                 </div>
