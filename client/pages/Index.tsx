@@ -2071,7 +2071,127 @@ export default function Index() {
                 scrollbarColor: '#d1d5db #f3f4f6'
               }}>
               {activeView === 'home' && (
-                <></>
+                <div className="space-y-8">
+                  {/* Today's Sessions Section */}
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <CalendarFold className="w-6 h-6 text-stone-400" />
+                        <h2 className="text-xl font-normal text-stone-400 font-lexend">Today's sessions</h2>
+                      </div>
+                      <button
+                        onClick={() => setActiveView('schedule')}
+                        className="flex items-center space-x-1 text-indigo-600 hover:text-indigo-700 transition-colors"
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </button>
+                    </div>
+                    <div className="flex gap-4 overflow-x-auto pb-2">
+                      {/* Alex */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            A
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Alex Rodriguez</div>
+                            <div className="text-sm text-stone-500">3:00 PM</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Emma */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            E
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Emma Davis</div>
+                            <div className="text-sm text-stone-500">4:30 PM</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Marcus */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            M
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Marcus Thompson</div>
+                            <div className="text-sm text-stone-500">6:00 PM</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Late Drafts Section */}
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <Timer className="w-6 h-6 text-stone-400" />
+                        <h2 className="text-xl font-normal text-stone-400 font-lexend">Late drafts</h2>
+                      </div>
+                      <button
+                        onClick={() => setActiveView('sessionnotes')}
+                        className="flex items-center space-x-1 text-indigo-600 hover:text-indigo-700 transition-colors"
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </button>
+                    </div>
+                    <div className="flex gap-4 overflow-x-auto pb-2">
+                      {/* Liam */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            L
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Liam Wilson</div>
+                            <div className="text-sm text-stone-500">Session notes</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Isabella */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-violet-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            I
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Isabella Martinez</div>
+                            <div className="text-sm text-stone-500">Due July 24th</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Sofia */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            S
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Sofia Chen</div>
+                            <div className="text-sm text-stone-500">Due July 23rd</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Marcus */}
+                      <div className="flex-shrink-0 bg-white border border-stone-200 rounded-lg p-4 min-w-[200px]">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                            M
+                          </div>
+                          <div>
+                            <div className="font-medium text-stone-800">Marcus Thompson</div>
+                            <div className="text-sm text-stone-500">Due July 21st</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               )}
 
               {activeView === 'all' && (
