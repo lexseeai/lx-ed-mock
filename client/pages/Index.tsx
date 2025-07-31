@@ -1695,23 +1695,23 @@ export default function Index() {
                     <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
                       <button
                         onClick={() => setStudentsViewMode('cards')}
-                        className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                        className={`flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
                           studentsViewMode === 'cards'
                             ? 'bg-indigo-600 text-white shadow-sm'
                             : 'text-stone-400 hover:text-stone-600'
                         }`}
                       >
-                        Card
+                        <ContactRound className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => setStudentsViewMode('list')}
-                        className={`flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
+                        className={`flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all overflow-hidden ${
                           studentsViewMode === 'list'
                             ? 'bg-indigo-600 text-white shadow-sm'
                             : 'text-stone-400 hover:text-stone-600'
                         }`}
                       >
-                        List
+                        <LayoutList className="w-4 h-4" />
                       </button>
                     </div>
                     {/* Add Student Button */}
