@@ -1889,7 +1889,7 @@ export default function Index() {
                         },
                         'Emma': {
                           next: { time: '3:00pm', date: 'Mon 4 August', status: 'wait' },
-                          previous: { time: '3:00pm', date: 'today, 28 July', status: 'done' }
+                          previous: { time: '3:00pm', date: 'today, 28 July', status: 'in-progress' }
                         },
                         'Isabella': {
                           next: { time: '1:30pm', date: 'Thu 31 July', status: 'wait' },
