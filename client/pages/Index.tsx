@@ -997,7 +997,7 @@ export default function Index() {
   return (
     <TooltipProvider>
       <div className="h-screen bg-indigo-900 flex">
-        <Sidebar activeView={activeView} setActiveView={setActiveView} onThisWeekClick={selectToday} setShowStudentOverlay={setShowStudentOverlay} />
+        <Sidebar activeView={activeView} setActiveView={setActiveView} onThisWeekClick={selectToday} setShowStudentOverlay={setShowStudentOverlay} greeting={greeting} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
