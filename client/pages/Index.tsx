@@ -448,6 +448,21 @@ function Sidebar({ activeView, setActiveView, onThisWeekClick, setShowStudentOve
 export default function Index() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeView, setActiveView] = useState("home");
+
+  // Get time-based greeting
+  const getTimeBasedGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      return { text: 'Good morning', icon: Haze };
+    } else if (hour < 18) {
+      return { text: 'Good afternoon', icon: SunMedium };
+    } else {
+      return { text: 'Good evening', icon: MoonStar };
+    }
+  };
+
+  const greeting = getTimeBasedGreeting();
+  const GreetingIcon = greeting.icon;
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date(2025, 6, 28)); // July 28, 2025 to match initial selectedDayDate
   const [hideEmptyDays, setHideEmptyDays] = useState(true);
