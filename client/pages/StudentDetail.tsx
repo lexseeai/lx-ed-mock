@@ -1568,12 +1568,13 @@ export default function StudentDetail() {
                                       <span
                                         onClick={(e) => {
                                           e.stopPropagation();
+                                          const dateParts = studentContent.nextSessionDate.split(' ');
                                           openNotesOverlay("view", {
-                                            date: "14",
-                                            month: "June",
-                                            day: "14",
+                                            date: dateParts[0],
+                                            month: dateParts[1],
+                                            day: dateParts[0],
                                             year: "2025",
-                                            time: "9:00-9:45am",
+                                            time: studentContent.nextSessionTime,
                                             isCompleted: true,
                                           });
                                         }}
