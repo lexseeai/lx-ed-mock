@@ -1474,7 +1474,11 @@ export default function Index() {
                         className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
                         style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}
                       >
-                        <X className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                        {showHomeDropdown ? (
+                          <X className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                        ) : (
+                          <Plus className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                        )}
                       </button>
                       {showHomeDropdown && (
                         <div className="absolute right-0 top-12 w-56 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden">
@@ -1484,9 +1488,9 @@ export default function Index() {
                                 setShowHomeDropdown(false);
                                 setActiveView('all');
                               }}
-                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-stone-50 transition-colors"
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group"
                             >
-                              <UserRoundPlus className="w-6 h-6 mr-3 text-stone-500" />
+                              <UserRoundPlus className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-base">Add student</span>
                             </button>
                             <button
@@ -1494,19 +1498,19 @@ export default function Index() {
                                 setShowHomeDropdown(false);
                                 setActiveView('sessionnotes');
                               }}
-                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-stone-50 transition-colors"
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group"
                             >
-                              <NotebookPen className="w-6 h-6 mr-3 text-stone-500" />
+                              <NotebookPen className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-base">New session notes</span>
                             </button>
                             <button
                               onClick={() => {
                                 setShowHomeDropdown(false);
                               }}
-                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-stone-50 transition-colors"
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group"
                             >
-                              <FileAudio className="w-4 h-4 mr-3 text-stone-500" />
-                              Create assignment
+                              <FileAudio className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                              <span className="font-lexend text-base">Create assignment</span>
                             </button>
                           </div>
                         </div>
