@@ -405,7 +405,7 @@ export default function StudentDetail() {
                 e.stopPropagation();
                 closeNotesOverlay();
               }}
-              className="p-2 hover:bg-stone-200 rounded-lg transition-colors cursor-pointer bg-white"
+              className="p-2 hover:bg-stone-200 rounded-lg transition-colors cursor-pointer bg-white group"
               style={{
                 position: 'absolute',
                 top: '20px',
