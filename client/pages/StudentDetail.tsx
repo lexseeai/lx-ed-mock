@@ -356,11 +356,16 @@ export default function StudentDetail() {
     if (!showNotesOverlay) return null;
 
     return (
-      <div className="fixed inset-0 z-50 flex items-end justify-center" style={{ background: 'rgba(0, 0, 0, 0.60)' }}>
+      <div
+        className="fixed inset-0 z-50 flex items-end justify-center"
+        style={{ background: 'rgba(0, 0, 0, 0.60)' }}
+        onClick={closeNotesOverlay}
+      >
         {/* Main Notes Card */}
         <div
-          className="w-full max-w-6xl bg-white rounded-t-lg shadow-xl animate-in slide-in-from-bottom duration-300"
+          className="w-full max-w-6xl bg-white rounded-t-lg shadow-xl transform transition-transform duration-300 ease-out translate-y-0"
           style={{ height: '90vh' }}
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-stone-200">
