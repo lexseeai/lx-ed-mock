@@ -1805,7 +1805,7 @@ export default function StudentDetail() {
                           onMouseLeave={() => setIsHoveringObservations(false)}
                         >
                           <CardContent className="p-0">
-                            <div className="flex flex-col gap-3">
+                            <div className="flex flex-col gap-6">
                               {/* Header with icon and copy button */}
                               <div className="flex justify-between items-start">
                                 <div className="flex flex-col gap-0.5">
