@@ -536,7 +536,7 @@ export default function StudentDetail() {
                                     <span className="bg-stone-50 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{padding: '2px 6px', lineHeight: '12px'}}>
                                       14 June 25
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
@@ -678,7 +678,7 @@ export default function StudentDetail() {
                                     <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
                                       <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>21 July 25</span>
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
@@ -700,7 +700,7 @@ export default function StudentDetail() {
                                     <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
                                       <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>21 July 25</span>
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
@@ -722,7 +722,7 @@ export default function StudentDetail() {
                                     <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
                                       <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>19 July 25</span>
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
@@ -744,7 +744,7 @@ export default function StudentDetail() {
                                     <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
                                       <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>18 July 25</span>
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
@@ -766,7 +766,7 @@ export default function StudentDetail() {
                                     <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
                                       <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>16 July 25</span>
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
@@ -788,7 +788,7 @@ export default function StudentDetail() {
                                     <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
                                       <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>14 July 25</span>
                                     </span>
-                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
