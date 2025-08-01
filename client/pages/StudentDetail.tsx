@@ -1559,7 +1559,7 @@ export default function StudentDetail() {
               <div className="flex-1 overflow-y-auto p-8 bg-stone-50 rounded-b-lg">
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 items-stretch">
                       {/* Left Column - Session Cards and For Next Session */}
                       <div className="flex flex-col gap-6">
                         {/* Sessions Group */}
