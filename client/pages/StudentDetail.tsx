@@ -882,7 +882,7 @@ export default function StudentDetail() {
                                 time: '3:00–3:45pm',
                                 isCompleted: false
                               })}
-                              className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:text-stone-600 hover:border-stone-300 transition-colors cursor-pointer"
+                              className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors cursor-pointer"
                             >
                               Add notes
                             </button>
