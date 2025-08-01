@@ -1775,11 +1775,11 @@ export default function StudentDetail() {
                                 {studentContent.nextSessionItems.map(
                                   (item, index) => (
                                     <div key={index} className="flex gap-1.5">
-                                      <div className="pt-0.5">
-                                        <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
+                                      <div className="pt-[3px]">
+                                        <div className="w-3.5 h-3.5 rounded-md border-2 border-stone-700"></div>
                                       </div>
                                       <span
-                                        className="font-lexend text-base leading-5 flex-1"
+                                        className="font-lexend text-sm leading-5 flex-1"
                                         style={{ color: "rgba(41, 37, 36, 1)" }}
                                       >
                                         {item}
