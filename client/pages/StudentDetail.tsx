@@ -273,9 +273,9 @@ export default function StudentDetail() {
     }
 
     switch (activeTab) {
-      case 'next-session':
+      case 'search':
         return { left: 6, width: button1 };
-      case 'observations':
+      case 'snapshot':
         return { left: 6 + button1, width: button2 };
       case 'goals':
         return { left: 6 + button1 + button2, width: button3 };
@@ -284,7 +284,7 @@ export default function StudentDetail() {
       case 'assignments':
         return { left: 6 + button1 + button2 + button3 + button4, width: button5 };
       default:
-        return { left: 6, width: button1 };
+        return { left: 6 + button1, width: button2 };
     }
   };
 
