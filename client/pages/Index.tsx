@@ -2141,19 +2141,21 @@ export default function Index() {
                       </div>
                     </div>
                     <div className="flex gap-4 overflow-x-auto pb-2">
-                      {mockStudents
-                        .filter(student => getSessionReportStatus(student) === 'late')
-                        .map((student) => (
-                        <div key={student.id} className="flex-shrink-0">
-                          <StudentCard
-                            student={student}
-                            onClick={() => {
-                              handleStudentClick(student.id, [student]);
-                            }}
-                            sessionNotesView={true}
-                          />
-                        </div>
-                      ))}
+                      {(() => {
+                        const lateDraftStudents = mockStudents
+                          .filter(student => getSessionReportStatus(student) === 'late');
+                        return lateDraftStudents.map((student) => (
+                          <div key={student.id} className="flex-shrink-0">
+                            <StudentCard
+                              student={student}
+                              onClick={() => {
+                                handleStudentClick(student.id, lateDraftStudents);
+                              }}
+                              sessionNotesView={true}
+                            />
+                          </div>
+                        ));
+                      })()}
                     </div>
                   </div>
                 </div>
