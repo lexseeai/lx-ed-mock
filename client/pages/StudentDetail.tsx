@@ -399,79 +399,96 @@ export default function StudentDetail() {
                 </div>
               </div>
 
-              {/* Tab Navigation */}
+              {/* Tab Navigation / Search */}
               <div className="border-b border-stone-200" style={{padding: '12px 24px 24px'}}>
                 <div className="flex justify-center">
-                  <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
-                    {/* Sliding background indicator */}
-                    {getTabPosition() && (
-                      <div
-                        className="absolute bg-indigo-600 shadow-sm rounded-md"
-                        style={{
-                          height: '32px',
-                          top: '6px',
-                          left: `${getTabPosition()!.left}px`,
-                          width: `${getTabPosition()!.width}px`,
-                          transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
-                        }}
+                  {isSearchMode ? (
+                    /* Search Mode */
+                    <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center w-full max-w-md">
+                      <input
+                        ref={searchInputRef}
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search..."
+                        className="flex-1 px-3 py-1.5 text-sm font-medium font-lexend bg-transparent border-0 outline-none"
                       />
-                    )}
-                    <button
-                      ref={button1RefCallback}
-                      onClick={() => setActiveTab('search')}
-                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'search'
-                          ? 'text-white'
-                          : 'text-stone-400 hover:text-stone-600'
-                      }`}
-                    >
-                      <Search className="w-5 h-5" />
-                    </button>
-                    <button
-                      ref={button2RefCallback}
-                      onClick={() => setActiveTab('snapshot')}
-                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'snapshot'
-                          ? 'text-white'
-                          : 'text-stone-400 hover:text-stone-600'
-                      }`}
-                    >
-                      Snapshot
-                    </button>
-                    <button
-                      ref={button3RefCallback}
-                      onClick={() => setActiveTab('goals')}
-                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'goals'
-                          ? 'text-white'
-                          : 'text-stone-400 hover:text-stone-600'
-                      }`}
-                    >
-                      Goals
-                    </button>
-                    <button
-                      ref={button4RefCallback}
-                      onClick={() => setActiveTab('session-notes')}
-                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'session-notes'
-                          ? 'text-white'
-                          : 'text-stone-400 hover:text-stone-600'
-                      }`}
-                    >
-                      Session notes
-                    </button>
-                    <button
-                      ref={button5RefCallback}
-                      onClick={() => setActiveTab('assignments')}
-                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'assignments'
-                          ? 'text-white'
-                          : 'text-stone-400 hover:text-stone-600'
-                      }`}
-                    >
-                      Assignments
-                    </button>
-                  </div>
+                      <button
+                        onClick={exitSearchMode}
+                        className="flex items-center justify-center px-3 py-1.5 rounded-md text-stone-400 hover:text-stone-600 transition-colors"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
+                    </div>
+                  ) : (
+                    /* Tab Mode */
+                    <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
+                      {/* Sliding background indicator */}
+                      {getTabPosition() && (
+                        <div
+                          className="absolute bg-indigo-600 shadow-sm rounded-md"
+                          style={{
+                            height: '32px',
+                            top: '6px',
+                            left: `${getTabPosition()!.left}px`,
+                            width: `${getTabPosition()!.width}px`,
+                            transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
+                          }}
+                        />
+                      )}
+                      <button
+                        ref={button1RefCallback}
+                        onClick={enterSearchMode}
+                        className="relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 text-stone-400 hover:text-stone-600"
+                      >
+                        <Search className="w-5 h-5" />
+                      </button>
+                      <button
+                        ref={button2RefCallback}
+                        onClick={() => setActiveTab('snapshot')}
+                        className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                          activeTab === 'snapshot'
+                            ? 'text-white'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Snapshot
+                      </button>
+                      <button
+                        ref={button3RefCallback}
+                        onClick={() => setActiveTab('goals')}
+                        className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                          activeTab === 'goals'
+                            ? 'text-white'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Goals
+                      </button>
+                      <button
+                        ref={button4RefCallback}
+                        onClick={() => setActiveTab('session-notes')}
+                        className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                          activeTab === 'session-notes'
+                            ? 'text-white'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Session notes
+                      </button>
+                      <button
+                        ref={button5RefCallback}
+                        onClick={() => setActiveTab('assignments')}
+                        className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                          activeTab === 'assignments'
+                            ? 'text-white'
+                            : 'text-stone-400 hover:text-stone-600'
+                        }`}
+                      >
+                        Assignments
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
