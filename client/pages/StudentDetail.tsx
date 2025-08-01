@@ -708,6 +708,17 @@ export default function StudentDetail() {
         previousSessionDate: "28 July 25",
         nextSessionTime: "9:00-9:45am",
         previousSessionTime: "9:00-9:45am"
+      },
+      "16": { // Carlos (duplicate)
+        nextSessionItems: [
+          "Solve projectile motion problems using kinematic equations.",
+          "Apply conservation of momentum in collision scenarios.",
+          "Practice energy calculations for pendulum and spring systems."
+        ],
+        nextSessionDate: "3 Aug 25",
+        previousSessionDate: "29 July 25",
+        nextSessionTime: "8:00-8:45pm",
+        previousSessionTime: "8:00-8:45pm"
       }
     };
 
