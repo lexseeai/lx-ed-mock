@@ -357,13 +357,24 @@ export default function StudentDetail() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button size="sm" variant="outline" className="border-stone-200">
-                      <MoreVertical className="w-4 h-4" />
-                    </Button>
-                    <Button size="sm" className="bg-indigo-600 hover:bg-indigo-700">
-                      <Plus className="w-4 h-4 mr-2" />
+                  <div className="flex items-center gap-2.5">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700"
+                    >
                       Actions
+                      <svg className="w-6 h-6 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M7 15L12 20L17 15" />
+                        <path d="M7 9L12 4L17 9" />
+                      </svg>
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="w-11 h-11 rounded-full border border-stone-200 bg-white hover:bg-stone-50 p-0 flex items-center justify-center"
+                      variant="outline"
+                    >
+                      <Plus className="w-6 h-6 text-indigo-600" strokeWidth={4} />
                     </Button>
                   </div>
                 </div>
