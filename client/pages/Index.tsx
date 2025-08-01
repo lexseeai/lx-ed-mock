@@ -232,15 +232,7 @@ const mockStudents: Student[] = [
     sessionDate: new Date(2025, 6, 28, 15, 0, 0),
     sessionReportCompleted: false,
   }, // In progress (3pm, within window, not completed)
-  {
-    id: "15",
-    name: "Marcus",
-    subject: "English Tutoring",
-    sessionTime: "7:00pm, July 28",
-    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus",
-    sessionDate: new Date(2025, 6, 28, 19, 0, 0),
-    sessionReportCompleted: false,
-  }, // Waiting (7pm, future)
+  // Marcus July 28 session removed - next session is August 5
 
   // July 29th - all waiting
   {
@@ -284,10 +276,10 @@ const mockStudents: Student[] = [
   {
     id: "20",
     name: "Liam",
-    subject: "Math Tutoring",
-    sessionTime: "2:00pm, July 31",
+    subject: "Chemistry Tutoring",
+    sessionTime: "9:00am, August 6",
     avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam",
-    sessionDate: new Date(2025, 6, 31),
+    sessionDate: new Date(2025, 7, 6),
     sessionReportCompleted: false,
     email: "liam.davis@email.com",
   }, // Waiting
