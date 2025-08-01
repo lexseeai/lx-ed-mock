@@ -4390,7 +4390,7 @@ export default function Index() {
                       <div className="flex items-center gap-2 mb-4">
                         <Timer className="w-6 h-6 text-stone-400" />
                         <h2 className="text-xl font-normal text-stone-400 font-lexend">
-                          Late drafts
+                          Late session notes
                         </h2>
                         <span className="text-sm text-stone-400 font-lexend">
                           (
