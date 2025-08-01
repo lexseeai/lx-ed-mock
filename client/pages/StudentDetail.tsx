@@ -759,6 +759,50 @@ export default function StudentDetail() {
         previousSessionDate: "29 July 25",
         nextSessionTime: "8:00-8:45pm",
         previousSessionTime: "8:00-8:45pm"
+      },
+      "17": { // Maya
+        nextSessionItems: [
+          "Study cellular respiration pathways and ATP production mechanisms.",
+          "Compare photosynthesis and cellular respiration energy cycles.",
+          "Practice genetics problems with Punnett squares and inheritance patterns."
+        ],
+        nextSessionDate: "5 Aug 25",
+        previousSessionDate: "31 July 25",
+        nextSessionTime: "10:00-10:45am",
+        previousSessionTime: "10:00-10:45am"
+      },
+      "19": { // Zoe
+        nextSessionItems: [
+          "Practice chord progressions and harmonic analysis techniques.",
+          "Study rhythm patterns in different musical time signatures.",
+          "Compose a short melody using pentatonic and major scales."
+        ],
+        nextSessionDate: "6 Aug 25",
+        previousSessionDate: "31 July 25",
+        nextSessionTime: "4:00-4:45pm",
+        previousSessionTime: "4:00-4:45pm"
+      },
+      "28": { // Luna
+        nextSessionItems: [
+          "Analyze symbolism and themes in contemporary poetry collections.",
+          "Practice close reading techniques for complex narrative structures.",
+          "Write analytical essays comparing different literary movements."
+        ],
+        nextSessionDate: "10 Aug 25",
+        previousSessionDate: "6 Aug 25",
+        nextSessionTime: "1:00-1:45pm",
+        previousSessionTime: "1:00-1:45pm"
+      },
+      "10": { // Sofia
+        nextSessionItems: [
+          "Examine primary source documents from the Industrial Revolution.",
+          "Compare different historical perspectives on social reform movements.",
+          "Practice constructing historical arguments with supporting evidence."
+        ],
+        nextSessionDate: "7 Aug 25",
+        previousSessionDate: "23 July 25",
+        nextSessionTime: "10:30-11:15am",
+        previousSessionTime: "10:30-11:15am"
       }
     };
 
