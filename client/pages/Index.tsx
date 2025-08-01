@@ -346,11 +346,27 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
         {/* Bottom section with session report badge - removed for showNextSession */}
         {!showNextSession && (
           <div className="flex justify-center px-1.5 pb-1.5">
-            <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-              <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                const mode = sessionStatus === 'done' ? 'view' : sessionStatus === 'waiting' ? 'add' : 'edit';
+                const sessionDate = new Date(timeSlot);
+                openNotesOverlay(mode, {
+                  date: sessionDate.getDate().toString(),
+                  month: sessionDate.toLocaleDateString('en-US', { month: 'long' }),
+                  day: sessionDate.getDate().toString(),
+                  year: sessionDate.getFullYear().toString(),
+                  time: timeSlot,
+                  isCompleted: sessionStatus === 'done',
+                  studentName: student.name
+                });
+              }}
+              className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white hover:bg-indigo-600 hover:border-indigo-600 transition-colors group"
+            >
+              <span className="text-stone-400 group-hover:text-white font-lexend text-xs font-normal leading-4 transition-colors">
                 {sessionStatus === 'done' ? 'View notes' : sessionStatus === 'waiting' ? 'Add notes' : 'Edit notes'}
               </span>
-            </div>
+            </button>
           </div>
         )}
       </CardContent>
