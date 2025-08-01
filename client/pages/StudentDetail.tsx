@@ -351,7 +351,7 @@ export default function StudentDetail() {
                           </AvatarFallback>
                         </Avatar>
                       </div>
-                      <div style={{marginLeft: '8px'}}>
+                      <div>
                         <h1 className="text-2xl font-bold text-stone-900 font-lexend">{student.name}</h1>
                         <p className="text-sm text-stone-600 font-lexend">{student.subject}</p>
                       </div>
