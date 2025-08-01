@@ -2804,6 +2804,25 @@ export default function Index() {
                         return (
                           <button
                             key={session.key}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const mode = session.status === 'done' ? 'view' : session.status === 'wait' ? 'add' : 'edit';
+                              const student = getSelectedStudent();
+                              if (student) {
+                                // Parse session date from the session data
+                                const dateStr = session.date.replace('today, ', '').replace(' August', ' August').replace(' July', ' July');
+                                const sessionDate = new Date(dateStr + ', 2025');
+                                openNotesOverlay(mode, {
+                                  date: sessionDate.getDate().toString(),
+                                  month: sessionDate.toLocaleDateString('en-US', { month: 'long' }),
+                                  day: sessionDate.getDate().toString(),
+                                  year: '2025',
+                                  time: session.time,
+                                  isCompleted: session.status === 'done',
+                                  studentName: student.name
+                                });
+                              }
+                            }}
                             className="group flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer text-left w-auto"
                             style={{margin: '0 36px 0 28px'}}
                           >
@@ -2819,8 +2838,8 @@ export default function Index() {
                               </span>
                             </div>
                             <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                              <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
-                                <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
+                              <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white hover:bg-indigo-600 hover:border-indigo-600 transition-colors group/button">
+                                <span className="text-stone-400 group-hover/button:text-white font-lexend text-xs font-normal leading-4 transition-colors">
                                   {buttonText}
                                 </span>
                               </div>
