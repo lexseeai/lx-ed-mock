@@ -363,8 +363,8 @@ export default function StudentDetail() {
       >
         {/* Main Notes Card */}
         <div
-          className="w-full max-w-6xl bg-white rounded-lg shadow-xl transform transition-transform duration-300 ease-out translate-y-0"
-          style={{ height: '90vh' }}
+          className="w-[90%] max-w-6xl bg-white rounded-lg shadow-xl transform transition-transform duration-300 ease-out translate-y-0"
+          style={{ height: '90%' }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
