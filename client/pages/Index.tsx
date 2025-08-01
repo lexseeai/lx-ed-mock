@@ -1327,6 +1327,15 @@ export default function Index() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeView, setActiveView] = useState("home");
 
+  // Check for return view from sessionStorage (e.g., when coming back from student detail page)
+  useEffect(() => {
+    const returnToView = sessionStorage.getItem('returnToView');
+    if (returnToView) {
+      setActiveView(returnToView);
+      sessionStorage.removeItem('returnToView');
+    }
+  }, []);
+
   // Get time-based greeting
   const getTimeBasedGreeting = () => {
     const hour = new Date().getHours();
