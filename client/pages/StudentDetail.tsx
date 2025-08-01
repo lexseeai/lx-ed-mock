@@ -533,7 +533,7 @@ export default function StudentDetail() {
                                 <div className="flex items-center gap-1 pl-1">
                                   <span className="text-stone-400 font-lexend text-sm">From notes</span>
                                   <span className="relative flex group" style={{lineHeight: '16px', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                    <span className="group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{backgroundColor: 'rgba(250, 250, 249, 1)', padding: '2px 6px', lineHeight: '12px'}}>
+                                    <span className="bg-stone-50 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{padding: '2px 6px', lineHeight: '12px'}}>
                                       14 June 25
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
