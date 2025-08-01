@@ -340,7 +340,7 @@ export default function StudentDetail() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="p-2 group"
+                      className="p-2 group hover:bg-transparent"
                       onClick={handleBackClick}
                     >
                       <ArrowLeft className="w-5 h-5 text-stone-300 group-hover:text-indigo-600 transition-colors" />
