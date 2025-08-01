@@ -238,6 +238,8 @@ export default function StudentDetail() {
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
   const [notesMode, setNotesMode] = useState<'view' | 'add' | 'edit'>('view');
   const [selectedSession, setSelectedSession] = useState<SessionData | null>(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Search mode handlers
   const enterSearchMode = () => {
