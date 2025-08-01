@@ -392,19 +392,18 @@ export default function StudentDetail() {
                 <p className="text-stone-700 font-lexend">July 28, 2025, 9:00–9:45am</p>
               </div>
             </div>
-            <button
-              type="button"
+            <div
               onClick={(e) => {
                 console.log('Close button clicked');
                 e.preventDefault();
                 e.stopPropagation();
                 closeNotesOverlay();
               }}
-              className="p-2 hover:bg-stone-100 rounded-lg transition-colors relative z-10"
-              style={{ cursor: 'pointer' }}
+              className="p-2 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
+              style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 9999 }}
             >
-              <X className="w-6 h-6 text-stone-700 pointer-events-none" />
-            </button>
+              <X className="w-6 h-6 text-stone-700" />
+            </div>
           </div>
 
           {/* Content Area */}
