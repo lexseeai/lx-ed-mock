@@ -386,7 +386,7 @@ export default function StudentDetail() {
           </div>
 
           {/* Content Area */}
-          <div className="flex flex-1 min-h-0">
+          <div className="flex flex-1 overflow-hidden">
             {/* Main Content */}
             <div className="flex-1 flex flex-col min-h-0">
               {/* Toolbar */}
