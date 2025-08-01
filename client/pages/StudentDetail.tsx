@@ -488,29 +488,28 @@ export default function StudentDetail() {
                           const buttonText = getButtonText(session.status);
 
                           return (
-                            <button
-                              key={session.key}
-                              className="group flex items-center justify-between gap-2 p-3 rounded-lg hover:bg-stone-50 transition-colors cursor-pointer text-left w-full border border-transparent hover:border-stone-200"
-                            >
-                              <div className="flex items-center gap-3">
-                                <div className="w-6 flex justify-center">
-                                  <IconComponent className={`w-5 h-5 ${iconConfig.color}`} />
-                                </div>
-                                <span className="text-lg font-lexend leading-5" style={{
-                                  fontWeight: session.key === 'previous' ? '400' : '600',
-                                  color: session.key === 'previous' ? 'rgba(87, 83, 78, 1)' : 'rgba(68, 64, 60, 1)'
-                                }}>
-                                  {session.time}, {session.date}
-                                </span>
-                              </div>
-                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div className="flex items-center px-2 py-1 border border-stone-200 rounded bg-white">
-                                  <span className="text-stone-400 font-lexend text-sm font-normal">
-                                    {buttonText}
+                            <Card key={session.key} className="group hover:border-stone-300 transition-colors cursor-pointer">
+                              <CardContent className="flex items-center justify-between gap-2 p-4">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-6 flex justify-center">
+                                    <IconComponent className={`w-5 h-5 ${iconConfig.color}`} />
+                                  </div>
+                                  <span className="text-lg font-lexend leading-5" style={{
+                                    fontWeight: session.key === 'previous' ? '400' : '600',
+                                    color: session.key === 'previous' ? 'rgba(87, 83, 78, 1)' : 'rgba(68, 64, 60, 1)'
+                                  }}>
+                                    {session.time}, {session.date}
                                   </span>
                                 </div>
-                              </div>
-                            </button>
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                  <div className="flex items-center px-2 py-1 border border-stone-200 rounded bg-white">
+                                    <span className="text-stone-400 font-lexend text-sm font-normal">
+                                      {buttonText}
+                                    </span>
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
                           );
                         });
                       })()}
