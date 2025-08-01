@@ -400,7 +400,9 @@ export default function StudentDetail() {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-stone-900 font-lexend">{student.name}</h2>
-                <p className="text-stone-700 font-lexend">July 28, 2025, 9:00–9:45am</p>
+                <p className="text-stone-700 font-lexend">
+                  {selectedSession ? `${selectedSession.month} ${selectedSession.day}, ${selectedSession.year}, ${selectedSession.time}` : 'July 28, 2025, 9:00–9:45am'}
+                </p>
               </div>
             </div>
             <div
