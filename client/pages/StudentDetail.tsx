@@ -405,7 +405,7 @@ export default function StudentDetail() {
                 <div className="flex justify-center">
                   {isSearchMode ? (
                     // Search Mode
-                    <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center w-full max-w-md focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600 transition-all">
+                    <div className="relative flex p-1.5 border border-input rounded-xl bg-white overflow-hidden h-auto self-center w-full max-w-md focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 transition-all">
                       {/* Search Icon - Fixed Position */}
                       <div className="flex items-center justify-center px-3 py-1.5">
                         <Search className="w-5 h-5 text-stone-400" />
