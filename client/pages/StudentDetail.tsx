@@ -1668,7 +1668,7 @@ export default function StudentDetail() {
 
                         {/* For Next Session */}
                         <Card
-                          className="p-5"
+                          className="p-5 flex-1"
                           style={{ width: "312px" }}
                           onMouseEnter={() => setIsHoveringNextSession(true)}
                           onMouseLeave={() => setIsHoveringNextSession(false)}
