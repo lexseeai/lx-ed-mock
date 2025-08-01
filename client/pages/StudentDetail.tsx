@@ -388,25 +388,25 @@ export default function StudentDetail() {
                     )}
                     <button
                       ref={button1RefCallback}
-                      onClick={() => setActiveTab('next-session')}
+                      onClick={() => setActiveTab('search')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'next-session'
+                        activeTab === 'search'
                           ? 'text-white'
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
-                      Next session
+                      <Search className="w-5 h-5" />
                     </button>
                     <button
                       ref={button2RefCallback}
-                      onClick={() => setActiveTab('observations')}
+                      onClick={() => setActiveTab('snapshot')}
                       className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
-                        activeTab === 'observations'
+                        activeTab === 'snapshot'
                           ? 'text-white'
                           : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
-                      Observations
+                      Snapshot
                     </button>
                     <button
                       ref={button3RefCallback}
