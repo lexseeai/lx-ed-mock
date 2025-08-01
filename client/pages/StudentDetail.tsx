@@ -601,28 +601,30 @@ export default function StudentDetail() {
                               </div>
 
                               {/* Copy Button */}
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="flex items-center gap-1 px-3 py-1.5 h-auto border-stone-200"
-                                onClick={() => {
-                                  const observationsText = [
-                                    "Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.",
-                                    "Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.",
-                                    "Demonstrated improved accuracy in identifying decimal positions with visual support.",
-                                    "Made progress toward independent problem-solving with fewer rounding errors.",
-                                    "Joined the session late but used remaining time effectively to reinforce key math skills.",
-                                    "Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies."
-                                  ].join('\n\n');
-                                  navigator.clipboard.writeText(observationsText);
-                                }}
-                              >
-                                <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor">
-                                  <path d="M10 4H5C4.44772 4 4 4.44772 4 5V10C4 10.5523 4.44772 11 5 11H10C10.5523 11 11 10.5523 11 10V5C11 4.44772 10.5523 4 10 4Z"/>
-                                  <path d="M2 8C1.45 8 1 7.55 1 7V2C1 1.45 1.45 1 2 1H7C7.55 1 8 1.45 8 2"/>
-                                </svg>
-                                <span className="text-sm">Copy</span>
-                              </Button>
+                              {isHoveringObservations && (
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="flex items-center gap-1 px-3 py-1.5 h-auto border-stone-200"
+                                  onClick={() => {
+                                    const observationsText = [
+                                      "Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.",
+                                      "Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.",
+                                      "Demonstrated improved accuracy in identifying decimal positions with visual support.",
+                                      "Made progress toward independent problem-solving with fewer rounding errors.",
+                                      "Joined the session late but used remaining time effectively to reinforce key math skills.",
+                                      "Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies."
+                                    ].join('\n\n');
+                                    navigator.clipboard.writeText(observationsText);
+                                  }}
+                                >
+                                  <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                                    <path d="M10 4H5C4.44772 4 4 4.44772 4 5V10C4 10.5523 4.44772 11 5 11H10C10.5523 11 11 10.5523 11 10V5C11 4.44772 10.5523 4 10 4Z"/>
+                                    <path d="M2 8C1.45 8 1 7.55 1 7V2C1 1.45 1.45 1 2 1H7C7.55 1 8 1.45 8 2"/>
+                                  </svg>
+                                  <span className="text-sm">Copy</span>
+                                </Button>
+                              )}
                             </div>
 
                             {/* Observations List */}
