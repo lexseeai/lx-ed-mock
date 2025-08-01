@@ -446,210 +446,232 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className="flex-1 overflow-y-auto px-16 pt-8 pb-12">
-                {activeTab === 'next-session' && (
-                  <div className="space-y-12 max-w-4xl">
-                    {/* Session Timeline */}
-                    <div className="space-y-6" style={{margin: '0 36px 0 28px'}}>
-                      {(() => {
-                        // Mock session data similar to sidebar
-                        const sessions = {
-                          next: { time: '9:00am', date: 'August 4', status: 'wait' },
-                          current: { time: '3:00pm', date: 'July 28', status: 'active' },
-                          previous: { time: '9:00am', date: 'July 21', status: 'done' }
-                        };
+              <div className="flex-1 overflow-y-auto p-8 bg-stone-50">
+                {activeTab === 'snapshot' && (
+                  <div className="flex gap-6">
+                    {/* Left Sidebar - Session Cards */}
+                    <div className="flex flex-col gap-6">
+                      {/* Sessions Group */}
+                      <div className="flex flex-col gap-3">
+                        {/* July 28 Card */}
+                        <Card className="w-[150px] h-[150px] p-3 flex flex-col justify-between">
+                          <CardContent className="p-0 flex flex-col gap-1.5">
+                            <div className="text-stone-400 font-lexend text-base font-medium">July</div>
+                            <div className="text-stone-700 font-lexend text-2xl font-black">28</div>
+                            <div className="text-stone-700 font-lexend text-base font-medium">Mon</div>
 
-                        const getSessionIcon = (status: string) => {
-                          switch (status) {
-                            case 'done':
-                              return { icon: CircleCheck, color: 'text-green-600' };
-                            case 'active':
-                              return { icon: LoaderCircle, color: 'text-indigo-600' };
-                            case 'wait':
-                            default:
-                              return { icon: Clock, color: 'text-stone-400' };
-                          }
-                        };
+                            {/* Session Time */}
+                            <div className="flex items-center gap-1 py-0.5">
+                              <CircleCheck className="w-3 h-3 text-green-500" />
+                              <span className="text-stone-700 font-lexend text-xs">3:00–3:45AM</span>
+                            </div>
+                          </CardContent>
 
-                        const getButtonText = (status: string) => {
-                          if (status === 'done') return 'View notes';
-                          if (status === 'wait') return 'Add notes';
-                          return 'Edit notes';
-                        };
-
-                        const sessions_to_show = [];
-                        if (sessions.next) sessions_to_show.push({ ...sessions.next, key: 'next' });
-                        if (sessions.current) sessions_to_show.push({ ...sessions.current, key: 'current' });
-                        if (sessions.previous) sessions_to_show.push({ ...sessions.previous, key: 'previous' });
-
-                        return sessions_to_show.map((session, index) => {
-                          const iconConfig = getSessionIcon(session.status);
-                          const IconComponent = iconConfig.icon;
-                          const buttonText = getButtonText(session.status);
-
-                          return (
-                            <Card key={session.key} className="group hover:border-stone-300 transition-colors cursor-pointer">
-                              <CardContent className="flex items-center justify-between gap-2 p-4">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-6 flex justify-center">
-                                    <IconComponent className={`w-5 h-5 ${iconConfig.color}`} />
-                                  </div>
-                                  <span className="text-lg font-lexend leading-5" style={{
-                                    fontWeight: session.key === 'previous' ? '400' : '600',
-                                    color: session.key === 'previous' ? 'rgba(87, 83, 78, 1)' : 'rgba(68, 64, 60, 1)'
-                                  }}>
-                                    {session.time}, {session.date}
-                                  </span>
-                                </div>
-                                <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                                  <div className="flex items-center px-2 py-1 border border-stone-200 rounded bg-white">
-                                    <span className="text-stone-400 font-lexend text-sm font-normal">
-                                      {buttonText}
-                                    </span>
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-                          );
-                        });
-                      })()}
-                    </div>
-
-                    {/* Next Session Tasks */}
-                    <div>
-                      <div className="pb-4">
-                        <h2 className="text-2xl font-bold text-stone-900 font-lexend leading-7">
-                          Next session
-                        </h2>
-                        <p className="text-sm font-normal text-stone-400 font-lexend mt-1">
-                          From session notes 21 July 2025
-                        </p>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <div className="w-5 h-5 rounded-md border-2 border-stone-700"></div>
+                          {/* View Notes Button */}
+                          <div className="flex justify-center pb-1.5">
+                            <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend">
+                              View notes
+                            </div>
                           </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <div className="w-5 h-5 rounded-md border-2 border-stone-700"></div>
+                        </Card>
+
+                        {/* August 4 Card */}
+                        <Card className="w-[150px] h-[150px] p-3 flex flex-col justify-between">
+                          <CardContent className="p-0 flex flex-col gap-1.5">
+                            <div className="text-stone-400 font-lexend text-base font-medium">August</div>
+                            <div className="text-stone-700 font-lexend text-2xl font-black">4</div>
+                            <div className="text-stone-700 font-lexend text-base font-medium">Mon</div>
+
+                            {/* Session Time */}
+                            <div className="flex items-center gap-1 py-0.5">
+                              <Clock className="w-3 h-3 text-stone-700" />
+                              <span className="text-stone-700 font-lexend text-xs">3:00–3:45AM</span>
+                            </div>
+                          </CardContent>
+
+                          {/* Add Notes Button */}
+                          <div className="flex justify-center pb-1.5">
+                            <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend">
+                              Add notes
+                            </div>
                           </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Apply 2D shape formulas in word problems to build real-world problem-solving skills.
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <div className="w-5 h-5 rounded-md border-2 border-stone-700"></div>
-                          </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Introduce multi-step problems involving both perimeter/area and decimal rounding.
-                          </p>
-                        </div>
+                        </Card>
                       </div>
                     </div>
 
-                    {/* Observations */}
-                    <div id="observations-section">
-                      <div className="pb-4">
-                        <h2 className="text-2xl font-bold text-stone-900 font-lexend leading-7">
-                          Observations
-                        </h2>
-                        <p className="text-sm font-normal text-stone-400 font-lexend mt-1">
-                          From the last 7 sessions
-                        </p>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <ArrowRight className="w-5 h-5 text-stone-700" />
+                    {/* Main Content Area */}
+                    <div className="flex-1 space-y-6">
+                      {/* For Next Session */}
+                      <Card className="p-5">
+                        <CardContent className="p-0">
+                          <div className="flex flex-col gap-3">
+                            {/* Header with icon */}
+                            <div className="flex items-start gap-1.5">
+                              <svg className="w-6 h-6 text-stone-700 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M7 18V12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12V18"/>
+                                <path d="M5 21C5 21.2652 5.10536 21.5196 5.29289 21.7071C5.48043 21.8946 5.73478 22 6 22H18C18.2652 22 18.5196 21.8946 18.7071 21.7071C18.8946 21.5196 19 21.2652 19 21V20C19 19.4696 18.7893 18.9609 18.4142 18.5858C18.0391 18.2107 17.5304 18 17 18H7C6.46957 18 5.96086 18.2107 5.58579 18.5858C5.21071 18.9609 5 19.4696 5 20V21Z"/>
+                                <path d="M21 12H22"/>
+                                <path d="M18.5 4.5L18 5"/>
+                                <path d="M2 12H3"/>
+                                <path d="M12 2V3"/>
+                                <path d="M4.92871 4.92871L5.63571 5.63571"/>
+                                <path d="M12 12V18"/>
+                              </svg>
+                              <div>
+                                <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">For next session</h2>
+                                <div className="flex items-center gap-1 mt-0.5">
+                                  <span className="text-stone-400 font-lexend text-sm">From session notes</span>
+                                  <div className="bg-stone-100 rounded-full px-2 py-1">
+                                    <span className="text-stone-400 font-lexend text-xs">14 June 25</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Task List */}
+                            <div className="space-y-3 pl-1.5">
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Apply 2D shape formulas in word problems to build real-world problem-solving skills.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Introduce multi-step problems involving both perimeter/area and decimal rounding.
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.{' '}
-                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px'}}>
-                              <span className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer text-xs">
-                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal">21 July 25</span>
-                              </span>
-                            </span>
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <ArrowRight className="w-5 h-5 text-stone-700" />
+                        </CardContent>
+                      </Card>
+
+                      {/* Observations */}
+                      <Card className="p-5 min-w-[500px] max-w-[650px] flex-1">
+                        <CardContent className="p-0">
+                          <div className="flex flex-col gap-3">
+                            {/* Header with icon and copy button */}
+                            <div className="flex justify-between items-start">
+                              <div className="flex items-start gap-1.5">
+                                <svg className="w-6 h-6 text-stone-900 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <path d="M16 2V4"/>
+                                  <path d="M17.915 22C17.915 20.4087 17.2829 18.8826 16.1577 17.7574C15.0325 16.6321 13.5063 16 11.915 16C10.3237 16 8.79762 16.6321 7.6724 17.7574C6.54718 18.8826 5.91504 20.4087 5.91504 22"/>
+                                  <path d="M8 2V4"/>
+                                  <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"/>
+                                  <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"/>
+                                </svg>
+                                <div>
+                                  <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">Observations</h2>
+                                  <span className="text-stone-400 font-lexend text-sm">From the last 7 sessions</span>
+                                </div>
+                              </div>
+
+                              {/* Copy Button */}
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="flex items-center gap-1 px-3 py-1.5 h-auto border-stone-200"
+                                onClick={() => {
+                                  const observationsText = [
+                                    "Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.",
+                                    "Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.",
+                                    "Demonstrated improved accuracy in identifying decimal positions with visual support.",
+                                    "Made progress toward independent problem-solving with fewer rounding errors.",
+                                    "Joined the session late but used remaining time effectively to reinforce key math skills.",
+                                    "Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies."
+                                  ].join('\n\n');
+                                  navigator.clipboard.writeText(observationsText);
+                                }}
+                              >
+                                <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                                  <path d="M10 4H5C4.44772 4 4 4.44772 4 5V10C4 10.5523 4.44772 11 5 11H10C10.5523 11 11 10.5523 11 10V5C11 4.44772 10.5523 4 10 4Z"/>
+                                  <path d="M2 8C1.45 8 1 7.55 1 7V2C1 1.45 1.45 1 2 1H7C7.55 1 8 1.45 8 2"/>
+                                </svg>
+                                <span className="text-sm">Copy</span>
+                              </Button>
+                            </div>
+
+                            {/* Observations List */}
+                            <div className="space-y-3 pl-1.5">
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Demonstrated improved accuracy in identifying decimal positions with visual support.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Made progress toward independent problem-solving with fewer rounding errors.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Joined the session late but used remaining time effectively to reinforce key math skills.
+                                </span>
+                              </div>
+
+                              <div className="flex gap-1.5">
+                                <div className="pt-0.5">
+                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                </div>
+                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.{' '}
-                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px'}}>
-                              <span className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer text-xs">
-                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal">21 July 25</span>
-                              </span>
-                            </span>
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <ArrowRight className="w-5 h-5 text-stone-700" />
-                          </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Demonstrated improved accuracy in identifying decimal positions with visual support.{' '}
-                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px'}}>
-                              <span className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer text-xs">
-                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal">14 July 25</span>
-                              </span>
-                            </span>
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <ArrowRight className="w-5 h-5 text-stone-700" />
-                          </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Made progress toward independent problem-solving with fewer rounding errors.{' '}
-                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px'}}>
-                              <span className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer text-xs">
-                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal">7 July 25</span>
-                              </span>
-                            </span>
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <ArrowRight className="w-5 h-5 text-stone-700" />
-                          </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Joined the session late but used remaining time effectively to reinforce key math skills.{' '}
-                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px'}}>
-                              <span className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer text-xs">
-                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal">30 June 25</span>
-                              </span>
-                            </span>
-                          </p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="pt-1">
-                            <ArrowRight className="w-5 h-5 text-stone-700" />
-                          </div>
-                          <p className="text-lg font-normal text-stone-900 font-lexend leading-6">
-                            Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.{' '}
-                            <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px'}}>
-                              <span className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer text-xs">
-                                <span className="text-stone-400 group-hover:text-white font-lexend font-normal">23 June 25</span>
-                              </span>
-                            </span>
-                          </p>
-                        </div>
-                      </div>
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
                 )}
 
-                {activeTab === 'observations' && (
+                {activeTab === 'search' && (
                   <div className="text-center py-12">
-                    <p className="text-stone-500 font-lexend">Observations content coming soon...</p>
+                    <p className="text-stone-500 font-lexend">Search functionality coming soon...</p>
                   </div>
                 )}
 
