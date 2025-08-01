@@ -844,7 +844,24 @@ export default function Index() {
   const handleExpandStudent = () => {
     if (selectedStudentId) {
       setShowStudentOverlay(false);
-      navigate(`/student/${selectedStudentId}`);
+      // Map to the correct student ID for the detail page
+      const student = allStudents.find(s => s.id === selectedStudentId);
+      if (student) {
+        // Map student names to their detail page IDs
+        const studentIdMap: Record<string, string> = {
+          'Alex': '23',
+          'Emma': '2',
+          'Marcus': '3',
+          'Isabella': '4',
+          'Carlos': '5',
+          'Daniel': '6',
+          'Liam': '7',
+          'Kai': '8',
+          'Oliver': '9'
+        };
+        const detailPageId = studentIdMap[student.name] || selectedStudentId;
+        navigate(`/student/${detailPageId}`);
+      }
     }
   };
 
