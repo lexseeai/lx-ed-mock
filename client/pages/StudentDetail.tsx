@@ -219,6 +219,19 @@ export default function StudentDetail() {
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
 
+  // Search mode handlers
+  const enterSearchMode = () => {
+    setIsSearchMode(true);
+    setTimeout(() => {
+      searchInputRef.current?.focus();
+    }, 10);
+  };
+
+  const exitSearchMode = () => {
+    setIsSearchMode(false);
+    setSearchQuery("");
+  };
+
   // Tab measurement state and refs for sliding indicator
   const [buttonMeasurements, setButtonMeasurements] = useState<{
     button1?: number;
