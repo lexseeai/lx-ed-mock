@@ -576,6 +576,15 @@ export default function Index() {
   const [activeTab, setActiveTab] = useState('in-progress');
   const [studentDetailTab, setStudentDetailTab] = useState('snapshot');
   const [isStudentSearchMode, setIsStudentSearchMode] = useState(false);
+
+  // Tab measurement state and refs for sliding indicator
+  const [studentTabMeasurements, setStudentTabMeasurements] = useState<{
+    search?: number;
+    snapshot?: number;
+    goals?: number;
+    sessionNotes?: number;
+    assignments?: number;
+  }>({});
   const [studentPanelSearchQuery, setStudentPanelSearchQuery] = useState("");
   const studentPanelSearchInputRef = useRef<HTMLInputElement>(null);
 
