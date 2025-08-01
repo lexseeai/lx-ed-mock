@@ -1938,6 +1938,10 @@ export default function Index() {
           Liam: "7",
           Kai: "8",
           Oliver: "9",
+          Maya: "17",
+          Zoe: "19",
+          Luna: "28",
+          Sofia: "10",
         };
         const detailPageId = studentIdMap[student.name] || selectedStudentId;
         navigate(`/student/${detailPageId}`);
