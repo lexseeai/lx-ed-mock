@@ -1305,12 +1305,12 @@ function Sidebar({
           <div className="flex items-center space-x-2">
             <Avatar className="w-8 h-8 rounded-xl">
               <AvatarFallback className="bg-stone-200 text-stone-600 text-xs rounded-xl">
-                JS
+                JR
               </AvatarFallback>
             </Avatar>
             {!isCollapsed && (
               <span className="text-sm font-medium text-white font-lexend">
-                John Smith
+                Jessica Reed
               </span>
             )}
           </div>
@@ -2947,7 +2947,7 @@ export default function Index() {
                       <div className="flex items-center">
                         <GreetingIcon className="w-12 h-12 text-indigo-600" />
                         <h1 className="text-4xl font-bold text-stone-800 font-lexend ml-3">
-                          {greeting.text}, John
+                          {greeting.text}, Jessica
                         </h1>
                       </div>
                       <div className="relative" ref={homeDropdownRef}>
