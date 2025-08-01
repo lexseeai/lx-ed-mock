@@ -1872,7 +1872,24 @@ export default function Index() {
   ) => {
     // If we're on the Students view, navigate to full page
     if (activeView === "all") {
-      navigate(`/student/${studentId}`);
+      // Map to the correct student ID for the detail page
+      const student = allStudents.find((s) => s.id === studentId);
+      if (student) {
+        // Map student names to their detail page IDs
+        const studentIdMap: Record<string, string> = {
+          Alex: "23",
+          Emma: "2",
+          Marcus: "3",
+          Isabella: "4",
+          Carlos: "16",
+          Daniel: "6",
+          Liam: "7",
+          Kai: "8",
+          Oliver: "9",
+        };
+        const detailPageId = studentIdMap[student.name] || studentId;
+        navigate(`/student/${detailPageId}`);
+      }
       return;
     }
 
