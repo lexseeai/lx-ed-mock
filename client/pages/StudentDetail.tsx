@@ -170,6 +170,16 @@ const mockStudents: Student[] = [
     sessionReportCompleted: false,
     email: "alex.johnson@email.com",
   },
+  {
+    id: "16",
+    name: "Carlos",
+    subject: "Physics Tutoring",
+    sessionTime: "8:00pm, July 29",
+    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos",
+    sessionDate: new Date(2025, 6, 29),
+    sessionReportCompleted: false,
+    email: "carlos.rodriguez@email.com",
+  },
 ];
 
 function Sidebar({
