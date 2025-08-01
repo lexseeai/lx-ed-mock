@@ -682,25 +682,25 @@ export default function StudentDetail() {
                   </div>
                 )}
 
-                {(activeView === 'student' || activeView === 'home') && activeTab === 'search' && (
+                {activeTab === 'search' && (
                   <div className="text-center py-12">
                     <p className="text-stone-500 font-lexend">Search functionality coming soon...</p>
                   </div>
                 )}
 
-                {(activeView === 'student' || activeView === 'home') && activeTab === 'goals' && (
+                {activeTab === 'goals' && (
                   <div className="text-center py-12">
                     <p className="text-stone-500 font-lexend">Goals content coming soon...</p>
                   </div>
                 )}
 
-                {(activeView === 'student' || activeView === 'home') && activeTab === 'session-notes' && (
+                {activeTab === 'session-notes' && (
                   <div className="text-center py-12">
                     <p className="text-stone-500 font-lexend">Session notes content coming soon...</p>
                   </div>
                 )}
 
-                {(activeView === 'student' || activeView === 'home') && activeTab === 'assignments' && (
+                {activeTab === 'assignments' && (
                   <div className="text-center py-12">
                     <p className="text-stone-500 font-lexend">Assignments content coming soon...</p>
                   </div>
