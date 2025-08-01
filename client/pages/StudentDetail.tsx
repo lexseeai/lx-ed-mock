@@ -523,23 +523,25 @@ export default function StudentDetail() {
                           <div className="flex flex-col gap-3">
                             {/* Header with icon and copy button */}
                             <div className="flex justify-between items-start">
-                              <div className="flex items-start gap-1.5">
-                                <Siren className="w-6 h-6 text-stone-700 mt-0.5" />
-                                <div>
+                              <div className="flex flex-col gap-1">
+                                {/* Icon and Title */}
+                                <div className="flex items-start gap-1.5">
+                                  <Siren className="w-6 h-6 text-stone-700 mt-0.5" />
                                   <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">For next session</h2>
-                                  <div className="flex items-center gap-1 mt-0.5">
-                                    <span className="text-stone-400 font-lexend text-sm">From</span>
-                                    <span className="relative inline-block group">
-                                      <span className="bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{padding: '1px 8px 3px', lineHeight: '12px'}}>
-                                        14 June 25
-                                      </span>
-                                      <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                                        <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                          <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
-                                        </span>
+                                </div>
+                                {/* From section - flush left */}
+                                <div className="flex items-center gap-1">
+                                  <span className="text-stone-400 font-lexend text-sm">From</span>
+                                  <span className="relative inline-block group">
+                                    <span className="bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{padding: '2px 8px', lineHeight: '12px'}}>
+                                      14 June 25
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                       </span>
                                     </span>
-                                  </div>
+                                  </span>
                                 </div>
                               </div>
 
