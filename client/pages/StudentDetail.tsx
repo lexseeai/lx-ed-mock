@@ -586,6 +586,126 @@ export default function StudentDetail() {
     navigate("/");
   };
 
+  // Get student-specific session content
+  const getStudentSessionContent = () => {
+    const studentContentMap = {
+      "1": { // Alex
+        nextSessionItems: [
+          "Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.",
+          "Apply 2D shape formulas in word problems to build real-world problem-solving skills.",
+          "Introduce multi-step problems involving both perimeter/area and decimal rounding."
+        ],
+        nextSessionDate: "14 June 25",
+        previousSessionDate: "28 July 25",
+        nextSessionTime: "9:00-9:45am",
+        previousSessionTime: "9:00-9:45am"
+      },
+      "2": { // Emma
+        nextSessionItems: [
+          "Review chemical bonding concepts and practice drawing Lewis structures.",
+          "Complete lab analysis of molecular structures and their properties.",
+          "Apply periodic trends to predict chemical behavior in reactions."
+        ],
+        nextSessionDate: "1 Aug 25",
+        previousSessionDate: "14 July 25",
+        nextSessionTime: "3:00-3:45pm",
+        previousSessionTime: "3:00-3:45pm"
+      },
+      "3": { // Marcus
+        nextSessionItems: [
+          "Analyze primary source documents from the American Civil War era.",
+          "Compare different historical perspectives on Reconstruction policies.",
+          "Practice writing thesis statements for historical argumentative essays."
+        ],
+        nextSessionDate: "5 Aug 25",
+        previousSessionDate: "28 July 25",
+        nextSessionTime: "4:00-4:45pm",
+        previousSessionTime: "4:00-4:45pm"
+      },
+      "4": { // Isabella
+        nextSessionItems: [
+          "Practice subjunctive mood in hypothetical situations and formal requests.",
+          "Review irregular verb conjugations in preterite and imperfect tenses.",
+          "Conduct conversation practice focusing on cultural topics from Spain."
+        ],
+        nextSessionDate: "2 Aug 25",
+        previousSessionDate: "21 July 25",
+        nextSessionTime: "11:00-11:45am",
+        previousSessionTime: "11:00-11:45am"
+      },
+      "5": { // Carlos
+        nextSessionItems: [
+          "Solve projectile motion problems using kinematic equations.",
+          "Apply conservation of momentum in collision scenarios.",
+          "Practice energy calculations for pendulum and spring systems."
+        ],
+        nextSessionDate: "3 Aug 25",
+        previousSessionDate: "29 July 25",
+        nextSessionTime: "8:00-8:45pm",
+        previousSessionTime: "8:00-8:45pm"
+      },
+      "6": { // Daniel
+        nextSessionItems: [
+          "Study cellular respiration and photosynthesis energy cycles.",
+          "Compare prokaryotic and eukaryotic cell structures and functions.",
+          "Practice genetics problems involving Punnett squares and inheritance patterns."
+        ],
+        nextSessionDate: "4 Aug 25",
+        previousSessionDate: "24 July 25",
+        nextSessionTime: "2:00-2:45pm",
+        previousSessionTime: "2:00-2:45pm"
+      },
+      "7": { // Liam
+        nextSessionItems: [
+          "Balance chemical equations and calculate molar relationships.",
+          "Study acid-base reactions and pH calculations.",
+          "Practice stoichiometry problems with limiting reactants."
+        ],
+        nextSessionDate: "6 Aug 25",
+        previousSessionDate: "24 July 25",
+        nextSessionTime: "9:00-9:45am",
+        previousSessionTime: "9:00-9:45am"
+      },
+      "8": { // Kai
+        nextSessionItems: [
+          "Analyze literary devices in modern poetry and their effects on meaning.",
+          "Practice writing analytical essays with strong thesis statements.",
+          "Study character development techniques in contemporary fiction."
+        ],
+        nextSessionDate: "7 Aug 25",
+        previousSessionDate: "1 Aug 25",
+        nextSessionTime: "6:00-6:45pm",
+        previousSessionTime: "6:00-6:45pm"
+      },
+      "9": { // Oliver
+        nextSessionItems: [
+          "Study plate tectonics and their impact on landform creation.",
+          "Analyze climate patterns and their effects on global ecosystems.",
+          "Practice map reading skills and geographic coordinate systems."
+        ],
+        nextSessionDate: "8 Aug 25",
+        previousSessionDate: "4 Aug 25",
+        nextSessionTime: "8:00-8:45am",
+        previousSessionTime: "8:00-8:45am"
+      },
+      "23": { // Alex (duplicate)
+        nextSessionItems: [
+          "Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.",
+          "Apply 2D shape formulas in word problems to build real-world problem-solving skills.",
+          "Introduce multi-step problems involving both perimeter/area and decimal rounding."
+        ],
+        nextSessionDate: "14 June 25",
+        previousSessionDate: "28 July 25",
+        nextSessionTime: "9:00-9:45am",
+        previousSessionTime: "9:00-9:45am"
+      }
+    };
+
+    return studentContentMap[studentId] || studentContentMap["1"]; // Default to Alex if not found
+  };
+
+  const studentContent = getStudentSessionContent();
+
   const handleSidebarNavigation = (view: string) => {
     // All sidebar navigation should go back to main app with the appropriate view
     navigate("/", { state: { activeView: view } });
