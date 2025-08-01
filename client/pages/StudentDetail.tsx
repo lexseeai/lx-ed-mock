@@ -370,27 +370,78 @@ export default function StudentDetail() {
               </div>
 
               {/* Tab Navigation */}
-              <div className="border-b border-stone-200 px-6">
-                <div className="flex space-x-8">
-                  {[
-                    { key: 'next-session', label: 'Next session' },
-                    { key: 'observations', label: 'Observations' },
-                    { key: 'goals', label: 'Goals' },
-                    { key: 'session-notes', label: 'Session notes' },
-                    { key: 'assignments', label: 'Assignments' }
-                  ].map((tab) => (
+              <div className="px-6 py-4 border-b border-stone-200">
+                <div className="flex justify-center">
+                  <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
+                    {/* Sliding background indicator */}
+                    {getTabPosition() && (
+                      <div
+                        className="absolute bg-indigo-600 shadow-sm rounded-md"
+                        style={{
+                          height: '32px',
+                          top: '6px',
+                          left: `${getTabPosition()!.left}px`,
+                          width: `${getTabPosition()!.width}px`,
+                          transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
+                        }}
+                      />
+                    )}
                     <button
-                      key={tab.key}
-                      onClick={() => setActiveTab(tab.key)}
-                      className={`py-4 px-1 border-b-2 font-medium text-sm font-lexend transition-colors ${
-                        activeTab === tab.key
-                          ? 'border-indigo-600 text-indigo-600'
-                          : 'border-transparent text-stone-500 hover:text-stone-700 hover:border-stone-300'
+                      ref={button1RefCallback}
+                      onClick={() => setActiveTab('next-session')}
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                        activeTab === 'next-session'
+                          ? 'text-white'
+                          : 'text-stone-400 hover:text-stone-600'
                       }`}
                     >
-                      {tab.label}
+                      Next session
                     </button>
-                  ))}
+                    <button
+                      ref={button2RefCallback}
+                      onClick={() => setActiveTab('observations')}
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                        activeTab === 'observations'
+                          ? 'text-white'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      Observations
+                    </button>
+                    <button
+                      ref={button3RefCallback}
+                      onClick={() => setActiveTab('goals')}
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                        activeTab === 'goals'
+                          ? 'text-white'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      Goals
+                    </button>
+                    <button
+                      ref={button4RefCallback}
+                      onClick={() => setActiveTab('session-notes')}
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                        activeTab === 'session-notes'
+                          ? 'text-white'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      Session notes
+                    </button>
+                    <button
+                      ref={button5RefCallback}
+                      onClick={() => setActiveTab('assignments')}
+                      className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
+                        activeTab === 'assignments'
+                          ? 'text-white'
+                          : 'text-stone-400 hover:text-stone-600'
+                      }`}
+                    >
+                      Assignments
+                    </button>
+                  </div>
                 </div>
               </div>
 
