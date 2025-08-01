@@ -2703,61 +2703,79 @@ export default function Index() {
 
                   {/* Tab Navigation */}
                   <div className="flex justify-center pt-6" style={{marginLeft: '6px'}}>
-                    <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white">
-                      <button
-                        onClick={() => setStudentDetailTab('next-session')}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
-                          studentDetailTab === 'next-session'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
-                        }`}
-                      >
-                        Next session
-                      </button>
-                      <button
-                        onClick={() => {
-                          setStudentDetailTab('observations');
-                          scrollToSection('observations-section');
-                        }}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
-                          studentDetailTab === 'observations'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
-                        }`}
-                      >
-                        Observations
-                      </button>
-                      <button
-                        onClick={() => setStudentDetailTab('goals')}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
-                          studentDetailTab === 'goals'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
-                        }`}
-                      >
-                        Goals
-                      </button>
-                      <button
-                        onClick={() => setStudentDetailTab('session-notes')}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
-                          studentDetailTab === 'session-notes'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
-                        }`}
-                      >
-                        Session Notes
-                      </button>
-                      <button
-                        onClick={() => setStudentDetailTab('assignments')}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
-                          studentDetailTab === 'assignments'
-                            ? 'bg-indigo-600 text-white shadow-sm'
-                            : 'text-stone-400 hover:text-stone-600'
-                        }`}
-                      >
-                        Assignments
-                      </button>
-                    </div>
+                    {isStudentSearchMode ? (
+                      // Search Mode
+                      <div className="relative flex p-1.5 border border-input rounded-xl bg-white overflow-hidden h-auto self-center w-full max-w-md focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 transition-all">
+                        {/* Search Icon - Fixed Position */}
+                        <div className="flex items-center justify-center px-3 py-1.5">
+                          <Search className="w-5 h-5 text-stone-400" />
+                        </div>
+                        <input
+                          ref={studentPanelSearchInputRef}
+                          type="text"
+                          value={studentPanelSearchQuery}
+                          onChange={(e) => setStudentPanelSearchQuery(e.target.value)}
+                          placeholder="Search..."
+                          className="flex-1 pr-3 py-1.5 text-sm font-medium font-lexend bg-transparent border-0 outline-none text-stone-800 placeholder-stone-400"
+                        />
+                        <button
+                          onClick={exitStudentSearchMode}
+                          className="flex items-center justify-center px-3 py-1.5 rounded-md text-stone-400 hover:text-stone-600 transition-colors"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      </div>
+                    ) : (
+                      // Tab Mode
+                      <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white">
+                        <button
+                          onClick={enterStudentSearchMode}
+                          className="relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 text-stone-400 hover:text-stone-600"
+                        >
+                          <Search className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => setStudentDetailTab('snapshot')}
+                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                            studentDetailTab === 'snapshot'
+                              ? 'bg-indigo-600 text-white shadow-sm'
+                              : 'text-stone-400 hover:text-stone-600'
+                          }`}
+                        >
+                          Snapshot
+                        </button>
+                        <button
+                          onClick={() => setStudentDetailTab('goals')}
+                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                            studentDetailTab === 'goals'
+                              ? 'bg-indigo-600 text-white shadow-sm'
+                              : 'text-stone-400 hover:text-stone-600'
+                          }`}
+                        >
+                          Goals
+                        </button>
+                        <button
+                          onClick={() => setStudentDetailTab('session-notes')}
+                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                            studentDetailTab === 'session-notes'
+                              ? 'bg-indigo-600 text-white shadow-sm'
+                              : 'text-stone-400 hover:text-stone-600'
+                          }`}
+                        >
+                          Session notes
+                        </button>
+                        <button
+                          onClick={() => setStudentDetailTab('assignments')}
+                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                            studentDetailTab === 'assignments'
+                              ? 'bg-indigo-600 text-white shadow-sm'
+                              : 'text-stone-400 hover:text-stone-600'
+                          }`}
+                        >
+                          Assignments
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
