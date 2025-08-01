@@ -464,7 +464,105 @@ export default function StudentDetail() {
 
               {/* Content */}
               <div className="flex-1 overflow-y-auto p-8 bg-stone-50">
-                {activeTab === 'snapshot' && (
+                {activeView === 'schedule' && (
+                  <div className="space-y-6">
+                    <div className="text-center py-8">
+                      <h2 className="text-2xl font-bold text-stone-900 font-lexend mb-6">Upcoming Sessions</h2>
+                      <div className="max-w-4xl mx-auto space-y-4">
+                        <Card className="p-5 text-left">
+                          <CardContent className="p-0">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <h3 className="text-lg font-bold text-stone-900 font-lexend">August 4, 2025</h3>
+                                <p className="text-sm text-stone-600 font-lexend">Math Tutoring</p>
+                                <p className="text-sm text-stone-600 font-lexend">3:00 - 3:45 AM</p>
+                              </div>
+                              <div className="flex gap-2">
+                                <Button size="sm" variant="outline" className="font-lexend">
+                                  View Details
+                                </Button>
+                                <Button size="sm" className="font-lexend">
+                                  Join Session
+                                </Button>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                        {/* Add more upcoming sessions */}
+                        <Card className="p-5 text-left">
+                          <CardContent className="p-0">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <h3 className="text-lg font-bold text-stone-900 font-lexend">August 11, 2025</h3>
+                                <p className="text-sm text-stone-600 font-lexend">Math Tutoring</p>
+                                <p className="text-sm text-stone-600 font-lexend">3:00 - 3:45 AM</p>
+                              </div>
+                              <div className="flex gap-2">
+                                <Button size="sm" variant="outline" className="font-lexend">
+                                  View Details
+                                </Button>
+                                <Button size="sm" className="font-lexend">
+                                  Join Session
+                                </Button>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeView === 'sessionnotes' && (
+                  <div className="space-y-6">
+                    <div className="text-center py-8">
+                      <h2 className="text-2xl font-bold text-stone-900 font-lexend mb-6">Notes Due</h2>
+                      <div className="max-w-4xl mx-auto space-y-4">
+                        <Card className="p-5 text-left">
+                          <CardContent className="p-0">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <h3 className="text-lg font-bold text-stone-900 font-lexend">Session Report - July 28, 2025</h3>
+                                <p className="text-sm text-stone-600 font-lexend">Math Tutoring - 3:00-3:45 AM</p>
+                                <p className="text-sm text-red-600 font-lexend mt-1">Due: July 30, 2025</p>
+                              </div>
+                              <div className="flex gap-2">
+                                <Button size="sm" variant="outline" className="font-lexend">
+                                  <Edit className="w-4 h-4 mr-1" />
+                                  Edit notes
+                                </Button>
+                                <Button size="sm" className="font-lexend">
+                                  <CircleCheck className="w-4 h-4 mr-1" />
+                                  Mark Complete
+                                </Button>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+
+                        <Card className="p-5 text-left">
+                          <CardContent className="p-0">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <h3 className="text-lg font-bold text-stone-900 font-lexend">Session Report - August 4, 2025</h3>
+                                <p className="text-sm text-stone-600 font-lexend">Math Tutoring - 3:00-3:45 AM</p>
+                                <p className="text-sm text-amber-600 font-lexend mt-1">Due: August 6, 2025</p>
+                              </div>
+                              <div className="flex gap-2">
+                                <Button size="sm" variant="outline" className="font-lexend">
+                                  <Plus className="w-4 h-4 mr-1" />
+                                  Add notes
+                                </Button>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {(activeView === 'student' || activeView === 'home') && activeTab === 'snapshot' && (
                   <div className="flex gap-6">
                     {/* Left Sidebar - Session Cards */}
                     <div className="flex flex-col gap-6">
