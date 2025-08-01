@@ -507,73 +507,74 @@ export default function StudentDetail() {
                             </div>
                           </div>
                         </Card>
+
+                        {/* For Next Session */}
+                        <Card className="p-5">
+                          <CardContent className="p-0">
+                            <div className="flex flex-col gap-3">
+                              {/* Header with icon */}
+                              <div className="flex items-start gap-1.5">
+                                <svg className="w-6 h-6 text-stone-700 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <path d="M7 18V12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12V18"/>
+                                  <path d="M5 21C5 21.2652 5.10536 21.5196 5.29289 21.7071C5.48043 21.8946 5.73478 22 6 22H18C18.2652 22 18.5196 21.8946 18.7071 21.7071C18.8946 21.5196 19 21.2652 19 21V20C19 19.4696 18.7893 18.9609 18.4142 18.5858C18.0391 18.2107 17.5304 18 17 18H7C6.46957 18 5.96086 18.2107 5.58579 18.5858C5.21071 18.9609 5 19.4696 5 20V21Z"/>
+                                  <path d="M21 12H22"/>
+                                  <path d="M18.5 4.5L18 5"/>
+                                  <path d="M2 12H3"/>
+                                  <path d="M12 2V3"/>
+                                  <path d="M4.92871 4.92871L5.63571 5.63571"/>
+                                  <path d="M12 12V18"/>
+                                </svg>
+                                <div>
+                                  <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">For next session</h2>
+                                  <div className="flex items-center gap-1 mt-0.5">
+                                    <span className="text-stone-400 font-lexend text-sm">From session notes</span>
+                                    <div className="bg-stone-100 rounded-full px-2 py-1">
+                                      <span className="text-stone-400 font-lexend text-xs">14 June 25</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Task List */}
+                              <div className="space-y-3 pl-1.5">
+                                <div className="flex gap-1.5">
+                                  <div className="pt-0.5">
+                                    <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                  </div>
+                                  <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                    Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
+                                  </span>
+                                </div>
+
+                                <div className="flex gap-1.5">
+                                  <div className="pt-0.5">
+                                    <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                  </div>
+                                  <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                    Apply 2D shape formulas in word problems to build real-world problem-solving skills.
+                                  </span>
+                                </div>
+
+                                <div className="flex gap-1.5">
+                                  <div className="pt-0.5">
+                                    <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                  </div>
+                                  <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                    Introduce multi-step problems involving both perimeter/area and decimal rounding.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
                       </div>
                     </div>
 
                     {/* Main Content Area */}
                     <div className="flex-1 space-y-6">
-                      {/* For Next Session */}
-                      <Card className="p-5">
-                        <CardContent className="p-0">
-                          <div className="flex flex-col gap-3">
-                            {/* Header with icon */}
-                            <div className="flex items-start gap-1.5">
-                              <svg className="w-6 h-6 text-stone-700 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M7 18V12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12V18"/>
-                                <path d="M5 21C5 21.2652 5.10536 21.5196 5.29289 21.7071C5.48043 21.8946 5.73478 22 6 22H18C18.2652 22 18.5196 21.8946 18.7071 21.7071C18.8946 21.5196 19 21.2652 19 21V20C19 19.4696 18.7893 18.9609 18.4142 18.5858C18.0391 18.2107 17.5304 18 17 18H7C6.46957 18 5.96086 18.2107 5.58579 18.5858C5.21071 18.9609 5 19.4696 5 20V21Z"/>
-                                <path d="M21 12H22"/>
-                                <path d="M18.5 4.5L18 5"/>
-                                <path d="M2 12H3"/>
-                                <path d="M12 2V3"/>
-                                <path d="M4.92871 4.92871L5.63571 5.63571"/>
-                                <path d="M12 12V18"/>
-                              </svg>
-                              <div>
-                                <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">For next session</h2>
-                                <div className="flex items-center gap-1 mt-0.5">
-                                  <span className="text-stone-400 font-lexend text-sm">From session notes</span>
-                                  <div className="bg-stone-100 rounded-full px-2 py-1">
-                                    <span className="text-stone-400 font-lexend text-xs">14 June 25</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Task List */}
-                            <div className="space-y-3 pl-1.5">
-                              <div className="flex gap-1.5">
-                                <div className="pt-0.5">
-                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
-                                </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
-                                </span>
-                              </div>
-
-                              <div className="flex gap-1.5">
-                                <div className="pt-0.5">
-                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
-                                </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Apply 2D shape formulas in word problems to build real-world problem-solving skills.
-                                </span>
-                              </div>
-
-                              <div className="flex gap-1.5">
-                                <div className="pt-0.5">
-                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
-                                </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Introduce multi-step problems involving both perimeter/area and decimal rounding.
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
 
                       {/* Observations */}
-                      <Card className="p-5 min-w-[500px] max-w-[650px] flex-1">
+                      <Card className="p-5 min-w-[500px] max-w-[650px] flex-1 mt-6">
                         <CardContent className="p-0">
                           <div className="flex flex-col gap-3">
                             {/* Header with icon and copy button */}
