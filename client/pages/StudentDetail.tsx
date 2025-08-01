@@ -1583,7 +1583,7 @@ export default function StudentDetail() {
                                           lineHeight: "12px",
                                         }}
                                       >
-                                        14 June 25
+                                        {studentContent.nextSessionDate}
                                       </span>
                                       <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
                                         <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
