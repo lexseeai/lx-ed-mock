@@ -258,8 +258,8 @@ const mockStudents: Student[] = [
     id: "17",
     name: "Maya",
     subject: "Biology Tutoring",
-    sessionTime: "10:00am, July 31",
-    sessionDate: new Date(2025, 6, 31),
+    sessionTime: "10:00am, August 5",
+    sessionDate: new Date(2025, 7, 5),
     sessionReportCompleted: false,
     email: "maya.patel@email.com",
   }, // Waiting
