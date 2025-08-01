@@ -1561,7 +1561,7 @@ export default function StudentDetail() {
                   <div className="flex justify-center">
                     <div className="flex gap-6">
                       {/* Left Column - Session Cards and For Next Session */}
-                      <div className="flex flex-col gap-6 flex-1">
+                      <div className="flex flex-col gap-6">
                         {/* Sessions Group */}
                         <div
                           className="flex flex-row gap-3"
