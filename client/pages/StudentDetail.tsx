@@ -341,9 +341,9 @@ export default function StudentDetail() {
                       className="text-stone-600 hover:text-indigo-600 transition-colors p-2"
                       onClick={handleBackClick}
                     >
-                      <ArrowLeft className="w-5 h-5" />
+                      <ArrowLeft className="w-5 h-5" style={{color: 'rgba(231, 229, 228, 1)'}} />
                     </Button>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                         <Avatar className="w-full h-full">
                           <AvatarFallback className={`${getSubjectColors(student.subject || '')} font-medium text-lg`}>
@@ -351,7 +351,7 @@ export default function StudentDetail() {
                           </AvatarFallback>
                         </Avatar>
                       </div>
-                      <div>
+                      <div style={{marginLeft: '8px'}}>
                         <h1 className="text-2xl font-bold text-stone-900 font-lexend">{student.name}</h1>
                         <p className="text-sm text-stone-600 font-lexend">{student.subject}</p>
                       </div>
