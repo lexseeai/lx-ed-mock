@@ -350,13 +350,13 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
               onClick={(e) => {
                 e.stopPropagation();
                 const mode = sessionStatus === 'done' ? 'view' : sessionStatus === 'waiting' ? 'add' : 'edit';
-                const sessionDate = new Date(timeSlot);
+                const sessionDate = student.sessionDate || new Date();
                 openNotesOverlay(mode, {
                   date: sessionDate.getDate().toString(),
                   month: sessionDate.toLocaleDateString('en-US', { month: 'long' }),
                   day: sessionDate.getDate().toString(),
                   year: sessionDate.getFullYear().toString(),
-                  time: timeSlot,
+                  time: student.sessionTime || '',
                   isCompleted: sessionStatus === 'done',
                   studentName: student.name
                 });
