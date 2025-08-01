@@ -1512,16 +1512,17 @@ export default function StudentDetail() {
                             {/* Add Notes Button */}
                             <div className="flex justify-center">
                               <button
-                                onClick={() =>
+                                onClick={() => {
+                                  const dateParts = studentContent.nextSessionDate.split(' ');
                                   openNotesOverlay("add", {
-                                    date: "4",
-                                    month: "August",
-                                    day: "4",
+                                    date: dateParts[0],
+                                    month: dateParts[1],
+                                    day: dateParts[0],
                                     year: "2025",
-                                    time: "3:00–3:45pm",
+                                    time: studentContent.nextSessionTime,
                                     isCompleted: false,
-                                  })
-                                }
+                                  });
+                                }}
                                 className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors cursor-pointer"
                               >
                                 Add notes
