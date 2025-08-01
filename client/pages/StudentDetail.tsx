@@ -348,6 +348,7 @@ export default function StudentDetail() {
   };
 
   const closeNotesOverlay = () => {
+    console.log('Closing notes overlay');
     setShowNotesOverlay(false);
   };
 
