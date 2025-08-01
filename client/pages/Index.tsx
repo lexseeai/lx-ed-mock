@@ -348,7 +348,7 @@ function StudentCard({ student, onClick, scheduleView = false, dimmed = false, s
           <div className="flex justify-center px-1.5 pb-1.5">
             <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded bg-white">
               <span className="text-stone-400 font-lexend text-xs font-normal leading-4">
-                {sessionStatus === 'done' ? 'View session notes' : sessionStatus === 'waiting' ? 'Add session notes' : 'Edit session notes'}
+                {sessionStatus === 'done' ? 'View notes' : sessionStatus === 'waiting' ? 'Add notes' : 'Edit notes'}
               </span>
             </div>
           </div>
@@ -2601,9 +2601,9 @@ export default function Index() {
 
                       // Get button text based on status
                       const getButtonText = (status: string) => {
-                        if (status === 'done') return 'View session notes';
-                        if (status === 'wait') return 'Add session notes';
-                        return 'Edit session notes';
+                        if (status === 'done') return 'View notes';
+                        if (status === 'wait') return 'Add notes';
+                        return 'Edit notes';
                       };
 
                       const sessions_to_show = [];
@@ -2793,7 +2793,7 @@ export default function Index() {
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                 </span>
                               </span>
                             </span>
@@ -2811,7 +2811,7 @@ export default function Index() {
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                 </span>
                               </span>
                             </span>
@@ -2829,7 +2829,7 @@ export default function Index() {
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                 </span>
                               </span>
                             </span>
@@ -2847,7 +2847,7 @@ export default function Index() {
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                 </span>
                               </span>
                             </span>
@@ -2865,7 +2865,7 @@ export default function Index() {
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                 </span>
                               </span>
                             </span>
@@ -2883,7 +2883,7 @@ export default function Index() {
                               </span>
                               <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                 <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View session notes</span>
+                                  <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
                                 </span>
                               </span>
                             </span>
