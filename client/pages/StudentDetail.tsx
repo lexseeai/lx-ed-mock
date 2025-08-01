@@ -2043,10 +2043,10 @@ export default function StudentDetail() {
                                 </div>
 
                                 <div className="flex gap-1.5">
-                                  <div className="pt-0.5">
-                                    <ArrowRight className="w-4 h-4 text-stone-700" />
+                                  <div className="pt-[3px]">
+                                    <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
                                     Made progress toward independent
                                     problem-solving with fewer rounding errors.{" "}
                                     <span
