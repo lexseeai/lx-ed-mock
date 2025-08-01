@@ -352,8 +352,9 @@ export default function StudentDetail() {
     return name.charAt(0).toUpperCase();
   };
 
-  const openNotesOverlay = (mode: 'view' | 'add' | 'edit') => {
+  const openNotesOverlay = (mode: 'view' | 'add' | 'edit', session: SessionData) => {
     setNotesMode(mode);
+    setSelectedSession(session);
     setShowNotesOverlay(true);
   };
 
