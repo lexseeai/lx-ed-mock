@@ -830,7 +830,7 @@ export default function StudentDetail() {
 
   const handleSidebarNavigation = (view: string) => {
     // All sidebar navigation should go back to main app with the appropriate view
-    sessionStorage.setItem('returnToView', view);
+    sessionStorage.setItem("returnToView", view);
     navigate("/");
   };
 
