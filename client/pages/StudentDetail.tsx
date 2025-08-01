@@ -479,7 +479,7 @@ export default function StudentDetail() {
                           </CardContent>
 
                           {/* View Notes Button */}
-                          <div className="flex justify-center pb-1.5">
+                          <div className="flex justify-center">
                             <div className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend">
                               View notes
                             </div>
