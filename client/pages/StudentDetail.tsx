@@ -352,6 +352,20 @@ export default function StudentDetail() {
     setShowNotesOverlay(false);
   };
 
+  // Add ESC key listener
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showNotesOverlay) {
+        closeNotesOverlay();
+      }
+    };
+
+    if (showNotesOverlay) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [showNotesOverlay]);
+
   // Session Notes Overlay Component
   const SessionNotesOverlay = () => {
     if (!showNotesOverlay) return null;
