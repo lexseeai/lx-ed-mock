@@ -525,13 +525,13 @@ export default function StudentDetail() {
                             <div className="flex justify-between items-start">
                               <div className="flex flex-col gap-1">
                                 {/* Icon and Title */}
-                                <div className="flex items-start gap-1.5">
+                                <div className="flex items-end gap-1.5 justify-start">
                                   <Siren className="w-6 h-6 text-stone-700 mt-0.5" />
-                                  <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">For next session</h2>
+                                  <h2 className="text-stone-900 font-lexend text-xl font-bold" style={{lineHeight: '20px'}}>For next session</h2>
                                 </div>
                                 {/* From section - flush left */}
-                                <div className="flex items-center gap-1">
-                                  <span className="text-stone-400 font-lexend text-sm">From</span>
+                                <div className="flex items-center gap-1 pl-1">
+                                  <span className="text-stone-400 font-lexend text-sm">From notes</span>
                                   <span className="relative inline-block group">
                                     <span className="bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{padding: '2px 8px', lineHeight: '12px'}}>
                                       14 June 25
