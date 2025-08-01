@@ -332,7 +332,7 @@ export default function StudentDetail() {
           <div className="flex-1 p-3 h-full min-w-0">
             <Card className="h-full flex flex-col min-w-0">
               {/* Header */}
-              <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200 rounded-t-lg">
+              <div className="bg-white border-b border-stone-200 rounded-t-lg" style={{padding: '18px 24px 0 18px', border: '1px none rgb(231, 229, 228)'}}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     <Button 
