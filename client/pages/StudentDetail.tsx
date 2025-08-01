@@ -217,6 +217,7 @@ export default function StudentDetail() {
   const [isHoveringNextSession, setIsHoveringNextSession] = useState(false);
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Tab measurement state and refs for sliding indicator
   const [buttonMeasurements, setButtonMeasurements] = useState<{
