@@ -418,7 +418,7 @@ export default function StudentDetail() {
                 justifyContent: 'center'
               }}
             >
-              <X className="w-6 h-6 text-stone-700" style={{ pointerEvents: 'none' }} />
+              <X className="w-6 h-6 text-stone-700 group-hover:text-indigo-600 transition-colors" style={{ pointerEvents: 'none' }} />
             </div>
           </div>
 
