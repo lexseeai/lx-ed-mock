@@ -633,7 +633,7 @@ export default function StudentDetail() {
   const student = mockStudents.find((s) => s.id === studentId);
 
   const handleBackClick = () => {
-    navigate("/");
+    navigate("/?view=all");
   };
 
   // Get student-specific session content
