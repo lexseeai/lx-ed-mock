@@ -357,13 +357,13 @@ export default function StudentDetail() {
 
     return (
       <div
-        className="fixed inset-0 z-50 flex items-end justify-center"
+        className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
         style={{ background: 'rgba(0, 0, 0, 0.60)' }}
         onClick={closeNotesOverlay}
       >
         {/* Main Notes Card */}
         <div
-          className="w-full max-w-6xl bg-white rounded-t-lg shadow-xl transform transition-transform duration-300 ease-out translate-y-0"
+          className="w-full max-w-6xl bg-white rounded-lg shadow-xl transform transition-transform duration-300 ease-out translate-y-0"
           style={{ height: '90vh' }}
           onClick={(e) => e.stopPropagation()}
         >
