@@ -754,7 +754,7 @@ export default function StudentDetail() {
 
               {/* Content */}
               <div className="flex-1 overflow-y-auto p-8 bg-stone-50">
-                {activeTab === 'snapshot' && (
+                {activeTab === 'snapshot' && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6">
                       {/* Left Column - Session Cards and For Next Session */}
@@ -783,7 +783,7 @@ export default function StudentDetail() {
                                 month: 'July',
                                 day: '28',
                                 year: '2025',
-                                time: '9:00–9:45am',
+                                time: '9:00��9:45am',
                                 isCompleted: true
                               })}
                               className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:text-stone-600 hover:border-stone-300 transition-colors cursor-pointer"
