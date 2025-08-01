@@ -2506,6 +2506,7 @@ export default function Index() {
                               }}
                               scheduleView={true}
                               dimmed={selectedStudentFilter && student.name !== selectedStudentFilter}
+                              openNotesOverlay={openNotesOverlay}
                             />
                           </div>
                         ))}
