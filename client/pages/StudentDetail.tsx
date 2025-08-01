@@ -304,13 +304,6 @@ export default function StudentDetail() {
 
     // For other views like 'schedule' and 'sessionnotes', stay on student page but update the view
     setActiveView(view);
-
-    // Synchronize the main content tab with sidebar navigation
-    if (view === 'schedule') {
-      setActiveTab('goals'); // Map 'Upcoming' to Goals tab
-    } else if (view === 'sessionnotes') {
-      setActiveTab('session-notes'); // Map 'Notes dues' to Session notes tab
-    }
   };
 
   if (!student) {
