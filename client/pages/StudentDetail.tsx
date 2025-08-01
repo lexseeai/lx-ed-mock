@@ -463,7 +463,7 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session Cards */}
                     <div className="flex flex-col gap-6">
                       {/* Sessions Group */}
-                      <div className="flex flex-row gap-3">
+                      <div className="flex flex-row gap-3" style={{flexDirection: 'row'}}>
                         {/* July 28 Card */}
                         <Card className="w-[150px] h-[150px] p-3 pb-2 flex flex-col justify-between">
                           <CardContent className="p-0 flex flex-col gap-0.5">
