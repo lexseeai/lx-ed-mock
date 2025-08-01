@@ -1685,7 +1685,7 @@ export default function StudentDetail() {
                                       className="text-stone-900 font-lexend text-xl font-bold"
                                       style={{ lineHeight: "20px" }}
                                     >
-                                      For next session
+                                      Next session
                                     </h2>
                                   </div>
                                   {/* From section - flush left */}
