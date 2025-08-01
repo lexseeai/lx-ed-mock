@@ -3139,6 +3139,9 @@ export default function Index() {
 
 
       </div>
+
+      {/* Notes Overlay */}
+      <NotesOverlay />
     </TooltipProvider>
   );
 }
