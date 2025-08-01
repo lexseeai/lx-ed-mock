@@ -1084,6 +1084,9 @@ export default function StudentDetail() {
           </div>
         </div>
       </div>
+
+      {/* Session Notes Overlay */}
+      <SessionNotesOverlay />
     </TooltipProvider>
   );
 }
