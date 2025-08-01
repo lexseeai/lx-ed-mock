@@ -1,307 +1,242 @@
-import { useState } from "react";
-import { ArrowLeft, Calendar, FileText, MessageSquare, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link, useParams } from "react-router-dom";
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Copy, Plus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
-interface StudentSession {
-  id: string;
-  date: string;
-  time: string;
-  type: string;
-  status: "completed" | "upcoming" | "cancelled";
-  notes?: string;
-}
-
-interface StudentAssignment {
-  id: string;
-  title: string;
-  dueDate: string;
-  status: "pending" | "completed" | "overdue";
-  type: string;
-}
-
-const mockSessions: StudentSession[] = [
-  {
-    id: "1",
-    date: "Today",
-    time: "3:00 PM",
-    type: "Reading Assessment",
-    status: "upcoming",
-  },
-  {
-    id: "2",
-    date: "Yesterday",
-    time: "3:00 PM",
-    type: "Reading Practice",
-    status: "completed",
-    notes: "Great progress on phonics. Student showed improvement in letter recognition.",
-  },
-  {
-    id: "3",
-    date: "Dec 10",
-    time: "3:00 PM",
-    type: "Vocabulary Building",
-    status: "completed",
-    notes: "Worked on sight words. Needs more practice with common words.",
-  },
-];
-
-const mockAssignments: StudentAssignment[] = [
-  {
-    id: "1",
-    title: "Session Report - Reading Assessment",
-    dueDate: "Today",
-    status: "pending",
-    type: "report",
-  },
-  {
-    id: "2",
-    title: "Homework - Sight Words Practice",
-    dueDate: "Tomorrow",
-    status: "pending",
-    type: "homework",
-  },
-  {
-    id: "3",
-    title: "Weekly Progress Report",
-    dueDate: "Dec 15",
-    status: "completed",
-    type: "report",
-  },
-];
+// Mock student data - in a real app, this would come from an API
+const mockStudentData = {
+  id: '23',
+  name: 'Alex',
+  subject: 'Math tutoring',
+  avatar: 'A',
+  observations: [
+    'Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.',
+    'Reviewed recalled formulas for 2D shapes: circle, rectangle, square.',
+    'Demonstrated improved accuracy in identifying decimal positions with visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.',
+    'Made progress toward independent problem-solving with fewer rounding errors.',
+    'Joined the session late but used remaining time effectively to reinforce key math skills.',
+    'Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.'
+  ],
+  nextSessionTasks: [
+    'Reinforce rounding to 1 decimal place with timed practice to boost fluency and accuracy.',
+    'Apply 2D shape formulas in word problems to build real-world problem-solving skills.',
+    'Introduce multi-step problems involving both perimeter/area and decimal rounding.'
+  ],
+  dates: {
+    current: { month: 'Jul', day: '28', weekday: 'Mon' },
+    next: { month: 'August', day: '4', weekday: 'Mon' }
+  }
+};
 
 export default function StudentDetail() {
   const { studentId } = useParams();
-  const [activeTab, setActiveTab] = useState("overview");
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("snapshot");
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
-  // Mock student data - in real app this would be fetched based on studentId
-  const student = {
-    id: studentId || "1",
-    name: "Jordan Smith",
-    grade: "2nd Grade",
-    age: 8,
-    parentName: "Sarah Smith",
-    parentEmail: "sarah.smith@email.com",
-    enrollmentDate: "September 2024",
+  // In a real app, you'd fetch student data based on studentId
+  const student = mockStudentData;
+
+  const handleBackClick = () => {
+    navigate('/');
   };
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "completed":
-        return "bg-green-100 text-green-800";
-      case "upcoming":
-        return "bg-blue-100 text-blue-800";
-      case "pending":
-        return "bg-yellow-100 text-yellow-800";
-      case "overdue":
-        return "bg-red-100 text-red-800";
-      case "cancelled":
-        return "bg-gray-100 text-gray-800";
-      default:
-        return "bg-gray-100 text-gray-800";
-    }
+  if (!student) {
+    return (
+      <div className="min-h-screen bg-stone-100 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-2">Student not found</h1>
+          <p className="text-gray-600 mb-4">The student you're looking for doesn't exist.</p>
+          <Button variant="outline" onClick={handleBackClick}>
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Students
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
   };
 
   return (
-    <div className="min-h-screen bg-stone-100">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="flex items-center space-x-4">
-          <Link to="/">
-            <Button variant="ghost" size="sm" className="text-gray-600">
+      <div className="border-b border-gray-200 px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-gray-600 hover:text-indigo-600 transition-colors"
+              onClick={handleBackClick}
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Students
             </Button>
-          </Link>
-          
-          <div className="flex items-center space-x-3">
-            <Avatar className="w-10 h-10">
-              <AvatarFallback className="bg-orange-100 text-orange-800 font-medium">
-                {student.name.charAt(0)}
-              </AvatarFallback>
-            </Avatar>
-            <div>
-              <h1 className="text-xl font-semibold text-gray-900">{student.name}</h1>
-              <p className="text-sm text-gray-600">{student.grade} • Age {student.age}</p>
+            <div className="flex items-center space-x-3">
+              <Avatar className="w-10 h-10">
+                <AvatarFallback className="bg-blue-100 text-blue-700 font-medium text-lg">
+                  {student.avatar}
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <h1 className="text-xl font-semibold text-gray-900">{student.name}</h1>
+                <p className="text-sm text-gray-600">{student.subject}</p>
+              </div>
             </div>
           </div>
+          <Button size="sm" className="bg-indigo-600 hover:bg-indigo-700">
+            Actions
+            <Plus className="w-4 h-4 ml-2" />
+          </Button>
+        </div>
+      </div>
+
+      {/* Tab Navigation */}
+      <div className="border-b border-gray-200 px-6">
+        <div className="flex space-x-8">
+          {['Snapshot', 'Goals', 'Session notes', 'Assignments'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab.toLowerCase().replace(' ', ''))}
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                activeTab === tab.toLowerCase().replace(' ', '')
+                  ? 'border-indigo-600 text-indigo-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Content */}
       <div className="p-6">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 max-w-md">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="sessions">Sessions</TabsTrigger>
-            <TabsTrigger value="assignments">Tasks</TabsTrigger>
-            <TabsTrigger value="notes">Notes</TabsTrigger>
-          </TabsList>
+        {activeTab === 'snapshot' && (
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-12 gap-8">
+              {/* Left Column - Dates */}
+              <div className="col-span-3">
+                <div className="space-y-8">
+                  {/* Current Date */}
+                  <div className="text-center">
+                    <div className="text-lg font-semibold text-gray-600">{student.dates.current.month}</div>
+                    <div className="text-3xl font-bold text-gray-900">{student.dates.current.day}</div>
+                    <div className="text-sm text-gray-500">{student.dates.current.weekday}</div>
+                    <div className="text-xs text-gray-400 mt-2">5:00-5:45AM</div>
+                  </div>
 
-          <TabsContent value="overview" className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Student Info */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Student Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Parent/Guardian</p>
-                    <p className="text-sm text-gray-900">{student.parentName}</p>
+                  {/* Next Date */}
+                  <div className="text-center">
+                    <div className="text-lg font-semibold text-gray-600">{student.dates.next.month}</div>
+                    <div className="text-3xl font-bold text-gray-900">{student.dates.next.day}</div>
+                    <div className="text-sm text-gray-500">{student.dates.next.weekday}</div>
+                    <div className="text-xs text-gray-400 mt-2">5:00-5:45AM</div>
+                    <div className="text-xs text-blue-600 mt-1">Your notes</div>
+                    <div className="text-xs text-blue-600">Add notes</div>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Contact Email</p>
-                    <p className="text-sm text-gray-900">{student.parentEmail}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Enrollment Date</p>
-                    <p className="text-sm text-gray-900">{student.enrollmentDate}</p>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              {/* Upcoming Sessions */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg flex items-center">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    Next Session
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <p className="font-medium text-gray-900">Reading Assessment</p>
-                    <p className="text-sm text-gray-600">Today at 3:00 PM</p>
-                    <Badge className={getStatusColor("upcoming")}>
-                      Upcoming
-                    </Badge>
+              {/* Right Column - Content */}
+              <div className="col-span-9 space-y-8">
+                {/* Observations Section */}
+                <div 
+                  className="relative group"
+                  onMouseEnter={() => setHoveredSection('observations')}
+                  onMouseLeave={() => setHoveredSection(null)}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-lg font-semibold text-gray-900 flex items-center">
+                      📊 Observations
+                    </h2>
+                    {hoveredSection === 'observations' && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => copyToClipboard(student.observations.join('\n\n'))}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <Copy className="w-4 h-4 mr-2" />
+                        Copy
+                      </Button>
+                    )}
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* Pending Tasks */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg flex items-center">
-                    <FileText className="w-4 h-4 mr-2" />
-                    Pending Tasks
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
                   <div className="space-y-3">
-                    {mockAssignments.filter(a => a.status === "pending").map((assignment) => (
-                      <div key={assignment.id} className="border-l-2 border-yellow-300 pl-3">
-                        <p className="text-sm font-medium text-gray-900">{assignment.title}</p>
-                        <p className="text-xs text-gray-600">Due {assignment.dueDate}</p>
+                    {student.observations.map((observation, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-gray-700 leading-relaxed">{observation}</p>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
+                </div>
 
-          <TabsContent value="sessions" className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900">Session History</h2>
-              <Button className="bg-indigo-600 hover:bg-indigo-700">
-                <Calendar className="w-4 h-4 mr-2" />
-                Schedule Session
-              </Button>
-            </div>
-            
-            <div className="space-y-4">
-              {mockSessions.map((session) => (
-                <Card key={session.id}>
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-3">
-                          <h3 className="font-medium text-gray-900">{session.type}</h3>
-                          <Badge className={getStatusColor(session.status)}>
-                            {session.status}
-                          </Badge>
-                        </div>
-                        <div className="flex items-center space-x-4 text-sm text-gray-600">
-                          <span className="flex items-center">
-                            <Calendar className="w-3 h-3 mr-1" />
-                            {session.date}
-                          </span>
-                          <span className="flex items-center">
-                            <Clock className="w-3 h-3 mr-1" />
-                            {session.time}
-                          </span>
-                        </div>
-                        {session.notes && (
-                          <p className="text-sm text-gray-700 mt-2">{session.notes}</p>
-                        )}
-                      </div>
+                {/* For Next Session Section */}
+                <div 
+                  className="relative group"
+                  onMouseEnter={() => setHoveredSection('nextSession')}
+                  onMouseLeave={() => setHoveredSection(null)}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-lg font-semibold text-gray-900 flex items-center">
+                      📋 For next session
+                    </h2>
+                    {hoveredSection === 'nextSession' && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => copyToClipboard(student.nextSessionTasks.join('\n\n'))}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <Copy className="w-4 h-4 mr-2" />
+                        Copy
+                      </Button>
+                    )}
+                  </div>
+                  <div className="bg-blue-50 rounded-lg p-4">
+                    <p className="text-sm text-blue-700 mb-4 font-medium">
+                      From 07/28/2025 • 5:00-5:45
+                    </p>
+                    <div className="space-y-3">
+                      {student.nextSessionTasks.map((task, index) => (
+                        <label key={index} className="flex items-start space-x-3 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            className="mt-1 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <span className="text-gray-700 leading-relaxed">{task}</span>
+                        </label>
+                      ))}
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="assignments" className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900">Assignments & Tasks</h2>
-              <Button className="bg-indigo-600 hover:bg-indigo-700">
-                <FileText className="w-4 h-4 mr-2" />
-                Create Task
-              </Button>
-            </div>
-            
-            <div className="space-y-4">
-              {mockAssignments.map((assignment) => (
-                <Card key={assignment.id}>
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-3">
-                          <h3 className="font-medium text-gray-900">{assignment.title}</h3>
-                          <Badge className={getStatusColor(assignment.status)}>
-                            {assignment.status}
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-gray-600">Due: {assignment.dueDate}</p>
-                        <p className="text-xs text-gray-500 capitalize">{assignment.type}</p>
-                      </div>
-                      {assignment.status === "pending" && (
-                        <Button size="sm" variant="outline">
-                          Mark Complete
-                        </Button>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
+        {/* Other tab content placeholders */}
+        {activeTab === 'goals' && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">Goals content coming soon...</p>
+          </div>
+        )}
 
-          <TabsContent value="notes" className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900">Session Notes</h2>
-              <Button className="bg-indigo-600 hover:bg-indigo-700">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                Add Note
-              </Button>
-            </div>
-            
-            <Card>
-              <CardContent className="p-6">
-                <p className="text-gray-600 text-center py-8">
-                  No notes available yet. Session notes will appear here after sessions are completed.
-                </p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+        {activeTab === 'sessionnotes' && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">Session notes content coming soon...</p>
+          </div>
+        )}
+
+        {activeTab === 'assignments' && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">Assignments content coming soon...</p>
+          </div>
+        )}
       </div>
     </div>
   );
