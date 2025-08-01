@@ -577,7 +577,11 @@ export default function StudentDetail() {
                     <div className="flex-1 space-y-6" style={{display: 'flex', flexDirection: 'column'}}>
 
                       {/* Observations */}
-                      <Card className="p-5 min-w-[500px] max-w-[650px] flex-1">
+                      <Card
+                        className="p-5 min-w-[500px] max-w-[650px] flex-1"
+                        onMouseEnter={() => setIsHoveringObservations(true)}
+                        onMouseLeave={() => setIsHoveringObservations(false)}
+                      >
                         <CardContent className="p-0">
                           <div className="flex flex-col gap-3">
                             {/* Header with icon and copy button */}
