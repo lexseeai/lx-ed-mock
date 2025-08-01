@@ -804,10 +804,15 @@ export default function Index() {
       return;
     }
 
-    // Otherwise, show the sidebar panel
-    setSelectedStudentId(studentId);
-    setCurrentStudentList(studentList);
-    setShowStudentOverlay(true);
+    // Only show sidebar panel for 'schedule' and 'sessionnotes' views (upcoming and notes due)
+    if (activeView === 'schedule' || activeView === 'sessionnotes') {
+      setSelectedStudentId(studentId);
+      setCurrentStudentList(studentList);
+      setShowStudentOverlay(true);
+    } else {
+      // For other views, also navigate to full page
+      navigate(`/student/${studentId}`);
+    }
   };
 
   const handleSheetOpenChange = (open: boolean) => {
