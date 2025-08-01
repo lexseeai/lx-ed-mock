@@ -618,16 +618,20 @@ export default function StudentDetail() {
                           <div className="flex flex-col gap-3">
                             {/* Header with icon and copy button */}
                             <div className="flex justify-between items-start">
-                              <div className="flex items-start gap-1.5">
-                                <svg className="w-6 h-6 text-stone-900 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                  <path d="M16 2V4"/>
-                                  <path d="M17.915 22C17.915 20.4087 17.2829 18.8826 16.1577 17.7574C15.0325 16.6321 13.5063 16 11.915 16C10.3237 16 8.79762 16.6321 7.6724 17.7574C6.54718 18.8826 5.91504 20.4087 5.91504 22"/>
-                                  <path d="M8 2V4"/>
-                                  <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"/>
-                                  <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"/>
-                                </svg>
-                                <div>
-                                  <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">Observations</h2>
+                              <div className="flex flex-col gap-0.5">
+                                {/* Icon and Title */}
+                                <div className="flex items-end gap-1.5 justify-start">
+                                  <svg className="w-6 h-6 text-stone-900 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M16 2V4"/>
+                                    <path d="M17.915 22C17.915 20.4087 17.2829 18.8826 16.1577 17.7574C15.0325 16.6321 13.5063 16 11.915 16C10.3237 16 8.79762 16.6321 7.6724 17.7574C6.54718 18.8826 5.91504 20.4087 5.91504 22"/>
+                                    <path d="M8 2V4"/>
+                                    <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"/>
+                                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"/>
+                                  </svg>
+                                  <h2 className="text-stone-900 font-lexend text-xl font-bold" style={{lineHeight: '20px'}}>Observations</h2>
+                                </div>
+                                {/* Subtitle section - flush left */}
+                                <div className="flex items-center pl-1">
                                   <span className="text-stone-400 font-lexend text-sm">From the last 7 sessions</span>
                                 </div>
                               </div>
