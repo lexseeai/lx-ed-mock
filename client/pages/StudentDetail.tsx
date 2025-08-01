@@ -1628,38 +1628,19 @@ export default function StudentDetail() {
 
                               {/* Task List */}
                               <div className="space-y-3 pl-1.5">
-                                <div className="flex gap-1.5">
-                                  <div className="pt-0.5">
-                                    <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
+                                {studentContent.nextSessionItems.map((item, index) => (
+                                  <div key={index} className="flex gap-1.5">
+                                    <div className="pt-0.5">
+                                      <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
+                                    </div>
+                                    <span
+                                      className="font-lexend text-base leading-5 flex-1"
+                                      style={{ color: "rgba(41, 37, 36, 1)" }}
+                                    >
+                                      {item}
+                                    </span>
                                   </div>
-                                  <span
-                                    className="font-lexend text-base leading-5 flex-1"
-                                    style={{ color: "rgba(41, 37, 36, 1)" }}
-                                  >
-                                    Reinforce rounding to 1 decimal place with
-                                    timed fluency drills for automaticity.
-                                  </span>
-                                </div>
-
-                                <div className="flex gap-1.5">
-                                  <div className="pt-0.5">
-                                    <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
-                                  </div>
-                                  <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                    Apply 2D shape formulas in word problems to
-                                    build real-world problem-solving skills.
-                                  </span>
-                                </div>
-
-                                <div className="flex gap-1.5">
-                                  <div className="pt-0.5">
-                                    <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
-                                  </div>
-                                  <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                    Introduce multi-step problems involving both
-                                    perimeter/area and decimal rounding.
-                                  </span>
-                                </div>
+                                ))}
                               </div>
                             </div>
                           </CardContent>
