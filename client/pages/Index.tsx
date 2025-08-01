@@ -2796,10 +2796,67 @@ export default function Index() {
                         </p>
                       </div>
                     </div>
-                    <Button variant="outline" className="flex items-center gap-1 px-4 py-2 border border-stone-200 bg-white">
-                      <span className="text-sm font-medium text-stone-700 font-lexend">Actions</span>
-                      <ChevronsUpDown className="w-6 h-6 text-stone-300" />
-                    </Button>
+                    <div className="flex items-center gap-2.5">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
+                      >
+                        Actions
+                        <svg className="w-6 h-6 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M7 15L12 20L17 15" />
+                          <path d="M7 9L12 4L17 9" />
+                        </svg>
+                      </Button>
+                      <div className="relative" ref={sidePanelDropdownRef}>
+                        <button
+                          onClick={() => setShowSidePanelDropdown(!showSidePanelDropdown)}
+                          className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                          style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}
+                        >
+                          {showSidePanelDropdown ? (
+                            <X className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                          ) : (
+                            <Plus className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                          )}
+                        </button>
+                        {showSidePanelDropdown && (
+                          <div className="absolute right-0 top-12 w-60 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden" style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}>
+                            <div className="p-2">
+                              <button
+                                onClick={() => {
+                                  setShowSidePanelDropdown(false);
+                                  setActiveView('all');
+                                }}
+                                className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                              >
+                                <UserRoundPlus className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                                <span className="font-lexend text-base">Add student</span>
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setShowSidePanelDropdown(false);
+                                  setActiveView('sessionnotes');
+                                }}
+                                className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                              >
+                                <NotebookPen className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                                <span className="font-lexend text-base">New session notes</span>
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setShowSidePanelDropdown(false);
+                                }}
+                                className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                              >
+                                <FileAudio className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                                <span className="font-lexend text-base">Create assignment</span>
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
 
                   {/* Session Times */}
