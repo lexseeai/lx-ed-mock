@@ -244,41 +244,42 @@ export default function StudentDetail() {
   // Ref callbacks that measure immediately when elements are mounted
   const button1RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
-      setTimeout(() => {
+      // Use requestAnimationFrame for immediate measurement without delay
+      requestAnimationFrame(() => {
         setButtonMeasurements(prev => ({ ...prev, button1: el.offsetWidth }));
-      }, 10);
+      });
     }
   };
 
   const button2RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         setButtonMeasurements(prev => ({ ...prev, button2: el.offsetWidth }));
-      }, 10);
+      });
     }
   };
 
   const button3RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         setButtonMeasurements(prev => ({ ...prev, button3: el.offsetWidth }));
-      }, 10);
+      });
     }
   };
 
   const button4RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         setButtonMeasurements(prev => ({ ...prev, button4: el.offsetWidth }));
-      }, 10);
+      });
     }
   };
 
   const button5RefCallback = (el: HTMLButtonElement | null) => {
     if (el) {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         setButtonMeasurements(prev => ({ ...prev, button5: el.offsetWidth }));
-      }, 10);
+      });
     }
   };
 
