@@ -908,7 +908,7 @@ export default function StudentDetail() {
                                 <div className="pt-0.5">
                                   <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                <span className="font-lexend text-base leading-5 flex-1" style={{ color: 'rgba(41, 37, 36, 1)' }}>
                                   Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
                                 </span>
                               </div>
