@@ -213,6 +213,8 @@ export default function StudentDetail() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("snapshot");
   const [activeView, setActiveView] = useState("student");
+  const [isHoveringObservations, setIsHoveringObservations] = useState(false);
+  const [isHoveringNextSession, setIsHoveringNextSession] = useState(false);
 
   // Tab measurement state and refs for sliding indicator
   const [buttonMeasurements, setButtonMeasurements] = useState<{
