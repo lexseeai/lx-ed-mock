@@ -1469,16 +1469,17 @@ export default function StudentDetail() {
                             {/* View Notes Button */}
                             <div className="flex justify-center">
                               <button
-                                onClick={() =>
+                                onClick={() => {
+                                  const dateParts = studentContent.previousSessionDate.split(' ');
                                   openNotesOverlay("view", {
-                                    date: "28",
-                                    month: "July",
-                                    day: "28",
+                                    date: dateParts[0],
+                                    month: dateParts[1],
+                                    day: dateParts[0],
                                     year: "2025",
-                                    time: "9:00–9:45am",
+                                    time: studentContent.previousSessionTime,
                                     isCompleted: true,
-                                  })
-                                }
+                                  });
+                                }}
                                 className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors cursor-pointer"
                               >
                                 View notes
