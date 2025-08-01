@@ -943,6 +943,23 @@ export default function Index() {
     };
   }, [showHomeDropdown]);
 
+  // Close side panel dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sidePanelDropdownRef.current && !sidePanelDropdownRef.current.contains(event.target as Node)) {
+        setShowSidePanelDropdown(false);
+      }
+    };
+
+    if (showSidePanelDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showSidePanelDropdown]);
+
   // Get unique student names for filtering
   const getUniqueStudentNames = () => {
     const names = [...new Set(mockStudents.map(s => s.name))];
