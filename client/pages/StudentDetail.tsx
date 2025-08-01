@@ -398,11 +398,7 @@ export default function StudentDetail() {
             </div>
             <button
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                closeNotesOverlay();
-              }}
+              onClick={closeNotesOverlay}
               className="p-2 hover:bg-stone-100 rounded-lg transition-colors"
             >
               <X className="w-6 h-6 text-stone-700" />
