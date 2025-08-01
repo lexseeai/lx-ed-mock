@@ -2108,19 +2108,21 @@ export default function Index() {
                       </div>
                     </div>
                     <div className="flex gap-4 overflow-x-auto pb-2">
-                      {getScheduleData().morning.concat(getScheduleData().afternoon, getScheduleData().evening)
-                        .filter(student => student.sessionDate && student.sessionDate.getDate() === 28)
-                        .map((student) => (
-                        <div key={student.id} className="flex-shrink-0">
-                          <StudentCard
-                            student={student}
-                            onClick={() => {
-                              handleStudentClick(student.id, [student]);
-                            }}
-                            scheduleView={true}
-                          />
-                        </div>
-                      ))}
+                      {(() => {
+                        const todaysStudents = getScheduleData().morning.concat(getScheduleData().afternoon, getScheduleData().evening)
+                          .filter(student => student.sessionDate && student.sessionDate.getDate() === 28);
+                        return todaysStudents.map((student) => (
+                          <div key={student.id} className="flex-shrink-0">
+                            <StudentCard
+                              student={student}
+                              onClick={() => {
+                                handleStudentClick(student.id, todaysStudents);
+                              }}
+                              scheduleView={true}
+                            />
+                          </div>
+                        ));
+                      })()}
                     </div>
                   </div>
 
