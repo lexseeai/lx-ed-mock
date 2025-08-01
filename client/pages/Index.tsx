@@ -2963,48 +2963,66 @@ export default function Index() {
                       </div>
                     ) : (
                       // Tab Mode
-                      <div className="flex p-1.5 border border-stone-200 rounded-xl bg-white">
+                      <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto">
+                        {/* Sliding background indicator */}
+                        {getStudentTabPosition() && (
+                          <div
+                            className="absolute bg-indigo-600 shadow-sm rounded-md"
+                            style={{
+                              height: '32px',
+                              top: '6px',
+                              left: `${getStudentTabPosition()!.left}px`,
+                              width: `${getStudentTabPosition()!.width}px`,
+                              transition: 'left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)'
+                            }}
+                          />
+                        )}
                         <button
+                          ref={searchTabRefCallback}
                           onClick={enterStudentSearchMode}
                           className="relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 text-stone-400 hover:text-stone-600"
                         >
                           <Search className="w-5 h-5" />
                         </button>
                         <button
+                          ref={snapshotTabRefCallback}
                           onClick={() => setStudentDetailTab('snapshot')}
-                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                             studentDetailTab === 'snapshot'
-                              ? 'bg-indigo-600 text-white shadow-sm'
+                              ? 'text-white'
                               : 'text-stone-400 hover:text-stone-600'
                           }`}
                         >
                           Snapshot
                         </button>
                         <button
+                          ref={goalsTabRefCallback}
                           onClick={() => setStudentDetailTab('goals')}
-                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                             studentDetailTab === 'goals'
-                              ? 'bg-indigo-600 text-white shadow-sm'
+                              ? 'text-white'
                               : 'text-stone-400 hover:text-stone-600'
                           }`}
                         >
                           Goals
                         </button>
                         <button
+                          ref={sessionNotesTabRefCallback}
                           onClick={() => setStudentDetailTab('session-notes')}
-                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                             studentDetailTab === 'session-notes'
-                              ? 'bg-indigo-600 text-white shadow-sm'
+                              ? 'text-white'
                               : 'text-stone-400 hover:text-stone-600'
                           }`}
                         >
                           Session notes
                         </button>
                         <button
+                          ref={assignmentsTabRefCallback}
                           onClick={() => setStudentDetailTab('assignments')}
-                          className={`px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-all ${
+                          className={`relative flex px-3 py-1.5 rounded-md text-sm font-medium font-lexend transition-colors duration-200 overflow-hidden z-10 ${
                             studentDetailTab === 'assignments'
-                              ? 'bg-indigo-600 text-white shadow-sm'
+                              ? 'text-white'
                               : 'text-stone-400 hover:text-stone-600'
                           }`}
                         >
