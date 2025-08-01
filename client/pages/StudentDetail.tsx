@@ -465,14 +465,14 @@ export default function StudentDetail() {
                       {/* Sessions Group */}
                       <div className="flex flex-row gap-3">
                         {/* July 28 Card */}
-                        <Card className="w-[150px] h-[150px] p-3 flex flex-col justify-between">
-                          <CardContent className="p-0 flex flex-col gap-1.5">
-                            <div className="text-stone-400 font-lexend text-base font-medium">July</div>
-                            <div className="text-stone-700 font-lexend text-2xl font-black">28</div>
-                            <div className="text-stone-700 font-lexend text-base font-medium">Mon</div>
+                        <Card className="w-[150px] h-[150px] p-3 pb-2 flex flex-col justify-between">
+                          <CardContent className="p-0 flex flex-col gap-0.5">
+                            <div className="text-stone-400 font-lexend text-base font-medium leading-4">July</div>
+                            <div className="text-stone-700 font-lexend text-2xl font-black leading-6">28</div>
+                            <div className="text-stone-700 font-lexend text-base font-medium leading-4">Mon</div>
 
                             {/* Session Time */}
-                            <div className="flex items-center gap-1 py-0.5">
+                            <div className="flex items-center gap-1 py-0.5 mt-1.5">
                               <CircleCheck className="w-3 h-3 text-green-500" />
                               <span className="text-stone-700 font-lexend text-xs">3:00–3:45AM</span>
                             </div>
