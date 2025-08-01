@@ -781,6 +781,8 @@ export default function Index() {
   const [tabPositionsReady, setTabPositionsReady] = useState(false);
   const [showHomeDropdown, setShowHomeDropdown] = useState(false);
   const homeDropdownRef = useRef<HTMLDivElement>(null);
+  const [showSidePanelDropdown, setShowSidePanelDropdown] = useState(false);
+  const sidePanelDropdownRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
   const [buttonMeasurements, setButtonMeasurements] = useState<{
