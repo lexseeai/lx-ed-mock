@@ -399,10 +399,26 @@ export default function StudentDetail() {
                 e.stopPropagation();
                 closeNotesOverlay();
               }}
-              className="p-2 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
-              style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 9999 }}
+              onMouseDown={(e) => {
+                console.log('Close button mouse down');
+                e.preventDefault();
+                e.stopPropagation();
+                closeNotesOverlay();
+              }}
+              className="p-2 hover:bg-stone-200 rounded-lg transition-colors cursor-pointer bg-white shadow-sm"
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                zIndex: 9999,
+                minWidth: '40px',
+                minHeight: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
             >
-              <X className="w-6 h-6 text-stone-700" />
+              <X className="w-6 h-6 text-stone-700" style={{ pointerEvents: 'none' }} />
             </div>
           </div>
 
