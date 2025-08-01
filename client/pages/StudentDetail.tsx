@@ -1876,10 +1876,10 @@ export default function StudentDetail() {
                               {/* Observations List */}
                               <div className="space-y-3 pl-1.5">
                                 <div className="flex gap-1.5">
-                                  <div className="pt-0.5">
-                                    <ArrowRight className="w-4 h-4 text-stone-700" />
+                                  <div className="pt-[3px]">
+                                    <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
                                     Practiced rounding to 1 decimal place using
                                     a place value chart to boost fluency and
                                     accuracy.{" "}
