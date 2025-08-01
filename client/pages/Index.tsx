@@ -295,9 +295,9 @@ const mockStudents: Student[] = [
     id: "21",
     name: "Isabella",
     subject: "Spanish Tutoring",
-    sessionTime: "11:00am, August 1",
+    sessionTime: "11:00am, August 2",
     avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella",
-    sessionDate: new Date(2025, 7, 1),
+    sessionDate: new Date(2025, 7, 2),
     sessionReportCompleted: false,
     email: "isabella.martinez@email.com",
   }, // Waiting
