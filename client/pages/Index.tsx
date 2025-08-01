@@ -2321,6 +2321,7 @@ export default function Index() {
                             student={student}
                             onClick={() => handleStudentClick(student.id, getFilteredUniqueStudents())}
                             showNextSession={true}
+                            openNotesOverlay={openNotesOverlay}
                           />
                         ))}
                       </div>
