@@ -654,56 +654,116 @@ export default function StudentDetail() {
                             <div className="space-y-3 pl-1.5">
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                  <ArrowRight className="w-4 h-4 text-stone-700" />
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.
-                                </span>
+                                <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.{' '}
+                                  <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                                    <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                      <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>21 July 25</span>
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </p>
                               </div>
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                  <ArrowRight className="w-4 h-4 text-stone-700" />
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.
-                                </span>
+                                <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.{' '}
+                                  <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                                    <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                      <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>21 July 25</span>
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </p>
                               </div>
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                  <ArrowRight className="w-4 h-4 text-stone-700" />
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Demonstrated improved accuracy in identifying decimal positions with visual support.
-                                </span>
+                                <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Demonstrated improved accuracy in identifying decimal positions with visual support.{' '}
+                                  <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                                    <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                      <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>19 July 25</span>
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </p>
                               </div>
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                  <ArrowRight className="w-4 h-4 text-stone-700" />
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Made progress toward independent problem-solving with fewer rounding errors.
-                                </span>
+                                <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Made progress toward independent problem-solving with fewer rounding errors.{' '}
+                                  <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                                    <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                      <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>18 July 25</span>
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </p>
                               </div>
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                  <ArrowRight className="w-4 h-4 text-stone-700" />
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Joined the session late but used remaining time effectively to reinforce key math skills.
-                                </span>
+                                <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Joined the session late but used remaining time effectively to reinforce key math skills.{' '}
+                                  <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                                    <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                      <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>16 July 25</span>
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </p>
                               </div>
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <ArrowRight className="w-[18px] h-[18px] text-stone-700" />
+                                  <ArrowRight className="w-4 h-4 text-stone-700" />
                                 </div>
-                                <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
-                                  Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.
-                                </span>
+                                <p className="text-stone-900 font-lexend text-base leading-5 flex-1">
+                                  Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.{' '}
+                                  <span className="relative inline-block group" style={{verticalAlign: 'middle', marginLeft: '4px', height: 'auto', lineHeight: '20px'}}>
+                                    <span className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer" style={{lineHeight: '20px', height: '14px', flexGrow: 0, verticalAlign: '4px'}}>
+                                      <span className="text-stone-400 group-hover:text-white font-lexend font-normal" style={{fontSize: '8px'}}>14 July 25</span>
+                                    </span>
+                                    <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                      <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </p>
                               </div>
                             </div>
                           </div>
