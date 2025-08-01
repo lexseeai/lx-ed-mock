@@ -2782,7 +2782,7 @@ export default function Index() {
 
               {/* Scrollable Content */}
               <div className="flex-1 overflow-y-auto px-[60px] pt-5 pb-12">
-                {studentDetailTab === 'next-session' && (
+                {studentDetailTab === 'snapshot' && !isStudentSearchMode && (
                   <div className="space-y-12">
                     {/* Next Session */}
                     <div>
