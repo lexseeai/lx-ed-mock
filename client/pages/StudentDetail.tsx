@@ -518,7 +518,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Content Area */}
-              <div className="flex-1 p-4">
+              <div className="flex-1 p-4 overflow-y-auto">
                 {/* This would contain the AI suggestions */}
               </div>
 
