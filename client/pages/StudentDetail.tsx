@@ -218,6 +218,8 @@ export default function StudentDetail() {
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [showNotesOverlay, setShowNotesOverlay] = useState(false);
+  const [notesMode, setNotesMode] = useState<'view' | 'add' | 'edit'>('view');
 
   // Search mode handlers
   const enterSearchMode = () => {
