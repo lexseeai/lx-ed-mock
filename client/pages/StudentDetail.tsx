@@ -374,11 +374,7 @@ export default function StudentDetail() {
       <div
         className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
         style={{ background: 'rgba(0, 0, 0, 0.60)' }}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) {
-            closeNotesOverlay();
-          }
-        }}
+        onClick={closeNotesOverlay}
       >
         {/* Main Notes Card */}
         <div
