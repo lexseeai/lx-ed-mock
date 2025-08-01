@@ -739,6 +739,30 @@ export default function Index() {
     }
   };
 
+  // Calculate student tab position and width
+  const getStudentTabPosition = () => {
+    const { search, snapshot, goals, sessionNotes, assignments } = studentTabMeasurements;
+
+    if (!search || !snapshot || !goals || !sessionNotes || !assignments) {
+      return null;
+    }
+
+    switch (studentDetailTab) {
+      case 'search':
+        return { left: 6, width: search };
+      case 'snapshot':
+        return { left: 6 + search, width: snapshot };
+      case 'goals':
+        return { left: 6 + search + snapshot, width: goals };
+      case 'session-notes':
+        return { left: 6 + search + snapshot + goals, width: sessionNotes };
+      case 'assignments':
+        return { left: 6 + search + snapshot + goals + sessionNotes, width: assignments };
+      default:
+        return { left: 6 + search, width: snapshot };
+    }
+  };
+
   // Student filtering states
   const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
