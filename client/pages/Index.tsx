@@ -562,6 +562,20 @@ export default function Index() {
   const [isStudentSearchMode, setIsStudentSearchMode] = useState(false);
   const [studentPanelSearchQuery, setStudentPanelSearchQuery] = useState("");
   const studentPanelSearchInputRef = useRef<HTMLInputElement>(null);
+
+  // Student panel search mode handlers
+  const enterStudentSearchMode = () => {
+    setIsStudentSearchMode(true);
+    setTimeout(() => {
+      studentPanelSearchInputRef.current?.focus();
+    }, 10);
+  };
+
+  const exitStudentSearchMode = () => {
+    setIsStudentSearchMode(false);
+    setStudentPanelSearchQuery("");
+  };
+
   // Student filtering states
   const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
