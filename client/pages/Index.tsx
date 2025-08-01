@@ -266,9 +266,9 @@ const mockStudents: Student[] = [
   {
     id: "18",
     name: "Daniel",
-    subject: "Art Tutoring",
-    sessionTime: "2:00pm, July 31",
-    sessionDate: new Date(2025, 6, 31),
+    subject: "Biology Tutoring",
+    sessionTime: "2:00pm, August 4",
+    sessionDate: new Date(2025, 7, 4),
     sessionReportCompleted: false,
     email: "daniel.kim@email.com",
   }, // Waiting
