@@ -1498,7 +1498,7 @@ export default function Index() {
                                 setShowHomeDropdown(false);
                                 setActiveView('sessionnotes');
                               }}
-                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group"
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group overflow-hidden"
                             >
                               <NotebookPen className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-base">New session notes</span>
