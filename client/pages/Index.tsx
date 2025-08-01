@@ -4024,7 +4024,7 @@ export default function Index() {
                         <div className="flex items-center space-x-2">
                           <Timer className="w-6 h-6 text-stone-400" />
                           <h2 className="text-xl font-normal text-stone-400 font-lexend">
-                            Late drafts
+                            Late session notes
                           </h2>
                           <div className="flex items-center text-stone-200 group-hover:text-indigo-600 transition-colors ml-1">
                             <ArrowRight className="w-6 h-6" />
