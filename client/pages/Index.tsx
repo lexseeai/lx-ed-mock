@@ -2300,6 +2300,7 @@ export default function Index() {
                                 handleStudentClick(student.id, lateDraftStudents);
                               }}
                               sessionNotesView={true}
+                              openNotesOverlay={openNotesOverlay}
                             />
                           </div>
                         ));
