@@ -566,7 +566,7 @@ export default function StudentDetail() {
                             <div className="space-y-3 pl-1.5">
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                  <RoundedRect className="w-[18px] h-[18px] text-stone-700" />
                                 </div>
                                 <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
                                   Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
@@ -575,7 +575,7 @@ export default function StudentDetail() {
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                  <RoundedRect className="w-[18px] h-[18px] text-stone-700" />
                                 </div>
                                 <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
                                   Apply 2D shape formulas in word problems to build real-world problem-solving skills.
@@ -584,7 +584,7 @@ export default function StudentDetail() {
 
                               <div className="flex gap-1.5">
                                 <div className="pt-0.5">
-                                  <div className="w-[18px] h-[18px] rounded-full border border-stone-700"></div>
+                                  <RoundedRect className="w-[18px] h-[18px] text-stone-700" />
                                 </div>
                                 <span className="text-stone-900 font-lexend text-base leading-5 flex-1">
                                   Introduce multi-step problems involving both perimeter/area and decimal rounding.
