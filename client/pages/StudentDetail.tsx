@@ -214,6 +214,80 @@ export default function StudentDetail() {
   const [activeTab, setActiveTab] = useState("next-session");
   const [activeView, setActiveView] = useState("student");
 
+  // Tab measurement state and refs for sliding indicator
+  const [buttonMeasurements, setButtonMeasurements] = useState<{
+    button1?: number;
+    button2?: number;
+    button3?: number;
+    button4?: number;
+    button5?: number;
+  }>({});
+
+  // Ref callbacks that measure immediately when elements are mounted
+  const button1RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button1: el.offsetWidth }));
+      }, 10);
+    }
+  };
+
+  const button2RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button2: el.offsetWidth }));
+      }, 10);
+    }
+  };
+
+  const button3RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button3: el.offsetWidth }));
+      }, 10);
+    }
+  };
+
+  const button4RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button4: el.offsetWidth }));
+      }, 10);
+    }
+  };
+
+  const button5RefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        setButtonMeasurements(prev => ({ ...prev, button5: el.offsetWidth }));
+      }, 10);
+    }
+  };
+
+  // Calculate tab position and width
+  const getTabPosition = () => {
+    const { button1, button2, button3, button4, button5 } = buttonMeasurements;
+
+    if (!button1 || !button2 || !button3 || !button4 || !button5) {
+      return null;
+    }
+
+    switch (activeTab) {
+      case 'next-session':
+        return { left: 6, width: button1 };
+      case 'observations':
+        return { left: 6 + button1, width: button2 };
+      case 'goals':
+        return { left: 6 + button1 + button2, width: button3 };
+      case 'session-notes':
+        return { left: 6 + button1 + button2 + button3, width: button4 };
+      case 'assignments':
+        return { left: 6 + button1 + button2 + button3 + button4, width: button5 };
+      default:
+        return { left: 6, width: button1 };
+    }
+  };
+
   // Find the student data
   const student = mockStudents.find(s => s.id === studentId);
 
