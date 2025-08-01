@@ -1605,11 +1605,7 @@ export default function StudentDetail() {
                                       size="sm"
                                       className="flex items-center gap-1 px-3 py-1.5 h-auto border-stone-200"
                                       onClick={() => {
-                                        const nextSessionText = [
-                                          "Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.",
-                                          "Apply 2D shape formulas in word problems to build real-world problem-solving skills.",
-                                          "Introduce multi-step problems involving both perimeter/area and decimal rounding.",
-                                        ].join("\n\n");
+                                        const nextSessionText = studentContent.nextSessionItems.join("\n\n");
                                         navigator.clipboard.writeText(
                                           nextSessionText,
                                         );
