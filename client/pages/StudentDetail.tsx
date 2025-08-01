@@ -342,6 +342,207 @@ export default function StudentDetail() {
     return name.charAt(0).toUpperCase();
   };
 
+  const openNotesOverlay = (mode: 'view' | 'add' | 'edit') => {
+    setNotesMode(mode);
+    setShowNotesOverlay(true);
+  };
+
+  const closeNotesOverlay = () => {
+    setShowNotesOverlay(false);
+  };
+
+  // Session Notes Overlay Component
+  const SessionNotesOverlay = () => {
+    if (!showNotesOverlay) return null;
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-end justify-center" style={{ background: 'rgba(0, 0, 0, 0.60)' }}>
+        {/* Main Notes Card */}
+        <div
+          className="w-full max-w-6xl bg-white rounded-t-lg shadow-xl animate-in slide-in-from-bottom duration-300"
+          style={{ height: '90vh' }}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-stone-200">
+            <div className="flex items-center gap-2">
+              <div className="w-11 h-11 rounded-lg bg-blue-100 flex items-center justify-center">
+                <span className="text-blue-700 font-bold text-lg font-lexend">{getInitials(student.name)}</span>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-stone-900 font-lexend">{student.name}</h2>
+                <p className="text-stone-700 font-lexend">July 28, 2025, 9:00–9:45am</p>
+              </div>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={closeNotesOverlay}
+              className="p-2"
+            >
+              <X className="w-6 h-6 text-stone-700" />
+            </Button>
+          </div>
+
+          {/* Content Area */}
+          <div className="flex h-full">
+            {/* Main Content */}
+            <div className="flex-1 flex flex-col">
+              {/* Toolbar */}
+              <div className="flex items-center justify-between border-b border-stone-200 bg-stone-50">
+                {/* Left Toolbar */}
+                <div className="flex items-center">
+                  {/* Lexsee Assist */}
+                  <div className="flex items-center gap-3 px-6 py-2 border-r border-stone-200">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-indigo-600" viewBox="0 0 19 18" fill="none">
+                        <path d="M7.95258 11.6252C7.88562 11.3656 7.75034 11.1288 7.5608 10.9392C7.37126 10.7497 7.13439 10.6144 6.87483 10.5474L2.27358 9.36094C2.19508 9.33866 2.12599 9.29138 2.07679 9.22627C2.02759 9.16117 2.00098 9.08179 2.00098 9.00019C2.00098 8.91858 2.02759 8.83921 2.07679 8.7741C2.12599 8.709 2.19508 8.66172 2.27358 8.63944L6.87483 7.45219C7.13429 7.38529 7.3711 7.25012 7.56063 7.06072C7.75017 6.87132 7.88551 6.6346 7.95258 6.37519L9.13908 1.77394C9.16114 1.69513 9.20837 1.62569 9.27357 1.57623C9.33878 1.52677 9.41837 1.5 9.50021 1.5C9.58205 1.5 9.66164 1.52677 9.72684 1.57623C9.79204 1.62569 9.83928 1.69513 9.86133 1.77394L11.0471 6.37519C11.114 6.63474 11.2493 6.87161 11.4389 7.06115C11.6284 7.25069 11.8653 7.38598 12.1248 7.45294L16.7261 8.63869C16.8052 8.66051 16.875 8.70769 16.9247 8.77299C16.9744 8.83829 17.0014 8.91811 17.0014 9.00019C17.0014 9.08227 16.9744 9.16208 16.9247 9.22738C16.875 9.29268 16.8052 9.33986 16.7261 9.36169L12.1248 10.5474C11.8653 10.6144 11.6284 10.7497 11.4389 10.9392C11.2493 11.1288 11.114 11.3656 11.0471 11.6252L9.86058 16.2264C9.83853 16.3052 9.7913 16.3747 9.72609 16.4241C9.66089 16.4736 9.5813 16.5004 9.49946 16.5004C9.41762 16.5004 9.33803 16.4736 9.27282 16.4241C9.20762 16.3747 9.16039 16.3052 9.13833 16.2264L7.95258 11.6252Z" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M15.5 2.25V5.25" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M17 3.75H14" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M3.5 12.75V14.25" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M4.25 13.5H2.75" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
+                      <span className="text-indigo-600 font-medium text-sm font-lexend">Lexsee Assist</span>
+                    </div>
+                    <ChevronDown className="w-3 h-3 text-indigo-600" />
+                  </div>
+
+                  {/* Microphone */}
+                  <div className="px-3 py-2 border-r border-stone-200">
+                    <svg className="w-5 h-5 text-stone-700" viewBox="0 0 19 18" fill="none">
+                      <path d="M9.5 1.5C8.90326 1.5 8.33097 1.73705 7.90901 2.15901C7.48705 2.58097 7.25 3.15326 7.25 3.75V9C7.25 9.59674 7.48705 10.169 7.90901 10.591C8.33097 11.0129 8.90326 11.25 9.5 11.25C10.0967 11.25 10.669 11.0129 11.091 10.591C11.5129 10.169 11.75 9.59674 11.75 9V3.75C11.75 3.15326 11.5129 2.58097 11.091 2.15901C10.669 1.73705 10.0967 1.5 9.5 1.5Z" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M14.75 7.5V9C14.75 10.3924 14.1969 11.7277 13.2123 12.7123C12.2277 13.6969 10.8924 14.25 9.5 14.25C8.10761 14.25 6.77226 13.6969 5.78769 12.7123C4.80312 11.7277 4.25 10.3924 4.25 9V7.5" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M9.5 14.25V16.5" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                  </div>
+
+                  {/* Text Format Dropdown */}
+                  <div className="flex items-center gap-3 px-3 py-2 border-r border-stone-200">
+                    <span className="text-stone-700 text-sm font-lexend">Regular Text</span>
+                    <ChevronDown className="w-3 h-3 text-stone-400" />
+                  </div>
+
+                  {/* Format Buttons */}
+                  <div className="flex items-center px-3 py-2 border-r border-stone-200">
+                    <Button variant="ghost" size="sm" className="p-2 w-8 h-8 rounded bg-indigo-50">
+                      <svg className="w-4 h-4 text-indigo-600" viewBox="0 0 19 18" fill="none">
+                        <path d="M5 9H11.75C12.5456 9 13.3087 9.31607 13.8713 9.87868C14.4339 10.4413 14.75 11.2044 14.75 12C14.75 12.7956 14.4339 13.5587 13.8713 14.1213C13.3087 14.6839 12.5456 15 11.75 15H5.75C5.55109 15 5.36032 14.921 5.21967 14.7803C5.07902 14.6397 5 14.4489 5 14.25V3.75C5 3.55109 5.07902 3.36032 5.21967 3.21967C5.36032 3.07902 5.55109 3 5.75 3H11C11.7956 3 12.5587 3.31607 13.1213 3.87868C13.6839 4.44129 14 5.20435 14 6C14 6.79565 13.6839 7.55871 13.1213 8.12132C12.5587 8.68393 11.7956 9 11 9" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
+                    </Button>
+                    <Button variant="ghost" size="sm" className="p-2 w-8 h-8">
+                      <svg className="w-4 h-4 text-stone-700" viewBox="0 0 19 18" fill="none">
+                        <path d="M14.75 3H8" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M11 15H4.25" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M11.75 3L7.25 15" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
+                    </Button>
+                    <Button variant="ghost" size="sm" className="p-2 w-8 h-8">
+                      <svg className="w-4 h-4 text-stone-700" viewBox="0 0 19 18" fill="none">
+                        <path d="M5 3V7.5C5 8.69347 5.47411 9.83807 6.31802 10.682C7.16193 11.5259 8.30653 12 9.5 12C10.6935 12 11.8381 11.5259 12.682 10.682C13.5259 9.83807 14 8.69347 14 7.5V3" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M3.5 15H15.5" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
+                    </Button>
+                    <Button variant="ghost" size="sm" className="p-2 w-8 h-8">
+                      <svg className="w-4 h-4 text-stone-700" viewBox="0 0 19 18" fill="none">
+                        <path d="M12.4992 3H7.24923C6.88917 2.99981 6.53433 3.08604 6.21451 3.25143C5.89468 3.41682 5.61923 3.65655 5.41127 3.95048C5.20332 4.24441 5.06894 4.58396 5.01942 4.94059C4.96991 5.29723 5.00671 5.66054 5.12673 6" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M11 9C11.7956 9 12.5587 9.31607 13.1213 9.87868C13.6839 10.4413 14 11.2044 14 12C14 12.7956 13.6839 13.5587 13.1213 14.1213C12.5587 14.6839 11.7956 15 11 15H5" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M3.5 9H15.5" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
+                    </Button>
+                  </div>
+
+                  {/* Link Button */}
+                  <div className="px-3 py-2">
+                    <svg className="w-5 h-5 text-stone-700" viewBox="0 0 19 18" fill="none">
+                      <path d="M16.2497 15.7501H6.49968C6.3019 15.7505 6.10599 15.7118 5.92321 15.6363C5.74044 15.5607 5.57441 15.4498 5.43468 15.3098L2.43918 12.3106C2.15797 12.0293 2 11.6478 2 11.2501C2 10.8523 2.15797 10.4708 2.43918 10.1896L9.93918 2.68955C10.0785 2.5502 10.2439 2.43966 10.4259 2.36424C10.6079 2.28882 10.803 2.25 11.0001 2.25C11.1971 2.25 11.3922 2.28882 11.5742 2.36424C11.7562 2.43966 11.9216 2.5502 12.0609 2.68955L16.5602 7.18956C16.8414 7.47085 16.9994 7.85231 16.9994 8.25005C16.9994 8.6478 16.8414 9.02926 16.5602 9.31055L10.1252 15.7501" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M4.3125 8.31738L10.9335 14.9384" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Right Toolbar */}
+                <div className="flex items-center gap-4 px-4">
+                  <Button variant="ghost" size="sm" className="p-2">
+                    <svg className="w-5 h-5 text-stone-700" viewBox="0 0 19 18" fill="none">
+                      <path d="M7.25 10.5L3.5 6.75L7.25 3" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M3.5 6.75H11.375C11.9167 6.75 12.4531 6.8567 12.9536 7.064C13.454 7.2713 13.9088 7.57514 14.2918 7.95818C14.6749 8.34123 14.9787 8.79596 15.186 9.29643C15.3933 9.7969 15.5 10.3333 15.5 10.875C15.5 11.4167 15.3933 11.9531 15.186 12.4536C14.9787 12.954 14.6749 13.4088 14.2918 13.7918C13.9088 14.1749 13.454 14.4787 12.9536 14.686C12.4531 14.8933 11.9167 15 11.375 15H8.75" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                  </Button>
+                  <Button variant="ghost" size="sm" className="p-2 opacity-50">
+                    <svg className="w-5 h-5 text-stone-700" viewBox="0 0 19 18" fill="none">
+                      <path d="M11.75 10.5L15.5 6.75L11.75 3" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M15.5 6.75H7.625C6.53098 6.75 5.48177 7.1846 4.70818 7.95818C3.9346 8.73177 3.5 9.78098 3.5 10.875C3.5 11.4167 3.6067 11.9531 3.814 12.4536C4.0213 12.954 4.32514 13.4088 4.70818 13.7918C5.48177 14.5654 6.53098 15 7.625 15H10.25" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Text Editor */}
+              <div className="flex-1 p-6">
+                <div className="w-full h-full bg-white">
+                  {/* This would be where the rich text editor content goes */}
+                  <div className="text-stone-500 text-lg">
+                    {notesMode === 'add' ? 'Start typing your notes...' :
+                     notesMode === 'edit' ? 'Edit session notes...' :
+                     'View session notes...'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="w-[425px] bg-stone-100 border-l border-stone-200 flex flex-col">
+              {/* Tabs */}
+              <div className="p-4">
+                <div className="flex bg-white rounded-lg border border-stone-200">
+                  <div className="flex-1 flex items-center justify-center gap-2 py-3 bg-white rounded-lg shadow-sm">
+                    <svg className="w-5 h-5 text-indigo-600" viewBox="0 0 19 18" fill="none">
+                      <path d="M3 1.5H16.5" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M15 4.5H4.5C3.67157 4.5 3 5.17157 3 6V12C3 12.8284 3.67157 13.5 4.5 13.5H15C15.8284 13.5 16.5 12.8284 16.5 12V6C16.5 5.17157 15.8284 4.5 15 4.5Z" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M3 16.5H16.5" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                    <span className="text-indigo-600 font-semibold text-sm font-lexend">Academic Coaching</span>
+                    <ChevronDown className="w-4 h-4 text-indigo-600 opacity-50" />
+                  </div>
+                  <div className="flex-1 flex items-center justify-center gap-2 py-2">
+                    <svg className="w-5 h-5 text-stone-400" viewBox="0 0 19 18" fill="none">
+                      <path d="M11.6519 16.2644C11.6803 16.3354 11.7299 16.396 11.7938 16.4381C11.8577 16.4801 11.933 16.5016 12.0095 16.4997C12.086 16.4977 12.16 16.4724 12.2217 16.4271C12.2834 16.3818 12.3298 16.3188 12.3546 16.2464L17.2296 1.99642C17.2536 1.92997 17.2582 1.85805 17.2428 1.78909C17.2274 1.72012 17.1927 1.65697 17.1428 1.607C17.0928 1.55704 17.0297 1.52234 16.9607 1.50696C16.8917 1.49159 16.8198 1.49617 16.7534 1.52017L2.50335 6.39517C2.43098 6.41999 2.36792 6.46636 2.32266 6.52805C2.27739 6.58974 2.25208 6.6638 2.25012 6.74029C2.24816 6.81678 2.26965 6.89204 2.3117 6.95597C2.35375 7.01989 2.41434 7.06943 2.48535 7.09792L8.43285 9.48292C8.62087 9.5582 8.79169 9.67077 8.93503 9.81384C9.07836 9.95692 9.19124 10.1275 9.26685 10.3154L11.6519 16.2644Z" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M17.1405 1.61035L8.93555 9.8146" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                    <span className="text-stone-400 font-semibold text-sm font-lexend">Session notes</span>
+                    <ChevronDown className="w-4 h-4 text-stone-400" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Area */}
+              <div className="flex-1 p-4">
+                {/* This would contain the AI suggestions */}
+              </div>
+
+              {/* Bottom Actions */}
+              <div className="p-6 border-t border-stone-200">
+                <div className="flex items-center gap-2">
+                  <Button className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg font-medium">
+                    Apply suggestions
+                  </Button>
+                  <Button variant="outline" size="sm" className="p-2 opacity-50">
+                    <svg className="w-5 h-5" viewBox="0 0 19 18" fill="none">
+                      <path d="M14 4.5L5.75 12.75L2 9" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M17 7.5L11.375 13.125L10.25 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                  </Button>
+                </div>
+                <p className="text-center text-stone-400 text-xs mt-3 font-lexend">
+                  Lexsee can make mistakes, so double-check it
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <TooltipProvider>
       <div className="h-screen bg-indigo-900 flex">
