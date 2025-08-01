@@ -1690,7 +1690,7 @@ export default function StudentDetail() {
                                   </div>
                                   {/* From section - flush left */}
                                   <div className="flex items-center gap-1 pl-1">
-                                    <span className="text-stone-400 font-lexend text-sm">
+                                    <span className="text-stone-400 font-lexend text-xs">
                                       From notes
                                     </span>
                                     <span
@@ -1833,7 +1833,7 @@ export default function StudentDetail() {
                                   </div>
                                   {/* Subtitle section - flush left */}
                                   <div className="flex items-center pl-1">
-                                    <span className="text-stone-400 font-lexend text-sm">
+                                    <span className="text-stone-400 font-lexend text-xs">
                                       From the last 7 sessions
                                     </span>
                                   </div>
