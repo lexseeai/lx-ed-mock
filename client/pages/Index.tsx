@@ -558,7 +558,10 @@ export default function Index() {
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
   const [activeTab, setActiveTab] = useState('in-progress');
-  const [studentDetailTab, setStudentDetailTab] = useState('next-session');
+  const [studentDetailTab, setStudentDetailTab] = useState('snapshot');
+  const [isStudentSearchMode, setIsStudentSearchMode] = useState(false);
+  const [studentPanelSearchQuery, setStudentPanelSearchQuery] = useState("");
+  const studentPanelSearchInputRef = useRef<HTMLInputElement>(null);
   // Student filtering states
   const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
