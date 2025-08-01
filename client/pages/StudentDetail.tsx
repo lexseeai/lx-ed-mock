@@ -378,14 +378,12 @@ export default function StudentDetail() {
                 <p className="text-stone-700 font-lexend">July 28, 2025, 9:00–9:45am</p>
               </div>
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
+            <button
               onClick={closeNotesOverlay}
-              className="p-2"
+              className="p-2 hover:bg-stone-100 rounded-lg transition-colors"
             >
               <X className="w-6 h-6 text-stone-700" />
-            </Button>
+            </button>
           </div>
 
           {/* Content Area */}
