@@ -2536,6 +2536,7 @@ export default function Index() {
                           student={student}
                           onClick={() => handleStudentClick(student.id, getInProgressNotes())}
                           sessionNotesView={true}
+                          openNotesOverlay={openNotesOverlay}
                         />
                       ))}
                     </div>
