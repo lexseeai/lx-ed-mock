@@ -403,15 +403,19 @@ export default function StudentDetail() {
               <div className="border-b border-stone-200" style={{padding: '12px 24px 24px'}}>
                 <div className="flex justify-center">
                   {isSearchMode ? (
-                    /* Search Mode */
-                    <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center w-full max-w-md">
+                    // Search Mode
+                    <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center w-full max-w-md focus-within:ring-2 focus-within:ring-indigo-600 focus-within:border-indigo-600 transition-all">
+                      {/* Search Icon - Fixed Position */}
+                      <div className="flex items-center justify-center px-3 py-1.5">
+                        <Search className="w-5 h-5 text-stone-400" />
+                      </div>
                       <input
                         ref={searchInputRef}
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search..."
-                        className="flex-1 px-3 py-1.5 text-sm font-medium font-lexend bg-transparent border-0 outline-none"
+                        className="flex-1 pr-3 py-1.5 text-sm font-medium font-lexend bg-transparent border-0 outline-none text-stone-800 placeholder-stone-400"
                       />
                       <button
                         onClick={exitSearchMode}
