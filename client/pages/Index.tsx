@@ -804,13 +804,13 @@ export default function Index() {
       return;
     }
 
-    // Only show sidebar panel for 'schedule' and 'sessionnotes' views (upcoming and notes due)
-    if (activeView === 'schedule' || activeView === 'sessionnotes') {
+    // Show sidebar panel for 'home', 'schedule' and 'sessionnotes' views
+    if (activeView === 'home' || activeView === 'schedule' || activeView === 'sessionnotes') {
       setSelectedStudentId(studentId);
       setCurrentStudentList(studentList);
       setShowStudentOverlay(true);
     } else {
-      // For other views, also navigate to full page
+      // For other views, navigate to full page
       navigate(`/student/${studentId}`);
     }
   };
