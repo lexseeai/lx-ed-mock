@@ -571,10 +571,10 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 space-y-6">
+                    <div className="flex-1 space-y-6" style={{display: 'flex', flexDirection: 'column'}}>
 
                       {/* Observations */}
-                      <Card className="p-5 min-w-[500px] max-w-[650px] flex-1 mt-6">
+                      <Card className="p-5 min-w-[500px] max-w-[650px] flex-1">
                         <CardContent className="p-0">
                           <div className="flex flex-col gap-3">
                             {/* Header with icon and copy button */}
