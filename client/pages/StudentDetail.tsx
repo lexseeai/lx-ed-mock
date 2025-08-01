@@ -296,8 +296,14 @@ export default function StudentDetail() {
   };
 
   const handleSidebarNavigation = (view: string) => {
+    // Only navigate away from student page for specific views
+    if (view === 'home' || view === 'all') {
+      navigate('/');
+      return;
+    }
+
+    // For other views like 'schedule' and 'sessionnotes', stay on student page but update the view
     setActiveView(view);
-    navigate('/');
   };
 
   if (!student) {
