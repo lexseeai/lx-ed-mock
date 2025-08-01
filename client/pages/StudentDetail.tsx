@@ -634,178 +634,193 @@ export default function StudentDetail() {
 
   const handleBackClick = () => {
     // Store the desired view in sessionStorage so the Index page can read it
-    sessionStorage.setItem('returnToView', 'all');
+    sessionStorage.setItem("returnToView", "all");
     navigate("/");
   };
 
   // Get student-specific session content
   const getStudentSessionContent = () => {
     const studentContentMap = {
-      "1": { // Alex
+      "1": {
+        // Alex
         nextSessionItems: [
           "Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.",
           "Apply 2D shape formulas in word problems to build real-world problem-solving skills.",
-          "Introduce multi-step problems involving both perimeter/area and decimal rounding."
+          "Introduce multi-step problems involving both perimeter/area and decimal rounding.",
         ],
         nextSessionDate: "14 June 25",
         previousSessionDate: "28 July 25",
         nextSessionTime: "9:00-9:45am",
-        previousSessionTime: "9:00-9:45am"
+        previousSessionTime: "9:00-9:45am",
       },
-      "2": { // Emma
+      "2": {
+        // Emma
         nextSessionItems: [
           "Review chemical bonding concepts and practice drawing Lewis structures.",
           "Complete lab analysis of molecular structures and their properties.",
-          "Apply periodic trends to predict chemical behavior in reactions."
+          "Apply periodic trends to predict chemical behavior in reactions.",
         ],
         nextSessionDate: "1 Aug 25",
         previousSessionDate: "14 July 25",
         nextSessionTime: "3:00-3:45pm",
-        previousSessionTime: "3:00-3:45pm"
+        previousSessionTime: "3:00-3:45pm",
       },
-      "3": { // Marcus
+      "3": {
+        // Marcus
         nextSessionItems: [
           "Analyze primary source documents from the American Civil War era.",
           "Compare different historical perspectives on Reconstruction policies.",
-          "Practice writing thesis statements for historical argumentative essays."
+          "Practice writing thesis statements for historical argumentative essays.",
         ],
         nextSessionDate: "5 Aug 25",
         previousSessionDate: "28 July 25",
         nextSessionTime: "4:00-4:45pm",
-        previousSessionTime: "4:00-4:45pm"
+        previousSessionTime: "4:00-4:45pm",
       },
-      "4": { // Isabella
+      "4": {
+        // Isabella
         nextSessionItems: [
           "Practice subjunctive mood in hypothetical situations and formal requests.",
           "Review irregular verb conjugations in preterite and imperfect tenses.",
-          "Conduct conversation practice focusing on cultural topics from Spain."
+          "Conduct conversation practice focusing on cultural topics from Spain.",
         ],
         nextSessionDate: "2 Aug 25",
         previousSessionDate: "21 July 25",
         nextSessionTime: "11:00-11:45am",
-        previousSessionTime: "11:00-11:45am"
+        previousSessionTime: "11:00-11:45am",
       },
-      "5": { // Carlos
+      "5": {
+        // Carlos
         nextSessionItems: [
           "Solve projectile motion problems using kinematic equations.",
           "Apply conservation of momentum in collision scenarios.",
-          "Practice energy calculations for pendulum and spring systems."
+          "Practice energy calculations for pendulum and spring systems.",
         ],
         nextSessionDate: "3 Aug 25",
         previousSessionDate: "29 July 25",
         nextSessionTime: "8:00-8:45pm",
-        previousSessionTime: "8:00-8:45pm"
+        previousSessionTime: "8:00-8:45pm",
       },
-      "6": { // Daniel
+      "6": {
+        // Daniel
         nextSessionItems: [
           "Study cellular respiration and photosynthesis energy cycles.",
           "Compare prokaryotic and eukaryotic cell structures and functions.",
-          "Practice genetics problems involving Punnett squares and inheritance patterns."
+          "Practice genetics problems involving Punnett squares and inheritance patterns.",
         ],
         nextSessionDate: "4 Aug 25",
         previousSessionDate: "24 July 25",
         nextSessionTime: "2:00-2:45pm",
-        previousSessionTime: "2:00-2:45pm"
+        previousSessionTime: "2:00-2:45pm",
       },
-      "7": { // Liam
+      "7": {
+        // Liam
         nextSessionItems: [
           "Balance chemical equations and calculate molar relationships.",
           "Study acid-base reactions and pH calculations.",
-          "Practice stoichiometry problems with limiting reactants."
+          "Practice stoichiometry problems with limiting reactants.",
         ],
         nextSessionDate: "6 Aug 25",
         previousSessionDate: "24 July 25",
         nextSessionTime: "9:00-9:45am",
-        previousSessionTime: "9:00-9:45am"
+        previousSessionTime: "9:00-9:45am",
       },
-      "8": { // Kai
+      "8": {
+        // Kai
         nextSessionItems: [
           "Analyze literary devices in modern poetry and their effects on meaning.",
           "Practice writing analytical essays with strong thesis statements.",
-          "Study character development techniques in contemporary fiction."
+          "Study character development techniques in contemporary fiction.",
         ],
         nextSessionDate: "7 Aug 25",
         previousSessionDate: "1 Aug 25",
         nextSessionTime: "6:00-6:45pm",
-        previousSessionTime: "6:00-6:45pm"
+        previousSessionTime: "6:00-6:45pm",
       },
-      "9": { // Oliver
+      "9": {
+        // Oliver
         nextSessionItems: [
           "Study plate tectonics and their impact on landform creation.",
           "Analyze climate patterns and their effects on global ecosystems.",
-          "Practice map reading skills and geographic coordinate systems."
+          "Practice map reading skills and geographic coordinate systems.",
         ],
         nextSessionDate: "8 Aug 25",
         previousSessionDate: "4 Aug 25",
         nextSessionTime: "8:00-8:45am",
-        previousSessionTime: "8:00-8:45am"
+        previousSessionTime: "8:00-8:45am",
       },
-      "23": { // Alex (duplicate)
+      "23": {
+        // Alex (duplicate)
         nextSessionItems: [
           "Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.",
           "Apply 2D shape formulas in word problems to build real-world problem-solving skills.",
-          "Introduce multi-step problems involving both perimeter/area and decimal rounding."
+          "Introduce multi-step problems involving both perimeter/area and decimal rounding.",
         ],
         nextSessionDate: "14 June 25",
         previousSessionDate: "28 July 25",
         nextSessionTime: "9:00-9:45am",
-        previousSessionTime: "9:00-9:45am"
+        previousSessionTime: "9:00-9:45am",
       },
-      "16": { // Carlos (duplicate)
+      "16": {
+        // Carlos (duplicate)
         nextSessionItems: [
           "Solve projectile motion problems using kinematic equations.",
           "Apply conservation of momentum in collision scenarios.",
-          "Practice energy calculations for pendulum and spring systems."
+          "Practice energy calculations for pendulum and spring systems.",
         ],
         nextSessionDate: "3 Aug 25",
         previousSessionDate: "29 July 25",
         nextSessionTime: "8:00-8:45pm",
-        previousSessionTime: "8:00-8:45pm"
+        previousSessionTime: "8:00-8:45pm",
       },
-      "17": { // Maya
+      "17": {
+        // Maya
         nextSessionItems: [
           "Study cellular respiration pathways and ATP production mechanisms.",
           "Compare photosynthesis and cellular respiration energy cycles.",
-          "Practice genetics problems with Punnett squares and inheritance patterns."
+          "Practice genetics problems with Punnett squares and inheritance patterns.",
         ],
         nextSessionDate: "5 Aug 25",
         previousSessionDate: "31 July 25",
         nextSessionTime: "10:00-10:45am",
-        previousSessionTime: "10:00-10:45am"
+        previousSessionTime: "10:00-10:45am",
       },
-      "19": { // Zoe
+      "19": {
+        // Zoe
         nextSessionItems: [
           "Practice chord progressions and harmonic analysis techniques.",
           "Study rhythm patterns in different musical time signatures.",
-          "Compose a short melody using pentatonic and major scales."
+          "Compose a short melody using pentatonic and major scales.",
         ],
         nextSessionDate: "6 Aug 25",
         previousSessionDate: "31 July 25",
         nextSessionTime: "4:00-4:45pm",
-        previousSessionTime: "4:00-4:45pm"
+        previousSessionTime: "4:00-4:45pm",
       },
-      "28": { // Luna
+      "28": {
+        // Luna
         nextSessionItems: [
           "Analyze symbolism and themes in contemporary poetry collections.",
           "Practice close reading techniques for complex narrative structures.",
-          "Write analytical essays comparing different literary movements."
+          "Write analytical essays comparing different literary movements.",
         ],
         nextSessionDate: "10 Aug 25",
         previousSessionDate: "6 Aug 25",
         nextSessionTime: "1:00-1:45pm",
-        previousSessionTime: "1:00-1:45pm"
+        previousSessionTime: "1:00-1:45pm",
       },
-      "10": { // Sofia
+      "10": {
+        // Sofia
         nextSessionItems: [
           "Examine primary source documents from the Industrial Revolution.",
           "Compare different historical perspectives on social reform movements.",
-          "Practice constructing historical arguments with supporting evidence."
+          "Practice constructing historical arguments with supporting evidence.",
         ],
         nextSessionDate: "7 Aug 25",
         previousSessionDate: "23 July 25",
         nextSessionTime: "10:30-11:15am",
-        previousSessionTime: "10:30-11:15am"
-      }
+        previousSessionTime: "10:30-11:15am",
+      },
     };
 
     return studentContentMap[studentId] || studentContentMap["1"]; // Default to Alex if not found
@@ -1555,10 +1570,18 @@ export default function StudentDetail() {
                           <Card className="w-[150px] h-[150px] p-3 pb-2 flex flex-col justify-between">
                             <CardContent className="p-0 flex flex-col gap-0.5">
                               <div className="text-stone-400 font-lexend text-base font-medium leading-4">
-                                {studentContent.previousSessionDate.split(' ')[1]}
+                                {
+                                  studentContent.previousSessionDate.split(
+                                    " ",
+                                  )[1]
+                                }
                               </div>
                               <div className="text-stone-700 font-lexend text-2xl font-black leading-6">
-                                {studentContent.previousSessionDate.split(' ')[0]}
+                                {
+                                  studentContent.previousSessionDate.split(
+                                    " ",
+                                  )[0]
+                                }
                               </div>
                               <div className="text-stone-700 font-lexend text-base font-medium leading-4">
                                 Mon
@@ -1577,7 +1600,10 @@ export default function StudentDetail() {
                             <div className="flex justify-center">
                               <button
                                 onClick={() => {
-                                  const dateParts = studentContent.previousSessionDate.split(' ');
+                                  const dateParts =
+                                    studentContent.previousSessionDate.split(
+                                      " ",
+                                    );
                                   openNotesOverlay("view", {
                                     date: dateParts[0],
                                     month: dateParts[1],
@@ -1598,10 +1624,10 @@ export default function StudentDetail() {
                           <Card className="w-[150px] h-[150px] p-3 pb-2 flex flex-col justify-between">
                             <CardContent className="p-0 flex flex-col gap-0.5">
                               <div className="text-stone-400 font-lexend text-base font-medium leading-4">
-                                {studentContent.nextSessionDate.split(' ')[1]}
+                                {studentContent.nextSessionDate.split(" ")[1]}
                               </div>
                               <div className="text-stone-700 font-lexend text-2xl font-black leading-6">
-                                {studentContent.nextSessionDate.split(' ')[0]}
+                                {studentContent.nextSessionDate.split(" ")[0]}
                               </div>
                               <div className="text-stone-700 font-lexend text-base font-medium leading-4">
                                 Mon
@@ -1620,7 +1646,8 @@ export default function StudentDetail() {
                             <div className="flex justify-center">
                               <button
                                 onClick={() => {
-                                  const dateParts = studentContent.nextSessionDate.split(' ');
+                                  const dateParts =
+                                    studentContent.nextSessionDate.split(" ");
                                   openNotesOverlay("add", {
                                     date: dateParts[0],
                                     month: dateParts[1],
@@ -1677,7 +1704,10 @@ export default function StudentDetail() {
                                       <span
                                         onClick={(e) => {
                                           e.stopPropagation();
-                                          const dateParts = studentContent.nextSessionDate.split(' ');
+                                          const dateParts =
+                                            studentContent.nextSessionDate.split(
+                                              " ",
+                                            );
                                           openNotesOverlay("view", {
                                             date: dateParts[0],
                                             month: dateParts[1],
@@ -1715,7 +1745,10 @@ export default function StudentDetail() {
                                       size="sm"
                                       className="flex items-center gap-1 px-3 py-1.5 h-auto border-stone-200"
                                       onClick={() => {
-                                        const nextSessionText = studentContent.nextSessionItems.join("\n\n");
+                                        const nextSessionText =
+                                          studentContent.nextSessionItems.join(
+                                            "\n\n",
+                                          );
                                         navigator.clipboard.writeText(
                                           nextSessionText,
                                         );
@@ -1738,19 +1771,21 @@ export default function StudentDetail() {
 
                               {/* Task List */}
                               <div className="space-y-3 pl-1.5">
-                                {studentContent.nextSessionItems.map((item, index) => (
-                                  <div key={index} className="flex gap-1.5">
-                                    <div className="pt-0.5">
-                                      <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
+                                {studentContent.nextSessionItems.map(
+                                  (item, index) => (
+                                    <div key={index} className="flex gap-1.5">
+                                      <div className="pt-0.5">
+                                        <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
+                                      </div>
+                                      <span
+                                        className="font-lexend text-base leading-5 flex-1"
+                                        style={{ color: "rgba(41, 37, 36, 1)" }}
+                                      >
+                                        {item}
+                                      </span>
                                     </div>
-                                    <span
-                                      className="font-lexend text-base leading-5 flex-1"
-                                      style={{ color: "rgba(41, 37, 36, 1)" }}
-                                    >
-                                      {item}
-                                    </span>
-                                  </div>
-                                ))}
+                                  ),
+                                )}
                               </div>
                             </div>
                           </CardContent>

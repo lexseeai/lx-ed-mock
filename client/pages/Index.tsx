@@ -1329,10 +1329,10 @@ export default function Index() {
 
   // Check for return view from sessionStorage (e.g., when coming back from student detail page)
   useEffect(() => {
-    const returnToView = sessionStorage.getItem('returnToView');
+    const returnToView = sessionStorage.getItem("returnToView");
     if (returnToView) {
       setActiveView(returnToView);
-      sessionStorage.removeItem('returnToView');
+      sessionStorage.removeItem("returnToView");
     }
   }, []);
 
