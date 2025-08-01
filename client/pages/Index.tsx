@@ -2266,6 +2266,7 @@ export default function Index() {
                                 handleStudentClick(student.id, todaysStudents);
                               }}
                               scheduleView={true}
+                              openNotesOverlay={openNotesOverlay}
                             />
                           </div>
                         ));
