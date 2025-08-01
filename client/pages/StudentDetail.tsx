@@ -425,7 +425,7 @@ export default function StudentDetail() {
                       </button>
                     </div>
                   ) : (
-                    /* Tab Mode */
+                    // Tab Mode
                     <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
                       {/* Sliding background indicator */}
                       {getTabPosition() && (
