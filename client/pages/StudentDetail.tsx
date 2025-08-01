@@ -387,9 +387,9 @@ export default function StudentDetail() {
           </div>
 
           {/* Content Area */}
-          <div className="flex h-full">
+          <div className="flex flex-1 min-h-0">
             {/* Main Content */}
-            <div className="flex-1 flex flex-col h-auto self-stretch">
+            <div className="flex-1 flex flex-col min-h-0">
               {/* Toolbar */}
               <div className="flex items-center justify-between border-b border-stone-200 bg-stone-50">
                 {/* Left Toolbar */}
