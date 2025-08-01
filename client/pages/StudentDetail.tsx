@@ -20,6 +20,15 @@ interface Student {
   email?: string;
 }
 
+interface SessionData {
+  date: string;
+  month: string;
+  day: string;
+  year: string;
+  time: string;
+  isCompleted: boolean;
+}
+
 // Mock student data that matches the sidebar content
 const mockStudents: Student[] = [
   { id: "1", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true, email: "alex.johnson@email.com" },
