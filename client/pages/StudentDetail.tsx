@@ -370,7 +370,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Tab Navigation */}
-              <div className="px-6 py-4 border-b border-stone-200">
+              <div className="border-b border-stone-200" style={{padding: '12px 24px 24px'}}>
                 <div className="flex justify-center">
                   <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
                     {/* Sliding background indicator */}
