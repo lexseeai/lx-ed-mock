@@ -32,6 +32,14 @@ interface SessionData {
 // Mock student data that matches the sidebar content
 const mockStudents: Student[] = [
   { id: "1", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true, email: "alex.johnson@email.com" },
+  { id: "2", name: "Emma", subject: "Science Tutoring", sessionTime: "3:00pm, July 14", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Emma", sessionDate: new Date(2025, 6, 14), sessionReportCompleted: true, email: "emma.wilson@email.com" },
+  { id: "3", name: "Marcus", subject: "History Tutoring", sessionTime: "4:00pm, July 28", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus", sessionDate: new Date(2025, 6, 28), sessionReportCompleted: false, email: "marcus.brown@email.com" },
+  { id: "4", name: "Isabella", subject: "Spanish Tutoring", sessionTime: "11:00am, July 21", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella", sessionDate: new Date(2025, 6, 21), sessionReportCompleted: false, email: "isabella.garcia@email.com" },
+  { id: "5", name: "Carlos", subject: "Physics Tutoring", sessionTime: "8:00pm, July 29", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos", sessionDate: new Date(2025, 6, 29), sessionReportCompleted: false, email: "carlos.rodriguez@email.com" },
+  { id: "6", name: "Daniel", subject: "Biology Tutoring", sessionTime: "2:00pm, July 24", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Daniel", sessionDate: new Date(2025, 6, 24), sessionReportCompleted: false, email: "daniel.lee@email.com" },
+  { id: "7", name: "Liam", subject: "Chemistry Tutoring", sessionTime: "9:00am, July 24", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam", sessionDate: new Date(2025, 6, 24), sessionReportCompleted: false, email: "liam.smith@email.com" },
+  { id: "8", name: "Kai", subject: "English Tutoring", sessionTime: "6:00pm, August 1", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Kai", sessionDate: new Date(2025, 7, 1), sessionReportCompleted: false, email: "kai.chen@email.com" },
+  { id: "9", name: "Oliver", subject: "Geography Tutoring", sessionTime: "8:00am, August 4", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Oliver", sessionDate: new Date(2025, 7, 4), sessionReportCompleted: false, email: "oliver.jones@email.com" },
   { id: "23", name: "Alex", subject: "Math Tutoring", sessionTime: "9:00am, August 4", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alex", sessionDate: new Date(2025, 7, 4), sessionReportCompleted: false, email: "alex.johnson@email.com" },
 ];
 
