@@ -698,6 +698,47 @@ export default function Index() {
     setStudentPanelSearchQuery("");
   };
 
+  // Ref callbacks for student tab measurements
+  const searchTabRefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      requestAnimationFrame(() => {
+        setStudentTabMeasurements(prev => ({ ...prev, search: el.offsetWidth }));
+      });
+    }
+  };
+
+  const snapshotTabRefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      requestAnimationFrame(() => {
+        setStudentTabMeasurements(prev => ({ ...prev, snapshot: el.offsetWidth }));
+      });
+    }
+  };
+
+  const goalsTabRefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      requestAnimationFrame(() => {
+        setStudentTabMeasurements(prev => ({ ...prev, goals: el.offsetWidth }));
+      });
+    }
+  };
+
+  const sessionNotesTabRefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      requestAnimationFrame(() => {
+        setStudentTabMeasurements(prev => ({ ...prev, sessionNotes: el.offsetWidth }));
+      });
+    }
+  };
+
+  const assignmentsTabRefCallback = (el: HTMLButtonElement | null) => {
+    if (el) {
+      requestAnimationFrame(() => {
+        setStudentTabMeasurements(prev => ({ ...prev, assignments: el.offsetWidth }));
+      });
+    }
+  };
+
   // Student filtering states
   const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
