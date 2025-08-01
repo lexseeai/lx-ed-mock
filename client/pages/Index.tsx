@@ -224,7 +224,7 @@ function getSessionTimeRange(timeString: string): string {
   }
 }
 
-function StudentCard({ student, onClick, scheduleView = false, dimmed = false, sessionNotesView = false, showNextSession = false }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean; sessionNotesView?: boolean; showNextSession?: boolean }) {
+function StudentCard({ student, onClick, scheduleView = false, dimmed = false, sessionNotesView = false, showNextSession = false, openNotesOverlay }: { student: Student; onClick: () => void; scheduleView?: boolean; dimmed?: boolean; sessionNotesView?: boolean; showNextSession?: boolean; openNotesOverlay?: (mode: 'view' | 'add' | 'edit', session: any) => void }) {
   const getInitials = (name: string) => {
     return name.charAt(0).toUpperCase();
   };
