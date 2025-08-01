@@ -229,6 +229,7 @@ export default function StudentDetail() {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
   const [notesMode, setNotesMode] = useState<'view' | 'add' | 'edit'>('view');
+  const [selectedSession, setSelectedSession] = useState<SessionData | null>(null);
 
   // Search mode handlers
   const enterSearchMode = () => {
