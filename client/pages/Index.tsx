@@ -566,7 +566,35 @@ export default function Index() {
   // Notes overlay state
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
   const [notesMode, setNotesMode] = useState<'view' | 'add' | 'edit'>('view');
-  const [selectedSession, setSelectedSession] = useState<any>(null);
+  const [selectedSession, setSelectedSession] = useState<{
+    date: string;
+    month: string;
+    day: string;
+    year: string;
+    time: string;
+    isCompleted: boolean;
+    studentName: string;
+  } | null>(null);
+
+  // Notes overlay handlers
+  const openNotesOverlay = (mode: 'view' | 'add' | 'edit', session: {
+    date: string;
+    month: string;
+    day: string;
+    year: string;
+    time: string;
+    isCompleted: boolean;
+    studentName: string;
+  }) => {
+    setNotesMode(mode);
+    setSelectedSession(session);
+    setShowNotesOverlay(true);
+  };
+
+  const closeNotesOverlay = () => {
+    setShowNotesOverlay(false);
+    setSelectedSession(null);
+  };
 
   // Student panel search mode handlers
   const enterStudentSearchMode = () => {
