@@ -783,7 +783,7 @@ export default function StudentDetail() {
                                 month: 'July',
                                 day: '28',
                                 year: '2025',
-                                time: '9:00��9:45am',
+                                time: '9:00–9:45am',
                                 isCompleted: true
                               })}
                               className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:text-stone-600 hover:border-stone-300 transition-colors cursor-pointer"
@@ -1217,6 +1217,15 @@ export default function StudentDetail() {
                       </Card>
                     </div>
                   </div>
+                  </div>
+                )}
+
+                {activeTab === 'snapshot' && isSearchMode && (
+                  <div className="flex justify-center items-center h-full">
+                    <div className="text-center">
+                      <p className="text-stone-500 font-lexend text-lg mb-2">Search results will appear here</p>
+                      <p className="text-stone-400 font-lexend text-sm">Start typing to search through notes and observations</p>
+                    </div>
                   </div>
                 )}
 
