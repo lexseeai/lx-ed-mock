@@ -855,7 +855,7 @@ export default function StudentDetail() {
                                           month: 'June',
                                           day: '14',
                                           year: '2025',
-                                          time: '9:00���9:45am',
+                                          time: '9:00-9:45am',
                                           isCompleted: true
                                         });
                                       }}
