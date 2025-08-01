@@ -2946,6 +2946,15 @@ export default function Index() {
                   </div>
                 )}
 
+                {studentDetailTab === 'snapshot' && isStudentSearchMode && (
+                  <div className="flex justify-center items-center h-full">
+                    <div className="text-center">
+                      <p className="text-stone-500 font-lexend text-lg mb-2">Search results will appear here</p>
+                      <p className="text-stone-400 font-lexend text-sm">Start typing to search through notes and observations</p>
+                    </div>
+                  </div>
+                )}
+
                 {studentDetailTab === 'observations' && (
                   <div className="text-center py-12">
                     <p className="text-stone-500 font-lexend">Observations content coming soon...</p>
