@@ -538,7 +538,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
@@ -677,7 +680,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
@@ -696,7 +702,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
@@ -715,7 +724,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
@@ -734,7 +746,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
@@ -753,7 +768,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
@@ -772,7 +790,10 @@ export default function StudentDetail() {
                                     </span>
                                     <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                        <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                          View notes
+                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                        </span>
                                       </span>
                                     </span>
                                   </span>
