@@ -459,8 +459,9 @@ export default function StudentDetail() {
               {/* Content */}
               <div className="flex-1 overflow-y-auto p-8 bg-stone-50">
                 {activeTab === 'snapshot' && (
-                  <div className="flex gap-6">
-                    {/* Left Sidebar - Session Cards */}
+                  <div className="flex justify-center">
+                    <div className="flex gap-6">
+                      {/* Left Column - Session Cards and For Next Session */}
                     <div className="flex flex-col gap-6">
                       {/* Sessions Group */}
                       <div className="flex flex-row gap-3" style={{flexDirection: 'row'}}>
@@ -678,6 +679,7 @@ export default function StudentDetail() {
                         </CardContent>
                       </Card>
                     </div>
+                  </div>
                   </div>
                 )}
 
