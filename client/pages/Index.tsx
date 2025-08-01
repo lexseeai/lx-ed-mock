@@ -563,6 +563,11 @@ export default function Index() {
   const [studentPanelSearchQuery, setStudentPanelSearchQuery] = useState("");
   const studentPanelSearchInputRef = useRef<HTMLInputElement>(null);
 
+  // Notes overlay state
+  const [showNotesOverlay, setShowNotesOverlay] = useState(false);
+  const [notesMode, setNotesMode] = useState<'view' | 'add' | 'edit'>('view');
+  const [selectedSession, setSelectedSession] = useState<any>(null);
+
   // Student panel search mode handlers
   const enterStudentSearchMode = () => {
     setIsStudentSearchMode(true);
