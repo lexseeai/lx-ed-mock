@@ -332,8 +332,8 @@ const mockStudents: Student[] = [
   {
     id: "25",
     name: "Marcus",
-    subject: "English Tutoring",
-    sessionTime: "7:00pm, August 4",
+    subject: "History Tutoring",
+    sessionTime: "4:00pm, August 5",
     avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus",
     sessionDate: new Date(2025, 7, 4),
     sessionReportCompleted: false,
