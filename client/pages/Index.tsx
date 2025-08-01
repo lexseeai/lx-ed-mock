@@ -1482,7 +1482,7 @@ export default function Index() {
                       </button>
                       {showHomeDropdown && (
                         <div className="absolute right-0 top-12 w-60 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden">
-                          <div className="py-2">
+                          <div className="p-2">
                             <button
                               onClick={() => {
                                 setShowHomeDropdown(false);
