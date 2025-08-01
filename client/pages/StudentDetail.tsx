@@ -363,7 +363,7 @@ export default function StudentDetail() {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700"
+                      className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
                     >
                       Actions
                       <svg className="w-6 h-6 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
