@@ -493,7 +493,7 @@ export default function StudentDetail() {
             </div>
 
             {/* Sidebar */}
-            <div className="w-[425px] bg-stone-100 border-l border-stone-200 flex flex-col">
+            <div className="w-[425px] bg-stone-100 border-l border-stone-200 flex flex-col h-auto self-stretch">
               {/* Tabs */}
               <div className="p-4">
                 <div className="flex bg-white rounded-lg border border-stone-200">
