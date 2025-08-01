@@ -296,8 +296,14 @@ export default function StudentDetail() {
   };
 
   const handleSidebarNavigation = (view: string) => {
-    // Navigate to the global pages - all sidebar navigation should go back to main app
-    navigate('/', { state: { activeView: view } });
+    // Only navigate away for specific views that should go to global pages
+    if (view === 'home' || view === 'all') {
+      navigate('/');
+      return;
+    }
+
+    // For other views like 'schedule' and 'sessionnotes', just update local state like Index.tsx does
+    setActiveView(view);
   };
 
   if (!student) {
