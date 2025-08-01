@@ -330,7 +330,7 @@ export default function StudentDetail() {
         <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
           {/* Content */}
           <div className="flex-1 p-3 h-full min-w-0">
-            <div className="bg-white rounded-lg h-full flex flex-col min-w-0" style={{boxShadow: '0 0 4px 1px rgba(30, 27, 75, 0.01)', border: '1px none rgb(231, 229, 228)'}}>
+            <Card className="h-full flex flex-col min-w-0">
               {/* Header */}
               <div className="px-6 pt-4 pb-6 bg-white border-b border-stone-200 rounded-t-lg">
                 <div className="flex items-center justify-between">
@@ -671,7 +671,7 @@ export default function StudentDetail() {
                   </div>
                 )}
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>
