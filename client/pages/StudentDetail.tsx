@@ -380,9 +380,8 @@ export default function StudentDetail() {
                 </div>
               </div>
 
-              {/* Tab Navigation - Only show in student view */}
-              {(activeView === 'student' || activeView === 'home') && (
-                <div className="border-b border-stone-200" style={{padding: '12px 24px 24px'}}>
+              {/* Tab Navigation */}
+              <div className="border-b border-stone-200" style={{padding: '12px 24px 24px'}}>
                 <div className="flex justify-center">
                   <div className="relative flex p-1.5 border border-stone-200 rounded-xl bg-white overflow-hidden h-auto self-center">
                     {/* Sliding background indicator */}
@@ -455,8 +454,7 @@ export default function StudentDetail() {
                     </button>
                   </div>
                 </div>
-                </div>
-              )}
+              </div>
 
               {/* Content */}
               <div className="flex-1 overflow-y-auto p-8 bg-stone-50">
