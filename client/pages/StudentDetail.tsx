@@ -810,7 +810,14 @@ export default function StudentDetail() {
                           {/* Add Notes Button */}
                           <div className="flex justify-center">
                             <button
-                              onClick={() => openNotesOverlay('add')}
+                              onClick={() => openNotesOverlay('add', {
+                                date: '4',
+                                month: 'August',
+                                day: '4',
+                                year: '2025',
+                                time: '3:00–3:45pm',
+                                isCompleted: false
+                              })}
                               className="flex items-center px-1.5 py-0.5 border border-stone-200 rounded text-xs text-stone-400 font-lexend hover:text-stone-600 hover:border-stone-300 transition-colors cursor-pointer"
                             >
                               Add notes
