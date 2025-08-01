@@ -361,7 +361,7 @@ const mockStudents: Student[] = [
     name: "Luna",
     subject: "Literature Tutoring",
     sessionTime: "1:00pm, August 10",
-    sessionDate: new Date(2025, 7, 7),
+    sessionDate: new Date(2025, 7, 10),
     sessionReportCompleted: false,
   }, // Waiting
   {
