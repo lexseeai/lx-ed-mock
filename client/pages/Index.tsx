@@ -798,6 +798,13 @@ export default function Index() {
   };
 
   const handleStudentClick = (studentId: string, studentList: Student[] = []) => {
+    // If we're on the Students view, navigate to full page
+    if (activeView === 'all') {
+      navigate(`/student/${studentId}`);
+      return;
+    }
+
+    // Otherwise, show the sidebar panel
     setSelectedStudentId(studentId);
     setCurrentStudentList(studentList);
     setShowStudentOverlay(true);
