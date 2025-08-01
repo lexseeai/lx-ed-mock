@@ -540,7 +540,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
@@ -682,7 +682,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
@@ -704,7 +704,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
@@ -726,7 +726,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
@@ -748,7 +748,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
@@ -770,7 +770,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
@@ -792,7 +792,7 @@ export default function StudentDetail() {
                                       <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
                                         <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
                                           View notes
-                                          <ArrowRight className="w-3 h-3 text-indigo-600" />
+                                          <ArrowRight className="w-6 h-6 text-indigo-600" />
                                         </span>
                                       </span>
                                     </span>
