@@ -373,7 +373,7 @@ export default function StudentDetail() {
                     </Button>
                     <Button
                       size="sm"
-                      className="w-11 h-11 rounded-full border border-stone-200 bg-white hover:bg-stone-50 p-0 flex items-center justify-center"
+                      className="w-11 h-11 rounded-xl border border-stone-200 bg-white hover:bg-stone-50 p-0 flex items-center justify-center overflow-hidden"
                       variant="outline"
                       style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}
                     >
