@@ -667,14 +667,54 @@ export default function StudentDetail() {
                         <path d="M7 9L12 4L17 9" />
                       </svg>
                     </Button>
-                    <Button
-                      size="sm"
-                      className="w-11 h-11 rounded-xl border border-stone-200 bg-white hover:bg-stone-50 p-0 flex items-center justify-center overflow-hidden"
-                      variant="outline"
-                      style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}
-                    >
-                      <Plus className="w-6 h-6 text-indigo-600" strokeWidth={4} />
-                    </Button>
+                    <div className="relative" ref={dropdownRef}>
+                      <button
+                        onClick={() => setShowDropdown(!showDropdown)}
+                        className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                        style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}
+                      >
+                        {showDropdown ? (
+                          <X className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                        ) : (
+                          <Plus className="w-5 h-5 text-indigo-600" strokeWidth={4} />
+                        )}
+                      </button>
+                      {showDropdown && (
+                        <div className="absolute right-0 top-12 w-60 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden" style={{boxShadow: '0 0 8px 0 rgba(80, 70, 229, 0.15)'}}>
+                          <div className="p-2">
+                            <button
+                              onClick={() => {
+                                setShowDropdown(false);
+                                setActiveView('all');
+                              }}
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                            >
+                              <UserRoundPlus className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                              <span className="font-lexend text-base">Add student</span>
+                            </button>
+                            <button
+                              onClick={() => {
+                                setShowDropdown(false);
+                                setActiveView('sessionnotes');
+                              }}
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                            >
+                              <NotebookPen className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                              <span className="font-lexend text-base">New session notes</span>
+                            </button>
+                            <button
+                              onClick={() => {
+                                setShowDropdown(false);
+                              }}
+                              className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                            >
+                              <FileAudio className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
+                              <span className="font-lexend text-base">Create assignment</span>
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
