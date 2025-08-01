@@ -211,7 +211,7 @@ function getSubjectColors(subject: string) {
 export default function StudentDetail() {
   const { studentId } = useParams();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("next-session");
+  const [activeTab, setActiveTab] = useState("snapshot");
   const [activeView, setActiveView] = useState("student");
 
   // Tab measurement state and refs for sliding indicator
