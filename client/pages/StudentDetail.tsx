@@ -528,10 +528,17 @@ export default function StudentDetail() {
                                 <div>
                                   <h2 className="text-stone-900 font-lexend text-xl font-bold leading-6">For next session</h2>
                                   <div className="flex items-center gap-1 mt-0.5">
-                                    <span className="text-stone-400 font-lexend text-sm">From session notes</span>
-                                    <div className="bg-stone-100 rounded-full px-2 py-1">
-                                      <span className="text-stone-400 font-lexend text-xs">14 June 25</span>
-                                    </div>
+                                    <span className="text-stone-400 font-lexend text-sm">From</span>
+                                    <span className="relative inline-block group">
+                                      <span className="bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs" style={{padding: '1px 8px 3px', lineHeight: '12px'}}>
+                                        14 June 25
+                                      </span>
+                                      <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                        <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                          <span className="text-stone-900 font-lexend text-sm whitespace-nowrap">View notes</span>
+                                        </span>
+                                      </span>
+                                    </span>
                                   </div>
                                 </div>
                               </div>
