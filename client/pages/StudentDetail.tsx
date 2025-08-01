@@ -648,7 +648,7 @@ export default function StudentDetail() {
           "Apply 2D shape formulas in word problems to build real-world problem-solving skills.",
           "Introduce multi-step problems involving both perimeter/area and decimal rounding.",
         ],
-        nextSessionDate: "14 June 25",
+        nextSessionDate: "4 Aug 25",
         previousSessionDate: "28 July 25",
         nextSessionTime: "9:00-9:45am",
         previousSessionTime: "9:00-9:45am",
