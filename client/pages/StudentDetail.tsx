@@ -481,7 +481,7 @@ export default function StudentDetail() {
 
               {/* Text Editor */}
               <div className="flex-1 p-6">
-                <div className="w-full h-full bg-white">
+                <div className="w-full bg-white">
                   {/* This would be where the rich text editor content goes */}
                   <div className="text-stone-500 text-lg">
                     {notesMode === 'add' ? 'Start typing your notes...' :
