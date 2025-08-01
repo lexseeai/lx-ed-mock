@@ -509,7 +509,7 @@ export default function StudentDetail() {
                         </Card>
 
                         {/* For Next Session */}
-                        <Card className="p-5">
+                        <Card className="p-5" style={{width: '312px'}}>
                           <CardContent className="p-0">
                             <div className="flex flex-col gap-3">
                               {/* Header with icon */}
