@@ -1,0 +1,9 @@
+follow these guidelines:
+1. Use shadcn/UI components / tailwindCSS
+2. Use icons from the Lucide icon set
+3. Use tailwindCSS colors. For the base grey, use the Stone with stone-200 for borders, stone-500, stone-700 and stone-900 for text. Use Indigo-600 as a primary color.
+4. Use font Lexend font
+5. Build for for desktop web and mobile web. 
+6. The app should always feel snappy, so minimize fade-in; however, transitions should feel organic so the user can follow how the screen is changing.
+7. Keep the design and layouts minimal, with a focus on clarity, legibity and ease of use. Make sure text and background colors support legibility.
+8. Add support for tool tip, as appropriate
