@@ -3945,18 +3945,17 @@ export default function Index() {
                         : activeView === "all" && studentsViewMode === "list"
                           ? "p-9 pb-0"
                           : "p-9"
-                } space-y-6 flex-1 overflow-y-auto safe-area-bottom`}
+                } space-y-6 h-full overflow-y-auto mobile-scroll`}
                 style={{
                   scrollbarWidth: "thin",
                   scrollbarColor: "#d1d5db #f3f4f6",
                   padding:
                     activeView === "home"
-                      ? "72px 64px 40px"
+                      ? "72px 64px 60px"
                       : activeView === "sessionnotes" ||
                           activeView === "schedule"
-                        ? "32px 64px 40px"
-                        : "32px 32px 40px",
-                  paddingBottom: "calc(40px + env(safe-area-inset-bottom, 20px))",
+                        ? "32px 64px 60px"
+                        : "32px 32px 60px",
                 }}
               >
                 {activeView === "home" && (
