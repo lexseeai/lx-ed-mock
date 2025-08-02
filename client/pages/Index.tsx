@@ -3945,10 +3945,12 @@ export default function Index() {
                         : activeView === "all" && studentsViewMode === "list"
                           ? "p-9 pb-0"
                           : "p-9"
-                } space-y-6 h-full overflow-y-auto mobile-scroll`}
+                } space-y-6 overflow-y-auto mobile-scroll`}
                 style={{
                   scrollbarWidth: "thin",
                   scrollbarColor: "#d1d5db #f3f4f6",
+                  height: "100vh",
+                  maxHeight: "100svh",
                   padding:
                     activeView === "home"
                       ? "72px 64px 60px"
