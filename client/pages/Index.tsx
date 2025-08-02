@@ -2907,7 +2907,14 @@ export default function Index() {
 
   return (
     <TooltipProvider>
-      <div className="h-screen-mobile bg-indigo-900 flex">
+      <div
+        className="h-screen-mobile bg-indigo-900 flex"
+        style={{
+          height: '100vh',
+          maxHeight: '100vh',
+          minHeight: '100vh'
+        }}
+      >
         <Sidebar
           activeView={activeView}
           setActiveView={setActiveView}
