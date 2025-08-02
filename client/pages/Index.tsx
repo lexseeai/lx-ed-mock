@@ -2907,7 +2907,7 @@ export default function Index() {
 
   return (
     <TooltipProvider>
-      <div className="mobile-container bg-indigo-900 flex">
+      <div className="h-screen-mobile bg-indigo-900 flex">
         <Sidebar
           activeView={activeView}
           setActiveView={setActiveView}
@@ -2920,8 +2920,8 @@ export default function Index() {
         <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
           {/* Content */}
           <div
-            className="mobile-scroll-area flex-1 p-3 min-w-0"
-            style={{ scrollBehavior: "smooth" }}
+            className="flex-1 p-3 min-w-0 h-full mobile-scroll"
+            style={{ scrollBehavior: "smooth", overflow: "hidden" }}
           >
             {/* My students panel card */}
             <div
