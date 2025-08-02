@@ -253,7 +253,7 @@ function Sidebar({
 
   return (
     <div
-      className={`${isCollapsed ? "w-16 min-w-16" : "w-60 min-w-60"} flex flex-col min-h-screen transition-all duration-300 flex-shrink-0 bg-indigo-900`}
+      className={`${isCollapsed ? "w-16 min-w-16" : "w-60 min-w-60"} flex flex-col min-h-screen-safe transition-all duration-300 flex-shrink-0 bg-indigo-900`}
     >
       {/* Header */}
       <div className="flex items-center justify-between pl-4 pr-0 py-4">
@@ -837,7 +837,7 @@ export default function StudentDetail() {
   if (!student) {
     return (
       <TooltipProvider>
-        <div className="min-h-screen bg-stone-100 flex items-center justify-center">
+        <div className="min-h-screen-safe bg-stone-100 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-semibold text-gray-900 mb-2">
               Student not found
