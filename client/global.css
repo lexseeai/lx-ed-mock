@@ -137,6 +137,7 @@
   .h-screen-mobile {
     height: 100vh;
     height: 100dvh; /* Dynamic viewport for modern browsers */
+    height: calc(var(--vh, 1vh) * 100); /* Fallback using CSS custom property */
   }
 
   /* Ensure proper scrolling on mobile */
