@@ -21,19 +21,45 @@ const App = () => {
       const vh = window.innerHeight * 0.01;
       // Set the value in the --vh custom property to the root of the document
       document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      // For iPad/iOS Safari, also set visual viewport if available
+      if (window.visualViewport) {
+        const visualVh = window.visualViewport.height * 0.01;
+        document.documentElement.style.setProperty('--visual-vh', `${visualVh}px`);
+      }
     };
 
     // Set initial value
     setViewportHeight();
 
+    // For iPad/iOS Safari, listen to visual viewport changes
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', setViewportHeight);
+      window.visualViewport.addEventListener('scroll', setViewportHeight);
+    }
+
     // Update on resize and orientation change
     window.addEventListener('resize', setViewportHeight);
-    window.addEventListener('orientationchange', setViewportHeight);
+    window.addEventListener('orientationchange', () => {
+      // Delay for orientation change to complete
+      setTimeout(setViewportHeight, 100);
+    });
+
+    // Additional iPad-specific events
+    window.addEventListener('scroll', setViewportHeight);
+
+    // Force update after a short delay on load
+    setTimeout(setViewportHeight, 300);
 
     // Cleanup
     return () => {
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', setViewportHeight);
+        window.visualViewport.removeEventListener('scroll', setViewportHeight);
+      }
       window.removeEventListener('resize', setViewportHeight);
       window.removeEventListener('orientationchange', setViewportHeight);
+      window.removeEventListener('scroll', setViewportHeight);
     };
   }, []);
 
