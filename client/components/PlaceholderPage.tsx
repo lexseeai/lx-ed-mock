@@ -17,7 +17,7 @@ export default function PlaceholderPage({
   backText = "Back to Dashboard" 
 }: PlaceholderPageProps) {
   return (
-    <div className="min-h-screen bg-stone-100 flex items-center justify-center p-6">
+    <div className="min-h-screen-safe bg-stone-100 flex items-center justify-center p-6">
       <Card className="w-full max-w-md">
         <CardContent className="p-8 text-center space-y-6">
           <div className="mx-auto w-16 h-16 bg-stone-200 rounded-full flex items-center justify-center">
