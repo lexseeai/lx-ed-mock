@@ -116,6 +116,12 @@
     overflow: hidden;
   }
 
+  #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
   /* Fix for iOS Safari viewport height */
   html {
     /* First we get the viewport height and multiply it by 1% to get a value for a vh unit */
