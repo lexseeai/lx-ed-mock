@@ -1556,7 +1556,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className="flex-1 overflow-y-auto p-8 bg-stone-50 rounded-b-lg">
+              <div className="mobile-scroll-area flex-1 p-8 bg-stone-50 rounded-b-lg safe-area-bottom">
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6 items-stretch">
