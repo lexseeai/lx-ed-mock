@@ -2907,7 +2907,7 @@ export default function Index() {
 
   return (
     <TooltipProvider>
-      <div className="h-screen bg-indigo-900 flex">
+      <div className="h-screen-safe bg-indigo-900 flex">
         <Sidebar
           activeView={activeView}
           setActiveView={setActiveView}
