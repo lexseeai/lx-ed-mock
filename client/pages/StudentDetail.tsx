@@ -1315,7 +1315,7 @@ export default function StudentDetail() {
 
   return (
     <TooltipProvider>
-      <div className="mobile-container bg-indigo-900 flex">
+      <div className="h-screen-mobile bg-indigo-900 flex">
         <Sidebar
           activeView={activeView}
           setActiveView={handleSidebarNavigation}
@@ -1556,7 +1556,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className="mobile-scroll-area flex-1 p-8 bg-stone-50 rounded-b-lg safe-area-bottom">
+              <div className="flex-1 overflow-y-auto mobile-scroll p-8 bg-stone-50 rounded-b-lg" style={{ paddingBottom: "60px" }}>
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6 items-stretch">
