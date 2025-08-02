@@ -106,6 +106,17 @@
 }
 
 @layer utilities {
+  /* Mobile-friendly height utilities for iOS Safari */
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height - modern browsers */
+  }
+
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height - modern browsers */
+  }
+
   /* Hide scrollbar for Chrome, Safari and Opera */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
