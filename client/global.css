@@ -110,11 +110,33 @@
   .h-screen-safe {
     height: 100vh;
     height: 100dvh; /* Dynamic viewport height - modern browsers */
+    /* Fallback for older browsers */
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   .min-h-screen-safe {
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height - modern browsers */
+    /* Fallback for older browsers */
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  /* iPad/iOS safe areas */
+  .safe-area-padding {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-area-padding-x {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .safe-area-padding-y {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
