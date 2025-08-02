@@ -139,8 +139,14 @@
     max-height: 100vh;
     max-height: 100dvh;
     max-height: calc(var(--vh, 1vh) * 100);
+    /* Use visual viewport if available (iPad Safari) */
+    height: calc(var(--visual-vh, var(--vh, 1vh)) * 100);
+    max-height: calc(var(--visual-vh, var(--vh, 1vh)) * 100);
     overflow: hidden;
     position: relative;
+    /* Prevent bounce scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
   }
 
   /* Scrollable content area within mobile container */
