@@ -14,26 +14,49 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Simple viewport height fix for iPad Safari
+  // iPad-specific viewport height fix
   useEffect(() => {
     const updateViewport = () => {
-      // Use visualViewport if available (modern iOS), otherwise window.innerHeight
-      const height = window.visualViewport?.height || window.innerHeight;
+      // For iPad Safari, use the smaller of visualViewport or window height
+      let height = window.innerHeight;
+
+      if (window.visualViewport) {
+        height = Math.min(window.visualViewport.height, window.innerHeight);
+      }
+
+      // Set custom property for CSS fallback
       document.documentElement.style.setProperty('--vh', `${height * 0.01}px`);
+
+      // Force immediate layout update on iOS
+      if (navigator.userAgent.includes('iPad') || navigator.userAgent.includes('iPhone')) {
+        document.body.style.height = `${height}px`;
+        setTimeout(() => {
+          document.body.style.height = '';
+        }, 10);
+      }
     };
 
     updateViewport();
 
-    // Listen for changes
+    // More frequent updates for iOS
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', updateViewport);
+      window.visualViewport.addEventListener('scroll', updateViewport);
     }
+
     window.addEventListener('resize', updateViewport);
-    window.addEventListener('orientationchange', updateViewport);
+    window.addEventListener('orientationchange', () => {
+      setTimeout(updateViewport, 200); // Delay for orientation change
+    });
+
+    // Initial delay update for iOS
+    setTimeout(updateViewport, 100);
+    setTimeout(updateViewport, 500);
 
     return () => {
       if (window.visualViewport) {
         window.visualViewport.removeEventListener('resize', updateViewport);
+        window.visualViewport.removeEventListener('scroll', updateViewport);
       }
       window.removeEventListener('resize', updateViewport);
       window.removeEventListener('orientationchange', updateViewport);
