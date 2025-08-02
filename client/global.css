@@ -133,11 +133,25 @@
     min-height: calc(var(--vh, 1vh) * 100);
   }
 
-  /* Simple mobile-safe height that works on iPad */
+  /* iPad-specific viewport fix */
   .h-screen-mobile {
     height: 100vh;
+    /* Use small viewport height on iOS to avoid cut-off */
+    height: 100svh; /* Small viewport height - stable on iOS */
     height: 100dvh; /* Dynamic viewport for modern browsers */
-    height: calc(var(--vh, 1vh) * 100); /* Fallback using CSS custom property */
+    /* Ensure it never exceeds the actual available space */
+    max-height: 100vh;
+    max-height: 100svh;
+    max-height: 100dvh;
+  }
+
+  /* Force height for iOS devices */
+  @supports (-webkit-touch-callout: none) {
+    .h-screen-mobile {
+      height: 100vh;
+      height: 100svh !important;
+      max-height: 100svh !important;
+    }
   }
 
   /* Ensure proper scrolling on mobile */
