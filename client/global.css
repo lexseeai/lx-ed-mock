@@ -103,6 +103,12 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Fix for iOS Safari viewport height */
+  html {
+    /* First we get the viewport height and multiply it by 1% to get a value for a vh unit */
+    --vh: 1vh;
+  }
 }
 
 @layer utilities {
