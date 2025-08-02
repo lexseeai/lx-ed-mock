@@ -2920,7 +2920,7 @@ export default function Index() {
         <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden">
           {/* Content */}
           <div
-            className="flex-1 p-3 h-full min-w-0"
+            className="mobile-scroll-area flex-1 p-3 min-w-0"
             style={{ scrollBehavior: "smooth" }}
           >
             {/* My students panel card */}
