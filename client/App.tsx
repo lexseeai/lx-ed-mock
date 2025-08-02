@@ -14,52 +14,29 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Fix viewport height for iOS Safari
+  // Simple viewport height fix for iPad Safari
   useEffect(() => {
-    const setViewportHeight = () => {
-      // Get the viewport height and multiply it by 1% to get a value for a vh unit
-      const vh = window.innerHeight * 0.01;
-      // Set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-      // For iPad/iOS Safari, also set visual viewport if available
-      if (window.visualViewport) {
-        const visualVh = window.visualViewport.height * 0.01;
-        document.documentElement.style.setProperty('--visual-vh', `${visualVh}px`);
-      }
+    const updateViewport = () => {
+      // Use visualViewport if available (modern iOS), otherwise window.innerHeight
+      const height = window.visualViewport?.height || window.innerHeight;
+      document.documentElement.style.setProperty('--vh', `${height * 0.01}px`);
     };
 
-    // Set initial value
-    setViewportHeight();
+    updateViewport();
 
-    // For iPad/iOS Safari, listen to visual viewport changes
+    // Listen for changes
     if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', setViewportHeight);
-      window.visualViewport.addEventListener('scroll', setViewportHeight);
+      window.visualViewport.addEventListener('resize', updateViewport);
     }
+    window.addEventListener('resize', updateViewport);
+    window.addEventListener('orientationchange', updateViewport);
 
-    // Update on resize and orientation change
-    window.addEventListener('resize', setViewportHeight);
-    window.addEventListener('orientationchange', () => {
-      // Delay for orientation change to complete
-      setTimeout(setViewportHeight, 100);
-    });
-
-    // Additional iPad-specific events
-    window.addEventListener('scroll', setViewportHeight);
-
-    // Force update after a short delay on load
-    setTimeout(setViewportHeight, 300);
-
-    // Cleanup
     return () => {
       if (window.visualViewport) {
-        window.visualViewport.removeEventListener('resize', setViewportHeight);
-        window.visualViewport.removeEventListener('scroll', setViewportHeight);
+        window.visualViewport.removeEventListener('resize', updateViewport);
       }
-      window.removeEventListener('resize', setViewportHeight);
-      window.removeEventListener('orientationchange', setViewportHeight);
-      window.removeEventListener('scroll', setViewportHeight);
+      window.removeEventListener('resize', updateViewport);
+      window.removeEventListener('orientationchange', updateViewport);
     };
   }, []);
 
