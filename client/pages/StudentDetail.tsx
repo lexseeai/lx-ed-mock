@@ -1847,12 +1847,13 @@ export default function StudentDetail() {
                                     className="flex items-center gap-1 px-3 py-1.5 h-auto border-stone-200"
                                     onClick={() => {
                                       const observationsText = [
-                                        "Practiced rounding to 1 decimal place using a place value chart to boost fluency and accuracy.",
-                                        "Reviewed and recalled formulas for 2D shapes: circle, rectangle, square.",
-                                        "Demonstrated improved accuracy in identifying decimal positions with visual support.",
-                                        "Made progress toward independent problem-solving with fewer rounding errors.",
-                                        "Joined the session late but used remaining time effectively to reinforce key math skills.",
-                                        "Worked on comparing fractions using visual models and practiced breaking down multi-step word problems. Demonstrated initial understanding with support and is building confidence in applying strategies.",
+                                        "**Met goal independently** — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy. (25 July)",
+                                        "**Self-checks work** — Used independent self-checking strategies for multi-step word problems. (25 July)",
+                                        "**Highly engaged** — Asked to take \"teacher mode\" and quiz the specialist, showing math confidence. (25 July)",
+                                        "**Connects math to interests** — Engaged more deeply with math when sports or real-life topics are included. (18 July)",
+                                        "**Self-corrects complex errors** — Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
+                                        "**Motivation responds to games & breaks** — Competitive games and strategic breaks increase focus and stamina. (11 July)",
+                                        "**Needs routine on low-energy days** — Predictable structure and reduced task load are effective for keeping Zack engaged when tired. (4 July)",
                                       ].join("\n\n");
                                       navigator.clipboard.writeText(
                                         observationsText,
