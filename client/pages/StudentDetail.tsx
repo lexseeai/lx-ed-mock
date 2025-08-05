@@ -39,6 +39,10 @@ import {
   UserRoundPlus,
   Plus,
   Siren,
+  Copy,
+  Edit3,
+  RefreshCw,
+  Eye,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
