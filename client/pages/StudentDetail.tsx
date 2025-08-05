@@ -549,6 +549,7 @@ export default function StudentDetail() {
     null,
   );
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showStudentMenu, setShowStudentMenu] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Search mode handlers
