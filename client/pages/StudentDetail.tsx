@@ -1736,30 +1736,37 @@ export default function StudentDetail() {
 
                                 {/* Copy Button - Always visible icon-only button */}
                                 <div className="w-16 flex justify-end">
-                                  <Button
-                                    variant="outline"
-                                    size="sm"
-                                    className="flex items-center justify-center w-8 h-8 p-0 border-stone-200 bg-transparent hover:bg-stone-50 hover:border-stone-300 transition-all duration-200"
-                                    onClick={() => {
-                                      const nextSessionText =
-                                        studentContent.nextSessionItems.join(
-                                          "\n\n",
-                                        );
-                                      navigator.clipboard.writeText(
-                                        nextSessionText,
-                                      );
-                                    }}
-                                  >
-                                    <svg
-                                      className="w-3 h-3 text-stone-400 hover:text-stone-600 transition-colors duration-200"
-                                      viewBox="0 0 12 12"
-                                      fill="none"
-                                      stroke="currentColor"
-                                    >
-                                      <path d="M10 4H5C4.44772 4 4 4.44772 4 5V10C4 10.5523 4.44772 11 5 11H10C10.5523 11 11 10.5523 11 10V5C11 4.44772 10.5523 4 10 4Z" />
-                                      <path d="M2 8C1.45 8 1 7.55 1 7V2C1 1.45 1.45 1 2 1H7C7.55 1 8 1.45 8 2" />
-                                    </svg>
-                                  </Button>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="flex items-center justify-center w-8 h-8 p-0 border-stone-200 bg-transparent hover:bg-stone-50 hover:border-stone-300 transition-all duration-200"
+                                        onClick={() => {
+                                          const nextSessionText =
+                                            studentContent.nextSessionItems.join(
+                                              "\n\n",
+                                            );
+                                          navigator.clipboard.writeText(
+                                            nextSessionText,
+                                          );
+                                        }}
+                                      >
+                                        <svg
+                                          className="w-3 h-3 text-stone-400 hover:text-stone-600 transition-colors duration-200"
+                                          viewBox="0 0 12 12"
+                                          fill="none"
+                                          stroke="currentColor"
+                                        >
+                                          <path d="M10 4H5C4.44772 4 4 4.44772 4 5V10C4 10.5523 4.44772 11 5 11H10C10.5523 11 11 10.5523 11 10V5C11 4.44772 10.5523 4 10 4Z" />
+                                          <path d="M2 8C1.45 8 1 7.55 1 7V2C1 1.45 1.45 1 2 1H7C7.55 1 8 1.45 8 2" />
+                                        </svg>
+                                      </Button>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Copy next session text</p>
+                                    </TooltipContent>
+                                  </Tooltip>
                                 </div>
                               </div>
 
@@ -1840,7 +1847,7 @@ export default function StudentDetail() {
                                       "**Met goal independently** — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy. (25 July)",
                                       "**Self-checks work** — Used independent self-checking strategies for multi-step word problems. (25 July)",
                                       "**Highly engaged** — Asked to take \"teacher mode\" and quiz the specialist, showing math confidence. (25 July)",
-                                      "**Connects math to interests** — Engaged more deeply with math when sports or real-life topics are included. (18 July)",
+                                      "**Connects math to interests** ��� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
                                       "**Self-corrects complex errors** — Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
                                       "**Motivation responds to games & breaks** — Competitive games and strategic breaks increase focus and stamina. (11 July)",
                                       "**Needs routine on low-energy days** — Predictable structure and reduced task load are effective for keeping Zack engaged when tired. (4 July)",
