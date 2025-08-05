@@ -1576,7 +1576,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "" : "p-8 bg-stone-50"}`} style={{ backgroundColor: activeTab === "session-notes" ? "#f7f7f7" : undefined, padding: activeTab === "session-notes" ? "32px 0 32px 20px" : undefined, paddingBottom: activeTab === "session-notes" ? "0px" : "60px" }}>
+              <div className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "" : "p-8 bg-stone-50"}`} style={{ backgroundColor: activeTab === "session-notes" ? "#f7f7f7" : undefined, padding: activeTab === "session-notes" ? "20px 0 20px 20px" : undefined, paddingBottom: activeTab === "session-notes" ? "0px" : "60px" }}>
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6 items-stretch">
@@ -2318,9 +2318,9 @@ export default function StudentDetail() {
                 )}
 
                 {activeTab === "session-notes" && (
-                  <div className="flex h-full bg-white">
+                  <div className="flex h-full">
                     {/* Left Sidebar - Session List */}
-                    <div className="w-[275px] border-r border-stone-200 flex flex-col rounded-lg overflow-hidden">
+                    <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200">
                       {/* Header */}
                       <div className="flex items-center justify-between py-3 px-[18px]">
                         <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
