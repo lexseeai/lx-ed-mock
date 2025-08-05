@@ -1670,8 +1670,6 @@ export default function StudentDetail() {
                         <Card
                           className="p-5 flex-1"
                           style={{ width: "312px" }}
-                          onMouseEnter={() => setIsHoveringNextSession(true)}
-                          onMouseLeave={() => setIsHoveringNextSession(false)}
                         >
                           <CardContent className="p-0">
                             <div className="flex flex-col gap-6">
@@ -1798,8 +1796,6 @@ export default function StudentDetail() {
                         {/* Observations */}
                         <Card
                           className="p-5 min-w-[500px] max-w-[650px] flex-1"
-                          onMouseEnter={() => setIsHoveringObservations(true)}
-                          onMouseLeave={() => setIsHoveringObservations(false)}
                         >
                           <CardContent className="p-0">
                             <div className="flex flex-col gap-6">
