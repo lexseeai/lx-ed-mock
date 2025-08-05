@@ -1856,7 +1856,7 @@ export default function StudentDetail() {
                                       "**Self-checks work** — Used independent self-checking strategies for multi-step word problems. (25 July)",
                                       "**Highly engaged** — Asked to take \"teacher mode\" and quiz the specialist, showing math confidence. (25 July)",
                                       "**Connects math to interests** ��� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
-                                      "**Self-corrects complex errors** ��� Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
+                                      "**Self-corrects complex errors** — Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
                                       "**Motivation responds to games & breaks** — Competitive games and strategic breaks increase focus and stamina. (11 July)",
                                       "**Needs routine on low-energy days** — Predictable structure and reduced task load are effective for keeping Zack engaged when tired. (4 July)",
                                     ].join("\n\n");
@@ -2397,7 +2397,7 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 p-8 px-4 flex flex-col justify-center items-start" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
+                    <div className="flex-1 p-8 px-4 flex flex-col justify-center items-center" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
                       {selectedSessionId === "july-18" && (
                         <div className="bg-white rounded-md border border-stone-200 overflow-hidden h-full max-w-[650px]">
                           {/* Header */}
