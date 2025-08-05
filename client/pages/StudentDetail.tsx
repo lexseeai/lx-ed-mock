@@ -1952,7 +1952,7 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
-                                    <span className="font-semibold">Self-checks work</span> �� Used independent self-checking strategies for multi-step word problems.{" "}
+                                    <span className="font-semibold">Self-checks work</span> — Used independent self-checking strategies for multi-step word problems.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -2449,7 +2449,7 @@ export default function StudentDetail() {
                                 </button>
                               </div>
                               <button
-                                className="flex items-center justify-center w-11 h-11 rounded-full border border-stone-200 transition-colors"
+                                className="flex items-center justify-center w-11 h-11 rounded-md border border-stone-200 transition-colors hover:bg-stone-50"
                                 onClick={() => {
                                   openNotesOverlay("view", {
                                     date: "18",
@@ -2462,7 +2462,7 @@ export default function StudentDetail() {
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <MoreHorizontal className="w-5 h-5 text-stone-600" strokeWidth={2} />
                               </button>
                             </div>
                           </div>
