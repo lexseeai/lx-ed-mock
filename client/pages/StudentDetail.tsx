@@ -2366,8 +2366,9 @@ export default function StudentDetail() {
                           <div
                             key={session.id}
                             className={`px-6 py-3 cursor-pointer transition-colors ${
-                              selectedSessionId === session.id ? "bg-stone-200" : ""
+                              selectedSessionId === session.id ? "" : ""
                             }`}
+                            style={selectedSessionId === session.id ? {backgroundColor: "rgba(237, 236, 252, 1)"} : {}}
                             onClick={() => setSelectedSessionId(session.id)}
                           >
                             <div className="flex items-center gap-1 py-0.5">
