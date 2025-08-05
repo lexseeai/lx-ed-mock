@@ -1737,9 +1737,9 @@ export default function StudentDetail() {
                                 {/* Copy Button - Always visible icon-only button */}
                                 <div className="w-16 flex justify-end">
                                   <Button
-                                    variant="ghost"
+                                    variant="outline"
                                     size="sm"
-                                    className="flex items-center justify-center w-8 h-8 p-0 border-0 bg-transparent hover:bg-transparent"
+                                    className="flex items-center justify-center w-8 h-8 p-0 border-stone-200 bg-transparent hover:bg-stone-50 hover:border-stone-300 transition-all duration-200"
                                     onClick={() => {
                                       const nextSessionText =
                                         studentContent.nextSessionItems.join(
@@ -1751,7 +1751,7 @@ export default function StudentDetail() {
                                     }}
                                   >
                                     <svg
-                                      className="w-3 h-3 text-stone-400"
+                                      className="w-3 h-3 text-stone-400 hover:text-stone-600 transition-colors duration-200"
                                       viewBox="0 0 12 12"
                                       fill="none"
                                       stroke="currentColor"
@@ -1832,9 +1832,9 @@ export default function StudentDetail() {
 
                                 {/* Copy Button - Always visible icon-only button */}
                                 <Button
-                                  variant="ghost"
+                                  variant="outline"
                                   size="sm"
-                                  className="flex items-center justify-center w-8 h-8 p-0 border-0 bg-transparent hover:bg-transparent"
+                                  className="flex items-center justify-center w-8 h-8 p-0 border-stone-200 bg-transparent hover:bg-stone-50 hover:border-stone-300 transition-all duration-200"
                                   onClick={() => {
                                     const observationsText = [
                                       "**Met goal independently** — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy. (25 July)",
@@ -1851,7 +1851,7 @@ export default function StudentDetail() {
                                   }}
                                 >
                                   <svg
-                                    className="w-3 h-3 text-stone-400"
+                                    className="w-3 h-3 text-stone-400 hover:text-stone-600 transition-colors duration-200"
                                     viewBox="0 0 12 12"
                                     fill="none"
                                     stroke="currentColor"
