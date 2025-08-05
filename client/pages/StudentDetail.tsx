@@ -2417,50 +2417,18 @@ export default function StudentDetail() {
                                 <p className="text-stone-600 font-lexend">9:00-9:45am</p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-2.5">
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
-                              >
-                                <FileText className="w-4 h-4 mr-2" />
-                                Actions
-                                <svg
-                                  className="w-6 h-6 ml-1"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                >
-                                  <path d="M7 15L12 20L17 15" />
-                                  <path d="M7 9L12 4L17 9" />
-                                </svg>
-                              </Button>
-
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
-                              >
-                                <Brain className="w-4 h-4 mr-2" />
-                                AI Assist
-                                <svg
-                                  className="w-6 h-6 ml-1"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                >
-                                  <path d="M7 15L12 20L17 15" />
-                                  <path d="M7 9L12 4L17 9" />
-                                </svg>
-                              </Button>
-
+                            <div className="flex items-center gap-1.5">
+                              <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                                <div className="absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 left-[3px] top-[3px] transition-[left] duration-150 ease-[cubic-bezier(0.34,1.25,0.64,1)]" />
+                                <button className="flex items-center justify-center rounded-[11px] text-white h-9 w-9 relative z-10 transition-colors duration-200 p-1.5 font-lexend text-sm font-medium">
+                                  <LayoutGrid className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                                <button className="flex items-center justify-center rounded-[11px] text-stone-500 h-9 w-9 relative z-10 transition-colors duration-200 p-1.5 font-lexend text-sm font-medium">
+                                  <List className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                              </div>
                               <button
-                                className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
-                                style={{
-                                  boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
-                                }}
+                                className="flex items-center justify-center w-11 h-11 rounded-full border border-stone-200 transition-colors"
                                 onClick={() => {
                                   openNotesOverlay("view", {
                                     date: "18",
@@ -2473,10 +2441,7 @@ export default function StudentDetail() {
                                   });
                                 }}
                               >
-                                <Pencil
-                                  className="w-5 h-5 text-indigo-600"
-                                  strokeWidth={2}
-                                />
+                                <UserPlus className="w-5 h-5 text-indigo-600" strokeWidth={2} />
                               </button>
                             </div>
                           </div>
