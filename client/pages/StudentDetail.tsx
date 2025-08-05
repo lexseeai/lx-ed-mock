@@ -2523,42 +2523,42 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Action Icons */}
-                                {hoveredSection === "observations" && (
-                                  <div className="flex items-center gap-1 opacity-100 transition-opacity">
-                                    <Tooltip>
-                                      <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                          <Copy className="w-4 h-4 text-stone-500" />
-                                        </Button>
-                                      </TooltipTrigger>
-                                      <TooltipContent>
-                                        <p>Copy text</p>
-                                      </TooltipContent>
-                                    </Tooltip>
+                                <div className={`flex items-center gap-1 transition-opacity ${
+                                  hoveredSection === "observations" ? "opacity-100" : "opacity-0"
+                                }`}>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                        <Copy className="w-4 h-4 text-stone-500" />
+                                      </Button>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Copy text</p>
+                                    </TooltipContent>
+                                  </Tooltip>
 
-                                    <Tooltip>
-                                      <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                          <Edit3 className="w-4 h-4 text-stone-500" />
-                                        </Button>
-                                      </TooltipTrigger>
-                                      <TooltipContent>
-                                        <p>Edit text</p>
-                                      </TooltipContent>
-                                    </Tooltip>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                        <Edit3 className="w-4 h-4 text-stone-500" />
+                                      </Button>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Edit text</p>
+                                    </TooltipContent>
+                                  </Tooltip>
 
-                                    <Tooltip>
-                                      <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                          <RefreshCw className="w-4 h-4 text-stone-500" />
-                                        </Button>
-                                      </TooltipTrigger>
-                                      <TooltipContent>
-                                        <p>Regenerate text</p>
-                                      </TooltipContent>
-                                    </Tooltip>
-                                  </div>
-                                )}
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                        <RefreshCw className="w-4 h-4 text-stone-500" />
+                                      </Button>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Regenerate text</p>
+                                    </TooltipContent>
+                                  </Tooltip>
+                                </div>
                               </div>
                             </div>
                           </div>
