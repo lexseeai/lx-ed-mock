@@ -2302,10 +2302,246 @@ export default function StudentDetail() {
                 )}
 
                 {activeTab === "session-notes" && (
-                  <div className="text-center py-12">
-                    <p className="text-stone-500 font-lexend">
-                      Session notes content coming soon...
-                    </p>
+                  <div className="flex h-full">
+                    {/* Left Sidebar - Session List */}
+                    <div className="w-80 border-r border-stone-200 bg-white">
+                      {/* Header */}
+                      <div className="p-6 border-b border-stone-200">
+                        <div className="flex items-center justify-between mb-4">
+                          <h2 className="text-lg font-semibold text-stone-900 font-lexend">Session Notes</h2>
+                          <Button variant="outline" size="sm">
+                            <Search className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </div>
+
+                      {/* Session List */}
+                      <div className="overflow-y-auto">
+                        {[
+                          {
+                            id: "session-1",
+                            date: "August 1",
+                            title: "Friday, 9:00-9:45am",
+                            isActive: true
+                          },
+                          {
+                            id: "session-2",
+                            date: "July 28",
+                            title: "Complex Borrowing and Personal Interests",
+                            isCompleted: true
+                          },
+                          {
+                            id: "session-3",
+                            date: "July 18",
+                            title: "Games and Real-World Math Connections"
+                          },
+                          {
+                            id: "session-4",
+                            date: "July 4",
+                            title: "Supporting Focus During Low-Energy Days"
+                          },
+                          {
+                            id: "session-5",
+                            date: "June 27",
+                            title: "Structured Routine and Peer Teaching"
+                          },
+                          {
+                            id: "session-6",
+                            date: "June 13",
+                            title: "Building Stamina with Timed Subtraction"
+                          },
+                          {
+                            id: "session-7",
+                            date: "June 6",
+                            title: "Introduction to Borrowing and Place Value"
+                          }
+                        ].map((session) => (
+                          <div
+                            key={session.id}
+                            className={`p-4 cursor-pointer border-b border-stone-100 hover:bg-stone-50 transition-colors ${
+                              selectedSession === session.id ? "bg-indigo-50 border-r-2 border-r-indigo-600" : ""
+                            }`}
+                            onClick={() => setSelectedSession(session.id)}
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                <div className={`w-2 h-2 rounded-full ${
+                                  session.isActive ? "bg-green-500" :
+                                  session.isCompleted ? "bg-indigo-600" : "bg-stone-300"
+                                }`} />
+                                <div>
+                                  <div className="text-sm font-medium text-stone-900 font-lexend">
+                                    {session.date}
+                                  </div>
+                                  <div className="text-sm text-stone-600 font-lexend">
+                                    {session.title}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Main Content Area */}
+                    <div className="flex-1 bg-white">
+                      {selectedSession === "session-1" && (
+                        <div className="p-8">
+                          {/* Header */}
+                          <div className="flex items-center justify-between mb-8">
+                            <div className="flex items-center gap-3">
+                              <div className="w-2 h-2 bg-green-500 rounded-full" />
+                              <div>
+                                <h2 className="text-xl font-semibold text-stone-900 font-lexend">
+                                  Friday, July 18 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <Button variant="outline" className="flex items-center gap-2">
+                              <Eye className="w-4 h-4" />
+                              View notes
+                            </Button>
+                          </div>
+
+                          {/* Content Sections */}
+                          <div className="space-y-8">
+                            {/* Complex Borrowing Section */}
+                            <div
+                              className="relative group"
+                              onMouseEnter={() => setHoveredSection("borrowing")}
+                              onMouseLeave={() => setHoveredSection(null)}
+                            >
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-4">
+                                    Complex Borrowing and Personal Interests
+                                  </h3>
+                                  <div className="text-stone-700 font-lexend space-y-2">
+                                    <p>Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.</p>
+                                  </div>
+                                </div>
+
+                                {/* Action Icons */}
+                                {hoveredSection === "borrowing" && (
+                                  <div className="flex items-center gap-2 ml-4">
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
+                                          <Copy className="w-4 h-4" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Copy text</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
+                                          <Edit3 className="w-4 h-4" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Edit text</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
+                                          <RefreshCw className="w-4 h-4" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Regenerate text</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Observations Section */}
+                            <div
+                              className="relative group"
+                              onMouseEnter={() => setHoveredSection("observations")}
+                              onMouseLeave={() => setHoveredSection(null)}
+                            >
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-4">
+                                    Observations
+                                  </h3>
+                                  <div className="text-stone-700 font-lexend space-y-2">
+                                    <div className="flex items-start gap-2">
+                                      <span className="text-indigo-600 mt-1">→</span>
+                                      <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
+                                    </div>
+                                    <div className="flex items-start gap-2">
+                                      <span className="text-indigo-600 mt-1">→</span>
+                                      <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
+                                    </div>
+                                    <div className="flex items-start gap-2">
+                                      <span className="text-indigo-600 mt-1">→</span>
+                                      <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Action Icons */}
+                                {hoveredSection === "observations" && (
+                                  <div className="flex items-center gap-2 ml-4">
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
+                                          <Copy className="w-4 h-4" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Copy text</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
+                                          <Edit3 className="w-4 h-4" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Edit text</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
+                                          <RefreshCw className="w-4 h-4" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Regenerate text</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Placeholder for other sessions */}
+                      {selectedSession !== "session-1" && (
+                        <div className="p-8 text-center">
+                          <p className="text-stone-500 font-lexend">
+                            Session content for {selectedSession} will be added here.
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
 
