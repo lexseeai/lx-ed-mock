@@ -2306,13 +2306,13 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session List */}
                     <div className="w-[312px] bg-white border-r border-stone-200 flex flex-col">
                       {/* Header */}
-                      <div className="flex items-center justify-between p-4 pb-0 bg-stone-100">
+                      <div className="flex items-center justify-between p-4 pb-0" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
                         <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
                         <Search className="w-6 h-6 text-stone-500" />
                       </div>
 
                       {/* Session List - flush to edges */}
-                      <div className="flex-1 overflow-y-auto pb-5 bg-stone-100">
+                      <div className="flex-1 overflow-y-auto pb-5 bg-stone-50">
                         {[
                           {
                             id: "august-1",
@@ -2366,7 +2366,7 @@ export default function StudentDetail() {
                           <div
                             key={session.id}
                             className={`px-6 py-3 cursor-pointer transition-colors ${
-                              selectedSessionId === session.id ? "bg-indigo-50" : ""
+                              selectedSessionId === session.id ? "bg-stone-200" : ""
                             }`}
                             onClick={() => setSelectedSessionId(session.id)}
                           >
@@ -2397,7 +2397,7 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 bg-stone-50">
+                    <div className="flex-1 p-8 px-4" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
                       {selectedSessionId === "july-18" && (
                         <div className="p-8">
                           {/* Header */}
@@ -2564,7 +2564,7 @@ export default function StudentDetail() {
 
                       {/* Placeholder for other sessions */}
                       {selectedSessionId && selectedSessionId !== "july-18" && (
-                        <div className="p-8 text-center bg-white">
+                        <div className="p-8 text-center bg-white rounded-md border border-stone-200 overflow-hidden">
                           <p className="text-stone-500 font-lexend">
                             Session content for {selectedSessionId} will be added here.
                           </p>
