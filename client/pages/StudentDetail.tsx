@@ -2456,7 +2456,10 @@ export default function StudentDetail() {
                                 </button>
                               </div>
                               <button
-                                className="flex items-center justify-center w-11 h-11 rounded-md border border-stone-200 transition-colors hover:bg-stone-50"
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                style={{
+                                  boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
+                                }}
                                 onClick={() => {
                                   openNotesOverlay("view", {
                                     date: "18",
