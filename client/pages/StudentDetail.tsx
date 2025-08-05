@@ -2302,58 +2302,63 @@ export default function StudentDetail() {
                 )}
 
                 {activeTab === "session-notes" && (
-                  <div className="flex h-full">
+                  <div className="flex h-full bg-white">
                     {/* Left Sidebar - Session List */}
-                    <div className="w-80 border-r border-stone-200 bg-white">
+                    <div className="w-80 bg-white">
                       {/* Header */}
                       <div className="p-6 border-b border-stone-200">
-                        <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center justify-between">
                           <h2 className="text-lg font-semibold text-stone-900 font-lexend">Session Notes</h2>
-                          <Button variant="outline" size="sm">
+                          <Button variant="outline" size="sm" className="w-8 h-8 p-0">
                             <Search className="w-4 h-4" />
                           </Button>
                         </div>
                       </div>
 
                       {/* Session List */}
-                      <div className="overflow-y-auto">
+                      <div className="overflow-y-auto h-full">
                         {[
                           {
-                            id: "session-1",
+                            id: "august-1",
                             date: "August 1",
                             title: "Friday, 9:00-9:45am",
-                            isActive: true
+                            status: "active"
                           },
                           {
-                            id: "session-2",
+                            id: "july-28",
                             date: "July 28",
                             title: "Complex Borrowing and Personal Interests",
-                            isCompleted: true
+                            status: "completed"
                           },
                           {
-                            id: "session-3",
+                            id: "july-18",
                             date: "July 18",
-                            title: "Games and Real-World Math Connections"
+                            title: "Games and Real-World Math Connections",
+                            status: "completed"
                           },
                           {
-                            id: "session-4",
+                            id: "july-4",
                             date: "July 4",
-                            title: "Supporting Focus During Low-Energy Days"
+                            title: "Supporting Focus During Low-Energy Days",
+                            status: "completed"
                           },
                           {
-                            id: "session-5",
+                            id: "june-27",
                             date: "June 27",
-                            title: "Structured Routine and Peer Teaching"
+                            title: "Structured Routine and Peer Teaching",
+                            status: "completed"
                           },
                           {
-                            id: "session-6",
+                            id: "june-13",
                             date: "June 13",
-                            title: "Building Stamina with Timed Subtraction"
+                            title: "Building Stamina with Timed Subtraction",
+                            status: "completed"
                           },
                           {
-                            id: "session-7",
+                            id: "june-6",
                             date: "June 6",
-                            title: "Introduction to Borrowing and Place Value"
+                            title: "Introduction to Borrowing and Place Value",
+                            status: "completed"
                           }
                         ].map((session) => (
                           <div
@@ -2363,19 +2368,16 @@ export default function StudentDetail() {
                             }`}
                             onClick={() => setSelectedSessionId(session.id)}
                           >
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-3">
-                                <div className={`w-2 h-2 rounded-full ${
-                                  session.isActive ? "bg-green-500" :
-                                  session.isCompleted ? "bg-indigo-600" : "bg-stone-300"
-                                }`} />
-                                <div>
-                                  <div className="text-sm font-medium text-stone-900 font-lexend">
-                                    {session.date}
-                                  </div>
-                                  <div className="text-sm text-stone-600 font-lexend">
-                                    {session.title}
-                                  </div>
+                            <div className="flex items-start gap-3">
+                              <div className={`w-2 h-2 rounded-full mt-2 ${
+                                session.status === "active" ? "bg-green-500" : "bg-indigo-600"
+                              }`} />
+                              <div className="flex-1">
+                                <div className="text-sm font-medium text-stone-900 font-lexend mb-1">
+                                  {session.date}
+                                </div>
+                                <div className="text-sm text-stone-600 font-lexend leading-tight">
+                                  {session.title}
                                 </div>
                               </div>
                             </div>
@@ -2385,8 +2387,8 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 bg-white">
-                      {selectedSessionId === "session-1" && (
+                    <div className="flex-1 bg-white border-l border-stone-200">
+                      {selectedSessionId === "july-28" && (
                         <div className="p-8">
                           {/* Header */}
                           <div className="flex items-center justify-between mb-8">
@@ -2399,7 +2401,21 @@ export default function StudentDetail() {
                                 <p className="text-stone-600 font-lexend">9:00-9:45am</p>
                               </div>
                             </div>
-                            <Button variant="outline" className="flex items-center gap-2">
+                            <Button
+                              variant="outline"
+                              className="flex items-center gap-2"
+                              onClick={() => {
+                                openNotesOverlay("view", {
+                                  date: "18",
+                                  month: "July",
+                                  day: "18",
+                                  year: "2025",
+                                  time: "9:00–9:45am",
+                                  isCompleted: true,
+                                  studentName: "Alex"
+                                });
+                              }}
+                            >
                               <Eye className="w-4 h-4" />
                               View notes
                             </Button>
@@ -2414,22 +2430,22 @@ export default function StudentDetail() {
                               onMouseLeave={() => setHoveredSection(null)}
                             >
                               <div className="flex items-start justify-between">
-                                <div className="flex-1">
+                                <div className="flex-1 pr-4">
                                   <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-4">
                                     Complex Borrowing and Personal Interests
                                   </h3>
-                                  <div className="text-stone-700 font-lexend space-y-2">
+                                  <div className="text-stone-700 font-lexend text-sm leading-relaxed">
                                     <p>Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.</p>
                                   </div>
                                 </div>
 
                                 {/* Action Icons */}
                                 {hoveredSection === "borrowing" && (
-                                  <div className="flex items-center gap-2 ml-4">
+                                  <div className="flex items-center gap-1 opacity-100 transition-opacity">
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
-                                          <Copy className="w-4 h-4" />
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <Copy className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
                                       <TooltipContent>
@@ -2439,8 +2455,8 @@ export default function StudentDetail() {
 
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
-                                          <Edit3 className="w-4 h-4" />
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <Edit3 className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
                                       <TooltipContent>
@@ -2450,8 +2466,8 @@ export default function StudentDetail() {
 
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
-                                          <RefreshCw className="w-4 h-4" />
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <RefreshCw className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
                                       <TooltipContent>
@@ -2470,21 +2486,21 @@ export default function StudentDetail() {
                               onMouseLeave={() => setHoveredSection(null)}
                             >
                               <div className="flex items-start justify-between">
-                                <div className="flex-1">
+                                <div className="flex-1 pr-4">
                                   <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-4">
                                     Observations
                                   </h3>
-                                  <div className="text-stone-700 font-lexend space-y-2">
+                                  <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
                                     <div className="flex items-start gap-2">
-                                      <span className="text-indigo-600 mt-1">→</span>
+                                      <span className="text-indigo-600 mt-1 font-bold">→</span>
                                       <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-indigo-600 mt-1">→</span>
+                                      <span className="text-indigo-600 mt-1 font-bold">→</span>
                                       <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-indigo-600 mt-1">→</span>
+                                      <span className="text-indigo-600 mt-1 font-bold">→</span>
                                       <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
                                     </div>
                                   </div>
@@ -2492,11 +2508,11 @@ export default function StudentDetail() {
 
                                 {/* Action Icons */}
                                 {hoveredSection === "observations" && (
-                                  <div className="flex items-center gap-2 ml-4">
+                                  <div className="flex items-center gap-1 opacity-100 transition-opacity">
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
-                                          <Copy className="w-4 h-4" />
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <Copy className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
                                       <TooltipContent>
@@ -2506,8 +2522,8 @@ export default function StudentDetail() {
 
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
-                                          <Edit3 className="w-4 h-4" />
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <Edit3 className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
                                       <TooltipContent>
@@ -2517,8 +2533,8 @@ export default function StudentDetail() {
 
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0">
-                                          <RefreshCw className="w-4 h-4" />
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <RefreshCw className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
                                       <TooltipContent>
@@ -2533,8 +2549,11 @@ export default function StudentDetail() {
                         </div>
                       )}
 
+                      {/* Default selection - July 28 session */}
+                      {!selectedSessionId && setSelectedSessionId("july-28")}
+
                       {/* Placeholder for other sessions */}
-                      {selectedSessionId !== "session-1" && (
+                      {selectedSessionId && selectedSessionId !== "july-28" && (
                         <div className="p-8 text-center">
                           <p className="text-stone-500 font-lexend">
                             Session content for {selectedSessionId} will be added here.
