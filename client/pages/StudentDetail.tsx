@@ -1403,23 +1403,6 @@ export default function StudentDetail() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
-                    >
-                      Actions
-                      <svg
-                        className="w-6 h-6 ml-1"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M7 15L12 20L17 15" />
-                        <path d="M7 9L12 4L17 9" />
-                      </svg>
-                    </Button>
                     <div className="relative" ref={dropdownRef}>
                       <button
                         onClick={() => setShowDropdown(!showDropdown)}
