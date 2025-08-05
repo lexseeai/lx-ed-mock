@@ -1952,7 +1952,7 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
-                                    <span className="font-semibold">Self-checks work</span> — Used independent self-checking strategies for multi-step word problems.{" "}
+                                    <span className="font-semibold">Self-checks work</span> �� Used independent self-checking strategies for multi-step word problems.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -2445,7 +2445,7 @@ export default function StudentDetail() {
                                     toggleView === "filetext" ? "text-white" : "text-stone-500"
                                   }`}
                                 >
-                                  <FileText className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses className="w-5 h-5" strokeWidth={2} />
                                 </button>
                               </div>
                               <button
