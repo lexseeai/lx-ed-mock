@@ -2015,7 +2015,7 @@ export default function StudentDetail() {
                                             month: "July",
                                             day: "25",
                                             year: "2025",
-                                            time: "9:00��9:45am",
+                                            time: "9:00–9:45am",
                                             isCompleted: true,
                                           });
                                         }}
@@ -2444,7 +2444,7 @@ export default function StudentDetail() {
                                   <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
                                     Complex Borrowing and Personal Interests
                                   </h3>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px]">
                                     Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
                                   </p>
                                 </div>
