@@ -1856,7 +1856,7 @@ export default function StudentDetail() {
                                       "**Self-checks work** — Used independent self-checking strategies for multi-step word problems. (25 July)",
                                       "**Highly engaged** — Asked to take \"teacher mode\" and quiz the specialist, showing math confidence. (25 July)",
                                       "**Connects math to interests** ��� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
-                                      "**Self-corrects complex errors** — Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
+                                      "**Self-corrects complex errors** ��� Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
                                       "**Motivation responds to games & breaks** — Competitive games and strategic breaks increase focus and stamina. (11 July)",
                                       "**Needs routine on low-energy days** — Predictable structure and reduced task load are effective for keeping Zack engaged when tired. (4 July)",
                                     ].join("\n\n");
@@ -2490,26 +2490,32 @@ export default function StudentDetail() {
 
                             {/* Observations Section */}
                             <div
-                              className="relative group"
+                              className="relative group mt-8"
                               onMouseEnter={() => setHoveredSection("observations")}
                               onMouseLeave={() => setHoveredSection(null)}
                             >
                               <div className="flex items-start justify-between">
-                                <div className="flex-1 pr-4">
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-4">
+                                <div className="flex-1 flex flex-col gap-0">
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
                                     Observations
                                   </h3>
                                   <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
-                                    <div className="flex items-start gap-2">
-                                      <span className="text-indigo-600 mt-1 font-bold">→</span>
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
                                       <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
                                     </div>
-                                    <div className="flex items-start gap-2">
-                                      <span className="text-indigo-600 mt-1 font-bold">→</span>
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
                                       <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
                                     </div>
-                                    <div className="flex items-start gap-2">
-                                      <span className="text-indigo-600 mt-1 font-bold">→</span>
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
                                       <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
                                     </div>
                                   </div>
