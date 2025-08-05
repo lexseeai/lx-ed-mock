@@ -2424,6 +2424,9 @@ export default function StudentDetail() {
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
                                     toggleView === "brain" ? "left-[3px]" : "left-[39px]"
                                   }`}
+                                  style={{
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                  }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
