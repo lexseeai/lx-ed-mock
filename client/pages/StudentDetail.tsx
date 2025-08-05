@@ -2394,7 +2394,7 @@ export default function StudentDetail() {
                               </div>
                             </div>
                             <div className={`text-xs font-normal font-lexend leading-4 transition-colors ${
-                              selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
+                              selectedSessionId === session.id ? "text-stone-900 pl-0.5" : "text-stone-700"
                             }`}>
                               {session.title}
                             </div>
