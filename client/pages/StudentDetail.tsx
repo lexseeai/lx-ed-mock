@@ -530,7 +530,7 @@ export default function StudentDetail() {
   const [activeTab, setActiveTab] = useState("snapshot");
   const [activeView, setActiveView] = useState("student");
   const [isSearchMode, setIsSearchMode] = useState(false);
-  const [selectedSession, setSelectedSession] = useState<string>("session-1");
+  const [selectedSessionId, setSelectedSessionId] = useState<string>("session-1");
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -2359,9 +2359,9 @@ export default function StudentDetail() {
                           <div
                             key={session.id}
                             className={`p-4 cursor-pointer border-b border-stone-100 hover:bg-stone-50 transition-colors ${
-                              selectedSession === session.id ? "bg-indigo-50 border-r-2 border-r-indigo-600" : ""
+                              selectedSessionId === session.id ? "bg-indigo-50 border-r-2 border-r-indigo-600" : ""
                             }`}
-                            onClick={() => setSelectedSession(session.id)}
+                            onClick={() => setSelectedSessionId(session.id)}
                           >
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-3">
@@ -2386,7 +2386,7 @@ export default function StudentDetail() {
 
                     {/* Main Content Area */}
                     <div className="flex-1 bg-white">
-                      {selectedSession === "session-1" && (
+                      {selectedSessionId === "session-1" && (
                         <div className="p-8">
                           {/* Header */}
                           <div className="flex items-center justify-between mb-8">
@@ -2534,10 +2534,10 @@ export default function StudentDetail() {
                       )}
 
                       {/* Placeholder for other sessions */}
-                      {selectedSession !== "session-1" && (
+                      {selectedSessionId !== "session-1" && (
                         <div className="p-8 text-center">
                           <p className="text-stone-500 font-lexend">
-                            Session content for {selectedSession} will be added here.
+                            Session content for {selectedSessionId} will be added here.
                           </p>
                         </div>
                       )}
