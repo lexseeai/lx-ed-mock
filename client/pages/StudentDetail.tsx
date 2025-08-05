@@ -2418,7 +2418,7 @@ export default function StudentDetail() {
                       {selectedSessionId === "july-18" && (
                         <div className="bg-white rounded-sm border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
                           {/* Fixed Header */}
-                          <div className="flex items-start justify-between p-5 border-t border-l border-r border-stone-200 flex-shrink-0">
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
                               <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
                               <div>
