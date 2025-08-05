@@ -530,7 +530,7 @@ export default function StudentDetail() {
   const [activeTab, setActiveTab] = useState("snapshot");
   const [activeView, setActiveView] = useState("student");
   const [isSearchMode, setIsSearchMode] = useState(false);
-  const [selectedSessionId, setSelectedSessionId] = useState<string>("session-1");
+  const [selectedSessionId, setSelectedSessionId] = useState<string>("july-28");
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
