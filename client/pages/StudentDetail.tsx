@@ -2413,7 +2413,7 @@ export default function StudentDetail() {
                             </div>
                             <Button
                               variant="outline"
-                              className="flex items-center gap-2"
+                              className="font-lexend text-sm font-medium"
                               onClick={() => {
                                 openNotesOverlay("view", {
                                   date: "18",
@@ -2426,7 +2426,6 @@ export default function StudentDetail() {
                                 });
                               }}
                             >
-                              <Eye className="w-4 h-4" />
                               View notes
                             </Button>
                           </div>
