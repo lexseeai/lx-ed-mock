@@ -2421,7 +2421,7 @@ export default function StudentDetail() {
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
-                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] transition-[left] duration-300 ease-[cubic-bezier(0.34,1.25,0.64,1)] ${
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
                                     toggleView === "brain" ? "left-[3px]" : "left-[39px]"
                                   }`}
                                 />
