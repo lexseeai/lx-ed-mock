@@ -2397,7 +2397,7 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 bg-white">
+                    <div className="flex-1 bg-stone-50">
                       {selectedSessionId === "july-18" && (
                         <div className="p-8">
                           {/* Header */}
