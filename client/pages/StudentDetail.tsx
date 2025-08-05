@@ -2320,7 +2320,7 @@ export default function StudentDetail() {
                 {activeTab === "session-notes" && (
                   <div className="flex h-full">
                     {/* Left Sidebar - Session List */}
-                    <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200">
+                    <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-8">
                       {/* Header */}
                       <div className="flex items-center justify-between py-3 px-[18px]">
                         <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
@@ -2328,7 +2328,7 @@ export default function StudentDetail() {
                       </div>
 
                       {/* Session List - flush to edges */}
-                      <div className="flex-1 overflow-y-auto pb-5">
+                      <div className="flex-1 overflow-y-auto">
                         {[
                           {
                             id: "august-1",
@@ -2381,9 +2381,7 @@ export default function StudentDetail() {
                         ].map((session) => (
                           <div
                             key={session.id}
-                            className={`px-6 py-3 cursor-pointer transition-colors ${
-                              selectedSessionId === session.id ? "flex flex-col gap-0.5" : ""
-                            }`}
+                            className={`px-6 py-3 cursor-pointer transition-colors flex flex-col gap-0.5`}
                             style={selectedSessionId === session.id ? {backgroundColor: "rgba(237, 236, 252, 1)"} : {}}
                             onClick={() => setSelectedSessionId(session.id)}
                           >
