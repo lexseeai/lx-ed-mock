@@ -2564,7 +2564,7 @@ export default function StudentDetail() {
 
                       {/* Placeholder for other sessions */}
                       {selectedSessionId && selectedSessionId !== "july-18" && (
-                        <div className="p-8 text-center">
+                        <div className="p-8 text-center bg-white">
                           <p className="text-stone-500 font-lexend">
                             Session content for {selectedSessionId} will be added here.
                           </p>
