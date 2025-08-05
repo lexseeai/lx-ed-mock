@@ -1576,7 +1576,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "" : "p-8 bg-stone-50"}`} style={{ backgroundColor: activeTab === "session-notes" ? "#f7f7f7" : undefined, padding: activeTab === "session-notes" ? "20px 0 20px 20px" : undefined, paddingBottom: activeTab === "session-notes" ? "0px" : "60px" }}>
+              <div className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "" : "p-8 bg-stone-50"}`} style={{ backgroundColor: activeTab === "session-notes" ? "#f7f7f7" : undefined, padding: activeTab === "session-notes" ? "32px" : undefined, paddingBottom: activeTab === "session-notes" ? "0px" : "60px" }}>
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6 items-stretch">
