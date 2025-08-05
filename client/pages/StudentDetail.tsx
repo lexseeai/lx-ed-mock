@@ -2406,9 +2406,9 @@ export default function StudentDetail() {
                     {/* Main Content Area */}
                     <div className="flex-1 p-8 px-4 flex flex-col justify-center items-center" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
                       {selectedSessionId === "july-18" && (
-                        <div className="bg-white rounded-md border border-stone-200 overflow-hidden h-full max-w-[650px]">
-                          {/* Header */}
-                          <div className="flex items-start justify-between mb-[35px] p-5">
+                        <div className="bg-white rounded-md border border-stone-200 overflow-hidden h-full max-w-[650px] flex flex-col">
+                          {/* Fixed Header */}
+                          <div className="flex items-start justify-between p-5 border-b border-stone-200 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
                               <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
                               <div>
@@ -2421,13 +2421,13 @@ export default function StudentDetail() {
                             <div className="flex items-center gap-1.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
-                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] transition-[left] duration-150 ease-[cubic-bezier(0.34,1.25,0.64,1)] ${
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] transition-[left] duration-300 ease-[cubic-bezier(0.34,1.25,0.64,1)] ${
                                     toggleView === "brain" ? "left-[3px]" : "left-[39px]"
                                   }`}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
-                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-200 p-1.5 font-lexend text-sm font-medium ${
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
                                     toggleView === "brain" ? "text-white" : "text-stone-500"
                                   }`}
                                 >
@@ -2435,7 +2435,7 @@ export default function StudentDetail() {
                                 </button>
                                 <button
                                   onClick={() => setToggleView("filetext")}
-                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-200 p-1.5 font-lexend text-sm font-medium ${
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
                                     toggleView === "filetext" ? "text-white" : "text-stone-500"
                                   }`}
                                 >
@@ -2461,8 +2461,8 @@ export default function StudentDetail() {
                             </div>
                           </div>
 
-                          {/* Content Sections */}
-                          <div className="px-5 pl-[50px]">
+                          {/* Scrollable Content */}
+                          <div className="flex-1 overflow-y-auto px-5 pl-[50px] py-8">
                             {toggleView === "brain" ? (
                               <>
                                 {/* Complex Borrowing Section */}
