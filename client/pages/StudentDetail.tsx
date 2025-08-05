@@ -2631,7 +2631,7 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Objectives of the session */}
-                                <div className="mt-2">
+                                <div className="mt-4">
                                   <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Objectives of the session
                                   </h3>
