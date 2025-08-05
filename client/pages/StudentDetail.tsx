@@ -2431,7 +2431,7 @@ export default function StudentDetail() {
                           </div>
 
                           {/* Content Sections */}
-                          <div className="space-y-8">
+                          <div className="px-5 pl-[50px]">
                             {/* Complex Borrowing Section */}
                             <div
                               className="relative group"
