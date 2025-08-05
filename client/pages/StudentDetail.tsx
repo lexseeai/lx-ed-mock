@@ -1369,16 +1369,39 @@ export default function StudentDetail() {
                         </Avatar>
                       </div>
                       <div>
-                        <h1 className="text-2xl font-bold text-stone-900 font-lexend">
-                          {student.name}
-                        </h1>
+                        <div className="flex items-center gap-2">
+                          <h1 className="text-2xl font-bold text-stone-900 font-lexend">
+                            {student.name}
+                          </h1>
+                          <div className="relative">
+                            <button
+                              onClick={() => setShowStudentMenu(!showStudentMenu)}
+                              className="flex items-center justify-center w-6 h-6 hover:bg-stone-100 rounded transition-colors"
+                            >
+                              <ChevronDown className="w-4 h-4 text-stone-600" />
+                            </button>
+                            {showStudentMenu && (
+                              <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-stone-200 py-1 z-50">
+                                <button className="w-full text-left px-4 py-2 text-sm text-stone-700 hover:bg-stone-50 font-lexend">
+                                  Update specialty
+                                </button>
+                                <button className="w-full text-left px-4 py-2 text-sm text-stone-700 hover:bg-stone-50 font-lexend">
+                                  Send message
+                                </button>
+                                <button className="w-full text-left px-4 py-2 text-sm text-stone-700 hover:bg-stone-50 font-lexend">
+                                  Student details
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
                         <p className="text-sm text-stone-600 font-lexend">
                           {student.subject}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2.5" style={{ display: 'none' }}>
                     <Button
                       size="sm"
                       variant="outline"
