@@ -3622,7 +3622,7 @@ export default function Index() {
                     <div className="text-stone-900 font-lexend text-3xl font-bold leading-9 tracking-[-0.75px]">
                       Students
                     </div>
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-2.5">
                       {/* Cards/List Toggle */}
                       <div
                         className="relative flex border border-stone-200 rounded-xl bg-white overflow-hidden h-11 self-center"
