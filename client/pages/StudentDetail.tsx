@@ -2306,13 +2306,13 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session List */}
                     <div className="w-[312px] bg-white border-r border-stone-200 flex flex-col">
                       {/* Header */}
-                      <div className="flex items-center justify-between p-4 pb-0" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
+                      <div className="flex items-center justify-between p-4 pb-0 bg-white">
                         <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
                         <Search className="w-6 h-6 text-stone-500" />
                       </div>
 
                       {/* Session List - flush to edges */}
-                      <div className="flex-1 overflow-y-auto pb-5 bg-stone-50">
+                      <div className="flex-1 overflow-y-auto pb-5 bg-white">
                         {[
                           {
                             id: "august-1",
@@ -2386,7 +2386,7 @@ export default function StudentDetail() {
                                 {session.date}
                               </div>
                             </div>
-                            <div className={`text-sm font-medium font-lexend leading-[18px] transition-colors ${
+                            <div className={`text-sm font-normal font-lexend leading-[18px] transition-colors ${
                               selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
                             }`}>
                               {session.title}
@@ -2413,7 +2413,7 @@ export default function StudentDetail() {
                             </div>
                             <Button
                               variant="outline"
-                              className="font-lexend text-sm font-medium"
+                              className="font-lexend text-xs font-medium bg-white"
                               onClick={() => {
                                 openNotesOverlay("view", {
                                   date: "18",
