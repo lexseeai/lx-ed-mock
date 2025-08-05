@@ -2529,9 +2529,9 @@ export default function StudentDetail() {
                                 >
                                   <div className="flex items-start justify-between">
                                     <div className="flex-1 flex flex-col gap-0">
-                                      <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
-                                        Observations
-                                      </h3>
+                                      <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Observations
+                                  </h3>
                                       <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
                                         <div className="flex items-start gap-1.5 pr-[30px]">
                                           <div className="pt-[3px]">
