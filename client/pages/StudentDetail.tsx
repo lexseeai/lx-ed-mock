@@ -2412,7 +2412,7 @@ export default function StudentDetail() {
                             <div className="flex items-start gap-1.5 justify-start">
                               <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
                               <div>
-                                <h2 className="text-2xl font-semibold text-stone-900 font-lexend">
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   July 18 2025
                                 </h2>
                                 <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
