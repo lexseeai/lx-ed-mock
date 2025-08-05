@@ -2397,13 +2397,13 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 bg-white border-l border-stone-200">
-                      {selectedSessionId === "july-28" && (
+                    <div className="flex-1 bg-white">
+                      {selectedSessionId === "july-18" && (
                         <div className="p-8">
                           {/* Header */}
                           <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-green-500 rounded-full" />
+                              <CircleCheck className="w-3 h-3 text-green-500" />
                               <div>
                                 <h2 className="text-xl font-semibold text-stone-900 font-lexend">
                                   Friday, July 18 2025
@@ -2559,11 +2559,11 @@ export default function StudentDetail() {
                         </div>
                       )}
 
-                      {/* Default selection - July 28 session */}
-                      {!selectedSessionId && setSelectedSessionId("july-28")}
+                      {/* Default selection - July 18 session */}
+                      {!selectedSessionId && setSelectedSessionId("july-18")}
 
                       {/* Placeholder for other sessions */}
-                      {selectedSessionId && selectedSessionId !== "july-28" && (
+                      {selectedSessionId && selectedSessionId !== "july-18" && (
                         <div className="p-8 text-center">
                           <p className="text-stone-500 font-lexend">
                             Session content for {selectedSessionId} will be added here.
