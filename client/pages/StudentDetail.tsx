@@ -2306,7 +2306,7 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session List */}
                     <div className="w-[312px] bg-white border-r border-stone-200 flex flex-col">
                       {/* Header */}
-                      <div className="flex items-center justify-between p-4 pb-0 bg-white">
+                      <div className="flex items-center justify-between py-3 px-[18px] bg-white">
                         <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
                         <Search className="w-6 h-6 text-stone-500" />
                       </div>
@@ -2370,7 +2370,7 @@ export default function StudentDetail() {
                             }`}
                             onClick={() => setSelectedSessionId(session.id)}
                           >
-                            <div className="flex items-center gap-2 py-0.5">
+                            <div className="flex items-center gap-1 py-0.5">
                               {session.status === "upcoming" && (
                                 <Clock className="w-3 h-3 text-stone-700" />
                               )}
