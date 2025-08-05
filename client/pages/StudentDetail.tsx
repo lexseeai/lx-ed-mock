@@ -1737,9 +1737,9 @@ export default function StudentDetail() {
                                 {/* Copy Button - Always visible icon-only button */}
                                 <div className="w-16 flex justify-end">
                                   <Button
-                                    variant="outline"
+                                    variant="ghost"
                                     size="sm"
-                                    className="flex items-center justify-center w-8 h-8 p-0 border-stone-200"
+                                    className="flex items-center justify-center w-8 h-8 p-0 border-0 bg-transparent hover:bg-transparent"
                                     onClick={() => {
                                       const nextSessionText =
                                         studentContent.nextSessionItems.join(
@@ -1751,7 +1751,7 @@ export default function StudentDetail() {
                                     }}
                                   >
                                     <svg
-                                      className="w-3 h-3"
+                                      className="w-3 h-3 text-stone-400"
                                       viewBox="0 0 12 12"
                                       fill="none"
                                       stroke="currentColor"
