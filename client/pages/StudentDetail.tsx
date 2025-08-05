@@ -1402,7 +1402,7 @@ export default function StudentDetail() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2.5" style={{ display: 'none' }}>
+                  <div className="flex items-center gap-2.5">
                     <Button
                       size="sm"
                       variant="outline"
