@@ -2439,13 +2439,13 @@ export default function StudentDetail() {
                               onMouseLeave={() => setHoveredSection(null)}
                             >
                               <div className="flex items-start justify-between">
-                                <div className="flex-1 pr-4">
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-4">
+                                <div className="flex-1 flex flex-col gap-0">
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
                                     Complex Borrowing and Personal Interests
                                   </h3>
-                                  <div className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                    <p>Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.</p>
-                                  </div>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                    Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                                  </p>
                                 </div>
 
                                 {/* Action Icons */}
