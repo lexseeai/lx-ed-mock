@@ -2414,23 +2414,68 @@ export default function StudentDetail() {
                                 <p className="text-stone-600 font-lexend">9:00-9:45am</p>
                               </div>
                             </div>
-                            <Button
-                              variant="outline"
-                              className="font-lexend text-xs font-medium bg-white"
-                              onClick={() => {
-                                openNotesOverlay("view", {
-                                  date: "18",
-                                  month: "July",
-                                  day: "18",
-                                  year: "2025",
-                                  time: "9:00–9:45am",
-                                  isCompleted: true,
-                                  studentName: "Alex"
-                                });
-                              }}
-                            >
-                              View notes
-                            </Button>
+                            <div className="flex items-center gap-2.5">
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
+                              >
+                                <FileText className="w-4 h-4 mr-2" />
+                                Actions
+                                <svg
+                                  className="w-6 h-6 ml-1"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                >
+                                  <path d="M7 15L12 20L17 15" />
+                                  <path d="M7 9L12 4L17 9" />
+                                </svg>
+                              </Button>
+
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="h-11 px-4 border-stone-200 bg-white hover:bg-stone-50 font-lexend text-sm font-normal text-stone-700 rounded-xl overflow-hidden"
+                              >
+                                <Brain className="w-4 h-4 mr-2" />
+                                AI Assist
+                                <svg
+                                  className="w-6 h-6 ml-1"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                >
+                                  <path d="M7 15L12 20L17 15" />
+                                  <path d="M7 9L12 4L17 9" />
+                                </svg>
+                              </Button>
+
+                              <button
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-xl hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                style={{
+                                  boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
+                                }}
+                                onClick={() => {
+                                  openNotesOverlay("view", {
+                                    date: "18",
+                                    month: "July",
+                                    day: "18",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: true,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
+                              </button>
+                            </div>
                           </div>
 
                           {/* Content Sections */}
