@@ -2410,7 +2410,7 @@ export default function StudentDetail() {
                           {/* Fixed Header */}
                           <div className="flex items-start justify-between p-5 border border-stone-200 border-b-0 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
-                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-1" />
                               <div>
                                 <h2 className="text-2xl font-semibold text-stone-900 font-lexend">
                                   July 18 2025
@@ -2418,7 +2418,7 @@ export default function StudentDetail() {
                                 <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-1.5">
+                            <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] transition-[left] duration-300 ease-[cubic-bezier(0.34,1.25,0.64,1)] ${
@@ -2609,7 +2609,7 @@ export default function StudentDetail() {
 
                                 {/* Session summary */}
                                 <div className="mt-12">
-                                  <h3 className="text-xl font-normal text-stone-900 font-lexend">
+                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend">
                                     Session summary
                                   </h3>
                                 </div>
