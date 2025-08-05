@@ -2410,7 +2410,7 @@ export default function StudentDetail() {
                           {/* Fixed Header */}
                           <div className="flex items-start justify-between p-5 border border-stone-200 border-b-0 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
-                              <CircleCheck className="w-6 h-6 text-green-500 mt-1" />
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
                               <div>
                                 <h2 className="text-2xl font-semibold text-stone-900 font-lexend">
                                   July 18 2025
