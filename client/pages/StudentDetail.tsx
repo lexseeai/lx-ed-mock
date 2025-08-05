@@ -2306,7 +2306,7 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session List */}
                     <div className="w-[312px] bg-white border-r border-stone-200 flex flex-col">
                       {/* Header */}
-                      <div className="flex items-center justify-between p-4 pb-0">
+                      <div className="flex items-center justify-between p-4 pb-0 bg-stone-100">
                         <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
                         <Search className="w-6 h-6 text-stone-500" />
                       </div>
