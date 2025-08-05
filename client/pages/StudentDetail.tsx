@@ -2599,7 +2599,7 @@ export default function StudentDetail() {
                               <div className="space-y-8 pr-[30px]">
                                 {/* Student goal */}
                                 <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend">
                                     Student goal
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -2608,15 +2608,15 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Session summary */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-12">
+                                  <h3 className="text-xl font-normal text-stone-900 font-lexend">
                                     Session summary
                                   </h3>
                                 </div>
 
                                 {/* Objectives of the session */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-4">
+                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Objectives of the session
                                   </h3>
                                   <div className="space-y-2">
@@ -2636,8 +2636,8 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Progression towards goals */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-6">
+                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Progression towards goals
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -2646,8 +2646,8 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Skill areas addressed */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-8">
+                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Skill areas addressed
                                   </h3>
                                   <div className="space-y-2">
@@ -2679,8 +2679,8 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Additional observations */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-8">
+                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Additional observations
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -2689,8 +2689,8 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Next session */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-8">
+                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Next session
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -2699,8 +2699,8 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Try these at home */}
-                                <div>
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                <div className="mt-8">
+                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Try these at home
                                   </h3>
                                   <div className="space-y-2">
