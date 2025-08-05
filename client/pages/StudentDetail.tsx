@@ -2416,7 +2416,7 @@ export default function StudentDetail() {
                     {/* Main Content Area */}
                     <div className="flex-1 p-8 px-4 flex flex-col justify-center items-center" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
                       {selectedSessionId === "july-18" && (
-                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                        <div className="bg-white rounded border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
                           {/* Fixed Header */}
                           <div className="flex items-start justify-between p-5 border-t border-l border-r border-stone-200 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
