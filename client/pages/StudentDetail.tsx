@@ -2463,134 +2463,267 @@ export default function StudentDetail() {
 
                           {/* Content Sections */}
                           <div className="px-5 pl-[50px]">
-                            {/* Complex Borrowing Section */}
-                            <div
-                              className="relative group"
-                              onMouseEnter={() => setHoveredSection("borrowing")}
-                              onMouseLeave={() => setHoveredSection(null)}
-                            >
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1 flex flex-col gap-0">
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
-                                    Complex Borrowing and Personal Interests
-                                  </h3>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px]">
-                                    Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
-                                  </p>
-                                </div>
-
-                                {/* Action Icons */}
-                                <div className={`flex items-center gap-1 transition-opacity ${
-                                  hoveredSection === "borrowing" ? "opacity-100" : "opacity-0"
-                                }`}>
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                        <Copy className="w-4 h-4 text-stone-500" />
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Copy text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
-
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                        <Edit3 className="w-4 h-4 text-stone-500" />
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Edit text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
-
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                        <RefreshCw className="w-4 h-4 text-stone-500" />
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Regenerate text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Observations Section */}
-                            <div
-                              className="relative group mt-8"
-                              onMouseEnter={() => setHoveredSection("observations")}
-                              onMouseLeave={() => setHoveredSection(null)}
-                            >
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1 flex flex-col gap-0">
-                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
-                                    Observations
-                                  </h3>
-                                  <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
-                                    <div className="flex items-start gap-1.5 pr-[30px]">
-                                      <div className="pt-[3px]">
-                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
-                                      </div>
-                                      <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
+                            {toggleView === "brain" ? (
+                              <>
+                                {/* Complex Borrowing Section */}
+                                <div
+                                  className="relative group"
+                                  onMouseEnter={() => setHoveredSection("borrowing")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex items-start justify-between">
+                                    <div className="flex-1 flex flex-col gap-0">
+                                      <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
+                                        Complex Borrowing and Personal Interests
+                                      </h3>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px]">
+                                        Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                                      </p>
                                     </div>
-                                    <div className="flex items-start gap-1.5 pr-[30px]">
-                                      <div className="pt-[3px]">
-                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
-                                      </div>
-                                      <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
-                                    </div>
-                                    <div className="flex items-start gap-1.5 pr-[30px]">
-                                      <div className="pt-[3px]">
-                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
-                                      </div>
-                                      <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
+
+                                    {/* Action Icons */}
+                                    <div className={`flex items-center gap-1 transition-opacity ${
+                                      hoveredSection === "borrowing" ? "opacity-100" : "opacity-0"
+                                    }`}>
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Copy className="w-4 h-4 text-stone-500" />
+                                          </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>Copy text</p>
+                                        </TooltipContent>
+                                      </Tooltip>
+
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Edit3 className="w-4 h-4 text-stone-500" />
+                                          </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>Edit text</p>
+                                        </TooltipContent>
+                                      </Tooltip>
+
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <RefreshCw className="w-4 h-4 text-stone-500" />
+                                          </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>Regenerate text</p>
+                                        </TooltipContent>
+                                      </Tooltip>
                                     </div>
                                   </div>
                                 </div>
 
-                                {/* Action Icons */}
-                                <div className={`flex items-center gap-1 transition-opacity ${
-                                  hoveredSection === "observations" ? "opacity-100" : "opacity-0"
-                                }`}>
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                        <Copy className="w-4 h-4 text-stone-500" />
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Copy text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
+                                {/* Observations Section */}
+                                <div
+                                  className="relative group mt-8"
+                                  onMouseEnter={() => setHoveredSection("observations")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex items-start justify-between">
+                                    <div className="flex-1 flex flex-col gap-0">
+                                      <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-1.5">
+                                        Observations
+                                      </h3>
+                                      <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
+                                        <div className="flex items-start gap-1.5 pr-[30px]">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5 pr-[30px]">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5 pr-[30px]">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
+                                        </div>
+                                      </div>
+                                    </div>
 
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                        <Edit3 className="w-4 h-4 text-stone-500" />
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Edit text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
+                                    {/* Action Icons */}
+                                    <div className={`flex items-center gap-1 transition-opacity ${
+                                      hoveredSection === "observations" ? "opacity-100" : "opacity-0"
+                                    }`}>
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Copy className="w-4 h-4 text-stone-500" />
+                                          </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>Copy text</p>
+                                        </TooltipContent>
+                                      </Tooltip>
 
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                        <RefreshCw className="w-4 h-4 text-stone-500" />
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Regenerate text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Edit3 className="w-4 h-4 text-stone-500" />
+                                          </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>Edit text</p>
+                                        </TooltipContent>
+                                      </Tooltip>
+
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <RefreshCw className="w-4 h-4 text-stone-500" />
+                                          </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>Regenerate text</p>
+                                        </TooltipContent>
+                                      </Tooltip>
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              /* Paper/FileText View - Markdown Content */
+                              <div className="space-y-8 pr-[30px]">
+                                {/* Student goal */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Student goal
+                                  </h3>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                  </p>
+                                </div>
+
+                                {/* Session summary */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Session summary
+                                  </h3>
+                                </div>
+
+                                {/* Objectives of the session */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Objectives of the session
+                                  </h3>
+                                  <div className="space-y-2">
+                                    <div className="flex items-start gap-1.5">
+                                      <span className="text-stone-700 font-lexend text-sm mt-1">1.</span>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Practiced 3-digit subtraction with more complex borrowing cases (borrowing across zeros and multiple digits).
+                                      </p>
+                                    </div>
+                                    <div className="flex items-start gap-1.5">
+                                      <span className="text-stone-700 font-lexend text-sm mt-1">2.</span>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Introduced a brief multiplication review and word problems that relate to Alex's hobbies (sports statistics).
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Progression towards goals */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Progression towards goals
+                                  </h3>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                    Alex completed 8 problems with 75% accuracy, a continued improvement. He made one mistake with borrowing across two zeros but was able to catch the error with guidance. He enjoyed the sports-related problems and showed more willingness to attempt challenging questions.
+                                  </p>
+                                </div>
+
+                                {/* Skill areas addressed */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Skill areas addressed
+                                  </h3>
+                                  <div className="space-y-2">
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Subtraction with borrowing (complex cases)
+                                      </p>
+                                    </div>
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Connecting math to personal interests
+                                      </p>
+                                    </div>
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Self-correction techniques
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Additional observations */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Additional observations
+                                  </h3>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                    Alex's confidence improved when he saw connections between math and real life. He was proud to solve a sports stats word problem on his own. He mentioned feeling "less nervous" about math at school.
+                                  </p>
+                                </div>
+
+                                {/* Next session */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Next session
+                                  </h3>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                    Review mistakes from this session and practice self-checking. Add one new type of problem (multi-step word problem) if ready.
+                                  </p>
+                                </div>
+
+                                {/* Try these at home */}
+                                <div>
+                                  <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-3">
+                                    Try these at home
+                                  </h3>
+                                  <div className="space-y-2">
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Create word problems based on Alex's interests.
+                                      </p>
+                                    </div>
+                                    <div className="flex items-start gap-1.5">
+                                      <div className="pt-[3px]">
+                                        <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                      </div>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Practice subtraction with borrowing, focusing on self-checking answers.
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                            )}
                           </div>
                         </div>
                       )}
