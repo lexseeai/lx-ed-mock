@@ -2379,21 +2379,21 @@ export default function StudentDetail() {
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {session.status === "upcoming" && (
-                                <Clock className="w-3 h-3 text-stone-700" />
+                                <Clock className="w-4 h-4 text-stone-700" />
                               )}
                               {session.status === "overdue" && (
-                                <Timer className="w-3 h-3 text-pink-600" />
+                                <Timer className="w-4 h-4 text-pink-600" />
                               )}
                               {session.status === "completed" && (
-                                <CircleCheck className="w-3 h-3 text-green-500" />
+                                <CircleCheck className="w-4 h-4 text-green-500" />
                               )}
-                              <div className={`text-xs font-normal font-lexend leading-4 transition-colors ${
+                              <div className={`text-sm font-medium font-lexend leading-4 transition-colors ${
                                 selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
                               }`}>
                                 {session.date}
                               </div>
                             </div>
-                            <div className={`text-sm font-normal font-lexend leading-[18px] transition-colors ${
+                            <div className={`text-xs font-normal font-lexend leading-4 transition-colors ${
                               selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
                             }`}>
                               {session.title}
