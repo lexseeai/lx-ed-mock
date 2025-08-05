@@ -2437,7 +2437,7 @@ export default function StudentDetail() {
                                     toggleView === "brain" ? "text-white" : "text-stone-500"
                                   }`}
                                 >
-                                  <Brain className="w-5 h-5" strokeWidth={2} />
+                                  <Coffee className="w-5 h-5" strokeWidth={2} />
                                 </button>
                                 <button
                                   onClick={() => setToggleView("filetext")}
