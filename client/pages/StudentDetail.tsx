@@ -2312,7 +2312,7 @@ export default function StudentDetail() {
                       </div>
 
                       {/* Session List - flush to edges */}
-                      <div className="flex-1 overflow-y-auto pb-5">
+                      <div className="flex-1 overflow-y-auto pb-5 bg-stone-100">
                         {[
                           {
                             id: "august-1",
