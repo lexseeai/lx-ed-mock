@@ -2415,7 +2415,7 @@ export default function StudentDetail() {
                                 <h2 className="text-2xl font-semibold text-stone-900 font-lexend">
                                   July 18 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-1.5">
