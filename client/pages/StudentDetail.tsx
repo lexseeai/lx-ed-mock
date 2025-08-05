@@ -2152,7 +2152,51 @@ export default function StudentDetail() {
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
                                     <span className="font-semibold">Motivation responds to games & breaks</span> — Competitive games and strategic breaks increase focus and stamina.{" "}
-                                    <span className="text-stone-600">(11 July)</span>
+                                    <span
+                                      className="relative inline-block group"
+                                      style={{
+                                        verticalAlign: "middle",
+                                        marginLeft: "4px",
+                                        height: "auto",
+                                        lineHeight: "20px",
+                                      }}
+                                    >
+                                      <span
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          openNotesOverlay("view", {
+                                            date: "11",
+                                            month: "July",
+                                            day: "11",
+                                            year: "2025",
+                                            time: "9:00–9:45am",
+                                            isCompleted: true,
+                                          });
+                                        }}
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        style={{
+                                          lineHeight: "20px",
+                                          height: "14px",
+                                          flexGrow: 0,
+                                          verticalAlign: "4px",
+                                        }}
+                                      >
+                                        <span
+                                          className="text-stone-400 group-hover:text-white font-lexend font-normal"
+                                          style={{ fontSize: "8px" }}
+                                        >
+                                          11 July 25
+                                        </span>
+                                      </span>
+                                      <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
+                                        <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
+                                          <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
+                                            View notes
+                                            <ArrowRight className="w-6 h-6 text-indigo-600" />
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </span>
                                   </p>
                                 </div>
 
