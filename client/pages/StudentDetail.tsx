@@ -2690,7 +2690,7 @@ export default function StudentDetail() {
 
                                 {/* Next session */}
                                 <div className="mt-8">
-                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
+                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend">
                                     Next session
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
