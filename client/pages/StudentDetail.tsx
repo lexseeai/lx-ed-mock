@@ -2401,9 +2401,9 @@ export default function StudentDetail() {
                       {selectedSessionId === "july-18" && (
                         <div className="bg-white rounded-md border border-stone-200 overflow-hidden h-full max-w-[650px]">
                           {/* Header */}
-                          <div className="flex items-center justify-between mb-8">
-                            <div className="flex items-center gap-3">
-                              <CircleCheck className="w-3 h-3 text-green-500" />
+                          <div className="flex items-start justify-between mb-8 py-[30px] px-5 pb-6 border-b border-stone-200">
+                            <div className="flex items-start gap-3 justify-start">
+                              <CircleCheck className="w-6 h-6 text-green-500" />
                               <div>
                                 <h2 className="text-xl font-semibold text-stone-900 font-lexend">
                                   Friday, July 18 2025
