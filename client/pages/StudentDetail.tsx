@@ -537,6 +537,7 @@ export default function StudentDetail() {
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [selectedSessionId, setSelectedSessionId] = useState<string>("july-18");
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [toggleView, setToggleView] = useState<"brain" | "filetext">("brain");
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
