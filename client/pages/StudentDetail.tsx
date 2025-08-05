@@ -2662,7 +2662,7 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Skill areas addressed */}
-                                <div className="mt-8">
+                                <div className="mt-6">
                                   <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Skill areas addressed
                                   </h3>
