@@ -2700,7 +2700,7 @@ export default function StudentDetail() {
 
                                 {/* Try these at home */}
                                 <div className="mt-8">
-                                  <h3 className="text-base font-semibold text-stone-900 font-lexend">
+                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend">
                                     Try these at home
                                   </h3>
                                   <div className="space-y-2">
