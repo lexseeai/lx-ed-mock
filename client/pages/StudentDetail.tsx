@@ -525,8 +525,6 @@ export default function StudentDetail() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("snapshot");
   const [activeView, setActiveView] = useState("student");
-  const [isHoveringObservations, setIsHoveringObservations] = useState(false);
-  const [isHoveringNextSession, setIsHoveringNextSession] = useState(false);
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
