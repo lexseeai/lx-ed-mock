@@ -2397,9 +2397,9 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 p-8 px-4" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
+                    <div className="flex-1 p-8 px-4 flex flex-col justify-center items-start" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
                       {selectedSessionId === "july-18" && (
-                        <div className="p-8 bg-white rounded-md border border-stone-200 overflow-hidden h-full max-w-[650px]">
+                        <div className="bg-white rounded-md border border-stone-200 overflow-hidden h-full max-w-[650px]">
                           {/* Header */}
                           <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-3">
