@@ -1560,7 +1560,7 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className="flex-1 overflow-y-auto mobile-scroll p-8 bg-stone-50 rounded-b-lg" style={{ paddingBottom: "60px" }}>
+              <div className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "bg-stone-50" : "p-8 bg-stone-50"}`} style={{ paddingBottom: activeTab === "session-notes" ? "0px" : "60px" }}>
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6 items-stretch">
