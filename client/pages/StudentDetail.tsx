@@ -2304,35 +2304,37 @@ export default function StudentDetail() {
                 {activeTab === "session-notes" && (
                   <div className="flex h-full bg-white">
                     {/* Left Sidebar - Session List */}
-                    <div className="w-80 bg-white">
+                    <div className="w-[312px] bg-white border-r border-stone-200 flex flex-col">
                       {/* Header */}
-                      <div className="p-6 border-b border-stone-200">
-                        <div className="flex items-center justify-between">
-                          <h2 className="text-lg font-semibold text-stone-900 font-lexend">Session Notes</h2>
-                          <Button variant="outline" size="sm" className="w-8 h-8 p-0">
-                            <Search className="w-4 h-4" />
-                          </Button>
-                        </div>
+                      <div className="flex items-center justify-between p-4 pb-0">
+                        <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
+                        <Search className="w-6 h-6 text-stone-500" />
                       </div>
 
-                      {/* Session List */}
-                      <div className="overflow-y-auto h-full">
+                      {/* Session List - flush to edges */}
+                      <div className="flex-1 overflow-y-auto pb-5">
                         {[
                           {
                             id: "august-1",
                             date: "August 1",
-                            title: "Friday, 9:00-9:45am",
-                            status: "active"
+                            title: "Friday, 9:00–9:45am",
+                            status: "upcoming"
                           },
                           {
-                            id: "july-28",
-                            date: "July 28",
-                            title: "Complex Borrowing and Personal Interests",
-                            status: "completed"
+                            id: "july-25",
+                            date: "July 25",
+                            title: "Friday, 9:00–9:45am",
+                            status: "overdue"
                           },
                           {
                             id: "july-18",
                             date: "July 18",
+                            title: "Complex Borrowing and Personal Interests",
+                            status: "completed"
+                          },
+                          {
+                            id: "july-11",
+                            date: "July 11",
                             title: "Games and Real-World Math Connections",
                             status: "completed"
                           },
@@ -2349,37 +2351,45 @@ export default function StudentDetail() {
                             status: "completed"
                           },
                           {
-                            id: "june-13",
-                            date: "June 13",
+                            id: "june-20",
+                            date: "June 20",
                             title: "Building Stamina with Timed Subtraction",
                             status: "completed"
                           },
                           {
-                            id: "june-6",
-                            date: "June 6",
+                            id: "june-13",
+                            date: "June 13",
                             title: "Introduction to Borrowing and Place Value",
                             status: "completed"
                           }
                         ].map((session) => (
                           <div
                             key={session.id}
-                            className={`p-4 cursor-pointer border-b border-stone-100 hover:bg-stone-50 transition-colors ${
-                              selectedSessionId === session.id ? "bg-indigo-50 border-r-2 border-r-indigo-600" : ""
+                            className={`px-6 py-3 cursor-pointer transition-colors ${
+                              selectedSessionId === session.id ? "bg-indigo-50" : ""
                             }`}
                             onClick={() => setSelectedSessionId(session.id)}
                           >
-                            <div className="flex items-start gap-3">
-                              <div className={`w-2 h-2 rounded-full mt-2 ${
-                                session.status === "active" ? "bg-green-500" : "bg-indigo-600"
-                              }`} />
-                              <div className="flex-1">
-                                <div className="text-sm font-medium text-stone-900 font-lexend mb-1">
-                                  {session.date}
-                                </div>
-                                <div className="text-sm text-stone-600 font-lexend leading-tight">
-                                  {session.title}
-                                </div>
+                            <div className="flex items-center gap-2 py-0.5">
+                              {session.status === "upcoming" && (
+                                <Clock className="w-3 h-3 text-stone-700" />
+                              )}
+                              {session.status === "overdue" && (
+                                <Timer className="w-3 h-3 text-pink-600" />
+                              )}
+                              {session.status === "completed" && (
+                                <CircleCheck className="w-3 h-3 text-green-500" />
+                              )}
+                              <div className={`text-xs font-normal font-lexend leading-4 transition-colors ${
+                                selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
+                              }`}>
+                                {session.date}
                               </div>
+                            </div>
+                            <div className={`text-sm font-medium font-lexend leading-[18px] transition-colors ${
+                              selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
+                            }`}>
+                              {session.title}
                             </div>
                           </div>
                         ))}
