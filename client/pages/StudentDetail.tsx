@@ -2313,9 +2313,12 @@ export default function StudentDetail() {
                             onClick={() => setSelectedSessionId(session.id)}
                             className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
                               selectedSessionId === session.id
-                                ? "bg-stone-100"
+                                ? ""
                                 : "hover:bg-stone-50"
                             }`}
+                            style={{
+                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                            }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {session.status === "upcoming" && (
@@ -2375,9 +2378,12 @@ export default function StudentDetail() {
                             onClick={() => setSelectedSessionId(session.id)}
                             className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
                               selectedSessionId === session.id
-                                ? "bg-stone-100"
+                                ? ""
                                 : "hover:bg-stone-50"
                             }`}
+                            style={{
+                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                            }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {session.status === "upcoming" && (
