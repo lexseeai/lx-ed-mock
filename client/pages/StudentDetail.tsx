@@ -1558,7 +1558,7 @@ export default function StudentDetail() {
                             : "text-stone-400 hover:text-stone-600"
                         }`}
                       >
-                        Snapshot
+                        Highlights
                       </button>
                       <button
                         ref={button3RefCallback}
@@ -1569,7 +1569,7 @@ export default function StudentDetail() {
                             : "text-stone-400 hover:text-stone-600"
                         }`}
                       >
-                        Goals
+                        Progress
                       </button>
                       <button
                         ref={button4RefCallback}
