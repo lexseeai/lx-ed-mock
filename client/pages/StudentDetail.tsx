@@ -850,7 +850,7 @@ export default function StudentDetail() {
 
   if (!student) {
     return (
-      <TooltipProvider>
+      <TooltipProvider delayDuration={100}>
         <div className="min-h-screen-safe bg-stone-100 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -1328,7 +1328,7 @@ export default function StudentDetail() {
   };
 
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={100}>
       <div className="h-screen-mobile bg-indigo-900 flex">
         <Sidebar
           activeView={activeView}
@@ -1875,7 +1875,7 @@ export default function StudentDetail() {
                                       "**Met goal independently** — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy. (25 July)",
                                       "**Self-checks work** — Used independent self-checking strategies for multi-step word problems. (25 July)",
                                       "**Highly engaged** — Asked to take \"teacher mode\" and quiz the specialist, showing math confidence. (25 July)",
-                                      "**Connects math to interests** ����� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
+                                      "**Connects math to interests** ��� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
                                       "**Self-corrects complex errors** — Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
                                       "**Motivation responds to games & breaks** — Competitive games and strategic breaks increase focus and stamina. (11 July)",
                                       "**Needs routine on low-energy days** — Predictable structure and reduced task load are effective for keeping Zack engaged when tired. (4 July)",
