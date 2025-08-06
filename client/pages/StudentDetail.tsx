@@ -2611,8 +2611,901 @@ export default function StudentDetail() {
                       {/* Default selection - July 18 session */}
                       {!selectedSessionId && setSelectedSessionId("july-18")}
 
+                      {/* July 11 Session */}
+                      {selectedSessionId === "july-11" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          {/* Fixed Header */}
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  July 11 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                                <div
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
+                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                  }`}
+                                  style={{
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                  }}
+                                />
+                                <button
+                                  onClick={() => setToggleView("brain")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Coffee className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                                <button
+                                  onClick={() => setToggleView("filetext")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                              </div>
+                              <button
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                onClick={() => {
+                                  openNotesOverlay("view", {
+                                    date: "11",
+                                    month: "July",
+                                    day: "11",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: true,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Scrollable Content */}
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+                            {toggleView === "brain" ? (
+                              <>
+                                {/* Recap Section */}
+                                <div
+                                  className="relative group"
+                                  onMouseEnter={() => setHoveredSection("july11-recap")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Recap
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "july11-recap" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <RefreshCw className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Regenerate</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Subtraction math games used as warm-up, boosting motivation. Focused on accuracy, explored measurement concepts, and encouraged error checking with practical strategies.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Observations Section */}
+                                <div
+                                  className="relative group mt-8"
+                                  onMouseEnter={() => setHoveredSection("july11-observations")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Observations
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "july11-observations" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p><span className="font-semibold">Enjoyed</span> the competitive subtraction game; motivation increased.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Hesitated on <span className="font-semibold">two-place borrowing</span> but solved correctly with prompting.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Became more energetic after a <span className="font-semibold">longer midpoint break</span>.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Asked about a <span className="font-semibold">measurement</span> problem (cm vs inches), relating math to real objects.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <div className="space-y-8 pr-[30px]">
+                                <div>
+                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Alex's goal
+                                    </h3>
+                                  </div>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
+                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                  </p>
+                                </div>
+                                <div className="mt-4" style={{ height: "32px" }}></div>
+                                <div className="mt-8">
+                                  <div className="flex items-center gap-2">
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Session summary
+                                    </h3>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* July 4 Session */}
+                      {selectedSessionId === "july-4" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  July 4 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                                <div
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
+                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                  }`}
+                                  style={{
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                  }}
+                                />
+                                <button
+                                  onClick={() => setToggleView("brain")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Coffee className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                                <button
+                                  onClick={() => setToggleView("filetext")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                              </div>
+                              <button
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                onClick={() => {
+                                  openNotesOverlay("view", {
+                                    date: "4",
+                                    month: "July",
+                                    day: "4",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: true,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                              </button>
+                            </div>
+                          </div>
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+                            {toggleView === "brain" ? (
+                              <>
+                                <div
+                                  className="relative group"
+                                  onMouseEnter={() => setHoveredSection("july4-recap")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Recap
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "july4-recap" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <RefreshCw className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Regenerate</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Reviewed subtraction and multiplication strategies, adjusted workload for Zack's tiredness, and used breaks and predictable routines to help him stay engaged and complete tasks.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  className="relative group mt-8"
+                                  onMouseEnter={() => setHoveredSection("july4-observations")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Observations
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "july4-observations" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Appeared <span className="font-semibold">tired</span>, slowing his pace and reducing accuracy.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Needed an <span className="font-semibold">extra break</span> and <span className="font-semibold">reduced workload</span> to stay engaged.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Maintained engagement when the <span className="font-semibold">session timetable</span> was predictable.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <div className="space-y-8 pr-[30px]">
+                                <div>
+                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Alex's goal
+                                    </h3>
+                                  </div>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
+                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* June 27 Session */}
+                      {selectedSessionId === "june-27" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  June 27 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                                <div
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
+                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                  }`}
+                                  style={{
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                  }}
+                                />
+                                <button
+                                  onClick={() => setToggleView("brain")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Coffee className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                                <button
+                                  onClick={() => setToggleView("filetext")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                              </div>
+                              <button
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                onClick={() => {
+                                  openNotesOverlay("view", {
+                                    date: "27",
+                                    month: "June",
+                                    day: "27",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: true,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                              </button>
+                            </div>
+                          </div>
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+                            {toggleView === "brain" ? (
+                              <>
+                                <div
+                                  className="relative group"
+                                  onMouseEnter={() => setHoveredSection("june27-recap")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Recap
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "june27-recap" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <RefreshCw className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Regenerate</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Used a session timetable to increase focus and predictability. Zack improved accuracy, explained steps to the coach, and engaged with fractions through visual examples.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  className="relative group mt-8"
+                                  onMouseEnter={() => setHoveredSection("june27-observations")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Observations
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "june27-observations" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Responded well to a <span className="font-semibold">structured timetable</span>, boosting focus.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Took pride in <span className="font-semibold">self-correcting</span> errors after prompts.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Expressed interest in <span className="font-semibold">creating his own math game</span> next time.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Brought a <span className="font-semibold">fraction</span> question; discussed via pizza-slice visuals.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <div className="space-y-8 pr-[30px]">
+                                <div>
+                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Alex's goal
+                                    </h3>
+                                  </div>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
+                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* June 20 Session */}
+                      {selectedSessionId === "june-20" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  June 20 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                                <div
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
+                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                  }`}
+                                  style={{
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                  }}
+                                />
+                                <button
+                                  onClick={() => setToggleView("brain")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Coffee className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                                <button
+                                  onClick={() => setToggleView("filetext")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                              </div>
+                              <button
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                onClick={() => {
+                                  openNotesOverlay("view", {
+                                    date: "20",
+                                    month: "June",
+                                    day: "20",
+                                    year: "2025",
+                                    time: "9:00��9:45am",
+                                    isCompleted: true,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                              </button>
+                            </div>
+                          </div>
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+                            {toggleView === "brain" ? (
+                              <>
+                                <div
+                                  className="relative group"
+                                  onMouseEnter={() => setHoveredSection("june20-recap")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Recap
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "june20-recap" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <RefreshCw className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Regenerate</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Practiced subtraction with borrowing across zeros, using base-10 blocks and short timed drills. Improved visualization and worked through a multiplication story problem from school.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  className="relative group mt-8"
+                                  onMouseEnter={() => setHoveredSection("june20-observations")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Observations
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "june20-observations" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Benefitted from <span className="font-semibold">hands-on</span> base-10 blocks to visualize borrowing.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Initially <span className="font-semibold">frustrated</span> by the timer but felt <span className="font-semibold">proud</span> when solving under time pressure.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Made errors when <span className="font-semibold">borrowing across zeros</span>, improved with visual aids.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Asked about a <span className="font-semibold">multiplication story problem</span> from school; worked through it step by step.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <div className="space-y-8 pr-[30px]">
+                                <div>
+                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Alex's goal
+                                    </h3>
+                                  </div>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
+                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* June 13 Session */}
+                      {selectedSessionId === "june-13" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  June 13 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                                <div
+                                  className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
+                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                  }`}
+                                  style={{
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                  }}
+                                />
+                                <button
+                                  onClick={() => setToggleView("brain")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Coffee className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                                <button
+                                  onClick={() => setToggleView("filetext")}
+                                  className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
+                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                  }`}
+                                >
+                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                </button>
+                              </div>
+                              <button
+                                className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200"
+                                onClick={() => {
+                                  openNotesOverlay("view", {
+                                    date: "13",
+                                    month: "June",
+                                    day: "13",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: true,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                              </button>
+                            </div>
+                          </div>
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+                            {toggleView === "brain" ? (
+                              <>
+                                <div
+                                  className="relative group"
+                                  onMouseEnter={() => setHoveredSection("june13-recap")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Recap
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "june13-recap" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <RefreshCw className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Regenerate</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Focused on introducing 3-digit subtraction with borrowing, emphasizing place value. Practiced multiplication facts, discussed division, and used hands-on visual aids to build foundational understanding.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  className="relative group mt-8"
+                                  onMouseEnter={() => setHoveredSection("june13-observations")}
+                                  onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                        Observations
+                                      </h3>
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "june13-observations" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
+                                      <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Alex showed enthusiasm using <span className="font-semibold">colored pens</span> for place value.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Needed <span className="font-semibold">reminders</span> to slow down and <span className="font-semibold">check his work</span>.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Confused borrowing with addition regrouping but <span className="font-semibold">self-corrected</span> with support.</p>
+                                        </div>
+                                        <div className="flex items-start gap-1.5">
+                                          <div className="pt-[3px]">
+                                            <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
+                                          </div>
+                                          <p>Asked about a <span className="font-semibold">division</span> problem from school; discussed breaking division into simpler steps.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <div className="space-y-8 pr-[30px]">
+                                <div>
+                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Alex's goal
+                                    </h3>
+                                  </div>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
+                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
                       {/* Placeholder for other sessions */}
-                      {selectedSessionId && selectedSessionId !== "july-18" && (
+                      {selectedSessionId && !["july-18", "july-11", "july-4", "june-27", "june-20", "june-13"].includes(selectedSessionId) && (
                         <div className="p-8 text-center bg-white rounded-md border border-stone-200 overflow-hidden">
                           <p className="text-stone-500 font-lexend">
                             Session content for {selectedSessionId} will be added here.
