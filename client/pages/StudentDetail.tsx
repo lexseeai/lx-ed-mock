@@ -2596,6 +2596,9 @@ export default function StudentDetail() {
                                   </p>
                                 </div>
 
+                                {/* Spacer */}
+                                <div style={{ height: "32px" }}></div>
+
                                 {/* Session summary */}
                                 <div className="mt-16">
                                   <div className="flex items-center gap-2">
