@@ -2538,11 +2538,28 @@ export default function StudentDetail() {
                                   onMouseEnter={() => setHoveredSection("observations")}
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
-                                  <div className="flex items-start justify-between">
-                                    <div className="flex-1 flex flex-col gap-0">
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
-                                    Observations
-                                  </h3>
+                                        Observations
+                                      </h3>
+                                      {/* Action Icons */}
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "observations" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy text</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    <div className="mt-1">
                                       <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
@@ -2563,22 +2580,6 @@ export default function StudentDetail() {
                                           <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
                                         </div>
                                       </div>
-                                    </div>
-
-                                    {/* Action Icons */}
-                                    <div className={`flex items-center gap-1 transition-opacity ${
-                                      hoveredSection === "observations" ? "opacity-100" : "opacity-0"
-                                    }`}>
-                                      <Tooltip>
-                                        <TooltipTrigger asChild>
-                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                            <Copy className="w-4 h-4 text-stone-500" />
-                                          </Button>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                          <p>Copy text</p>
-                                        </TooltipContent>
-                                      </Tooltip>
                                     </div>
                                   </div>
                                 </div>
