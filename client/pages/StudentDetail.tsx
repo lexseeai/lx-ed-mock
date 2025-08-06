@@ -2586,7 +2586,7 @@ export default function StudentDetail() {
                               <div className="space-y-8 pr-[30px]">
                                 {/* Student goal */}
                                 <div>
-                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend">
+                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7" style={{ height: "24px" }}>
                                     Student goal
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
