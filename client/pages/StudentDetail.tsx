@@ -1730,7 +1730,7 @@ export default function StudentDetail() {
                                 {studentContent.nextSessionItems.map(
                                   (item, index) => (
                                     <div key={index} className="flex gap-1.5">
-                                      <div className="pt-[3px]">
+                                      <div className="pt-[5px]">
                                         <div className="w-3.5 h-3.5 rounded-md border-2 border-stone-700"></div>
                                       </div>
                                       <span
