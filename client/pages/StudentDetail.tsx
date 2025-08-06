@@ -3521,7 +3521,7 @@ export default function StudentDetail() {
 
                       {/* August 1 Session - Upcoming */}
                       {selectedSessionId === "august-1" && (
-                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full flex flex-col">
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
                           {/* Fixed Header */}
                           <div className="flex items-start justify-between p-5 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
