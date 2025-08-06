@@ -1766,7 +1766,7 @@ export default function StudentDetail() {
                                 onMouseLeave={() => setHoveredSection(null)}
                               >
                                 <div className="flex items-center gap-2">
-                                  <h2 className="text-stone-900 font-lexend text-2xl font-medium leading-6">
+                                  <h2 className="text-stone-900 font-lexend text-2xl font-bold leading-7">
                                     Recent observations
                                   </h2>
                                   {/* Action Icon */}
