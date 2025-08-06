@@ -2489,44 +2489,45 @@ export default function StudentDetail() {
                                   onMouseEnter={() => setHoveredSection("borrowing")}
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
-                                  <div className="flex items-start justify-between">
-                                    <div className="flex-1 flex flex-col gap-0">
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
-                                    Challenging borrowing and linking math to interests.
-                                  </p>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                    Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
-                                  </p>
+                                      {/* Action Icons */}
+                                      <div className={`flex items-center gap-1 transition-opacity ${
+                                        hoveredSection === "borrowing" ? "opacity-100" : "opacity-0"
+                                      }`}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <Copy className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Copy text</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                              <RefreshCw className="w-4 h-4 text-stone-500" />
+                                            </Button>
+                                          </TooltipTrigger>
+                                          <TooltipContent>
+                                            <p>Regenerate text</p>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </div>
                                     </div>
-
-                                    {/* Action Icons */}
-                                    <div className={`flex items-center gap-1 transition-opacity ${
-                                      hoveredSection === "borrowing" ? "opacity-100" : "opacity-0"
-                                    }`}>
-                                      <Tooltip>
-                                        <TooltipTrigger asChild>
-                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                            <Copy className="w-4 h-4 text-stone-500" />
-                                          </Button>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                          <p>Copy text</p>
-                                        </TooltipContent>
-                                      </Tooltip>
-
-                                      <Tooltip>
-                                        <TooltipTrigger asChild>
-                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                            <RefreshCw className="w-4 h-4 text-stone-500" />
-                                          </Button>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                          <p>Regenerate text</p>
-                                        </TooltipContent>
-                                      </Tooltip>
+                                    <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                        Challenging borrowing and linking math to interests.
+                                      </p>
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                        Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
