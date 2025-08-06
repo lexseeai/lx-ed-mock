@@ -1759,8 +1759,36 @@ export default function StudentDetail() {
                         >
                           <CardContent className="p-0">
                             <div className="flex flex-col gap-6">
-                              {/* Header with icon and copy button */}
-                              <div className="flex justify-between items-start">
+                              {/* Header with hover copy */}
+                              <div
+                                className="group"
+                                onMouseEnter={() => setHoveredSection("observations-card")}
+                                onMouseLeave={() => setHoveredSection(null)}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <h2 className="text-stone-900 font-lexend text-2xl font-medium leading-6">
+                                    Recent observations
+                                  </h2>
+                                  {/* Action Icon */}
+                                  <div className={`flex items-center gap-1 transition-opacity ${
+                                    hoveredSection === "observations-card" ? "opacity-100" : "opacity-0"
+                                  }`}>
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <Copy className="w-4 h-4 text-stone-500" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Copy</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Observations List */}
+                              <div className="space-y-3 pl-1.5">
                                 <div className="flex flex-col gap-0.5">
                                   {/* Icon and Title */}
                                   <div className="flex items-end gap-1.5 justify-start">
