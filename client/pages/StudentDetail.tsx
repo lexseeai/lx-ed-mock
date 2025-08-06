@@ -3557,10 +3557,10 @@ export default function StudentDetail() {
                           <div className="flex-1 overflow-y-auto py-8 px-[50px]">
                             <div className="h-full flex items-center justify-center">
                               <div className="text-center">
-                                <div className="w-16 h-16 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                  <Clock className="w-8 h-8 text-stone-400" />
-                                </div>
-                                <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                                <Clock className="w-15 h-15 text-stone-400" />
+                              </div>
+                              <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
                                 Upcoming Session
                               </h3>
                               </div>
@@ -3607,11 +3607,11 @@ export default function StudentDetail() {
                           <div className="flex-1 overflow-y-auto py-8 px-[50px]">
                             <div className="h-full flex items-center justify-center">
                               <div className="text-center">
-                                <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                                  <Timer className="w-8 h-8 text-pink-600" />
-                                </div>
-                                <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
-                                Overdue Session
+                                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                                <Timer className="w-15 h-15 text-pink-600" />
+                              </div>
+                              <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                                Late notes
                               </h3>
                               </div>
                             </div>
