@@ -2405,8 +2405,8 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
-                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
-                                        Challenging borrowing and linking math to interests.
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
+                                        Challenging borrowing and linking math to interests
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                         Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
@@ -2712,7 +2712,7 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
-                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
                                         Math games and connecting problems to real life
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -2902,7 +2902,7 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
-                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
                                         Adjusting pace and supporting focus when tired
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -3076,7 +3076,7 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
-                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
                                         Structured routines and explaining math steps to others
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -3256,7 +3256,7 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
-                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
                                         Timed subtraction and borrowing across zeros practice
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
@@ -3436,7 +3436,7 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
-                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
                                         Introduction to borrowing and building place value skills
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
