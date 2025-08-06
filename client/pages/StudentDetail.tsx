@@ -2505,7 +2505,7 @@ export default function StudentDetail() {
                                             </Button>
                                           </TooltipTrigger>
                                           <TooltipContent>
-                                            <p>Copy text</p>
+                                            <p>Copy</p>
                                           </TooltipContent>
                                         </Tooltip>
 
@@ -2516,7 +2516,7 @@ export default function StudentDetail() {
                                             </Button>
                                           </TooltipTrigger>
                                           <TooltipContent>
-                                            <p>Regenerate text</p>
+                                            <p>Regenerate</p>
                                           </TooltipContent>
                                         </Tooltip>
                                       </div>
@@ -2554,7 +2554,7 @@ export default function StudentDetail() {
                                             </Button>
                                           </TooltipTrigger>
                                           <TooltipContent>
-                                            <p>Copy text</p>
+                                            <p>Copy</p>
                                           </TooltipContent>
                                         </Tooltip>
                                       </div>
