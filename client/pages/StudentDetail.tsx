@@ -2554,19 +2554,19 @@ export default function StudentDetail() {
                                     Observations
                                   </h3>
                                       <div className="text-stone-700 font-lexend text-sm leading-relaxed space-y-2">
-                                        <div className="flex items-start gap-1.5 pr-[30px]">
+                                        <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
                                           <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
                                         </div>
-                                        <div className="flex items-start gap-1.5 pr-[30px]">
+                                        <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
                                           <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
                                         </div>
-                                        <div className="flex items-start gap-1.5 pr-[30px]">
+                                        <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
