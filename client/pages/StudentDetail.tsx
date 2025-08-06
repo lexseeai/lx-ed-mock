@@ -1875,7 +1875,7 @@ export default function StudentDetail() {
                                       "**Met goal independently** — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy. (25 July)",
                                       "**Self-checks work** — Used independent self-checking strategies for multi-step word problems. (25 July)",
                                       "**Highly engaged** — Asked to take \"teacher mode\" and quiz the specialist, showing math confidence. (25 July)",
-                                      "**Connects math to interests** ��� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
+                                      "**Connects math to interests** ����� Engaged more deeply with math when sports or real-life topics are included. (18 July)",
                                       "**Self-corrects complex errors** — Caught mistakes in complex borrowing, particularly with zeros. (18 July)",
                                       "**Motivation responds to games & breaks** — Competitive games and strategic breaks increase focus and stamina. (11 July)",
                                       "**Needs routine on low-energy days** — Predictable structure and reduced task load are effective for keeping Zack engaged when tired. (4 July)",
@@ -2576,28 +2576,6 @@ export default function StudentDetail() {
                                         </TooltipTrigger>
                                         <TooltipContent>
                                           <p>Copy text</p>
-                                        </TooltipContent>
-                                      </Tooltip>
-
-                                      <Tooltip>
-                                        <TooltipTrigger asChild>
-                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                            <Edit3 className="w-4 h-4 text-stone-500" />
-                                          </Button>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                          <p>Edit text</p>
-                                        </TooltipContent>
-                                      </Tooltip>
-
-                                      <Tooltip>
-                                        <TooltipTrigger asChild>
-                                          <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
-                                            <RefreshCw className="w-4 h-4 text-stone-500" />
-                                          </Button>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                          <p>Regenerate text</p>
                                         </TooltipContent>
                                       </Tooltip>
                                     </div>
