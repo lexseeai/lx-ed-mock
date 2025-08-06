@@ -3560,12 +3560,9 @@ export default function StudentDetail() {
                                 <div className="w-16 h-16 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                   <Clock className="w-8 h-8 text-stone-400" />
                                 </div>
-                                <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-2">
-                                  Upcoming Session
-                                </h3>
-                                <p className="text-stone-600 font-lexend text-sm">
-                                  This session is scheduled for Friday, August 1 at 9:00-9:45am
-                                </p>
+                                <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                                Upcoming Session
+                              </h3>
                               </div>
                             </div>
                           </div>
@@ -3613,12 +3610,9 @@ export default function StudentDetail() {
                                 <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mx-auto mb-4">
                                   <Timer className="w-8 h-8 text-pink-600" />
                                 </div>
-                                <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-2">
-                                  Overdue Session
-                                </h3>
-                                <p className="text-stone-600 font-lexend text-sm">
-                                  This session was scheduled for Friday, July 25 at 9:00-9:45am
-                                </p>
+                                <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                                Overdue Session
+                              </h3>
                               </div>
                             </div>
                           </div>
