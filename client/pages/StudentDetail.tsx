@@ -2345,37 +2345,37 @@ export default function StudentDetail() {
                           {
                             id: "july-18",
                             date: "July 18",
-                            title: "Complex Borrowing and Personal Interests",
+                            title: "Challenging borrowing and linking math to interests",
                             status: "completed"
                           },
                           {
                             id: "july-11",
                             date: "July 11",
-                            title: "Games and Real-World Math Connections",
+                            title: "Math games and connecting problems to real life",
                             status: "completed"
                           },
                           {
                             id: "july-4",
                             date: "July 4",
-                            title: "Supporting Focus During Low-Energy Days",
+                            title: "Adjusting pace and supporting focus when tired",
                             status: "completed"
                           },
                           {
                             id: "june-27",
                             date: "June 27",
-                            title: "Structured Routine and Peer Teaching",
+                            title: "Structured routines and explaining math steps to others",
                             status: "completed"
                           },
                           {
                             id: "june-20",
                             date: "June 20",
-                            title: "Building Stamina with Timed Subtraction",
+                            title: "Timed subtraction and borrowing across zeros practice",
                             status: "completed"
                           },
                           {
                             id: "june-13",
                             date: "June 13",
-                            title: "Introduction to Borrowing and Place Value",
+                            title: "Introduction to borrowing and building place value skills",
                             status: "completed"
                           }
                         ].map((session) => (
