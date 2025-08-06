@@ -1755,7 +1755,7 @@ export default function StudentDetail() {
                       >
                         {/* Observations */}
                         <Card
-                          className="p-5 min-w-[500px] max-w-[650px] flex-1"
+                          className="p-8 min-w-[500px] max-w-[650px] flex-1"
                         >
                           <CardContent className="p-0">
                             <div className="flex flex-col gap-6">
