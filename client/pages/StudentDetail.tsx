@@ -2323,7 +2323,7 @@ export default function StudentDetail() {
                                     toggleView === "brain" ? "left-[3px]" : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
                                   }}
                                 />
                                 <button
