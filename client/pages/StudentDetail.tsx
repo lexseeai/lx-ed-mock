@@ -2322,9 +2322,9 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session List */}
                     <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-8">
                       {/* Header */}
-                      <div className="flex items-center justify-between py-3 px-[18px]">
-                        <h2 className="text-xl font-bold text-stone-700 font-lexend -tracking-[0.35px]">Session Notes</h2>
-                        <Search className="w-6 h-6 text-stone-500" />
+                      <div className="flex items-center justify-between p-5">
+                        <h2 className="text-xl font-bold font-lexend -tracking-[0.35px]" style={{color: "#44403c"}}>Sessions</h2>
+                        <Calendar className="w-6 h-6" style={{color: "rgba(214, 211, 209, 1)"}} />
                       </div>
 
                       {/* Session List - flush to edges */}
