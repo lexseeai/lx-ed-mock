@@ -948,7 +948,7 @@ export default function StudentDetail() {
                 <p className="text-stone-700 font-lexend">
                   {selectedSession
                     ? `${selectedSession.month} ${selectedSession.day}, ${selectedSession.year}, ${selectedSession.time}`
-                    : "July 28, 2025, 9:00–9:45am"}
+                    : "July 28, 2025, 9:00��9:45am"}
                 </p>
               </div>
             </div>
@@ -2598,9 +2598,11 @@ export default function StudentDetail() {
 
                                 {/* Session summary */}
                                 <div className="mt-8">
-                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7" style={{ height: "24px" }}>
-                                    Session summary
-                                  </h3>
+                                  <div className="flex items-center gap-2">
+                                    <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      Session summary
+                                    </h3>
+                                  </div>
                                 </div>
 
                                 {/* Objectives of the session */}
