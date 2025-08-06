@@ -2488,7 +2488,7 @@ export default function StudentDetail() {
                                 >
                                   <div className="flex flex-col">
                                     <div className="flex items-center gap-2">
-                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
+                                      <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7" style={{ height: "24px" }}>
                                         Recap
                                       </h3>
                                       {/* Action Icons */}
