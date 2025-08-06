@@ -3003,10 +3003,10 @@ export default function Index() {
                                   setShowHomeDropdown(false);
                                   setActiveView("sessionnotes");
                                 }}
-                                className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                                className="w-full flex items-center p-2 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
                               >
-                                <NotebookPen className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
-                                <span className="font-lexend text-base">
+                                <NotebookPen className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
+                                <span className="font-lexend text-sm">
                                   New session notes
                                 </span>
                               </button>
@@ -3014,10 +3014,10 @@ export default function Index() {
                                 onClick={() => {
                                   setShowHomeDropdown(false);
                                 }}
-                                className="w-full flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                                className="w-full flex items-center p-2 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
                               >
-                                <FileAudio className="w-6 h-6 mr-3 text-stone-500 group-hover:text-white" />
-                                <span className="font-lexend text-base">
+                                <FileAudio className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
+                                <span className="font-lexend text-sm">
                                   Create assignment
                                 </span>
                               </button>
