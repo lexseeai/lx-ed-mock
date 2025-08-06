@@ -2480,7 +2480,7 @@ export default function StudentDetail() {
                           </div>
 
                           {/* Scrollable Content */}
-                          <div className="flex-1 overflow-y-auto px-5 pl-[50px] py-8">
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px]">
                             {toggleView === "brain" ? (
                               <>
                                 {/* Complex Borrowing Section */}
@@ -2494,10 +2494,10 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px] pb-1.5">
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
                                     Challenging borrowing and linking math to interests.
                                   </p>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px]">
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                     Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
                                   </p>
                                     </div>
