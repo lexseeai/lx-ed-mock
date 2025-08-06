@@ -2623,7 +2623,7 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Progression towards goals */}
-                                <div className="mt-6">
+                                <div className="mt-4">
                                   <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Progression towards goals
                                   </h3>
@@ -2633,7 +2633,7 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Skill areas addressed */}
-                                <div className="mt-6">
+                                <div className="mt-4">
                                   <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Skill areas addressed
                                   </h3>
@@ -2666,7 +2666,7 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Additional observations */}
-                                <div className="mt-8">
+                                <div className="mt-4">
                                   <h3 className="text-base font-semibold text-stone-900 font-lexend">
                                     Additional observations
                                   </h3>
