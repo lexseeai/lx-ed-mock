@@ -2398,7 +2398,7 @@ export default function StudentDetail() {
 
                     {/* Main Content Area */}
                     <div
-                      className="flex-1 px-4 flex flex-col justify-center items-center"
+                      className="flex-1 pl-4 flex flex-col justify-center items-center"
                       style={{ backgroundColor: "rgba(247, 247, 247, 1)" }}
                     >
                       {selectedSessionId === "july-18" && (
