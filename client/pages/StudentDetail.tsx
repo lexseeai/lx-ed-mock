@@ -2149,7 +2149,7 @@ export default function StudentDetail() {
                                             month: "July",
                                             day: "11",
                                             year: "2025",
-                                            time: "9:00–9:45am",
+                                            time: "9:00���9:45am",
                                             isCompleted: true,
                                           });
                                         }}
@@ -2406,7 +2406,7 @@ export default function StudentDetail() {
                         ))}
 
                         {/* June section */}
-                        <div className="text-stone-400 font-lexend text-xs pt-5 pb-0 pl-5">
+                        <div className="text-stone-400 font-lexend text-[10px] font-light pt-5 pb-0 pl-5">
                           June
                         </div>
                         {[
