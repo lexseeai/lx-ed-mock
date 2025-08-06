@@ -2281,7 +2281,7 @@ export default function StudentDetail() {
                     {/* Left Sidebar - Session List */}
                     <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
                       {/* Header */}
-                      <div className="flex items-center justify-between p-5">
+                      <div className="flex items-center justify-between px-5 pt-5 pb-3">
                         <h2
                           className="text-xl font-bold font-lexend -tracking-[0.35px]"
                           style={{ color: "#44403c" }}
