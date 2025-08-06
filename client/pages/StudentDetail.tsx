@@ -1695,14 +1695,14 @@ export default function StudentDetail() {
                           className="p-6 flex-1"
                           style={{ width: "312px" }}
                         >
-                          <CardContent className="p-0">
+                          <CardContent
+                            className="p-0"
+                            onMouseEnter={() => setHoveredSection("next-session")}
+                            onMouseLeave={() => setHoveredSection(null)}
+                          >
                             <div className="flex flex-col gap-6">
                               {/* Header with icon and copy button */}
-                              <div
-                                className="group"
-                                onMouseEnter={() => setHoveredSection("next-session")}
-                                onMouseLeave={() => setHoveredSection(null)}
-                              >
+                              <div className="group">
                                 <div className="flex items-center gap-2">
                                   <h2 className="text-stone-900 font-lexend text-2xl font-bold leading-7 tracking-tight">
                                     Up next
@@ -1757,14 +1757,14 @@ export default function StudentDetail() {
                         <Card
                           className="p-8 min-w-[500px] max-w-[650px] flex-1"
                         >
-                          <CardContent className="p-0">
+                          <CardContent
+                            className="p-0"
+                            onMouseEnter={() => setHoveredSection("observations-card")}
+                            onMouseLeave={() => setHoveredSection(null)}
+                          >
                             <div className="flex flex-col gap-6">
                               {/* Header with hover copy */}
-                              <div
-                                className="group"
-                                onMouseEnter={() => setHoveredSection("observations-card")}
-                                onMouseLeave={() => setHoveredSection(null)}
-                              >
+                              <div className="group">
                                 <div className="flex items-center gap-2">
                                   <h2 className="text-stone-900 font-lexend text-2xl font-bold leading-7 tracking-tight">
                                     Recent observations
