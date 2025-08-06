@@ -2712,6 +2712,9 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                        Math games and connecting problems to real life
+                                      </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                         Subtraction math games used as warm-up, boosting motivation. Focused on accuracy, explored measurement concepts, and encouraged error checking with practical strategies.
                                       </p>
@@ -2899,6 +2902,9 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                        Adjusting pace and supporting focus when tired
+                                      </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                         Reviewed subtraction and multiplication strategies, adjusted workload for Zack's tiredness, and used breaks and predictable routines to help him stay engaged and complete tasks.
                                       </p>
@@ -3070,6 +3076,9 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                        Structured routines and explaining math steps to others
+                                      </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                         Used a session timetable to increase focus and predictability. Zack improved accuracy, explained steps to the coach, and engaged with fractions through visual examples.
                                       </p>
@@ -3247,6 +3256,9 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                        Timed subtraction and borrowing across zeros practice
+                                      </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                         Practiced subtraction with borrowing across zeros, using base-10 blocks and short timed drills. Improved visualization and worked through a multiplication story problem from school.
                                       </p>
@@ -3424,6 +3436,9 @@ export default function StudentDetail() {
                                       </div>
                                     </div>
                                     <div className="mt-1">
+                                      <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5">
+                                        Introduction to borrowing and building place value skills
+                                      </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
                                         Focused on introducing 3-digit subtraction with borrowing, emphasizing place value. Practiced multiplication facts, discussed division, and used hands-on visual aids to build foundational understanding.
                                       </p>
