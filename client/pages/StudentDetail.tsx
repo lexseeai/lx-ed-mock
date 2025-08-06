@@ -1805,7 +1805,7 @@ export default function StudentDetail() {
                                         <div className="w-3.5 h-3.5 rounded-md border-2 border-stone-700"></div>
                                       </div>
                                       <span
-                                        className="font-lexend text-sm leading-5 flex-1"
+                                        className="font-lexend text-sm leading-relaxed flex-1"
                                         style={{ color: "rgba(41, 37, 36, 1)" }}
                                       >
                                         {item}
@@ -1908,7 +1908,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Met goal independently</span> — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy.{" "}
                                     <span
                                       className="relative inline-block group"
@@ -1962,7 +1962,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Self-checks work</span> — Used independent self-checking strategies for multi-step word problems.{" "}
                                     <span
                                       className="relative inline-block group"
@@ -2016,7 +2016,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Highly engaged</span> — Asked to take "teacher mode" and quiz the specialist, showing math confidence.{" "}
                                     <span
                                       className="relative inline-block group"
@@ -2070,7 +2070,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Connects math to interests</span> — Engaged more deeply with math when sports or real-life topics are included.{" "}
                                     <span
                                       className="relative inline-block group"
@@ -2124,7 +2124,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Self-corrects complex errors</span> — Caught mistakes in complex borrowing, particularly with zeros.{" "}
                                     <span
                                       className="relative inline-block group"
@@ -2178,7 +2178,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Motivation responds to games & breaks</span> — Competitive games and strategic breaks increase focus and stamina.{" "}
                                     <span
                                       className="relative inline-block group"
@@ -2232,7 +2232,7 @@ export default function StudentDetail() {
                                   <div className="pt-[3px]">
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
-                                  <p className="text-stone-900 font-lexend text-sm leading-5 flex-1">
+                                  <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
                                     <span className="font-semibold">Needs routine on low-energy days</span> — Predictable structure and reduced task load are effective for keeping Zack engaged when tired.{" "}
                                     <span
                                       className="relative inline-block group"
