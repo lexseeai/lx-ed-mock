@@ -3558,9 +3558,9 @@ export default function StudentDetail() {
                             <div className="h-full flex items-center justify-center">
                               <div className="text-center">
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                                <Clock className="w-15 h-15 text-stone-400" />
+                                <Clock className="w-[60px] h-[60px] text-stone-400" />
                               </div>
-                              <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                              <h3 className="text-lg font-semibold text-stone-600 font-lexend">
                                 Upcoming Session
                               </h3>
                               </div>
@@ -3608,9 +3608,9 @@ export default function StudentDetail() {
                             <div className="h-full flex items-center justify-center">
                               <div className="text-center">
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                                <Timer className="w-15 h-15 text-pink-600" />
+                                <Timer className="w-[60px] h-[60px] text-pink-600" />
                               </div>
-                              <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                              <h3 className="text-lg font-semibold text-stone-600 font-lexend">
                                 Late notes
                               </h3>
                               </div>
