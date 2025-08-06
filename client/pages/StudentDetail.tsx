@@ -2488,8 +2488,11 @@ export default function StudentDetail() {
                                   <div className="flex items-start justify-between">
                                     <div className="flex-1 flex flex-col gap-0">
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
-                                        Complex Borrowing and Personal Interests
+                                        Recap
                                       </h3>
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px] pb-1.5">
+                                    Challenging borrowing and linking math to interests.
+                                  </p>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed pr-[30px]">
                                     Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
                                   </p>
