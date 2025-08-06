@@ -2296,6 +2296,10 @@ export default function StudentDetail() {
 
                       {/* Session List - flush to edges */}
                       <div className="flex-1 overflow-y-auto">
+                        {/* This week section */}
+                        <div className="text-stone-400 font-lexend text-xs pt-5 pb-0 pl-5">
+                          This week
+                        </div>
                         {[
                           {
                             id: "august-1",
@@ -2303,6 +2307,41 @@ export default function StudentDetail() {
                             title: "Friday, 9:00–9:45am",
                             status: "upcoming",
                           },
+                        ].map((session) => (
+                          <div
+                            key={session.id}
+                            onClick={() => setSelectedSessionId(session.id)}
+                            className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                              selectedSessionId === session.id
+                                ? "bg-stone-100"
+                                : "hover:bg-stone-50"
+                            }`}
+                          >
+                            <div className="flex items-center gap-1 py-0.5">
+                              {session.status === "upcoming" && (
+                                <Clock className="w-4 h-4 text-stone-700" />
+                              )}
+                              {session.status === "overdue" && (
+                                <Timer className="w-4 h-4 text-pink-600" />
+                              )}
+                              {session.status === "completed" && (
+                                <CircleCheck className="w-4 h-4 text-green-500" />
+                              )}
+                              <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                                {session.date}
+                              </span>
+                            </div>
+                            <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                              {session.title}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* July section */}
+                        <div className="text-stone-400 font-lexend text-xs pt-5 pb-0 pl-5">
+                          July
+                        </div>
+                        {[
                           {
                             id: "july-25",
                             date: "July 25",
@@ -2330,6 +2369,41 @@ export default function StudentDetail() {
                               "Adjusting pace and supporting focus when tired",
                             status: "completed",
                           },
+                        ].map((session) => (
+                          <div
+                            key={session.id}
+                            onClick={() => setSelectedSessionId(session.id)}
+                            className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                              selectedSessionId === session.id
+                                ? "bg-stone-100"
+                                : "hover:bg-stone-50"
+                            }`}
+                          >
+                            <div className="flex items-center gap-1 py-0.5">
+                              {session.status === "upcoming" && (
+                                <Clock className="w-4 h-4 text-stone-700" />
+                              )}
+                              {session.status === "overdue" && (
+                                <Timer className="w-4 h-4 text-pink-600" />
+                              )}
+                              {session.status === "completed" && (
+                                <CircleCheck className="w-4 h-4 text-green-500" />
+                              )}
+                              <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                                {session.date}
+                              </span>
+                            </div>
+                            <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                              {session.title}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* June section */}
+                        <div className="text-stone-400 font-lexend text-xs pt-5 pb-0 pl-5">
+                          June
+                        </div>
+                        {[
                           {
                             id: "june-27",
                             date: "June 27",
