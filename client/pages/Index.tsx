@@ -2980,7 +2980,8 @@ export default function Index() {
                         </button>
                         {showHomeDropdown && (
                           <div
-                            className="absolute right-0 top-12 w-60 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
+                            className="absolute right-0 top-12 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
+                            style={{ width: "210px" }}
                             style={{
                               boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
                             }}
@@ -4695,7 +4696,8 @@ export default function Index() {
                           </button>
                           {showSidePanelDropdown && (
                             <div
-                              className="absolute right-0 top-12 w-60 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
+                              className="absolute right-0 top-12 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
+                            style={{ width: "210px" }}
                               style={{
                                 boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
                               }}
