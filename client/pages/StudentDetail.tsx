@@ -3561,7 +3561,7 @@ export default function StudentDetail() {
                                 <Clock className="w-[60px] h-[60px] text-stone-400" />
                               </div>
                               <h3 className="text-lg font-semibold text-stone-600 font-lexend">
-                                Upcoming Session
+                                Upcoming session
                               </h3>
                               </div>
                             </div>
