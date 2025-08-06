@@ -2597,10 +2597,10 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Spacer */}
-                                <div style={{ height: "32px" }}></div>
+                                <div className="mt-4" style={{ height: "32px" }}></div>
 
                                 {/* Session summary */}
-                                <div className="mt-16">
+                                <div className="mt-8">
                                   <div className="flex items-center gap-2">
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Session summary
