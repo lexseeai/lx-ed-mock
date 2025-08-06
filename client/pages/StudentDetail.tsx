@@ -1698,101 +1698,30 @@ export default function StudentDetail() {
                           <CardContent className="p-0">
                             <div className="flex flex-col gap-6">
                               {/* Header with icon and copy button */}
-                              <div className="flex justify-between items-start">
-                                <div className="flex flex-col gap-0.5">
-                                  {/* Icon and Title */}
-                                  <div className="flex items-end gap-1.5 justify-start">
-                                    <Siren className="w-6 h-6 text-stone-700 mt-0.5" />
-                                    <h2
-                                      className="text-stone-900 font-lexend text-xl font-bold"
-                                      style={{ lineHeight: "20px" }}
-                                    >
-                                      Next session
-                                    </h2>
+                              <div
+                                className="group"
+                                onMouseEnter={() => setHoveredSection("next-session")}
+                                onMouseLeave={() => setHoveredSection(null)}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <h2 className="text-stone-900 font-lexend text-xl font-medium leading-5">
+                                    To work on
+                                  </h2>
+                                  {/* Action Icon */}
+                                  <div className={`flex items-center gap-1 transition-opacity ${
+                                    hoveredSection === "next-session" ? "opacity-100" : "opacity-0"
+                                  }`}>
+                                    <Tooltip>
+                                      <TooltipTrigger asChild>
+                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                          <Copy className="w-4 h-4 text-stone-500" />
+                                        </Button>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        <p>Copy</p>
+                                      </TooltipContent>
+                                    </Tooltip>
                                   </div>
-                                  {/* From section - flush left */}
-                                  <div className="flex items-center gap-1 pl-1">
-                                    <span className="text-stone-400 font-lexend text-xs">
-                                      From notes
-                                    </span>
-                                    <span
-                                      className="relative flex group"
-                                      style={{
-                                        lineHeight: "16px",
-                                        flexDirection: "column",
-                                        justifyContent: "flex-start",
-                                        alignItems: "center",
-                                      }}
-                                    >
-                                      <span
-                                        onClick={(e) => {
-                                          e.stopPropagation();
-                                          const dateParts =
-                                            studentContent.nextSessionDate.split(
-                                              " ",
-                                            );
-                                          openNotesOverlay("view", {
-                                            date: dateParts[0],
-                                            month: dateParts[1],
-                                            day: dateParts[0],
-                                            year: "2025",
-                                            time: studentContent.nextSessionTime,
-                                            isCompleted: true,
-                                          });
-                                        }}
-                                        className="bg-stone-50 group-hover:bg-stone-700 transition-colors cursor-pointer rounded-full text-stone-400 group-hover:text-white font-lexend text-xs"
-                                        style={{
-                                          padding: "2px 6px",
-                                          lineHeight: "12px",
-                                        }}
-                                      >
-                                        {studentContent.nextSessionDate}
-                                      </span>
-                                      <span className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 opacity-0 group-hover:opacity-100 z-10 pointer-events-none">
-                                        <span className="block bg-stone-100 px-3 py-1.5 rounded shadow-md pointer-events-none">
-                                          <span className="flex items-center gap-1 text-stone-900 font-lexend text-sm whitespace-nowrap">
-                                            View notes
-                                            <ArrowRight className="w-6 h-6 text-indigo-600" />
-                                          </span>
-                                        </span>
-                                      </span>
-                                    </span>
-                                  </div>
-                                </div>
-
-                                {/* Copy Button - Always visible icon-only button */}
-                                <div className="w-16 flex justify-end">
-                                  <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <Button
-                                        variant="outline"
-                                        size="sm"
-                                        className="flex items-center justify-center w-8 h-8 p-0 border-stone-200 bg-transparent hover:bg-stone-50 hover:border-stone-300 transition-all duration-200"
-                                        onClick={() => {
-                                          const nextSessionText =
-                                            studentContent.nextSessionItems.join(
-                                              "\n\n",
-                                            );
-                                          navigator.clipboard.writeText(
-                                            nextSessionText,
-                                          );
-                                        }}
-                                      >
-                                        <svg
-                                          className="w-3 h-3 text-stone-400 hover:text-stone-600 transition-colors duration-200"
-                                          viewBox="0 0 12 12"
-                                          fill="none"
-                                          stroke="currentColor"
-                                        >
-                                          <path d="M10 4H5C4.44772 4 4 4.44772 4 5V10C4 10.5523 4.44772 11 5 11H10C10.5523 11 11 10.5523 11 10V5C11 4.44772 10.5523 4 10 4Z" />
-                                          <path d="M2 8C1.45 8 1 7.55 1 7V2C1 1.45 1.45 1 2 1H7C7.55 1 8 1.45 8 2" />
-                                        </svg>
-                                      </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p>Copy next session text</p>
-                                    </TooltipContent>
-                                  </Tooltip>
                                 </div>
                               </div>
 
