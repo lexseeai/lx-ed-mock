@@ -2471,7 +2471,7 @@ export default function StudentDetail() {
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-stone-600" strokeWidth={2} />
+                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
                               </button>
                             </div>
                           </div>
