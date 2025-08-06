@@ -1437,7 +1437,8 @@ export default function StudentDetail() {
                                 setShowDropdown(false);
                                 setActiveView("all");
                               }}
-                              className="w-full flex items-center p-2 text-sm text-stone-700 hover:bg-indigo-600 hover:text-white transition-colors group rounded-md overflow-hidden"
+                              className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
+                              style={{ padding: "10px 8px", transition: "all 0.05s ease" }}
                             >
                               <UserRoundPlus className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-sm">
