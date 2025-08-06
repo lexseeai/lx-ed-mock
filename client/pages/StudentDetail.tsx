@@ -2341,7 +2341,7 @@ export default function StudentDetail() {
                         ))}
 
                         {/* July section */}
-                        <div className="text-stone-400 font-lexend text-xs pt-5 pb-0 pl-5">
+                        <div className="text-stone-400 font-lexend text-[10px] font-light pt-5 pb-0 pl-5">
                           July
                         </div>
                         {[
