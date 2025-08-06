@@ -2586,7 +2586,7 @@ export default function StudentDetail() {
                               <div className="space-y-8 pr-[30px]">
                                 {/* Student goal */}
                                 <div>
-                                  <div className="flex items-center gap-2">
+                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Student goal
                                     </h3>
