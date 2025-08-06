@@ -2596,7 +2596,7 @@ export default function StudentDetail() {
 
                                 {/* Session summary */}
                                 <div className="mt-8">
-                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend">
+                                  <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7" style={{ height: "24px" }}>
                                     Session summary
                                   </h3>
                                 </div>
