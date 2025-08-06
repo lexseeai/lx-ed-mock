@@ -2589,7 +2589,7 @@ export default function StudentDetail() {
                                   <h3 className="text-xl font-semibold text-stone-900 font-lexend">
                                     Student goal
                                   </h3>
-                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed">
+                                  <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
                                     By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
                                   </p>
                                 </div>
