@@ -1817,7 +1817,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
@@ -1871,7 +1871,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
@@ -1925,7 +1925,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
@@ -1979,7 +1979,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
@@ -2033,7 +2033,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
@@ -2087,7 +2087,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
@@ -2141,7 +2141,7 @@ export default function StudentDetail() {
                                             isCompleted: true,
                                           });
                                         }}
-                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-stone-100 group-hover:bg-stone-700 transition-colors cursor-pointer"
+                                        className="inline-flex items-center justify-center px-1 py-0.5 rounded-full bg-white border border-stone-200 group-hover:bg-stone-700 transition-colors cursor-pointer"
                                         style={{
                                           lineHeight: "20px",
                                           height: "14px",
