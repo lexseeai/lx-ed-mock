@@ -1732,7 +1732,7 @@ export default function StudentDetail() {
                               <div className="group">
                                 <div className="flex items-center gap-2">
                                   <h2 className="text-stone-900 font-lexend text-2xl font-bold leading-7 tracking-tight">
-                                    Up next
+                                    Next-up topics
                                   </h2>
                                   {/* Action Icon */}
                                   <div
@@ -1802,7 +1802,7 @@ export default function StudentDetail() {
                               <div className="group">
                                 <div className="flex items-center gap-2">
                                   <h2 className="text-stone-900 font-lexend text-2xl font-bold leading-7 tracking-tight">
-                                    Recent observations
+                                    Key observations
                                   </h2>
                                   {/* Action Icon */}
                                   <div
@@ -2091,7 +2091,7 @@ export default function StudentDetail() {
                                             month: "July",
                                             day: "18",
                                             year: "2025",
-                                            time: "9:00��9:45am",
+                                            time: "9:00���9:45am",
                                             isCompleted: true,
                                           });
                                         }}
