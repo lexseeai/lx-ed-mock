@@ -1704,8 +1704,8 @@ export default function StudentDetail() {
                                 onMouseLeave={() => setHoveredSection(null)}
                               >
                                 <div className="flex items-center gap-2">
-                                  <h2 className="text-stone-900 font-lexend text-xl font-medium leading-5">
-                                    To work on
+                                  <h2 className="text-stone-900 font-lexend text-xl font-medium leading-7">
+                                    Up next
                                   </h2>
                                   {/* Action Icon */}
                                   <div className={`flex items-center gap-1 transition-opacity ${
