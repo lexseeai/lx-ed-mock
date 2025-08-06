@@ -2324,7 +2324,7 @@ export default function StudentDetail() {
                 {activeTab === "session-notes" && (
                   <div className="flex h-full">
                     {/* Left Sidebar - Session List */}
-                    <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-8">
+                    <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
                       {/* Header */}
                       <div className="flex items-center justify-between p-5">
                         <h2 className="text-xl font-bold font-lexend -tracking-[0.35px]" style={{color: "#44403c"}}>Sessions</h2>
