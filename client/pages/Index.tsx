@@ -2910,9 +2910,9 @@ export default function Index() {
       <div
         className="h-screen-mobile bg-indigo-900 flex"
         style={{
-          height: '100vh',
-          maxHeight: '100vh',
-          minHeight: '100vh'
+          height: "100vh",
+          maxHeight: "100vh",
+          minHeight: "100vh",
         }}
       >
         <Sidebar
@@ -2983,7 +2983,7 @@ export default function Index() {
                             className="absolute right-0 top-12 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
                             style={{
                               width: "210px",
-                              boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)"
+                              boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
                             }}
                           >
                             <div className="p-2">
@@ -2993,7 +2993,11 @@ export default function Index() {
                                   setActiveView("all");
                                 }}
                                 className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                                style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                                style={{
+                                  padding: "10px 8px",
+                                  transition: "all 0.05s ease",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 <UserRoundPlus className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                                 <span className="font-lexend text-sm">
@@ -3006,7 +3010,11 @@ export default function Index() {
                                   setActiveView("sessionnotes");
                                 }}
                                 className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                                style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                                style={{
+                                  padding: "10px 8px",
+                                  transition: "all 0.05s ease",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 <NotebookPen className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                                 <span className="font-lexend text-sm">
@@ -3018,7 +3026,11 @@ export default function Index() {
                                   setShowHomeDropdown(false);
                                 }}
                                 className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                                style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                                style={{
+                                  padding: "10px 8px",
+                                  transition: "all 0.05s ease",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 <FileAudio className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                                 <span className="font-lexend text-sm">
@@ -4700,10 +4712,10 @@ export default function Index() {
                           {showSidePanelDropdown && (
                             <div
                               className="absolute right-0 top-12 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
-                            style={{
-                              width: "210px",
-                              boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)"
-                            }}
+                              style={{
+                                width: "210px",
+                                boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
+                              }}
                             >
                               <div className="p-2">
                                 <button
@@ -4712,7 +4724,11 @@ export default function Index() {
                                     setActiveView("all");
                                   }}
                                   className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                                  style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                                  style={{
+                                    padding: "10px 8px",
+                                    transition: "all 0.05s ease",
+                                    whiteSpace: "nowrap",
+                                  }}
                                 >
                                   <UserRoundPlus className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                                   <span className="font-lexend text-sm">
@@ -4725,7 +4741,11 @@ export default function Index() {
                                     setActiveView("sessionnotes");
                                   }}
                                   className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                                  style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                                  style={{
+                                    padding: "10px 8px",
+                                    transition: "all 0.05s ease",
+                                    whiteSpace: "nowrap",
+                                  }}
                                 >
                                   <NotebookPen className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                                   <span className="font-lexend text-sm">
@@ -4737,7 +4757,11 @@ export default function Index() {
                                     setShowSidePanelDropdown(false);
                                   }}
                                   className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                                  style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                                  style={{
+                                    padding: "10px 8px",
+                                    transition: "all 0.05s ease",
+                                    whiteSpace: "nowrap",
+                                  }}
                                 >
                                   <FileAudio className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                                   <span className="font-lexend text-sm">

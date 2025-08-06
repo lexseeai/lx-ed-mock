@@ -54,7 +54,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface Student {
@@ -1376,7 +1381,9 @@ export default function StudentDetail() {
                           </h1>
                           <div className="relative">
                             <button
-                              onClick={() => setShowStudentMenu(!showStudentMenu)}
+                              onClick={() =>
+                                setShowStudentMenu(!showStudentMenu)
+                              }
                               className="flex items-center justify-center w-6 h-6 hover:bg-stone-100 rounded transition-colors"
                             >
                               <ChevronDown className="w-4 h-4 text-stone-600" />
@@ -1426,10 +1433,10 @@ export default function StudentDetail() {
                       {showDropdown && (
                         <div
                           className="absolute right-0 top-12 bg-white border border-stone-200 rounded-xl shadow-lg z-50 overflow-hidden"
-                        style={{
-                          width: "210px",
-                          boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)"
-                        }}
+                          style={{
+                            width: "210px",
+                            boxShadow: "0 0 8px 0 rgba(80, 70, 229, 0.15)",
+                          }}
                         >
                           <div className="p-2">
                             <button
@@ -1438,7 +1445,11 @@ export default function StudentDetail() {
                                 setActiveView("all");
                               }}
                               className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                              style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                              style={{
+                                padding: "10px 8px",
+                                transition: "all 0.05s ease",
+                                whiteSpace: "nowrap",
+                              }}
                             >
                               <UserRoundPlus className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-sm">
@@ -1451,7 +1462,11 @@ export default function StudentDetail() {
                                 setActiveView("sessionnotes");
                               }}
                               className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                              style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                              style={{
+                                padding: "10px 8px",
+                                transition: "all 0.05s ease",
+                                whiteSpace: "nowrap",
+                              }}
                             >
                               <NotebookPen className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-sm">
@@ -1463,7 +1478,11 @@ export default function StudentDetail() {
                                 setShowDropdown(false);
                               }}
                               className="w-full flex items-center text-sm text-stone-700 hover:bg-indigo-600 hover:text-white group rounded-md overflow-hidden"
-                              style={{ padding: "10px 8px", transition: "all 0.05s ease", whiteSpace: "nowrap" }}
+                              style={{
+                                padding: "10px 8px",
+                                transition: "all 0.05s ease",
+                                whiteSpace: "nowrap",
+                              }}
                             >
                               <FileAudio className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
                               <span className="font-lexend text-sm">
@@ -1580,7 +1599,16 @@ export default function StudentDetail() {
               </div>
 
               {/* Content */}
-              <div className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "" : "p-8 bg-stone-50"}`} style={{ backgroundColor: activeTab === "session-notes" ? "#f7f7f7" : undefined, padding: activeTab === "session-notes" ? "32px" : undefined, paddingBottom: activeTab === "session-notes" ? "32px" : "60px" }}>
+              <div
+                className={`flex-1 overflow-y-auto mobile-scroll rounded-b-lg ${activeTab === "session-notes" ? "" : "p-8 bg-stone-50"}`}
+                style={{
+                  backgroundColor:
+                    activeTab === "session-notes" ? "#f7f7f7" : undefined,
+                  padding: activeTab === "session-notes" ? "32px" : undefined,
+                  paddingBottom:
+                    activeTab === "session-notes" ? "32px" : "60px",
+                }}
+              >
                 {activeTab === "snapshot" && !isSearchMode && (
                   <div className="flex justify-center">
                     <div className="flex gap-6 items-stretch">
@@ -1691,13 +1719,12 @@ export default function StudentDetail() {
                         </div>
 
                         {/* For Next Session */}
-                        <Card
-                          className="p-6 flex-1"
-                          style={{ width: "312px" }}
-                        >
+                        <Card className="p-6 flex-1" style={{ width: "312px" }}>
                           <CardContent
                             className="p-0"
-                            onMouseEnter={() => setHoveredSection("next-session")}
+                            onMouseEnter={() =>
+                              setHoveredSection("next-session")
+                            }
                             onMouseLeave={() => setHoveredSection(null)}
                           >
                             <div className="flex flex-col gap-6">
@@ -1708,12 +1735,20 @@ export default function StudentDetail() {
                                     Up next
                                   </h2>
                                   {/* Action Icon */}
-                                  <div className={`flex items-center gap-1 transition-opacity ${
-                                    hoveredSection === "next-session" ? "opacity-100" : "opacity-0"
-                                  }`}>
+                                  <div
+                                    className={`flex items-center gap-1 transition-opacity ${
+                                      hoveredSection === "next-session"
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    }`}
+                                  >
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                        <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          className="w-8 h-8 p-0 hover:bg-stone-100"
+                                        >
                                           <Copy className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
@@ -1754,12 +1789,12 @@ export default function StudentDetail() {
                         style={{ display: "flex", flexDirection: "column" }}
                       >
                         {/* Observations */}
-                        <Card
-                          className="p-8 min-w-[500px] max-w-[650px] flex-1"
-                        >
+                        <Card className="p-8 min-w-[500px] max-w-[650px] flex-1">
                           <CardContent
                             className="p-0"
-                            onMouseEnter={() => setHoveredSection("observations-card")}
+                            onMouseEnter={() =>
+                              setHoveredSection("observations-card")
+                            }
                             onMouseLeave={() => setHoveredSection(null)}
                           >
                             <div className="flex flex-col gap-6">
@@ -1770,12 +1805,20 @@ export default function StudentDetail() {
                                     Recent observations
                                   </h2>
                                   {/* Action Icon */}
-                                  <div className={`flex items-center gap-1 transition-opacity ${
-                                    hoveredSection === "observations-card" ? "opacity-100" : "opacity-0"
-                                  }`}>
+                                  <div
+                                    className={`flex items-center gap-1 transition-opacity ${
+                                      hoveredSection === "observations-card"
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    }`}
+                                  >
                                     <Tooltip>
                                       <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                        <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          className="w-8 h-8 p-0 hover:bg-stone-100"
+                                        >
                                           <Copy className="w-4 h-4 text-stone-500" />
                                         </Button>
                                       </TooltipTrigger>
@@ -1787,7 +1830,6 @@ export default function StudentDetail() {
                                 </div>
                               </div>
 
-
                               {/* Observations List */}
                               <div className="space-y-3 pl-1.5">
                                 <div className="flex gap-1.5">
@@ -1795,7 +1837,11 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Met goal independently</span> — Solved 10 three-digit subtraction problems with borrowing at 80% accuracy.{" "}
+                                    <span className="font-semibold">
+                                      Met goal independently
+                                    </span>{" "}
+                                    — Solved 10 three-digit subtraction problems
+                                    with borrowing at 80% accuracy.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -1849,7 +1895,11 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Self-checks work</span> — Used independent self-checking strategies for multi-step word problems.{" "}
+                                    <span className="font-semibold">
+                                      Self-checks work
+                                    </span>{" "}
+                                    — Used independent self-checking strategies
+                                    for multi-step word problems.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -1903,7 +1953,11 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Highly engaged</span> — Asked to take "teacher mode" and quiz the specialist, showing math confidence.{" "}
+                                    <span className="font-semibold">
+                                      Highly engaged
+                                    </span>{" "}
+                                    — Asked to take "teacher mode" and quiz the
+                                    specialist, showing math confidence.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -1957,7 +2011,11 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Connects math to interests</span> — Engaged more deeply with math when sports or real-life topics are included.{" "}
+                                    <span className="font-semibold">
+                                      Connects math to interests
+                                    </span>{" "}
+                                    — Engaged more deeply with math when sports
+                                    or real-life topics are included.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -2011,7 +2069,11 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Self-corrects complex errors</span> — Caught mistakes in complex borrowing, particularly with zeros.{" "}
+                                    <span className="font-semibold">
+                                      Self-corrects complex errors
+                                    </span>{" "}
+                                    — Caught mistakes in complex borrowing,
+                                    particularly with zeros.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -2065,7 +2127,11 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Motivation responds to games & breaks</span> — Competitive games and strategic breaks increase focus and stamina.{" "}
+                                    <span className="font-semibold">
+                                      Motivation responds to games & breaks
+                                    </span>{" "}
+                                    — Competitive games and strategic breaks
+                                    increase focus and stamina.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -2119,7 +2185,12 @@ export default function StudentDetail() {
                                     <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                   </div>
                                   <p className="text-stone-900 font-lexend text-sm leading-relaxed flex-1">
-                                    <span className="font-semibold">Needs routine on low-energy days</span> — Predictable structure and reduced task load are effective for keeping Zack engaged when tired.{" "}
+                                    <span className="font-semibold">
+                                      Needs routine on low-energy days
+                                    </span>{" "}
+                                    — Predictable structure and reduced task
+                                    load are effective for keeping Zack engaged
+                                    when tired.{" "}
                                     <span
                                       className="relative inline-block group"
                                       style={{
@@ -2167,8 +2238,6 @@ export default function StudentDetail() {
                                     </span>
                                   </p>
                                 </div>
-
-
                               </div>
                             </div>
                           </CardContent>
@@ -2213,8 +2282,16 @@ export default function StudentDetail() {
                     <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
                       {/* Header */}
                       <div className="flex items-center justify-between p-5">
-                        <h2 className="text-xl font-bold font-lexend -tracking-[0.35px]" style={{color: "#44403c"}}>Sessions</h2>
-                        <Calendar className="w-6 h-6" style={{color: "rgba(214, 211, 209, 1)"}} />
+                        <h2
+                          className="text-xl font-bold font-lexend -tracking-[0.35px]"
+                          style={{ color: "#44403c" }}
+                        >
+                          Sessions
+                        </h2>
+                        <Calendar
+                          className="w-6 h-6"
+                          style={{ color: "rgba(214, 211, 209, 1)" }}
+                        />
                       </div>
 
                       {/* Session List - flush to edges */}
@@ -2224,55 +2301,65 @@ export default function StudentDetail() {
                             id: "august-1",
                             date: "August 1",
                             title: "Friday, 9:00–9:45am",
-                            status: "upcoming"
+                            status: "upcoming",
                           },
                           {
                             id: "july-25",
                             date: "July 25",
                             title: "Friday, 9:00–9:45am",
-                            status: "overdue"
+                            status: "overdue",
                           },
                           {
                             id: "july-18",
                             date: "July 18",
-                            title: "Challenging borrowing and linking math to interests",
-                            status: "completed"
+                            title:
+                              "Challenging borrowing and linking math to interests",
+                            status: "completed",
                           },
                           {
                             id: "july-11",
                             date: "July 11",
-                            title: "Math games and connecting problems to real life",
-                            status: "completed"
+                            title:
+                              "Math games and connecting problems to real life",
+                            status: "completed",
                           },
                           {
                             id: "july-4",
                             date: "July 4",
-                            title: "Adjusting pace and supporting focus when tired",
-                            status: "completed"
+                            title:
+                              "Adjusting pace and supporting focus when tired",
+                            status: "completed",
                           },
                           {
                             id: "june-27",
                             date: "June 27",
-                            title: "Structured routines and explaining math steps to others",
-                            status: "completed"
+                            title:
+                              "Structured routines and explaining math steps to others",
+                            status: "completed",
                           },
                           {
                             id: "june-20",
                             date: "June 20",
-                            title: "Timed subtraction and borrowing across zeros practice",
-                            status: "completed"
+                            title:
+                              "Timed subtraction and borrowing across zeros practice",
+                            status: "completed",
                           },
                           {
                             id: "june-13",
                             date: "June 13",
-                            title: "Introduction to borrowing and building place value skills",
-                            status: "completed"
-                          }
+                            title:
+                              "Introduction to borrowing and building place value skills",
+                            status: "completed",
+                          },
                         ].map((session) => (
                           <div
                             key={session.id}
                             className={`px-6 py-3 cursor-pointer transition-colors flex flex-col gap-0.5`}
-                            style={selectedSessionId === session.id ? {backgroundColor: "rgba(237, 236, 252, 1)"} : {}}
+                            style={
+                              selectedSessionId === session.id
+                                ? { backgroundColor: "rgba(237, 236, 252, 1)" }
+                                : {}
+                            }
                             onClick={() => setSelectedSessionId(session.id)}
                           >
                             <div className="flex items-center gap-1 py-0.5">
@@ -2285,15 +2372,23 @@ export default function StudentDetail() {
                               {session.status === "completed" && (
                                 <CircleCheck className="w-4 h-4 text-green-500" />
                               )}
-                              <div className={`text-sm font-medium font-lexend leading-4 transition-colors ${
-                                selectedSessionId === session.id ? "text-stone-900" : "text-stone-700"
-                              }`}>
+                              <div
+                                className={`text-sm font-medium font-lexend leading-4 transition-colors ${
+                                  selectedSessionId === session.id
+                                    ? "text-stone-900"
+                                    : "text-stone-700"
+                                }`}
+                              >
                                 {session.date}
                               </div>
                             </div>
-                            <div className={`text-xs font-normal font-lexend leading-4 transition-colors ${
-                              selectedSessionId === session.id ? "text-stone-900 pl-0.5" : "text-stone-700 pl-0.5"
-                            }`}>
+                            <div
+                              className={`text-xs font-normal font-lexend leading-4 transition-colors ${
+                                selectedSessionId === session.id
+                                  ? "text-stone-900 pl-0.5"
+                                  : "text-stone-700 pl-0.5"
+                              }`}
+                            >
                               {session.title}
                             </div>
                           </div>
@@ -2302,7 +2397,10 @@ export default function StudentDetail() {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex-1 px-4 flex flex-col justify-center items-center" style={{backgroundColor: "rgba(247, 247, 247, 1)"}}>
+                    <div
+                      className="flex-1 px-4 flex flex-col justify-center items-center"
+                      style={{ backgroundColor: "rgba(247, 247, 247, 1)" }}
+                    >
                       {selectedSessionId === "july-18" && (
                         <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
                           {/* Fixed Header */}
@@ -2313,23 +2411,30 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   July 18 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Friday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
-                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                    toggleView === "brain"
+                                      ? "left-[3px]"
+                                      : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition:
+                                      "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
                                   }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                    toggleView === "brain"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
                                   <Coffee className="w-5 h-5" strokeWidth={2} />
@@ -2337,10 +2442,15 @@ export default function StudentDetail() {
                                 <button
                                   onClick={() => setToggleView("filetext")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                    toggleView === "filetext"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
-                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses
+                                    className="w-5 h-5"
+                                    strokeWidth={2}
+                                  />
                                 </button>
                               </div>
                               <button
@@ -2353,11 +2463,14 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: true,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
                               </button>
                             </div>
                           </div>
@@ -2369,7 +2482,9 @@ export default function StudentDetail() {
                                 {/* Complex Borrowing Section */}
                                 <div
                                   className="relative group"
-                                  onMouseEnter={() => setHoveredSection("borrowing")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("borrowing")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -2378,12 +2493,20 @@ export default function StudentDetail() {
                                         Recap
                                       </h3>
                                       {/* Action Icons */}
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "borrowing" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "borrowing"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2394,7 +2517,11 @@ export default function StudentDetail() {
 
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <RefreshCw className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2406,10 +2533,15 @@ export default function StudentDetail() {
                                     </div>
                                     <div className="mt-1">
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
-                                        Challenging borrowing and linking math to interests
+                                        Challenging borrowing and linking math
+                                        to interests
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Practiced challenging subtraction cases (across zeros), reviewed multiplication, and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                                        Practiced challenging subtraction cases
+                                        (across zeros), reviewed multiplication,
+                                        and included sports-themed word
+                                        problems. Confidence grew as Zack
+                                        related math to his hobbies.
                                       </p>
                                     </div>
                                   </div>
@@ -2418,7 +2550,9 @@ export default function StudentDetail() {
                                 {/* Observations Section */}
                                 <div
                                   className="relative group mt-8"
-                                  onMouseEnter={() => setHoveredSection("observations")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("observations")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -2427,12 +2561,20 @@ export default function StudentDetail() {
                                         Observations
                                       </h3>
                                       {/* Action Icons */}
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "observations" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "observations"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2448,19 +2590,36 @@ export default function StudentDetail() {
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p><span className="font-semibold">Completed complex borrowing</span> (across two zeros) with one error, then self-caught.</p>
+                                          <p>
+                                            <span className="font-semibold">
+                                              Completed complex borrowing
+                                            </span>{" "}
+                                            (across two zeros) with one error,
+                                            then self-caught.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p><span className="font-semibold">Engaged deeply with sports-related</span> word problems.</p>
+                                          <p>
+                                            <span className="font-semibold">
+                                              Engaged deeply with sports-related
+                                            </span>{" "}
+                                            word problems.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Reported feeling <span className="font-semibold">less nervous</span> about math at school.</p>
+                                          <p>
+                                            Reported feeling{" "}
+                                            <span className="font-semibold">
+                                              less nervous
+                                            </span>{" "}
+                                            about math at school.
+                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -2472,18 +2631,26 @@ export default function StudentDetail() {
                               <div className="space-y-8 pr-[30px]">
                                 {/* Student goal */}
                                 <div>
-                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                  <div
+                                    className="flex items-center gap-2"
+                                    style={{ marginTop: "2px" }}
+                                  >
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Alex's goal
                                     </h3>
                                   </div>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
-                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                    By August 1, 2025, Alex will solve 10
+                                    3-digit subtraction problems with borrowing
+                                    at 80% using just paper and pencil.
                                   </p>
                                 </div>
 
                                 {/* Spacer */}
-                                <div className="mt-4" style={{ height: "32px" }}></div>
+                                <div
+                                  className="mt-4"
+                                  style={{ height: "32px" }}
+                                ></div>
 
                                 {/* Session summary */}
                                 <div className="mt-8">
@@ -2501,15 +2668,23 @@ export default function StudentDetail() {
                                   </h3>
                                   <div className="space-y-2">
                                     <div className="flex items-start gap-1.5">
-                                      <span className="text-stone-700 font-lexend text-sm mt-1">1.</span>
+                                      <span className="text-stone-700 font-lexend text-sm mt-1">
+                                        1.
+                                      </span>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Practiced 3-digit subtraction with more complex borrowing cases (borrowing across zeros and multiple digits).
+                                        Practiced 3-digit subtraction with more
+                                        complex borrowing cases (borrowing
+                                        across zeros and multiple digits).
                                       </p>
                                     </div>
                                     <div className="flex items-start gap-1.5">
-                                      <span className="text-stone-700 font-lexend text-sm mt-1">2.</span>
+                                      <span className="text-stone-700 font-lexend text-sm mt-1">
+                                        2.
+                                      </span>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Introduced a brief multiplication review and word problems that relate to Alex's hobbies (sports statistics).
+                                        Introduced a brief multiplication review
+                                        and word problems that relate to Alex's
+                                        hobbies (sports statistics).
                                       </p>
                                     </div>
                                   </div>
@@ -2521,7 +2696,13 @@ export default function StudentDetail() {
                                     Progression towards goals
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                    Alex completed 8 problems with 75% accuracy, a continued improvement. He made one mistake with borrowing across two zeros but was able to catch the error with guidance. He enjoyed the sports-related problems and showed more willingness to attempt challenging questions.
+                                    Alex completed 8 problems with 75% accuracy,
+                                    a continued improvement. He made one mistake
+                                    with borrowing across two zeros but was able
+                                    to catch the error with guidance. He enjoyed
+                                    the sports-related problems and showed more
+                                    willingness to attempt challenging
+                                    questions.
                                   </p>
                                 </div>
 
@@ -2536,7 +2717,8 @@ export default function StudentDetail() {
                                         <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                       </div>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Subtraction with borrowing (complex cases)
+                                        Subtraction with borrowing (complex
+                                        cases)
                                       </p>
                                     </div>
                                     <div className="flex items-start gap-1.5">
@@ -2564,7 +2746,11 @@ export default function StudentDetail() {
                                     Additional observations
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                    Alex's confidence improved when he saw connections between math and real life. He was proud to solve a sports stats word problem on his own. He mentioned feeling "less nervous" about math at school.
+                                    Alex's confidence improved when he saw
+                                    connections between math and real life. He
+                                    was proud to solve a sports stats word
+                                    problem on his own. He mentioned feeling
+                                    "less nervous" about math at school.
                                   </p>
                                 </div>
 
@@ -2574,7 +2760,9 @@ export default function StudentDetail() {
                                     Next session
                                   </h3>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                    Review mistakes from this session and practice self-checking. Add one new type of problem (multi-step word problem) if ready.
+                                    Review mistakes from this session and
+                                    practice self-checking. Add one new type of
+                                    problem (multi-step word problem) if ready.
                                   </p>
                                 </div>
 
@@ -2589,7 +2777,8 @@ export default function StudentDetail() {
                                         <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                       </div>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Create word problems based on Alex's interests.
+                                        Create word problems based on Alex's
+                                        interests.
                                       </p>
                                     </div>
                                     <div className="flex items-start gap-1.5">
@@ -2597,7 +2786,8 @@ export default function StudentDetail() {
                                         <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                       </div>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Practice subtraction with borrowing, focusing on self-checking answers.
+                                        Practice subtraction with borrowing,
+                                        focusing on self-checking answers.
                                       </p>
                                     </div>
                                   </div>
@@ -2622,23 +2812,30 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   July 11 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Thursday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
-                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                    toggleView === "brain"
+                                      ? "left-[3px]"
+                                      : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition:
+                                      "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
                                   }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                    toggleView === "brain"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
                                   <Coffee className="w-5 h-5" strokeWidth={2} />
@@ -2646,10 +2843,15 @@ export default function StudentDetail() {
                                 <button
                                   onClick={() => setToggleView("filetext")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                    toggleView === "filetext"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
-                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses
+                                    className="w-5 h-5"
+                                    strokeWidth={2}
+                                  />
                                 </button>
                               </div>
                               <button
@@ -2662,11 +2864,14 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: true,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
                               </button>
                             </div>
                           </div>
@@ -2678,7 +2883,9 @@ export default function StudentDetail() {
                                 {/* Recap Section */}
                                 <div
                                   className="relative group"
-                                  onMouseEnter={() => setHoveredSection("july11-recap")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("july11-recap")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -2686,12 +2893,20 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "july11-recap" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "july11-recap"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2701,7 +2916,11 @@ export default function StudentDetail() {
                                         </Tooltip>
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <RefreshCw className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2713,10 +2932,15 @@ export default function StudentDetail() {
                                     </div>
                                     <div className="mt-1">
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
-                                        Math games and connecting problems to real life
+                                        Math games and connecting problems to
+                                        real life
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Subtraction math games used as warm-up, boosting motivation. Focused on accuracy, explored measurement concepts, and encouraged error checking with practical strategies.
+                                        Subtraction math games used as warm-up,
+                                        boosting motivation. Focused on
+                                        accuracy, explored measurement concepts,
+                                        and encouraged error checking with
+                                        practical strategies.
                                       </p>
                                     </div>
                                   </div>
@@ -2725,7 +2949,9 @@ export default function StudentDetail() {
                                 {/* Observations Section */}
                                 <div
                                   className="relative group mt-8"
-                                  onMouseEnter={() => setHoveredSection("july11-observations")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("july11-observations")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -2733,12 +2959,21 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Observations
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "july11-observations" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection ===
+                                          "july11-observations"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2754,25 +2989,50 @@ export default function StudentDetail() {
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p><span className="font-semibold">Enjoyed</span> the competitive subtraction game; motivation increased.</p>
+                                          <p>
+                                            <span className="font-semibold">
+                                              Enjoyed
+                                            </span>{" "}
+                                            the competitive subtraction game;
+                                            motivation increased.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Hesitated on <span className="font-semibold">two-place borrowing</span> but solved correctly with prompting.</p>
+                                          <p>
+                                            Hesitated on{" "}
+                                            <span className="font-semibold">
+                                              two-place borrowing
+                                            </span>{" "}
+                                            but solved correctly with prompting.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Became more energetic after a <span className="font-semibold">longer midpoint break</span>.</p>
+                                          <p>
+                                            Became more energetic after a{" "}
+                                            <span className="font-semibold">
+                                              longer midpoint break
+                                            </span>
+                                            .
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Asked about a <span className="font-semibold">measurement</span> problem (cm vs inches), relating math to real objects.</p>
+                                          <p>
+                                            Asked about a{" "}
+                                            <span className="font-semibold">
+                                              measurement
+                                            </span>{" "}
+                                            problem (cm vs inches), relating
+                                            math to real objects.
+                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -2782,16 +3042,24 @@ export default function StudentDetail() {
                             ) : (
                               <div className="space-y-8 pr-[30px]">
                                 <div>
-                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                  <div
+                                    className="flex items-center gap-2"
+                                    style={{ marginTop: "2px" }}
+                                  >
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Alex's goal
                                     </h3>
                                   </div>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
-                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                    By August 1, 2025, Alex will solve 10
+                                    3-digit subtraction problems with borrowing
+                                    at 80% using just paper and pencil.
                                   </p>
                                 </div>
-                                <div className="mt-4" style={{ height: "32px" }}></div>
+                                <div
+                                  className="mt-4"
+                                  style={{ height: "32px" }}
+                                ></div>
                                 <div className="mt-8">
                                   <div className="flex items-center gap-2">
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
@@ -2815,23 +3083,30 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   July 4 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Thursday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
-                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                    toggleView === "brain"
+                                      ? "left-[3px]"
+                                      : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition:
+                                      "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
                                   }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                    toggleView === "brain"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
                                   <Coffee className="w-5 h-5" strokeWidth={2} />
@@ -2839,10 +3114,15 @@ export default function StudentDetail() {
                                 <button
                                   onClick={() => setToggleView("filetext")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                    toggleView === "filetext"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
-                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses
+                                    className="w-5 h-5"
+                                    strokeWidth={2}
+                                  />
                                 </button>
                               </div>
                               <button
@@ -2855,11 +3135,14 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: true,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
                               </button>
                             </div>
                           </div>
@@ -2868,7 +3151,9 @@ export default function StudentDetail() {
                               <>
                                 <div
                                   className="relative group"
-                                  onMouseEnter={() => setHoveredSection("july4-recap")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("july4-recap")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -2876,12 +3161,20 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "july4-recap" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "july4-recap"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2891,7 +3184,11 @@ export default function StudentDetail() {
                                         </Tooltip>
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <RefreshCw className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2903,17 +3200,24 @@ export default function StudentDetail() {
                                     </div>
                                     <div className="mt-1">
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
-                                        Adjusting pace and supporting focus when tired
+                                        Adjusting pace and supporting focus when
+                                        tired
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Reviewed subtraction and multiplication strategies, adjusted workload for Zack's tiredness, and used breaks and predictable routines to help him stay engaged and complete tasks.
+                                        Reviewed subtraction and multiplication
+                                        strategies, adjusted workload for Zack's
+                                        tiredness, and used breaks and
+                                        predictable routines to help him stay
+                                        engaged and complete tasks.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div
                                   className="relative group mt-8"
-                                  onMouseEnter={() => setHoveredSection("july4-observations")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("july4-observations")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -2921,12 +3225,21 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Observations
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "july4-observations" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection ===
+                                          "july4-observations"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -2942,19 +3255,42 @@ export default function StudentDetail() {
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Appeared <span className="font-semibold">tired</span>, slowing his pace and reducing accuracy.</p>
+                                          <p>
+                                            Appeared{" "}
+                                            <span className="font-semibold">
+                                              tired
+                                            </span>
+                                            , slowing his pace and reducing
+                                            accuracy.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Needed an <span className="font-semibold">extra break</span> and <span className="font-semibold">reduced workload</span> to stay engaged.</p>
+                                          <p>
+                                            Needed an{" "}
+                                            <span className="font-semibold">
+                                              extra break
+                                            </span>{" "}
+                                            and{" "}
+                                            <span className="font-semibold">
+                                              reduced workload
+                                            </span>{" "}
+                                            to stay engaged.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Maintained engagement when the <span className="font-semibold">session timetable</span> was predictable.</p>
+                                          <p>
+                                            Maintained engagement when the{" "}
+                                            <span className="font-semibold">
+                                              session timetable
+                                            </span>{" "}
+                                            was predictable.
+                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -2964,13 +3300,18 @@ export default function StudentDetail() {
                             ) : (
                               <div className="space-y-8 pr-[30px]">
                                 <div>
-                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                  <div
+                                    className="flex items-center gap-2"
+                                    style={{ marginTop: "2px" }}
+                                  >
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Alex's goal
                                     </h3>
                                   </div>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
-                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                    By August 1, 2025, Alex will solve 10
+                                    3-digit subtraction problems with borrowing
+                                    at 80% using just paper and pencil.
                                   </p>
                                 </div>
                               </div>
@@ -2989,23 +3330,30 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   June 27 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Thursday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
-                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                    toggleView === "brain"
+                                      ? "left-[3px]"
+                                      : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition:
+                                      "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
                                   }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                    toggleView === "brain"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
                                   <Coffee className="w-5 h-5" strokeWidth={2} />
@@ -3013,10 +3361,15 @@ export default function StudentDetail() {
                                 <button
                                   onClick={() => setToggleView("filetext")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                    toggleView === "filetext"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
-                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses
+                                    className="w-5 h-5"
+                                    strokeWidth={2}
+                                  />
                                 </button>
                               </div>
                               <button
@@ -3029,11 +3382,14 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: true,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
                               </button>
                             </div>
                           </div>
@@ -3042,7 +3398,9 @@ export default function StudentDetail() {
                               <>
                                 <div
                                   className="relative group"
-                                  onMouseEnter={() => setHoveredSection("june27-recap")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("june27-recap")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -3050,12 +3408,20 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "june27-recap" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "june27-recap"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3065,7 +3431,11 @@ export default function StudentDetail() {
                                         </Tooltip>
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <RefreshCw className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3077,17 +3447,24 @@ export default function StudentDetail() {
                                     </div>
                                     <div className="mt-1">
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
-                                        Structured routines and explaining math steps to others
+                                        Structured routines and explaining math
+                                        steps to others
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Used a session timetable to increase focus and predictability. Zack improved accuracy, explained steps to the coach, and engaged with fractions through visual examples.
+                                        Used a session timetable to increase
+                                        focus and predictability. Zack improved
+                                        accuracy, explained steps to the coach,
+                                        and engaged with fractions through
+                                        visual examples.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div
                                   className="relative group mt-8"
-                                  onMouseEnter={() => setHoveredSection("june27-observations")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("june27-observations")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -3095,12 +3472,21 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Observations
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "june27-observations" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection ===
+                                          "june27-observations"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3116,25 +3502,50 @@ export default function StudentDetail() {
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Responded well to a <span className="font-semibold">structured timetable</span>, boosting focus.</p>
+                                          <p>
+                                            Responded well to a{" "}
+                                            <span className="font-semibold">
+                                              structured timetable
+                                            </span>
+                                            , boosting focus.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Took pride in <span className="font-semibold">self-correcting</span> errors after prompts.</p>
+                                          <p>
+                                            Took pride in{" "}
+                                            <span className="font-semibold">
+                                              self-correcting
+                                            </span>{" "}
+                                            errors after prompts.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Expressed interest in <span className="font-semibold">creating his own math game</span> next time.</p>
+                                          <p>
+                                            Expressed interest in{" "}
+                                            <span className="font-semibold">
+                                              creating his own math game
+                                            </span>{" "}
+                                            next time.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Brought a <span className="font-semibold">fraction</span> question; discussed via pizza-slice visuals.</p>
+                                          <p>
+                                            Brought a{" "}
+                                            <span className="font-semibold">
+                                              fraction
+                                            </span>{" "}
+                                            question; discussed via pizza-slice
+                                            visuals.
+                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -3144,13 +3555,18 @@ export default function StudentDetail() {
                             ) : (
                               <div className="space-y-8 pr-[30px]">
                                 <div>
-                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                  <div
+                                    className="flex items-center gap-2"
+                                    style={{ marginTop: "2px" }}
+                                  >
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Alex's goal
                                     </h3>
                                   </div>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
-                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                    By August 1, 2025, Alex will solve 10
+                                    3-digit subtraction problems with borrowing
+                                    at 80% using just paper and pencil.
                                   </p>
                                 </div>
                               </div>
@@ -3169,23 +3585,30 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   June 20 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Thursday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
-                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                    toggleView === "brain"
+                                      ? "left-[3px]"
+                                      : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition:
+                                      "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
                                   }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                    toggleView === "brain"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
                                   <Coffee className="w-5 h-5" strokeWidth={2} />
@@ -3193,10 +3616,15 @@ export default function StudentDetail() {
                                 <button
                                   onClick={() => setToggleView("filetext")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                    toggleView === "filetext"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
-                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses
+                                    className="w-5 h-5"
+                                    strokeWidth={2}
+                                  />
                                 </button>
                               </div>
                               <button
@@ -3209,11 +3637,14 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00��9:45am",
                                     isCompleted: true,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
                               </button>
                             </div>
                           </div>
@@ -3222,7 +3653,9 @@ export default function StudentDetail() {
                               <>
                                 <div
                                   className="relative group"
-                                  onMouseEnter={() => setHoveredSection("june20-recap")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("june20-recap")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -3230,12 +3663,20 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "june20-recap" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "june20-recap"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3245,7 +3686,11 @@ export default function StudentDetail() {
                                         </Tooltip>
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <RefreshCw className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3257,17 +3702,25 @@ export default function StudentDetail() {
                                     </div>
                                     <div className="mt-1">
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
-                                        Timed subtraction and borrowing across zeros practice
+                                        Timed subtraction and borrowing across
+                                        zeros practice
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Practiced subtraction with borrowing across zeros, using base-10 blocks and short timed drills. Improved visualization and worked through a multiplication story problem from school.
+                                        Practiced subtraction with borrowing
+                                        across zeros, using base-10 blocks and
+                                        short timed drills. Improved
+                                        visualization and worked through a
+                                        multiplication story problem from
+                                        school.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div
                                   className="relative group mt-8"
-                                  onMouseEnter={() => setHoveredSection("june20-observations")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("june20-observations")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -3275,12 +3728,21 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Observations
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "june20-observations" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection ===
+                                          "june20-observations"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3296,25 +3758,55 @@ export default function StudentDetail() {
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Benefitted from <span className="font-semibold">hands-on</span> base-10 blocks to visualize borrowing.</p>
+                                          <p>
+                                            Benefitted from{" "}
+                                            <span className="font-semibold">
+                                              hands-on
+                                            </span>{" "}
+                                            base-10 blocks to visualize
+                                            borrowing.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Initially <span className="font-semibold">frustrated</span> by the timer but felt <span className="font-semibold">proud</span> when solving under time pressure.</p>
+                                          <p>
+                                            Initially{" "}
+                                            <span className="font-semibold">
+                                              frustrated
+                                            </span>{" "}
+                                            by the timer but felt{" "}
+                                            <span className="font-semibold">
+                                              proud
+                                            </span>{" "}
+                                            when solving under time pressure.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Made errors when <span className="font-semibold">borrowing across zeros</span>, improved with visual aids.</p>
+                                          <p>
+                                            Made errors when{" "}
+                                            <span className="font-semibold">
+                                              borrowing across zeros
+                                            </span>
+                                            , improved with visual aids.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Asked about a <span className="font-semibold">multiplication story problem</span> from school; worked through it step by step.</p>
+                                          <p>
+                                            Asked about a{" "}
+                                            <span className="font-semibold">
+                                              multiplication story problem
+                                            </span>{" "}
+                                            from school; worked through it step
+                                            by step.
+                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -3324,13 +3816,18 @@ export default function StudentDetail() {
                             ) : (
                               <div className="space-y-8 pr-[30px]">
                                 <div>
-                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                  <div
+                                    className="flex items-center gap-2"
+                                    style={{ marginTop: "2px" }}
+                                  >
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Alex's goal
                                     </h3>
                                   </div>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
-                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                    By August 1, 2025, Alex will solve 10
+                                    3-digit subtraction problems with borrowing
+                                    at 80% using just paper and pencil.
                                   </p>
                                 </div>
                               </div>
@@ -3349,23 +3846,30 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   June 13 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Thursday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Thursday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
                               <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
                                 <div
                                   className={`absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] ${
-                                    toggleView === "brain" ? "left-[3px]" : "left-[39px]"
+                                    toggleView === "brain"
+                                      ? "left-[3px]"
+                                      : "left-[39px]"
                                   }`}
                                   style={{
-                                    transition: "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)"
+                                    transition:
+                                      "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
                                   }}
                                 />
                                 <button
                                   onClick={() => setToggleView("brain")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "brain" ? "text-white" : "text-stone-500"
+                                    toggleView === "brain"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
                                   <Coffee className="w-5 h-5" strokeWidth={2} />
@@ -3373,10 +3877,15 @@ export default function StudentDetail() {
                                 <button
                                   onClick={() => setToggleView("filetext")}
                                   className={`flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium ${
-                                    toggleView === "filetext" ? "text-white" : "text-stone-500"
+                                    toggleView === "filetext"
+                                      ? "text-white"
+                                      : "text-stone-500"
                                   }`}
                                 >
-                                  <Glasses className="w-5 h-5" strokeWidth={2} />
+                                  <Glasses
+                                    className="w-5 h-5"
+                                    strokeWidth={2}
+                                  />
                                 </button>
                               </div>
                               <button
@@ -3389,11 +3898,14 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: true,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
-                                <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                                <Pencil
+                                  className="w-5 h-5 text-indigo-600"
+                                  strokeWidth={2}
+                                />
                               </button>
                             </div>
                           </div>
@@ -3402,7 +3914,9 @@ export default function StudentDetail() {
                               <>
                                 <div
                                   className="relative group"
-                                  onMouseEnter={() => setHoveredSection("june13-recap")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("june13-recap")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -3410,12 +3924,20 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Recap
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "june13-recap" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection === "june13-recap"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3425,7 +3947,11 @@ export default function StudentDetail() {
                                         </Tooltip>
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <RefreshCw className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3437,17 +3963,25 @@ export default function StudentDetail() {
                                     </div>
                                     <div className="mt-1">
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed pb-1.5 font-medium">
-                                        Introduction to borrowing and building place value skills
+                                        Introduction to borrowing and building
+                                        place value skills
                                       </p>
                                       <p className="text-stone-700 font-lexend text-sm leading-relaxed">
-                                        Focused on introducing 3-digit subtraction with borrowing, emphasizing place value. Practiced multiplication facts, discussed division, and used hands-on visual aids to build foundational understanding.
+                                        Focused on introducing 3-digit
+                                        subtraction with borrowing, emphasizing
+                                        place value. Practiced multiplication
+                                        facts, discussed division, and used
+                                        hands-on visual aids to build
+                                        foundational understanding.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div
                                   className="relative group mt-8"
-                                  onMouseEnter={() => setHoveredSection("june13-observations")}
+                                  onMouseEnter={() =>
+                                    setHoveredSection("june13-observations")
+                                  }
                                   onMouseLeave={() => setHoveredSection(null)}
                                 >
                                   <div className="flex flex-col">
@@ -3455,12 +3989,21 @@ export default function StudentDetail() {
                                       <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                         Observations
                                       </h3>
-                                      <div className={`flex items-center gap-1 transition-opacity ${
-                                        hoveredSection === "june13-observations" ? "opacity-100" : "opacity-0"
-                                      }`}>
+                                      <div
+                                        className={`flex items-center gap-1 transition-opacity ${
+                                          hoveredSection ===
+                                          "june13-observations"
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        }`}
+                                      >
                                         <Tooltip>
                                           <TooltipTrigger asChild>
-                                            <Button variant="ghost" size="sm" className="w-8 h-8 p-0 hover:bg-stone-100">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-8 h-8 p-0 hover:bg-stone-100"
+                                            >
                                               <Copy className="w-4 h-4 text-stone-500" />
                                             </Button>
                                           </TooltipTrigger>
@@ -3476,25 +4019,56 @@ export default function StudentDetail() {
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Alex showed enthusiasm using <span className="font-semibold">colored pens</span> for place value.</p>
+                                          <p>
+                                            Alex showed enthusiasm using{" "}
+                                            <span className="font-semibold">
+                                              colored pens
+                                            </span>{" "}
+                                            for place value.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Needed <span className="font-semibold">reminders</span> to slow down and <span className="font-semibold">check his work</span>.</p>
+                                          <p>
+                                            Needed{" "}
+                                            <span className="font-semibold">
+                                              reminders
+                                            </span>{" "}
+                                            to slow down and{" "}
+                                            <span className="font-semibold">
+                                              check his work
+                                            </span>
+                                            .
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Confused borrowing with addition regrouping but <span className="font-semibold">self-corrected</span> with support.</p>
+                                          <p>
+                                            Confused borrowing with addition
+                                            regrouping but{" "}
+                                            <span className="font-semibold">
+                                              self-corrected
+                                            </span>{" "}
+                                            with support.
+                                          </p>
                                         </div>
                                         <div className="flex items-start gap-1.5">
                                           <div className="pt-[3px]">
                                             <ArrowRight className="w-3.5 h-3.5 text-stone-700" />
                                           </div>
-                                          <p>Asked about a <span className="font-semibold">division</span> problem from school; discussed breaking division into simpler steps.</p>
+                                          <p>
+                                            Asked about a{" "}
+                                            <span className="font-semibold">
+                                              division
+                                            </span>{" "}
+                                            problem from school; discussed
+                                            breaking division into simpler
+                                            steps.
+                                          </p>
                                         </div>
                                       </div>
                                     </div>
@@ -3504,13 +4078,18 @@ export default function StudentDetail() {
                             ) : (
                               <div className="space-y-8 pr-[30px]">
                                 <div>
-                                  <div className="flex items-center gap-2" style={{ marginTop: "2px" }}>
+                                  <div
+                                    className="flex items-center gap-2"
+                                    style={{ marginTop: "2px" }}
+                                  >
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Alex's goal
                                     </h3>
                                   </div>
                                   <p className="text-stone-700 font-lexend text-sm leading-relaxed mt-1">
-                                    By August 1, 2025, Alex will solve 10 3-digit subtraction problems with borrowing at 80% using just paper and pencil.
+                                    By August 1, 2025, Alex will solve 10
+                                    3-digit subtraction problems with borrowing
+                                    at 80% using just paper and pencil.
                                   </p>
                                 </div>
                               </div>
@@ -3530,7 +4109,9 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   August 1 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Friday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
@@ -3544,7 +4125,7 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: false,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
@@ -3558,11 +4139,11 @@ export default function StudentDetail() {
                             <div className="h-full flex items-center justify-center">
                               <div className="text-center">
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                                <Clock className="w-[60px] h-[60px] text-stone-400" />
-                              </div>
-                              <h3 className="text-lg font-semibold text-stone-600 font-lexend">
-                                Upcoming session
-                              </h3>
+                                  <Clock className="w-[60px] h-[60px] text-stone-400" />
+                                </div>
+                                <h3 className="text-lg font-semibold text-stone-600 font-lexend">
+                                  Upcoming session
+                                </h3>
                               </div>
                             </div>
                           </div>
@@ -3580,7 +4161,9 @@ export default function StudentDetail() {
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   July 25 2025
                                 </h2>
-                                <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
+                                <p className="text-stone-600 font-lexend">
+                                  Friday, 9:00-9:45am
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2.5">
@@ -3594,7 +4177,7 @@ export default function StudentDetail() {
                                     year: "2025",
                                     time: "9:00–9:45am",
                                     isCompleted: false,
-                                    studentName: "Alex"
+                                    studentName: "Alex",
                                   });
                                 }}
                               >
@@ -3608,11 +4191,11 @@ export default function StudentDetail() {
                             <div className="h-full flex items-center justify-center">
                               <div className="text-center">
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                                <Timer className="w-[60px] h-[60px] text-pink-600" />
-                              </div>
-                              <h3 className="text-lg font-semibold text-stone-600 font-lexend">
-                                Late notes
-                              </h3>
+                                  <Timer className="w-[60px] h-[60px] text-pink-600" />
+                                </div>
+                                <h3 className="text-lg font-semibold text-stone-600 font-lexend">
+                                  Late notes
+                                </h3>
                               </div>
                             </div>
                           </div>
@@ -3620,13 +4203,24 @@ export default function StudentDetail() {
                       )}
 
                       {/* Placeholder for other sessions */}
-                      {selectedSessionId && !["july-18", "july-11", "july-4", "june-27", "june-20", "june-13", "august-1", "july-25"].includes(selectedSessionId) && (
-                        <div className="p-8 text-center bg-white rounded-md border border-stone-200 overflow-hidden">
-                          <p className="text-stone-500 font-lexend">
-                            Session content for {selectedSessionId} will be added here.
-                          </p>
-                        </div>
-                      )}
+                      {selectedSessionId &&
+                        ![
+                          "july-18",
+                          "july-11",
+                          "july-4",
+                          "june-27",
+                          "june-20",
+                          "june-13",
+                          "august-1",
+                          "july-25",
+                        ].includes(selectedSessionId) && (
+                          <div className="p-8 text-center bg-white rounded-md border border-stone-200 overflow-hidden">
+                            <p className="text-stone-500 font-lexend">
+                              Session content for {selectedSessionId} will be
+                              added here.
+                            </p>
+                          </div>
+                        )}
                     </div>
                   </div>
                 )}
