@@ -3519,8 +3519,110 @@ export default function StudentDetail() {
                         </div>
                       )}
 
+                      {/* August 1 Session - Upcoming */}
+                      {selectedSessionId === "august-1" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          {/* Fixed Header */}
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <Clock className="w-6 h-6 text-stone-700 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  August 1 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <button
+                                className="flex items-center justify-center h-11 px-4 bg-white border border-stone-200 rounded-xl hover:bg-stone-50 transition-colors font-lexend text-sm font-medium text-stone-700"
+                                onClick={() => {
+                                  openNotesOverlay("add", {
+                                    date: "1",
+                                    month: "August",
+                                    day: "1",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: false,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                Add notes
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px] flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="w-16 h-16 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Clock className="w-8 h-8 text-stone-400" />
+                              </div>
+                              <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-2">
+                                Upcoming Session
+                              </h3>
+                              <p className="text-stone-600 font-lexend text-sm">
+                                This session is scheduled for Friday, August 1 at 9:00-9:45am
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* July 25 Session - Overdue */}
+                      {selectedSessionId === "july-25" && (
+                        <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+                          {/* Fixed Header */}
+                          <div className="flex items-start justify-between p-5 flex-shrink-0">
+                            <div className="flex items-start gap-1.5 justify-start">
+                              <Timer className="w-6 h-6 text-pink-600 mt-0.5" />
+                              <div>
+                                <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                                  July 25 2025
+                                </h2>
+                                <p className="text-stone-600 font-lexend">Friday, 9:00-9:45am</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                              <button
+                                className="flex items-center justify-center h-11 px-4 bg-white border border-stone-200 rounded-xl hover:bg-stone-50 transition-colors font-lexend text-sm font-medium text-stone-700"
+                                onClick={() => {
+                                  openNotesOverlay("add", {
+                                    date: "25",
+                                    month: "July",
+                                    day: "25",
+                                    year: "2025",
+                                    time: "9:00–9:45am",
+                                    isCompleted: false,
+                                    studentName: "Alex"
+                                  });
+                                }}
+                              >
+                                Add notes
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1 overflow-y-auto py-8 px-[50px] flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Timer className="w-8 h-8 text-pink-600" />
+                              </div>
+                              <h3 className="text-lg font-semibold text-stone-900 font-lexend mb-2">
+                                Overdue Session
+                              </h3>
+                              <p className="text-stone-600 font-lexend text-sm">
+                                This session was scheduled for Friday, July 25 at 9:00-9:45am
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
                       {/* Placeholder for other sessions */}
-                      {selectedSessionId && !["july-18", "july-11", "july-4", "june-27", "june-20", "june-13"].includes(selectedSessionId) && (
+                      {selectedSessionId && !["july-18", "july-11", "july-4", "june-27", "june-20", "june-13", "august-1", "july-25"].includes(selectedSessionId) && (
                         <div className="p-8 text-center bg-white rounded-md border border-stone-200 overflow-hidden">
                           <p className="text-stone-500 font-lexend">
                             Session content for {selectedSessionId} will be added here.
