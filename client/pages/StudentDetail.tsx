@@ -2597,7 +2597,7 @@ export default function StudentDetail() {
                                 </div>
 
                                 {/* Session summary */}
-                                <div className="mt-12">
+                                <div className="mt-16">
                                   <div className="flex items-center gap-2">
                                     <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7">
                                       Session summary
