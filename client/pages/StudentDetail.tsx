@@ -2288,7 +2288,7 @@ export default function StudentDetail() {
                         >
                           Tracking
                         </h2>
-                        <Calendar
+                        <BellPlus
                           className="w-6 h-6"
                           style={{ color: "rgba(214, 211, 209, 1)" }}
                         />
