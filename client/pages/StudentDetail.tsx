@@ -2270,7 +2270,7 @@ export default function StudentDetail() {
 
                 {activeTab === "goals" && (
                   <div className="flex h-full">
-                    {/* Left Sidebar - Progress List */}
+                    {/* Left Sidebar - Tracking List */}
                     <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
                       {/* Header */}
                       <div className="flex items-center justify-between px-5 pt-5 pb-3">
@@ -2278,7 +2278,7 @@ export default function StudentDetail() {
                           className="text-xl font-bold font-lexend -tracking-[0.35px]"
                           style={{ color: "#44403c" }}
                         >
-                          Progress
+                          Tracking
                         </h2>
                         <Calendar
                           className="w-6 h-6"
@@ -2286,172 +2286,154 @@ export default function StudentDetail() {
                         />
                       </div>
 
-                      {/* Progress List - flush to edges */}
+                      {/* Tracking List - flush to edges */}
                       <div className="flex-1 overflow-y-auto">
-                        {/* This week section */}
+                        {/* Goal section */}
                         <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
-                          This week
+                          Goal
                         </div>
                         {[
                           {
-                            id: "august-1",
-                            date: "August 1",
-                            title: "Friday, 9:00–9:45am",
-                            status: "upcoming",
+                            id: "subtraction-borrowing",
+                            title: "Subtraction with borrowing",
+                            subtitle: "three-digit subtraction problems correct (75% accuracy)",
                           },
-                        ].map((session) => (
+                        ].map((item) => (
                           <div
-                            key={session.id}
-                            onClick={() => setSelectedSessionId(session.id)}
+                            key={item.id}
+                            onClick={() => setSelectedSessionId(item.id)}
                             className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
-                              selectedSessionId === session.id
+                              selectedSessionId === item.id
                                 ? ""
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
-                              {session.status === "upcoming" && (
-                                <Clock className="w-4 h-4 text-stone-700" />
-                              )}
-                              {session.status === "overdue" && (
-                                <Timer className="w-4 h-4 text-pink-600" />
-                              )}
-                              {session.status === "completed" && (
-                                <CircleCheck className="w-4 h-4 text-green-500" />
-                              )}
+                              <ArrowUpRight className="w-4 h-4 text-stone-700" />
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
-                                {session.date}
+                                {item.title}
                               </span>
                             </div>
                             <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
-                              {session.title}
+                              {item.subtitle}
                             </div>
                           </div>
                         ))}
 
-                        {/* July section */}
+                        {/* Problem-Solving section */}
                         <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
-                          July
+                          Problem-Solving
                         </div>
                         {[
                           {
-                            id: "july-25",
-                            date: "July 25",
-                            title: "Friday, 9:00–9:45am",
-                            status: "overdue",
+                            id: "borrowing-zeros",
+                            title: "Borrowing across zeros",
+                            subtitle: "Error on borrowing across two zeros",
                           },
                           {
-                            id: "july-18",
-                            date: "July 18",
-                            title:
-                              "Challenging borrowing and linking math to interests",
-                            status: "completed",
+                            id: "multi-step",
+                            title: "Multi-step",
+                            subtitle: "Ready to practice multi-step word problems next session",
                           },
-                          {
-                            id: "july-11",
-                            date: "July 11",
-                            title:
-                              "Math games and connecting problems to real life",
-                            status: "completed",
-                          },
-                          {
-                            id: "july-4",
-                            date: "July 4",
-                            title:
-                              "Adjusting pace and supporting focus when tired",
-                            status: "completed",
-                          },
-                        ].map((session) => (
+                        ].map((item) => (
                           <div
-                            key={session.id}
-                            onClick={() => setSelectedSessionId(session.id)}
+                            key={item.id}
+                            onClick={() => setSelectedSessionId(item.id)}
                             className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
-                              selectedSessionId === session.id
+                              selectedSessionId === item.id
                                 ? ""
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
-                              {session.status === "upcoming" && (
-                                <Clock className="w-4 h-4 text-stone-700" />
-                              )}
-                              {session.status === "overdue" && (
-                                <Timer className="w-4 h-4 text-pink-600" />
-                              )}
-                              {session.status === "completed" && (
-                                <CircleCheck className="w-4 h-4 text-green-500" />
-                              )}
+                              <ArrowUpRight className="w-4 h-4 text-stone-700" />
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
-                                {session.date}
+                                {item.title}
                               </span>
                             </div>
                             <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
-                              {session.title}
+                              {item.subtitle}
                             </div>
                           </div>
                         ))}
 
-                        {/* June section */}
+                        {/* Metacognitive section */}
                         <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
-                          June
+                          Metacognitive
                         </div>
                         {[
                           {
-                            id: "june-27",
-                            date: "June 27",
-                            title:
-                              "Structured routines and explaining math steps to others",
-                            status: "completed",
+                            id: "self-checking",
+                            title: "Self-Checking Strategies",
+                            subtitle: "Self-corrected mistake with guidance",
                           },
-                          {
-                            id: "june-20",
-                            date: "June 20",
-                            title:
-                              "Timed subtraction and borrowing across zeros practice",
-                            status: "completed",
-                          },
-                          {
-                            id: "june-13",
-                            date: "June 13",
-                            title:
-                              "Introduction to borrowing and building place value skills",
-                            status: "completed",
-                          },
-                        ].map((session) => (
+                        ].map((item) => (
                           <div
-                            key={session.id}
-                            onClick={() => setSelectedSessionId(session.id)}
+                            key={item.id}
+                            onClick={() => setSelectedSessionId(item.id)}
                             className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
-                              selectedSessionId === session.id
+                              selectedSessionId === item.id
                                 ? ""
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
-                              {session.status === "upcoming" && (
-                                <Clock className="w-4 h-4 text-stone-700" />
-                              )}
-                              {session.status === "overdue" && (
-                                <Timer className="w-4 h-4 text-pink-600" />
-                              )}
-                              {session.status === "completed" && (
-                                <CircleCheck className="w-4 h-4 text-green-500" />
-                              )}
+                              <ArrowUpRight className="w-4 h-4 text-stone-700" />
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
-                                {session.date}
+                                {item.title}
                               </span>
                             </div>
                             <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
-                              {session.title}
+                              {item.subtitle}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* Engagement section */}
+                        <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
+                          Engagement
+                        </div>
+                        {[
+                          {
+                            id: "affect",
+                            title: "Affect",
+                            subtitle: "Increased willingness to tackle challenging questions",
+                          },
+                          {
+                            id: "real-world-context",
+                            title: "Real-world context",
+                            subtitle: "Engaged by sports-statistics word problems",
+                          },
+                        ].map((item) => (
+                          <div
+                            key={item.id}
+                            onClick={() => setSelectedSessionId(item.id)}
+                            className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                              selectedSessionId === item.id
+                                ? ""
+                                : "hover:bg-stone-50"
+                            }`}
+                            style={{
+                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
+                            }}
+                          >
+                            <div className="flex items-center gap-1 py-0.5">
+                              <ArrowUpRight className="w-4 h-4 text-stone-700" />
+                              <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                                {item.title}
+                              </span>
+                            </div>
+                            <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                              {item.subtitle}
                             </div>
                           </div>
                         ))}
