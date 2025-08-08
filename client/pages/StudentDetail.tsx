@@ -2357,11 +2357,11 @@ export default function StudentDetail() {
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {item.id === "multi-step" ? (
-                                <ArrowDownRight className="w-4 h-4 text-stone-700" />
+                                <ArrowDownRight className="w-4 h-4" style={{ color: "rgba(254, 154, 0, 1)" }} />
                               ) : item.id === "borrowing-zeros" ? (
-                                <MessageCirclePlus className="w-4 h-4 text-stone-700" />
+                                <MessageCirclePlus className="w-4 h-4" style={{ color: "rgba(0, 188, 255, 1)" }} />
                               ) : (
-                                <ArrowUpRight className="w-4 h-4 text-stone-700" />
+                                <ArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 153, 102, 1)" }} />
                               )}
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
