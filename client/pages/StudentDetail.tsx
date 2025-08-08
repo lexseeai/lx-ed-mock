@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Minus,
+  MessageCirclePlus,
   UsersRound,
   NotebookText,
   LibraryBig,
