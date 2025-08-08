@@ -22,6 +22,7 @@ import {
   Calendar,
   CalendarFold,
   Bell,
+  BellPlus,
   ChevronLeft,
   ChevronRight,
   ChevronDown,
