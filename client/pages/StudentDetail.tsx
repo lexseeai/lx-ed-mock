@@ -2269,10 +2269,209 @@ export default function StudentDetail() {
                 )}
 
                 {activeTab === "goals" && (
-                  <div className="text-center py-12">
-                    <p className="text-stone-500 font-lexend">
-                      Goals content coming soon...
-                    </p>
+                  <div className="flex h-full">
+                    {/* Left Sidebar - Progress List */}
+                    <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
+                      {/* Header */}
+                      <div className="flex items-center justify-between px-5 pt-5 pb-3">
+                        <h2
+                          className="text-xl font-bold font-lexend -tracking-[0.35px]"
+                          style={{ color: "#44403c" }}
+                        >
+                          Progress
+                        </h2>
+                        <Calendar
+                          className="w-6 h-6"
+                          style={{ color: "rgba(214, 211, 209, 1)" }}
+                        />
+                      </div>
+
+                      {/* Progress List - flush to edges */}
+                      <div className="flex-1 overflow-y-auto">
+                        {/* This week section */}
+                        <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
+                          This week
+                        </div>
+                        {[
+                          {
+                            id: "august-1",
+                            date: "August 1",
+                            title: "Friday, 9:00–9:45am",
+                            status: "upcoming",
+                          },
+                        ].map((session) => (
+                          <div
+                            key={session.id}
+                            onClick={() => setSelectedSessionId(session.id)}
+                            className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                              selectedSessionId === session.id
+                                ? ""
+                                : "hover:bg-stone-50"
+                            }`}
+                            style={{
+                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                            }}
+                          >
+                            <div className="flex items-center gap-1 py-0.5">
+                              {session.status === "upcoming" && (
+                                <Clock className="w-4 h-4 text-stone-700" />
+                              )}
+                              {session.status === "overdue" && (
+                                <Timer className="w-4 h-4 text-pink-600" />
+                              )}
+                              {session.status === "completed" && (
+                                <CircleCheck className="w-4 h-4 text-green-500" />
+                              )}
+                              <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                                {session.date}
+                              </span>
+                            </div>
+                            <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                              {session.title}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* July section */}
+                        <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
+                          July
+                        </div>
+                        {[
+                          {
+                            id: "july-25",
+                            date: "July 25",
+                            title: "Friday, 9:00–9:45am",
+                            status: "overdue",
+                          },
+                          {
+                            id: "july-18",
+                            date: "July 18",
+                            title:
+                              "Challenging borrowing and linking math to interests",
+                            status: "completed",
+                          },
+                          {
+                            id: "july-11",
+                            date: "July 11",
+                            title:
+                              "Math games and connecting problems to real life",
+                            status: "completed",
+                          },
+                          {
+                            id: "july-4",
+                            date: "July 4",
+                            title:
+                              "Adjusting pace and supporting focus when tired",
+                            status: "completed",
+                          },
+                        ].map((session) => (
+                          <div
+                            key={session.id}
+                            onClick={() => setSelectedSessionId(session.id)}
+                            className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                              selectedSessionId === session.id
+                                ? ""
+                                : "hover:bg-stone-50"
+                            }`}
+                            style={{
+                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                            }}
+                          >
+                            <div className="flex items-center gap-1 py-0.5">
+                              {session.status === "upcoming" && (
+                                <Clock className="w-4 h-4 text-stone-700" />
+                              )}
+                              {session.status === "overdue" && (
+                                <Timer className="w-4 h-4 text-pink-600" />
+                              )}
+                              {session.status === "completed" && (
+                                <CircleCheck className="w-4 h-4 text-green-500" />
+                              )}
+                              <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                                {session.date}
+                              </span>
+                            </div>
+                            <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                              {session.title}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* June section */}
+                        <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
+                          June
+                        </div>
+                        {[
+                          {
+                            id: "june-27",
+                            date: "June 27",
+                            title:
+                              "Structured routines and explaining math steps to others",
+                            status: "completed",
+                          },
+                          {
+                            id: "june-20",
+                            date: "June 20",
+                            title:
+                              "Timed subtraction and borrowing across zeros practice",
+                            status: "completed",
+                          },
+                          {
+                            id: "june-13",
+                            date: "June 13",
+                            title:
+                              "Introduction to borrowing and building place value skills",
+                            status: "completed",
+                          },
+                        ].map((session) => (
+                          <div
+                            key={session.id}
+                            onClick={() => setSelectedSessionId(session.id)}
+                            className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                              selectedSessionId === session.id
+                                ? ""
+                                : "hover:bg-stone-50"
+                            }`}
+                            style={{
+                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                            }}
+                          >
+                            <div className="flex items-center gap-1 py-0.5">
+                              {session.status === "upcoming" && (
+                                <Clock className="w-4 h-4 text-stone-700" />
+                              )}
+                              {session.status === "overdue" && (
+                                <Timer className="w-4 h-4 text-pink-600" />
+                              )}
+                              {session.status === "completed" && (
+                                <CircleCheck className="w-4 h-4 text-green-500" />
+                              )}
+                              <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                                {session.date}
+                              </span>
+                            </div>
+                            <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                              {session.title}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Main Content Area */}
+                    <div
+                      className="flex-1 pl-4 flex flex-col justify-center items-center"
+                      style={{ backgroundColor: "rgba(247, 247, 247, 1)" }}
+                    >
+                      <div className="text-center">
+                        <h3 className="text-lg font-semibold text-stone-600 font-lexend mb-2">
+                          Progress tracking content
+                        </h3>
+                        <p className="text-stone-500 font-lexend text-sm">
+                          Select a session from the left to view progress details
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 )}
 
