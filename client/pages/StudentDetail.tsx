@@ -4,6 +4,8 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  ArrowDownRight,
+  Minus,
   UsersRound,
   NotebookText,
   LibraryBig,
