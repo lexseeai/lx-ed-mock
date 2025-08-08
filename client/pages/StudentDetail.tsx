@@ -2434,7 +2434,11 @@ export default function StudentDetail() {
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
-                              <ArrowUpRight className="w-4 h-4 text-stone-700" />
+                              {item.id === "real-world-context" ? (
+                                <Minus className="w-4 h-4 text-stone-700" />
+                              ) : (
+                                <ArrowUpRight className="w-4 h-4 text-stone-700" />
+                              )}
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
                               </span>
