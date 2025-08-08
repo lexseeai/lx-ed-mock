@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
   UsersRound,
   NotebookText,
   LibraryBig,
