@@ -2442,11 +2442,11 @@ export default function StudentDetail() {
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {item.id === "real-world-context" ? (
-                                <Minus className="w-4 h-4" style={{ color: "rgba(121, 113, 107, 1)" }} />
+                                <SquareMinus className="w-4 h-4" style={{ color: "rgba(121, 113, 107, 1)" }} />
                               ) : item.id === "affect" ? (
-                                <MessageCirclePlus className="w-4 h-4" style={{ color: "rgba(0, 132, 209, 1)" }} />
+                                <MessageCircleDashed className="w-4 h-4" style={{ color: "rgba(121, 113, 107, 1)" }} />
                               ) : (
-                                <ArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 150, 137, 1)" }} />
+                                <SquareArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 150, 137, 1)" }} />
                               )}
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
