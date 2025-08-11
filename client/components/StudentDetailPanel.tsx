@@ -2,11 +2,7 @@ import React, { useState, useRef } from "react";
 import { Student } from "@/types/student";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import {
   ChevronsRight,
   Maximize2,
@@ -276,7 +272,10 @@ export function StudentDetailPanel({
     },
   };
 
-  const sessions = studentSessionData[selectedStudent.name as keyof typeof studentSessionData] || {};
+  const sessions =
+    studentSessionData[
+      selectedStudent.name as keyof typeof studentSessionData
+    ] || {};
 
   // Get icon and color based on status
   const getSessionIcon = (status: string) => {
@@ -377,16 +376,12 @@ export function StudentDetailPanel({
                   onClick={onNavigatePrevious}
                   disabled={!canNavigatePrevious}
                   className={`p-1 hover:bg-stone-100 rounded transition-colors ${
-                    !canNavigatePrevious
-                      ? "opacity-50 cursor-not-allowed"
-                      : ""
+                    !canNavigatePrevious ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
                   <ChevronUp
                     className={`w-6 h-6 ${
-                      canNavigatePrevious
-                        ? "text-stone-400"
-                        : "text-stone-300"
+                      canNavigatePrevious ? "text-stone-400" : "text-stone-300"
                     }`}
                   />
                 </button>
@@ -394,16 +389,12 @@ export function StudentDetailPanel({
                   onClick={onNavigateNext}
                   disabled={!canNavigateNext}
                   className={`p-1 hover:bg-stone-100 rounded transition-colors ${
-                    !canNavigateNext
-                      ? "opacity-50 cursor-not-allowed"
-                      : ""
+                    !canNavigateNext ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
                   <ChevronDown
                     className={`w-6 h-6 ${
-                      canNavigateNext
-                        ? "text-stone-400"
-                        : "text-stone-300"
+                      canNavigateNext ? "text-stone-400" : "text-stone-300"
                     }`}
                   />
                 </button>
@@ -557,21 +548,18 @@ export function StudentDetailPanel({
                             : session.status === "wait"
                               ? "add"
                               : "edit";
-                        
+
                         // Parse session date from the session data
                         const dateStr = session.date
                           .replace("today, ", "")
                           .replace(" August", " August")
                           .replace(" July", " July");
-                        const sessionDate = new Date(
-                          dateStr + ", 2025",
-                        );
+                        const sessionDate = new Date(dateStr + ", 2025");
                         openNotesOverlay(mode, {
                           date: sessionDate.getDate().toString(),
-                          month: sessionDate.toLocaleDateString(
-                            "en-US",
-                            { month: "long" },
-                          ),
+                          month: sessionDate.toLocaleDateString("en-US", {
+                            month: "long",
+                          }),
                           day: sessionDate.getDate().toString(),
                           year: "2025",
                           time: session.time,
@@ -592,9 +580,7 @@ export function StudentDetailPanel({
                           className="text-base font-lexend leading-4.5 -tracking-[0.08px]"
                           style={{
                             fontWeight:
-                              session.key === "previous"
-                                ? "400"
-                                : "600",
+                              session.key === "previous" ? "400" : "600",
                             color:
                               session.key === "previous"
                                 ? "rgba(87, 83, 78, 1)"
@@ -739,8 +725,8 @@ export function StudentDetailPanel({
                         <div className="w-4 h-4 rounded-md border-2 border-stone-700"></div>
                       </div>
                       <p className="text-base font-normal text-stone-900 font-lexend leading-5">
-                        Reinforce rounding to 1 decimal place with timed
-                        fluency drills for automaticity.
+                        Reinforce rounding to 1 decimal place with timed fluency
+                        drills for automaticity.
                       </p>
                     </div>
                     <div className="flex items-start gap-1.5">
@@ -781,8 +767,8 @@ export function StudentDetailPanel({
                         <ArrowRight className="w-4 h-4 text-stone-700" />
                       </div>
                       <p className="text-base font-normal text-stone-900 font-lexend leading-5">
-                        Practiced rounding to 1 decimal place using a
-                        place value chart to boost fluency and accuracy.{" "}
+                        Practiced rounding to 1 decimal place using a place
+                        value chart to boost fluency and accuracy.{" "}
                         <span
                           className="relative inline-block group"
                           style={{
@@ -824,8 +810,8 @@ export function StudentDetailPanel({
                         <ArrowRight className="w-4 h-4 text-stone-700" />
                       </div>
                       <p className="text-base font-normal text-stone-900 font-lexend leading-5">
-                        Reviewed and recalled formulas for 2D shapes:
-                        circle, rectangle, square.{" "}
+                        Reviewed and recalled formulas for 2D shapes: circle,
+                        rectangle, square.{" "}
                         <span
                           className="relative inline-block group"
                           style={{
@@ -867,8 +853,8 @@ export function StudentDetailPanel({
                         <ArrowRight className="w-4 h-4 text-stone-700" />
                       </div>
                       <p className="text-base font-normal text-stone-900 font-lexend leading-5">
-                        Demonstrated improved accuracy in identifying
-                        decimal positions with visual support.{" "}
+                        Demonstrated improved accuracy in identifying decimal
+                        positions with visual support.{" "}
                         <span
                           className="relative inline-block group"
                           style={{
@@ -910,8 +896,8 @@ export function StudentDetailPanel({
                         <ArrowRight className="w-4 h-4 text-stone-700" />
                       </div>
                       <p className="text-base font-normal text-stone-900 font-lexend leading-5">
-                        Made progress toward independent problem-solving
-                        with fewer rounding errors.{" "}
+                        Made progress toward independent problem-solving with
+                        fewer rounding errors.{" "}
                         <span
                           className="relative inline-block group"
                           style={{
@@ -996,11 +982,10 @@ export function StudentDetailPanel({
                         <ArrowRight className="w-4 h-4 text-stone-700" />
                       </div>
                       <p className="text-base font-normal text-stone-900 font-lexend leading-5">
-                        Worked on comparing fractions using visual models
-                        and practiced breaking down multi-step word
-                        problems. Demonstrated initial understanding with
-                        support and is building confidence in applying
-                        strategies.{" "}
+                        Worked on comparing fractions using visual models and
+                        practiced breaking down multi-step word problems.
+                        Demonstrated initial understanding with support and is
+                        building confidence in applying strategies.{" "}
                         <span
                           className="relative inline-block group"
                           style={{

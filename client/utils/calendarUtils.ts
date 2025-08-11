@@ -1,6 +1,9 @@
 import { getAllDaysData, DayData } from "@/data/calendarData";
 
-export function getCurrentWeek(currentWeekStart: number, selectedDayDate: string) {
+export function getCurrentWeek(
+  currentWeekStart: number,
+  selectedDayDate: string,
+) {
   const allDays = getAllDaysData();
 
   // Use currentWeekStart if it's set, otherwise calculate from selectedDayDate
@@ -9,9 +12,7 @@ export function getCurrentWeek(currentWeekStart: number, selectedDayDate: string
   }
 
   // Fallback: find by selectedDayDate
-  const currentIndex = allDays.findIndex(
-    (day) => day.date === selectedDayDate,
-  );
+  const currentIndex = allDays.findIndex((day) => day.date === selectedDayDate);
 
   if (currentIndex === -1) return allDays.slice(0, 7);
 
@@ -23,13 +24,13 @@ export function getCurrentWeek(currentWeekStart: number, selectedDayDate: string
   const mondayIndex = currentIndex - dayIndex;
 
   // Get the complete week (Monday through Sunday)
-  return allDays.slice(
-    Math.max(0, mondayIndex),
-    Math.max(7, mondayIndex + 7),
-  );
+  return allDays.slice(Math.max(0, mondayIndex), Math.max(7, mondayIndex + 7));
 }
 
-export function getCurrentMondayMonth(currentWeekStart: number, selectedDayDate: string) {
+export function getCurrentMondayMonth(
+  currentWeekStart: number,
+  selectedDayDate: string,
+) {
   const currentWeek = getCurrentWeek(currentWeekStart, selectedDayDate);
   const monday = currentWeek.find((day) => day.day === "Mon");
   return monday ? monday.month : "July";
@@ -50,15 +51,9 @@ export function jumpToDate(targetDate: Date) {
   if (targetDay) {
     // Find the Monday of this week and set as week start
     const targetIndex = allDays.findIndex((day) => day === targetDay);
-    const dayIndex = [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu",
-      "Fri",
-      "Sat",
-      "Sun",
-    ].indexOf(targetDay.day);
+    const dayIndex = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(
+      targetDay.day,
+    );
     const mondayIndex = targetIndex - dayIndex;
 
     return {
@@ -75,13 +70,16 @@ export function selectToday() {
   return jumpToDate(new Date(2025, 6, 28)); // July 28, 2025
 }
 
-export function navigateTime(direction: "prev" | "next", currentWeekStart: number) {
+export function navigateTime(
+  direction: "prev" | "next",
+  currentWeekStart: number,
+) {
   const allDays = getAllDaysData();
 
   if (direction === "prev") {
     // Go to previous week
     const newWeekStart = Math.max(0, currentWeekStart - 7);
-    
+
     // Set selected day to the Monday of this week
     const newMonday = allDays[newWeekStart];
     return {
@@ -91,7 +89,7 @@ export function navigateTime(direction: "prev" | "next", currentWeekStart: numbe
   } else {
     // Go to next week
     const newWeekStart = Math.min(allDays.length - 7, currentWeekStart + 7);
-    
+
     // Set selected day to the Monday of this week
     const newMonday = allDays[newWeekStart];
     return {

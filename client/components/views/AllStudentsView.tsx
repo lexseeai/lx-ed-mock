@@ -37,8 +37,12 @@ export function AllStudentsView({
   openNotesOverlay,
 }: AllStudentsViewProps) {
   const [allStudentsSearchQuery, setAllStudentsSearchQuery] = useState("");
-  const [studentsViewMode, setStudentsViewMode] = useState<"cards" | "list">("cards");
-  const [sortField, setSortField] = useState<"name" | "subject" | "nextSession" | "email">("name");
+  const [studentsViewMode, setStudentsViewMode] = useState<"cards" | "list">(
+    "cards",
+  );
+  const [sortField, setSortField] = useState<
+    "name" | "subject" | "nextSession" | "email"
+  >("name");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   // Filter students based on search query
@@ -106,7 +110,9 @@ export function AllStudentsView({
   };
 
   // Get header styling for active sort column
-  const getHeaderStyle = (field: "name" | "subject" | "nextSession" | "email") => {
+  const getHeaderStyle = (
+    field: "name" | "subject" | "nextSession" | "email",
+  ) => {
     return sortField === field ? "font-bold" : "font-medium";
   };
 
@@ -228,7 +234,9 @@ export function AllStudentsView({
           padding: "32px 32px 60px",
         }}
       >
-        <section className={studentsViewMode === "list" ? "h-full flex flex-col" : ""}>
+        <section
+          className={studentsViewMode === "list" ? "h-full flex flex-col" : ""}
+        >
           {studentsViewMode === "cards" ? (
             <div className="flex justify-center">
               <div className="grid grid-cols-[repeat(auto-fill,_180px)] gap-4 justify-center max-w-full">
@@ -298,7 +306,10 @@ export function AllStudentsView({
                         key={student.name}
                         className="flex items-center cursor-pointer hover:bg-stone-50 border-b border-stone-100 min-h-[68px]"
                         onClick={() =>
-                          onStudentClick(student.id, getFilteredUniqueStudents())
+                          onStudentClick(
+                            student.id,
+                            getFilteredUniqueStudents(),
+                          )
                         }
                       >
                         <div className="w-12 px-4 py-4">
@@ -323,7 +334,9 @@ export function AllStudentsView({
                         <div className="w-40 px-4 py-4">
                           <div className="text-stone-600 font-lexend text-sm">
                             {formatSessionTimeToMonthDayTime(
-                              student.nextSessionTime || student.sessionTime || "",
+                              student.nextSessionTime ||
+                                student.sessionTime ||
+                                "",
                             )}
                           </div>
                         </div>

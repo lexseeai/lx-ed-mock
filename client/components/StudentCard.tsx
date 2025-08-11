@@ -2,13 +2,7 @@ import React from "react";
 import { Student } from "@/types/student";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  CircleCheck,
-  LoaderCircle,
-  Timer,
-  Loader,
-  Clock,
-} from "lucide-react";
+import { CircleCheck, LoaderCircle, Timer, Loader, Clock } from "lucide-react";
 import {
   getSessionReportStatus,
   getSubjectColors,

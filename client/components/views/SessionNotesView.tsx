@@ -7,13 +7,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
-import {
-  UserRound,
-  X,
-  Clock,
-  Timer,
-  CircleCheck,
-} from "lucide-react";
+import { UserRound, X, Clock, Timer, CircleCheck } from "lucide-react";
 import {
   getInProgressNotes,
   getDueSoonNotes,
@@ -44,8 +38,11 @@ export function SessionNotesView({
   button2RefCallback,
   button3RefCallback,
 }: SessionNotesViewProps) {
-  const [selectedNotesStudentFilter, setSelectedNotesStudentFilter] = useState<string | null>(null);
-  const [showNotesStudentDropdown, setShowNotesStudentDropdown] = useState(false);
+  const [selectedNotesStudentFilter, setSelectedNotesStudentFilter] = useState<
+    string | null
+  >(null);
+  const [showNotesStudentDropdown, setShowNotesStudentDropdown] =
+    useState(false);
   const [notesStudentSearchQuery, setNotesStudentSearchQuery] = useState("");
   const notesDropdownRef = useRef<HTMLDivElement>(null);
 
@@ -91,7 +88,9 @@ export function SessionNotesView({
               <Input
                 type="text"
                 placeholder={selectedNotesStudentFilter || "Filter by student"}
-                value={selectedNotesStudentFilter ? "" : notesStudentSearchQuery}
+                value={
+                  selectedNotesStudentFilter ? "" : notesStudentSearchQuery
+                }
                 onChange={(e) => {
                   if (!selectedNotesStudentFilter) {
                     setNotesStudentSearchQuery(e.target.value);
@@ -105,17 +104,19 @@ export function SessionNotesView({
                 }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !selectedNotesStudentFilter) {
-                    const filteredNames = getFilteredStudentNames().filter((name) => {
-                      // Filter to show only students that appear in session notes
-                      const allNotesStudents = [
-                        ...inProgressNotes,
-                        ...dueSoonNotes,
-                        ...submittedNotes,
-                      ];
-                      return allNotesStudents.some(
-                        (student) => student.name === name,
-                      );
-                    });
+                    const filteredNames = getFilteredStudentNames().filter(
+                      (name) => {
+                        // Filter to show only students that appear in session notes
+                        const allNotesStudents = [
+                          ...inProgressNotes,
+                          ...dueSoonNotes,
+                          ...submittedNotes,
+                        ];
+                        return allNotesStudents.some(
+                          (student) => student.name === name,
+                        );
+                      },
+                    );
                     if (filteredNames.length === 1) {
                       setSelectedNotesStudentFilter(filteredNames[0]);
                       setShowNotesStudentDropdown(false);
@@ -314,9 +315,7 @@ export function SessionNotesView({
                 <StudentCard
                   key={student.id}
                   student={student}
-                  onClick={() =>
-                    onStudentClick(student.id, inProgressNotes)
-                  }
+                  onClick={() => onStudentClick(student.id, inProgressNotes)}
                   sessionNotesView={true}
                   openNotesOverlay={openNotesOverlay}
                 />
@@ -354,9 +353,7 @@ export function SessionNotesView({
                 <StudentCard
                   key={student.id}
                   student={student}
-                  onClick={() =>
-                    onStudentClick(student.id, dueSoonNotes)
-                  }
+                  onClick={() => onStudentClick(student.id, dueSoonNotes)}
                   sessionNotesView={true}
                   openNotesOverlay={openNotesOverlay}
                 />
@@ -394,9 +391,7 @@ export function SessionNotesView({
                 <StudentCard
                   key={student.id}
                   student={student}
-                  onClick={() =>
-                    onStudentClick(student.id, submittedNotes)
-                  }
+                  onClick={() => onStudentClick(student.id, submittedNotes)}
                   sessionNotesView={true}
                   openNotesOverlay={openNotesOverlay}
                 />

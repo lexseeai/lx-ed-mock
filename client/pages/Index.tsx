@@ -35,17 +35,23 @@ export default function Index() {
   const [currentWeekStart, setCurrentWeekStart] = useState(27); // July 28th is at index 27 (Monday)
   const [hideEmptyDays, setHideEmptyDays] = useState(true);
   const [isToggling, setIsToggling] = useState(false);
-  const [animationDirection, setAnimationDirection] = useState<"hiding" | "showing" | null>(null);
+  const [animationDirection, setAnimationDirection] = useState<
+    "hiding" | "showing" | null
+  >(null);
 
   // Student panel state
   const [showStudentOverlay, setShowStudentOverlay] = useState(false);
-  const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
+  const [selectedStudentId, setSelectedStudentId] = useState<string | null>(
+    null,
+  );
   const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
 
   // Notes overlay state
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
   const [notesMode, setNotesMode] = useState<"view" | "add" | "edit">("view");
-  const [selectedSession, setSelectedSession] = useState<SessionData | null>(null);
+  const [selectedSession, setSelectedSession] = useState<SessionData | null>(
+    null,
+  );
 
   // Session notes tab state
   const [activeTab, setActiveTab] = useState("in-progress");
@@ -134,7 +140,10 @@ export default function Index() {
   };
 
   // Student handlers
-  const handleStudentClick = (studentId: string, studentList: Student[] = []) => {
+  const handleStudentClick = (
+    studentId: string,
+    studentList: Student[] = [],
+  ) => {
     if (activeView === "all") {
       const student = mockStudents.find((s) => s.id === studentId);
       if (student) {

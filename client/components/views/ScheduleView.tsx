@@ -20,10 +20,7 @@ import {
   selectToday,
   navigateTime,
 } from "@/utils/calendarUtils";
-import {
-  getSessionCountForDate,
-  getSessionDotsData,
-} from "@/utils/dateUtils";
+import { getSessionCountForDate, getSessionDotsData } from "@/utils/dateUtils";
 import {
   getUniqueStudentNames,
   getStudentSessionDays,
@@ -65,10 +62,12 @@ export function ScheduleView({
   setAnimationDirection,
 }: ScheduleViewProps) {
   const [showCalendarPicker, setShowCalendarPicker] = useState(false);
-  const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
+  const [selectedStudentFilter, setSelectedStudentFilter] = useState<
+    string | null
+  >(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
-  
+
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
 
@@ -125,7 +124,10 @@ export function ScheduleView({
   const shouldShowDay = (dayData: any) => {
     if (!selectedStudentFilter) return true;
 
-    const studentSessionDays = getStudentSessionDays(students, selectedStudentFilter);
+    const studentSessionDays = getStudentSessionDays(
+      students,
+      selectedStudentFilter,
+    );
     return studentSessionDays.includes(dayData.date);
   };
 
@@ -165,9 +167,9 @@ export function ScheduleView({
     };
   } = {
     "28": {
-      morning: students.filter(s => s.id === "13"), // Alex - Done
-      afternoon: students.filter(s => s.id === "14"), // Emma - In progress
-      evening: students.filter(s => s.id === "15"), // Marcus - Waiting
+      morning: students.filter((s) => s.id === "13"), // Alex - Done
+      afternoon: students.filter((s) => s.id === "14"), // Emma - In progress
+      evening: students.filter((s) => s.id === "15"), // Marcus - Waiting
     },
     // Add other dates as needed
   };
@@ -215,7 +217,11 @@ export function ScheduleView({
     isSelected: boolean = false,
     isCurrentMonth: boolean = true,
   ) => {
-    const dotsData = getSessionDotsData(sessionCount, isSelected, isCurrentMonth);
+    const dotsData = getSessionDotsData(
+      sessionCount,
+      isSelected,
+      isCurrentMonth,
+    );
     if (!dotsData) return null;
 
     const { dotCount, dotColor } = dotsData;
@@ -241,12 +247,11 @@ export function ScheduleView({
             >
               <button
                 className="flex items-center space-x-2 hover:bg-stone-100 rounded pr-2"
-                onClick={() =>
-                  setShowCalendarPicker(!showCalendarPicker)
-                }
+                onClick={() => setShowCalendarPicker(!showCalendarPicker)}
               >
                 <h1 className="text-3xl font-bold text-stone-800 font-lexend">
-                  {getCurrentMondayMonth(currentWeekStart, selectedDayDate)} 2025
+                  {getCurrentMondayMonth(currentWeekStart, selectedDayDate)}{" "}
+                  2025
                 </h1>
                 <ChevronDown className="w-6 h-6 text-stone-400" />
               </button>
@@ -285,22 +290,16 @@ export function ScheduleView({
 
                   {/* Simple calendar grid */}
                   <div className="grid grid-cols-7 gap-1 text-sm">
-                    {[
-                      "Mon",
-                      "Tue",
-                      "Wed",
-                      "Thu",
-                      "Fri",
-                      "Sat",
-                      "Sun",
-                    ].map((day) => (
-                      <div
-                        key={day}
-                        className="text-center p-2 text-stone-500 font-lexend text-xs"
-                      >
-                        {day}
-                      </div>
-                    ))}
+                    {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
+                      (day) => (
+                        <div
+                          key={day}
+                          className="text-center p-2 text-stone-500 font-lexend text-xs"
+                        >
+                          {day}
+                        </div>
+                      ),
+                    )}
                     {Array.from({ length: 42 }, (_, i) => {
                       // Start from Monday - calculate the first Monday of the month view
                       const firstOfMonth = new Date(
@@ -308,8 +307,7 @@ export function ScheduleView({
                         selectedDate.getMonth(),
                         1,
                       );
-                      const firstDayOfWeek =
-                        (firstOfMonth.getDay() + 6) % 7; // Convert Sunday=0 to Monday=0
+                      const firstDayOfWeek = (firstOfMonth.getDay() + 6) % 7; // Convert Sunday=0 to Monday=0
                       const date = new Date(
                         selectedDate.getFullYear(),
                         selectedDate.getMonth(),
@@ -319,17 +317,16 @@ export function ScheduleView({
                       const isSelected =
                         date.getDate() === selectedDate.getDate() &&
                         date.getMonth() === selectedDate.getMonth() &&
-                        date.getFullYear() ===
-                          selectedDate.getFullYear();
+                        date.getFullYear() === selectedDate.getFullYear();
                       const isCurrentMonth =
                         date.getMonth() === selectedDate.getMonth();
-                      const sessionCount =
-                        getSessionCountForDate(date, getAllDaysData());
+                      const sessionCount = getSessionCountForDate(
+                        date,
+                        getAllDaysData(),
+                      );
                       const hasNoSessions = sessionCount === 0;
                       const shouldGrayOut =
-                        hideEmptyDays &&
-                        hasNoSessions &&
-                        isCurrentMonth;
+                        hideEmptyDays && hasNoSessions && isCurrentMonth;
 
                       return (
                         <button
@@ -352,9 +349,7 @@ export function ScheduleView({
                                       : "text-stone-400"
                           }`}
                         >
-                          <div className="leading-none">
-                            {date.getDate()}
-                          </div>
+                          <div className="leading-none">{date.getDate()}</div>
                           {sessionCount > 0 ? (
                             renderSessionDots(
                               sessionCount,
@@ -395,21 +390,15 @@ export function ScheduleView({
                         }, 50);
                       }}
                       className={`relative w-9 h-5 rounded-full transition-colors ${
-                        hideEmptyDays
-                          ? "bg-indigo-600"
-                          : "bg-stone-600"
+                        hideEmptyDays ? "bg-indigo-600" : "bg-stone-600"
                       }`}
                       style={{
-                        backgroundColor: hideEmptyDays
-                          ? "#4f46e5"
-                          : "#5d5955",
+                        backgroundColor: hideEmptyDays ? "#4f46e5" : "#5d5955",
                       }}
                     >
                       <div
                         className={`absolute w-4 h-4 rounded-full bg-white shadow-lg transition-transform top-0.5 ${
-                          hideEmptyDays
-                            ? "translate-x-4"
-                            : "translate-x-0.5"
+                          hideEmptyDays ? "translate-x-4" : "translate-x-0.5"
                         }`}
                       />
                     </button>
@@ -420,10 +409,7 @@ export function ScheduleView({
           </div>
 
           <div className="flex items-center gap-1.5">
-            <div
-              className="relative flex-1 w-56"
-              ref={studentDropdownRef}
-            >
+            <div className="relative flex-1 w-56" ref={studentDropdownRef}>
               <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
                 <UserRound className="w-6 h-6 text-stone-400" />
               </div>
@@ -442,12 +428,8 @@ export function ScheduleView({
               )}
               <Input
                 type="text"
-                placeholder={
-                  selectedStudentFilter || "Filter by student"
-                }
-                value={
-                  selectedStudentFilter ? "" : studentSearchQuery
-                }
+                placeholder={selectedStudentFilter || "Filter by student"}
+                value={selectedStudentFilter ? "" : studentSearchQuery}
                 onChange={(e) => {
                   if (!selectedStudentFilter) {
                     setStudentSearchQuery(e.target.value);
@@ -486,19 +468,22 @@ export function ScheduleView({
 
                         // Highlight the first day when student is selected
                         const allDays = getAllDaysData();
-                        const activeMonth =
-                          selectedDate.toLocaleDateString("en-US", {
+                        const activeMonth = selectedDate.toLocaleDateString(
+                          "en-US",
+                          {
                             month: "long",
-                          });
-                        const studentSessionDays =
-                          getStudentSessionDays(students, name);
-                        const monthDaysWithStudentSessions =
-                          allDays.filter(
-                            (day) =>
-                              day.month === activeMonth &&
-                              studentSessionDays.includes(day.date) &&
-                              day.sessions > 0,
-                          );
+                          },
+                        );
+                        const studentSessionDays = getStudentSessionDays(
+                          students,
+                          name,
+                        );
+                        const monthDaysWithStudentSessions = allDays.filter(
+                          (day) =>
+                            day.month === activeMonth &&
+                            studentSessionDays.includes(day.date) &&
+                            day.sessions > 0,
+                        );
 
                         if (monthDaysWithStudentSessions.length > 0) {
                           setSelectedDayDate(
@@ -556,7 +541,10 @@ export function ScheduleView({
           <div className="flex-1 min-w-0 overflow-hidden">
             <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">
               {(() => {
-                const currentWeek = getCurrentWeek(currentWeekStart, selectedDayDate);
+                const currentWeek = getCurrentWeek(
+                  currentWeekStart,
+                  selectedDayDate,
+                );
 
                 // Show all days during animation, filter after based on new rules
                 let visibleDays;
@@ -565,10 +553,9 @@ export function ScheduleView({
                 } else if (selectedStudentFilter) {
                   // When student is filtered: show all dates in the active month where that student has sessions
                   const allDays = getAllDaysData();
-                  const activeMonth = selectedDate.toLocaleDateString(
-                    "en-US",
-                    { month: "long" },
-                  );
+                  const activeMonth = selectedDate.toLocaleDateString("en-US", {
+                    month: "long",
+                  });
 
                   // Get all days in the active month where the selected student has sessions
                   const studentSessionDays = getStudentSessionDays(
@@ -585,9 +572,7 @@ export function ScheduleView({
                   visibleDays = monthDaysWithStudentSessions;
                 } else if (hideEmptyDays) {
                   // When hiding empty days: show only days with sessions, but always include Monday
-                  const monday = currentWeek.find(
-                    (day) => day.day === "Mon",
-                  );
+                  const monday = currentWeek.find((day) => day.day === "Mon");
                   const daysWithSessions = currentWeek.filter(
                     (day) => day.sessions > 0,
                   );
@@ -599,8 +584,7 @@ export function ScheduleView({
                     uniqueDays.set(day.date, day),
                   );
                   visibleDays = Array.from(uniqueDays.values()).sort(
-                    (a, b) =>
-                      currentWeek.indexOf(a) - currentWeek.indexOf(b),
+                    (a, b) => currentWeek.indexOf(a) - currentWeek.indexOf(b),
                   );
                 } else {
                   // When showing empty days: show all 7 days of the week
@@ -673,9 +657,7 @@ export function ScheduleView({
                               <div
                                 key={index}
                                 className={`text-xs font-normal leading-none font-lexend ${
-                                  isSelected
-                                    ? "text-white"
-                                    : "text-stone-700"
+                                  isSelected ? "text-white" : "text-stone-700"
                                 }`}
                               >
                                 {time}
@@ -686,18 +668,14 @@ export function ScheduleView({
                             <div className="flex items-start gap-1 w-full">
                               <div
                                 className={`text-xs font-normal leading-none font-lexend ${
-                                  isSelected
-                                    ? "text-white"
-                                    : "text-stone-700"
+                                  isSelected ? "text-white" : "text-stone-700"
                                 }`}
                               >
                                 {dayData.sessions}
                               </div>
                               <div
                                 className={`text-xs font-normal leading-none font-lexend ${
-                                  isSelected
-                                    ? "text-white"
-                                    : "text-stone-700"
+                                  isSelected ? "text-white" : "text-stone-700"
                                 }`}
                               >
                                 {dayData.sessions === 1

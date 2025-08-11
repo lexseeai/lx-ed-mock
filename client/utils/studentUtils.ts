@@ -177,7 +177,10 @@ export function getUniqueStudentNames(students: Student[]) {
 }
 
 // Get days that have sessions for a specific student
-export function getStudentSessionDays(students: Student[], studentName: string) {
+export function getStudentSessionDays(
+  students: Student[],
+  studentName: string,
+) {
   const studentSessions = students.filter((s) => s.name === studentName);
   const days = new Set<string>();
 

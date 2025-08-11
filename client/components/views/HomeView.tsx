@@ -34,9 +34,12 @@ export function HomeView({
   const homeDropdownRef = useRef<HTMLDivElement>(null);
 
   const greeting = getTimeBasedGreeting();
-  const GreetingIcon = greeting.icon === "Haze" ? Search : 
-                      greeting.icon === "SunMedium" ? Search : 
-                      Search; // Import the actual icons if needed
+  const GreetingIcon =
+    greeting.icon === "Haze"
+      ? Search
+      : greeting.icon === "SunMedium"
+        ? Search
+        : Search; // Import the actual icons if needed
 
   // Session data for each date - simplified mapping for today (July 28)
   const dateSessionData: {
@@ -47,9 +50,9 @@ export function HomeView({
     };
   } = {
     "28": {
-      morning: students.filter(s => s.id === "13"), // Alex - Done
-      afternoon: students.filter(s => s.id === "14"), // Emma - In progress
-      evening: students.filter(s => s.id === "15"), // Marcus - Waiting
+      morning: students.filter((s) => s.id === "13"), // Alex - Done
+      afternoon: students.filter((s) => s.id === "14"), // Emma - In progress
+      evening: students.filter((s) => s.id === "15"), // Marcus - Waiting
     },
   };
 
@@ -97,15 +100,9 @@ export function HomeView({
                 }}
               >
                 {showHomeDropdown ? (
-                  <X
-                    className="w-5 h-5 text-indigo-600"
-                    strokeWidth={4}
-                  />
+                  <X className="w-5 h-5 text-indigo-600" strokeWidth={4} />
                 ) : (
-                  <Plus
-                    className="w-5 h-5 text-indigo-600"
-                    strokeWidth={4}
-                  />
+                  <Plus className="w-5 h-5 text-indigo-600" strokeWidth={4} />
                 )}
               </button>
               {showHomeDropdown && (
@@ -130,9 +127,7 @@ export function HomeView({
                       }}
                     >
                       <UserRoundPlus className="w-5 h-5 mr-2 text-stone-500 group-hover:text-white" />
-                      <span className="font-lexend text-sm">
-                        New student
-                      </span>
+                      <span className="font-lexend text-sm">New student</span>
                     </button>
                     <button
                       onClick={() => {
@@ -172,10 +167,7 @@ export function HomeView({
               )}
             </div>
           </div>
-          <div
-            className="w-full relative"
-            style={{ paddingLeft: "4px" }}
-          >
+          <div className="w-full relative" style={{ paddingLeft: "4px" }}>
             <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-10">
               <Search className="w-5 h-5 text-stone-400" />
             </div>
@@ -226,8 +218,7 @@ export function HomeView({
                 )
                 .filter(
                   (student) =>
-                    student.sessionDate &&
-                    student.sessionDate.getDate() === 28,
+                    student.sessionDate && student.sessionDate.getDate() === 28,
                 );
               return todaysStudents.map((student) => (
                 <div key={student.id} className="flex-shrink-0">
