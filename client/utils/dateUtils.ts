@@ -100,8 +100,8 @@ export function getSessionCountForDate(date: Date, allDays: any[]) {
   return matchingDay ? matchingDay.sessions : 0;
 }
 
-// Helper function to render session dots
-export function renderSessionDots(
+// Calculate session dots data (count and color)
+export function getSessionDotsData(
   sessionCount: number,
   isSelected: boolean = false,
   isCurrentMonth: boolean = true,
@@ -119,11 +119,5 @@ export function renderSessionDots(
     dotColor = "bg-stone-400"; // Non-active months use stone-400
   }
 
-  return (
-    <div className="flex justify-center gap-0.5 mt-0.5">
-      {Array.from({ length: dotCount }, (_, i) => (
-        <div key={i} className={`w-1 h-1 ${dotColor} rounded-full`}></div>
-      ))}
-    </div>
-  );
+  return { dotCount, dotColor };
 }
