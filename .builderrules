@@ -7,3 +7,4 @@ follow these guidelines:
 6. The app should always feel snappy, so minimize fade-in; however, transitions should feel organic so the user can follow how the screen is changing.
 7. Keep the design and layouts minimal, with a focus on clarity, legibity and ease of use. Make sure text and background colors support legibility.
 8. Add support for tool tip, as appropriate
+9. When a file is longer than 500 lines it should be split into 2 file; ideally, no file is longer than 500 lines.
