@@ -12,6 +12,9 @@ import {
   UserRoundPlus,
   NotebookPen,
   FileAudio,
+  Haze,
+  SunMedium,
+  MoonStar,
 } from "lucide-react";
 import { getTimeBasedGreeting, getSessionsHeading } from "@/utils/dateUtils";
 import { getSessionReportStatus } from "@/utils/studentUtils";
@@ -34,12 +37,21 @@ export function HomeView({
   const homeDropdownRef = useRef<HTMLDivElement>(null);
 
   const greeting = getTimeBasedGreeting();
-  const GreetingIcon =
-    greeting.icon === "Haze"
-      ? Search
-      : greeting.icon === "SunMedium"
-        ? Search
-        : Search; // Import the actual icons if needed
+
+  const getGreetingIcon = () => {
+    switch (greeting.icon) {
+      case "Haze":
+        return Haze;
+      case "SunMedium":
+        return SunMedium;
+      case "MoonStar":
+        return MoonStar;
+      default:
+        return Haze;
+    }
+  };
+
+  const GreetingIcon = getGreetingIcon();
 
   // Session data for each date - simplified mapping for today (July 28)
   const dateSessionData: {

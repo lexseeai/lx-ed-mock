@@ -15,6 +15,9 @@ import {
   ChevronsUpDown,
   PanelLeft,
   Calendar,
+  Haze,
+  SunMedium,
+  MoonStar,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -22,7 +25,7 @@ interface SidebarProps {
   setActiveView: (view: string) => void;
   onThisWeekClick: () => void;
   setShowStudentOverlay: (show: boolean) => void;
-  greeting: { text: string; icon: any };
+  greeting: { text: string; icon: string };
 }
 
 export function Sidebar({
@@ -33,7 +36,21 @@ export function Sidebar({
   greeting,
 }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const GreetingIcon = greeting.icon;
+
+  const getGreetingIcon = () => {
+    switch (greeting.icon) {
+      case "Haze":
+        return Haze;
+      case "SunMedium":
+        return SunMedium;
+      case "MoonStar":
+        return MoonStar;
+      default:
+        return Haze;
+    }
+  };
+
+  const GreetingIcon = getGreetingIcon();
 
   return (
     <div
@@ -146,7 +163,7 @@ export function Sidebar({
                   <span
                     className={`text-sm font-lexend ${activeView === "schedule" ? "text-white" : "text-white"}`}
                   >
-                    Upcoming
+                    Calendar
                   </span>
                 )}
               </div>
@@ -188,7 +205,7 @@ export function Sidebar({
                   <span
                     className={`text-sm font-lexend ${activeView === "sessionnotes" ? "text-white" : "text-white"}`}
                   >
-                    Notes dues
+                    Session notes
                   </span>
                 )}
               </div>
