@@ -1578,7 +1578,7 @@ export default function StudentDetail() {
                             : "text-stone-400 hover:text-stone-600"
                         }`}
                       >
-                        Progress tracking
+                        Progress
                       </button>
                       <button
                         ref={button4RefCallback}
@@ -1589,7 +1589,7 @@ export default function StudentDetail() {
                             : "text-stone-400 hover:text-stone-600"
                         }`}
                       >
-                        Session notes
+                        Notes
                       </button>
                       <button
                         ref={button5RefCallback}
@@ -3662,7 +3662,7 @@ export default function StudentDetail() {
                                     month: "June",
                                     day: "27",
                                     year: "2025",
-                                    time: "9:00–9:45am",
+                                    time: "9:00��9:45am",
                                     isCompleted: true,
                                     studentName: "Alex",
                                   });
