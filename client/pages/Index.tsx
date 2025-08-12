@@ -33,7 +33,7 @@ export default function Index() {
   const [selectedDate, setSelectedDate] = useState(new Date(2025, 6, 28)); // July 28, 2025
   const [selectedDayDate, setSelectedDayDate] = useState("28"); // Track selected day
   const [currentWeekStart, setCurrentWeekStart] = useState(27); // July 28th is at index 27 (Monday)
-  const [hideEmptyDays, setHideEmptyDays] = useState(true);
+  const [hideEmptyDays, setHideEmptyDays] = useState(false);
   const [isToggling, setIsToggling] = useState(false);
   const [animationDirection, setAnimationDirection] = useState<
     "hiding" | "showing" | null
