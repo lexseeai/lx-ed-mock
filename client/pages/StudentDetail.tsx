@@ -378,7 +378,7 @@ function Sidebar({
                   <span
                     className={`text-sm font-lexend ${activeView === "schedule" ? "text-white" : "text-white"}`}
                   >
-                    Upcoming
+                    Calendar
                   </span>
                 )}
               </div>
@@ -408,7 +408,7 @@ function Sidebar({
                   <span
                     className={`text-sm font-lexend ${activeView === "sessionnotes" ? "text-white" : "text-white"}`}
                   >
-                    Notes dues
+                    Session Notes
                   </span>
                 )}
               </div>
