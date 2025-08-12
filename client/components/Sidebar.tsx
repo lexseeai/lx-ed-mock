@@ -123,7 +123,7 @@ export function Sidebar({
                 <span
                   className={`text-sm font-lexend ${activeView === "all" ? "text-white" : "text-white"}`}
                 >
-                  Students
+                  My students
                 </span>
               )}
             </div>
