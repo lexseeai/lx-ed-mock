@@ -148,7 +148,16 @@ export const mockStudents: Student[] = [
     sessionDate: new Date(2025, 6, 28, 15, 0, 0),
     sessionReportCompleted: false,
   }, // In progress (3pm, within window, not completed)
-  // Marcus July 28 session removed - next session is August 5
+  {
+    id: "15",
+    name: "Marcus",
+    subject: "English Tutoring",
+    sessionTime: "7:00pm, July 28",
+    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Marcus",
+    sessionDate: new Date(2025, 6, 28, 19, 0, 0),
+    sessionReportCompleted: false,
+    email: "marcus.brown@email.com",
+  }, // Waiting (7pm, not completed)
 
   // July 29th - all waiting
   {
