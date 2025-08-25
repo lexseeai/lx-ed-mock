@@ -305,7 +305,7 @@ export function ScheduleView({
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 p-6 gap-4.5">
+      <div className="flex flex-1 p-6 gap-6">
         {/* Left: Day Schedule */}
         <div className="w-[450px] flex flex-col bg-white rounded-lg border border-stone-200 p-4.5">
           {/* Time slots with sessions */}
@@ -424,136 +424,189 @@ export function ScheduleView({
 
         {/* Right: Session Details */}
         {selectedSession && (
-          <div className="flex-1 flex flex-col bg-white rounded-lg border border-stone-200 p-9">
-            {/* Student header */}
-            <div className="flex items-start justify-between pt-4.5 mb-10">
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-15 h-15 rounded-full bg-purple-100 flex items-center justify-center border-2 border-white">
-                    <span className="text-xl font-bold text-purple-600 font-lexend">
-                      M
-                    </span>
-                  </div>
-                  <div className="flex flex-col px-0.5">
-                    <h3 className="text-2xl font-bold text-stone-900 font-lexend tracking-tight">
-                      {selectedSession.name} Smith
-                    </h3>
-                    <p className="text-sm font-medium text-stone-400 font-lexend tracking-tight">
-                      {selectedSession.subject}
-                    </p>
-                  </div>
-                </div>
-                <div className="pl-17 pt-2">
-                  <p className="text-base font-medium text-stone-700 font-lexend tracking-tight">
-                    Monday, 28 July, 19:00 – 19:45
-                  </p>
-                </div>
-              </div>
-              <button className="flex items-center gap-1 px-4 py-2 border border-stone-200 bg-white rounded-md hover:bg-stone-50">
-                <span className="text-sm font-normal text-black font-readex tracking-tight">
-                  View student
-                </span>
-                <UserRound className="w-4.5 h-4.5 text-black" />
-              </button>
-            </div>
-
-            {/* Topics section */}
-            <div className="bg-white rounded-lg p-5 mb-5">
-              <div className="mb-3">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-wide">
-                    Topics for this session
-                  </h4>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="text-sm font-normal text-stone-400 font-lexend">
-                    From session notes
-                  </span>
-                  <div className="px-1 py-1 bg-stone-100 rounded-full">
-                    <span className="text-xs font-normal text-stone-400 font-lexend">
-                      14 June 25
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pl-1.5">
-                <div className="flex items-start gap-1.5">
-                  <div className="pt-0.5">
-                    <div className="w-4.5 h-4.5 border border-stone-700 rounded-full"></div>
-                  </div>
-                  <p className="flex-1 text-base font-normal text-stone-900 font-lexend leading-relaxed">
-                    Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
-                  </p>
-                </div>
-                <div className="flex items-start gap-1.5">
-                  <div className="pt-0.5">
-                    <div className="w-4.5 h-4.5 border border-stone-700 rounded-full"></div>
-                  </div>
-                  <p className="flex-1 text-base font-normal text-stone-900 font-lexend leading-relaxed">
-                    Apply 2D shape formulas in word problems to build real-world problem-solving skills.
-                  </p>
-                </div>
-                <div className="flex items-start gap-1.5">
-                  <div className="pt-0.5">
-                    <div className="w-4.5 h-4.5 border border-stone-700 rounded-full"></div>
-                  </div>
-                  <p className="flex-1 text-base font-normal text-stone-900 font-lexend leading-relaxed">
-                    Introduce multi-step problems involving both perimeter/area and decimal rounding.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Session Notes */}
-            <div className="bg-white rounded-lg p-5">
-              <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-wide mb-4">
-                Session notes
-              </h4>
-              <div className="space-y-3 pl-1.5">
-                {/* Today's session */}
-                <div className="flex flex-col p-3 border border-stone-200 rounded-lg">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    <Clock className="w-5 h-5 text-stone-400" />
-                    <span className="text-sm font-bold text-stone-700 font-lexend">
-                      Monday, 28 July 25
-                    </span>
-                  </div>
-                  <div className="pl-6.5">
-                    <span className="text-sm font-normal text-stone-400 font-lexend">
-                      19:00 – 19:45
-                    </span>
-                  </div>
-                </div>
-
-                {/* Previous sessions */}
-                <div className="flex flex-col p-3 border border-stone-200 rounded-lg">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    <div className="w-5 h-5 border-2 border-pink-600 rounded-full"></div>
-                    <span className="text-sm font-bold text-stone-700 font-lexend">
-                      Monday, 21 July 25
-                    </span>
-                  </div>
-                  <div className="pl-6.5">
-                    <span className="text-sm font-normal text-stone-400 font-lexend">
-                      19:00 – 19:45
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col p-3 border border-stone-200 rounded-lg">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    <div className="w-5 h-5 border-2 border-green-600 rounded-full flex items-center justify-center">
-                      <div className="w-2 h-1 bg-green-600 transform rotate-45"></div>
+          <div className="flex-1 flex flex-col bg-white rounded-lg border border-stone-200">
+            <div className="flex p-[18px_36px_0_36px] flex-col items-start gap-2.5 flex-1 self-stretch">
+              {/* Top section */}
+              <div className="flex pt-[19px] justify-between items-start self-stretch">
+                {/* Left side */}
+                <div className="flex flex-col items-start">
+                  {/* Name */}
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex w-15 h-15 p-[18px_10px] flex-col justify-center items-center gap-2.5 rounded-full border-2 border-white bg-[#F2E9FE]">
+                      <span className="text-[#7536C7] font-lexend text-2xl font-bold leading-4 tracking-[-0.12px]">
+                        M
+                      </span>
                     </div>
-                    <span className="text-sm font-bold text-stone-700 font-lexend">
-                      Monday, 14 July 25
-                    </span>
+                    <div className="flex p-[2px_0] flex-col justify-center items-start">
+                      <div className="text-stone-900 font-lexend text-[30px] font-bold leading-9 tracking-[-0.15px]">
+                        {selectedSession.name} Smith
+                      </div>
+                      <div className="text-stone-400 font-lexend text-sm font-medium leading-5 tracking-[-0.07px]">
+                        {selectedSession.subject}
+                      </div>
+                    </div>
                   </div>
-                  <div className="pl-6.5">
-                    <span className="text-sm font-normal text-stone-400 font-lexend">
-                      19:00 – 19:45
+                  {/* Day and time */}
+                  <div className="flex p-[8px_0_0_68px] justify-center items-center gap-2.5">
+                    <div className="text-stone-700 font-lexend text-base font-medium leading-5 tracking-[-0.08px]">
+                      Monday, 28 July, 19:00 – 19:45
+                    </div>
+                  </div>
+                </div>
+                {/* View student button */}
+                <button className="flex p-[8px_16px] justify-center items-center gap-1 rounded-md border border-stone-200 bg-white hover:bg-stone-50">
+                  <span className="text-black font-['Readex_Pro'] text-sm font-normal leading-6 tracking-[-0.07px]">
+                    View student
+                  </span>
+                  <UserRound className="w-[18px] h-[18px] text-black" />
+                </button>
+              </div>
+
+              {/* Topics section */}
+              <div className="flex p-[48px_20px_20px_20px] flex-col items-start gap-3 self-stretch rounded-lg">
+                {/* Title */}
+                <div className="flex flex-col items-start gap-0.5 self-stretch">
+                  <div className="flex h-6 items-start gap-1.5">
+                    <h4 className="text-stone-900 font-lexend text-xl font-bold leading-6 tracking-[-0.35px]">
+                      Topics for this session
+                    </h4>
+                  </div>
+                  <div className="flex h-5 items-center gap-1 self-stretch">
+                    <span className="text-stone-400 font-lexend text-sm font-normal leading-5">
+                      From session notes
                     </span>
+                    <div className="flex p-1 justify-center items-center gap-2.5 rounded-[99px] bg-stone-100">
+                      <span className="text-stone-400 font-lexend text-xs font-normal leading-[14px]">
+                        14 June 25
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Topics list */}
+                <div className="flex pl-1.5 items-start gap-1.5 self-stretch">
+                  <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9C2.25 3.6 3.6 2.25 9 2.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-stone-900 font-lexend text-base font-normal leading-[23.75px]">
+                    Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
+                  </div>
+                </div>
+                <div className="flex pl-1.5 items-start gap-1.5 self-stretch">
+                  <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9C2.25 3.6 3.6 2.25 9 2.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-stone-900 font-lexend text-base font-normal leading-[23.75px]">
+                    Apply 2D shape formulas in word problems to build real-world problem-solving skills.
+                  </div>
+                </div>
+                <div className="flex pl-1.5 items-start gap-1.5 self-stretch">
+                  <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9 C2.25 3.6 3.6 2.25 9 2.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-stone-900 font-lexend text-base font-normal leading-[23.75px]">
+                    Introduce multi-step problems involving both perimeter/area and decimal rounding.
+                  </div>
+                </div>
+              </div>
+
+              {/* Session Notes */}
+              <div className="flex p-5 flex-col items-start gap-4 flex-1 self-stretch rounded-lg bg-white">
+                {/* Title */}
+                <div className="flex flex-col items-start gap-0.5 self-stretch">
+                  <div className="flex h-6 items-start gap-1.5">
+                    <h4 className="text-stone-900 font-lexend text-xl font-bold leading-6 tracking-[-0.35px]">
+                      Session notes
+                    </h4>
+                  </div>
+                </div>
+
+                {/* List of notes */}
+                <div className="flex p-[0_6px] flex-col items-start gap-3 self-stretch">
+                  {/* Today's session - Upcoming */}
+                  <div className="flex p-3 flex-col items-start self-stretch rounded border border-stone-200">
+                    <div className="flex items-start self-stretch">
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6475_2920)">
+                            <path d="M10 5V10L13.3333 11.6667" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6475_2920">
+                              <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span className="text-stone-700 font-lexend text-sm font-bold leading-[18px]">
+                          Monday, 28 July 25
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex pl-[26px] flex-col justify-center items-start self-stretch">
+                      <span className="text-stone-400 font-lexend text-sm font-normal leading-[18px]">
+                        19:00 – 19:45
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Previous session - In progress */}
+                  <div className="flex p-3 flex-col items-start self-stretch rounded border border-stone-200">
+                    <div className="flex items-start self-stretch">
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6477_3242)">
+                            <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#BE185D" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6477_3242">
+                              <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span className="text-stone-700 font-lexend text-sm font-bold leading-[18px]">
+                          Monday, 21 July 25
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex pl-[26px] flex-col justify-center items-start self-stretch">
+                      <span className="text-stone-400 font-lexend text-sm font-normal leading-[18px]">
+                        19:00 – 19:45
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Completed session */}
+                  <div className="flex p-3 flex-col items-start self-stretch rounded border border-stone-200">
+                    <div className="flex items-start self-stretch">
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6477_3250)">
+                            <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#059669" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M7.5 10.0007L9.16667 11.6673L12.5 8.33398" stroke="#059669" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6477_3250">
+                              <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span className="text-stone-700 font-lexend text-sm font-bold leading-[18px]">
+                          Monday, 14 July 25
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex pl-[26px] flex-col justify-center items-start self-stretch">
+                      <span className="text-stone-400 font-lexend text-sm font-normal leading-[18px]">
+                        19:00 – 19:45
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
