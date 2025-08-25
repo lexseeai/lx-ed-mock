@@ -148,7 +148,6 @@ export function Sidebar({
               onClick={() => {
                 setActiveView("schedule");
                 onThisWeekClick(); // Navigate to this week (July 28)
-                setShowStudentOverlay(false);
               }}
             >
               <div className="flex items-center space-x-2">
