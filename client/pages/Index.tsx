@@ -38,7 +38,6 @@ export default function Index() {
     "hiding" | "showing" | null
   >(null);
 
-
   // Notes overlay state
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
   const [notesMode, setNotesMode] = useState<"view" | "add" | "edit">("view");
@@ -160,8 +159,6 @@ export default function Index() {
     }
   };
 
-
-
   // Notes overlay handlers
   const openNotesOverlay = (
     mode: "view" | "add" | "edit",
@@ -269,7 +266,6 @@ export default function Index() {
             </div>
           </div>
         </div>
-
 
         {/* Notes Overlay */}
         <NotesOverlay
