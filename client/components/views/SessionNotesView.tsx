@@ -150,223 +150,169 @@ export function SessionNotesView({
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex flex-1 p-6 gap-[18px] h-0 min-h-0">
-        {/* Left Column - Session Lists */}
-        <div className="flex flex-col gap-6">
-          {/* To do List */}
-          <div className="w-[350px] min-w-[300px] max-w-[350px] p-[18px] bg-white border border-stone-200 rounded-lg">
-            <div className="flex items-end gap-2.5 mb-4">
-              <h2 className="text-3xl font-black text-stone-700 font-lexend tracking-tight">
-                To<span style={{letterSpacing: '-7.9px'}}> </span>do
-              </h2>
-            </div>
-            <div className="space-y-3">
-              {todoNotes.map((note) => (
-                <div
-                  key={note.id}
-                  className="p-3 rounded-md cursor-pointer hover:bg-stone-50"
-                  onClick={() => setSelectedNoteId(note.id)}
-                >
-                  <div className="flex items-start">
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_6475_2778)">
-                          <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#BE185D" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_6475_2778">
-                            <rect width="20" height="20" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <span className="text-sm font-bold text-stone-700 font-lexend">
-                        {note.studentName}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center pl-[26px] mt-1">
-                    <span className="text-sm text-stone-700 font-lexend">
-                      {note.date}
-                    </span>
-                    <span className="text-sm text-stone-400 font-lexend">
-                      {note.time}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* Main Content - matching StudentDetail notes pattern */}
+      <div className="flex h-full">
+        {/* Left Sidebar - Session List */}
+        <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
+          {/* Header */}
+          <div className="flex items-center justify-between px-5 pt-5 pb-3">
+            <h2
+              className="text-xl font-bold font-lexend -tracking-[0.35px]"
+              style={{ color: "#44403c" }}
+            >
+              Sessions
+            </h2>
+            <Calendar
+              className="w-6 h-6"
+              style={{ color: "rgba(214, 211, 209, 1)" }}
+            />
           </div>
 
-          {/* Done List */}
-          <div className="w-[350px] min-w-[300px] max-w-[350px] p-[18px_18px_0_18px] bg-white border border-stone-200 rounded-lg flex-1">
-            <div className="flex items-end gap-2.5 mb-4">
-              <h2 className="text-3xl font-black text-stone-700 font-lexend tracking-tight">
-                Done
-              </h2>
+          {/* Session List */}
+          <div className="flex-1 overflow-y-auto">
+            {/* To do section */}
+            <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
+              To do
             </div>
-            <div className="flex h-8 items-end gap-2.5 mb-4">
-              <span className="text-xs text-stone-400 font-lexend tracking-tight">
-                July
-              </span>
-            </div>
-            <div className="space-y-3">
-              {doneNotes.map((note, index) => (
-                <div
-                  key={note.id}
-                  className={`p-3 rounded-md cursor-pointer hover:bg-stone-50 ${
-                    selectedNoteId === note.id ? "bg-indigo-600" : ""
-                  }`}
-                  onClick={() => setSelectedNoteId(note.id)}
-                >
-                  <div className="flex items-start">
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_6477_3339)">
-                          <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke={selectedNoteId === note.id ? "white" : "#059669"} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M7.5 10.0007L9.16667 11.6673L12.5 8.33398" stroke={selectedNoteId === note.id ? "white" : "#059669"} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_6477_3339">
-                            <rect width="20" height="20" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <span className={`text-sm font-bold font-lexend ${
-                        selectedNoteId === note.id ? "text-white" : "text-stone-700"
-                      }`}>
-                        {note.studentName}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center pl-[26px] mt-1">
-                    <span className={`text-sm font-lexend ${
-                      selectedNoteId === note.id ? "text-white" : "text-stone-700"
-                    }`}>
-                      {note.date}
-                    </span>
-                    <span className={`text-sm font-lexend ${
-                      selectedNoteId === note.id ? "text-white opacity-50" : "text-stone-400"
-                    }`}>
-                      {note.time}
-                    </span>
-                  </div>
+            {todoNotes.map((note) => (
+              <div
+                key={note.id}
+                onClick={() => setSelectedNoteId(note.id)}
+                className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                  selectedNoteId === note.id
+                    ? ""
+                    : "hover:bg-stone-50"
+                }`}
+                style={{
+                  backgroundColor: selectedNoteId === note.id ? "rgba(238, 242, 255, 1)" : undefined
+                }}
+              >
+                <div className="flex items-center gap-1 py-0.5">
+                  <Clock className="w-4 h-4 text-pink-600" />
+                  <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                    {note.studentName}
+                  </span>
                 </div>
-              ))}
+                <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                  {note.date} • {note.time}
+                </div>
+              </div>
+            ))}
+
+            {/* Done section */}
+            <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
+              Done
             </div>
+            {doneNotes.map((note) => (
+              <div
+                key={note.id}
+                onClick={() => setSelectedNoteId(note.id)}
+                className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
+                  selectedNoteId === note.id
+                    ? ""
+                    : "hover:bg-stone-50"
+                }`}
+                style={{
+                  backgroundColor: selectedNoteId === note.id ? "rgba(238, 242, 255, 1)" : undefined
+                }}
+              >
+                <div className="flex items-center gap-1 py-0.5">
+                  <CircleCheck className="w-4 h-4 text-green-500" />
+                  <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
+                    {note.studentName}
+                  </span>
+                </div>
+                <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
+                  {note.date} • {note.time}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Right Column - Session Notes Detail */}
-        <div className="flex-1 bg-white border border-stone-200 rounded-lg flex flex-col min-w-[500px] max-w-[650px]">
+        {/* Main Content Area */}
+        <div
+          className="flex-1 pl-4 flex flex-col justify-center items-center"
+          style={{ backgroundColor: "rgba(247, 247, 247, 1)" }}
+        >
           {selectedNote && (
-            <>
-              {/* Content Area - matching StudentDetail notes pattern */}
-              <div className="flex-1 p-6">
-                <div className="w-full bg-white">
-                  {/* Header */}
-                  <div className="border-b-0 mb-6">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-1.5 w-[391px]">
-                        <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M9.5 12L11.5 14L15.5 10" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        <h3 className="text-2xl font-bold text-stone-900 font-lexend tracking-tight leading-5 flex-1 overflow-hidden text-ellipsis">
-                          {selectedNote.studentName}
-                        </h3>
-                      </div>
-                      <div className="flex items-center gap-2.5 h-11">
-                        <div className="flex h-11 p-[8px_4px] items-center gap-1 border border-stone-200 bg-white rounded-lg">
-                          <div className="flex w-9 h-9 items-center justify-center gap-2.5 rounded-[11px] bg-indigo-600">
-                            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M8.83301 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M12.167 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M13.8333 6.66602C14.0543 6.66602 14.2663 6.75381 14.4226 6.91009C14.5789 7.06637 14.6667 7.27834 14.6667 7.49935V14.166C14.6667 15.0501 14.3155 15.8979 13.6904 16.523C13.0652 17.1482 12.2174 17.4993 11.3333 17.4993H6.33333C5.44928 17.4993 4.60143 17.1482 3.97631 16.523C3.35119 15.8979 3 15.0501 3 14.166V7.49935C3 7.27834 3.0878 7.06637 3.24408 6.91009C3.40036 6.75381 3.61232 6.66602 3.83333 6.66602H15.5C16.3841 6.66602 17.2319 7.0172 17.857 7.64233C18.4821 8.26745 18.8333 9.11529 18.8333 9.99935C18.8333 10.8834 18.4821 11.7313 17.857 12.3564C17.2319 12.9815 16.3841 13.3327 15.5 13.3327H14.6667" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M5.5 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </div>
-                          <div className="flex w-9 h-9 items-center justify-center gap-2.5 rounded-[11px]">
-                            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5.50033 15.8327C7.34127 15.8327 8.83366 14.3403 8.83366 12.4993C8.83366 10.6584 7.34127 9.16602 5.50033 9.16602C3.65938 9.16602 2.16699 10.6584 2.16699 12.4993C2.16699 14.3403 3.65938 15.8327 5.50033 15.8327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M15.5003 15.8327C17.3413 15.8327 18.8337 14.3403 18.8337 12.4993C18.8337 10.6584 17.3413 9.16602 15.5003 9.16602C13.6594 9.16602 12.167 10.6584 12.167 12.4993C12.167 14.3403 13.6594 15.8327 15.5003 15.8327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M12.1663 12.5007C12.1663 12.0586 11.9907 11.6347 11.6782 11.3221C11.3656 11.0096 10.9417 10.834 10.4997 10.834C10.0576 10.834 9.63372 11.0096 9.32116 11.3221C9.0086 11.6347 8.83301 12.0586 8.83301 12.5007" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M2.58301 10.8327L4.66634 5.83268C5.24967 4.74935 5.83301 4.16602 7.16634 4.16602" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                              <path d="M18.4163 10.8327L16.333 5.83268C15.7497 4.74935 15.083 4.16602 13.833 4.16602" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </div>
-                        </div>
-                        <button className="flex w-11 h-11 p-4 items-center justify-center gap-1 border border-stone-200 bg-white rounded-full">
-                          <Edit3 className="w-5 h-5 flex-shrink-0 text-indigo-600" />
-                        </button>
-                      </div>
-                    </div>
-                    <div className="flex pl-[30px] items-start gap-1.5 mt-2">
-                      <span className="text-base text-stone-900 font-lexend w-[580px]">
-                        Fri, 18 July 2025, 9:00–9:45am
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Session Recap Section */}
-                  <div className="mb-6">
-                    <div className="flex h-[30px] items-center mb-2">
-                      <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-tight">
-                        Session recap
-                      </h4>
-                    </div>
-                    <div className="text-stone-500 text-lg font-lexend leading-relaxed">
-                      Practiced challenging subtraction cases (across zeros), reviewed multiplication,
-                      and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
-                    </div>
-                  </div>
-
-                  {/* Observations Section */}
+            <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
+              {/* Fixed Header */}
+              <div className="flex items-start justify-between p-5 flex-shrink-0">
+                <div className="flex items-start gap-1.5 justify-start">
+                  <CircleCheck className="w-6 h-6 text-green-500 mt-0.5" />
                   <div>
-                    <div className="flex h-[30px] justify-between items-center w-full mb-2">
-                      <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-tight">
-                        Observations
-                      </h4>
+                    <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
+                      {selectedNote.studentName}
+                    </h2>
+                    <p className="text-stone-600 font-lexend">
+                      {selectedNote.date}, {selectedNote.time}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <div className="flex self-center bg-white border border-stone-200 rounded-xl h-11 overflow-hidden relative p-[3px]">
+                    <div
+                      className="absolute bg-indigo-600 rounded-[9px] shadow-sm h-9 w-9 top-[3px] left-[3px]"
+                      style={{
+                        transition:
+                          "left 0.15s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.15s cubic-bezier(0.34, 1.25, 0.64, 1)",
+                      }}
+                    />
+                    <button className="flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium text-white">
+                      <Coffee className="w-5 h-5" strokeWidth={2} />
+                    </button>
+                    <button className="flex items-center justify-center rounded-[11px] h-9 w-9 relative z-10 transition-colors duration-300 p-1.5 font-lexend text-sm font-medium text-stone-500">
+                      <Glasses className="w-5 h-5" strokeWidth={2} />
+                    </button>
+                  </div>
+                  <button className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200">
+                    <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Scrollable Content */}
+              <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+                {/* Session Recap Section */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7 mb-3">
+                    Recap
+                  </h3>
+                  <p className="text-stone-700 font-lexend leading-relaxed">
+                    Practiced challenging subtraction cases (across zeros), reviewed multiplication,
+                    and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                  </p>
+                </div>
+
+                {/* Observations Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7 mb-4">
+                    Observations
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-stone-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-stone-700 font-lexend leading-relaxed">
+                        Completed <span className="font-semibold">complex borrowing</span> (across two zeros) with one error, then self‑caught.
+                      </p>
                     </div>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex pt-1 flex-col justify-center items-start">
-                          <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </div>
-                        <div className="flex-1 text-stone-500 text-lg font-lexend leading-relaxed">
-                          Completed <span className="font-bold text-stone-700">complex borrowing</span> (across two zeros) with one error, then self‑caught.
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex pt-1 flex-col justify-center items-start">
-                          <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </div>
-                        <div className="flex-1 text-stone-500 text-lg font-lexend leading-relaxed">
-                          Engaged deeply with <span className="font-bold text-stone-700">sports‑related</span> word problems
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex pt-1 flex-col justify-center items-start">
-                          <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </div>
-                        <div className="flex-1 text-stone-500 text-lg font-lexend leading-relaxed">
-                          Reported feeling <span className="font-bold text-stone-700">less nervous</span> about math at school.
-                        </div>
-                      </div>
+                    <div className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-stone-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-stone-700 font-lexend leading-relaxed">
+                        Engaged deeply with <span className="font-semibold">sports‑related</span> word problems.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-stone-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-stone-700 font-lexend leading-relaxed">
+                        Reported feeling <span className="font-semibold">less nervous</span> about math at school.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
