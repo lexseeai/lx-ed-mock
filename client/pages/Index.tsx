@@ -38,12 +38,6 @@ export default function Index() {
     "hiding" | "showing" | null
   >(null);
 
-  // Student panel state
-  const [showStudentOverlay, setShowStudentOverlay] = useState(false);
-  const [selectedStudentId, setSelectedStudentId] = useState<string | null>(
-    null,
-  );
-  const [currentStudentList, setCurrentStudentList] = useState<Student[]>([]);
 
   // Notes overlay state
   const [showNotesOverlay, setShowNotesOverlay] = useState(false);
