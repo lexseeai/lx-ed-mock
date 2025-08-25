@@ -181,8 +181,9 @@ export function SessionNotesView({
                     {note.studentName}
                   </span>
                 </div>
-                <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-0.5">
-                  {note.date} • {note.time}
+                <div className="text-stone-700 font-lexend text-xs leading-4 transition-colors pl-5 flex justify-between">
+                  <span>{note.date}</span>
+                  <span className="text-stone-500">{note.time}</span>
                 </div>
               </div>
             ))}
