@@ -2,7 +2,7 @@ import React from "react";
 import { Student } from "@/types/student";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { CircleCheck, LoaderCircle, Timer, Loader, Clock } from "lucide-react";
+import { CircleCheck, Circle, Timer, Loader, Clock } from "lucide-react";
 import {
   getSessionReportStatus,
   getSubjectColors,
@@ -39,14 +39,14 @@ export function StudentCard({
   const getTimeIcon = () => {
     switch (sessionStatus) {
       case "active": // in progress
-        return { icon: LoaderCircle, color: "text-indigo-600" };
+        return { icon: Circle, color: "text-pink-700" };
       case "late": // due soon
         return { icon: Timer, color: "text-pink-600" };
       case "done": // submitted
-        return { icon: CircleCheck, color: "text-green-600" };
+        return { icon: CircleCheck, color: "text-emerald-600" };
       case "waiting":
       default:
-        return { icon: Clock, color: "text-stone-700" };
+        return { icon: Clock, color: "text-stone-400" };
     }
   };
 
