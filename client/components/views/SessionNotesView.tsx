@@ -155,25 +155,13 @@ export function SessionNotesView({
         {/* Left Sidebar - Session List */}
         <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
           {/* Header */}
-          <div className="flex items-center justify-between px-5 pt-5 pb-3">
-            <h2
-              className="text-xl font-bold font-lexend -tracking-[0.35px]"
-              style={{ color: "#44403c" }}
-            >
-              Sessions
-            </h2>
-            <Calendar
-              className="w-6 h-6"
-              style={{ color: "rgba(214, 211, 209, 1)" }}
-            />
+          <div className="px-5 pt-5 pb-3" style={{ color: "rgb(68, 64, 60)", letterSpacing: "-0.35px", font: "400 20px/28px Lexend, sans-serif" }}>
+            Open
           </div>
 
           {/* Session List */}
           <div className="flex-1 overflow-y-auto">
-            {/* To do section */}
-            <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
-              To do
-            </div>
+            {/* Session notes */}
             {todoNotes.map((note) => (
               <div
                 key={note.id}
@@ -200,8 +188,10 @@ export function SessionNotesView({
             ))}
 
             {/* Done section */}
-            <div className="text-stone-400 font-lexend text-xs font-light pt-3 pb-0 pl-5">
-              Done
+            <div className="text-stone-400 font-lexend text-xs font-light pl-5" style={{ padding: "20px 0 12px 20px" }}>
+              <span style={{ color: "rgb(68, 64, 60)", fontSize: "20px", fontWeight: "700", letterSpacing: "-0.35px" }}>
+                Done
+              </span>
             </div>
             {doneNotes.map((note) => (
               <div
