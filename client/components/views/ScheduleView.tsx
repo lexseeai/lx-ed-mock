@@ -337,11 +337,17 @@ export function ScheduleView({
               <div className="absolute inset-0 pointer-events-none">
                 {todaysSessions.map((session, index) => {
                   const sessionHour = session.sessionDate?.getHours() || 9;
-                  const topPosition = ((sessionHour - 8) * 52) + 20; // 52px per hour + padding
-                  
+                  const sessionMinutes = session.sessionDate?.getMinutes() || 0;
+
+                  // Calculate precise start position including minutes
+                  const startPosition = ((sessionHour - 8) * 52) + (sessionMinutes / 60 * 52) + 20;
+
+                  // Session duration is 45 minutes = 39px (0.75 * 52px per hour)
+                  const sessionHeight = 39;
+
                   let bgColor = "bg-indigo-100 border-indigo-200";
                   let textColor = "text-stone-600";
-                  
+
                   if (session.sessionReportCompleted) {
                     bgColor = "bg-indigo-50 border-indigo-100";
                   } else if (sessionHour < new Date().getHours()) {
@@ -349,16 +355,28 @@ export function ScheduleView({
                     textColor = "text-white";
                   }
 
+                  // Format time range for display
+                  const startTime = session.sessionTime?.split(", ")[0] || "";
+                  const endHour = sessionMinutes >= 15 ? sessionHour + 1 : sessionHour;
+                  const endMinutes = (sessionMinutes + 45) % 60;
+                  const endPeriod = sessionHour >= 12 ? "pm" : "am";
+                  const displayHour = sessionHour > 12 ? sessionHour - 12 : sessionHour === 0 ? 12 : sessionHour;
+                  const endDisplayHour = endHour > 12 ? endHour - 12 : endHour === 0 ? 12 : endHour;
+                  const timeRange = `${displayHour}:${sessionMinutes.toString().padStart(2, '0')} – ${endDisplayHour}:${endMinutes.toString().padStart(2, '0')}`;
+
                   return (
                     <button
                       key={session.id}
                       onClick={() => setSelectedSession(session)}
-                      className={`absolute left-9 w-[400px] h-[35px] flex items-center px-1.5 rounded-md border pointer-events-auto ${bgColor}`}
-                      style={{ top: `${topPosition}px` }}
+                      className={`absolute left-9 w-[400px] flex items-center px-1.5 rounded-md border pointer-events-auto ${bgColor}`}
+                      style={{
+                        top: `${startPosition}px`,
+                        height: `${sessionHeight}px`
+                      }}
                     >
                       <div className="flex items-center gap-4.5">
                         <div className={`w-[75px] text-xs font-lexend ${textColor}`}>
-                          {session.sessionTime?.split(", ")[0] || ""}
+                          {timeRange}
                         </div>
                         <div className="flex items-center gap-2">
                           <div className={`text-sm font-bold font-lexend ${textColor}`}>
