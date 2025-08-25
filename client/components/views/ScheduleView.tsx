@@ -435,8 +435,8 @@ export function ScheduleView({
           </div>
         </div>
 
-        {/* Right: Session Details */}
-        {selectedSession && (
+        {/* Right: Session Details - Always visible for design mode */}
+        {(selectedSession || true) && (
           <div className="flex-1 flex flex-col bg-white rounded-lg border border-stone-200">
             <div className="flex p-[18px_36px_0_36px] flex-col items-start gap-2.5 flex-1 self-stretch">
               {/* Top section */}
