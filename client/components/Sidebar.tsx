@@ -189,7 +189,6 @@ export function Sidebar({
               }`}
               onClick={() => {
                 setActiveView("sessionnotes");
-                setShowStudentOverlay(false);
               }}
             >
               <div className="flex items-center space-x-2">
