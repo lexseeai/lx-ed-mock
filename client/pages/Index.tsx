@@ -8,7 +8,6 @@ import { mockStudents } from "@/data/mockStudents";
 
 // Components
 import { Sidebar } from "@/components/Sidebar";
-import { StudentDetailPanel } from "@/components/StudentDetailPanel";
 import { NotesOverlay } from "@/components/NotesOverlay";
 import { HomeView } from "@/components/views/HomeView";
 import { AllStudentsView } from "@/components/views/AllStudentsView";
