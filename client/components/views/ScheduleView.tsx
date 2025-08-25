@@ -329,11 +329,11 @@ export function ScheduleView({
             <div className="flex-1 flex flex-col relative">
               {/* Hour markers */}
               {Array.from({ length: 13 }, (_, i) => i + 8).map((hour) => (
-                <div key={hour} className="flex items-center gap-2.5 px-3 py-3 relative">
-                  <div className="w-16 text-sm text-stone-600 text-right font-lexend font-medium">
-                    {hour.toString().padStart(2, '0')}:00
+                <div key={hour} className="flex items-center gap-2.5 px-3 py-3">
+                  <div className="w-4 text-xs text-stone-400 text-right font-lexend">
+                    {hour}
                   </div>
-                  <div className="flex-1 h-px bg-stone-200"></div>
+                  <div className="flex-1 h-px bg-stone-100"></div>
                 </div>
               ))}
 
@@ -385,20 +385,23 @@ export function ScheduleView({
                     <button
                       key={session.id}
                       onClick={() => setSelectedSession(session)}
-                      className={`absolute flex items-center px-3 py-1 rounded-md border pointer-events-auto ${bgColor}`}
+                      className={`absolute left-9 w-[400px] flex items-center px-1.5 rounded-md border pointer-events-auto ${bgColor}`}
                       style={{
-                        left: "76px", // Position after time column
-                        width: "calc(100% - 76px - 24px)", // Full width minus time column and padding
                         top: `${startPosition}px`,
                         height: `${sessionHeight}px`
                       }}
                     >
-                      <div className="flex items-center gap-2">
-                        <div className={`text-sm font-bold font-lexend ${textColor}`}>
-                          {session.name}
+                      <div className="flex items-center gap-4.5">
+                        <div className={`w-[75px] text-xs font-lexend ${textColor}`} style={{marginRight: "16px"}}>
+                          {timeRange}
                         </div>
-                        <div className={`text-sm font-normal font-lexend opacity-60 ${textColor}`}>
-                          {session.subject}
+                        <div className="flex items-center gap-2">
+                          <div className={`text-sm font-bold font-lexend ${textColor}`}>
+                            {session.name}
+                          </div>
+                          <div className={`text-sm font-normal font-lexend opacity-60 ${textColor}`}>
+                            {session.subject}
+                          </div>
                         </div>
                       </div>
                     </button>
@@ -409,16 +412,11 @@ export function ScheduleView({
               {/* Current time indicator - only show on today */}
               {selectedDayDate === "28" && (
                 <div
-                  className="absolute h-0.5 bg-red-500 rounded-full z-10"
+                  className="absolute left-9 w-[400px] h-1 bg-red-600 rounded-full"
                   style={{
-                    left: "76px",
-                    width: "calc(100% - 76px - 24px)",
                     top: `${(new Date().getHours() - 8) * 46 + (new Date().getMinutes() / 60 * 46) + 12}px`
                   }}
-                >
-                  {/* Current time dot */}
-                  <div className="absolute -left-1 -top-1 w-2 h-2 bg-red-500 rounded-full"></div>
-                </div>
+                />
               )}
             </div>
           </div>
