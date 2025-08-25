@@ -339,11 +339,12 @@ export function ScheduleView({
                   const sessionHour = session.sessionDate?.getHours() || 9;
                   const sessionMinutes = session.sessionDate?.getMinutes() || 0;
 
-                  // Calculate precise start position including minutes
-                  const startPosition = ((sessionHour - 8) * 52) + (sessionMinutes / 60 * 52) + 20;
+                  // Calculate precise start position - each hour row is 48px tall (py-3 = 24px + content)
+                  const hourHeight = 48;
+                  const startPosition = (sessionHour - 8) * hourHeight + (sessionMinutes / 60 * hourHeight);
 
-                  // Session duration is 45 minutes = 39px (0.75 * 52px per hour)
-                  const sessionHeight = 39;
+                  // Session duration is 45 minutes = 36px (0.75 * 48px per hour)
+                  const sessionHeight = 36;
 
                   let bgColor = "bg-indigo-100 border-indigo-200";
                   let textColor = "text-stone-600";
