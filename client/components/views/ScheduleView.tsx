@@ -308,9 +308,14 @@ export function ScheduleView({
           <div className="flex flex-col flex-1 justify-between">
             {/* Header */}
             <div className="flex items-center justify-between px-9 py-6">
-              <h2 className="text-4xl font-normal text-stone-700 font-lexend tracking-tight">
-                Monday 28
-              </h2>
+              <div className="flex gap-1">
+                <h2 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
+                  Monday
+                </h2>
+                <h2 className="text-4xl font-normal text-stone-700 font-lexend tracking-tight">
+                  28
+                </h2>
+              </div>
               <span className="text-sm font-semibold text-stone-500 font-lexend">
                 Today
               </span>
@@ -348,7 +353,7 @@ export function ScheduleView({
                     <button
                       key={session.id}
                       onClick={() => setSelectedSession(session)}
-                      className={`absolute left-11.5 w-[374px] h-[35px] flex items-center px-1.5 rounded-md border pointer-events-auto ${bgColor}`}
+                      className={`absolute left-9 w-[400px] h-[35px] flex items-center px-1.5 rounded-md border pointer-events-auto ${bgColor}`}
                       style={{ top: `${topPosition}px` }}
                     >
                       <div className="flex items-center gap-4.5">
@@ -369,11 +374,13 @@ export function ScheduleView({
                 })}
               </div>
 
-              {/* Current time indicator */}
+              {/* Current time indicator - only show on today */}
               {selectedDayDate === "28" && (
-                <div 
-                  className="absolute left-11.5 w-[374px] h-1 bg-red-600 rounded-full"
-                  style={{ top: "490px" }}
+                <div
+                  className="absolute left-9 w-[400px] h-1 bg-red-600 rounded-full"
+                  style={{
+                    top: `${((new Date().getHours() - 8) * 52) + 20}px`
+                  }}
                 />
               )}
             </div>
