@@ -101,10 +101,10 @@ export function SessionNotesView({
   return (
     <div className="flex flex-col h-full bg-stone-50 rounded-lg border border-stone-200 shadow-lg">
       {/* Header */}
-      <div className="px-6 py-4 bg-white border-b border-stone-200 rounded-t-lg">
+      <div className="px-6 pt-6 pb-4 bg-white border-b border-stone-200 rounded-t-lg">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-end gap-0.5">
-            <h1 className="text-2xl font-black text-stone-700 font-lexend tracking-tight pl-2">
+            <h1 className="text-2xl font-black text-stone-700 font-lexend tracking-tight pl-2 h-11">
               Session Notes
             </h1>
           </div>
