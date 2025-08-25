@@ -440,7 +440,7 @@ export function ScheduleView({
                 <div className="flex flex-col items-start">
                   {/* Name */}
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="flex w-15 h-15 p-[18px_10px] flex-col justify-center items-center gap-2.5 rounded-full border-2 border-white bg-[#F2E9FE]">
+                    <div className="flex w-[60px] h-[60px] p-[18px_10px] flex-col justify-center items-center gap-2.5 rounded-full border-2 border-white bg-[#F2E9FE]">
                       <span className="text-[#7536C7] font-lexend text-2xl font-bold leading-4 tracking-[-0.12px]">
                         M
                       </span>
