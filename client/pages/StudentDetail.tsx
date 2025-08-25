@@ -4386,7 +4386,7 @@ export default function StudentDetail() {
                           {/* Fixed Header */}
                           <div className="flex items-start justify-between p-5 flex-shrink-0">
                             <div className="flex items-start gap-1.5 justify-start">
-                              <Clock className="w-6 h-6 text-stone-700 mt-0.5" />
+                              <Clock className="w-6 h-6 text-stone-400 mt-0.5" />
                               <div>
                                 <h2 className="text-xl font-bold text-stone-900 font-lexend tracking-[-0.35px]">
                                   August 1 2025
