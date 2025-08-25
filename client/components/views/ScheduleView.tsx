@@ -452,10 +452,10 @@ export function ScheduleView({
                     </div>
                     <div className="flex p-[2px_0] flex-col justify-center items-start">
                       <div className="text-stone-900 font-lexend text-[30px] font-bold leading-9 tracking-[-0.15px]">
-                        {selectedSession.name} Smith
+                        {selectedSession?.name || "Marcus"} Smith
                       </div>
                       <div className="text-stone-400 font-lexend text-sm font-medium leading-5 tracking-[-0.07px]">
-                        {selectedSession.subject}
+                        {selectedSession?.subject || "English tutoring"}
                       </div>
                     </div>
                   </div>
@@ -471,7 +471,7 @@ export function ScheduleView({
                   className="flex p-[8px_16px] justify-center items-center gap-1 rounded-md border border-stone-200 bg-white hover:bg-stone-50"
                   onMouseEnter={() => setIsViewStudentHovered(true)}
                   onMouseLeave={() => setIsViewStudentHovered(false)}
-                  onClick={() => onStudentClick(selectedSession.id, students)}
+                  onClick={() => onStudentClick(selectedSession?.id || '15', students)}
                 >
                   <span className="text-black font-['Readex_Pro'] text-sm font-normal leading-6 tracking-[-0.07px]">
                     View student
