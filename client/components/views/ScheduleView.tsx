@@ -339,8 +339,8 @@ export function ScheduleView({
                   const sessionHour = session.sessionDate?.getHours() || 9;
                   const sessionMinutes = session.sessionDate?.getMinutes() || 0;
 
-                  // Each hour row: py-3 (12px top + 12px bottom) + content ≈ 52px total height
-                  const hourHeight = 52;
+                  // Each hour row: py-3 (12px top + 12px bottom) + content ≈ 46px total height
+                  const hourHeight = 46;
                   const startPosition = (sessionHour - 8) * hourHeight + (sessionMinutes / 60 * hourHeight);
 
                   // Debug: Log positioning
@@ -348,8 +348,8 @@ export function ScheduleView({
                     console.log(`${session.name} (${sessionHour}:${sessionMinutes.toString().padStart(2,'0')}): position ${startPosition}px`);
                   }
 
-                  // Session duration is 45 minutes = 39px (0.75 * 52px per hour)
-                  const sessionHeight = 39;
+                  // Session duration is 45 minutes = 34px (0.75 * 46px per hour)
+                  const sessionHeight = 34;
 
                   let bgColor = "bg-indigo-100 border-indigo-200";
                   let textColor = "text-stone-600";
@@ -407,7 +407,7 @@ export function ScheduleView({
                 <div
                   className="absolute left-9 w-[400px] h-1 bg-red-600 rounded-full"
                   style={{
-                    top: `${(new Date().getHours() - 8) * 52 + (new Date().getMinutes() / 60 * 52)}px`
+                    top: `${(new Date().getHours() - 8) * 46 + (new Date().getMinutes() / 60 * 46)}px`
                   }}
                 />
               )}
