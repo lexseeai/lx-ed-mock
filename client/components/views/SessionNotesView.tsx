@@ -155,7 +155,7 @@ export function SessionNotesView({
         {/* Left Sidebar - Session List */}
         <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
           {/* Header */}
-          <div className="px-5 pt-5 pb-3" style={{ color: "rgb(68, 64, 60)", letterSpacing: "-0.35px", font: "400 20px/28px Lexend, sans-serif" }}>
+          <div className="px-5 pt-5 pb-3" style={{ color: "rgba(87, 83, 77, 1)", letterSpacing: "-0.35px", font: "900 24px/28px Lexend, sans-serif" }}>
             Open
           </div>
 
@@ -190,9 +190,7 @@ export function SessionNotesView({
 
             {/* Done section */}
             <div className="text-stone-400 font-lexend text-xs font-light pl-5" style={{ padding: "20px 0 12px 20px" }}>
-              <span style={{ color: "rgb(68, 64, 60)", fontSize: "20px", fontWeight: "700", letterSpacing: "-0.35px" }}>
-                Done
-              </span>
+              <span style={{ color: "rgb(87, 83, 77)" }}>Done</span>
             </div>
             {doneNotes.map((note) => (
               <div
@@ -225,7 +223,7 @@ export function SessionNotesView({
         {/* Main Content Area */}
         <div
           className="flex-1 pl-4 flex flex-col justify-center items-center"
-          style={{ backgroundColor: "rgba(247, 247, 247, 1)", paddingLeft: "24px" }}
+          style={{ paddingLeft: "24px" }}
         >
           {selectedNote && (
             <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
