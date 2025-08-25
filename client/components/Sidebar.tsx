@@ -24,7 +24,6 @@ interface SidebarProps {
   activeView: string;
   setActiveView: (view: string) => void;
   onThisWeekClick: () => void;
-  setShowStudentOverlay: (show: boolean) => void;
   greeting: { text: string; icon: string };
 }
 
@@ -32,7 +31,6 @@ export function Sidebar({
   activeView,
   setActiveView,
   onThisWeekClick,
-  setShowStudentOverlay,
   greeting,
 }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
