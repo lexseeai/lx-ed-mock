@@ -159,26 +159,48 @@ export const mockStudents: Student[] = [
     email: "marcus.brown@email.com",
   }, // Waiting (7pm, not completed)
 
-  // July 29th - all waiting
+  // July 29th - 1 session
   {
     id: "16",
-    name: "Carlos",
-    subject: "Physics Tutoring",
-    sessionTime: "8:00pm, August 3",
-    sessionDate: new Date(2025, 7, 3),
+    name: "Sofia",
+    subject: "History Tutoring",
+    sessionTime: "2:00pm, July 29",
+    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sofia",
+    sessionDate: new Date(2025, 6, 29, 14, 0, 0),
     sessionReportCompleted: false,
-    email: "carlos.rodriguez@email.com",
+    email: "sofia.garcia@email.com",
   }, // Waiting
 
-  // July 31st - all waiting
+  // July 31st - 3 sessions
   {
     id: "17",
     name: "Maya",
     subject: "Biology Tutoring",
-    sessionTime: "10:00am, August 5",
-    sessionDate: new Date(2025, 7, 5),
+    sessionTime: "10:00am, July 31",
+    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Maya",
+    sessionDate: new Date(2025, 6, 31, 10, 0, 0),
     sessionReportCompleted: false,
     email: "maya.patel@email.com",
+  }, // Waiting
+  {
+    id: "18",
+    name: "Liam",
+    subject: "Chemistry Tutoring",
+    sessionTime: "1:30pm, July 31",
+    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam",
+    sessionDate: new Date(2025, 6, 31, 13, 30, 0),
+    sessionReportCompleted: false,
+    email: "liam.davis@email.com",
+  }, // Waiting
+  {
+    id: "19",
+    name: "Isabella",
+    subject: "Spanish Tutoring",
+    sessionTime: "4:00pm, July 31",
+    avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Isabella",
+    sessionDate: new Date(2025, 6, 31, 16, 0, 0),
+    sessionReportCompleted: false,
+    email: "isabella.martinez@email.com",
   }, // Waiting
   {
     id: "18",
