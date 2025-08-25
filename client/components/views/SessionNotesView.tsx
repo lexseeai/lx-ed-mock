@@ -104,7 +104,7 @@ export function SessionNotesView({
       <div className="p-4 bg-white border-b border-stone-200 rounded-t-lg">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-end gap-0.5">
-            <h1 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
+            <h1 className="text-2xl font-black text-stone-700 font-lexend tracking-tight">
               Session Notes
             </h1>
           </div>
@@ -157,8 +157,8 @@ export function SessionNotesView({
           {/* To do List */}
           <div className="w-[350px] min-w-[300px] max-w-[350px] p-[18px] bg-white border border-stone-200 rounded-lg">
             <div className="flex items-end gap-2.5 mb-4">
-              <h2 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
-                To do
+              <h2 className="text-3xl font-black text-stone-700 font-lexend tracking-tight">
+                To<span style={{letterSpacing: '-7.9px'}}> </span>do
               </h2>
             </div>
             <div className="space-y-3">
@@ -201,7 +201,7 @@ export function SessionNotesView({
           {/* Done List */}
           <div className="w-[350px] min-w-[300px] max-w-[350px] p-[18px_18px_0_18px] bg-white border border-stone-200 rounded-lg flex-1">
             <div className="flex items-end gap-2.5 mb-4">
-              <h2 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
+              <h2 className="text-3xl font-black text-stone-700 font-lexend tracking-tight">
                 Done
               </h2>
             </div>
