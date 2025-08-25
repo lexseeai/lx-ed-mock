@@ -15,6 +15,7 @@ import {
   FileAudio,
   Clock,
   LoaderCircle,
+  Circle,
   CircleCheck,
   Timer,
   Search,
@@ -284,13 +285,13 @@ export function StudentDetailPanel({
         return { icon: Clock, color: "text-stone-400" };
       case "in-progress":
         return {
-          icon: LoaderCircle,
-          color: "text-indigo-600",
+          icon: Circle,
+          color: "text-pink-700",
         };
       case "done":
         return {
           icon: CircleCheck,
-          color: "text-green-500",
+          color: "text-emerald-600",
         };
       case "late":
         return { icon: Timer, color: "text-pink-600" };
