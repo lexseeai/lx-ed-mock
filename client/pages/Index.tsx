@@ -144,40 +144,26 @@ export default function Index() {
     studentId: string,
     studentList: Student[] = [],
   ) => {
-    if (activeView === "all") {
-      const student = mockStudents.find((s) => s.id === studentId);
-      if (student) {
-        const studentIdMap: Record<string, string> = {
-          Alex: "23",
-          Emma: "2",
-          Marcus: "3",
-          Isabella: "4",
-          Carlos: "16",
-          Daniel: "6",
-          Liam: "7",
-          Kai: "8",
-          Oliver: "9",
-          Maya: "17",
-          Zoe: "19",
-          Luna: "28",
-          Sofia: "10",
-        };
-        const detailPageId = studentIdMap[student.name] || studentId;
-        navigate(`/student/${detailPageId}`);
-      }
-      return;
-    }
-
-    if (
-      activeView === "home" ||
-      activeView === "schedule" ||
-      activeView === "sessionnotes"
-    ) {
-      setSelectedStudentId(studentId);
-      setCurrentStudentList(studentList);
-      setShowStudentOverlay(true);
-    } else {
-      navigate(`/student/${studentId}`);
+    // Always navigate to the full student page
+    const student = mockStudents.find((s) => s.id === studentId);
+    if (student) {
+      const studentIdMap: Record<string, string> = {
+        Alex: "23",
+        Emma: "2",
+        Marcus: "3",
+        Isabella: "4",
+        Carlos: "16",
+        Daniel: "6",
+        Liam: "7",
+        Kai: "8",
+        Oliver: "9",
+        Maya: "17",
+        Zoe: "19",
+        Luna: "28",
+        Sofia: "10",
+      };
+      const detailPageId = studentIdMap[student.name] || studentId;
+      navigate(`/student/${detailPageId}`);
     }
   };
 
