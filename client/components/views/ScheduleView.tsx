@@ -435,8 +435,8 @@ export function ScheduleView({
           </div>
         </div>
 
-        {/* Right: Session Details - Always visible for design mode */}
-        {(selectedSession || true) && (
+        {/* Right: Session Details */}
+        {selectedSession && (
           <div className="flex-1 flex flex-col bg-white rounded-lg border border-stone-200">
             <div className="flex p-[18px_36px_0_36px] flex-col items-start gap-2.5 flex-1 self-stretch">
               {/* Top section */}
@@ -452,10 +452,10 @@ export function ScheduleView({
                     </div>
                     <div className="flex p-[2px_0] flex-col justify-center items-start">
                       <div className="text-stone-900 font-lexend text-[30px] font-bold leading-9 tracking-[-0.15px]">
-                        {selectedSession?.name || "Marcus"} Smith
+                        {selectedSession.name} Smith
                       </div>
                       <div className="text-stone-400 font-lexend text-sm font-medium leading-5 tracking-[-0.07px]">
-                        {selectedSession?.subject || "English tutoring"}
+                        {selectedSession.subject}
                       </div>
                     </div>
                   </div>
@@ -471,7 +471,7 @@ export function ScheduleView({
                   className="flex p-[8px_16px] justify-center items-center gap-1 rounded-md border border-stone-200 bg-white hover:bg-stone-50"
                   onMouseEnter={() => setIsViewStudentHovered(true)}
                   onMouseLeave={() => setIsViewStudentHovered(false)}
-                  onClick={() => onStudentClick(selectedSession?.id || '15', students)}
+                  onClick={() => onStudentClick(selectedSession.id, students)}
                 >
                   <span className="text-black font-['Readex_Pro'] text-sm font-normal leading-6 tracking-[-0.07px]">
                     View student
