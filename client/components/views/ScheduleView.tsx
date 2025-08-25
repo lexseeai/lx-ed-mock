@@ -162,9 +162,9 @@ export function ScheduleView({
             </button>
             <button
               onClick={handleToday}
-              className="flex h-11 px-4 items-center justify-center gap-2 border border-stone-200 bg-white rounded-lg hover:bg-stone-50"
+              className="flex h-11 w-27 px-4 items-center justify-center gap-2 border border-stone-200 bg-white rounded-lg hover:bg-stone-50 font-lexend"
             >
-              <span className="text-base font-normal text-stone-900 font-readex">
+              <span className="text-base font-normal text-stone-900">
                 Today
               </span>
             </button>
@@ -217,7 +217,7 @@ export function ScheduleView({
 
         {/* Calendar Days - Centered */}
         <div className="flex justify-center">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5">
             {currentWeek.slice(0, 7).map((dayData) => {
               const isSelected = selectedDayDate === dayData.date;
               const isToday = dayData.isToday;
