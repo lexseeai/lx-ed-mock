@@ -2305,7 +2305,8 @@ export default function StudentDetail() {
                           {
                             id: "subtraction-borrowing",
                             title: "Subtraction with borrowing",
-                            subtitle: "three-digit subtraction problems correct (75% accuracy)",
+                            subtitle:
+                              "three-digit subtraction problems correct (75% accuracy)",
                           },
                         ].map((item) => (
                           <div
@@ -2317,11 +2318,17 @@ export default function StudentDetail() {
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor:
+                                selectedSessionId === item.id
+                                  ? "rgba(238, 242, 255, 1)"
+                                  : undefined,
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
-                              <SquareArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 150, 137, 1)" }} />
+                              <SquareArrowUpRight
+                                className="w-4 h-4"
+                                style={{ color: "rgba(0, 150, 137, 1)" }}
+                              />
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
                               </span>
@@ -2345,7 +2352,8 @@ export default function StudentDetail() {
                           {
                             id: "multi-step",
                             title: "Multi-step",
-                            subtitle: "Ready to practice multi-step word problems next session",
+                            subtitle:
+                              "Ready to practice multi-step word problems next session",
                           },
                         ].map((item) => (
                           <div
@@ -2357,16 +2365,28 @@ export default function StudentDetail() {
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor:
+                                selectedSessionId === item.id
+                                  ? "rgba(238, 242, 255, 1)"
+                                  : undefined,
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {item.id === "multi-step" ? (
-                                <SquareArrowDownRight className="w-4 h-4" style={{ color: "rgba(254, 154, 0, 1)" }} />
+                                <SquareArrowDownRight
+                                  className="w-4 h-4"
+                                  style={{ color: "rgba(254, 154, 0, 1)" }}
+                                />
                               ) : item.id === "borrowing-zeros" ? (
-                                <MessageCirclePlus className="w-4 h-4" style={{ color: "rgba(0, 132, 209, 1)" }} />
+                                <MessageCirclePlus
+                                  className="w-4 h-4"
+                                  style={{ color: "rgba(0, 132, 209, 1)" }}
+                                />
                               ) : (
-                                <SquareArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 150, 137, 1)" }} />
+                                <SquareArrowUpRight
+                                  className="w-4 h-4"
+                                  style={{ color: "rgba(0, 150, 137, 1)" }}
+                                />
                               )}
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
@@ -2398,11 +2418,17 @@ export default function StudentDetail() {
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor:
+                                selectedSessionId === item.id
+                                  ? "rgba(238, 242, 255, 1)"
+                                  : undefined,
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
-                              <SquareArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 150, 137, 1)" }} />
+                              <SquareArrowUpRight
+                                className="w-4 h-4"
+                                style={{ color: "rgba(0, 150, 137, 1)" }}
+                              />
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
                               </span>
@@ -2421,12 +2447,14 @@ export default function StudentDetail() {
                           {
                             id: "affect",
                             title: "Affect",
-                            subtitle: "Increased willingness to tackle challenging questions",
+                            subtitle:
+                              "Increased willingness to tackle challenging questions",
                           },
                           {
                             id: "real-world-context",
                             title: "Real-world context",
-                            subtitle: "Engaged by sports-statistics word problems",
+                            subtitle:
+                              "Engaged by sports-statistics word problems",
                           },
                         ].map((item) => (
                           <div
@@ -2438,16 +2466,28 @@ export default function StudentDetail() {
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === item.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor:
+                                selectedSessionId === item.id
+                                  ? "rgba(238, 242, 255, 1)"
+                                  : undefined,
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
                               {item.id === "real-world-context" ? (
-                                <SquareMinus className="w-4 h-4" style={{ color: "rgba(121, 113, 107, 1)" }} />
+                                <SquareMinus
+                                  className="w-4 h-4"
+                                  style={{ color: "rgba(121, 113, 107, 1)" }}
+                                />
                               ) : item.id === "affect" ? (
-                                <MessageCircleDashed className="w-4 h-4" style={{ color: "rgba(121, 113, 107, 1)" }} />
+                                <MessageCircleDashed
+                                  className="w-4 h-4"
+                                  style={{ color: "rgba(121, 113, 107, 1)" }}
+                                />
                               ) : (
-                                <SquareArrowUpRight className="w-4 h-4" style={{ color: "rgba(0, 150, 137, 1)" }} />
+                                <SquareArrowUpRight
+                                  className="w-4 h-4"
+                                  style={{ color: "rgba(0, 150, 137, 1)" }}
+                                />
                               )}
                               <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                                 {item.title}
@@ -2471,7 +2511,8 @@ export default function StudentDetail() {
                           Progress tracking content
                         </h3>
                         <p className="text-stone-500 font-lexend text-sm">
-                          Select a session from the left to view progress details
+                          Select a session from the left to view progress
+                          details
                         </p>
                       </div>
                     </div>
@@ -2519,7 +2560,10 @@ export default function StudentDetail() {
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor:
+                                selectedSessionId === session.id
+                                  ? "rgba(238, 242, 255, 1)"
+                                  : undefined,
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
@@ -2584,7 +2628,10 @@ export default function StudentDetail() {
                                 : "hover:bg-stone-50"
                             }`}
                             style={{
-                              backgroundColor: selectedSessionId === session.id ? "rgba(238, 242, 255, 1)" : undefined
+                              backgroundColor:
+                                selectedSessionId === session.id
+                                  ? "rgba(238, 242, 255, 1)"
+                                  : undefined,
                             }}
                           >
                             <div className="flex items-center gap-1 py-0.5">
