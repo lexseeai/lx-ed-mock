@@ -341,19 +341,6 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Student Details Panel */}
-        <StudentDetailPanel
-          showStudentOverlay={showStudentOverlay}
-          selectedStudent={getSelectedStudent()}
-          currentStudentList={currentStudentList}
-          onClose={closeStudentPanel}
-          onExpandStudent={handleExpandStudent}
-          onNavigatePrevious={navigatePrevious}
-          onNavigateNext={navigateNext}
-          canNavigatePrevious={canNavigatePrevious()}
-          canNavigateNext={canNavigateNext()}
-          openNotesOverlay={openNotesOverlay}
-        />
 
         {/* Notes Overlay */}
         <NotesOverlay
