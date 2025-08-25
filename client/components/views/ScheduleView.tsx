@@ -339,10 +339,9 @@ export function ScheduleView({
                   const sessionHour = session.sessionDate?.getHours() || 9;
                   const sessionMinutes = session.sessionDate?.getMinutes() || 0;
 
-                  // Calculate precise start position - each hour row is 48px tall (py-3 = 24px + content)
-                  const hourHeight = 48;
-                  const hourOffset = 12; // py-3 top padding
-                  const startPosition = (sessionHour - 8) * hourHeight + hourOffset + (sessionMinutes / 60 * hourHeight);
+                  // Each hour row: py-3 (12px top + 12px bottom) + content ≈ 44px total height
+                  const hourHeight = 44;
+                  const startPosition = (sessionHour - 8) * hourHeight + (sessionMinutes / 60 * hourHeight);
 
                   // Session duration is 45 minutes = 36px (0.75 * 48px per hour)
                   const sessionHeight = 36;
