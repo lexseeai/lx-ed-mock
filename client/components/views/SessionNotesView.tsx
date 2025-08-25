@@ -263,7 +263,7 @@ export function SessionNotesView({
               </div>
 
               {/* Scrollable Content */}
-              <div className="flex-1 overflow-y-auto py-8 px-[50px]">
+              <div className="flex-1 overflow-y-auto p-6">
                 {/* Session Recap Section */}
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-stone-900 font-lexend leading-7 mb-3">
