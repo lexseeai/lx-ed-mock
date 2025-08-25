@@ -359,10 +359,17 @@ export function ScheduleView({
                   // Session duration is 45 minutes = 34px (0.75 * 46px per hour)
                   const sessionHeight = 34;
 
+                  // Check if this session is selected
+                  const isSelected = selectedSession?.id === session.id;
+
                   let bgColor = "bg-indigo-100 border-indigo-200";
                   let textColor = "text-stone-600";
 
-                  if (session.sessionReportCompleted) {
+                  if (isSelected) {
+                    // Selected state: indigo-600 background with white text
+                    bgColor = "bg-indigo-600 border-indigo-600";
+                    textColor = "text-white";
+                  } else if (session.sessionReportCompleted) {
                     bgColor = "bg-indigo-50 border-indigo-100";
                   } else if (sessionHour < new Date().getHours()) {
                     bgColor = "bg-indigo-600 border-indigo-600";
