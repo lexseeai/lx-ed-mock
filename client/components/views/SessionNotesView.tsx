@@ -105,7 +105,7 @@ export function SessionNotesView({
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-end gap-0.5">
             <h1 className="text-2xl font-black text-stone-700 font-lexend tracking-tight pl-2 h-11">
-              Session Notes
+              Session notes
             </h1>
           </div>
           <div className="flex items-center gap-1.5">
