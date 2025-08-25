@@ -261,104 +261,108 @@ export function SessionNotesView({
         <div className="flex-1 bg-white border border-stone-200 rounded-lg flex flex-col min-w-[500px] max-w-[650px]">
           {selectedNote && (
             <>
-              {/* Header */}
-              <div className="p-[18px] border-b-0">
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-1.5 w-[391px]">
-                    <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M9.5 12L11.5 14L15.5 10" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <h3 className="text-2xl font-bold text-stone-900 font-lexend tracking-tight leading-5 flex-1 overflow-hidden text-ellipsis">
-                      {selectedNote.studentName}
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-2.5 h-11">
-                    <div className="flex h-11 p-[8px_4px] items-center gap-1 border border-stone-200 bg-white rounded-lg">
-                      <div className="flex w-9 h-9 items-center justify-center gap-2.5 rounded-[11px] bg-indigo-600">
-                        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M8.83301 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M12.167 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M13.8333 6.66602C14.0543 6.66602 14.2663 6.75381 14.4226 6.91009C14.5789 7.06637 14.6667 7.27834 14.6667 7.49935V14.166C14.6667 15.0501 14.3155 15.8979 13.6904 16.523C13.0652 17.1482 12.2174 17.4993 11.3333 17.4993H6.33333C5.44928 17.4993 4.60143 17.1482 3.97631 16.523C3.35119 15.8979 3 15.0501 3 14.166V7.49935C3 7.27834 3.0878 7.06637 3.24408 6.91009C3.40036 6.75381 3.61232 6.66602 3.83333 6.66602H15.5C16.3841 6.66602 17.2319 7.0172 17.857 7.64233C18.4821 8.26745 18.8333 9.11529 18.8333 9.99935C18.8333 10.8834 18.4821 11.7313 17.857 12.3564C17.2319 12.9815 16.3841 13.3327 15.5 13.3327H14.6667" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M5.5 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+              {/* Content Area - matching StudentDetail notes pattern */}
+              <div className="flex-1 p-6">
+                <div className="w-full bg-white">
+                  {/* Header */}
+                  <div className="border-b-0 mb-6">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-1.5 w-[391px]">
+                        <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M9.5 12L11.5 14L15.5 10" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
+                        <h3 className="text-2xl font-bold text-stone-900 font-lexend tracking-tight leading-5 flex-1 overflow-hidden text-ellipsis">
+                          {selectedNote.studentName}
+                        </h3>
                       </div>
-                      <div className="flex w-9 h-9 items-center justify-center gap-2.5 rounded-[11px]">
-                        <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.50033 15.8327C7.34127 15.8327 8.83366 14.3403 8.83366 12.4993C8.83366 10.6584 7.34127 9.16602 5.50033 9.16602C3.65938 9.16602 2.16699 10.6584 2.16699 12.4993C2.16699 14.3403 3.65938 15.8327 5.50033 15.8327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M15.5003 15.8327C17.3413 15.8327 18.8337 14.3403 18.8337 12.4993C18.8337 10.6584 17.3413 9.16602 15.5003 9.16602C13.6594 9.16602 12.167 10.6584 12.167 12.4993C12.167 14.3403 13.6594 15.8327 15.5003 15.8327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M12.1663 12.5007C12.1663 12.0586 11.9907 11.6347 11.6782 11.3221C11.3656 11.0096 10.9417 10.834 10.4997 10.834C10.0576 10.834 9.63372 11.0096 9.32116 11.3221C9.0086 11.6347 8.83301 12.0586 8.83301 12.5007" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M2.58301 10.8327L4.66634 5.83268C5.24967 4.74935 5.83301 4.16602 7.16634 4.16602" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M18.4163 10.8327L16.333 5.83268C15.7497 4.74935 15.083 4.16602 13.833 4.16602" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                      <div className="flex items-center gap-2.5 h-11">
+                        <div className="flex h-11 p-[8px_4px] items-center gap-1 border border-stone-200 bg-white rounded-lg">
+                          <div className="flex w-9 h-9 items-center justify-center gap-2.5 rounded-[11px] bg-indigo-600">
+                            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.83301 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M12.167 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M13.8333 6.66602C14.0543 6.66602 14.2663 6.75381 14.4226 6.91009C14.5789 7.06637 14.6667 7.27834 14.6667 7.49935V14.166C14.6667 15.0501 14.3155 15.8979 13.6904 16.523C13.0652 17.1482 12.2174 17.4993 11.3333 17.4993H6.33333C5.44928 17.4993 4.60143 17.1482 3.97631 16.523C3.35119 15.8979 3 15.0501 3 14.166V7.49935C3 7.27834 3.0878 7.06637 3.24408 6.91009C3.40036 6.75381 3.61232 6.66602 3.83333 6.66602H15.5C16.3841 6.66602 17.2319 7.0172 17.857 7.64233C18.4821 8.26745 18.8333 9.11529 18.8333 9.99935C18.8333 10.8834 18.4821 11.7313 17.857 12.3564C17.2319 12.9815 16.3841 13.3327 15.5 13.3327H14.6667" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M5.5 1.66602V3.33268" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <div className="flex w-9 h-9 items-center justify-center gap-2.5 rounded-[11px]">
+                            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5.50033 15.8327C7.34127 15.8327 8.83366 14.3403 8.83366 12.4993C8.83366 10.6584 7.34127 9.16602 5.50033 9.16602C3.65938 9.16602 2.16699 10.6584 2.16699 12.4993C2.16699 14.3403 3.65938 15.8327 5.50033 15.8327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M15.5003 15.8327C17.3413 15.8327 18.8337 14.3403 18.8337 12.4993C18.8337 10.6584 17.3413 9.16602 15.5003 9.16602C13.6594 9.16602 12.167 10.6584 12.167 12.4993C12.167 14.3403 13.6594 15.8327 15.5003 15.8327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M12.1663 12.5007C12.1663 12.0586 11.9907 11.6347 11.6782 11.3221C11.3656 11.0096 10.9417 10.834 10.4997 10.834C10.0576 10.834 9.63372 11.0096 9.32116 11.3221C9.0086 11.6347 8.83301 12.0586 8.83301 12.5007" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M2.58301 10.8327L4.66634 5.83268C5.24967 4.74935 5.83301 4.16602 7.16634 4.16602" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M18.4163 10.8327L16.333 5.83268C15.7497 4.74935 15.083 4.16602 13.833 4.16602" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <button className="flex w-11 h-11 p-4 items-center justify-center gap-1 border border-stone-200 bg-white rounded-full">
+                          <Edit3 className="w-5 h-5 flex-shrink-0 text-indigo-600" />
+                        </button>
                       </div>
                     </div>
-                    <button className="flex w-11 h-11 p-4 items-center justify-center gap-1 border border-stone-200 bg-white rounded-full">
-                      <Edit3 className="w-5 h-5 flex-shrink-0 text-indigo-600" />
-                    </button>
+                    <div className="flex pl-[30px] items-start gap-1.5 mt-2">
+                      <span className="text-base text-stone-900 font-lexend w-[580px]">
+                        Fri, 18 July 2025, 9:00–9:45am
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div className="flex pl-[30px] items-start gap-1.5 mt-2">
-                  <span className="text-base text-stone-900 font-lexend w-[580px]">
-                    Fri, 18 July 2025, 9:00–9:45am
-                  </span>
-                </div>
-              </div>
 
-              {/* Session Recap Section */}
-              <div className="flex p-[0_50px] flex-col items-start gap-1.5">
-                <div className="flex h-[30px] items-center">
-                  <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-tight">
-                    Session recap
-                  </h4>
-                </div>
-                <p className="text-sm text-stone-900 font-lexend leading-[22.75px]">
-                  Practiced challenging subtraction cases (across zeros), reviewed multiplication, 
-                  and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
-                </p>
-              </div>
+                  {/* Session Recap Section */}
+                  <div className="mb-6">
+                    <div className="flex h-[30px] items-center mb-2">
+                      <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-tight">
+                        Session recap
+                      </h4>
+                    </div>
+                    <div className="text-stone-500 text-lg font-lexend leading-relaxed">
+                      Practiced challenging subtraction cases (across zeros), reviewed multiplication,
+                      and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                    </div>
+                  </div>
 
-              {/* Observations Section */}
-              <div className="flex p-[0_50px] flex-col items-start gap-1.5 mt-6">
-                <div className="flex h-[30px] justify-between items-center w-full">
-                  <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-tight">
-                    Observations
-                  </h4>
-                  <div className="flex w-[30px] h-[30px] items-center gap-1"></div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex pl-1.5 items-start gap-1.5">
-                    <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
-                      <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                  {/* Observations Section */}
+                  <div>
+                    <div className="flex h-[30px] justify-between items-center w-full mb-2">
+                      <h4 className="text-xl font-bold text-stone-900 font-lexend tracking-tight">
+                        Observations
+                      </h4>
                     </div>
-                    <p className="flex-1 text-sm text-stone-900 font-lexend leading-[22.75px]">
-                      Completed <span className="font-bold">complex borrowing</span> (across two zeros) with one error, then self‑caught.
-                    </p>
-                  </div>
-                  <div className="flex pl-1.5 items-start gap-1.5">
-                    <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
-                      <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <div className="flex pt-1 flex-col justify-center items-start">
+                          <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <div className="flex-1 text-stone-500 text-lg font-lexend leading-relaxed">
+                          Completed <span className="font-bold text-stone-700">complex borrowing</span> (across two zeros) with one error, then self‑caught.
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="flex pt-1 flex-col justify-center items-start">
+                          <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <div className="flex-1 text-stone-500 text-lg font-lexend leading-relaxed">
+                          Engaged deeply with <span className="font-bold text-stone-700">sports‑related</span> word problems
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="flex pt-1 flex-col justify-center items-start">
+                          <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <div className="flex-1 text-stone-500 text-lg font-lexend leading-relaxed">
+                          Reported feeling <span className="font-bold text-stone-700">less nervous</span> about math at school.
+                        </div>
+                      </div>
                     </div>
-                    <p className="flex-1 text-sm text-stone-900 font-lexend leading-[22.75px]">
-                      Engaged deeply with <span className="font-bold">sports‑related</span> word problems
-                    </p>
-                  </div>
-                  <div className="flex pl-1.5 items-start gap-1.5">
-                    <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
-                      <svg className="w-[18px] h-[18px]" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.25 9H14.75" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M9.5 3.75L14.75 9L9.5 14.25" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                    <p className="flex-1 text-sm text-stone-900 font-lexend leading-[22.75px]">
-                      Reported feeling <span className="font-bold">less nervous</span> about math at school.
-                    </p>
                   </div>
                 </div>
               </div>
