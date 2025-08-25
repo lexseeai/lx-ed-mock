@@ -166,7 +166,8 @@ export function ScheduleView({
             </button>
             <button
               onClick={handleToday}
-              className="flex h-11 w-27 px-4 items-center justify-center gap-2 border border-stone-200 bg-white rounded-lg hover:bg-stone-50 font-lexend"
+              className="flex h-11 px-4 items-center justify-center gap-2 border border-stone-200 bg-white rounded-lg hover:bg-stone-50 font-lexend"
+              style={{ width: "108px" }}
             >
               <span className="text-base font-normal text-stone-900">
                 Today
