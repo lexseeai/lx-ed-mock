@@ -68,10 +68,20 @@ export function ScheduleView({
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
   const [selectedSession, setSelectedSession] = useState<any>(null);
 
-  // Clear selected session when switching days
+  // Clear selected session when switching days - force immediate clear
   useEffect(() => {
     setSelectedSession(null);
   }, [selectedDayDate]);
+
+  // Ensure no session is selected on initial render of a new day
+  useEffect(() => {
+    if (selectedSession && selectedSession.sessionDate) {
+      const sessionDay = selectedSession.sessionDate.getDate().toString();
+      if (sessionDay !== selectedDayDate) {
+        setSelectedSession(null);
+      }
+    }
+  }, [selectedSession, selectedDayDate]);
   const [isViewStudentHovered, setIsViewStudentHovered] = useState(false);
 
   const calendarRef = useRef<HTMLDivElement>(null);
