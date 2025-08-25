@@ -199,7 +199,6 @@ export default function Index() {
           activeView={activeView}
           setActiveView={setActiveView}
           onThisWeekClick={handleThisWeekClick}
-          setShowStudentOverlay={setShowStudentOverlay}
           greeting={greeting}
         />
 
