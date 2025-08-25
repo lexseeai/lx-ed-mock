@@ -140,7 +140,7 @@ export function ScheduleView({
   return (
     <div className="flex flex-col h-full bg-stone-50 rounded-lg border border-stone-200 shadow-lg">
       {/* Header */}
-      <div className="p-6 bg-white border-b border-stone-200">
+      <div className="p-6 bg-white border-b border-stone-200 overflow-hidden">
         {/* Top row with date picker and filter */}
         <div className="flex items-center justify-between mb-3">
           {/* Date Picker - Left side */}
