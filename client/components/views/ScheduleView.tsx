@@ -336,8 +336,11 @@ export function ScheduleView({
               {/* Sessions overlay */}
               <div className="absolute inset-0 pointer-events-none">
                 {todaysSessions.map((session, index) => {
-                  const sessionHour = session.sessionDate?.getHours() || 9;
-                  const sessionMinutes = session.sessionDate?.getMinutes() || 0;
+                  // Only process sessions with valid sessionDate
+                  if (!session.sessionDate) return null;
+
+                  const sessionHour = session.sessionDate.getHours();
+                  const sessionMinutes = session.sessionDate.getMinutes();
 
                   // Each hour row: py-3 (12px top + 12px bottom) + content ≈ 46px total height
                   const hourHeight = 46;
