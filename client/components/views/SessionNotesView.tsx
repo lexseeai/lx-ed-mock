@@ -151,7 +151,7 @@ export function SessionNotesView({
       </div>
 
       {/* Main Content - matching StudentDetail notes pattern */}
-      <div className="flex h-full">
+      <div className="flex h-full" style={{ padding: "24px" }}>
         {/* Left Sidebar - Session List */}
         <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
           {/* Header */}
@@ -223,7 +223,7 @@ export function SessionNotesView({
         {/* Main Content Area */}
         <div
           className="flex-1 pl-4 flex flex-col justify-center items-center"
-          style={{ backgroundColor: "rgba(247, 247, 247, 1)", padding: "24px" }}
+          style={{ backgroundColor: "rgba(247, 247, 247, 1)", paddingLeft: "24px" }}
         >
           {selectedNote && (
             <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
