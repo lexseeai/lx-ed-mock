@@ -190,7 +190,7 @@ export function SessionNotesView({
 
             {/* Done section */}
             <div className="px-5 pt-5 pb-3" style={{ color: "rgba(87, 83, 77, 1)", letterSpacing: "-0.35px", font: "900 24px/28px Lexend, sans-serif" }}>
-              Done <span style={{ fontWeight: "400" }}>({doneNotes.length})</span>
+              Done <span style={{ fontWeight: "400" }}>{doneNotes.length}</span>
             </div>
             {doneNotes.map((note) => (
               <div
