@@ -107,9 +107,22 @@ export function ScheduleView({
   };
 
   const handleToday = () => {
-    const { newWeekStart, newSelectedDay } = selectToday();
-    setCurrentWeekStart(newWeekStart);
-    setSelectedDayDate(newSelectedDay);
+    const result = selectToday();
+    if (result) {
+      setCurrentWeekStart(result.currentWeekStart);
+      setSelectedDayDate(result.selectedDayDate);
+    } else {
+      // Fallback: ensure we go to July 28th directly
+      setSelectedDayDate("28");
+      // Find the week that contains July 28th
+      const allDays = getAllDaysData();
+      const july28Index = allDays.findIndex(day => day.date === "28" && day.month === "July");
+      if (july28Index !== -1) {
+        const dayOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(allDays[july28Index].day);
+        const mondayIndex = july28Index - dayOfWeek;
+        setCurrentWeekStart(Math.max(0, mondayIndex));
+      }
+    }
   };
 
   // Close dropdowns when clicking outside
