@@ -457,7 +457,7 @@ export function ScheduleView({
                     </div>
                   </div>
                   {/* Day and time */}
-                  <div className="flex p-[8px_0_0_68px] justify-center items-center gap-2.5">
+                  <div className="flex p-[4px_0_0_68px] justify-center items-center gap-2.5">
                     <div className="text-stone-700 font-lexend text-base font-medium leading-5 tracking-[-0.08px]">
                       Monday, 28 July, 19:00 – 19:45
                     </div>
@@ -536,7 +536,7 @@ export function ScheduleView({
               </div>
 
               {/* Session Notes */}
-              <div className="flex p-5 flex-col items-start gap-4 flex-1 self-stretch rounded-lg bg-white">
+              <div className="flex p-5 flex-col items-start gap-4 flex-1 self-stretch rounded-xl bg-white">
                 {/* Title */}
                 <div className="flex flex-col items-start gap-0.5 self-stretch">
                   <div className="flex h-6 items-start gap-1.5">
