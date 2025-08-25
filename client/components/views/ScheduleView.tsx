@@ -417,7 +417,8 @@ export function ScheduleView({
                     textColor = "text-white";
                   } else if (session.sessionReportCompleted) {
                     bgColor = "bg-indigo-50 border-indigo-100";
-                  } else if (sessionHour < new Date().getHours()) {
+                  } else if (selectedDayDate === "28" && sessionHour < new Date().getHours()) {
+                    // Only apply "past session" styling to today's sessions (July 28th)
                     bgColor = "bg-indigo-600 border-indigo-600";
                     textColor = "text-white";
                   }
