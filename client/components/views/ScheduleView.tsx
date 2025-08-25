@@ -398,7 +398,7 @@ export function ScheduleView({
                 <div
                   className="absolute left-9 w-[400px] h-1 bg-red-600 rounded-full"
                   style={{
-                    top: `${((new Date().getHours() - 8) * 52) + 20}px`
+                    top: `${(new Date().getHours() - 8) * 48 + (new Date().getMinutes() / 60 * 48)}px`
                   }}
                 />
               )}
