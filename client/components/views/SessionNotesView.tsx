@@ -104,7 +104,7 @@ export function SessionNotesView({
       <div className="px-6 pt-6 pb-4 bg-white border-b border-stone-200 rounded-t-lg">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-0.5">
-            <h1 className="text-2xl font-bold text-stone-700 font-lexend tracking-tight pl-2 h-11">
+            <h1 className="text-2xl font-bold text-stone-700 font-lexend tracking-normal leading-6 pl-2 h-11">
               Session notes
             </h1>
           </div>
