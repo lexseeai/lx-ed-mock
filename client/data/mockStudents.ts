@@ -243,7 +243,7 @@ export const mockStudents: Student[] = [
 
   // August sessions - all waiting
   {
-    id: "20",
+    id: "24",
     name: "Oliver",
     subject: "Geography Tutoring",
     sessionTime: "8:00am, August 8",
@@ -251,7 +251,7 @@ export const mockStudents: Student[] = [
     sessionReportCompleted: false,
   }, // Waiting
   {
-    id: "21",
+    id: "25",
     name: "Alex",
     subject: "Math Tutoring",
     sessionTime: "9:00am, August 4",
@@ -260,7 +260,7 @@ export const mockStudents: Student[] = [
     sessionReportCompleted: false,
   }, // Waiting
   {
-    id: "22",
+    id: "26",
     name: "Emma",
     subject: "Science Tutoring",
     sessionTime: "3:00pm, August 1",
