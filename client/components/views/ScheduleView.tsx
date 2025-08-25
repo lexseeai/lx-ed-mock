@@ -9,6 +9,7 @@ import {
   UserRound,
   X,
   Clock,
+  SquareArrowOutUpRight,
 } from "lucide-react";
 import { getAllDaysData } from "@/data/calendarData";
 import {
@@ -66,6 +67,7 @@ export function ScheduleView({
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
   const [selectedSession, setSelectedSession] = useState<any>(null);
+  const [isViewStudentHovered, setIsViewStudentHovered] = useState(false);
 
   const calendarRef = useRef<HTMLDivElement>(null);
   const studentDropdownRef = useRef<HTMLDivElement>(null);
@@ -462,11 +464,20 @@ export function ScheduleView({
                   </div>
                 </div>
                 {/* View student button */}
-                <button className="flex p-[8px_16px] justify-center items-center gap-1 rounded-md border border-stone-200 bg-white hover:bg-stone-50">
+                <button
+                  className="flex p-[8px_16px] justify-center items-center gap-1 rounded-md border border-stone-200 bg-white hover:bg-stone-50"
+                  onMouseEnter={() => setIsViewStudentHovered(true)}
+                  onMouseLeave={() => setIsViewStudentHovered(false)}
+                  onClick={() => onStudentClick(selectedSession.id, students)}
+                >
                   <span className="text-black font-['Readex_Pro'] text-sm font-normal leading-6 tracking-[-0.07px]">
                     View student
                   </span>
-                  <UserRound className="w-[18px] h-[18px] text-black" />
+                  {isViewStudentHovered ? (
+                    <SquareArrowOutUpRight className="w-[18px] h-[18px] text-black" />
+                  ) : (
+                    <UserRound className="w-[18px] h-[18px] text-black" />
+                  )}
                 </button>
               </div>
 
