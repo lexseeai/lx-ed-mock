@@ -78,7 +78,11 @@ export function ScheduleView({
     return students.filter((student) => {
       if (!student.sessionDate) return false;
       const studentDate = student.sessionDate.getDate().toString();
-      return studentDate === dayDate;
+      const studentMonth = student.sessionDate.getMonth(); // 0-based (6 = July)
+      const studentYear = student.sessionDate.getFullYear();
+
+      // For July 2025 (month 6), only show sessions from July 2025
+      return studentDate === dayDate && studentMonth === 6 && studentYear === 2025;
     });
   };
 
