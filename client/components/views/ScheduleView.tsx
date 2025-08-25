@@ -549,7 +549,7 @@ export function ScheduleView({
                 {/* List of notes */}
                 <div className="flex p-[0_6px] flex-col items-start gap-3 self-stretch">
                   {/* Today's session - Upcoming */}
-                  <div className="flex p-3 flex-col items-start self-stretch rounded border border-stone-200">
+                  <div className="flex p-3 flex-col items-start self-stretch rounded-xl border border-stone-200">
                     <div className="flex items-start self-stretch">
                       <div className="flex items-center gap-1.5">
                         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -576,7 +576,7 @@ export function ScheduleView({
                   </div>
 
                   {/* Previous session - In progress */}
-                  <div className="flex p-3 flex-col items-start self-stretch rounded border border-stone-200">
+                  <div className="flex p-3 flex-col items-start self-stretch rounded-xl border border-stone-200">
                     <div className="flex items-start self-stretch">
                       <div className="flex items-center gap-1.5">
                         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -602,7 +602,7 @@ export function ScheduleView({
                   </div>
 
                   {/* Completed session */}
-                  <div className="flex p-3 flex-col items-start self-stretch rounded border border-stone-200">
+                  <div className="flex p-3 flex-col items-start self-stretch rounded-xl border border-stone-200">
                     <div className="flex items-start self-stretch">
                       <div className="flex items-center gap-1.5">
                         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
