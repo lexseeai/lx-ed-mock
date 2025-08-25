@@ -308,9 +308,9 @@ export function ScheduleView({
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 p-6 gap-6">
+      <div className="flex flex-1 p-6 gap-6 h-0 min-h-0">
         {/* Left: Day Schedule */}
-        <div className="w-[450px] flex flex-col bg-white rounded-lg border border-stone-200 p-4.5">
+        <div className="w-[450px] flex flex-col bg-white rounded-lg border border-stone-200 p-4.5 h-full overflow-hidden">
           {/* Time slots with sessions */}
           <div className="flex flex-col flex-1 justify-between">
             {/* Header */}
@@ -434,8 +434,8 @@ export function ScheduleView({
 
         {/* Right: Session Details */}
         {selectedSession && (
-          <div className="flex-1 flex flex-col bg-white rounded-lg border border-stone-200">
-            <div className="flex p-[18px_36px_0_36px] flex-col items-start gap-2.5 flex-1 self-stretch">
+          <div className="flex-1 flex flex-col bg-white rounded-lg border border-stone-200 h-full max-h-full overflow-hidden">
+            <div className="flex p-[18px_36px_0_36px] flex-col items-start gap-2.5 flex-1 self-stretch overflow-y-auto">
               {/* Top section */}
               <div className="flex pt-[19px] justify-between items-start self-stretch">
                 {/* Left side */}
