@@ -356,14 +356,18 @@ export function ScheduleView({
                     textColor = "text-white";
                   }
 
-                  // Format time range for display
-                  const startTime = session.sessionTime?.split(", ")[0] || "";
-                  const endHour = sessionMinutes >= 15 ? sessionHour + 1 : sessionHour;
-                  const endMinutes = (sessionMinutes + 45) % 60;
-                  const endPeriod = sessionHour >= 12 ? "pm" : "am";
-                  const displayHour = sessionHour > 12 ? sessionHour - 12 : sessionHour === 0 ? 12 : sessionHour;
-                  const endDisplayHour = endHour > 12 ? endHour - 12 : endHour === 0 ? 12 : endHour;
-                  const timeRange = `${displayHour}:${sessionMinutes.toString().padStart(2, '0')} – ${endDisplayHour}:${endMinutes.toString().padStart(2, '0')}`;
+                  // Format time range for display in 24-hour format
+                  const startHour24 = sessionHour.toString().padStart(2, '0');
+                  const startMin24 = sessionMinutes.toString().padStart(2, '0');
+
+                  // Calculate end time (45 minutes later)
+                  const endTotalMinutes = sessionHour * 60 + sessionMinutes + 45;
+                  const endHour = Math.floor(endTotalMinutes / 60);
+                  const endMinutes = endTotalMinutes % 60;
+                  const endHour24 = endHour.toString().padStart(2, '0');
+                  const endMin24 = endMinutes.toString().padStart(2, '0');
+
+                  const timeRange = `${startHour24}:${startMin24} – ${endHour24}:${endMin24}`;
 
                   return (
                     <button
