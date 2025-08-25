@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Student } from "@/types/student";
 import { Input } from "@/components/ui/input";
-import { UserRound, Edit3, Clock, CircleCheck, Calendar, Coffee, Glasses, Pencil, ArrowRight } from "lucide-react";
+import { UserRound, Edit3, Clock, CircleCheck, Circle, Calendar, Coffee, Glasses, Pencil, ArrowRight } from "lucide-react";
 import {
   getInProgressNotes,
   getDueSoonNotes,
@@ -85,6 +85,18 @@ export function SessionNotesView({
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
   const [selectedNoteId, setSelectedNoteId] = useState<string>("3"); // Default selected note (Alex Anders - submitted)
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case "submitted":
+        return <CircleCheck className="w-4 h-4 text-emerald-600" />;
+      case "not-started":
+        return <Clock className="w-4 h-4 text-stone-400" />;
+      case "in-progress":
+      default:
+        return <Circle className="w-4 h-4 text-pink-700" />;
+    }
+  };
 
   const getFilteredStudentNames = () => {
     const allNames = getUniqueStudentNames(students);
@@ -176,7 +188,7 @@ export function SessionNotesView({
                 }}
               >
                 <div className="flex items-center gap-1 py-0.5">
-                  <Clock className="w-4 h-4 text-pink-600" />
+                  {getStatusIcon(note.status)}
                   <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                     {note.studentName}
                   </span>
@@ -206,7 +218,7 @@ export function SessionNotesView({
                 }}
               >
                 <div className="flex items-center gap-1 py-0.5">
-                  <CircleCheck className="w-4 h-4 text-green-500" />
+                  {getStatusIcon(note.status)}
                   <span className="text-stone-900 font-lexend text-sm font-medium leading-4 transition-colors">
                     {note.studentName}
                   </span>
