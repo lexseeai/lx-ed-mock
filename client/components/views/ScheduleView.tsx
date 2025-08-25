@@ -66,7 +66,10 @@ export function ScheduleView({
   >(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
-  const [selectedSession, setSelectedSession] = useState<any>(null);
+  // Temporarily auto-select first session for design mode interaction
+  const [selectedSession, setSelectedSession] = useState<any>(
+    students.find(s => s.sessionDate?.getDate().toString() === selectedDayDate) || null
+  );
   const [isViewStudentHovered, setIsViewStudentHovered] = useState(false);
 
   const calendarRef = useRef<HTMLDivElement>(null);
