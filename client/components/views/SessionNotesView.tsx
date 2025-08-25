@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Student } from "@/types/student";
 import { Input } from "@/components/ui/input";
-import { UserRound, Edit3, Clock, CircleCheck } from "lucide-react";
+import { UserRound, Edit3, Clock, CircleCheck, Calendar, Coffee, Glasses, Pencil, ArrowRight } from "lucide-react";
 import {
   getInProgressNotes,
   getDueSoonNotes,
