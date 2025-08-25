@@ -156,7 +156,7 @@ export function SessionNotesView({
         <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
           {/* Header */}
           <div className="px-5 pt-5 pb-3" style={{ color: "rgba(87, 83, 77, 1)", letterSpacing: "-0.35px", font: "900 24px/28px Lexend, sans-serif" }}>
-            Open <span style={{ fontWeight: "400" }}>({todoNotes.length})</span>
+            Open <span style={{ fontWeight: "400" }}>{todoNotes.length}</span>
           </div>
 
           {/* Session List */}
