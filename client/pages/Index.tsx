@@ -160,31 +160,6 @@ export default function Index() {
     }
   };
 
-  const handleExpandStudent = () => {
-    if (selectedStudentId) {
-      setShowStudentOverlay(false);
-      const student = mockStudents.find((s) => s.id === selectedStudentId);
-      if (student) {
-        const studentIdMap: Record<string, string> = {
-          Alex: "23",
-          Emma: "2",
-          Marcus: "3",
-          Isabella: "4",
-          Carlos: "16",
-          Daniel: "6",
-          Liam: "7",
-          Kai: "8",
-          Oliver: "9",
-          Maya: "17",
-          Zoe: "19",
-          Luna: "28",
-          Sofia: "10",
-        };
-        const detailPageId = studentIdMap[student.name] || selectedStudentId;
-        navigate(`/student/${detailPageId}`);
-      }
-    }
-  };
 
   const getCurrentStudentIndex = () => {
     return currentStudentList.findIndex(
