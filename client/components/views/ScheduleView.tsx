@@ -67,6 +67,11 @@ export function ScheduleView({
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
   const [selectedSession, setSelectedSession] = useState<any>(null);
+
+  // Clear selected session when switching days
+  useEffect(() => {
+    setSelectedSession(null);
+  }, [selectedDayDate]);
   const [isViewStudentHovered, setIsViewStudentHovered] = useState(false);
 
   const calendarRef = useRef<HTMLDivElement>(null);
@@ -316,16 +321,32 @@ export function ScheduleView({
             {/* Header */}
             <div className="flex items-center justify-between px-9 py-6">
               <div className="flex gap-1">
-                <h2 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
-                  Monday
-                </h2>
-                <h2 className="text-4xl font-normal text-stone-700 font-lexend tracking-tight">
-                  28
-                </h2>
+                {(() => {
+                  const selectedDay = currentWeek.find(day => day.date === selectedDayDate);
+                  const dayName = selectedDay?.day === 'Mon' ? 'Monday' :
+                                 selectedDay?.day === 'Tue' ? 'Tuesday' :
+                                 selectedDay?.day === 'Wed' ? 'Wednesday' :
+                                 selectedDay?.day === 'Thu' ? 'Thursday' :
+                                 selectedDay?.day === 'Fri' ? 'Friday' :
+                                 selectedDay?.day === 'Sat' ? 'Saturday' :
+                                 selectedDay?.day === 'Sun' ? 'Sunday' : 'Monday';
+                  return (
+                    <>
+                      <h2 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
+                        {dayName}
+                      </h2>
+                      <h2 className="text-4xl font-normal text-stone-700 font-lexend tracking-tight">
+                        {selectedDayDate}
+                      </h2>
+                    </>
+                  );
+                })()}
               </div>
-              <span className="text-sm font-semibold font-lexend" style={{color: "#ffffff"}}>
-                <span style={{color: "rgb(220, 38, 38)"}}>Today</span>
-              </span>
+              {selectedDayDate === "28" && (
+                <span className="text-sm font-semibold text-stone-500 font-lexend">
+                  Today
+                </span>
+              )}
             </div>
 
             {/* Time grid */}
