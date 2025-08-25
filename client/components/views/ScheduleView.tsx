@@ -343,6 +343,11 @@ export function ScheduleView({
                   const hourHeight = 44;
                   const startPosition = (sessionHour - 8) * hourHeight + (sessionMinutes / 60 * hourHeight);
 
+                  // Debug: Log positioning
+                  if (process.env.NODE_ENV === 'development') {
+                    console.log(`${session.name} (${sessionHour}:${sessionMinutes.toString().padStart(2,'0')}): position ${startPosition}px`);
+                  }
+
                   // Session duration is 45 minutes = 33px (0.75 * 44px per hour)
                   const sessionHeight = 33;
 
