@@ -578,13 +578,31 @@ export function ScheduleView({
                           </defs>
                         </svg>
                         <span className="text-stone-700 font-lexend text-sm font-bold leading-[18px]">
-                          Monday, 28 July 25
+                          {selectedSession?.sessionDate ? (() => {
+                            const sessionDate = selectedSession.sessionDate;
+                            const dayName = sessionDate.toLocaleDateString('en-US', { weekday: 'long' });
+                            const day = sessionDate.getDate();
+                            const month = sessionDate.toLocaleDateString('en-US', { month: 'short' });
+                            const year = sessionDate.getFullYear().toString().slice(-2);
+                            return `${dayName}, ${day} ${month} ${year}`;
+                          })() : "Monday, 28 July 25"}
                         </span>
                       </div>
                     </div>
                     <div className="flex pl-[26px] flex-col justify-center items-start self-stretch">
                       <span className="text-stone-400 font-lexend text-sm font-normal leading-[18px]">
-                        19:00 – 19:45
+                        {selectedSession?.sessionDate ? (() => {
+                          const sessionDate = selectedSession.sessionDate;
+                          const startHour = sessionDate.getHours().toString().padStart(2, '0');
+                          const startMin = sessionDate.getMinutes().toString().padStart(2, '0');
+
+                          // Calculate end time (45 minutes later)
+                          const endTime = new Date(sessionDate.getTime() + 45 * 60000);
+                          const endHour = endTime.getHours().toString().padStart(2, '0');
+                          const endMin = endTime.getMinutes().toString().padStart(2, '0');
+
+                          return `${startHour}:${startMin} – ${endHour}:${endMin}`;
+                        })() : "19:00 – 19:45"}
                       </span>
                     </div>
                   </div>
