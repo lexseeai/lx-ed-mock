@@ -221,12 +221,13 @@ export function ScheduleView({
             {currentWeek.slice(0, 7).map((dayData) => {
               const isSelected = selectedDayDate === dayData.date;
               const isToday = dayData.isToday;
+              const hasNoSessions = dayData.sessions === 0;
 
               return (
                 <button
                   key={dayData.date}
                   onClick={() => setSelectedDayDate(dayData.date)}
-                  className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-lg border ${
+                  className={`flex w-24 h-24 p-3 pb-2 flex-col justify-between items-start rounded-xl border ${
                     isSelected
                       ? "border-indigo-600 bg-indigo-600"
                       : "border-stone-200 bg-white hover:bg-stone-50"
@@ -237,7 +238,11 @@ export function ScheduleView({
                     <div className="flex justify-between items-center w-full">
                       <div
                         className={`text-2xl font-black leading-none font-lexend ${
-                          isSelected ? "text-white" : "text-stone-700"
+                          isSelected
+                            ? "text-white"
+                            : hasNoSessions
+                              ? "text-stone-400"
+                              : "text-stone-700"
                         }`}
                       >
                         {dayData.date}
@@ -245,7 +250,11 @@ export function ScheduleView({
                       {isToday && (
                         <div
                           className={`text-xs leading-none font-lexend opacity-50 ${
-                            isSelected ? "text-white" : "text-stone-700"
+                            isSelected
+                              ? "text-white"
+                              : hasNoSessions
+                                ? "text-stone-400"
+                                : "text-stone-700"
                           }`}
                         >
                           Today
@@ -254,30 +263,36 @@ export function ScheduleView({
                     </div>
                     <div
                       className={`text-base font-medium leading-none font-lexend ${
-                        isSelected ? "text-white" : "text-stone-700"
+                        isSelected
+                          ? "text-white"
+                          : hasNoSessions
+                            ? "text-stone-400"
+                            : "text-stone-700"
                       }`}
                     >
                       {dayData.day}
                     </div>
                   </div>
 
-                  {/* Sessions count */}
-                  <div className="flex items-center gap-1">
-                    <div
-                      className={`text-sm font-normal font-lexend ${
-                        isSelected ? "text-white" : "text-stone-700"
-                      }`}
-                    >
-                      {dayData.sessions}
+                  {/* Sessions count - only show if there are sessions */}
+                  {dayData.sessions > 0 && (
+                    <div className="flex items-center gap-1">
+                      <div
+                        className={`text-sm font-normal font-lexend ${
+                          isSelected ? "text-white" : "text-stone-700"
+                        }`}
+                      >
+                        {dayData.sessions}
+                      </div>
+                      <div
+                        className={`text-sm font-normal font-lexend ${
+                          isSelected ? "text-white" : "text-stone-700"
+                        }`}
+                      >
+                        {dayData.sessions === 1 ? "session" : "sessions"}
+                      </div>
                     </div>
-                    <div
-                      className={`text-sm font-normal font-lexend ${
-                        isSelected ? "text-white" : "text-stone-700"
-                      }`}
-                    >
-                      {dayData.sessions === 1 ? "session" : "sessions"}
-                    </div>
-                  </div>
+                  )}
                 </button>
               );
             })}
