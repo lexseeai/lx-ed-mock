@@ -161,45 +161,6 @@ export default function Index() {
   };
 
 
-  const getCurrentStudentIndex = () => {
-    return currentStudentList.findIndex(
-      (student) => student.id === selectedStudentId,
-    );
-  };
-
-  const canNavigatePrevious = () => {
-    const currentIndex = getCurrentStudentIndex();
-    return currentIndex > 0;
-  };
-
-  const canNavigateNext = () => {
-    const currentIndex = getCurrentStudentIndex();
-    return currentIndex < currentStudentList.length - 1;
-  };
-
-  const navigatePrevious = () => {
-    if (canNavigatePrevious()) {
-      const currentIndex = getCurrentStudentIndex();
-      setSelectedStudentId(currentStudentList[currentIndex - 1].id);
-    }
-  };
-
-  const navigateNext = () => {
-    if (canNavigateNext()) {
-      const currentIndex = getCurrentStudentIndex();
-      setSelectedStudentId(currentStudentList[currentIndex + 1].id);
-    }
-  };
-
-  const getSelectedStudent = () => {
-    return mockStudents.find((student) => student.id === selectedStudentId);
-  };
-
-  const closeStudentPanel = () => {
-    setShowStudentOverlay(false);
-    setSelectedStudentId(null);
-    setCurrentStudentList([]);
-  };
 
   // Notes overlay handlers
   const openNotesOverlay = (
