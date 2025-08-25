@@ -459,7 +459,21 @@ export function ScheduleView({
                   {/* Day and time */}
                   <div className="flex p-[4px_0_0_68px] justify-center items-center gap-2.5">
                     <div className="text-stone-700 font-lexend text-base font-medium leading-5 tracking-[-0.08px]">
-                      Monday, 28 July, 19:00 – 19:45
+                      {selectedSession?.sessionDate ? (() => {
+                        const sessionDate = selectedSession.sessionDate;
+                        const dayName = sessionDate.toLocaleDateString('en-US', { weekday: 'long' });
+                        const day = sessionDate.getDate();
+                        const month = sessionDate.toLocaleDateString('en-US', { month: 'long' });
+                        const startHour = sessionDate.getHours().toString().padStart(2, '0');
+                        const startMin = sessionDate.getMinutes().toString().padStart(2, '0');
+
+                        // Calculate end time (45 minutes later)
+                        const endTime = new Date(sessionDate.getTime() + 45 * 60000);
+                        const endHour = endTime.getHours().toString().padStart(2, '0');
+                        const endMin = endTime.getMinutes().toString().padStart(2, '0');
+
+                        return `${dayName}, ${day} ${month}, ${startHour}:${startMin} – ${endHour}:${endMin}`;
+                      })() : "Monday, 28 July, 19:00 – 19:45"}
                     </div>
                   </div>
                 </div>
