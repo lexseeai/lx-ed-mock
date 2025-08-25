@@ -99,7 +99,9 @@ export function ScheduleView({
       const studentYear = student.sessionDate.getFullYear();
 
       // For July 2025 (month 6), only show sessions from July 2025
-      return studentDate === dayDate && studentMonth === 6 && studentYear === 2025;
+      return (
+        studentDate === dayDate && studentMonth === 6 && studentYear === 2025
+      );
     });
   };
 
@@ -126,9 +128,19 @@ export function ScheduleView({
       setSelectedDayDate("28");
       // Find the week that contains July 28th
       const allDays = getAllDaysData();
-      const july28Index = allDays.findIndex(day => day.date === "28" && day.month === "July");
+      const july28Index = allDays.findIndex(
+        (day) => day.date === "28" && day.month === "July",
+      );
       if (july28Index !== -1) {
-        const dayOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(allDays[july28Index].day);
+        const dayOfWeek = [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun",
+        ].indexOf(allDays[july28Index].day);
         const mondayIndex = july28Index - dayOfWeek;
         setCurrentWeekStart(Math.max(0, mondayIndex));
       }
@@ -345,14 +357,25 @@ export function ScheduleView({
             <div className="flex items-center justify-between px-9 py-6">
               <div className="flex gap-1">
                 {(() => {
-                  const selectedDay = currentWeek.find(day => day.date === selectedDayDate);
-                  const dayName = selectedDay?.day === 'Mon' ? 'Monday' :
-                                 selectedDay?.day === 'Tue' ? 'Tuesday' :
-                                 selectedDay?.day === 'Wed' ? 'Wednesday' :
-                                 selectedDay?.day === 'Thu' ? 'Thursday' :
-                                 selectedDay?.day === 'Fri' ? 'Friday' :
-                                 selectedDay?.day === 'Sat' ? 'Saturday' :
-                                 selectedDay?.day === 'Sun' ? 'Sunday' : 'Monday';
+                  const selectedDay = currentWeek.find(
+                    (day) => day.date === selectedDayDate,
+                  );
+                  const dayName =
+                    selectedDay?.day === "Mon"
+                      ? "Monday"
+                      : selectedDay?.day === "Tue"
+                        ? "Tuesday"
+                        : selectedDay?.day === "Wed"
+                          ? "Wednesday"
+                          : selectedDay?.day === "Thu"
+                            ? "Thursday"
+                            : selectedDay?.day === "Fri"
+                              ? "Friday"
+                              : selectedDay?.day === "Sat"
+                                ? "Saturday"
+                                : selectedDay?.day === "Sun"
+                                  ? "Sunday"
+                                  : "Monday";
                   return (
                     <>
                       <h2 className="text-4xl font-black text-stone-700 font-lexend tracking-tight">
@@ -395,11 +418,16 @@ export function ScheduleView({
 
                   // Each hour row: py-3 (12px top + 12px bottom) + content ≈ 46px total height
                   const hourHeight = 46;
-                  const startPosition = (sessionHour - 8) * hourHeight + (sessionMinutes / 60 * hourHeight) + 12;
+                  const startPosition =
+                    (sessionHour - 8) * hourHeight +
+                    (sessionMinutes / 60) * hourHeight +
+                    12;
 
                   // Debug: Log positioning
-                  if (process.env.NODE_ENV === 'development') {
-                    console.log(`${session.name} (${sessionHour}:${sessionMinutes.toString().padStart(2,'0')}): position ${startPosition}px`);
+                  if (process.env.NODE_ENV === "development") {
+                    console.log(
+                      `${session.name} (${sessionHour}:${sessionMinutes.toString().padStart(2, "0")}): position ${startPosition}px`,
+                    );
                   }
 
                   // Session duration is 45 minutes = 34px (0.75 * 46px per hour)
@@ -417,22 +445,26 @@ export function ScheduleView({
                     textColor = "text-white";
                   } else if (session.sessionReportCompleted) {
                     bgColor = "bg-indigo-50 border-indigo-100";
-                  } else if (selectedDayDate === "28" && sessionHour < new Date().getHours()) {
+                  } else if (
+                    selectedDayDate === "28" &&
+                    sessionHour < new Date().getHours()
+                  ) {
                     // Only apply "past session" styling to today's sessions (July 28th)
                     bgColor = "bg-indigo-600 border-indigo-600";
                     textColor = "text-white";
                   }
 
                   // Format time range for display in 24-hour format
-                  const startHour24 = sessionHour.toString().padStart(2, '0');
-                  const startMin24 = sessionMinutes.toString().padStart(2, '0');
+                  const startHour24 = sessionHour.toString().padStart(2, "0");
+                  const startMin24 = sessionMinutes.toString().padStart(2, "0");
 
                   // Calculate end time (45 minutes later)
-                  const endTotalMinutes = sessionHour * 60 + sessionMinutes + 45;
+                  const endTotalMinutes =
+                    sessionHour * 60 + sessionMinutes + 45;
                   const endHour = Math.floor(endTotalMinutes / 60);
                   const endMinutes = endTotalMinutes % 60;
-                  const endHour24 = endHour.toString().padStart(2, '0');
-                  const endMin24 = endMinutes.toString().padStart(2, '0');
+                  const endHour24 = endHour.toString().padStart(2, "0");
+                  const endMin24 = endMinutes.toString().padStart(2, "0");
 
                   const timeRange = `${startHour24}:${startMin24} – ${endHour24}:${endMin24}`;
 
@@ -443,18 +475,25 @@ export function ScheduleView({
                       className={`absolute left-9 w-[400px] flex items-center px-1.5 rounded-md border pointer-events-auto ${bgColor}`}
                       style={{
                         top: `${startPosition}px`,
-                        height: `${sessionHeight}px`
+                        height: `${sessionHeight}px`,
                       }}
                     >
                       <div className="flex items-center gap-4.5">
-                        <div className={`w-[75px] text-xs font-lexend ${textColor}`} style={{marginRight: "16px"}}>
+                        <div
+                          className={`w-[75px] text-xs font-lexend ${textColor}`}
+                          style={{ marginRight: "16px" }}
+                        >
                           {timeRange}
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className={`text-sm font-bold font-lexend ${textColor}`}>
+                          <div
+                            className={`text-sm font-bold font-lexend ${textColor}`}
+                          >
                             {session.name}
                           </div>
-                          <div className={`text-sm font-normal font-lexend opacity-60 ${textColor}`}>
+                          <div
+                            className={`text-sm font-normal font-lexend opacity-60 ${textColor}`}
+                          >
                             {session.subject}
                           </div>
                         </div>
@@ -469,7 +508,7 @@ export function ScheduleView({
                 <div
                   className="absolute left-9 w-[400px] h-1 bg-red-600 rounded-full"
                   style={{
-                    top: `${(new Date().getHours() - 8) * 46 + (new Date().getMinutes() / 60 * 46) + 12}px`
+                    top: `${(new Date().getHours() - 8) * 46 + (new Date().getMinutes() / 60) * 46 + 12}px`,
                   }}
                 />
               )}
@@ -504,21 +543,43 @@ export function ScheduleView({
                   {/* Day and time */}
                   <div className="flex p-[4px_0_0_68px] justify-center items-center gap-2.5">
                     <div className="text-stone-700 font-lexend text-base font-medium leading-5 tracking-[-0.08px]">
-                      {selectedSession?.sessionDate ? (() => {
-                        const sessionDate = selectedSession.sessionDate;
-                        const dayName = sessionDate.toLocaleDateString('en-US', { weekday: 'long' });
-                        const day = sessionDate.getDate();
-                        const month = sessionDate.toLocaleDateString('en-US', { month: 'long' });
-                        const startHour = sessionDate.getHours().toString().padStart(2, '0');
-                        const startMin = sessionDate.getMinutes().toString().padStart(2, '0');
+                      {selectedSession?.sessionDate
+                        ? (() => {
+                            const sessionDate = selectedSession.sessionDate;
+                            const dayName = sessionDate.toLocaleDateString(
+                              "en-US",
+                              { weekday: "long" },
+                            );
+                            const day = sessionDate.getDate();
+                            const month = sessionDate.toLocaleDateString(
+                              "en-US",
+                              { month: "long" },
+                            );
+                            const startHour = sessionDate
+                              .getHours()
+                              .toString()
+                              .padStart(2, "0");
+                            const startMin = sessionDate
+                              .getMinutes()
+                              .toString()
+                              .padStart(2, "0");
 
-                        // Calculate end time (45 minutes later)
-                        const endTime = new Date(sessionDate.getTime() + 45 * 60000);
-                        const endHour = endTime.getHours().toString().padStart(2, '0');
-                        const endMin = endTime.getMinutes().toString().padStart(2, '0');
+                            // Calculate end time (45 minutes later)
+                            const endTime = new Date(
+                              sessionDate.getTime() + 45 * 60000,
+                            );
+                            const endHour = endTime
+                              .getHours()
+                              .toString()
+                              .padStart(2, "0");
+                            const endMin = endTime
+                              .getMinutes()
+                              .toString()
+                              .padStart(2, "0");
 
-                        return `${dayName}, ${day} ${month}, ${startHour}:${startMin} – ${endHour}:${endMin}`;
-                      })() : "Monday, 28 July, 19:00 – 19:45"}
+                            return `${dayName}, ${day} ${month}, ${startHour}:${startMin} – ${endHour}:${endMin}`;
+                          })()
+                        : "Monday, 28 July, 19:00 – 19:45"}
                     </div>
                   </div>
                 </div>
@@ -564,32 +625,68 @@ export function ScheduleView({
                 {/* Topics list */}
                 <div className="flex pl-1.5 items-start gap-1.5 self-stretch">
                   <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9C2.25 3.6 3.6 2.25 9 2.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      className="w-[18px] h-[18px]"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9C2.25 3.6 3.6 2.25 9 2.25Z"
+                        stroke="#44403C"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                   <div className="flex-1 text-stone-900 font-lexend text-base font-normal leading-[23.75px]">
-                    Reinforce rounding to 1 decimal place with timed fluency drills for automaticity.
+                    Reinforce rounding to 1 decimal place with timed fluency
+                    drills for automaticity.
                   </div>
                 </div>
                 <div className="flex pl-1.5 items-start gap-1.5 self-stretch">
                   <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9C2.25 3.6 3.6 2.25 9 2.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      className="w-[18px] h-[18px]"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9C2.25 3.6 3.6 2.25 9 2.25Z"
+                        stroke="#44403C"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                   <div className="flex-1 text-stone-900 font-lexend text-base font-normal leading-[23.75px]">
-                    Apply 2D shape formulas in word problems to build real-world problem-solving skills.
+                    Apply 2D shape formulas in word problems to build real-world
+                    problem-solving skills.
                   </div>
                 </div>
                 <div className="flex pl-1.5 items-start gap-1.5 self-stretch">
                   <div className="flex pt-0.5 flex-col justify-center items-start gap-2.5">
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9 C2.25 3.6 3.6 2.25 9 2.25Z" stroke="#44403C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      className="w-[18px] h-[18px]"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 2.25C14.4 2.25 15.75 3.6 15.75 9C15.75 14.4 14.4 15.75 9 15.75C3.6 15.75 2.25 14.4 2.25 9 C2.25 3.6 3.6 2.25 9 2.25Z"
+                        stroke="#44403C"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                   <div className="flex-1 text-stone-900 font-lexend text-base font-normal leading-[23.75px]">
-                    Introduce multi-step problems involving both perimeter/area and decimal rounding.
+                    Introduce multi-step problems involving both perimeter/area
+                    and decimal rounding.
                   </div>
                 </div>
               </div>
@@ -611,43 +708,87 @@ export function ScheduleView({
                   <div className="flex p-3 flex-col items-start self-stretch rounded-xl border border-stone-200">
                     <div className="flex items-start self-stretch">
                       <div className="flex items-center gap-1.5">
-                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <g clipPath="url(#clip0_6475_2920)">
-                            <path d="M10 5V10L13.3333 11.6667" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#A8A29E" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path
+                              d="M10 5V10L13.3333 11.6667"
+                              stroke="#A8A29E"
+                              strokeWidth="1.66667"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z"
+                              stroke="#A8A29E"
+                              strokeWidth="1.66667"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </g>
                           <defs>
                             <clipPath id="clip0_6475_2920">
-                              <rect width="20" height="20" fill="white"/>
+                              <rect width="20" height="20" fill="white" />
                             </clipPath>
                           </defs>
                         </svg>
                         <span className="text-stone-700 font-lexend text-sm font-bold leading-[18px]">
-                          {selectedSession?.sessionDate ? (() => {
-                            const sessionDate = selectedSession.sessionDate;
-                            const dayName = sessionDate.toLocaleDateString('en-US', { weekday: 'long' });
-                            const day = sessionDate.getDate();
-                            const month = sessionDate.toLocaleDateString('en-US', { month: 'short' });
-                            const year = sessionDate.getFullYear().toString().slice(-2);
-                            return `${dayName}, ${day} ${month} ${year}`;
-                          })() : "Monday, 28 July 25"}
+                          {selectedSession?.sessionDate
+                            ? (() => {
+                                const sessionDate = selectedSession.sessionDate;
+                                const dayName = sessionDate.toLocaleDateString(
+                                  "en-US",
+                                  { weekday: "long" },
+                                );
+                                const day = sessionDate.getDate();
+                                const month = sessionDate.toLocaleDateString(
+                                  "en-US",
+                                  { month: "short" },
+                                );
+                                const year = sessionDate
+                                  .getFullYear()
+                                  .toString()
+                                  .slice(-2);
+                                return `${dayName}, ${day} ${month} ${year}`;
+                              })()
+                            : "Monday, 28 July 25"}
                         </span>
                       </div>
                     </div>
                     <div className="flex pl-[26px] flex-col justify-center items-start self-stretch">
                       <span className="text-stone-400 font-lexend text-sm font-normal leading-[18px]">
-                        {selectedSession?.sessionDate ? (() => {
-                          const sessionDate = selectedSession.sessionDate;
-                          const startHour = sessionDate.getHours().toString().padStart(2, '0');
-                          const startMin = sessionDate.getMinutes().toString().padStart(2, '0');
+                        {selectedSession?.sessionDate
+                          ? (() => {
+                              const sessionDate = selectedSession.sessionDate;
+                              const startHour = sessionDate
+                                .getHours()
+                                .toString()
+                                .padStart(2, "0");
+                              const startMin = sessionDate
+                                .getMinutes()
+                                .toString()
+                                .padStart(2, "0");
 
-                          // Calculate end time (45 minutes later)
-                          const endTime = new Date(sessionDate.getTime() + 45 * 60000);
-                          const endHour = endTime.getHours().toString().padStart(2, '0');
-                          const endMin = endTime.getMinutes().toString().padStart(2, '0');
+                              // Calculate end time (45 minutes later)
+                              const endTime = new Date(
+                                sessionDate.getTime() + 45 * 60000,
+                              );
+                              const endHour = endTime
+                                .getHours()
+                                .toString()
+                                .padStart(2, "0");
+                              const endMin = endTime
+                                .getMinutes()
+                                .toString()
+                                .padStart(2, "0");
 
-                          return `${startHour}:${startMin} – ${endHour}:${endMin}`;
-                        })() : "19:00 – 19:45"}
+                              return `${startHour}:${startMin} – ${endHour}:${endMin}`;
+                            })()
+                          : "19:00 – 19:45"}
                       </span>
                     </div>
                   </div>
@@ -656,13 +797,24 @@ export function ScheduleView({
                   <div className="flex p-3 flex-col items-start self-stretch rounded-xl border border-stone-200">
                     <div className="flex items-start self-stretch">
                       <div className="flex items-center gap-1.5">
-                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <g clipPath="url(#clip0_6477_3242)">
-                            <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#BE185D" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path
+                              d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z"
+                              stroke="#BE185D"
+                              strokeWidth="1.66667"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </g>
                           <defs>
                             <clipPath id="clip0_6477_3242">
-                              <rect width="20" height="20" fill="white"/>
+                              <rect width="20" height="20" fill="white" />
                             </clipPath>
                           </defs>
                         </svg>
@@ -682,14 +834,31 @@ export function ScheduleView({
                   <div className="flex p-3 flex-col items-start self-stretch rounded-xl border border-stone-200">
                     <div className="flex items-start self-stretch">
                       <div className="flex items-center gap-1.5">
-                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <g clipPath="url(#clip0_6477_3250)">
-                            <path d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z" stroke="#059669" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M7.5 10.0007L9.16667 11.6673L12.5 8.33398" stroke="#059669" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path
+                              d="M10.0003 18.3327C14.6027 18.3327 18.3337 14.6017 18.3337 9.99935C18.3337 5.39698 14.6027 1.66602 10.0003 1.66602C5.39795 1.66602 1.66699 5.39698 1.66699 9.99935C1.66699 14.6017 5.39795 18.3327 10.0003 18.3327Z"
+                              stroke="#059669"
+                              strokeWidth="1.66667"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M7.5 10.0007L9.16667 11.6673L12.5 8.33398"
+                              stroke="#059669"
+                              strokeWidth="1.66667"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </g>
                           <defs>
                             <clipPath id="clip0_6477_3250">
-                              <rect width="20" height="20" fill="white"/>
+                              <rect width="20" height="20" fill="white" />
                             </clipPath>
                           </defs>
                         </svg>

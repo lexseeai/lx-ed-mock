@@ -1,7 +1,18 @@
 import React, { useState, useRef } from "react";
 import { Student } from "@/types/student";
 import { Input } from "@/components/ui/input";
-import { UserRound, Edit3, Clock, CircleCheck, Circle, Calendar, Coffee, Glasses, Pencil, ArrowRight } from "lucide-react";
+import {
+  UserRound,
+  Edit3,
+  Clock,
+  CircleCheck,
+  Circle,
+  Calendar,
+  Coffee,
+  Glasses,
+  Pencil,
+  ArrowRight,
+} from "lucide-react";
 import {
   getInProgressNotes,
   getDueSoonNotes,
@@ -36,43 +47,43 @@ const mockSessionNotes: SessionNote[] = [
     studentName: "Alex Anders",
     date: "Fri, 18 July 25",
     time: "9:00–9:45am",
-    status: "in-progress"
+    status: "in-progress",
   },
   {
-    id: "2", 
+    id: "2",
     studentName: "Emma Edwards",
     date: "Fri, 18 July 25",
     time: "9:00–9:45am",
-    status: "in-progress"
+    status: "in-progress",
   },
   {
     id: "3",
     studentName: "Alex Anders",
-    date: "Fri, 18 July 25", 
+    date: "Fri, 18 July 25",
     time: "9:00–9:45am",
-    status: "submitted"
+    status: "submitted",
   },
   {
     id: "4",
     studentName: "Marcus",
     date: "Fri, 18 July 25",
-    time: "9:00–9:45am", 
-    status: "submitted"
+    time: "9:00–9:45am",
+    status: "submitted",
   },
   {
     id: "5",
     studentName: "Marcus",
     date: "Fri, 18 July 25",
     time: "9:00–9:45am",
-    status: "submitted"
+    status: "submitted",
   },
   {
     id: "6",
-    studentName: "Marcus", 
+    studentName: "Marcus",
     date: "Fri, 18 July 25",
     time: "9:00–9:45am",
-    status: "submitted"
-  }
+    status: "submitted",
+  },
 ];
 
 export function SessionNotesView({
@@ -80,7 +91,9 @@ export function SessionNotesView({
   onStudentClick,
   openNotesOverlay,
 }: SessionNotesViewProps) {
-  const [selectedStudentFilter, setSelectedStudentFilter] = useState<string | null>(null);
+  const [selectedStudentFilter, setSelectedStudentFilter] = useState<
+    string | null
+  >(null);
   const [showStudentDropdown, setShowStudentDropdown] = useState(false);
   const [studentSearchQuery, setStudentSearchQuery] = useState("");
   const [selectedNoteId, setSelectedNoteId] = useState<string>("3"); // Default selected note (Alex Anders - submitted)
@@ -106,9 +119,15 @@ export function SessionNotesView({
     );
   };
 
-  const todoNotes = mockSessionNotes.filter(note => note.status === "in-progress");
-  const doneNotes = mockSessionNotes.filter(note => note.status === "submitted");
-  const selectedNote = mockSessionNotes.find(note => note.id === selectedNoteId);
+  const todoNotes = mockSessionNotes.filter(
+    (note) => note.status === "in-progress",
+  );
+  const doneNotes = mockSessionNotes.filter(
+    (note) => note.status === "submitted",
+  );
+  const selectedNote = mockSessionNotes.find(
+    (note) => note.id === selectedNoteId,
+  );
 
   return (
     <div className="flex flex-col h-full bg-stone-50 rounded-lg border border-stone-200 shadow-lg">
@@ -167,7 +186,14 @@ export function SessionNotesView({
         {/* Left Sidebar - Session List */}
         <div className="w-[275px] flex flex-col rounded-lg overflow-hidden bg-white border border-stone-200 pb-1.5">
           {/* Header */}
-          <div className="px-5 pt-5 pb-3" style={{ color: "rgba(87, 83, 77, 1)", letterSpacing: "-0.35px", font: "900 24px/28px Lexend, sans-serif" }}>
+          <div
+            className="px-5 pt-5 pb-3"
+            style={{
+              color: "rgba(87, 83, 77, 1)",
+              letterSpacing: "-0.35px",
+              font: "900 24px/28px Lexend, sans-serif",
+            }}
+          >
             Open <span style={{ fontWeight: "400" }}>{todoNotes.length}</span>
           </div>
 
@@ -179,12 +205,13 @@ export function SessionNotesView({
                 key={note.id}
                 onClick={() => setSelectedNoteId(note.id)}
                 className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
-                  selectedNoteId === note.id
-                    ? ""
-                    : "hover:bg-stone-50"
+                  selectedNoteId === note.id ? "" : "hover:bg-stone-50"
                 }`}
                 style={{
-                  backgroundColor: selectedNoteId === note.id ? "rgba(238, 242, 255, 1)" : undefined
+                  backgroundColor:
+                    selectedNoteId === note.id
+                      ? "rgba(238, 242, 255, 1)"
+                      : undefined,
                 }}
               >
                 <div className="flex items-center gap-1 py-0.5">
@@ -201,7 +228,14 @@ export function SessionNotesView({
             ))}
 
             {/* Done section */}
-            <div className="px-5 pt-5 pb-3" style={{ color: "rgba(87, 83, 77, 1)", letterSpacing: "-0.35px", font: "900 24px/28px Lexend, sans-serif" }}>
+            <div
+              className="px-5 pt-5 pb-3"
+              style={{
+                color: "rgba(87, 83, 77, 1)",
+                letterSpacing: "-0.35px",
+                font: "900 24px/28px Lexend, sans-serif",
+              }}
+            >
               Done <span style={{ fontWeight: "400" }}>{doneNotes.length}</span>
             </div>
             {doneNotes.map((note) => (
@@ -209,12 +243,13 @@ export function SessionNotesView({
                 key={note.id}
                 onClick={() => setSelectedNoteId(note.id)}
                 className={`flex flex-col gap-0.5 px-6 py-3 transition-colors cursor-pointer ${
-                  selectedNoteId === note.id
-                    ? ""
-                    : "hover:bg-stone-50"
+                  selectedNoteId === note.id ? "" : "hover:bg-stone-50"
                 }`}
                 style={{
-                  backgroundColor: selectedNoteId === note.id ? "rgba(238, 242, 255, 1)" : undefined
+                  backgroundColor:
+                    selectedNoteId === note.id
+                      ? "rgba(238, 242, 255, 1)"
+                      : undefined,
                 }}
               >
                 <div className="flex items-center gap-1 py-0.5">
@@ -269,7 +304,10 @@ export function SessionNotesView({
                     </button>
                   </div>
                   <button className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-stone-50 transition-colors overflow-hidden border border-stone-200">
-                    <Pencil className="w-5 h-5 text-indigo-600" strokeWidth={2} />
+                    <Pencil
+                      className="w-5 h-5 text-indigo-600"
+                      strokeWidth={2}
+                    />
                   </button>
                 </div>
               </div>
@@ -282,8 +320,10 @@ export function SessionNotesView({
                     Recap
                   </h3>
                   <p className="text-stone-700 font-lexend leading-relaxed">
-                    Practiced challenging subtraction cases (across zeros), reviewed multiplication,
-                    and included sports-themed word problems. Confidence grew as Zack related math to his hobbies.
+                    Practiced challenging subtraction cases (across zeros),
+                    reviewed multiplication, and included sports-themed word
+                    problems. Confidence grew as Zack related math to his
+                    hobbies.
                   </p>
                 </div>
 
@@ -296,19 +336,25 @@ export function SessionNotesView({
                     <div className="flex items-start gap-3">
                       <ArrowRight className="w-5 h-5 text-stone-500 mt-0.5 flex-shrink-0" />
                       <p className="text-stone-700 font-lexend leading-relaxed">
-                        Completed <span className="font-semibold">complex borrowing</span> (across two zeros) with one error, then self‑caught.
+                        Completed{" "}
+                        <span className="font-semibold">complex borrowing</span>{" "}
+                        (across two zeros) with one error, then self‑caught.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <ArrowRight className="w-5 h-5 text-stone-500 mt-0.5 flex-shrink-0" />
                       <p className="text-stone-700 font-lexend leading-relaxed">
-                        Engaged deeply with <span className="font-semibold">sports‑related</span> word problems.
+                        Engaged deeply with{" "}
+                        <span className="font-semibold">sports‑related</span>{" "}
+                        word problems.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <ArrowRight className="w-5 h-5 text-stone-500 mt-0.5 flex-shrink-0" />
                       <p className="text-stone-700 font-lexend leading-relaxed">
-                        Reported feeling <span className="font-semibold">less nervous</span> about math at school.
+                        Reported feeling{" "}
+                        <span className="font-semibold">less nervous</span>{" "}
+                        about math at school.
                       </p>
                     </div>
                   </div>
