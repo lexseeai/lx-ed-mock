@@ -156,13 +156,13 @@ export function ScheduleView({
           <div className="flex items-center gap-1.5">
             <button
               onClick={handlePrevWeek}
-              className="flex h-11 w-11 items-center justify-center border border-stone-200 bg-white rounded hover:bg-stone-50"
+              className="flex h-11 w-11 items-center justify-center border border-stone-200 bg-white rounded-lg hover:bg-stone-50"
             >
               <ChevronLeft className="w-6 h-6 text-indigo-600" />
             </button>
             <button
               onClick={handleToday}
-              className="flex h-11 px-4 items-center justify-center gap-2 border border-stone-200 bg-white rounded hover:bg-stone-50"
+              className="flex h-11 px-4 items-center justify-center gap-2 border border-stone-200 bg-white rounded-lg hover:bg-stone-50"
             >
               <span className="text-base font-normal text-stone-900 font-readex">
                 Today
@@ -170,7 +170,7 @@ export function ScheduleView({
             </button>
             <button
               onClick={handleNextWeek}
-              className="flex h-11 w-11 items-center justify-center border border-stone-200 bg-white rounded hover:bg-stone-50"
+              className="flex h-11 w-11 items-center justify-center border border-stone-200 bg-white rounded-lg hover:bg-stone-50"
             >
               <ChevronRight className="w-6 h-6 text-indigo-600" />
             </button>
