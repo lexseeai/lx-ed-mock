@@ -233,7 +233,7 @@ export function SessionNotesView({
         {/* Main Content Area */}
         <div
           className="flex-1 pl-4 flex flex-col justify-center items-center"
-          style={{ backgroundColor: "rgba(247, 247, 247, 1)" }}
+          style={{ backgroundColor: "rgba(247, 247, 247, 1)", padding: "24px" }}
         >
           {selectedNote && (
             <div className="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden h-full max-w-[650px] flex flex-col">
