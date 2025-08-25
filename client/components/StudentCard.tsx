@@ -103,7 +103,7 @@ export function StudentCard({
               <div className="flex items-center gap-1 py-0.5">
                 <div className="flex items-center gap-1">
                   {showNextSession ? (
-                    <Clock className="w-3 h-3 text-stone-700" />
+                    <Clock className="w-3 h-3 text-stone-400" />
                   ) : (
                     <TimeIcon className={`w-3 h-3 ${timeIconConfig.color}`} />
                   )}
