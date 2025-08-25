@@ -343,8 +343,8 @@ export function ScheduleView({
                   const hourHeight = 44;
                   const startPosition = (sessionHour - 8) * hourHeight + (sessionMinutes / 60 * hourHeight);
 
-                  // Session duration is 45 minutes = 36px (0.75 * 48px per hour)
-                  const sessionHeight = 36;
+                  // Session duration is 45 minutes = 33px (0.75 * 44px per hour)
+                  const sessionHeight = 33;
 
                   let bgColor = "bg-indigo-100 border-indigo-200";
                   let textColor = "text-stone-600";
@@ -402,7 +402,7 @@ export function ScheduleView({
                 <div
                   className="absolute left-9 w-[400px] h-1 bg-red-600 rounded-full"
                   style={{
-                    top: `${(new Date().getHours() - 8) * 48 + 12 + (new Date().getMinutes() / 60 * 48)}px`
+                    top: `${(new Date().getHours() - 8) * 44 + (new Date().getMinutes() / 60 * 44)}px`
                   }}
                 />
               )}
