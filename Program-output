@@ -1,0 +1,1249 @@
+{
+  "program": {
+    "name": "Chasing the Distant Light",
+    "description": "Trace how wealth, desire, and reinvention shape choices, then judge who pays the real price."
+  },
+  "background": {
+    "conflict": "A self-made millionaire tries to reclaim an old love and the status she represents while an old-money husband fights to keep control, and the fallout destroys lives.",
+    "event_spine": [
+      "Nick moves East seeking purpose → he becomes a close observer inside a wealthy, careless world.",
+      "Nick reunites with Daisy and meets Tom’s circle → he learns of Tom’s affair and the moral rot behind privilege.",
+      "Nick meets his neighbor Gatsby amid rumors and parties → Gatsby uses Nick to get close to Daisy.",
+      "Nick helps Gatsby and Daisy reunite → their renewed relationship intensifies Tom’s suspicion.",
+      "Tom exposes Gatsby’s criminal ties during a showdown → Daisy recoils and Gatsby’s dream destabilizes.",
+      "Daisy drives Gatsby’s car and kills Myrtle by accident → Tom redirects blame toward Gatsby.",
+      "George, manipulated and grieving, hunts Gatsby → Gatsby is murdered and George dies by suicide.",
+      "Nick tries to gather people for Gatsby’s funeral → he sees how empty Gatsby’s social world is.",
+      "Nick confronts Tom and leaves the East → the survivors retreat into wealth as Nick returns to the Midwest."
+    ],
+    "characters": [
+      {
+        "name": "Nick Carraway",
+        "role": "Narrator and observer from the Midwest who enters East Coast wealth.",
+        "motivation": "Seek excitement and a new start after World War I while trying to stay “nonjudgmental.”",
+        "arc": "Moves from curiosity to disgust as he recognizes carelessness and moral decay, then chooses to leave."
+      },
+      {
+        "name": "Jay Gatsby (James Gatz)",
+        "role": "Mysterious new-money millionaire who throws lavish parties.",
+        "motivation": "Win Daisy back and secure the social status she symbolizes.",
+        "arc": "Clings to an idealized past and a fabricated identity until his dream collapses and he is killed."
+      },
+      {
+        "name": "Daisy Buchanan",
+        "role": "Old-money socialite at the center of Gatsby and Tom’s rivalry.",
+        "motivation": "Maintain comfort, security, and admiration while sampling romance and excitement.",
+        "arc": "Flirts with escape but retreats into the safety of wealth, letting others absorb consequences."
+      },
+      {
+        "name": "Tom Buchanan",
+        "role": "Old-money husband and antagonist who asserts dominance through power and prejudice.",
+        "motivation": "Protect his social superiority and possess Daisy while indulging in infidelity.",
+        "arc": "Escalates from entitled arrogance to active damage-control, shifting blame and escaping accountability."
+      },
+      {
+        "name": "Jordan Baker",
+        "role": "Professional golfer and Nick’s romantic interest, emblem of Jazz Age independence.",
+        "motivation": "Pursue her own desires with minimal emotional risk and maximum insulation.",
+        "arc": "Remains cynical and self-protective, and the relationship ends when Nick rejects her moral drift."
+      },
+      {
+        "name": "Myrtle Wilson",
+        "role": "Tom’s mistress in the valley of ashes who longs for a richer life.",
+        "motivation": "Use the affair as a path to wealth and social mobility.",
+        "arc": "Reaches for escape through Tom and is killed in the collision between the rich people’s conflicts."
+      },
+      {
+        "name": "George Wilson",
+        "role": "Working-class garage owner whose life is crushed by others’ choices.",
+        "motivation": "Hold onto his marriage and find justice after Myrtle’s death.",
+        "arc": "Shifts from worn-down resignation to desperate vengeance, then dies after killing Gatsby."
+      },
+      {
+        "name": "Meyer Wolfsheim",
+        "role": "Underworld figure tied to Gatsby’s money and secrecy.",
+        "motivation": "Profit and self-preservation within organized crime.",
+        "arc": "Avoids risk when Gatsby dies, illustrating how loyalty collapses when consequences arrive."
+      }
+    ],
+    "settings": [
+      {
+        "location": "West Egg, Long Island",
+        "period": "Jazz Age, post–World War I",
+        "narrative_function": "Represents new money’s showy striving, where Gatsby builds a persona and hosts parties to reach Daisy."
+      },
+      {
+        "location": "East Egg, Long Island",
+        "period": "Jazz Age, post–World War I",
+        "narrative_function": "Represents old money’s inherited power and social gatekeeping embodied by Tom and Daisy."
+      },
+      {
+        "location": "The valley of ashes",
+        "period": "Jazz Age industrial boom",
+        "narrative_function": "Shows the human and environmental cost beneath prosperity and becomes the site of Myrtle’s death and George’s unraveling."
+      },
+      {
+        "location": "New York City (apartment and hotel)",
+        "period": "Jazz Age nightlife and consumer culture",
+        "narrative_function": "Intensifies secrecy and confrontation, exposing hedonism and pushing conflicts into open violence."
+      },
+      {
+        "location": "Long Island Sound / Daisy’s dock",
+        "period": "Recurring symbol across the summer",
+        "narrative_function": "Creates physical distance that mirrors Gatsby’s longing, with the green light marking an always-receding dream."
+      }
+    ],
+    "themes": [
+      {
+        "theme": "The illusion of the American Dream",
+        "claim": "In the Jazz Age, wealth promises fulfillment but often delivers emptiness, exclusion, and moral decay.",
+        "anchor_moment": "Nick’s closing reflection on the green light as a future that “recedes before us.”"
+      },
+      {
+        "theme": "The capacity to reinvent one’s identity",
+        "claim": "Reinvention can create opportunity, but building a self on performance and secrecy makes identity fragile under pressure.",
+        "anchor_moment": "Nick’s revelation that “Jay Gatsby” began as James Gatz and invented himself after meeting Dan Cody."
+      },
+      {
+        "theme": "Love and relationships in a culture defined by wealth and hedonism",
+        "claim": "When romance is fused with status and pleasure, relationships become transactions that collapse under truth and risk.",
+        "anchor_moment": "The hotel confrontation where Daisy wavers after Tom exposes Gatsby’s criminal wealth."
+      },
+      {
+        "theme": "Class tensions and inequality",
+        "claim": "Old money and new money compete for dominance while working-class people absorb the harshest consequences.",
+        "anchor_moment": "Myrtle’s death in the valley of ashes and George’s manipulated vengeance against Gatsby."
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Chapter 1",
+      "background": {
+        "summary": "Nick moves to West Egg, visits Daisy and Tom in East Egg, meets Jordan, and glimpses Gatsby alone at night.",
+        "key_events": [
+          "Nick leaves the Midwest for the bond business → he settles in West Egg near East Egg.",
+          "Nick visits the Buchanans → Tom’s arrogance and prejudice color the evening.",
+          "Jordan hints Tom has a mistress → Nick sees tension under wealth and charm.",
+          "Nick returns home and notices Gatsby reaching toward the water → Gatsby is introduced as a mysterious neighbor."
+        ],
+        "themes": [
+          "Class tensions and inequality",
+          "The illusion of the American Dream"
+        ],
+        "vocabulary": [
+          {
+            "word": "affluent",
+            "context": "an affluent Midwest family"
+          },
+          {
+            "word": "restless",
+            "context": "I came back restless"
+          },
+          {
+            "word": "Georgian",
+            "context": "a Georgian Colonial mansion"
+          },
+          {
+            "word": "haughty",
+            "context": "tendency to come across as haughty"
+          },
+          {
+            "word": "intimation",
+            "context": "a sudden intimation that he was content to be alone"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "Judging people from the outside",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "Before you read, think about how you form first impressions. What kinds of details make you trust someone—or doubt them?",
+            "context": [
+              "First impressions can come from wealth, confidence, or reputation",
+              "People can seem kind in public and harmful in private",
+              "A narrator’s “nonjudgmental” stance can still carry bias",
+              "A new place can make someone more alert to social rules"
+            ]
+          },
+          {
+            "name": "Starting over somewhere new",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "Imagine moving to a place where everyone seems to have different money and status than you. What would you watch for to fit in?",
+            "context": [
+              "New environments have unspoken rules about belonging",
+              "Status can be shown through homes, jobs, and connections",
+              "Outsiders often notice hypocrisy faster than insiders do",
+              "People may hide problems to protect their image"
+            ]
+          },
+          {
+            "name": "What does “success” mean?",
+            "type": "Start",
+            "bloom_category": "Remember",
+            "prompt": "When people say someone is “successful,” what do they usually mean? Name two different ways success can be measured.",
+            "context": [
+              "Money and possessions are common measures",
+              "Reputation and connections can act like power",
+              "Personal values can conflict with social rewards",
+              "Comfort can hide unhappiness"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "Nick’s new world, fast",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "In this chapter, what changes for Nick once he arrives in the East, and what feels unsettling to him?",
+            "context": [
+              "Nick relocates to West Egg to work in bonds",
+              "He reconnects with Daisy and Tom in East Egg",
+              "Tom brings up a racist book at dinner",
+              "Jordan suggests Tom has a mistress",
+              "Nick ends the night seeing Gatsby alone by the water"
+            ]
+          },
+          {
+            "name": "What’s hiding under the charm?",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "How does the dinner conversation show cracks in a “perfect” wealthy life? Point to two moments that reveal tension.",
+            "context": [
+              "Tom’s phone call interrupts dinner and pulls him away",
+              "Jordan explains the interruption relates to an affair",
+              "Daisy tries to smooth things over with light talk",
+              "Nick feels distressed by the situation",
+              "The group separates into smaller, uneasy conversations"
+            ]
+          },
+          {
+            "name": "Gatsby at the edge of the water",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Nick sees Gatsby stretching his arms toward the dark water. What does that image suggest about Gatsby’s feelings or goals?",
+            "context": [
+              "Gatsby stands alone rather than joining people",
+              "Nick notices Gatsby trembling",
+              "Nick glimpses a single green light far away",
+              "When Nick looks again, Gatsby has vanished",
+              "The moment feels quiet but intense"
+            ]
+          },
+          {
+            "name": "Fair or unfair judgment?",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Nick begins with advice about not criticizing people. Based on what you saw in this chapter, what seems hardest to judge fairly—and why?",
+            "context": [
+              "Nick comes from family wealth and knows social advantages",
+              "Tom’s behavior is openly domineering and prejudiced",
+              "Daisy’s charm sits beside obvious marital strain",
+              "Jordan passes along private information casually",
+              "Nick considers approaching Gatsby but holds back"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 2",
+      "background": {
+        "summary": "Nick visits the valley of ashes with Tom, meets Myrtle and George, and witnesses a drunken city party that ends in violence.",
+        "key_events": [
+          "Nick describes the valley of ashes and Eckleburg billboard → the story’s underbelly is revealed.",
+          "Tom drags Nick to George’s garage → Nick meets Myrtle, Tom’s mistress.",
+          "Tom and Myrtle bring Nick to a city apartment → the affair becomes a public, hedonistic performance.",
+          "Myrtle repeats Daisy’s name → Tom breaks Myrtle’s nose and the party collapses.",
+          "Nick leaves intoxicated and disoriented → his narration becomes less reliable in the chaos."
+        ],
+        "themes": [
+          "Class tensions and inequality",
+          "Love and relationships in a culture defined by wealth and hedonism",
+          "The illusion of the American Dream"
+        ],
+        "setting": "The valley of ashes, an industrial wasteland under the looming eyes of Dr. T. J. Eckleburg, frames the chapter’s moral decay.",
+        "vocabulary": [
+          {
+            "word": "wasteland",
+            "context": "an ugly wasteland"
+          },
+          {
+            "word": "dilapidated",
+            "context": "the dilapidated billboard"
+          },
+          {
+            "word": "optometrist",
+            "context": "an old optometrist’s billboard"
+          },
+          {
+            "word": "superficial",
+            "context": "after a superficial conversation"
+          },
+          {
+            "word": "chaos",
+            "context": "during the chaos of attending to Myrtle’s injury"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "A place that tells a truth",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "As you read, pay attention to setting. How can a place reveal what a society tries to hide?",
+            "context": [
+              "Some places show pollution and waste that others ignore",
+              "A rich area can depend on unseen labor and hardship",
+              "A single image or landmark can change how people feel",
+              "Crossing between neighborhoods can shift the rules of behavior"
+            ]
+          },
+          {
+            "name": "Secrets in plain sight",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "If someone’s wrongdoing is an “open secret,” how does that change what people tolerate? Listen for what characters treat as normal.",
+            "context": [
+              "Friends may resent hypocrisy but still accept it",
+              "Power can protect people from consequences",
+              "Public image can matter more than private harm",
+              "Bystanders can become involved without choosing to"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "What is the valley of ashes?",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "Describe the valley of ashes and what Nick notices there before the day with Tom and Myrtle unfolds.",
+            "context": [
+              "Ashes from factories are dumped there",
+              "The railroad runs alongside the road for a stretch",
+              "A billboard shows Dr. T. J. Eckleburg’s eyes",
+              "George Wilson’s struggling garage sits nearby",
+              "The area feels bleak compared with East and West Egg"
+            ]
+          },
+          {
+            "name": "Power at the apartment party",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "At the New York apartment, who has power and who doesn’t? What moments show that clearly?",
+            "context": [
+              "Tom controls where Nick goes and what happens next",
+              "Myrtle tries to perform a richer identity through the apartment and guests",
+              "The party is fueled by alcohol and careless talk",
+              "Myrtle mentioning Daisy triggers Tom’s violence",
+              "Nick watches rather than stopping events"
+            ]
+          },
+          {
+            "name": "The billboard’s different meanings",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Nick describes the giant eyes on the billboard without giving one fixed meaning. What could those eyes suggest in this chapter?",
+            "context": [
+              "The eyes loom over industrial decay",
+              "They watch people traveling between rich and poor areas",
+              "They are part of an advertisement, not a real person",
+              "Nick is largely secular and notices them as a sign of decay",
+              "Later characters will interpret the eyes differently"
+            ]
+          },
+          {
+            "name": "Nick’s choices as a witness",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Nick goes along with Tom’s day even when things feel wrong. How responsible do you think Nick is for what he witnesses?",
+            "context": [
+              "Nick agrees to meet Myrtle and go into the city",
+              "He describes being drunk and disoriented",
+              "He sees Tom strike Myrtle in the face",
+              "He leaves with Mr. McKee during the aftermath",
+              "He ends the night alone at the station at 4:00 am"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 3",
+      "background": {
+        "summary": "Nick attends Gatsby’s party, meets Gatsby, hears rumors, grows closer to Jordan, and claims honesty while noticing widespread dishonesty.",
+        "key_events": [
+          "Nick receives a formal invitation to Gatsby’s party → he enters a world of anonymous excess.",
+          "Guests trade contradictory rumors about Gatsby → Gatsby’s identity becomes a puzzle.",
+          "Nick meets Gatsby and is struck by his smile → Gatsby stands apart from his own party.",
+          "Jordan speaks privately with Gatsby → a plan begins to form offstage.",
+          "Nick and Jordan become romantically involved → Nick frames himself as honest despite surrounding deceit."
+        ],
+        "themes": [
+          "The capacity to reinvent one’s identity",
+          "Love and relationships in a culture defined by wealth and hedonism"
+        ],
+        "vocabulary": [
+          {
+            "word": "anonymity",
+            "context": "large parties because they provide anonymity"
+          },
+          {
+            "word": "contradictory",
+            "context": "They are contradictory explanations"
+          },
+          {
+            "word": "chauffeur",
+            "context": "delivered by a chauffeur"
+          },
+          {
+            "word": "conservatory",
+            "context": "a sort of green leather conservatory"
+          },
+          {
+            "word": "cardinal",
+            "context": "the “cardinal virtue” of honesty"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "Crowds where nobody knows you",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "This chapter centers on a huge party. What can a crowd reveal about people that a small group can hide?",
+            "context": [
+              "Crowds can make it easier to invent or exaggerate a persona",
+              "People repeat rumors when they don’t have facts",
+              "Status can be performed through clothing, music, and guests",
+              "Being unseen can feel freeing or lonely"
+            ]
+          },
+          {
+            "name": "Rumors versus evidence",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "As you read, sort what you hear into two buckets: gossip and proof. How might that shape your view of someone?",
+            "context": [
+              "Gossip can be contradictory and still feel persuasive",
+              "Proof can come from objects, documents, or behavior",
+              "People often believe the story that fits their bias",
+              "A narrator might also choose what to emphasize"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "First night at Gatsby’s",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "Walk me through Nick’s main experiences at the party, from arrival to leaving.",
+            "context": [
+              "Nick attends with a formal invitation",
+              "He finds Jordan and feels relieved to know someone",
+              "He hears multiple rumors about Gatsby’s past",
+              "He meets an owl-eyed man amazed the books are real",
+              "Nick finally meets Gatsby and notices his charismatic smile",
+              "A drunk car crash happens as people leave"
+            ]
+          },
+          {
+            "name": "Gatsby: host but alone",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "How does Gatsby’s behavior at his own party create a contrast with his guests, and what might that suggest?",
+            "context": [
+              "Most guests do not know Gatsby personally",
+              "Gatsby is sober compared with many drunk guests",
+              "Nick sees Gatsby standing alone looking out over the party",
+              "Gatsby is pulled away by a phone call from Chicago",
+              "Gatsby’s smile seems to mirror what others want to see"
+            ]
+          },
+          {
+            "name": "Jordan and honesty",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Nick calls himself honest, but he also excuses Jordan’s dishonesty. Do his judgments feel consistent to you so far?",
+            "context": [
+              "Nick recalls a story that Jordan may have cheated at golf",
+              "He still feels drawn to her poise and independence",
+              "He says he delays commitment until ending a Midwest relationship",
+              "He’s surrounded by secrecy, rumors, and half-truths",
+              "He claims honesty as a “cardinal virtue”"
+            ]
+          },
+          {
+            "name": "A party snapshot",
+            "type": "End",
+            "bloom_category": "Create",
+            "prompt": "Create a short ‘camera shot’ description of one moment from the party that captures the mood of this world.",
+            "context": [
+              "Hundreds of guests arrive without invitation",
+              "Music and banquets overwhelm the senses",
+              "The library’s real books surprise the owl-eyed guest",
+              "Rumors swirl about Gatsby’s identity",
+              "A drunk driver ends in a ditch at the night’s close"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 4",
+      "background": {
+        "summary": "Gatsby takes Nick to lunch, offers a polished life story, reveals powerful connections, and Jordan explains Gatsby’s history with Daisy and his request.",
+        "key_events": [
+          "Gatsby drives Nick to lunch and seeks approval → he tries to control Nick’s opinion of him.",
+          "Gatsby claims elite origins and war glory → Nick receives partial proof through a photo and medal.",
+          "A policeman lets Gatsby off for speeding → Gatsby’s connections protect him.",
+          "Nick meets Meyer Wolfsheim with Gatsby → Gatsby is linked to organized crime.",
+          "Jordan tells Daisy’s past with Gatsby and the near-canceled wedding → Nick becomes key to a reunion plan."
+        ],
+        "themes": [
+          "The capacity to reinvent one’s identity",
+          "The illusion of the American Dream",
+          "Love and relationships in a culture defined by wealth and hedonism"
+        ],
+        "vocabulary": [
+          {
+            "word": "valor",
+            "context": "showed great valor in World War I"
+          },
+          {
+            "word": "corroborate",
+            "context": "To corroborate his stories"
+          },
+          {
+            "word": "notorious",
+            "context": "a notorious man"
+          },
+          {
+            "word": "inevitable",
+            "context": "the end of some inevitable chain"
+          },
+          {
+            "word": "hesitated",
+            "context": "Gatsby hesitated, then added"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "When someone sells you a story",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "Gatsby wants Nick to think well of him. As you read, notice what Gatsby chooses to highlight about himself—and what he avoids.",
+            "context": [
+              "People craft biographies to seem impressive",
+              "Details like schools, medals, and travel can signal status",
+              "A single contradiction can undermine credibility",
+              "Approval from the right observer can be valuable"
+            ]
+          },
+          {
+            "name": "Proof can be persuasive",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "If you were Nick, what would count as convincing evidence that someone is telling the truth? Keep that in mind during Gatsby’s lunch.",
+            "context": [
+              "Photographs and documents can feel undeniable",
+              "Connections to powerful people can change how rules work",
+              "Rumors often persist even when evidence appears",
+              "Confidence can sound like truth"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "Gatsby’s version of Gatsby",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "What story does Gatsby tell Nick about his past, and what does Nick see that seems to support it?",
+            "context": [
+              "Gatsby claims wealthy parents from the Midwest",
+              "He says he lived lavishly in Europe",
+              "He says he earned medals for war heroism",
+              "He shows Nick a photo at Oxford",
+              "He shows a medal from Montenegro"
+            ]
+          },
+          {
+            "name": "A tiny clue that matters",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Nick notices a detail that makes Gatsby’s story sound off. How does that one detail change the way you hear everything else?",
+            "context": [
+              "Gatsby says his parents were from the Midwest",
+              "When asked where, he answers “San Francisco”",
+              "Nick starts wondering which parts are true or invented",
+              "Gatsby seems eager for Nick’s approval",
+              "Rumors at parties set up doubt before this chapter begins"
+            ]
+          },
+          {
+            "name": "Wealth and protection",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "What does the speeding stop show about how power works in this world?",
+            "context": [
+              "A policeman pulls Gatsby over for speeding",
+              "Gatsby shows a Christmas card from the police commissioner",
+              "The policeman apologizes and lets them go",
+              "Gatsby’s connections change the outcome",
+              "Rules apply differently depending on status"
+            ]
+          },
+          {
+            "name": "Should Nick help the reunion?",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Jordan explains Gatsby and Daisy’s history and asks Nick’s help. If you were Nick, what risks would you weigh before agreeing?",
+            "context": [
+              "Daisy nearly backed out of marrying Tom",
+              "Gatsby and Daisy were romantically involved in 1917",
+              "Tom had a newspaper story about a car accident with another woman",
+              "Gatsby wants to meet Daisy again",
+              "Nick is Daisy’s cousin and Gatsby’s neighbor"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 5",
+      "background": {
+        "summary": "Nick hosts Daisy and Gatsby’s reunion, the awkward meeting softens, and Daisy reacts emotionally to Gatsby’s wealth and the green light’s meaning shifts.",
+        "key_events": [
+          "Gatsby prepares anxiously for Daisy’s visit → his confidence cracks under pressure.",
+          "Daisy and Gatsby meet at Nick’s house → awkwardness gives way to renewed closeness.",
+          "They tour Gatsby’s mansion → Gatsby uses luxury to communicate worth and possibility.",
+          "Daisy cries over Gatsby’s shirts → wealth becomes an emotional symbol.",
+          "Gatsby points out the green light on Daisy’s dock → the dream changes now that Daisy is near."
+        ],
+        "themes": [
+          "Love and relationships in a culture defined by wealth and hedonism",
+          "The illusion of the American Dream"
+        ],
+        "vocabulary": [
+          {
+            "word": "chastises",
+            "context": "Nick chastises Gatsby"
+          },
+          {
+            "word": "dissolute",
+            "context": "the dissolute “boarder”"
+          },
+          {
+            "word": "colossal",
+            "context": "Gatsby’s colossal significance"
+          },
+          {
+            "word": "marvels",
+            "context": "She marvels at his luxurious belongings"
+          },
+          {
+            "word": "thatched",
+            "context": "have their roofs thatched with straw"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "Reunions and reality",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "Gatsby has been reaching for a past relationship. As you read, notice what happens when a long-held fantasy finally meets real life.",
+            "context": [
+              "Time changes people and expectations",
+              "An idealized memory can be hard to live up to",
+              "Nervousness can reveal what’s truly at stake",
+              "A mediator can shape how a reunion goes"
+            ]
+          },
+          {
+            "name": "Gifts as a message",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "Pay attention to objects in this chapter. How might a house, clothing, or a view across the water act like an argument without words?",
+            "context": [
+              "Luxury can signal power and belonging",
+              "Objects can stand in for feelings people can’t say",
+              "A symbol can change meaning once a goal feels closer",
+              "Showing possessions can be a form of persuasion"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "How the reunion unfolds",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "What are the key beats of Gatsby and Daisy’s meeting, from the first awkward moments to the end of the visit?",
+            "context": [
+              "Gatsby acts uninterested but is visibly anxious",
+              "Nick gives them time alone, then returns later",
+              "They go to Gatsby’s house together",
+              "Daisy reacts strongly to Gatsby’s shirts",
+              "Klipspringer appears as a constant “boarder” in the home",
+              "Nick leaves Daisy and Gatsby alone again"
+            ]
+          },
+          {
+            "name": "Why the shirts matter",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Daisy cries over Gatsby’s shirts. What do the shirts communicate in this moment beyond ‘nice clothing’?",
+            "context": [
+              "Gatsby pulls out hundreds of expensive shirts like treasure",
+              "Daisy marvels at the luxury and abundance",
+              "The scene happens inside Gatsby’s mansion tour",
+              "Gatsby is trying to impress Daisy",
+              "Wealth is presented as proof of transformation"
+            ]
+          },
+          {
+            "name": "The green light shifts",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Nick suggests the green light loses some ‘colossal significance’ now that Gatsby is with Daisy. Why might a symbol feel smaller once it’s close?",
+            "context": [
+              "The green light burns at the end of Daisy’s dock",
+              "Gatsby has watched it from across the bay",
+              "Now Daisy is physically beside Gatsby",
+              "Nick says an “enchanted object” diminishes",
+              "The dream has to compete with real human complexity"
+            ]
+          },
+          {
+            "name": "Nick’s role: helpful or risky?",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Nick helps create the meeting and then steps away. Do you think his involvement is caring, careless, or both? Explain your view.",
+            "context": [
+              "Jordan asked Nick to facilitate a reunion",
+              "Nick hosts tea at his own house",
+              "Nick tries to give Gatsby and Daisy privacy",
+              "He notices Gatsby’s anxiety and odd behavior",
+              "He leaves them alone together at the end"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 6",
+      "background": {
+        "summary": "Nick explains Gatsby’s true origins, Tom intrudes into Gatsby’s space, Daisy recoils from the party, and Gatsby insists he can recreate the past with Daisy.",
+        "key_events": [
+          "A reporter’s “fishing expedition” arrives → Gatsby’s public mystery continues to grow.",
+          "Nick recounts Gatsby’s reinvention from James Gatz → Gatsby’s self-made identity is clarified.",
+          "Tom appears at Gatsby’s with companions → old money tests and dismisses new money.",
+          "Tom and Daisy attend Gatsby’s party → Daisy finds it distasteful, raising Gatsby’s anxiety.",
+          "Gatsby admits he wants Daisy to leave Tom → he commits to repeating the past."
+        ],
+        "themes": [
+          "The capacity to reinvent one’s identity",
+          "Class tensions and inequality",
+          "Love and relationships in a culture defined by wealth and hedonism"
+        ],
+        "vocabulary": [
+          {
+            "word": "ingratiate",
+            "context": "managed to ingratiate himself with Cody"
+          },
+          {
+            "word": "affectation",
+            "context": "labeling it an affectation"
+          },
+          {
+            "word": "bootlegger",
+            "context": "a liquor “bootlegger”"
+          },
+          {
+            "word": "extraordinary",
+            "context": "Although his true origin is extraordinary"
+          },
+          {
+            "word": "incredulously",
+            "context": "he cried incredulously"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "The mask starts to slip",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "We’ve heard rumors about Gatsby, and we’ve seen him chase Daisy. As you read, watch for what the story reveals about who he used to be.",
+            "context": [
+              "Party rumors have created a fog around Gatsby’s past",
+              "Gatsby’s wealth is visible, but his origin is unclear",
+              "Tom’s suspicion is building as Gatsby and Daisy meet",
+              "A public image can be threatened by a single outsider",
+              "Reinvention can be inspiring or dangerous"
+            ]
+          },
+          {
+            "name": "Old money meets new money",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "When someone with inherited power meets someone self-made, what kinds of insults or tests show up? Listen for them.",
+            "context": [
+              "Status can be defended through taste and manners",
+              "Insults can focus on ‘where you come from’",
+              "Social acceptance can matter more than money",
+              "A host can still be treated like an outsider"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "James Gatz to Gatsby",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "Summarize the story Nick tells about Gatsby’s early life and the moment he changes his name.",
+            "context": [
+              "Gatsby’s real name is James Gatz",
+              "He comes from a good but unremarkable family in South Dakota",
+              "He meets Dan Cody on a yacht in Lake Superior",
+              "He takes the name “Gatsby” at that meeting",
+              "Cody makes him an unofficial assistant, but Gatsby loses an inheritance to Ella Kaye"
+            ]
+          },
+          {
+            "name": "Tom’s social weapon",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "How does Tom use class to undermine Gatsby during the party scenes, even before anything is proven?",
+            "context": [
+              "Tom drops by Gatsby’s house with riding companions",
+              "At the party, Tom raises rumors about bootlegging",
+              "Tom mocks Gatsby’s speech, especially “old sport,” as an affectation",
+              "Daisy tries to defend Gatsby but also seems repulsed by the party",
+              "Tom openly pursues other women at the party"
+            ]
+          },
+          {
+            "name": "Can someone repeat the past?",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Gatsby insists, ‘Why of course you can!’ about repeating the past. Do you think that belief is romantic, unrealistic, or both?",
+            "context": [
+              "Gatsby wants Daisy to leave Tom",
+              "He remembers the first time he kissed Daisy as life-defining",
+              "Daisy’s reaction to Gatsby’s party is not the reaction he hoped for",
+              "Gatsby’s identity is built around a long-held dream",
+              "Nick senses Gatsby’s attachment to an ideal version of Daisy"
+            ]
+          },
+          {
+            "name": "One scene, two viewpoints",
+            "type": "End",
+            "bloom_category": "Create",
+            "prompt": "Choose one party moment and retell it in two sentences: once as Gatsby might see it, and once as Daisy might see it.",
+            "context": [
+              "Gatsby watches Daisy’s reactions during his party",
+              "Daisy views West Egg through East Egg ‘eyes’ and tastes",
+              "Tom’s presence changes the mood in the room",
+              "Gatsby’s guests are largely strangers to him",
+              "Nick feels an unpleasantness in the air"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 7",
+      "background": {
+        "summary": "Gatsby ends the parties, Tom confronts the affair, Daisy wavers after Gatsby is exposed, Myrtle is killed by Gatsby’s car, and Gatsby vows to protect Daisy.",
+        "key_events": [
+          "Gatsby stops hosting parties and replaces servants → his focus narrows to Daisy and secrecy.",
+          "At the Buchanans’, Gatsby and Daisy kiss openly → Tom’s suspicion turns into certainty.",
+          "The group drives through the valley of ashes and stops for gas → George signals he will move West with Myrtle.",
+          "In a New York hotel, Tom exposes Gatsby’s bootlegging → Daisy pulls back and Tom regains control.",
+          "Myrtle runs into the road and is struck by Gatsby’s car → Myrtle dies and George collapses.",
+          "Gatsby admits Daisy was driving and hides the car → he commits to taking the blame to shield Daisy."
+        ],
+        "themes": [
+          "Love and relationships in a culture defined by wealth and hedonism",
+          "Class tensions and inequality",
+          "The illusion of the American Dream"
+        ],
+        "setting": "A sweltering day drives the group to a New York hotel, where heat and confinement intensify the confrontation and its consequences.",
+        "vocabulary": [
+          {
+            "word": "confronts",
+            "context": "Tom confronts Daisy and Gatsby"
+          },
+          {
+            "word": "dominance",
+            "context": "attempts to assert his dominance"
+          },
+          {
+            "word": "distraught",
+            "context": "Tom convinces a distraught George"
+          },
+          {
+            "word": "foreshadowing",
+            "context": "in a moment of foreshadowing"
+          },
+          {
+            "word": "twilight",
+            "context": "toward death through the cooling twilight"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "When the fun stops",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "Gatsby’s parties have been nonstop. As you read, notice what it means when the lights don’t come on anymore.",
+            "context": [
+              "A change in routine can signal rising stakes",
+              "A public persona can fade when a private goal takes over",
+              "Silence after crowds can feel ominous",
+              "Secrets become harder to manage as more people notice"
+            ]
+          },
+          {
+            "name": "Heat, pressure, and mistakes",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "This chapter builds toward a major clash. Think about how stress—like heat or jealousy—can push people into choices they regret.",
+            "context": [
+              "Jealousy often turns suspicion into action",
+              "Group settings can force hidden relationships into the open",
+              "Recklessness with cars has already appeared earlier",
+              "Power struggles can become dangerous when control slips"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "From tension to tragedy",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "Outline the chain of events that takes the group from lunch at the Buchanans’ to Myrtle’s death.",
+            "context": [
+              "Gatsby and Daisy kiss when Tom isn’t looking",
+              "They decide to drive into town to ease tension",
+              "Tom stops at George’s garage for gas",
+              "The confrontation happens in a New York hotel",
+              "Daisy and Gatsby drive back in Gatsby’s car",
+              "Myrtle runs into the street and is hit by the speeding car"
+            ]
+          },
+          {
+            "name": "Tom’s strategy in the hotel",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "In the hotel scene, how does Tom win back control even though he’s been unfaithful too?",
+            "context": [
+              "Tom mocks Gatsby’s ‘old sport’ as an affectation",
+              "Tom challenges Gatsby’s Oxford story",
+              "Tom forces the affair into direct confrontation",
+              "Tom reveals Gatsby’s bootlegging and criminal ties",
+              "Daisy is jarred by the revelation and wavers"
+            ]
+          },
+          {
+            "name": "Who carries the blame?",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "After the accident, notice how information is managed. Who knows Daisy was driving, and how does that shape what happens next?",
+            "context": [
+              "Gatsby tells Nick Daisy was behind the wheel",
+              "Gatsby hides the car in his garage",
+              "Tom speaks to George at the garage area after the accident",
+              "Tom implies Gatsby drove the car to George",
+              "Nick worries what Tom would think if he knew the truth"
+            ]
+          },
+          {
+            "name": "Gatsby’s choice to protect Daisy",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "Gatsby decides to cover for Daisy. Do you see that as love, obsession, or something else? Use this chapter’s moments to support your view.",
+            "context": [
+              "Gatsby waits outside the Buchanans’ to watch over Daisy",
+              "He is committed to helping Daisy conceal responsibility",
+              "He believes Daisy will choose him after the showdown",
+              "Daisy retreats inside with Tom at the end",
+              "The death intensifies the cost of their affair"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 8",
+      "background": {
+        "summary": "Nick urges Gatsby to leave, Gatsby relives his romance with Daisy, and George finds Gatsby and kills him before dying by suicide.",
+        "key_events": [
+          "Nick visits Gatsby after the accident → he advises Gatsby to leave town before the car is traced.",
+          "Gatsby recounts his early relationship with Daisy → nostalgia tightens his grip on the dream.",
+          "Gatsby refuses to drain the pool yet → he clings to the summer and what it meant.",
+          "George slips away from watchers after Myrtle’s death → he searches for the person he believes responsible.",
+          "George shoots Gatsby and then himself → the conflict’s violence becomes irreversible."
+        ],
+        "themes": [
+          "The illusion of the American Dream",
+          "The capacity to reinvent one’s identity",
+          "Love and relationships in a culture defined by wealth and hedonism"
+        ],
+        "vocabulary": [
+          {
+            "word": "advises",
+            "context": "He advises Gatsby to leave town"
+          },
+          {
+            "word": "culpability",
+            "context": "cover for Daisy’s culpability"
+          },
+          {
+            "word": "drain",
+            "context": "asks him if it’s okay to drain the pool"
+          },
+          {
+            "word": "disturbed",
+            "context": "George grows increasingly disturbed"
+          },
+          {
+            "word": "suicide",
+            "context": "then dies by suicide"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "Aftermath and second thoughts",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "After a disaster, people often replay the past and make desperate plans. As you read, track what Gatsby and George do in the quiet after the crash.",
+            "context": [
+              "The accident creates fear of legal consequences",
+              "Gatsby has tied his identity to Daisy and a dream",
+              "George has lost Myrtle and feels betrayed",
+              "Nick is still close enough to intervene with advice",
+              "Silence can be more dangerous than crowds"
+            ]
+          },
+          {
+            "name": "A warning that could change everything",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "Nick gives Gatsby advice. As you read, think about why someone might ignore a good warning even when danger is obvious.",
+            "context": [
+              "Hope can feel stronger than logic",
+              "Leaving might feel like admitting defeat",
+              "Protecting someone else can override self-protection",
+              "A single dream can narrow someone’s choices"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "Nick’s last words to Gatsby",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "What does Nick tell Gatsby that morning, and what does it show about how Nick now sees the people around him?",
+            "context": [
+              "Nick advises Gatsby to leave town",
+              "Nick believes the police will identify Gatsby’s car",
+              "Nick tells Gatsby he’s “worth more” than Tom and Daisy",
+              "Nick feels disgusted with Tom and Daisy’s world",
+              "Nick’s feelings toward Gatsby are mixed: contempt and sympathy"
+            ]
+          },
+          {
+            "name": "Nostalgia as a trap",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "How does Gatsby’s retelling of his past with Daisy show the difference between memory and reality?",
+            "context": [
+              "Gatsby describes his youthful love affair with Daisy",
+              "His longing has lasted for years after the war",
+              "Daisy’s reaction changed after learning about Gatsby’s crime",
+              "Gatsby clings to what Daisy represents: status and perfection",
+              "The story slows down after Chapter 7’s chaos"
+            ]
+          },
+          {
+            "name": "The pool moment",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Why does the detail about draining—or not draining—the pool matter at this point in the story?",
+            "context": [
+              "A servant asks whether to drain the pool",
+              "Gatsby says to wait",
+              "Gatsby repeats he has not used the pool all summer",
+              "He uses the pool for the first time right before he dies",
+              "The pool links wealth, leisure, and the passing of the season"
+            ]
+          },
+          {
+            "name": "Where responsibility lands",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "George kills Gatsby believing he’s responsible. Who do you think is most responsible for the chain of events leading to the murder, and why?",
+            "context": [
+              "Myrtle is killed by Gatsby’s car while Daisy is driving",
+              "Tom points George toward Gatsby as the driver",
+              "Gatsby chooses to shield Daisy from blame",
+              "George is overwhelmed by grief and betrayal",
+              "Nick has watched the wealthy escape consequences before"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Chapter 9",
+      "background": {
+        "summary": "Nick manages the aftermath, discovers Gatsby’s isolation through the empty funeral, confronts Tom’s role in blame, and leaves the East behind.",
+        "key_events": [
+          "Newspapers distort the tragedy → Nick becomes Gatsby’s main defender.",
+          "Daisy and Tom leave without contact → Nick cannot hold them accountable.",
+          "Wolfsheim refuses to attend the funeral → Gatsby’s connections evaporate under risk.",
+          "Henry Gatz arrives and shares Gatsby’s childhood schedule → Gatsby’s ambition is reframed as long-standing.",
+          "Few attend the rainy funeral except Owl-Eyes → Gatsby’s social world is exposed as hollow.",
+          "Nick breaks with Jordan and confronts Tom → Tom admits he implicated Gatsby to protect himself and Daisy.",
+          "Nick decides to return to the Midwest → he rejects the East’s moral carelessness."
+        ],
+        "themes": [
+          "The illusion of the American Dream",
+          "Class tensions and inequality"
+        ],
+        "vocabulary": [
+          {
+            "word": "distorted",
+            "context": "accounts that Nick describes as distorted"
+          },
+          {
+            "word": "telegram",
+            "context": "A telegram arrives"
+          },
+          {
+            "word": "sentimental",
+            "context": "a sentimental Gatz"
+          },
+          {
+            "word": "closure",
+            "context": "he contacts Jordan for closure"
+          },
+          {
+            "word": "conspiring",
+            "context": "they were conspiring together"
+          }
+        ]
+      },
+      "stems": {
+        "before_reading": [
+          {
+            "name": "Who shows up when it’s over?",
+            "type": "Start",
+            "bloom_category": "Understand",
+            "prompt": "This final chapter looks at what’s left after the tragedy. As you read, notice who stays, who disappears, and what that reveals about loyalty.",
+            "context": [
+              "Some relationships are built on parties and usefulness",
+              "Risk changes who will be publicly associated with you",
+              "Family may see a different version of a person than friends do",
+              "A narrator’s final choices reveal what the story meant to them"
+            ]
+          },
+          {
+            "name": "Dreams versus outcomes",
+            "type": "Start",
+            "bloom_category": "Apply",
+            "prompt": "Think about a goal someone might chase for years. What kinds of endings make that chase feel meaningful—and what endings make it feel empty?",
+            "context": [
+              "A dream can inspire self-discipline and change",
+              "A dream can also trap someone in the past",
+              "Public admiration may not equal real connection",
+              "A single event can rewrite how a life is remembered"
+            ]
+          }
+        ],
+        "end_of_chapter": [
+          {
+            "name": "What the funeral reveals",
+            "type": "End",
+            "bloom_category": "Understand",
+            "prompt": "Who attends Gatsby’s funeral, and what does the turnout show about the life Gatsby built?",
+            "context": [
+              "Henry Gatz, Gatsby’s father, comes from Minnesota",
+              "Wolfsheim sends a letter but will not attend",
+              "Klipspringer calls only to retrieve shoes",
+              "Owl-Eyes is the only party guest who appears",
+              "Nick, some servants, and the postman are present in the rain"
+            ]
+          },
+          {
+            "name": "Gatz’s view of his son",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "How does Henry Gatz’s reaction reshape our view of Gatsby’s ambition and identity?",
+            "context": [
+              "Gatz feels pride and awe more than simple grief",
+              "He compares Gatsby to James J. Hill, a railroad magnate",
+              "He shows Gatsby’s childhood schedule of self-improvement",
+              "He learns details about Gatsby’s mansion and achievements",
+              "The items suggest Gatsby’s dream started long before Daisy returned"
+            ]
+          },
+          {
+            "name": "Nick versus the Buchanans",
+            "type": "End",
+            "bloom_category": "Analyze",
+            "prompt": "Nick calls Tom and Daisy ‘careless.’ What specific actions in this chapter support that judgment?",
+            "context": [
+              "They leave town without leaving an address",
+              "Nick cannot reach them after Gatsby’s death",
+              "Tom admits he pointed George toward Gatsby",
+              "They retreat into money and distance from consequences",
+              "Nick sees them as protected by privilege"
+            ]
+          },
+          {
+            "name": "The green light ending",
+            "type": "End",
+            "bloom_category": "Evaluate",
+            "prompt": "At the end, Nick connects the green light to striving and being ‘borne back ceaselessly into the past.’ Do you read that as hopeful, critical, or both?",
+            "context": [
+              "The green light sits across the water on Daisy’s dock",
+              "Gatsby believed in it as a future just out of reach",
+              "Nick expands it into a broader statement about ‘us’",
+              "The future ‘recedes’ even as people reach forward",
+              "The image of boats against the current suggests effort and resistance"
+            ]
+          },
+          {
+            "name": "Nick’s final choice",
+            "type": "End",
+            "bloom_category": "Create",
+            "prompt": "Imagine Nick writing one last short note to himself before leaving the East. What lesson would he write in three sentences?",
+            "context": [
+              "Nick is disillusioned by the East Coast elite",
+              "He breaks up with Jordan and rejects ‘false honor’",
+              "He confronts Tom about Gatsby’s death",
+              "He sees Gatsby as both flawed and victimized",
+              "He decides to return to the Midwest"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
